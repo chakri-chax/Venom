@@ -1,0 +1,83 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"_lpWallet","type":"address"},
+				{"name":"_nonce","type":"uint64"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "purchasePackage",
+			"inputs": [
+				{"name":"referralWallets","type":"address[]"},
+				{"name":"commissions","type":"uint128[]"},
+				{"name":"packagePrice","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "calculateLpAmount",
+			"inputs": [
+				{"name":"commissions","type":"uint128[]"},
+				{"name":"packagePrice","type":"uint128"}
+			],
+			"outputs": [
+				{"name":"value0","type":"uint128"}
+			]
+		},
+		{
+			"name": "contractBalance",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"uint128"}
+			]
+		},
+		{
+			"name": "lpWallet",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"lpWallet","type":"address"}
+			]
+		}
+	],
+	"data": [
+		{"key":1,"name":"nonce_","type":"uint64"}
+	],
+	"events": [
+		{
+			"name": "PurchaseEvent",
+			"inputs": [
+				{"components":[{"name":"wallet","type":"address"},{"name":"commission","type":"uint128"}],"name":"referrals","type":"tuple[]"},
+				{"name":"user","type":"address"},
+				{"name":"packagePrice","type":"uint128"},
+				{"name":"lpAmount","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "TooLowBalance",
+			"inputs": [
+				{"name":"replenishment","type":"uint256"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"nonce_","type":"uint64"},
+		{"name":"lpWallet","type":"address"}
+	]
+}

@@ -1,0 +1,111 @@
+pragma ever-solidity >= 0.62.0;
+
+pragma AbiHeader expire;
+pragma AbiHeader time;
+pragma AbiHeader pubkey;
+
+contract CommissionDistribution {
+    uint64 static nonce_;
+
+    event PurchaseEvent(
+        Referral[] referrals,
+        address indexed user,
+        uint128 packagePrice,
+        uint256 lpAmount
+    );
+     struct Referral {
+        address wallet;
+        uint128 commission;
+    }
+
+  event TooLowBalance(uint replenishment);
+
+    uint8 constant AmountTooLow = 101;
+    uint8 constant InvalidAccount = 102;
+    uint8 constant InvalidInputLength = 103;
+    uint8 constant DuplicateReferral = 104;
+    uint8 constant InvalidCommissions = 105;
+    uint8 constant TransferFailed = 106;
+
+    address  public  lpWallet;
+
+    constructor(address _lpWallet,uint64 _nonce) public{
+        tvm.accept();
+        tvm.rawReserve(1 ever, 0);
+        lpWallet = _lpWallet;
+        nonce_ = _nonce;
+    }
+    function purchasePackage(
+        address[]  referralWallets,
+        uint128[]  commissions,
+        uint128 packagePrice
+    ) external view{
+        tvm.accept();
+        tvm.rawReserve(1 ever, 0);
+        require( msg.value >= packagePrice, AmountTooLow);
+        uint128 totalCommissions = 0;
+        for (uint i = 0; i < commissions.length; i++) {
+            totalCommissions += commissions[i];
+        }
+        require( totalCommissions <= 100, InvalidCommissions);
+
+        
+        require( referralWallets.length == commissions.length, InvalidInputLength);
+
+        Referral[]  referrals = new Referral[](referralWallets.length);
+        uint128 distributedAmount = 0;
+        
+        for (uint i = 0; i < referralWallets.length; i++) {
+            address wallet = referralWallets[i];
+            
+            for (uint j = 0; j < i; j++) {
+                require( referralWallets[j] != wallet, DuplicateReferral);
+            }
+
+            uint128 commissionAmount = (packagePrice * uint128(commissions[i])) / 100;
+           
+
+            transferToAddress(wallet, commissionAmount);
+
+            distributedAmount += commissionAmount;
+            referrals[i] = Referral(wallet, commissionAmount);
+        }
+
+        uint128 remaining = packagePrice - distributedAmount;
+        transferToAddress(lpWallet, remaining);
+
+        if (msg.value > packagePrice) {
+            transferToAddress(msg.sender, uint128(msg.value - packagePrice));
+        }
+
+        emit PurchaseEvent(referrals, msg.sender, packagePrice, remaining);
+    }
+
+    // Helper function to calculate expected LP amount
+    function calculateLpAmount(
+        uint128[]  commissions,
+        uint128 packagePrice
+    ) external pure returns (uint128) {
+        uint128 totalCommissions = 0;
+        for (uint i = 0; i < commissions.length; i++) {
+            totalCommissions += commissions[i];
+        }
+        return packagePrice - ((packagePrice * totalCommissions) / 100);
+    }
+
+    function transferToAddress(address _destination, uint128 _value) internal pure  returns (bool) {
+        if (address(this).balance < _value ) {
+                emit TooLowBalance( _value - address(this).balance);
+                return false;
+            }else{
+		    _destination.transfer({value: _value, bounce: false});
+            return true;
+            }
+	}
+    function contractBalance() external pure returns(uint128) {
+        return uint128(address(this).balance);
+    }
+  
+   
+}
+
