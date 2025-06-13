@@ -18,8 +18,7 @@ contract Nft is TIP4_1Nft, TIP4_2_2Nft, TIP4_3Nft, INft {
     uint8 constant invalid_address = 243;
 
     uint256 public nftId; 
-    uint256 public parentNftId;    
-    address public parentNftAddress;    
+   
 
     string public typeName;
     string public nickName;
@@ -33,8 +32,6 @@ contract Nft is TIP4_1Nft, TIP4_2_2Nft, TIP4_3Nft, INft {
         address sendGasTo,
         uint128 remainOnNft,
         uint256 nftId_,
-        uint256 parentNftId_,
-        address parentNftAddress_,
         string typeName_,
         string nickName_,
         uint128 indexDeployValue,
@@ -51,8 +48,6 @@ contract Nft is TIP4_1Nft, TIP4_2_2Nft, TIP4_3Nft, INft {
     ) public {
         tvm.accept();
         nftId = nftId_;
-        parentNftId = parentNftId_;
-        parentNftAddress = parentNftAddress_;
         typeName = typeName_;
         nickName = nickName_;
     }
@@ -145,8 +140,8 @@ contract Nft is TIP4_1Nft, TIP4_2_2Nft, TIP4_3Nft, INft {
         emit NftNickNameChanged(nftId, oldNickName, nickName);
     }
 
-    function getNftInfo() external view responsible override returns(uint256 nftId_, uint256 parentNftId_, address parentNftAddress_, string typeName_, string nickName_) {
-		return {value: 0, bounce: false, flag: 64}(nftId, parentNftId, parentNftAddress, typeName, nickName);    
+    function getNftInfo() external view responsible override returns(uint256 nftId_, string typeName_, string nickName_) {
+		return {value: 0, bounce: false, flag: 64}(nftId, typeName, nickName);    
     }
 
 }
