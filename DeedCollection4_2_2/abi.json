@@ -42,8 +42,6 @@
 			"name": "mintNftByType",
 			"inputs": [
 				{"name":"owner","type":"address"},
-				{"name":"parentNftId","type":"uint256"},
-				{"name":"parentNftAddress","type":"address"},
 				{"name":"nftTypeIndex","type":"uint8"},
 				{"name":"nickName","type":"string"}
 			],
