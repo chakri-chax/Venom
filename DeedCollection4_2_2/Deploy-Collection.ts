@@ -2,7 +2,6 @@ import { toNano, WalletTypes, Address,getRandomNonce } from "locklift";
 
 async function main() {
   const signer = (await locklift.keystore.getSigner("0"))!;
-  console.log("signer address", signer);
 
   const nftArtifacts = await locklift.factory.getContractArtifacts("Nft");
   const indexArtifacts = await locklift.factory.getContractArtifacts("Index");
@@ -27,8 +26,8 @@ async function main() {
 
       owner: owner, //   address owner,
       remainOnNft: locklift.utils.toNano(0.2), // 	uint128 remainOnNft,
-      baseNftUrl: `https://mprofy-web2.s3.us-east-2.amazonaws.com/deedseed/`, // 	string baseNftUrl,
-      collectionUrl: `https://mprofy-web2.s3.us-east-2.amazonaws.com/deedseed/collection.json`, //     string collectionUrl,
+      baseNftUrl: `https://purple-definite-trout-798.mypinata.cloud/ipfs/QmNT6pU4kLmQ9AKJ9WWjyqsoemNPecCbbRsjJNKUv4MN9j/`, // 	string baseNftUrl,
+      collectionUrl: `https://coral-naval-clam-30.mypinata.cloud/ipfs/bafkreibjex2gx4xhkelgihafsv6i7c5enfsm4c3ks32d23ydeqvd3gelua`, //     string collectionUrl,
       genesisNftOwner: owner, // 	address genesisNftOwner,
       genesisNickName: `Mprofy`, // 	string genesisNickName
       nonce: getRandomNonce(), // 	uint64 nonce,
@@ -36,7 +35,7 @@ async function main() {
 
     value: locklift.utils.toNano(1.5),
   });
-  console.log("sample", sample);
+  // console.log("sample", sample);
 
   console.log(`Collection deployed at: ${sample.address.toString()}`);
 }
