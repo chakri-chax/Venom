@@ -60,7 +60,7 @@ contract Collection is TIP4_2_2Collection, TIP4_3Collection, OwnableInternal  {
 		_addUpdateNftType(0, 'S');
 		_addUpdateNftType(1, 'D');
 
-		_mintNft(genesisNftOwner, 0, address(0), nftTypes.at(0), genesisNickName, 0, 128);
+		_mintNft(genesisNftOwner, nftTypes.at(0), genesisNickName, 0, 128);
 		nonce_ = nonce;
 	}
 
@@ -73,17 +73,16 @@ contract Collection is TIP4_2_2Collection, TIP4_3Collection, OwnableInternal  {
 		return tvm.hash(code);
 	}
 
-	function mintNftByType(address owner, uint256 parentNftId, address parentNftAddress, uint8 nftTypeIndex, string nickName) external virtual onlyOwner {
+	function mintNftByType(address owner, uint8 nftTypeIndex, string nickName) external virtual onlyOwner {
 		require(mintNftStatus == StatusFlag.Active, Errors.minting_must_be_active);
 		require(nftTypes.exists(nftTypeIndex), Errors.nft_type_not_set);
-		require(_resolveNft(parentNftId) == parentNftAddress, Errors.parent_nft_does_not_belong_to_this_collection);
 		require(owner != address(0), Errors.zero_address_is_prohibited_for_owner);
 		require(
 			msg.value > _remainOnNft + _indexDeployValue * 2 + 0.3 ever,
 			Errors.value_is_less_than_required
 		);
 		tvm.rawReserve(1 ever, 0);
-		_mintNft(owner, parentNftId, parentNftAddress, nftTypes.at(nftTypeIndex), nickName, 0, 128);
+		_mintNft(owner, nftTypes.at(nftTypeIndex), nickName, 0, 128);
 	}
 
 	function totalMinted() external view responsible returns (uint256 count) {
@@ -103,14 +102,14 @@ contract Collection is TIP4_2_2Collection, TIP4_3Collection, OwnableInternal  {
 		return {value: 0, flag: 64, bounce: false} (_remainOnNft);
 	}
 
-	function changeNftTypeName(uint256 nftId, address nftAddress, uint8 nftTypeIndex) external onlyOwner {
+	function changeNftTypeName(uint256 nftId, address nftAddress, uint8 nftTypeIndex) external view onlyOwner {
 		require(msg.value >= 0.5 ever, Errors.value_is_less_than_required);
 		require(_resolveNft(nftId) == nftAddress, Errors.nft_does_not_belong_to_this_collection);
 		require(nftTypes.exists(nftTypeIndex), Errors.nft_type_not_set);
 		INft(nftAddress).setTypeName{value:0, flag:64, bounce: true}(nftTypes.at(nftTypeIndex));
 	}
 
-	function acceptNftTypeNameChange(uint256 nftId, string newNftTypeName, string oldNftTypeName) external {
+	function acceptNftTypeNameChange(uint256 nftId, string newNftTypeName, string oldNftTypeName) external view{
         require(msg.sender == owner(), Errors.not_callable);
 		address resolvedNft = _resolveNft(nftId);
 		require(resolvedNft != address(0), Errors.not_callable);
@@ -120,13 +119,13 @@ contract Collection is TIP4_2_2Collection, TIP4_3Collection, OwnableInternal  {
 		emit NftTypeNameChanged(nftId, resolvedNft, oldNftTypeName, newNftTypeName);
 	}
 
-	function changeNftNickName(uint256 nftId, address nftAddress, string nickName) external onlyOwner {	
+	function changeNftNickName(uint256 nftId, address nftAddress, string nickName) external view onlyOwner {	
 		require(msg.value >= 0.5 ever, Errors.value_is_less_than_required);
 		require(_resolveNft(nftId) == nftAddress, Errors.nft_does_not_belong_to_this_collection);
 		INft(nftAddress).setNickName{value:0, flag:64, bounce: true}(nickName);
 	}
 
-	function acceptNftNickNameChange(uint256 nftId, string newNftNickName, string oldNftNickName, address sendRemainGasTo) external {
+	function acceptNftNickNameChange(uint256 nftId, string newNftNickName, string oldNftNickName, address sendRemainGasTo) external view{
 		require(msg.sender == owner(), Errors.not_callable);
         address resolvedNft = _resolveNft(nftId);
 		require(msg.sender.value != 0 && resolvedNft == msg.sender, Errors.not_callable);
@@ -172,7 +171,7 @@ contract Collection is TIP4_2_2Collection, TIP4_3Collection, OwnableInternal  {
 		emit CollectionMetadataUpdated();
 	}
 
-	function withdrawBalance(address to) external  onlyOwner {
+	function withdrawBalance(address to) external view  onlyOwner {
         tvm.rawReserve(1 ever, 0);
         to.transfer({value: 0, flag: 128, bounce: true});	
     }
@@ -188,7 +187,7 @@ contract Collection is TIP4_2_2Collection, TIP4_3Collection, OwnableInternal  {
 		}
 	}
 
-	function _mintNft(address owner, uint256 parentNftId, address parentNftAddress, string nftType, string nickName, uint128 value, uint16 flag) internal virtual 	
+	function _mintNft(address owner,  string nftType, string nickName, uint128 value, uint16 flag) internal virtual 	
 	{
 		uint256 id = uint256(_totalMinted) + 1;
 		_totalMinted++;
@@ -201,8 +200,6 @@ contract Collection is TIP4_2_2Collection, TIP4_3Collection, OwnableInternal  {
 			msg.sender,
 			_remainOnNft,
 			id,
-			parentNftId,
-			parentNftAddress,
 			nftType,
 			nickName,			
 			_indexDeployValue,
