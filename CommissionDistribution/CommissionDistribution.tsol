@@ -13,6 +13,13 @@ contract CommissionDistribution {
         uint128 packagePrice,
         uint256 lpAmount
     );
+    event IndividualPurchaseEvent(
+        address indexed referral,
+        address indexed user,
+        uint128 packagePrice,
+        uint128 lpAmount
+    );
+
      struct Referral {
         address wallet;
         uint128 commission;
@@ -30,6 +37,7 @@ contract CommissionDistribution {
     address  public  lpWallet;
 
     constructor(address _lpWallet,uint64 _nonce) public{
+        require(_lpWallet != address(0), InvalidAccount);
         tvm.accept();
         tvm.rawReserve(1 ever, 0);
         lpWallet = _lpWallet;
@@ -54,21 +62,21 @@ contract CommissionDistribution {
 
         Referral[]  referrals = new Referral[](referralWallets.length);
         uint128 distributedAmount = 0;
+        mapping(address => bool) walletExists;
         
         for (uint i = 0; i < referralWallets.length; i++) {
             address wallet = referralWallets[i];
-            
-            for (uint j = 0; j < i; j++) {
-                require( referralWallets[j] != wallet, DuplicateReferral);
-            }
+            require(!walletExists[wallet], DuplicateReferral);
+            walletExists[wallet] = true;
 
             uint128 commissionAmount = (packagePrice * uint128(commissions[i])) / 100;
-           
 
-            transferToAddress(wallet, commissionAmount);
+            bool success = transferToAddress(wallet, commissionAmount);
+            require(success, TransferFailed);
 
             distributedAmount += commissionAmount;
             referrals[i] = Referral(wallet, commissionAmount);
+            emit IndividualPurchaseEvent(wallet, msg.sender, commissionAmount, 0);
         }
 
         uint128 remaining = packagePrice - distributedAmount;
@@ -93,7 +101,7 @@ contract CommissionDistribution {
         return packagePrice - ((packagePrice * totalCommissions) / 100);
     }
 
-    function transferToAddress(address _destination, uint128 _value) internal pure  returns (bool) {
+    function transferToAddress(address _destination, uint128 _value) internal view  returns (bool) {
         if (address(this).balance < _value ) {
                 emit TooLowBalance( _value - address(this).balance);
                 return false;
@@ -102,7 +110,7 @@ contract CommissionDistribution {
             return true;
             }
 	}
-    function contractBalance() external pure returns(uint128) {
+    function contractBalance() external view returns(uint128) {
         return uint128(address(this).balance);
     }
   
