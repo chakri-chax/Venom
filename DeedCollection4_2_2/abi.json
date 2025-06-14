@@ -15,7 +15,8 @@
 				{"name":"collectionUrl","type":"string"},
 				{"name":"genesisNftOwner","type":"address"},
 				{"name":"genesisNickName","type":"string"},
-				{"name":"nonce","type":"uint64"}
+				{"name":"nonce","type":"uint64"},
+				{"name":"_burnerWallet","type":"address"}
 			],
 			"outputs": [
 			]
@@ -26,6 +27,23 @@
 			],
 			"outputs": [
 				{"name":"value0","type":"uint16"}
+			]
+		},
+		{
+			"name": "setBurnerWallet",
+			"inputs": [
+				{"name":"burnerWallet_","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getBurnerWallet",
+			"inputs": [
+				{"name":"answerId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"value0","type":"address"}
 			]
 		},
 		{
@@ -448,6 +466,7 @@
 		{"name":"_deployIndexBasisValue","type":"uint128"},
 		{"name":"owner_","type":"address"},
 		{"name":"nonce_","type":"uint64"},
+		{"name":"burnerWallet","type":"address"},
 		{"name":"_totalMinted","type":"uint256"},
 		{"name":"_remainOnNft","type":"uint128"},
 		{"name":"mintNftStatus","type":"uint8"},
