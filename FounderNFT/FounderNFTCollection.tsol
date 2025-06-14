@@ -6,13 +6,19 @@ pragma AbiHeader expire;
 pragma AbiHeader time;
 pragma AbiHeader pubkey;
 
-import "@broxus/tip4/contracts/TIP4_2/TIP4_2Collection.tsol";
+// import "@broxus/tip4/contracts/TIP4_2/TIP4_2Collection.tsol";
+// import "@broxus/tip4/contracts/TIP4_3/TIP4_3Collection.tsol";
+// import "@broxus/contracts/contracts/access/InternalOwner.tsol";
+
+import "@broxus/tip4/contracts/TIP4_2_2/TIP4_2_2Collection.tsol";
 import "@broxus/tip4/contracts/TIP4_3/TIP4_3Collection.tsol";
-import "@broxus/contracts/contracts/access/InternalOwner.tsol";
+import "@broxus/tip4/contracts/access/OwnableInternal.tsol";
+
 
 import './Nft.tsol';
 
-contract FounderNFTCollection is TIP4_2Collection, TIP4_3Collection {
+contract FounderNFTCollection is TIP4_2_2Collection, TIP4_3Collection, OwnableInternal {
+    uint64 static nonce_;
 
     uint256 public _totalMinted;
 
@@ -57,17 +63,20 @@ contract FounderNFTCollection is TIP4_2Collection, TIP4_3Collection {
         TvmCell codeIndexBasis,
         address owner,
         uint128 remainOnNft,
-        string json,
-
+        string baseNftUrl,
+        string collectionUrl,
         address _warehouseWallet, 
         address _routingWallet, 
-        string  _baseTokenURI
+        string  _baseTokenURI,
+        uint64 _nonce
     )
         public
-        TIP4_1Collection(codeNft)
-        TIP4_2Collection(json)
-        TIP4_3Collection(codeIndex, codeIndexBasis
-    ) {
+        OwnableInternal(owner)
+		TIP4_1Collection(codeNft)
+		TIP4_2_2Collection(baseNftUrl, collectionUrl)
+		TIP4_3Collection(codeIndex, codeIndexBasis)	
+
+     {
         tvm.accept();
         tvm.rawReserve(1 ever, 0);
         require(_warehouseWallet != address(0), 101);
@@ -76,26 +85,26 @@ contract FounderNFTCollection is TIP4_2Collection, TIP4_3Collection {
         warehouseWallet = _warehouseWallet;
         routingWallet = _routingWallet;
         baseTokenURI = _baseTokenURI;
-
-        owner = msg.sender;
+        nonce_ = _nonce;
+        owner = owner;
     }
 
     function codeDepth() public view returns(uint16) {
         return (_buildNftCode(address(this)).depth());
     }
 
-    function _buildNftState(TvmCell code, uint256 id)
-        internal
-        pure
-        virtual
-        override (TIP4_2Collection, TIP4_3Collection)
-        returns (TvmCell)
-    {
-        return tvm.buildStateInit({contr: Nft, varInit: {_id: id}, code: code});
-    }
+   function _buildNftState(TvmCell code, uint256 id)
+		internal
+		pure
+		virtual
+		override (TIP4_2_2Collection, TIP4_3Collection)
+		returns (TvmCell)
+	{
+		return tvm.buildStateInit({contr: Nft, varInit: {_id: id}, code: code});
+	}
 
  function getIndexFromRequestId(uint256 _requestId) public view returns (uint256) {
-        require(_requestId > 0 && _requestId <= requestId,109);
+        require(_requestId >= 0 && _requestId < requestId, 109);
         return requestIdToIndex[_requestId];
     }
 
@@ -104,6 +113,8 @@ contract FounderNFTCollection is TIP4_2Collection, TIP4_3Collection {
         require(_amount > 0, 104);
         require(msg.sender == routingWallet, 105);
         require(_tokenId < MAX_SUPPLY, 106); 
+        uint256 currentRequestId = requestId;
+
         pendingMints.push(MintRequest({
             to: _to,
             amount: _amount,
@@ -120,9 +131,8 @@ contract FounderNFTCollection is TIP4_2Collection, TIP4_3Collection {
             completed: false
         });
 
+        emit MintInitiated(_to, currentRequestId, _amount);
         requestId += 1;
-
-        emit MintInitiated(_to, requestId, _amount);
     }
  function getAllPendingMints() external view returns (MintRequest[] ) {
         return pendingMints;
@@ -136,7 +146,7 @@ contract FounderNFTCollection is TIP4_2Collection, TIP4_3Collection {
     }
 
     function completeMint(uint256 index) external  {
-        require(msg.sender == warehouseWallet,201);
+        require(msg.sender == owner(),201);
         // uint256 _index = getIndexFromRequestId(index);
         require(index <= pendingMints.length, 107);
         MintRequest mintRequest = pendingMints[index];
@@ -145,6 +155,7 @@ contract FounderNFTCollection is TIP4_2Collection, TIP4_3Collection {
         mintRequest.completed = true;
 
         mintNft(mintRequest.to);
+        pendingMints[index].completed = true; 
 
         emit MintCompleted(mintRequest.to, mintRequest.requestId, amount);
      
@@ -202,8 +213,7 @@ contract FounderNFTCollection is TIP4_2Collection, TIP4_3Collection {
         }(
             _to,
             msg.sender,
-            0.3 ever,
-            "{collection:FounderNFT}",               
+            0.3 ever,             
             _codeIndex,        
             _indexDeployValue, 
             _indexDestroyValue 
@@ -230,6 +240,12 @@ contract FounderNFTCollection is TIP4_2Collection, TIP4_3Collection {
         
         require(_routingWallet != address(0), 103);
         routingWallet = _routingWallet;
+    }
+    function getWarehouseWallet() public view returns (address) {
+        return warehouseWallet;
+    }
+function getRoutingWallet() public view returns (address) {
+        return routingWallet;
     }
     function getNftAddress(uint256 id) public view returns (address) {
         return nftAddressOf[id];
