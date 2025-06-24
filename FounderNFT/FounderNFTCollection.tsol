@@ -6,10 +6,6 @@ pragma AbiHeader expire;
 pragma AbiHeader time;
 pragma AbiHeader pubkey;
 
-// import "@broxus/tip4/contracts/TIP4_2/TIP4_2Collection.tsol";
-// import "@broxus/tip4/contracts/TIP4_3/TIP4_3Collection.tsol";
-// import "@broxus/contracts/contracts/access/InternalOwner.tsol";
-
 import "@broxus/tip4/contracts/TIP4_2_2/TIP4_2_2Collection.tsol";
 import "@broxus/tip4/contracts/TIP4_3/TIP4_3Collection.tsol";
 import "@broxus/tip4/contracts/access/OwnableInternal.tsol";
@@ -86,7 +82,6 @@ contract FounderNFTCollection is TIP4_2_2Collection, TIP4_3Collection, OwnableIn
         routingWallet = _routingWallet;
         baseTokenURI = _baseTokenURI;
         nonce_ = _nonce;
-        owner = owner;
     }
 
     function codeDepth() public view returns(uint16) {
@@ -145,18 +140,23 @@ contract FounderNFTCollection is TIP4_2_2Collection, TIP4_3Collection, OwnableIn
         return _getPendingMintByIndex[_index];
     }
 
-    function completeMint(uint256 index) external  {
-        require(msg.sender == owner(),201);
-        // uint256 _index = getIndexFromRequestId(index);
+    function completeMint(uint256 _requestId) external  {
+        require(msg.sender == owner() || msg.sender == routingWallet,201);
+        uint256 index = getIndexFromRequestId(_requestId);
         require(index <= pendingMints.length, 107);
         MintRequest mintRequest = pendingMints[index];
         require(!mintRequest.completed, 108);
         uint128 amount = uint128(mintRequest.amount);
+        
+        for (uint256 i = _tokenId; i < (_tokenId + amount); i++) {
+            _safeMint(mintRequest.to, i);
+           
+        }
+        mintNft(mintRequest.to);
         mintRequest.completed = true;
 
-        mintNft(mintRequest.to);
-        pendingMints[index].completed = true; 
-
+        // pendingMints[index].completed = true; 
+        // _getPendingMintByIndex[_requestId].completed = true;
         emit MintCompleted(mintRequest.to, mintRequest.requestId, amount);
      
         _removePendingMint(index);      
