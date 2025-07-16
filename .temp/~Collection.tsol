@@ -6,13 +6,13 @@ pragma AbiHeader expire;
 pragma AbiHeader time;
 pragma AbiHeader pubkey;
 
-import "@broxus/tip4/contracts/TIP4_2/TIP4_2Collection.tsol";
-import "@broxus/tip4/contracts/TIP4_3/TIP4_3Collection.tsol";
-import "@broxus/contracts/contracts/access/InternalOwner.tsol";
+import "c:/Users/SUPRAJA/Downloads/Venom-main/Venom-main/node_modules/@broxus/tip4/contracts/TIP4_2/TIP4_2Collection.tsol";
+import "c:/Users/SUPRAJA/Downloads/Venom-main/Venom-main/node_modules/@broxus/tip4/contracts/TIP4_3/TIP4_3Collection.tsol";
+import "c:/Users/SUPRAJA/Downloads/Venom-main/Venom-main/node_modules/@broxus/contracts/contracts/access/InternalOwner.tsol";
 
-import './Nft.tsol';
+import './~Nft.tsol';
 
-contract FounderNFTCollection is TIP4_2Collection, TIP4_3Collection {
+contract Collection is TIP4_2Collection, TIP4_3Collection {
 
     uint256 public _totalMinted;
 
@@ -46,8 +46,6 @@ contract FounderNFTCollection is TIP4_2Collection, TIP4_3Collection {
 
     event MintInitiated(address indexed to, uint256 indexed requestId, uint256 indexed amount);
     event MintCompleted(address indexed to, uint256 indexed requestId, uint256 indexed amount);
-    event NftMinted(address indexed to,address indexed nftAddress, uint256 indexed tokenId);
-    
     event BatchMintCompleted(uint256 totalAddresses);
     event CompletedNft(uint256 id,address indexed to,address indexed nftAddress);
 
@@ -102,7 +100,7 @@ contract FounderNFTCollection is TIP4_2Collection, TIP4_3Collection {
       function initiateMint(address _to, uint256 _amount) external {
         require(_to != address(0), 103);
         require(_amount > 0, 104);
-        require(msg.sender == routingWallet, 105);
+        // require(msg.sender == routingWallet, 105);
         require(_tokenId < MAX_SUPPLY, 106); 
         pendingMints.push(MintRequest({
             to: _to,
@@ -215,7 +213,6 @@ contract FounderNFTCollection is TIP4_2Collection, TIP4_3Collection {
         }));
 
         nftAddressOf[id] = nftAddress;
-        emit NftMinted(_to,nftAddress,id);
     }
 
 

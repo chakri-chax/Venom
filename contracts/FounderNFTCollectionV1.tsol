@@ -1,0 +1,76 @@
+
+// pragma ever-solidity >= 0.62.0;
+
+// pragma AbiHeader expire;
+// pragma AbiHeader time;
+// pragma AbiHeader pubkey;
+
+// import "@broxus/tip4/contracts/TIP4_2/TIP4_2Collection.tsol";
+// import "@broxus/tip4/contracts/TIP4_3/TIP4_3Collection.tsol";
+// import "@broxus/contracts/contracts/access/InternalOwner.tsol";
+
+// import './Nft.tsol';
+
+// contract FounderNFTCollectionV1 is TIP4_2Collection, TIP4_3Collection {
+
+//     uint64 static nonce_;
+
+//     constructor(
+//         TvmCell codeNft,
+//         TvmCell codeIndex,
+//         TvmCell codeIndexBasis,
+//         address owner,
+//         uint128 remainOnNft,
+//         string json
+//     )
+//         public
+//         TIP4_1Collection(codeNft)
+//         TIP4_2Collection(json)
+//         TIP4_3Collection(codeIndex, codeIndexBasis
+//     ) {
+//         tvm.accept();
+//         tvm.rawReserve(1 ever, 0);
+//         owner = msg.sender;
+//     }
+
+//     function codeDepth() public view returns(uint16) {
+//         return (_buildNftCode(address(this)).depth());
+//     }
+
+//     function _buildNftState(TvmCell code, uint256 id)
+//         internal
+//         pure
+//         virtual
+//         override (TIP4_2Collection, TIP4_3Collection)
+//         returns (TvmCell)
+//     {
+//         return tvm.buildStateInit({contr: Nft, varInit: {_id: id}, code: code});
+//     }
+
+//     function mintNft(string json) external virtual {
+//         require(msg.value > 0.4 ever, 101);
+//         tvm.rawReserve(0, 4);
+
+//         uint256 id = uint256(_totalSupply);
+//         _totalSupply++;
+
+//         TvmCell codeNft = _buildNftCode(address(this));
+//         TvmCell stateNft = tvm.buildStateInit({
+//             contr: Nft,
+//             varInit: {_id: id},
+//             code: codeNft
+//         });
+//         new Nft{
+//             stateInit: stateNft,
+//             value: 0,
+//             flag: 128
+//         }(
+//             msg.sender,
+//             msg.sender,
+//             0.3 ever,
+//             _codeIndex,        // for TIP-4.3
+//             _indexDeployValue, // for TIP-4.3
+//             _indexDestroyValue // for TIP-4.3
+//         );
+//     }
+// }

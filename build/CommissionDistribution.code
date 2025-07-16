@@ -1,0 +1,775 @@
+.version sol 0.62.0
+
+.macro constructor
+DROP
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7_with_init_storage$
+}
+GETGLOB 6
+THROWIF 51
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDMSGADDR
+LDU 64
+ENDS
+.loc ../contracts/CommissionDistribution.tsol, 40
+OVER
+PUSHREFSLICE {
+	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+}
+SDEQ
+THROWIF 102
+.loc ../contracts/CommissionDistribution.tsol, 41
+ACCEPT
+.loc ../contracts/CommissionDistribution.tsol, 42
+PUSHINT 1000000000
+PUSHINT 0
+RAWRESERVE
+.loc ../contracts/CommissionDistribution.tsol, 43
+SWAP
+SETGLOB 11
+.loc ../contracts/CommissionDistribution.tsol, 44
+SETGLOB 10
+.loc ../contracts/CommissionDistribution.tsol, 0
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.macro purchasePackage
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/CommissionDistribution.tsol, 46
+OVER
+PUSHCONT {
+	LDU 32
+	LDDICT
+	ROTREV
+	PAIR
+	SWAP
+	LDU 32
+	LDDICT
+	ROTREV
+	PAIR
+	SWAP
+	LDREF
+	ENDS
+	CTOS
+}
+PUSHCONT {
+	LDU 32
+	LDDICT
+	ROTREV
+	PAIR
+	SWAP
+	LDU 32
+	LDDICT
+	ROTREV
+	PAIR
+	SWAP
+}
+IFELSE
+LDU 128
+ENDS
+.loc ../contracts/CommissionDistribution.tsol, 0
+CALLREF {
+	CALL $purchasePackage_7a808c9c_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.macro purchasePackage_7a808c9c_internal_macro
+.loc ../contracts/CommissionDistribution.tsol, 51
+ACCEPT
+.loc ../contracts/CommissionDistribution.tsol, 52
+PUSHINT 1000000000
+PUSHINT 0
+RAWRESERVE
+.loc ../contracts/CommissionDistribution.tsol, 53
+DEPTH
+ADDCONST -2
+PICK
+OVER
+GEQ
+THROWIFNOT 101
+.loc ../contracts/CommissionDistribution.tsol, 54
+PUSHINT 0
+DUP
+.loc ../contracts/CommissionDistribution.tsol, 55
+PUSHCONT {
+	PUSH2 S0, S3
+	FIRST
+	LESS
+}
+PUSHCONT {
+	.loc ../contracts/CommissionDistribution.tsol, 56
+	PUSH2 S0, S3
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	PLDU 128
+	PUSH S2
+	ADD
+	UFITS 128
+	POP S2
+	.loc ../contracts/CommissionDistribution.tsol, 55
+	INC
+	.loc ../contracts/CommissionDistribution.tsol, 0
+}
+WHILE
+DROP
+.loc ../contracts/CommissionDistribution.tsol, 58
+LESSINT 101
+THROWIFNOT 105
+.loc ../contracts/CommissionDistribution.tsol, 61
+PUSH S2
+FIRST
+PUSH S2
+FIRST
+EQUAL
+THROWIFNOT 103
+.loc ../contracts/CommissionDistribution.tsol, 63
+PUSH S2
+FIRST
+PUSHREFSLICE
+.compute $default_tuple_builder_t_address_t_uint128$
+PUSHINT 0
+NEWDICT
+PUSH S3
+PUSHCONT {
+	BLKPUSH 2, 2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSET
+}
+REPEAT
+BLKDROP2 2, 1
+PAIR
+.loc ../contracts/CommissionDistribution.tsol, 64
+PUSHINT 0
+.loc ../contracts/CommissionDistribution.tsol, 65
+NEWDICT
+.loc ../contracts/CommissionDistribution.tsol, 67
+PUSHINT 0
+PUSHCONT {
+	PUSH2 S0, S6
+	FIRST
+	LESS
+}
+PUSHCONT {
+	.loc ../contracts/CommissionDistribution.tsol, 68
+	PUSH2 S0, S6
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	.loc ../contracts/CommissionDistribution.tsol, 69
+	PUSH2 S0, S2
+	PUSHINT 267
+	DICTGET
+	ZEROSWAPIFNOT
+	PUSHCONT {
+		PLDI 1
+	}
+	IF
+	THROWIF 104
+	.loc ../contracts/CommissionDistribution.tsol, 70
+	PUSH2 S0, S2
+	NEWC
+	STONE
+	ROTREV
+	PUSHINT 267
+	DICTSETB
+	POP S3
+	.loc ../contracts/CommissionDistribution.tsol, 72
+	PUSH3 S5, S1, S6
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	PLDU 128
+	MUL
+	UFITS 128
+	PUSHINT 100
+	DIV
+	.loc ../contracts/CommissionDistribution.tsol, 74
+	DUP2
+	CALLREF {
+		CALL $transferToAddress_fd535881_internal_macro$
+	}
+	.loc ../contracts/CommissionDistribution.tsol, 75
+	THROWIFNOT 106
+	.loc ../contracts/CommissionDistribution.tsol, 77
+	PUSH2 S4, S0
+	ADD
+	UFITS 128
+	POP S5
+	.loc ../contracts/CommissionDistribution.tsol, 78
+	DUP2
+	PAIR
+	PUSH S6
+	UNPAIR
+	PUXC S5, S-1
+	PUSH2 S1, S2
+	LESS
+	THROWIFNOT 50
+	ROLL 3
+	CALLREF {
+		UNPAIR
+		SWAP
+		NEWC
+		STSLICE
+		STU 128
+	}
+	ROTREV
+	PUSHINT 32
+	DICTUSETB
+	PAIR
+	POP S6
+	.loc ../contracts/CommissionDistribution.tsol, 79
+	PUSHINT 0
+	SWAP
+	GETGLOB 9
+	ROLL 3
+	PUSHSLICE xc0000000000000000000000001
+	NEWC
+	STSLICE
+	ROLLREV 4
+	NEWC
+	STSLICECONST x1bdaee3d
+	STSLICE
+	ROLLREV 3
+	NEWC
+	STSLICE
+	STU 128
+	STU 128
+	STBREFR
+	STBREFR
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+	.loc ../contracts/CommissionDistribution.tsol, 67
+	INC
+	.loc ../contracts/CommissionDistribution.tsol, 0
+}
+WHILE
+DROP2
+.loc ../contracts/CommissionDistribution.tsol, 82
+PUSH S2
+SUBR
+UFITS 128
+.loc ../contracts/CommissionDistribution.tsol, 83
+GETGLOB 11
+OVER
+CALLREF {
+	CALL $transferToAddress_fd535881_internal_macro$
+}
+DROP
+.loc ../contracts/CommissionDistribution.tsol, 85
+DEPTH
+ADDCONST -2
+PICK
+PUSH S3
+GREATER
+PUSHCONT {
+	.loc ../contracts/CommissionDistribution.tsol, 86
+	GETGLOB 9
+	DEPTH
+	ADDCONST -2
+	PICK
+	PUSH S4
+	SUB
+	UFITS 128
+	CALLREF {
+		CALL $transferToAddress_fd535881_internal_macro$
+	}
+	DROP
+	.loc ../contracts/CommissionDistribution.tsol, 0
+}
+IF
+.loc ../contracts/CommissionDistribution.tsol, 89
+ROT
+GETGLOB 9
+ROLL 3
+PUSHSLICE xc0000000000000000000000001
+NEWC
+STSLICE
+ROLLREV 4
+NEWC
+STSLICECONST x07f59961
+SWAP
+UNPAIR
+XCHG S2
+STU 32
+STDICT
+STSLICE
+STU 128
+SWAP
+NEWC
+STU 256
+STBREFR
+STBREFR
+ENDC
+PUSHINT 0
+SENDRAWMSG
+DROP2
+.loc ../contracts/CommissionDistribution.tsol, 0
+
+.macro calculateLpAmount
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc ../contracts/CommissionDistribution.tsol, 93
+OVER
+PUSHCONT {
+	LDU 32
+	LDDICT
+	ROTREV
+	PAIR
+	SWAP
+	LDREF
+	ENDS
+	CTOS
+}
+PUSHCONT {
+	LDU 32
+	LDDICT
+	ROTREV
+	PAIR
+	SWAP
+}
+IFELSE
+LDU 128
+ENDS
+.loc ../contracts/CommissionDistribution.tsol, 0
+CALLREF {
+	CALL $calculateLpAmount_ad7c810a_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 2452418113
+	STUR 130
+	STU 128
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $upd_only_time_in_c4$
+}
+THROW 0
+
+.macro calculateLpAmount_ad7c810a_internal_macro
+.loc ../contracts/CommissionDistribution.tsol, 97
+PUSHINT 0
+DUP
+.loc ../contracts/CommissionDistribution.tsol, 98
+PUSHCONT {
+	PUSH2 S0, S3
+	FIRST
+	LESS
+}
+PUSHCONT {
+	.loc ../contracts/CommissionDistribution.tsol, 99
+	PUSH2 S0, S3
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	PLDU 128
+	PUSH S2
+	ADD
+	UFITS 128
+	POP S2
+	.loc ../contracts/CommissionDistribution.tsol, 98
+	INC
+	.loc ../contracts/CommissionDistribution.tsol, 0
+}
+WHILE
+DROP
+.loc ../contracts/CommissionDistribution.tsol, 101
+OVER
+ROTREV
+MUL
+UFITS 128
+PUSHINT 100
+DIV
+SUB
+UFITS 128
+NIP
+.loc ../contracts/CommissionDistribution.tsol, 0
+
+.globl	transferToAddress_fd535881_internal
+.type	transferToAddress_fd535881_internal, @function
+CALL $transferToAddress_fd535881_internal_macro$
+
+.macro transferToAddress_fd535881_internal_macro
+.loc ../contracts/CommissionDistribution.tsol, 105
+GETPARAM 7
+FIRST
+OVER
+LESS
+PUSHCONT {
+	.loc ../contracts/CommissionDistribution.tsol, 106
+	GETPARAM 7
+	FIRST
+	SUB
+	UFITS 128
+	PUSHSLICE xc000000000000000000000000035a2bf07
+	NEWC
+	STSLICE
+	STU 256
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+	.loc ../contracts/CommissionDistribution.tsol, 107
+	DROP
+	FALSE
+	.loc ../contracts/CommissionDistribution.tsol, 0
+}
+PUSHCONT {
+	.loc ../contracts/CommissionDistribution.tsol, 109
+	SWAP
+	NEWC
+	STSLICECONST x42_
+	STSLICE
+	SWAP
+	STGRAMS
+	PUSHINT 107
+	STZEROES
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+	.loc ../contracts/CommissionDistribution.tsol, 110
+	TRUE
+	.loc ../contracts/CommissionDistribution.tsol, 0
+}
+IFELSE
+.loc ../contracts/CommissionDistribution.tsol, 0
+
+.macro contractBalance
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/CommissionDistribution.tsol, 113
+ENDS
+.loc ../contracts/CommissionDistribution.tsol, 0
+CALLREF {
+	CALL $contractBalance_8b7afe2e_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 2234869164
+	STUR 130
+	STU 128
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $upd_only_time_in_c4$
+}
+THROW 0
+
+.macro contractBalance_8b7afe2e_internal_macro
+.loc ../contracts/CommissionDistribution.tsol, 114
+GETPARAM 7
+FIRST
+.loc ../contracts/CommissionDistribution.tsol, 0
+
+.macro c4_to_c7
+PUSHROOT
+CTOS
+LDU 256 ; pubkey c4
+LDU 64 ; pubkey timestamp c4
+LDU 1 ; ctor flag
+NIP
+LDU 64
+LDMSGADDR
+ENDS
+SETGLOB 11
+SETGLOB 10
+SETGLOB 3
+SETGLOB 2
+
+.macro c4_to_c7_with_init_storage
+PUSHROOT
+CTOS
+SBITS
+GTINT 1
+PUSHCONT {
+	PUSHINT 0
+	PUSHROOT
+	CTOS
+	PLDDICT ; D
+	PUSHINT 1
+	OVER
+	PUSHINT 64
+	DICTUGET
+	ZEROSWAPIFNOT
+	PUSHCONT {
+		PLDU 64
+	}
+	IF
+	PUSHREFSLICE {
+		.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+	}
+	SETGLOB 11
+	SETGLOB 10
+	PUSHINT 64
+	DICTUGET
+	THROWIFNOT 61
+	PLDU 256
+	SETGLOB 2
+	PUSHINT 0 ; timestamp
+	SETGLOB 3
+}
+IFREFELSE {
+	CALL $c4_to_c7$
+}
+
+.macro c7_to_c4
+GETGLOB 11
+GETGLOB 10
+GETGLOB 3
+GETGLOB 2
+NEWC
+STU 256
+STU 64
+STONE
+STU 64
+STSLICE
+ENDC
+POPROOT
+
+.macro upd_only_time_in_c4
+PUSHROOT
+CTOS
+LDU 256
+LDU 64
+NIP
+GETGLOB 3
+ROT
+NEWC
+STU 256
+STU 64
+STSLICE
+ENDC
+POPROOT
+
+.internal-alias :main_internal, 0
+.internal :main_internal
+PUSHROOT
+CTOS
+SBITS
+NEQINT 1
+SETGLOB 6
+PUSH S2
+CTOS
+LDU 4 ; bounced tail
+LDMSGADDR ; bounced src tail
+DROP
+SETGLOB 9
+MODPOW2 1
+IFRET
+OVER
+SEMPTY ; isEmpty
+IFJMPREF {
+	GETGLOB 6
+	THROWIFNOT 76
+}
+OVER
+LDUQ 32  ; [funcId] body' ok
+THROWIFNOT 60
+OVER
+IFNOTJMPREF {
+	GETGLOB 6
+	THROWIFNOT 76
+}
+SWAP
+CALLREF {
+	CALL $public_function_selector$
+}
+THROW 60
+
+.internal-alias :main_external, -1
+.internal :main_external
+PUSHROOT
+CTOS
+SBITS
+NEQINT 1
+SETGLOB 6
+PUSHREFSLICE {
+	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+}
+SETGLOB 9
+OVER
+CALLREF {
+	CALL $c4_to_c7_with_init_storage$
+}
+LDU 1 ; haveSign msgSlice
+SWAP
+PUSHCONT {
+	PUSHPOW2 9
+	LDSLICEX ; signatureSlice msgSlice
+	DUP
+	HASHSU ; signatureSlice msgSlice hashMsgSlice
+	SWAP
+	LDU 1 ; signatureSlice hashMsgSlice hasPubkey msgSlice
+	SWAP
+	PUSHCONT {
+		LDU 256 ; signatureSlice hashMsgSlice pubkey msgSlice
+		XCHG S3
+		SWAP
+	}
+	PUSHCONT {
+		XCHG S2
+		GETGLOB 2
+	}
+	IFELSE
+	CHKSIGNU ; msgSlice isSigned
+	THROWIFNOT 40
+}
+PUSHCONT {
+	LDU 1 ; hasPubkey msgSlice
+	SWAP
+	THROWIF 58
+}
+IFELSE
+LDU 64 ; timestamp msgSlice
+SWAP
+CALL $replay_protection_macro$
+LDU 32 ; expireAt msgSlice
+SWAP
+NOW ; msgSlice expireAt now
+GREATER ; msgSlice expireAt>now
+THROWIFNOT 57
+LDU 32 ; funcId body
+SWAP
+CALLREF {
+	CALL $public_function_selector$
+}
+THROW 60
+
+.macro lpWallet
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 11
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000f31c8ad4
+	NEWC
+	STSLICE
+	STSLICE
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro default_tuple_builder_t_address_t_uint128
+PUSHREFSLICE {
+	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+}
+PUSHINT 0
+PAIR
+CALLREF {
+	UNPAIR
+	SWAP
+	NEWC
+	STSLICE
+	STU 128
+}
+ENDC
+
+.macro public_function_selector
+DUP
+PUSHINT 1196799625
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 87385516
+	EQUAL
+	IFJMPREF {
+		CALL $contractBalance$
+	}
+	DUP
+	PUSHINT 219143852
+	EQUAL
+	IFJMPREF {
+		CALL $constructor$
+	}
+	DUP
+	PUSHINT 304934465
+	EQUAL
+	IFJMPREF {
+		CALL $calculateLpAmount$
+	}
+	DUP
+	PUSHINT 1196799625
+	EQUAL
+	IFJMPREF {
+		CALL $purchasePackage$
+	}
+}
+DUP
+PUSHINT 1931250388
+EQUAL
+IFJMPREF {
+	CALL $lpWallet$
+}
+

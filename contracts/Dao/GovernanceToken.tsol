@@ -1,0 +1,812 @@
+
+
+pragma ever-solidity >= 0.62.0;
+
+pragma AbiHeader expire;
+pragma AbiHeader time;
+pragma AbiHeader pubkey;
+
+// import "@broxus/tip4/contracts/TIP4_2_2/TIP4_2_2Collection.tsol";
+import "@broxus/tip4/contracts/TIP4_2_2/interfaces/ITIP4_2_2Collection.tsol";
+
+// import "@broxus/tip4/contracts/TIP4_3/TIP4_3Collection.tsol";
+import "@broxus/tip4/contracts/TIP4_3/interfaces/ITIP4_3Collection.tsol";
+
+// import "@broxus/tip4/contracts/access/OwnableInternal.tsol";
+import "./ITreasury.tsol";
+
+// import './Nft.tsol';
+
+
+
+contract Governance {
+    enum ProposalType {
+        OPEN,
+        TREASURY,
+        COMPLIANCE,
+        TREASURY_MAN,
+        BLOCK_USER,
+        UNBLOCK_USER
+    }
+
+    // Enumeration for different statuses of proposals
+    enum ProposalStatus {
+        PENDING,
+        LIVE,
+        COMPLETED,
+        FAILED,
+        DELETED
+    }
+
+    // Structure representing a proposal
+    struct Proposal {
+        uint PID;
+        address creator;
+        address blockAddress;
+        string title;
+        string description;
+        uint vote_start;
+        uint vote_end;
+        ProposalType ptype;
+        ProposalStatus pStatus;
+        uint yVotes;
+        uint nVotes;
+        uint minVotes;
+        uint totalVoted;
+        uint minPercent;
+        uint fundingAmount;
+        uint releasedAmount;
+        uint startTime;
+        uint lastReleaseTime;
+        uint claimPercent;
+        uint fundingInterval;
+        bool isStopped;
+        bool funded;
+    }
+
+    uint16 constant public ZERO_ADDRESS = 55;
+    uint16 constant public INVALID_PROPOSAL = 56;
+    uint16 constant public INVALID_TOKEN_ADDRESS = 57;
+    uint16 constant public CALLABLE_BY_ADMIN_ONLY = 58;
+    uint CREATE_PROPOSAL_COST = 1 * 10 ** 18;
+
+     Proposal[] public proposals;
+    // Proposal[] private  complianceProposals;
+
+    address public treasury;
+    address public admin;
+
+    uint public pendingProposals;
+    uint public completedProposals;
+
+    mapping(address => uint[]) public uProposals;
+
+    uint private constant PERCENT = 100;
+
+    mapping(uint => mapping(address => bool)) public complianerVotes;
+
+    //should this be cleared after voting is completed or has any usecase ?
+    mapping(uint => mapping(address => int)) public voterVotes;
+
+    address[] public blacklistedUsers;
+
+    event ProposalAdded(
+        uint indexed proposalID,
+        address recipient,
+        uint amount,
+        string description
+    );
+
+    event ProposalStatusChanged(uint indexed proposalID, ProposalStatus status);
+    event Voted(uint indexed proposalID, bool position, address indexed voter);
+    event ProposalTallied(
+        uint indexed proposalID,
+        bool result,
+        uint approvalRate
+    );
+    //  IERC721 public deedNFT;
+    // IERC721 public genesisNFT;
+    // IERC721 public founderNFT;
+    address[] public complianceMembers;
+  constructor(
+        address _deedNFT,
+        address _genesisNFT,
+        address _founderNFT,
+        address _admin,
+        address[] _complianers
+    )public {
+        require(
+            _deedNFT != address(0) &&
+                _genesisNFT != address(0) &&
+                _founderNFT != address(0),
+          INVALID_TOKEN_ADDRESS
+        );
+        require(_admin != address(0), ZERO_ADDRESS);
+
+        // deedNFT = ITIP(_deedNFT);
+        // genesisNFT = IERC721(_genesisNFT);
+        // founderNFT = IERC721(_founderNFT);
+        admin = _admin;
+        complianceMembers = _complianers;
+    }
+
+    address[] private treasureMngQueue;
+
+
+
+
+        function isComplianceMember(address s) public view returns (bool) {
+        bool _isComplianer = false;
+        for (uint i = 0; i < complianceMembers.length; i++) {
+            if (s == complianceMembers[i]) {
+                _isComplianer = true;
+                break;
+            }
+        }
+        return _isComplianer;
+    }
+
+    modifier OnlyComplianceMember() {
+        require(isComplianceMember(msg.sender));
+        _;
+    }
+   modifier onlyAdmin() {
+        require(msg.sender == admin,CALLABLE_BY_ADMIN_ONLY );
+        _;
+    }
+     function isUserBlacklisted(address _user) public view returns(bool blacklisted) {
+        for(uint i = 0; i < blacklistedUsers.length; i++) {
+            if(blacklistedUsers[i] == _user) {
+                blacklisted = true;
+            }
+        }
+    }
+
+    uint16 constant public FUNDING_LIMIT_EXCEEDED = 59;
+    uint16 constant public MIN_PERCENTAGE_TOO_LOW = 60;
+    uint16 constant public MIN_VOTERS_TOO_LOW = 61;
+    uint16 constant public USER_IS_BLOCKED = 62;
+    uint16 constant public AMOUNT_TOO_LOW = 63;
+    uint16 constant public FOUNDER_NFT_LOCKED = 64;
+ uint16 constant public ONLY_DEED_NFT_HOLDER_CAN_CREATE_OPEN_PROPOSAL = 65;
+    uint16 constant public TREASURY_BALANCE_IS_0 = 66;
+    uint16 constant public ONLY_DEED_NFT_HOLDER_OR_COMPLIANCE_MEMBER_CAN_CREATE_PROPOSAL = 67;
+
+ function createProposal(
+        // address  _creator,
+        string  _title,
+        string  _description,
+        uint _vote_start,
+        uint _vote_end,
+        ProposalType _ptype,
+        uint _minVoters,
+        uint _minPercent,
+        uint amount,
+        address _blockAddress
+    ) external {
+        require(_minPercent > 40,MIN_PERCENTAGE_TOO_LOW);
+        require(_minVoters >= 2, MIN_VOTERS_TOO_LOW);
+        require(!isUserBlacklisted(msg.sender), USER_IS_BLOCKED);
+
+        require(
+            msg.value == CREATE_PROPOSAL_COST,
+            AMOUNT_TOO_LOW
+        );
+
+        // funding amount should be less than 15% of totalTreasuryDeposits
+
+        uint256 treasuryDeposit = 100;
+        (
+            uint256 deedNFTCount,
+            uint256 founderNFTCount,
+            uint256 genesisNFTCount
+        ) = (50, 50, 50); // ITreasury(treasury).getLockedNFTBalances(msg.sender);
+
+        // uint256 treasuryDeposit = ITreasury(treasury).treasuryBalances{value: 0, flag: 128 + 32, bounce: false}(msg.sender);
+
+        // (
+        //     uint256 deedNFTCount,
+        //     uint256 founderNFTCount,
+        //     uint256 genesisNFTCount
+        // ) = ITreasury(treasury).getLockedNFTBalances{value: 0, flag: 128 + 32, bounce: false}(msg.sender);
+// (
+//     uint256 deedNFTCount,
+//     uint256 founderNFTCount,
+//     uint256 genesisNFTCount
+// ) = ITreasury(treasury).getLockedNFTBalances{value: 0, flag: 128 + 32, bounce: false}(msg.sender);
+        uint maxFundingAmount = treasuryDeposit *
+            100 *
+            (deedNFTCount + founderNFTCount + genesisNFTCount);
+
+        require(amount <= maxFundingAmount, FUNDING_LIMIT_EXCEEDED);
+
+        require(founderNFTCount >= 1, FOUNDER_NFT_LOCKED);
+
+        Proposal p;
+        p.PID = proposals.length;
+        p.creator = msg.sender;
+        p.title = _title;
+        p.description = _description;
+        p.vote_start = _vote_start;
+        p.vote_end = _vote_end;
+        p.minVotes = _minVoters;
+        p.minPercent = _minPercent;
+        p.ptype = _ptype;
+        p.fundingAmount = amount;
+        p.totalVoted = 0;
+        p.releasedAmount = 0;
+        p.startTime = block.timestamp;
+        p.lastReleaseTime = block.timestamp;
+        p.claimPercent = 0;
+        p.fundingInterval = 0;
+        p.isStopped = true;
+        p.funded = false;
+        p.blockAddress = _blockAddress;
+
+        if (_ptype == ProposalType.COMPLIANCE) {
+            p.pStatus = ProposalStatus.LIVE;
+        } else {
+            pendingProposals++;
+        }
+        if(_ptype == ProposalType.OPEN){
+            require(deedNFTCount > 0, ONLY_DEED_NFT_HOLDER_CAN_CREATE_OPEN_PROPOSAL);
+        }
+        else if(_ptype == ProposalType.TREASURY){
+            require(treasuryDeposit > 0, TREASURY_BALANCE_IS_0);
+        }
+        else if(_ptype == ProposalType.BLOCK_USER || _ptype == ProposalType.UNBLOCK_USER){
+            require(deedNFTCount > 0 || isComplianceMember(msg.sender), ONLY_DEED_NFT_HOLDER_OR_COMPLIANCE_MEMBER_CAN_CREATE_PROPOSAL);
+        }
+
+        proposals.push(p);
+        uProposals[msg.sender].push(p.PID);
+        // if(p.ptype==ProposalType.COMPLIANCE){
+        //     complianceProposals.push(p);
+        // }
+    }
+
+    function isProposalAgreed(uint _pId) internal view returns (bool) {
+        uint agreed = 0;
+        uint n = complianceMembers.length;
+        for (uint i = 0; i < n; i++) {
+            if (complianerVotes[_pId][complianceMembers[i]]) {
+                agreed += 1;
+            }
+        }
+        if (agreed == 0) return false;
+        // (, uint r) =  agreed * 100;//agreed.tryMul(100);
+        uint r = agreed * PERCENT;
+        uint p = r / complianceMembers.length;
+        return p > 50;
+    }
+
+    uint16 constant public INVALID_ID = 68;
+    // uint16 constant public USER_IS_BLOCKED = 69;
+    uint16 constant public PROPOSAL_IS_NOT_PENDING_FOR_COMPLIANCE_MEMBERS = 70;
+    // Function for compliance members to vote on a proposal
+    function voteByComplianer(
+        uint _propID,
+        bool _supports
+    ) public OnlyComplianceMember returns (bool _success) {
+        require(_propID < proposals.length, INVALID_ID);
+        require(!isUserBlacklisted(msg.sender), USER_IS_BLOCKED);
+
+        Proposal p = proposals[_propID];
+
+        require(
+            p.pStatus == ProposalStatus.PENDING,
+            PROPOSAL_IS_NOT_PENDING_FOR_COMPLIANCE_MEMBERS
+        );
+
+        complianerVotes[p.PID][msg.sender] = _supports;
+        //check voted by all compliners
+
+        if (p.vote_start < block.timestamp) {
+            if (isProposalAgreed(p.PID)) {
+                // If agreed, mark proposal as live
+                p.pStatus = ProposalStatus.LIVE;
+            } else {
+                // If not agreed, mark proposal as failed
+                p.pStatus = ProposalStatus.FAILED;
+            }
+            pendingProposals--;
+        }
+
+        _success = true;
+    }
+uint16 constant public VOTING_NOT_STARTED = 71;
+
+function makeItLive(uint _propID) public OnlyComplianceMember {
+    require(_propID < proposals.length, INVALID_ID);
+
+    Proposal p = proposals[_propID];
+
+    require(
+        p.vote_start < block.timestamp,
+        VOTING_NOT_STARTED
+    );
+
+    if (isProposalAgreed(p.PID)) {
+        // If agreed, mark proposal as live
+        p.pStatus = ProposalStatus.LIVE;
+    } else {
+        // If not agreed, mark proposal as failed
+        p.pStatus = ProposalStatus.FAILED;
+    }
+    pendingProposals--;
+}
+
+uint16 constant public VOTE_NOT_ENDED = 72;
+uint16 constant public CLAIM_PERCENT_NOT_SET = 73;
+uint16 constant public FUNDING_INTERVAL_NOT_SET = 74;
+
+function executeProposal(
+    uint _pId
+) external OnlyComplianceMember  {
+    require(_pId < proposals.length, INVALID_ID); 
+    Proposal  p = proposals[_pId];
+    // (, uint totalVotes) = p.yVotes.tryAdd(p.nVotes);
+    uint totalVotes = p.yVotes + p.nVotes;
+    require(block.timestamp > p.vote_end, VOTE_NOT_ENDED);  
+
+    if(p.fundingAmount > 0) {
+        require(
+            p.claimPercent > 0,
+            CLAIM_PERCENT_NOT_SET
+        );
+        require(
+            p.fundingInterval > 0,
+            FUNDING_INTERVAL_NOT_SET  
+        );
+    }
+    uint percent;
+    if (p.yVotes > 0) {
+        percent = (p.yVotes * PERCENT) / totalVotes;
+    } else {
+        // Handle the case where yVotes is zero
+        percent = 0;
+    }
+
+    bool criteria = (percent >= p.minPercent) &&
+        (p.totalVoted >= p.minVotes);
+
+    if (!criteria) {
+        p.pStatus = ProposalStatus.FAILED;
+        emit ProposalTallied(p.PID, false, percent);
+        return;
+    }
+
+    if (p.ptype == ProposalType.COMPLIANCE) {
+        uint256 totalComplianceMembers = complianceMembers.length;
+        uint256 complianceVotesNeed = (totalComplianceMembers / 2) + 1;
+
+        bool compliant = p.yVotes >= complianceVotesNeed &&
+            isComplianceMember(msg.sender);
+        if (!compliant) {
+            p.pStatus = ProposalStatus.FAILED;
+            emit ProposalTallied(p.PID, false, percent);
+            return;
+        } else {
+            complianceMembers.push(p.creator);
+        }
+    }
+
+    if (p.fundingAmount > 0) {
+        p.isStopped = false;
+        p.lastReleaseTime = block.timestamp;
+    }
+
+    if (p.ptype == ProposalType.BLOCK_USER) {
+        if(!isUserBlacklisted(p.blockAddress)) {
+            blacklistedUsers.push(p.blockAddress);
+        }
+    }
+
+    if (p.ptype == ProposalType.UNBLOCK_USER) {
+        _removeFromBlacklist(p.blockAddress);
+    }
+
+    p.pStatus = ProposalStatus.COMPLETED;
+    completedProposals++;
+    emit ProposalStatusChanged(p.PID, ProposalStatus.COMPLETED);
+}
+    function _removeFromBlacklist(address _user) internal {
+        for (uint i = 0; i < blacklistedUsers.length; i++) {
+            if (blacklistedUsers[i] == _user) {
+                // Replace the user to remove with the last element
+                blacklistedUsers[i] = blacklistedUsers[blacklistedUsers.length - 1];
+                blacklistedUsers.pop();
+                break;
+            }
+        }
+    }
+
+// Continuing error codes (previous codes up to 72)
+uint16 constant public INVALID_FUNDING_PROPOSAL = 75;
+uint16 constant public FUNDING_STOPPED = 76;
+uint16 constant public INTERVAL_NOT_DUE = 77;
+uint16 constant public FUNDING_COMPLETED = 78;
+uint16 constant public STATUS_NOT_COMPLETED = 79;
+uint16 constant public NO_FUNDS_AVAILABLE = 80;
+
+function releaseFunds(uint _proposalId) external {
+    Proposal  p = proposals[_proposalId];
+    require(p.fundingAmount > 0, INVALID_FUNDING_PROPOSAL);  
+    require(!p.isStopped, FUNDING_STOPPED);  
+    require(
+        block.timestamp >= p.lastReleaseTime + p.fundingInterval,
+        INTERVAL_NOT_DUE  
+    );
+    require(!p.funded, FUNDING_COMPLETED);  
+    require(p.pStatus == ProposalStatus.COMPLETED, STATUS_NOT_COMPLETED);  
+    require(msg.sender == p.creator || isComplianceMember(msg.sender));
+
+    uint amountToRelease = (p.fundingAmount * p.claimPercent) / 100;
+
+    if (p.releasedAmount + amountToRelease <= p.fundingAmount) {
+        // ITreasury(treasury).swapAndTransferToGovernance(
+        //     amountToRelease,
+        //     p.creator
+        // );
+    } else if (p.releasedAmount + amountToRelease > p.fundingAmount) {
+        amountToRelease = p.fundingAmount - p.releasedAmount;
+        require(amountToRelease > 0, NO_FUNDS_AVAILABLE);  
+        // ITreasury(treasury).swapAndTransferToGovernance(
+        //     amountToRelease,
+        //     p.creator
+        // );
+    }
+
+    p.releasedAmount += amountToRelease;
+    if (p.releasedAmount == p.fundingAmount) {
+        p.funded = true;
+    }
+
+    p.lastReleaseTime = block.timestamp;
+}
+
+// Continuing error codes (starting from 81 as requested)
+uint16 constant public INVALID_FUNDING_PROPOSAL_ID = 81;
+uint16 constant public ALREADY_FUNDED = 82;
+
+function stopFunding(uint _proposalId) external OnlyComplianceMember {
+    Proposal p = proposals[_proposalId];
+    p.isStopped = true;
+}
+
+function resumeFunding(uint _proposalId) external OnlyComplianceMember {
+    Proposal  p = proposals[_proposalId];
+    require(p.fundingAmount > 0, INVALID_FUNDING_PROPOSAL_ID);  
+    require(!p.funded, ALREADY_FUNDED);  
+    p.isStopped = false;
+}
+
+function setFundingParams(
+    uint _proposalId,
+    uint256 Interval,
+    uint claim
+) external OnlyComplianceMember {
+    Proposal p = proposals[_proposalId];
+    p.fundingInterval = Interval;
+    p.claimPercent = claim;
+}
+
+function isTopTreasury(address sender) internal view returns (bool) {
+    // address[] topTreasuryHolders = []; //ITreasury(treasury).getTopTreasuryHolders();
+
+    // uint n = topTreasuryHolders.length;
+    // for (uint i = 0; i < n; i++) {
+    //     if (topTreasuryHolders[i] == sender) {
+    //         return true;
+    //     }
+    // }
+    return false;
+}
+
+function getVotingPower(address voter) public view returns (uint) {
+    (
+        uint256 deedNFTCount,
+        uint256 founderNFTCount,
+        uint256 genesisNFTCount
+    ) = (50, 30, 20); // ITreasury(treasury).getLockedNFTBalances(voter);
+    // uint total_votes = Math.max(1, deedNFTCount);
+    uint total_votes = deedNFTCount;
+    // uint votes = Math.min(11, total_votes);
+    uint votes = total_votes > 11 ? 11 : total_votes;
+
+    // uint256 treasuryDeposit = ITreasury(treasury).treasuryBalances(voter);
+    uint256 treasuryDeposit = 100; // ITreasury(treasury).treasuryBalances(voter);
+
+    uint256 treasuryBal = treasuryDeposit / 10 ** 18;
+    if (treasuryBal >= 10) {
+        // (, uint r) = treasuryBal.tryDiv(10);
+        uint r = treasuryBal / 10;
+        votes *= r;
+    }
+
+    votes = votes * (1 + genesisNFTCount + founderNFTCount);
+
+    return votes;
+}
+// Continuing error codes (previous last was 82)
+uint16 constant public INVALID_PROPOSAL_ID = 83;          // 83 (reused from earlier INVALID_ID)
+uint16 constant public USER_ALREADY_VOTED = 84;           // 84
+uint16 constant public PROPOSAL_NOT_LIVE = 85;            // 85
+uint16 constant public VOTING_CLOSED = 86;                // 86
+uint16 constant public USER_BLOCKED = 87;                  // 87
+uint16 constant public DEED_NFT_REQUIRED = 88;            // 88
+uint16 constant public TREASURY_BAL_REQUIRED = 89;        // 89
+
+function voteByUser(uint _propID, bool _supports) public returns (bool) {
+    require(_propID < proposals.length, INVALID_PROPOSAL_ID);  // 83
+    Proposal p = proposals[_propID];
+    require(voterVotes[_propID][msg.sender] == 0, USER_ALREADY_VOTED);  // 84
+    require(p.pStatus == ProposalStatus.LIVE, PROPOSAL_NOT_LIVE);  // 85
+    require(
+        (block.timestamp >= p.vote_start) &&
+            (block.timestamp <= p.vote_end),
+        VOTING_CLOSED  // 86
+    );
+    require(!isUserBlacklisted(msg.sender), USER_BLOCKED);  // 87
+
+    uint votes = getVotingPower(msg.sender);
+    // (uint256 deedNFTCount, , ) = ITreasury(treasury).getLockedNFTBalances(
+    //     msg.sender
+    // );
+    uint256 deedNFTCount = 1; // ITreasury(treasury).getLockedNFTBalances(msg.sender);
+
+    if (p.ptype == ProposalType.OPEN || p.ptype == ProposalType.BLOCK_USER || p.ptype == ProposalType.UNBLOCK_USER) {
+        require(
+            deedNFTCount > 0,
+            DEED_NFT_REQUIRED  // 88
+        );
+        if (_supports) {
+            p.yVotes += votes;
+            voterVotes[_propID][msg.sender] = int256(votes);
+        } else {
+            p.nVotes += votes;
+            voterVotes[_propID][msg.sender] = -int256(votes);
+        }
+        p.totalVoted += 1;
+    } else if (p.ptype == ProposalType.TREASURY) {
+        // uint256 treasuryDeposit = ITreasury(treasury).treasuryBalances(
+        //     msg.sender
+        // );
+        uint256 treasuryDeposit = 100; // ITreasury(treasury).treasuryBalances(msg.sender);
+        uint256 treasuryBal = treasuryDeposit;
+        require(
+            treasuryBal > 0,
+            TREASURY_BAL_REQUIRED  // 89
+        );
+        if (_supports) {
+            p.yVotes += votes;
+            voterVotes[_propID][msg.sender] = int256(votes);
+        } else {
+            p.nVotes += votes;
+            voterVotes[_propID][msg.sender] = -int256(votes);
+        }
+        p.totalVoted += 1;
+    } else if (
+        p.ptype == ProposalType.COMPLIANCE && isComplianceMember(msg.sender)
+    ) {
+        if (_supports) {
+            p.yVotes += 1;
+            voterVotes[_propID][msg.sender] = 1;
+        } else {
+            p.nVotes += 1;
+            voterVotes[_propID][msg.sender] = -1;
+        }
+        p.totalVoted += 1;
+    } else if (
+        p.ptype == ProposalType.TREASURY_MAN && isTopTreasury(msg.sender)
+    ) {
+        if (_supports) {
+            p.yVotes += votes;
+            voterVotes[_propID][msg.sender] = int256(votes);
+        } else {
+            p.nVotes += votes;
+            voterVotes[_propID][msg.sender] = -int256(votes);
+        }
+        p.totalVoted += 1;
+    }
+
+    emit Voted(p.PID, _supports, msg.sender);
+
+    return true;
+}
+
+// Continuing error codes (previous last was 89)
+uint16 constant public USER_NOT_VOTED = 90;                // 90
+uint16 constant public DEED_NFT_REQUIRED_WITHDRAW = 91;    // 91 (reuses same requirement as voting)
+uint16 constant public TREASURY_BAL_REQUIRED_WITHDRAW = 92; // 92 (reuses same requirement as voting)
+
+function withdrawVote(uint _propID) public returns (bool) {
+    require(voterVotes[_propID][msg.sender] != 0, USER_NOT_VOTED);  // 90
+    require(_propID < proposals.length, INVALID_PROPOSAL_ID);  // Reused 83
+
+    Proposal p = proposals[_propID];
+    int votes = int256(voterVotes[_propID][msg.sender]);
+    require(p.pStatus == ProposalStatus.LIVE && votes != 0);
+
+    voterVotes[_propID][msg.sender] = 0;
+
+    bool _supports = votes > 0;
+    // (uint256 deedNFTCount, , ) = ITreasury(treasury).getLockedNFTBalances(
+    //     msg.sender
+    // );
+    uint256 deedNFTCount = 1; // ITreasury(treasury).getLockedNFTBalances(msg.sender);
+
+    if (p.ptype == ProposalType.OPEN || p.ptype == ProposalType.BLOCK_USER || p.ptype == ProposalType.UNBLOCK_USER) {
+        require(
+            deedNFTCount > 0,
+            DEED_NFT_REQUIRED_WITHDRAW  // 91
+        );
+        if (_supports) {
+            p.yVotes -= uint256(votes);
+        } else {
+            int256 result = int256(p.nVotes) + votes;
+            p.nVotes = uint256(result);
+        }
+        p.totalVoted -= 1;
+    } else if (p.ptype == ProposalType.TREASURY) {
+        // uint256 treasuryDeposit = ITreasury(treasury).treasuryBalances(
+        //     msg.sender
+        // );
+        uint256 treasuryDeposit = 100; // ITreasury(treasury).treasuryBalances(msg.sender);
+        uint256 treasuryBal = treasuryDeposit;
+        require(treasuryBal > 0, TREASURY_BAL_REQUIRED_WITHDRAW);  // 92
+        if (_supports) {
+            p.yVotes -= uint256(votes);
+        } else {
+            int256 result = int256(p.nVotes) + votes;
+            p.nVotes = uint256(result);
+        }
+        p.totalVoted -= 1;
+    } else if (
+        p.ptype == ProposalType.COMPLIANCE && isComplianceMember(msg.sender)
+    ) {
+        if (_supports) {
+            p.yVotes -= 1;
+        } else {
+            p.nVotes -= 1;
+        }
+        p.totalVoted -= 1;
+    } else if (
+        p.ptype == ProposalType.TREASURY_MAN && isTopTreasury(msg.sender)
+    ) {
+        // uint256 treasuryDeposit = ITreasury(treasury).treasuryBalances(
+        //     msg.sender
+        // );
+        uint256 treasuryDeposit = 100; // ITreasury(treasury).treasuryBalances(msg.sender);
+        uint256 treasuryBal = treasuryDeposit;
+        // (, uint r) = treasuryBal.tryDiv(10);
+        uint r = treasuryBal / 10;
+        if (_supports) {
+            p.yVotes -= r;
+        } else {
+            p.nVotes -= r;
+        }
+        p.totalVoted -= 1;
+    }
+
+    return true;
+}
+
+// Continuing error codes (previous last was 92)
+// uint16 constant public ZERO_ADDRESS = 93;                  // 93
+uint16 constant public BALANCE_SHOULD_NOT_BE_ZERO = 94;     // 94
+
+function getTreasuryManagerQueue() public view returns (address[] topTreasuryHolders) {
+    // topTreasuryHolders = ITreasury(treasury).getTopTreasuryHolders();
+    topTreasuryHolders = new address[](0);
+}
+
+modifier onlyTreasuryContract() {
+    require(msg.sender == treasury); // No error message in original
+    _;
+}
+
+function getProposal(uint pID) public view returns (Proposal) {
+    require(pID < proposals.length, INVALID_PROPOSAL_ID);  // Reused 83
+    return proposals[pID];
+}
+
+function numOfProposals() external view returns (uint) {
+    return proposals.length;
+}
+
+function getCreatorProposals() external view returns (Proposal[]) {
+    uint[]  upids = uProposals[msg.sender];
+    Proposal[] mps = new Proposal[](upids.length);
+    uint256 n = upids.length;
+    for (uint i = 0; i < n; i++) {
+        mps[i] = proposals[upids[i]];
+    }
+    return mps;
+}
+
+function getProposalYayVotes(uint _pid) external view returns (uint) {
+    require(_pid < proposals.length, INVALID_PROPOSAL_ID);  // Reused 83
+    return proposals[_pid].yVotes;
+}
+
+function getProposalNayVotes(uint _pid) external view returns (uint) {
+    require(_pid < proposals.length, INVALID_PROPOSAL_ID);  // Reused 83
+    return proposals[_pid].nVotes;
+}
+
+function getProposalStatus(uint _pid) external view returns (ProposalStatus) {
+    require(_pid < proposals.length, INVALID_PROPOSAL_ID);  // Reused 83
+    return proposals[_pid].pStatus;
+}
+
+function getAllProposals() public view returns (Proposal[] ) {
+    return proposals;
+}
+
+function getPendingProposals() public view OnlyComplianceMember returns (Proposal[] ) {
+    Proposal[]  penProps = new Proposal[](pendingProposals);
+    uint ci = 0;
+    uint256 n = proposals.length;
+    for (uint i = 0; i < n; i++) {
+        if (proposals[i].pStatus == ProposalStatus.PENDING) {
+            penProps[ci] = proposals[i];
+            ci++;
+        }
+    }
+    return penProps;
+}
+
+function getComplianers() public view returns (address[]) {
+    return complianceMembers;
+}
+
+function setTreasury(address _treasury) external onlyAdmin {
+    require(_treasury != address(0), ZERO_ADDRESS);  // 93
+    treasury = _treasury;
+}
+
+function addComplianer(address _complianer) public onlyAdmin {
+    complianceMembers.push(_complianer);
+}
+
+function removeComplianer(address _complianer) public onlyAdmin {
+    uint i = 0;
+    uint len = complianceMembers.length;
+
+    for (; i < len; i++) {
+        if (complianceMembers[i] == _complianer) {
+            break;
+        }
+    }
+
+    if (i < len) {
+        for (uint j = i; j < len - 1; j++) {
+            complianceMembers[j] = complianceMembers[j + 1];
+        }
+        complianceMembers.pop();
+    }
+}
+
+function revokeAdmin(address _newAdmin) public onlyAdmin {
+    admin = _newAdmin;
+}
+
+function withdrawCreateProposalFee() external onlyAdmin {
+    require(address(this).balance > 0, BALANCE_SHOULD_NOT_BE_ZERO);  // 94
+    payable(admin).transfer(address(this).balance);
+}
+
+function getCompletedProposals() public view returns (Proposal[]) {
+    Proposal[] comProps = new Proposal[](completedProposals);
+    uint ci = 0;
+    uint len = proposals.length;
+    for (uint i = 0; i < len; i++) {
+        if (proposals[i].pStatus == ProposalStatus.COMPLETED) {
+            comProps[ci] = proposals[i];
+            ci++;
+        }
+    }
+    return comProps;
+}
+}

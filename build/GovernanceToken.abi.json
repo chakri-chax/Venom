@@ -1,0 +1,413 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"_deedNFT","type":"address"},
+				{"name":"_genesisNFT","type":"address"},
+				{"name":"_founderNFT","type":"address"},
+				{"name":"_admin","type":"address"},
+				{"name":"_complianers","type":"address[]"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "isComplianceMember",
+			"inputs": [
+				{"name":"s","type":"address"}
+			],
+			"outputs": [
+				{"name":"value0","type":"bool"}
+			]
+		},
+		{
+			"name": "isUserBlacklisted",
+			"inputs": [
+				{"name":"_user","type":"address"}
+			],
+			"outputs": [
+				{"name":"blacklisted","type":"bool"}
+			]
+		},
+		{
+			"name": "createProposal",
+			"inputs": [
+				{"name":"_title","type":"string"},
+				{"name":"_description","type":"string"},
+				{"name":"_vote_start","type":"uint256"},
+				{"name":"_vote_end","type":"uint256"},
+				{"name":"_ptype","type":"uint8"},
+				{"name":"_minVoters","type":"uint256"},
+				{"name":"_minPercent","type":"uint256"},
+				{"name":"amount","type":"uint256"},
+				{"name":"_blockAddress","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "voteByComplianer",
+			"inputs": [
+				{"name":"_propID","type":"uint256"},
+				{"name":"_supports","type":"bool"}
+			],
+			"outputs": [
+				{"name":"_success","type":"bool"}
+			]
+		},
+		{
+			"name": "makeItLive",
+			"inputs": [
+				{"name":"_propID","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "executeProposal",
+			"inputs": [
+				{"name":"_pId","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "releaseFunds",
+			"inputs": [
+				{"name":"_proposalId","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "stopFunding",
+			"inputs": [
+				{"name":"_proposalId","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "resumeFunding",
+			"inputs": [
+				{"name":"_proposalId","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setFundingParams",
+			"inputs": [
+				{"name":"_proposalId","type":"uint256"},
+				{"name":"Interval","type":"uint256"},
+				{"name":"claim","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getVotingPower",
+			"inputs": [
+				{"name":"voter","type":"address"}
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256"}
+			]
+		},
+		{
+			"name": "voteByUser",
+			"inputs": [
+				{"name":"_propID","type":"uint256"},
+				{"name":"_supports","type":"bool"}
+			],
+			"outputs": [
+				{"name":"value0","type":"bool"}
+			]
+		},
+		{
+			"name": "withdrawVote",
+			"inputs": [
+				{"name":"_propID","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"bool"}
+			]
+		},
+		{
+			"name": "getTreasuryManagerQueue",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"topTreasuryHolders","type":"address[]"}
+			]
+		},
+		{
+			"name": "getProposal",
+			"inputs": [
+				{"name":"pID","type":"uint256"}
+			],
+			"outputs": [
+				{"components":[{"name":"PID","type":"uint256"},{"name":"creator","type":"address"},{"name":"blockAddress","type":"address"},{"name":"title","type":"string"},{"name":"description","type":"string"},{"name":"vote_start","type":"uint256"},{"name":"vote_end","type":"uint256"},{"name":"ptype","type":"uint8"},{"name":"pStatus","type":"uint8"},{"name":"yVotes","type":"uint256"},{"name":"nVotes","type":"uint256"},{"name":"minVotes","type":"uint256"},{"name":"totalVoted","type":"uint256"},{"name":"minPercent","type":"uint256"},{"name":"fundingAmount","type":"uint256"},{"name":"releasedAmount","type":"uint256"},{"name":"startTime","type":"uint256"},{"name":"lastReleaseTime","type":"uint256"},{"name":"claimPercent","type":"uint256"},{"name":"fundingInterval","type":"uint256"},{"name":"isStopped","type":"bool"},{"name":"funded","type":"bool"}],"name":"value0","type":"tuple"}
+			]
+		},
+		{
+			"name": "numOfProposals",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256"}
+			]
+		},
+		{
+			"name": "getCreatorProposals",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"PID","type":"uint256"},{"name":"creator","type":"address"},{"name":"blockAddress","type":"address"},{"name":"title","type":"string"},{"name":"description","type":"string"},{"name":"vote_start","type":"uint256"},{"name":"vote_end","type":"uint256"},{"name":"ptype","type":"uint8"},{"name":"pStatus","type":"uint8"},{"name":"yVotes","type":"uint256"},{"name":"nVotes","type":"uint256"},{"name":"minVotes","type":"uint256"},{"name":"totalVoted","type":"uint256"},{"name":"minPercent","type":"uint256"},{"name":"fundingAmount","type":"uint256"},{"name":"releasedAmount","type":"uint256"},{"name":"startTime","type":"uint256"},{"name":"lastReleaseTime","type":"uint256"},{"name":"claimPercent","type":"uint256"},{"name":"fundingInterval","type":"uint256"},{"name":"isStopped","type":"bool"},{"name":"funded","type":"bool"}],"name":"value0","type":"tuple[]"}
+			]
+		},
+		{
+			"name": "getProposalYayVotes",
+			"inputs": [
+				{"name":"_pid","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256"}
+			]
+		},
+		{
+			"name": "getProposalNayVotes",
+			"inputs": [
+				{"name":"_pid","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256"}
+			]
+		},
+		{
+			"name": "getProposalStatus",
+			"inputs": [
+				{"name":"_pid","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"uint8"}
+			]
+		},
+		{
+			"name": "getAllProposals",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"PID","type":"uint256"},{"name":"creator","type":"address"},{"name":"blockAddress","type":"address"},{"name":"title","type":"string"},{"name":"description","type":"string"},{"name":"vote_start","type":"uint256"},{"name":"vote_end","type":"uint256"},{"name":"ptype","type":"uint8"},{"name":"pStatus","type":"uint8"},{"name":"yVotes","type":"uint256"},{"name":"nVotes","type":"uint256"},{"name":"minVotes","type":"uint256"},{"name":"totalVoted","type":"uint256"},{"name":"minPercent","type":"uint256"},{"name":"fundingAmount","type":"uint256"},{"name":"releasedAmount","type":"uint256"},{"name":"startTime","type":"uint256"},{"name":"lastReleaseTime","type":"uint256"},{"name":"claimPercent","type":"uint256"},{"name":"fundingInterval","type":"uint256"},{"name":"isStopped","type":"bool"},{"name":"funded","type":"bool"}],"name":"value0","type":"tuple[]"}
+			]
+		},
+		{
+			"name": "getPendingProposals",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"PID","type":"uint256"},{"name":"creator","type":"address"},{"name":"blockAddress","type":"address"},{"name":"title","type":"string"},{"name":"description","type":"string"},{"name":"vote_start","type":"uint256"},{"name":"vote_end","type":"uint256"},{"name":"ptype","type":"uint8"},{"name":"pStatus","type":"uint8"},{"name":"yVotes","type":"uint256"},{"name":"nVotes","type":"uint256"},{"name":"minVotes","type":"uint256"},{"name":"totalVoted","type":"uint256"},{"name":"minPercent","type":"uint256"},{"name":"fundingAmount","type":"uint256"},{"name":"releasedAmount","type":"uint256"},{"name":"startTime","type":"uint256"},{"name":"lastReleaseTime","type":"uint256"},{"name":"claimPercent","type":"uint256"},{"name":"fundingInterval","type":"uint256"},{"name":"isStopped","type":"bool"},{"name":"funded","type":"bool"}],"name":"value0","type":"tuple[]"}
+			]
+		},
+		{
+			"name": "getComplianers",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"address[]"}
+			]
+		},
+		{
+			"name": "setTreasury",
+			"inputs": [
+				{"name":"_treasury","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "addComplianer",
+			"inputs": [
+				{"name":"_complianer","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "removeComplianer",
+			"inputs": [
+				{"name":"_complianer","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "revokeAdmin",
+			"inputs": [
+				{"name":"_newAdmin","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "withdrawCreateProposalFee",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getCompletedProposals",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"PID","type":"uint256"},{"name":"creator","type":"address"},{"name":"blockAddress","type":"address"},{"name":"title","type":"string"},{"name":"description","type":"string"},{"name":"vote_start","type":"uint256"},{"name":"vote_end","type":"uint256"},{"name":"ptype","type":"uint8"},{"name":"pStatus","type":"uint8"},{"name":"yVotes","type":"uint256"},{"name":"nVotes","type":"uint256"},{"name":"minVotes","type":"uint256"},{"name":"totalVoted","type":"uint256"},{"name":"minPercent","type":"uint256"},{"name":"fundingAmount","type":"uint256"},{"name":"releasedAmount","type":"uint256"},{"name":"startTime","type":"uint256"},{"name":"lastReleaseTime","type":"uint256"},{"name":"claimPercent","type":"uint256"},{"name":"fundingInterval","type":"uint256"},{"name":"isStopped","type":"bool"},{"name":"funded","type":"bool"}],"name":"value0","type":"tuple[]"}
+			]
+		},
+		{
+			"name": "proposals",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"PID","type":"uint256"},{"name":"creator","type":"address"},{"name":"blockAddress","type":"address"},{"name":"title","type":"string"},{"name":"description","type":"string"},{"name":"vote_start","type":"uint256"},{"name":"vote_end","type":"uint256"},{"name":"ptype","type":"uint8"},{"name":"pStatus","type":"uint8"},{"name":"yVotes","type":"uint256"},{"name":"nVotes","type":"uint256"},{"name":"minVotes","type":"uint256"},{"name":"totalVoted","type":"uint256"},{"name":"minPercent","type":"uint256"},{"name":"fundingAmount","type":"uint256"},{"name":"releasedAmount","type":"uint256"},{"name":"startTime","type":"uint256"},{"name":"lastReleaseTime","type":"uint256"},{"name":"claimPercent","type":"uint256"},{"name":"fundingInterval","type":"uint256"},{"name":"isStopped","type":"bool"},{"name":"funded","type":"bool"}],"name":"proposals","type":"tuple[]"}
+			]
+		},
+		{
+			"name": "treasury",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"treasury","type":"address"}
+			]
+		},
+		{
+			"name": "admin",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"admin","type":"address"}
+			]
+		},
+		{
+			"name": "pendingProposals",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"pendingProposals","type":"uint256"}
+			]
+		},
+		{
+			"name": "completedProposals",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"completedProposals","type":"uint256"}
+			]
+		},
+		{
+			"name": "uProposals",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"uProposals","type":"map(address,uint256[])"}
+			]
+		},
+		{
+			"name": "complianerVotes",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"complianerVotes","type":"map(uint256,map(address,bool))"}
+			]
+		},
+		{
+			"name": "voterVotes",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"voterVotes","type":"map(uint256,map(address,int256))"}
+			]
+		},
+		{
+			"name": "blacklistedUsers",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"blacklistedUsers","type":"address[]"}
+			]
+		},
+		{
+			"name": "complianceMembers",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"complianceMembers","type":"address[]"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+		{
+			"name": "ProposalAdded",
+			"inputs": [
+				{"name":"proposalID","type":"uint256"},
+				{"name":"recipient","type":"address"},
+				{"name":"amount","type":"uint256"},
+				{"name":"description","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "ProposalStatusChanged",
+			"inputs": [
+				{"name":"proposalID","type":"uint256"},
+				{"name":"status","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "Voted",
+			"inputs": [
+				{"name":"proposalID","type":"uint256"},
+				{"name":"position","type":"bool"},
+				{"name":"voter","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "ProposalTallied",
+			"inputs": [
+				{"name":"proposalID","type":"uint256"},
+				{"name":"result","type":"bool"},
+				{"name":"approvalRate","type":"uint256"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"CREATE_PROPOSAL_COST","type":"uint256"},
+		{"components":[{"name":"PID","type":"uint256"},{"name":"creator","type":"address"},{"name":"blockAddress","type":"address"},{"name":"title","type":"string"},{"name":"description","type":"string"},{"name":"vote_start","type":"uint256"},{"name":"vote_end","type":"uint256"},{"name":"ptype","type":"uint8"},{"name":"pStatus","type":"uint8"},{"name":"yVotes","type":"uint256"},{"name":"nVotes","type":"uint256"},{"name":"minVotes","type":"uint256"},{"name":"totalVoted","type":"uint256"},{"name":"minPercent","type":"uint256"},{"name":"fundingAmount","type":"uint256"},{"name":"releasedAmount","type":"uint256"},{"name":"startTime","type":"uint256"},{"name":"lastReleaseTime","type":"uint256"},{"name":"claimPercent","type":"uint256"},{"name":"fundingInterval","type":"uint256"},{"name":"isStopped","type":"bool"},{"name":"funded","type":"bool"}],"name":"proposals","type":"tuple[]"},
+		{"name":"treasury","type":"address"},
+		{"name":"admin","type":"address"},
+		{"name":"pendingProposals","type":"uint256"},
+		{"name":"completedProposals","type":"uint256"},
+		{"name":"uProposals","type":"map(address,uint256[])"},
+		{"name":"complianerVotes","type":"map(uint256,map(address,bool))"},
+		{"name":"voterVotes","type":"map(uint256,map(address,int256))"},
+		{"name":"blacklistedUsers","type":"address[]"},
+		{"name":"complianceMembers","type":"address[]"},
+		{"name":"treasureMngQueue","type":"address[]"}
+	]
+}
