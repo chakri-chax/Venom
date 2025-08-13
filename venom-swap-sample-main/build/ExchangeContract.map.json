@@ -1,0 +1,2333 @@
+{
+  "map": {
+    "09b441e08652e40438a5d90770a1985343f1f381ec5b766c56471f4b5efc59ce": {
+      "0": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 20
+      },
+      "32": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 20
+      }
+    },
+    "0c6dd9096932fb6d0841dabe56adc7c72b9f1d34581ff311935998e231559900": {
+      "0": {
+        "filename": "ExchangeContract.code",
+        "line": 285
+      },
+      "8": {
+        "filename": "ExchangeContract.code",
+        "line": 286
+      },
+      "24": {
+        "filename": "ExchangeContract.code",
+        "line": 287
+      },
+      "48": {
+        "filename": "ExchangeContract.code",
+        "line": 288
+      },
+      "64": {
+        "filename": "ExchangeContract.code",
+        "line": 289
+      },
+      "72": {
+        "filename": "ExchangeContract.code",
+        "line": 290
+      },
+      "88": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "96": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "104": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "120": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "136": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "152": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "160": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "168": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "176": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "184": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "200": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "216": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "232": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "240": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "256": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "272": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "288": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "304": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "320": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "328": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 100
+      },
+      "336": {
+        "filename": "ExchangeContract.code",
+        "line": 317
+      },
+      "352": {
+        "filename": "ExchangeContract.code",
+        "line": 320
+      },
+      "360": {
+        "filename": "ExchangeContract.code",
+        "line": 321
+      },
+      "376": {
+        "filename": "ExchangeContract.code",
+        "line": 324
+      }
+    },
+    "0dd899a6f2b39f8e683cff8ebfd083e17da65c348afbc06f5bd810d20c76783a": {
+      "0": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 273
+      },
+      "8": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 273
+      },
+      "40": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 273
+      }
+    },
+    "13f9fb498c41e1470a083d9a92be3275f71b9eb0fba4db46b49b5f581d29d6fd": {
+      "0": {
+        "filename": "ExchangeContract.code",
+        "line": 485
+      },
+      "16": {
+        "filename": "ExchangeContract.code",
+        "line": 486
+      },
+      "24": {
+        "filename": "ExchangeContract.code",
+        "line": 487
+      },
+      "40": {
+        "filename": "ExchangeContract.code",
+        "line": 488
+      },
+      "56": {
+        "filename": "ExchangeContract.code",
+        "line": 489
+      },
+      "72": {
+        "filename": "ExchangeContract.code",
+        "line": 490
+      },
+      "80": {
+        "filename": "ExchangeContract.code",
+        "line": 493
+      },
+      "96": {
+        "filename": "ExchangeContract.code",
+        "line": 494
+      },
+      "104": {
+        "filename": "ExchangeContract.code",
+        "line": 495
+      },
+      "120": {
+        "filename": "ExchangeContract.code",
+        "line": 498
+      },
+      "136": {
+        "filename": "ExchangeContract.code",
+        "line": 499
+      },
+      "144": {
+        "filename": "ExchangeContract.code",
+        "line": 500
+      },
+      "160": {
+        "filename": "ExchangeContract.code",
+        "line": 501
+      },
+      "176": {
+        "filename": "ExchangeContract.code",
+        "line": 502
+      },
+      "192": {
+        "filename": "ExchangeContract.code",
+        "line": 503
+      },
+      "200": {
+        "filename": "ExchangeContract.code",
+        "line": 504
+      },
+      "216": {
+        "filename": "ExchangeContract.code",
+        "line": 505
+      },
+      "224": {
+        "filename": "ExchangeContract.code",
+        "line": 506
+      },
+      "240": {
+        "filename": "ExchangeContract.code",
+        "line": 507
+      },
+      "248": {
+        "filename": "ExchangeContract.code",
+        "line": 508
+      },
+      "256": {
+        "filename": "ExchangeContract.code",
+        "line": 509
+      },
+      "272": {
+        "filename": "ExchangeContract.code",
+        "line": 510
+      },
+      "280": {
+        "filename": "ExchangeContract.code",
+        "line": 511
+      },
+      "288": {
+        "filename": "ExchangeContract.code",
+        "line": 513
+      },
+      "296": {
+        "filename": "ExchangeContract.code",
+        "line": 514
+      },
+      "304": {
+        "filename": "ExchangeContract.code",
+        "line": 515
+      },
+      "320": {
+        "filename": "ExchangeContract.code",
+        "line": 517
+      },
+      "328": {
+        "filename": "ExchangeContract.code",
+        "line": 518
+      },
+      "344": {
+        "filename": "ExchangeContract.code",
+        "line": 519
+      },
+      "360": {
+        "filename": "ExchangeContract.code",
+        "line": 521
+      },
+      "368": {
+        "filename": "ExchangeContract.code",
+        "line": 522
+      },
+      "384": {
+        "filename": "ExchangeContract.code",
+        "line": 523
+      },
+      "392": {
+        "filename": "ExchangeContract.code",
+        "line": 524
+      },
+      "408": {
+        "filename": "ExchangeContract.code",
+        "line": 526
+      },
+      "416": {
+        "filename": "ExchangeContract.code",
+        "line": 527
+      },
+      "432": {
+        "filename": "ExchangeContract.code",
+        "line": 528
+      },
+      "440": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "456": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "464": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "472": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "488": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "496": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "512": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "536": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "544": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "584": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "592": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "600": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "616": {
+        "filename": "stdlib.sol",
+        "line": 63
+      },
+      "632": {
+        "filename": "ExchangeContract.code",
+        "line": 530
+      },
+      "648": {
+        "filename": "ExchangeContract.code",
+        "line": 531
+      },
+      "656": {
+        "filename": "ExchangeContract.code",
+        "line": 532
+      },
+      "672": {
+        "filename": "ExchangeContract.code",
+        "line": 533
+      },
+      "680": {
+        "filename": "ExchangeContract.code",
+        "line": 534
+      },
+      "696": {
+        "filename": "ExchangeContract.code",
+        "line": 535
+      },
+      "712": {
+        "filename": "ExchangeContract.code",
+        "line": 536
+      },
+      "720": {
+        "filename": "ExchangeContract.code",
+        "line": 537
+      },
+      "736": {
+        "filename": "ExchangeContract.code",
+        "line": 540
+      }
+    },
+    "1b75502a7bb364e42c0bb6c6a1486e391acceea78692aae282486f0643cb9ced": {
+      "0": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 74
+      },
+      "8": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 74
+      },
+      "16": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 74
+      },
+      "40": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 74
+      },
+      "48": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 74
+      },
+      "56": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 74
+      },
+      "72": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 74
+      },
+      "80": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 74
+      },
+      "104": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 74
+      },
+      "112": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 74
+      },
+      "120": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 74
+      },
+      "128": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 74
+      }
+    },
+    "378d5974d8dbe2f340ff8137051bd6d4ca9becf55c9ba28b2ecee42004193655": {
+      "0": {
+        "filename": "<entry-selector>",
+        "line": 1
+      },
+      "8": {
+        "filename": "<entry-selector>",
+        "line": 2
+      },
+      "24": {
+        "filename": "<entry-selector>",
+        "line": 3
+      },
+      "32": {
+        "filename": "<entry-selector>",
+        "line": 4
+      },
+      "48": {
+        "filename": "<entry-selector>",
+        "line": 5
+      },
+      "56": {
+        "filename": "<entry-selector>",
+        "line": 6
+      },
+      "72": {
+        "filename": "<entry-selector>",
+        "line": 7
+      },
+      "88": {
+        "filename": "<entry-selector>",
+        "line": 8
+      },
+      "96": {
+        "filename": "<entry-selector>",
+        "line": 9
+      },
+      "112": {
+        "filename": "<entry-selector>",
+        "line": 10
+      },
+      "128": {
+        "filename": "<entry-selector>",
+        "line": 11
+      }
+    },
+    "3bae3905bd98c3380f37f57eeeb421a95fcaee97af6bcfac49710e1fe87c33b2": {
+      "0": {
+        "filename": "ExchangeContract.code",
+        "line": 347
+      },
+      "8": {
+        "filename": "ExchangeContract.code",
+        "line": 348
+      },
+      "24": {
+        "filename": "ExchangeContract.code",
+        "line": 349
+      },
+      "48": {
+        "filename": "ExchangeContract.code",
+        "line": 350
+      },
+      "64": {
+        "filename": "ExchangeContract.code",
+        "line": 351
+      },
+      "72": {
+        "filename": "ExchangeContract.code",
+        "line": 352
+      },
+      "88": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 104
+      },
+      "96": {
+        "filename": "ExchangeContract.code",
+        "line": 358
+      },
+      "112": {
+        "filename": "ExchangeContract.code",
+        "line": 361
+      },
+      "120": {
+        "filename": "ExchangeContract.code",
+        "line": 362
+      },
+      "136": {
+        "filename": "ExchangeContract.code",
+        "line": 365
+      }
+    },
+    "3e67cb6d0c0d5e14b110ab78d1a28dfd5f02a0b2b3615048a61ca89f305793be": {
+      "0": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 56
+      },
+      "8": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 56
+      },
+      "16": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 56
+      },
+      "24": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 56
+      },
+      "32": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 56
+      },
+      "40": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 56
+      },
+      "48": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 56
+      },
+      "72": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 60
+      },
+      "80": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 60
+      },
+      "104": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 61
+      },
+      "120": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 61
+      },
+      "144": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 62
+      },
+      "160": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 62
+      },
+      "184": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 63
+      },
+      "200": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 63
+      },
+      "216": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 64
+      },
+      "232": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 64
+      },
+      "248": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 67
+      },
+      "256": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 67
+      },
+      "264": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 67
+      },
+      "280": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 67
+      },
+      "288": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 67
+      },
+      "304": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 67
+      },
+      "312": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 67
+      },
+      "328": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 67
+      },
+      "336": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 67
+      },
+      "344": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 67
+      },
+      "360": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 68
+      },
+      "368": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 68
+      },
+      "376": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 68
+      },
+      "384": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 70
+      },
+      "400": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 70
+      },
+      "408": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 70
+      },
+      "416": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 70
+      },
+      "432": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 70
+      },
+      "440": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 70
+      },
+      "448": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 70
+      },
+      "456": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 70
+      },
+      "464": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 72
+      },
+      "472": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 72
+      },
+      "480": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 72
+      },
+      "488": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 73
+      },
+      "504": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 73
+      },
+      "512": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 73
+      },
+      "528": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 73
+      },
+      "536": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 73
+      },
+      "544": {
+        "filename": "ExchangeContract.code",
+        "line": 878
+      },
+      "552": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 75
+      },
+      "560": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 75
+      },
+      "568": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 75
+      },
+      "576": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 76
+      },
+      "592": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 76
+      },
+      "600": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 76
+      },
+      "616": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 76
+      },
+      "624": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 76
+      },
+      "632": {
+        "filename": "ExchangeContract.code",
+        "line": 891
+      },
+      "640": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 79
+      },
+      "648": {
+        "filename": "../node_modules/dex/contracts/libraries/PairPayload.tsol",
+        "line": 79
+      }
+    },
+    "4ba0a5044c0ddeec46ce8a7f22191ae904bb5501dc858e1ca9f9ea7b1b1f5f30": {
+      "0": {
+        "filename": "ExchangeContract.code",
+        "line": 902
+      },
+      "8": {
+        "filename": "ExchangeContract.code",
+        "line": 903
+      },
+      "56": {
+        "filename": "ExchangeContract.code",
+        "line": 904
+      },
+      "64": {
+        "filename": "ExchangeContract.code",
+        "line": 905
+      },
+      "80": {
+        "filename": "ExchangeContract.code",
+        "line": 908
+      },
+      "88": {
+        "filename": "ExchangeContract.code",
+        "line": 909
+      },
+      "136": {
+        "filename": "ExchangeContract.code",
+        "line": 910
+      },
+      "144": {
+        "filename": "ExchangeContract.code",
+        "line": 911
+      },
+      "160": {
+        "filename": "ExchangeContract.code",
+        "line": 914
+      },
+      "168": {
+        "filename": "ExchangeContract.code",
+        "line": 915
+      },
+      "216": {
+        "filename": "ExchangeContract.code",
+        "line": 916
+      },
+      "224": {
+        "filename": "ExchangeContract.code",
+        "line": 917
+      },
+      "240": {
+        "filename": "ExchangeContract.code",
+        "line": 920
+      },
+      "248": {
+        "filename": "ExchangeContract.code",
+        "line": 921
+      },
+      "296": {
+        "filename": "ExchangeContract.code",
+        "line": 922
+      },
+      "304": {
+        "filename": "ExchangeContract.code",
+        "line": 923
+      }
+    },
+    "4f35461d22a10c0b1b0e5f6b306138f0a7b30e77bd2400fe24b9a3d53ecab7f4": {
+      "0": {
+        "filename": "ExchangeContract.code",
+        "line": 398
+      },
+      "16": {
+        "filename": "ExchangeContract.code",
+        "line": 399
+      },
+      "24": {
+        "filename": "ExchangeContract.code",
+        "line": 400
+      },
+      "40": {
+        "filename": "ExchangeContract.code",
+        "line": 401
+      },
+      "56": {
+        "filename": "ExchangeContract.code",
+        "line": 402
+      },
+      "72": {
+        "filename": "ExchangeContract.code",
+        "line": 403
+      },
+      "80": {
+        "filename": "ExchangeContract.code",
+        "line": 404
+      },
+      "96": {
+        "filename": "ExchangeContract.code",
+        "line": 405
+      },
+      "104": {
+        "filename": "ExchangeContract.code",
+        "line": 406
+      },
+      "120": {
+        "filename": "ExchangeContract.code",
+        "line": 407
+      },
+      "128": {
+        "filename": "ExchangeContract.code",
+        "line": 408
+      },
+      "144": {
+        "filename": "ExchangeContract.code",
+        "line": 409
+      },
+      "160": {
+        "filename": "ExchangeContract.code",
+        "line": 410
+      },
+      "176": {
+        "filename": "ExchangeContract.code",
+        "line": 411
+      },
+      "192": {
+        "filename": "ExchangeContract.code",
+        "line": 412
+      },
+      "216": {
+        "filename": "ExchangeContract.code",
+        "line": 413
+      },
+      "232": {
+        "filename": "ExchangeContract.code",
+        "line": 414
+      },
+      "240": {
+        "filename": "ExchangeContract.code",
+        "line": 415
+      },
+      "256": {
+        "filename": "ExchangeContract.code",
+        "line": 417
+      }
+    },
+    "61ab4641fa30d9310391025086eec65d200d79268e1b7cd402565e01ba64be3c": {
+      "0": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 37
+      }
+    },
+    "71987e7cfd434657b0b0791963bcbf05f4613cc1061fd2199dfef2e64879710b": {
+      "0": {
+        "filename": "ExchangeContract.code",
+        "line": 450
+      },
+      "16": {
+        "filename": "ExchangeContract.code",
+        "line": 451
+      },
+      "24": {
+        "filename": "ExchangeContract.code",
+        "line": 452
+      },
+      "40": {
+        "filename": "ExchangeContract.code",
+        "line": 453
+      },
+      "56": {
+        "filename": "ExchangeContract.code",
+        "line": 454
+      },
+      "72": {
+        "filename": "ExchangeContract.code",
+        "line": 455
+      },
+      "80": {
+        "filename": "ExchangeContract.code",
+        "line": 456
+      },
+      "88": {
+        "filename": "ExchangeContract.code",
+        "line": 457
+      },
+      "104": {
+        "filename": "ExchangeContract.code",
+        "line": 458
+      },
+      "120": {
+        "filename": "ExchangeContract.code",
+        "line": 459
+      },
+      "128": {
+        "filename": "ExchangeContract.code",
+        "line": 460
+      },
+      "144": {
+        "filename": "ExchangeContract.code",
+        "line": 461
+      },
+      "168": {
+        "filename": "ExchangeContract.code",
+        "line": 462
+      },
+      "176": {
+        "filename": "ExchangeContract.code",
+        "line": 463
+      },
+      "184": {
+        "filename": "ExchangeContract.code",
+        "line": 464
+      },
+      "200": {
+        "filename": "ExchangeContract.code",
+        "line": 465
+      },
+      "216": {
+        "filename": "ExchangeContract.code",
+        "line": 469
+      },
+      "224": {
+        "filename": "ExchangeContract.code",
+        "line": 470
+      },
+      "248": {
+        "filename": "ExchangeContract.code",
+        "line": 471
+      },
+      "264": {
+        "filename": "ExchangeContract.code",
+        "line": 472
+      },
+      "272": {
+        "filename": "ExchangeContract.code",
+        "line": 473
+      },
+      "288": {
+        "filename": "ExchangeContract.code",
+        "line": 477
+      },
+      "296": {
+        "filename": "ExchangeContract.code",
+        "line": 478
+      },
+      "312": {
+        "filename": "ExchangeContract.code",
+        "line": 481
+      }
+    },
+    "73867e37ec1ffb9ecb087a37d71892215b0b805a73c127da219a28729084e2e0": {
+      "0": {
+        "filename": "<internal-selector>",
+        "line": 1
+      },
+      "24": {
+        "filename": "<internal-selector>",
+        "line": 2
+      }
+    },
+    "76f2d0f855c02f54f0a2cf9a89a20be96cd57148eec1e527aab6694b802e6ddb": {
+      "0": {
+        "filename": "ExchangeContract.code",
+        "line": 219
+      },
+      "8": {
+        "filename": "ExchangeContract.code",
+        "line": 220
+      },
+      "24": {
+        "filename": "ExchangeContract.code",
+        "line": 221
+      },
+      "48": {
+        "filename": "ExchangeContract.code",
+        "line": 222
+      },
+      "64": {
+        "filename": "ExchangeContract.code",
+        "line": 223
+      },
+      "72": {
+        "filename": "ExchangeContract.code",
+        "line": 224
+      },
+      "88": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "96": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "104": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "112": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "120": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "128": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "136": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "152": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "168": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "176": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "184": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "192": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "208": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "216": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "224": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "232": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "248": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "256": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "264": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "272": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "288": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "296": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 83
+      },
+      "304": {
+        "filename": "ExchangeContract.code",
+        "line": 252
+      },
+      "320": {
+        "filename": "ExchangeContract.code",
+        "line": 255
+      },
+      "328": {
+        "filename": "ExchangeContract.code",
+        "line": 256
+      },
+      "344": {
+        "filename": "ExchangeContract.code",
+        "line": 259
+      }
+    },
+    "7ce30b55139ada3468b0223e1e520a077de8f227402230443bc7057043b3e057": {
+      "0": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 76
+      },
+      "40": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 76
+      },
+      "80": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 76
+      },
+      "88": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 76
+      },
+      "104": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 76
+      },
+      "152": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 76
+      },
+      "160": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 76
+      },
+      "176": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 76
+      },
+      "208": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 76
+      },
+      "216": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 76
+      },
+      "224": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 76
+      },
+      "240": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 76
+      },
+      "280": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 76
+      },
+      "288": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 76
+      },
+      "304": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 76
+      }
+    },
+    "8745a430d3bdb241739ec86403ac8fe7fae93a90af44a5930949e6e11cec18c0": {
+      "0": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 42
+      },
+      "8": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 43
+      },
+      "24": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 43
+      },
+      "32": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 43
+      },
+      "48": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 43
+      },
+      "64": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 43
+      },
+      "72": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 43
+      },
+      "80": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 43
+      },
+      "96": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 43
+      },
+      "104": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 43
+      },
+      "120": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "128": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "144": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "160": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "176": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "184": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "208": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "216": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "224": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "248": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "264": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "272": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "320": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "336": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "344": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "360": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "376": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "384": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "392": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "408": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "416": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "424": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "432": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "440": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "456": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 55
+      },
+      "472": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 63
+      },
+      "480": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 63
+      },
+      "600": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 63
+      },
+      "608": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 63
+      },
+      "616": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 63
+      },
+      "632": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 63
+      },
+      "640": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 63
+      },
+      "688": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 63
+      },
+      "696": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 63
+      },
+      "704": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 63
+      },
+      "712": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 63
+      },
+      "720": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 63
+      },
+      "736": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 63
+      },
+      "744": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 63
+      },
+      "752": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 63
+      },
+      "760": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 63
+      },
+      "768": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 63
+      }
+    },
+    "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7": {},
+    "a4b381ae70ca079ff9f1d73ad86baf3fa62b8dbef0528a8874eaa12251c88bb0": {
+      "0": {
+        "filename": "ExchangeContract.code",
+        "line": 385
+      },
+      "16": {
+        "filename": "ExchangeContract.code",
+        "line": 386
+      },
+      "24": {
+        "filename": "ExchangeContract.code",
+        "line": 387
+      },
+      "40": {
+        "filename": "ExchangeContract.code",
+        "line": 388
+      },
+      "56": {
+        "filename": "ExchangeContract.code",
+        "line": 389
+      },
+      "72": {
+        "filename": "ExchangeContract.code",
+        "line": 390
+      },
+      "80": {
+        "filename": "ExchangeContract.code",
+        "line": 391
+      },
+      "96": {
+        "filename": "ExchangeContract.code",
+        "line": 392
+      },
+      "104": {
+        "filename": "ExchangeContract.code",
+        "line": 393
+      },
+      "120": {
+        "filename": "ExchangeContract.code",
+        "line": 394
+      },
+      "136": {
+        "filename": "ExchangeContract.code",
+        "line": 395
+      }
+    },
+    "a62a17f715512d9f0a60a0940c684586afbc1495ff71ec91fe38e7599eb4fb8d": {
+      "0": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 280
+      },
+      "16": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 281
+      },
+      "32": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 282
+      },
+      "48": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 282
+      },
+      "64": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "104": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "120": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "128": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "144": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "152": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "168": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "176": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "192": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "200": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "216": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "224": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "240": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "256": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "280": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "296": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "304": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "312": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "328": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "336": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "344": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "360": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "368": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "384": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "392": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "408": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "416": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "432": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "472": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "480": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "496": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "512": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "528": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "544": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "568": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "584": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "592": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "600": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "616": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "624": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "632": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "648": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      },
+      "664": {
+        "filename": "../node_modules/dex/contracts/libraries/GasValues.tsol",
+        "line": 283
+      }
+    },
+    "b41b960031a157a66d0f416b4b0e0cc4ada73824ed3282ec3e90ad2a0164c878": {
+      "0": {
+        "filename": "ExchangeContract.code",
+        "line": 422
+      },
+      "16": {
+        "filename": "ExchangeContract.code",
+        "line": 423
+      },
+      "32": {
+        "filename": "ExchangeContract.code",
+        "line": 424
+      },
+      "48": {
+        "filename": "ExchangeContract.code",
+        "line": 425
+      },
+      "56": {
+        "filename": "ExchangeContract.code",
+        "line": 426
+      },
+      "72": {
+        "filename": "ExchangeContract.code",
+        "line": 427
+      },
+      "88": {
+        "filename": "ExchangeContract.code",
+        "line": 428
+      },
+      "104": {
+        "filename": "ExchangeContract.code",
+        "line": 429
+      },
+      "120": {
+        "filename": "ExchangeContract.code",
+        "line": 430
+      },
+      "128": {
+        "filename": "ExchangeContract.code",
+        "line": 431
+      }
+    },
+    "bb6e96df87e032a522479f763972fc7e6ef87ff252ce65ac46454929c76383fd": {
+      "0": {
+        "filename": "ExchangeContract.code",
+        "line": 4
+      },
+      "8": {
+        "filename": "ExchangeContract.code",
+        "line": 5
+      },
+      "24": {
+        "filename": "ExchangeContract.code",
+        "line": 6
+      },
+      "32": {
+        "filename": "ExchangeContract.code",
+        "line": 7
+      },
+      "48": {
+        "filename": "ExchangeContract.code",
+        "line": 10
+      },
+      "64": {
+        "filename": "ExchangeContract.code",
+        "line": 11
+      },
+      "80": {
+        "filename": "ExchangeContract.code",
+        "line": 12
+      },
+      "88": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 24
+      },
+      "104": {
+        "filename": "ExchangeContract.code",
+        "line": 16
+      },
+      "120": {
+        "filename": "ExchangeContract.code",
+        "line": 19
+      }
+    },
+    "c84bae172a2a9ec234018146522fb08426b9e7047be5940122b537fe52a3bd6e": {
+      "0": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 102
+      },
+      "8": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 102
+      },
+      "168": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 102
+      },
+      "176": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 102
+      },
+      "184": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 102
+      },
+      "200": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 102
+      },
+      "208": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 102
+      },
+      "224": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 102
+      },
+      "240": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 102
+      },
+      "256": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 102
+      },
+      "272": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 102
+      },
+      "288": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 102
+      },
+      "304": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 102
+      },
+      "312": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 102
+      },
+      "320": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 102
+      },
+      "336": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 102
+      }
+    },
+    "d0e2bfe82e5d0070c180510f262b75785e5cc5ce7d1e5aea83bf9c61e0fd79dd": {
+      "0": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 37
+      },
+      "8": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 37
+      },
+      "24": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 37
+      },
+      "48": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 37
+      },
+      "64": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 37
+      },
+      "80": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 37
+      },
+      "88": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 38
+      },
+      "104": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 38
+      },
+      "112": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 38
+      },
+      "128": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 38
+      },
+      "152": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 39
+      },
+      "200": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 39
+      },
+      "208": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 39
+      },
+      "224": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 40
+      },
+      "232": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 40
+      },
+      "248": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 40
+      },
+      "256": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 40
+      },
+      "272": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 40
+      },
+      "280": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 40
+      },
+      "296": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 41
+      },
+      "304": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 41
+      },
+      "320": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 41
+      },
+      "328": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 41
+      },
+      "336": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 41
+      },
+      "344": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 41
+      }
+    },
+    "d35b7afeb6782bd659921eb9fbce74e3557daa6b11abcc35add6100094042df5": {
+      "0": {
+        "filename": "ExchangeContract.code",
+        "line": 172
+      },
+      "8": {
+        "filename": "ExchangeContract.code",
+        "line": 173
+      },
+      "24": {
+        "filename": "ExchangeContract.code",
+        "line": 174
+      },
+      "48": {
+        "filename": "ExchangeContract.code",
+        "line": 175
+      },
+      "64": {
+        "filename": "ExchangeContract.code",
+        "line": 176
+      },
+      "72": {
+        "filename": "ExchangeContract.code",
+        "line": 177
+      },
+      "88": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 69
+      },
+      "96": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 69
+      },
+      "104": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 69
+      },
+      "112": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 69
+      },
+      "120": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 69
+      },
+      "128": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 69
+      },
+      "136": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 69
+      },
+      "152": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 69
+      },
+      "168": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 69
+      },
+      "176": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 69
+      },
+      "184": {
+        "filename": "ExchangeContract.code",
+        "line": 193
+      },
+      "200": {
+        "filename": "ExchangeContract.code",
+        "line": 196
+      },
+      "208": {
+        "filename": "ExchangeContract.code",
+        "line": 197
+      },
+      "224": {
+        "filename": "ExchangeContract.code",
+        "line": 200
+      }
+    },
+    "d558e53bf690afc8a76b8887a99a49a52db1bd24bec5da84780ea0e7bc0aad3f": {
+      "0": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 37
+      }
+    },
+    "d5b1f9e770d8ad292dc3f975c5c39c848b49cefbdccb284237280cfe05fb4da7": {
+      "0": {
+        "filename": "ExchangeContract.code",
+        "line": 931
+      },
+      "8": {
+        "filename": "ExchangeContract.code",
+        "line": 932
+      },
+      "56": {
+        "filename": "ExchangeContract.code",
+        "line": 933
+      },
+      "64": {
+        "filename": "ExchangeContract.code",
+        "line": 934
+      },
+      "80": {
+        "filename": "ExchangeContract.code",
+        "line": 937
+      },
+      "88": {
+        "filename": "ExchangeContract.code",
+        "line": 938
+      },
+      "136": {
+        "filename": "ExchangeContract.code",
+        "line": 939
+      },
+      "144": {
+        "filename": "ExchangeContract.code",
+        "line": 940
+      }
+    },
+    "eac0b71273562d61a4eae986af331d99c4b9996c92d5b0184927b3d50b843d4f": {
+      "0": {
+        "filename": "ExchangeContract.code",
+        "line": 22
+      },
+      "8": {
+        "filename": "ExchangeContract.code",
+        "line": 23
+      },
+      "24": {
+        "filename": "ExchangeContract.code",
+        "line": 24
+      },
+      "48": {
+        "filename": "ExchangeContract.code",
+        "line": 25
+      },
+      "64": {
+        "filename": "ExchangeContract.code",
+        "line": 26
+      },
+      "72": {
+        "filename": "ExchangeContract.code",
+        "line": 27
+      },
+      "88": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "96": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "104": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "120": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "128": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "136": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "144": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "152": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "168": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "176": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "192": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "208": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "216": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "224": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "232": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "248": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "256": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "264": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "272": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "288": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "304": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "320": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "328": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "336": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "344": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "360": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 27
+      },
+      "368": {
+        "filename": "ExchangeContract.code",
+        "line": 60
+      },
+      "384": {
+        "filename": "ExchangeContract.code",
+        "line": 63
+      },
+      "392": {
+        "filename": "ExchangeContract.code",
+        "line": 64
+      },
+      "408": {
+        "filename": "ExchangeContract.code",
+        "line": 67
+      }
+    },
+    "ee173513570bafc5af9e3d4ce7f3926cf6808254bd83d4e7761b0e2115faa67b": {
+      "0": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 105
+      },
+      "16": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 105
+      },
+      "24": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 105
+      },
+      "48": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 105
+      },
+      "56": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 105
+      },
+      "216": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 105
+      },
+      "240": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 105
+      },
+      "248": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 105
+      },
+      "264": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 105
+      }
+    },
+    "f24e1e7aa04d89aad2945816b6e9b921f2b3892da9ba53e2383c148351b96d0c": {
+      "0": {
+        "filename": "ExchangeContract.code",
+        "line": 466
+      },
+      "16": {
+        "filename": "ExchangeContract.code",
+        "line": 467
+      }
+    },
+    "f2c90bf80cfe697ce0170bfe2153f909943f8c8c840895d339f57a904613d44a": {
+      "0": {
+        "filename": "ExchangeContract.code",
+        "line": 898
+      },
+      "8": {
+        "filename": "ExchangeContract.code",
+        "line": 899
+      },
+      "56": {
+        "filename": "ExchangeContract.code",
+        "line": 900
+      },
+      "64": {
+        "filename": "ExchangeContract.code",
+        "line": 901
+      },
+      "80": {
+        "filename": "ExchangeContract.code",
+        "line": 927
+      },
+      "88": {
+        "filename": "ExchangeContract.code",
+        "line": 928
+      },
+      "136": {
+        "filename": "ExchangeContract.code",
+        "line": 929
+      },
+      "144": {
+        "filename": "ExchangeContract.code",
+        "line": 930
+      }
+    },
+    "f9690d096dcbd8d4aa749dcb4fea0ff3de0eafbccad3379112a6f77b6d12d38a": {
+      "0": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 92
+      },
+      "8": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 92
+      },
+      "24": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 92
+      },
+      "40": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 92
+      },
+      "48": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 92
+      },
+      "64": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 92
+      },
+      "72": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 92
+      },
+      "96": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 92
+      },
+      "112": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 92
+      },
+      "128": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 93
+      },
+      "136": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 93
+      },
+      "160": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 93
+      },
+      "168": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 93
+      },
+      "184": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 93
+      },
+      "200": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 93
+      },
+      "208": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 93
+      },
+      "224": {
+        "filename": "../contracts/ExchangeContract.tsol",
+        "line": 93
+      },
+      "240": {
+        "filename": "ExchangeContract.code",
+        "line": 282
+      }
+    }
+  }
+}

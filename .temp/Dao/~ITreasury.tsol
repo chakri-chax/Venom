@@ -40,6 +40,6 @@ interface ITreasury {
     function getTreasuryBalance(address _user) external view returns (uint256 treasuryBal);
     function getTopTreasuryHolders() external view returns (address[]);
     function swapAndTransferToGovernance(uint256 amount,address receiver) external;
-    
+     function _continueSwap(address user) external;
 
 }

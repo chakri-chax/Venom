@@ -1,0 +1,106 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "makeSwap",
+			"inputs": [
+				{"name":"queryId","type":"uint64"},
+				{"name":"tokenIn","type":"address"},
+				{"name":"amountIn","type":"uint128"},
+				{"name":"tokenOut","type":"address"},
+				{"name":"pair","type":"address"},
+				{"name":"deployWalletValue","type":"uint128"},
+				{"name":"expectedAmountOut","type":"uint128"},
+				{"name":"treasuryAddress","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "makeSwapWithOffChainPayload",
+			"inputs": [
+				{"name":"dst","type":"address"},
+				{"name":"value","type":"uint128"},
+				{"name":"swapPayload","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "onAcceptTokensTransfer",
+			"inputs": [
+				{"name":"tokenRoot","type":"address"},
+				{"name":"amount","type":"uint128"},
+				{"name":"sender","type":"address"},
+				{"name":"senderWallet","type":"address"},
+				{"name":"remainingGasTo","type":"address"},
+				{"name":"payload","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "dexPairExchangeSuccess",
+			"inputs": [
+				{"name":"id","type":"uint64"},
+				{"name":"via_account","type":"bool"},
+				{"components":[{"name":"left_to_right","type":"bool"},{"name":"spent","type":"uint128"},{"name":"fee","type":"uint128"},{"name":"received","type":"uint128"}],"name":"result","type":"tuple"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getCallbackAmouhnt",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "rootToWallet",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"rootToWallet","type":"map(address,address)"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+		{
+			"name": "SwapSuccess",
+			"inputs": [
+				{"name":"queyId","type":"uint64"},
+				{"components":[{"name":"left_to_right","type":"bool"},{"name":"spent","type":"uint128"},{"name":"fee","type":"uint128"},{"name":"received","type":"uint128"}],"name":"result","type":"tuple"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "madeSwap",
+			"inputs": [
+				{"name":"tokenIn","type":"address"},
+				{"name":"tokenOut","type":"address"},
+				{"name":"amount","type":"uint128"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"rootToWallet","type":"map(address,address)"}
+	]
+}

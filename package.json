@@ -27,12 +27,14 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "@broxus/contracts": "^1.1.1",
+    "locklift": "git://github.com/broxus/ton-locklift#f647b67",
     "@broxus/locklift-deploy": "^1.1.1",
+    "@broxus/tip4": "github:broxus/tip4#master",
     "body-parser": "^2.2.0",
     "everscale-inpage-provider": "^0.6.0",
     "express": "^5.1.0",
     "nodemon": "^3.1.10",
-    "@broxus/tip4": "github:broxus/tip4#master"
-
+     "dex": "github:broxus/flatqube-contracts"
   }
 }

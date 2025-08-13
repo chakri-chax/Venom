@@ -141,7 +141,7 @@ ROT
 CALLREF {
 	CALL $_init4_3_8f662628_internal_macro$
 }
-.loc ../contracts/Dao/Nft.tsol, 0
+.loc ../contracts/Nft.tsol, 0
 CALLREF {
 	CALL $c7_to_c4$
 }
@@ -152,12 +152,12 @@ THROW 0
 CALL $_beforeTransfer_4721b701_internal_macro$
 
 .macro _beforeTransfer_4721b701_internal_macro
-.loc ../contracts/Dao/Nft.tsol, 43
+.loc ../contracts/Nft.tsol, 43
 DROP
 CALLREF {
 	CALL $_destructIndex_d3dd7d3c_internal_macro$
 }
-.loc ../contracts/Dao/Nft.tsol, 0
+.loc ../contracts/Nft.tsol, 0
 DROP
 
 .globl	_afterTransfer_41f289ae_internal
@@ -165,24 +165,24 @@ DROP
 CALL $_afterTransfer_41f289ae_internal_macro$
 
 .macro _afterTransfer_41f289ae_internal_macro
-.loc ../contracts/Dao/Nft.tsol, 51
+.loc ../contracts/Nft.tsol, 51
 BLKDROP 3
 CALLREF {
 	CALL $_deployIndex_367ac79d_internal_macro$
 }
-.loc ../contracts/Dao/Nft.tsol, 0
+.loc ../contracts/Nft.tsol, 0
 
 .globl	_beforeChangeOwner_14992e29_internal
 .type	_beforeChangeOwner_14992e29_internal, @function
 CALL $_beforeChangeOwner_14992e29_internal_macro$
 
 .macro _beforeChangeOwner_14992e29_internal_macro
-.loc ../contracts/Dao/Nft.tsol, 60
+.loc ../contracts/Nft.tsol, 60
 DROP
 CALLREF {
 	CALL $_destructIndex_d3dd7d3c_internal_macro$
 }
-.loc ../contracts/Dao/Nft.tsol, 0
+.loc ../contracts/Nft.tsol, 0
 DROP2
 
 .globl	_afterChangeOwner_4a7c15bb_internal
@@ -190,30 +190,30 @@ DROP2
 CALL $_afterChangeOwner_4a7c15bb_internal_macro$
 
 .macro _afterChangeOwner_4a7c15bb_internal_macro
-.loc ../contracts/Dao/Nft.tsol, 69
+.loc ../contracts/Nft.tsol, 69
 BLKDROP 4
 CALLREF {
 	CALL $_deployIndex_367ac79d_internal_macro$
 }
-.loc ../contracts/Dao/Nft.tsol, 0
+.loc ../contracts/Nft.tsol, 0
 
 .globl	_beforeChangeManager_98a59d63_internal
 .type	_beforeChangeManager_98a59d63_internal, @function
 CALL $_beforeChangeManager_98a59d63_internal_macro$
 
 .macro _beforeChangeManager_98a59d63_internal_macro
-.loc ../contracts/Dao/Nft.tsol, 78
+.loc ../contracts/Nft.tsol, 78
 BLKDROP 4
-.loc ../contracts/Dao/Nft.tsol, 0
+.loc ../contracts/Nft.tsol, 0
 
 .globl	_afterChangeManager_83a727c6_internal
 .type	_afterChangeManager_83a727c6_internal, @function
 CALL $_afterChangeManager_83a727c6_internal_macro$
 
 .macro _afterChangeManager_83a727c6_internal_macro
-.loc ../contracts/Dao/Nft.tsol, 87
+.loc ../contracts/Nft.tsol, 87
 BLKDROP 4
-.loc ../contracts/Dao/Nft.tsol, 0
+.loc ../contracts/Nft.tsol, 0
 
 .globl	_init4_3_8f662628_internal
 .type	_init4_3_8f662628_internal, @function

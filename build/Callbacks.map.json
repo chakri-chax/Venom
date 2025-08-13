@@ -1,0 +1,1296 @@
+{
+  "map": {
+    "034487640235c04c7e66ed03cf7c100bca39462b9c0f06b0494931f7936ce1f3": {
+      "0": {
+        "filename": "Callbacks.code",
+        "line": 74
+      },
+      "8": {
+        "filename": "Callbacks.code",
+        "line": 75
+      },
+      "24": {
+        "filename": "Callbacks.code",
+        "line": 76
+      },
+      "48": {
+        "filename": "Callbacks.code",
+        "line": 77
+      },
+      "64": {
+        "filename": "Callbacks.code",
+        "line": 78
+      },
+      "72": {
+        "filename": "Callbacks.code",
+        "line": 79
+      },
+      "88": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 31
+      },
+      "96": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 31
+      },
+      "104": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 31
+      },
+      "112": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 31
+      },
+      "120": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 31
+      },
+      "128": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 31
+      },
+      "136": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 31
+      },
+      "152": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 31
+      },
+      "168": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 31
+      },
+      "176": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 31
+      },
+      "184": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 31
+      },
+      "192": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 31
+      },
+      "208": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 31
+      },
+      "216": {
+        "filename": "Callbacks.code",
+        "line": 98
+      },
+      "232": {
+        "filename": "Callbacks.code",
+        "line": 101
+      },
+      "240": {
+        "filename": "Callbacks.code",
+        "line": 102
+      },
+      "256": {
+        "filename": "Callbacks.code",
+        "line": 105
+      }
+    },
+    "130b2ec8207d9274f0db4776933844c2163b38dc2bf3c224e8b472931ee797ea": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      }
+    },
+    "2090e366227d0b641a237e511980adb7c521c23327503e1fc395b0b54cb243dd": {
+      "0": {
+        "filename": "Callbacks.code",
+        "line": 261
+      },
+      "16": {
+        "filename": "Callbacks.code",
+        "line": 262
+      },
+      "24": {
+        "filename": "Callbacks.code",
+        "line": 263
+      },
+      "40": {
+        "filename": "Callbacks.code",
+        "line": 264
+      },
+      "56": {
+        "filename": "Callbacks.code",
+        "line": 265
+      },
+      "72": {
+        "filename": "Callbacks.code",
+        "line": 266
+      },
+      "80": {
+        "filename": "Callbacks.code",
+        "line": 267
+      },
+      "96": {
+        "filename": "Callbacks.code",
+        "line": 268
+      },
+      "104": {
+        "filename": "Callbacks.code",
+        "line": 269
+      },
+      "120": {
+        "filename": "Callbacks.code",
+        "line": 270
+      },
+      "128": {
+        "filename": "Callbacks.code",
+        "line": 271
+      },
+      "136": {
+        "filename": "Callbacks.code",
+        "line": 272
+      },
+      "152": {
+        "filename": "Callbacks.code",
+        "line": 273
+      },
+      "168": {
+        "filename": "Callbacks.code",
+        "line": 274
+      },
+      "184": {
+        "filename": "Callbacks.code",
+        "line": 275
+      },
+      "192": {
+        "filename": "Callbacks.code",
+        "line": 276
+      },
+      "216": {
+        "filename": "Callbacks.code",
+        "line": 278
+      },
+      "224": {
+        "filename": "Callbacks.code",
+        "line": 279
+      },
+      "240": {
+        "filename": "Callbacks.code",
+        "line": 280
+      },
+      "256": {
+        "filename": "Callbacks.code",
+        "line": 281
+      },
+      "272": {
+        "filename": "Callbacks.code",
+        "line": 282
+      },
+      "288": {
+        "filename": "Callbacks.code",
+        "line": 283
+      },
+      "312": {
+        "filename": "Callbacks.code",
+        "line": 284
+      },
+      "328": {
+        "filename": "Callbacks.code",
+        "line": 285
+      },
+      "336": {
+        "filename": "Callbacks.code",
+        "line": 286
+      },
+      "352": {
+        "filename": "Callbacks.code",
+        "line": 288
+      }
+    },
+    "222ffdf3ce642ab49b57917dcb3e83d097262cd7af792bb13505b6e1229dde0c": {
+      "0": {
+        "filename": "Callbacks.code",
+        "line": 248
+      },
+      "16": {
+        "filename": "Callbacks.code",
+        "line": 249
+      },
+      "24": {
+        "filename": "Callbacks.code",
+        "line": 250
+      },
+      "40": {
+        "filename": "Callbacks.code",
+        "line": 251
+      },
+      "56": {
+        "filename": "Callbacks.code",
+        "line": 252
+      },
+      "72": {
+        "filename": "Callbacks.code",
+        "line": 253
+      },
+      "80": {
+        "filename": "Callbacks.code",
+        "line": 254
+      },
+      "96": {
+        "filename": "Callbacks.code",
+        "line": 255
+      },
+      "104": {
+        "filename": "Callbacks.code",
+        "line": 256
+      },
+      "120": {
+        "filename": "Callbacks.code",
+        "line": 257
+      },
+      "136": {
+        "filename": "Callbacks.code",
+        "line": 258
+      }
+    },
+    "4a3250e90ea8c61e91df2fe61e8a13e8ee8d6f1d52aad5c2d176c66f4dd4b232": {
+      "0": {
+        "filename": "<entry-selector>",
+        "line": 1
+      },
+      "8": {
+        "filename": "<entry-selector>",
+        "line": 2
+      },
+      "24": {
+        "filename": "<entry-selector>",
+        "line": 3
+      },
+      "32": {
+        "filename": "<entry-selector>",
+        "line": 4
+      },
+      "48": {
+        "filename": "<entry-selector>",
+        "line": 5
+      },
+      "56": {
+        "filename": "<entry-selector>",
+        "line": 6
+      },
+      "72": {
+        "filename": "<entry-selector>",
+        "line": 7
+      },
+      "88": {
+        "filename": "<entry-selector>",
+        "line": 8
+      },
+      "96": {
+        "filename": "<entry-selector>",
+        "line": 9
+      },
+      "112": {
+        "filename": "<entry-selector>",
+        "line": 10
+      },
+      "128": {
+        "filename": "<entry-selector>",
+        "line": 11
+      }
+    },
+    "73867e37ec1ffb9ecb087a37d71892215b0b805a73c127da219a28729084e2e0": {
+      "0": {
+        "filename": "<internal-selector>",
+        "line": 1
+      },
+      "24": {
+        "filename": "<internal-selector>",
+        "line": 2
+      }
+    },
+    "7747f174c77fa0c618ef65186a754259b188be2e7716665c61082284827d86b0": {
+      "0": {
+        "filename": "Callbacks.code",
+        "line": 4
+      },
+      "8": {
+        "filename": "Callbacks.code",
+        "line": 5
+      },
+      "24": {
+        "filename": "Callbacks.code",
+        "line": 6
+      },
+      "32": {
+        "filename": "Callbacks.code",
+        "line": 7
+      },
+      "48": {
+        "filename": "Callbacks.code",
+        "line": 10
+      },
+      "64": {
+        "filename": "Callbacks.code",
+        "line": 11
+      },
+      "80": {
+        "filename": "Callbacks.code",
+        "line": 12
+      },
+      "88": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 19
+      },
+      "104": {
+        "filename": "Callbacks.code",
+        "line": 16
+      },
+      "120": {
+        "filename": "Callbacks.code",
+        "line": 19
+      }
+    },
+    "7990572463331ff63bf2064af1806a35a950de7e82e068463189a38856e76328": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 31
+      }
+    },
+    "8066acdd10349216771f7c5600c84d28677c953963847fa817e043c4600afea3": {
+      "0": {
+        "filename": "Callbacks.code",
+        "line": 440
+      },
+      "8": {
+        "filename": "Callbacks.code",
+        "line": 441
+      },
+      "56": {
+        "filename": "Callbacks.code",
+        "line": 442
+      },
+      "64": {
+        "filename": "Callbacks.code",
+        "line": 443
+      },
+      "80": {
+        "filename": "Callbacks.code",
+        "line": 446
+      },
+      "88": {
+        "filename": "Callbacks.code",
+        "line": 447
+      },
+      "136": {
+        "filename": "Callbacks.code",
+        "line": 448
+      },
+      "144": {
+        "filename": "Callbacks.code",
+        "line": 449
+      }
+    },
+    "a8386783c6c9a63b1a52a9c45e06b78a428dc9140bc41275cfe736a263976b96": {
+      "0": {
+        "filename": "Callbacks.code",
+        "line": 117
+      },
+      "8": {
+        "filename": "Callbacks.code",
+        "line": 118
+      },
+      "24": {
+        "filename": "Callbacks.code",
+        "line": 119
+      },
+      "48": {
+        "filename": "Callbacks.code",
+        "line": 120
+      },
+      "64": {
+        "filename": "Callbacks.code",
+        "line": 121
+      },
+      "72": {
+        "filename": "Callbacks.code",
+        "line": 122
+      },
+      "88": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 37
+      },
+      "96": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 37
+      },
+      "104": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 37
+      },
+      "112": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 37
+      },
+      "120": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 37
+      },
+      "128": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 37
+      },
+      "136": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 37
+      },
+      "152": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 37
+      },
+      "168": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 37
+      },
+      "176": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 37
+      },
+      "184": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 37
+      },
+      "192": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 37
+      },
+      "208": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 37
+      },
+      "216": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 37
+      },
+      "224": {
+        "filename": "Callbacks.code",
+        "line": 142
+      },
+      "240": {
+        "filename": "Callbacks.code",
+        "line": 145
+      },
+      "248": {
+        "filename": "Callbacks.code",
+        "line": 146
+      },
+      "264": {
+        "filename": "Callbacks.code",
+        "line": 149
+      }
+    },
+    "b0966876ea7bde9bb290bdde27ee5efdd1ca0835afc5512ee2b02b606dcdca25": {
+      "0": {
+        "filename": "Callbacks.code",
+        "line": 293
+      },
+      "16": {
+        "filename": "Callbacks.code",
+        "line": 294
+      },
+      "32": {
+        "filename": "Callbacks.code",
+        "line": 295
+      },
+      "48": {
+        "filename": "Callbacks.code",
+        "line": 296
+      },
+      "56": {
+        "filename": "Callbacks.code",
+        "line": 297
+      },
+      "72": {
+        "filename": "Callbacks.code",
+        "line": 298
+      },
+      "88": {
+        "filename": "Callbacks.code",
+        "line": 299
+      },
+      "104": {
+        "filename": "Callbacks.code",
+        "line": 300
+      },
+      "120": {
+        "filename": "Callbacks.code",
+        "line": 301
+      },
+      "128": {
+        "filename": "Callbacks.code",
+        "line": 302
+      }
+    },
+    "b63509a2340628bdd568441ad463e5dfc31a4028380ac991cdf61d5b6140afe7": {
+      "0": {
+        "filename": "Callbacks.code",
+        "line": 22
+      },
+      "8": {
+        "filename": "Callbacks.code",
+        "line": 23
+      },
+      "24": {
+        "filename": "Callbacks.code",
+        "line": 24
+      },
+      "48": {
+        "filename": "Callbacks.code",
+        "line": 25
+      },
+      "64": {
+        "filename": "Callbacks.code",
+        "line": 26
+      },
+      "72": {
+        "filename": "Callbacks.code",
+        "line": 27
+      },
+      "88": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "96": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "104": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "112": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "120": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "128": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "136": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "152": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "168": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "176": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "184": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "192": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "208": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "216": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "224": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "232": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "248": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "256": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "264": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "272": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "288": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "296": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 22
+      },
+      "304": {
+        "filename": "Callbacks.code",
+        "line": 55
+      },
+      "320": {
+        "filename": "Callbacks.code",
+        "line": 58
+      },
+      "328": {
+        "filename": "Callbacks.code",
+        "line": 59
+      },
+      "344": {
+        "filename": "Callbacks.code",
+        "line": 62
+      }
+    },
+    "b777fc6ae488ff4b1bca3c816c5f7da8af1e7eff032d4dc805541892911d64ae": {
+      "0": {
+        "filename": "Callbacks.code",
+        "line": 407
+      },
+      "8": {
+        "filename": "Callbacks.code",
+        "line": 408
+      },
+      "56": {
+        "filename": "Callbacks.code",
+        "line": 409
+      },
+      "64": {
+        "filename": "Callbacks.code",
+        "line": 410
+      },
+      "80": {
+        "filename": "Callbacks.code",
+        "line": 436
+      },
+      "88": {
+        "filename": "Callbacks.code",
+        "line": 437
+      },
+      "136": {
+        "filename": "Callbacks.code",
+        "line": 438
+      },
+      "144": {
+        "filename": "Callbacks.code",
+        "line": 439
+      }
+    },
+    "bfac2f673fb0a9a11b1adbb1f3af4e1b043411e2896b2d04f8b80dfbb8cdc8d3": {
+      "0": {
+        "filename": "Callbacks.code",
+        "line": 209
+      },
+      "8": {
+        "filename": "Callbacks.code",
+        "line": 210
+      },
+      "24": {
+        "filename": "Callbacks.code",
+        "line": 211
+      },
+      "48": {
+        "filename": "Callbacks.code",
+        "line": 212
+      },
+      "64": {
+        "filename": "Callbacks.code",
+        "line": 213
+      },
+      "72": {
+        "filename": "Callbacks.code",
+        "line": 214
+      },
+      "88": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 52
+      },
+      "96": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 52
+      },
+      "104": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 52
+      },
+      "112": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 52
+      },
+      "120": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 52
+      },
+      "128": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 52
+      },
+      "136": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 52
+      },
+      "152": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 52
+      },
+      "168": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 52
+      },
+      "176": {
+        "filename": "Callbacks.code",
+        "line": 229
+      },
+      "192": {
+        "filename": "Callbacks.code",
+        "line": 232
+      },
+      "200": {
+        "filename": "Callbacks.code",
+        "line": 233
+      },
+      "216": {
+        "filename": "Callbacks.code",
+        "line": 236
+      }
+    },
+    "d082360653755262835885e042ffb0365b56f18cdb074a101d3ea551406583e8": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 37
+      }
+    },
+    "d13b60b09a4c4147a703391e8e16c3759c8b20ad71ce9c0d354fff9a85eb0c8d": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 52
+      }
+    },
+    "e1a337209ced1d114cc9c354d3a2299e4ef6a6b5084638a702c048658705c874": {
+      "0": {
+        "filename": "Callbacks.code",
+        "line": 161
+      },
+      "8": {
+        "filename": "Callbacks.code",
+        "line": 162
+      },
+      "24": {
+        "filename": "Callbacks.code",
+        "line": 163
+      },
+      "48": {
+        "filename": "Callbacks.code",
+        "line": 164
+      },
+      "64": {
+        "filename": "Callbacks.code",
+        "line": 165
+      },
+      "72": {
+        "filename": "Callbacks.code",
+        "line": 166
+      },
+      "88": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      },
+      "96": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      },
+      "104": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      },
+      "112": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      },
+      "120": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      },
+      "128": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      },
+      "136": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      },
+      "152": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      },
+      "168": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      },
+      "176": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      },
+      "184": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      },
+      "192": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      },
+      "208": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      },
+      "216": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      },
+      "224": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      },
+      "232": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      },
+      "248": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      },
+      "256": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      },
+      "264": {
+        "filename": "Callbacks.code",
+        "line": 190
+      },
+      "280": {
+        "filename": "Callbacks.code",
+        "line": 193
+      },
+      "288": {
+        "filename": "Callbacks.code",
+        "line": 194
+      },
+      "304": {
+        "filename": "Callbacks.code",
+        "line": 197
+      }
+    },
+    "ef7a7229991cf78e184af5c6aac7e1228fc7c6791f23dfdfaf91be29d29ac51e": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/tests/Callbacks.tsol",
+        "line": 44
+      }
+    },
+    "f24e1e7aa04d89aad2945816b6e9b921f2b3892da9ba53e2383c148351b96d0c": {
+      "0": {
+        "filename": "Callbacks.code",
+        "line": 334
+      },
+      "16": {
+        "filename": "Callbacks.code",
+        "line": 335
+      }
+    },
+    "f2742dd0db8d112c62cb5a83fad76b15884b59ef7776c922df97acf9a9471425": {
+      "0": {
+        "filename": "Callbacks.code",
+        "line": 353
+      },
+      "16": {
+        "filename": "Callbacks.code",
+        "line": 354
+      },
+      "24": {
+        "filename": "Callbacks.code",
+        "line": 355
+      },
+      "40": {
+        "filename": "Callbacks.code",
+        "line": 356
+      },
+      "56": {
+        "filename": "Callbacks.code",
+        "line": 357
+      },
+      "72": {
+        "filename": "Callbacks.code",
+        "line": 358
+      },
+      "80": {
+        "filename": "Callbacks.code",
+        "line": 359
+      },
+      "96": {
+        "filename": "Callbacks.code",
+        "line": 362
+      },
+      "112": {
+        "filename": "Callbacks.code",
+        "line": 363
+      },
+      "120": {
+        "filename": "Callbacks.code",
+        "line": 364
+      },
+      "136": {
+        "filename": "Callbacks.code",
+        "line": 365
+      },
+      "152": {
+        "filename": "Callbacks.code",
+        "line": 366
+      },
+      "168": {
+        "filename": "Callbacks.code",
+        "line": 367
+      },
+      "176": {
+        "filename": "Callbacks.code",
+        "line": 368
+      },
+      "192": {
+        "filename": "Callbacks.code",
+        "line": 369
+      },
+      "200": {
+        "filename": "Callbacks.code",
+        "line": 370
+      },
+      "216": {
+        "filename": "Callbacks.code",
+        "line": 371
+      },
+      "224": {
+        "filename": "Callbacks.code",
+        "line": 372
+      },
+      "232": {
+        "filename": "Callbacks.code",
+        "line": 373
+      },
+      "248": {
+        "filename": "Callbacks.code",
+        "line": 374
+      },
+      "256": {
+        "filename": "Callbacks.code",
+        "line": 375
+      },
+      "264": {
+        "filename": "Callbacks.code",
+        "line": 377
+      },
+      "272": {
+        "filename": "Callbacks.code",
+        "line": 378
+      },
+      "280": {
+        "filename": "Callbacks.code",
+        "line": 379
+      },
+      "296": {
+        "filename": "Callbacks.code",
+        "line": 381
+      },
+      "304": {
+        "filename": "Callbacks.code",
+        "line": 382
+      },
+      "320": {
+        "filename": "Callbacks.code",
+        "line": 383
+      },
+      "336": {
+        "filename": "Callbacks.code",
+        "line": 385
+      },
+      "344": {
+        "filename": "Callbacks.code",
+        "line": 386
+      },
+      "360": {
+        "filename": "Callbacks.code",
+        "line": 387
+      },
+      "368": {
+        "filename": "Callbacks.code",
+        "line": 388
+      },
+      "384": {
+        "filename": "Callbacks.code",
+        "line": 390
+      },
+      "392": {
+        "filename": "Callbacks.code",
+        "line": 391
+      },
+      "408": {
+        "filename": "Callbacks.code",
+        "line": 392
+      },
+      "416": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "432": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "440": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "448": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "464": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "472": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "488": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "512": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "520": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "560": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "568": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "576": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "592": {
+        "filename": "stdlib.sol",
+        "line": 63
+      },
+      "608": {
+        "filename": "Callbacks.code",
+        "line": 394
+      },
+      "624": {
+        "filename": "Callbacks.code",
+        "line": 395
+      },
+      "632": {
+        "filename": "Callbacks.code",
+        "line": 396
+      },
+      "648": {
+        "filename": "Callbacks.code",
+        "line": 397
+      },
+      "656": {
+        "filename": "Callbacks.code",
+        "line": 398
+      },
+      "672": {
+        "filename": "Callbacks.code",
+        "line": 399
+      },
+      "688": {
+        "filename": "Callbacks.code",
+        "line": 400
+      },
+      "696": {
+        "filename": "Callbacks.code",
+        "line": 401
+      },
+      "712": {
+        "filename": "Callbacks.code",
+        "line": 404
+      }
+    },
+    "f35ac0b1c433692dede7a3c519dcf848856da857ee1d58ea3e2d8cea257c1dfc": {
+      "0": {
+        "filename": "Callbacks.code",
+        "line": 411
+      },
+      "8": {
+        "filename": "Callbacks.code",
+        "line": 412
+      },
+      "56": {
+        "filename": "Callbacks.code",
+        "line": 413
+      },
+      "64": {
+        "filename": "Callbacks.code",
+        "line": 414
+      },
+      "80": {
+        "filename": "Callbacks.code",
+        "line": 417
+      },
+      "88": {
+        "filename": "Callbacks.code",
+        "line": 418
+      },
+      "136": {
+        "filename": "Callbacks.code",
+        "line": 419
+      },
+      "144": {
+        "filename": "Callbacks.code",
+        "line": 420
+      },
+      "160": {
+        "filename": "Callbacks.code",
+        "line": 423
+      },
+      "168": {
+        "filename": "Callbacks.code",
+        "line": 424
+      },
+      "216": {
+        "filename": "Callbacks.code",
+        "line": 425
+      },
+      "224": {
+        "filename": "Callbacks.code",
+        "line": 426
+      },
+      "240": {
+        "filename": "Callbacks.code",
+        "line": 429
+      },
+      "248": {
+        "filename": "Callbacks.code",
+        "line": 430
+      },
+      "296": {
+        "filename": "Callbacks.code",
+        "line": 431
+      },
+      "304": {
+        "filename": "Callbacks.code",
+        "line": 432
+      }
+    },
+    "ff4654cb99d890d6cb00cb144b06562b8b3c76673a2153010e21bd3fadeaebb5": {
+      "0": {
+        "filename": "Callbacks.code",
+        "line": 321
+      },
+      "16": {
+        "filename": "Callbacks.code",
+        "line": 322
+      },
+      "24": {
+        "filename": "Callbacks.code",
+        "line": 323
+      },
+      "40": {
+        "filename": "Callbacks.code",
+        "line": 324
+      },
+      "56": {
+        "filename": "Callbacks.code",
+        "line": 325
+      },
+      "72": {
+        "filename": "Callbacks.code",
+        "line": 326
+      },
+      "80": {
+        "filename": "Callbacks.code",
+        "line": 327
+      },
+      "88": {
+        "filename": "Callbacks.code",
+        "line": 328
+      },
+      "112": {
+        "filename": "Callbacks.code",
+        "line": 329
+      },
+      "136": {
+        "filename": "Callbacks.code",
+        "line": 330
+      },
+      "144": {
+        "filename": "Callbacks.code",
+        "line": 331
+      },
+      "152": {
+        "filename": "Callbacks.code",
+        "line": 332
+      },
+      "168": {
+        "filename": "Callbacks.code",
+        "line": 333
+      },
+      "184": {
+        "filename": "Callbacks.code",
+        "line": 337
+      },
+      "192": {
+        "filename": "Callbacks.code",
+        "line": 338
+      },
+      "216": {
+        "filename": "Callbacks.code",
+        "line": 339
+      },
+      "232": {
+        "filename": "Callbacks.code",
+        "line": 340
+      },
+      "240": {
+        "filename": "Callbacks.code",
+        "line": 341
+      },
+      "256": {
+        "filename": "Callbacks.code",
+        "line": 345
+      },
+      "264": {
+        "filename": "Callbacks.code",
+        "line": 346
+      },
+      "280": {
+        "filename": "Callbacks.code",
+        "line": 349
+      }
+    }
+  }
+}

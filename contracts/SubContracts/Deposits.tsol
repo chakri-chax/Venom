@@ -1,0 +1,93 @@
+pragma ever-solidity >=0.62.0;
+
+pragma AbiHeader expire;
+pragma AbiHeader time;
+pragma AbiHeader pubkey;
+
+import "@broxus/tip4/contracts/TIP4_2_2/interfaces/ITIP4_2_2Collection.tsol";
+
+import "@broxus/tip4/contracts/TIP4_3/interfaces/ITIP4_3Collection.tsol";
+
+import "@broxus/contracts/contracts/access/ExternalOwner.tsol";
+import "@broxus/contracts/contracts/access/InternalOwner.tsol";
+
+import "../TIP3Root/contracts/interfaces/ITokenRoot.tsol";
+import "../TIP3Root/contracts/interfaces/ITokenWallet.tsol";
+
+import "../TIP3Root/contracts/interfaces/IAcceptTokensTransferCallback.tsol";
+
+contract Deposits is IAcceptTokensTransferCallback {
+	mapping(address => address) public rootToWallet;
+
+	address public root;
+	address public wallet;
+
+	event DeployedWallet(address contractTokenWallet);
+	event ThankYou(address sender, uint128 amount);
+
+	constructor() public {
+		tvm.accept();
+	}
+
+	function deposit_admin(
+		address[] users,
+		uint256[] daiAmounts,
+		address tokenIn,
+		address userTokenWallet
+	) public {
+		root = tokenIn;
+		uint256 _totalAmount = 0;
+		uint256 n = daiAmounts.length;
+
+		for (uint256 i = 0; i < n; i++) {
+			require(daiAmounts[i] > 0, 101);
+			require(users[i] != address(0), 102);
+
+			_totalAmount += daiAmounts[i];
+		}
+		TvmCell e;
+		address tokenWallet = rootToWallet[tokenIn];
+
+		ITokenRoot(tokenIn).deployWallet{
+			value: 2_000_000_000,
+			callback: onDeployWallet
+		}(this, 1_000_000_000);
+		emit DeployedWallet(msg.sender);
+		ITokenWallet(userTokenWallet).transfer{
+			value: 0,
+			flag: 64
+			
+		}(uint128(_totalAmount + 1), address(this), 0.1 ever, msg.sender, true, e);
+	}
+
+	function onDeployWallet(address _wallet) public {
+		require(msg.sender == root, 201);
+		wallet = _wallet;
+	}
+
+	function onAcceptTokensTransfer(
+		address tokenRoot,
+		uint128 amount,
+		address sender,
+		address senderWallet,
+		address remainingGasTo,
+		TvmCell payload
+	) external override {
+		require(senderWallet == wallet, 202);
+		rootToWallet[tokenRoot] = msg.sender;
+		emit ThankYou(sender, amount);
+		remainingGasTo.transfer({value: 0, flag: 64, bounce: false});
+		tokenRoot;
+		remainingGasTo;
+		payload;
+	}
+
+	function getTokenRoot(address tokenRoot) public returns (address) {
+		return rootToWallet[tokenRoot] = msg.sender;
+	}
+
+	function getTvm(TvmCell tvmData) public view returns (TvmCell) {
+		TvmCell e = TvmCell(tvmData);
+		return e;
+	}
+}

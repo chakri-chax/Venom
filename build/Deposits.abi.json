@@ -1,0 +1,117 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "deposit_admin",
+			"inputs": [
+				{"name":"users","type":"address[]"},
+				{"name":"daiAmounts","type":"uint256[]"},
+				{"name":"tokenIn","type":"address"},
+				{"name":"userTokenWallet","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "onDeployWallet",
+			"inputs": [
+				{"name":"_wallet","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "onAcceptTokensTransfer",
+			"inputs": [
+				{"name":"tokenRoot","type":"address"},
+				{"name":"amount","type":"uint128"},
+				{"name":"sender","type":"address"},
+				{"name":"senderWallet","type":"address"},
+				{"name":"remainingGasTo","type":"address"},
+				{"name":"payload","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getTokenRoot",
+			"inputs": [
+				{"name":"tokenRoot","type":"address"}
+			],
+			"outputs": [
+				{"name":"value0","type":"address"}
+			]
+		},
+		{
+			"name": "getTvm",
+			"inputs": [
+				{"name":"tvmData","type":"cell"}
+			],
+			"outputs": [
+				{"name":"value0","type":"cell"}
+			]
+		},
+		{
+			"name": "rootToWallet",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"rootToWallet","type":"map(address,address)"}
+			]
+		},
+		{
+			"name": "root",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"root","type":"address"}
+			]
+		},
+		{
+			"name": "wallet",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"wallet","type":"address"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+		{
+			"name": "DeployedWallet",
+			"inputs": [
+				{"name":"contractTokenWallet","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "ThankYou",
+			"inputs": [
+				{"name":"sender","type":"address"},
+				{"name":"amount","type":"uint128"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"rootToWallet","type":"map(address,address)"},
+		{"name":"root","type":"address"},
+		{"name":"wallet","type":"address"}
+	]
+}

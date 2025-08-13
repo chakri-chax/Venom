@@ -1382,11 +1382,11 @@
     },
     "1991dc5e54347021b7011bce70916ffa7227f9e324a8db16ebd73a5694867b4c": {
       "0": {
-        "filename": "../contracts/Dao/Nft.tsol",
+        "filename": "../contracts/Nft.tsol",
         "line": 43
       },
       "8": {
-        "filename": "../contracts/Dao/Nft.tsol",
+        "filename": "../contracts/Nft.tsol",
         "line": 43
       },
       "24": {
@@ -2784,11 +2784,11 @@
     },
     "53b29ec87af84dd4f00f927965e3d5c8e1b57dcaba97868338139039ffe35ac8": {
       "0": {
-        "filename": "../contracts/Dao/Nft.tsol",
+        "filename": "../contracts/Nft.tsol",
         "line": 60
       },
       "8": {
-        "filename": "../contracts/Dao/Nft.tsol",
+        "filename": "../contracts/Nft.tsol",
         "line": 60
       },
       "24": {
@@ -2860,8 +2860,8 @@
     },
     "61ab4641fa30d9310391025086eec65d200d79268e1b7cd402565e01ba64be3c": {
       "0": {
-        "filename": "Nft.code",
-        "line": 2151
+        "filename": "../node_modules/@broxus/tip4/contracts/TIP4_3/TIP4_3Nft.tsol",
+        "line": 96
       }
     },
     "62fb886539d879f9a7c7f96f05342e50b8888ff02a94ea4aa21db815eb7bcf92": {
@@ -4146,11 +4146,11 @@
     },
     "903395859dde2ccda5610dde37c5d238f8d73d4ff9b51e4d866179367ef57e90": {
       "0": {
-        "filename": "../contracts/Dao/Nft.tsol",
+        "filename": "../contracts/Nft.tsol",
         "line": 69
       },
       "16": {
-        "filename": "../contracts/Dao/Nft.tsol",
+        "filename": "../contracts/Nft.tsol",
         "line": 69
       }
     },
@@ -4923,11 +4923,11 @@
     },
     "b0ed73be1c1adddbdb90e6eb32145185239a64de07c2e709a7d215b8cc28a278": {
       "0": {
-        "filename": "../contracts/Dao/Nft.tsol",
+        "filename": "../contracts/Nft.tsol",
         "line": 51
       },
       "16": {
-        "filename": "../contracts/Dao/Nft.tsol",
+        "filename": "../contracts/Nft.tsol",
         "line": 51
       }
     },
@@ -5519,7 +5519,7 @@
     },
     "d082360653755262835885e042ffb0365b56f18cdb074a101d3ea551406583e8": {
       "0": {
-        "filename": "../contracts/Dao/Nft.tsol",
+        "filename": "../contracts/Nft.tsol",
         "line": 78
       }
     },

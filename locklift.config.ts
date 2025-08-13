@@ -18,7 +18,7 @@ declare global {
   const locklift: import("locklift").Locklift<FactorySource>;
 }
 
-const LOCAL_NETWORK_ENDPOINT = process.env.NETWORK_ENDPOINT || "http://localhost/graphql";
+const LOCAL_NETWORK_ENDPOINT ="http://localhost/graphql";
 
 const VENOM_TESTNET_ENDPOINT = process.env.VENOM_TESTNET_ENDPOINT || "https://jrpc-devnet.venom.foundation/";
 
@@ -39,6 +39,9 @@ const config: LockliftConfig = {
     // externalContracts: {
     //   "./precompiled/": ["Index", "IndexBasis"],
     // },
+    externalContracts: {
+      "node_modules/@broxus/tip3/build": ["TokenRoot", "TokenWallet"],
+    },
     externalContractsArtifacts: {
       "precompiled": ['Index', 'IndexBasis'],
       "node_modules/@broxus/tip3/build": ["TokenRoot", "TokenWallet"],
@@ -97,7 +100,7 @@ const config: LockliftConfig = {
       keys: {
         // Use everdev to generate your phrase
         // !!! Never commit it in your repos !!!
-       // phrase: "action inject penalty envelope rabbit element slim tornado dinner pizza off blood",
+       phrase: "action inject penalty envelope rabbit element slim tornado dinner pizza off blood",
         amount: 20,
       },
     },
@@ -140,6 +143,49 @@ const config: LockliftConfig = {
         // Your mainnet key
         phrase: "push finger naive equip onion rely hundred aisle upgrade seed dog budget",
         amount: 20,
+      },
+      fork: {
+        contracts: [
+          {
+            address: "0:56a3f53b5d07da8266c38eb7b4fe1b0e3f3dac6b88ef23a1634d4b9bd4eb2bbe",
+            abi: {
+              path: "external_abi/DexPair.abi.json",
+            },
+          },
+          {
+            codeHash: "b91fd2506cbcf7d973347f5fe7240c93966153d041e86c5036f4cb8109d54983",
+            abi: {
+              path: "external_abi/DexTokenVault.abi.json",
+            },
+          },
+          {
+            codeHash: "3f6602aa1baa20ae46859741cc2338f866ffa54dd8e737af39035aac90b2b7d9",
+            abi: {
+              path: "external_abi/TokenWallet.abi.json",
+            },
+          },
+          {
+            codeHash: "dea8fa8b886d2d8ac9f55274d96762a0308239d3a52c6788ddc03218258379ac",
+            abi: {
+              path: "external_abi/VaultTokenWallet.abi.json",
+            },
+          },
+          {
+            abi: { path: "external_abi/DexRoot.abi.json" },
+            address: "0:8befb8324b036876ac5da268570031c10b0baa5c26bc7f69af17b2db20fc09b7",
+          },
+        ],
+        source: {
+          type: "live",
+          connection: {
+            id: 1000,
+            type: "jrpc",
+            group: "dev",
+            data: {
+              endpoint: "https://jrpc.venom.foundation",
+            },
+          },
+        },
       },
      
     },

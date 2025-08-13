@@ -1,0 +1,3264 @@
+{
+  "map": {
+    "0584c93026d7fb3f4d75b285c0f714398cd9ec192dcabb6cab8aabe177b730ef": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 1114
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 1115
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 1116
+      },
+      "64": {
+        "filename": "Selector.code",
+        "line": 1117
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 1120
+      },
+      "88": {
+        "filename": "Selector.code",
+        "line": 1121
+      },
+      "136": {
+        "filename": "Selector.code",
+        "line": 1122
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 1123
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 1126
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 1127
+      },
+      "216": {
+        "filename": "Selector.code",
+        "line": 1128
+      },
+      "224": {
+        "filename": "Selector.code",
+        "line": 1129
+      },
+      "240": {
+        "filename": "Selector.code",
+        "line": 1132
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 1133
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 1134
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 1135
+      }
+    },
+    "0ede0b52281698b51178cb2cdd771457d29da3f4dada58f2ac4ecb1dc579379b": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 1056
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 1057
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 1058
+      },
+      "64": {
+        "filename": "Selector.code",
+        "line": 1059
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 1062
+      },
+      "88": {
+        "filename": "Selector.code",
+        "line": 1063
+      },
+      "136": {
+        "filename": "Selector.code",
+        "line": 1064
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 1065
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 1068
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 1069
+      },
+      "216": {
+        "filename": "Selector.code",
+        "line": 1070
+      },
+      "224": {
+        "filename": "Selector.code",
+        "line": 1071
+      },
+      "240": {
+        "filename": "Selector.code",
+        "line": 1074
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 1075
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 1076
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 1077
+      }
+    },
+    "12f1bbabaf3305a84a299920fe230361e1f7a3570e06615f1ea0dee007d05f07": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 158
+      }
+    },
+    "150c48e9a50c961b93a64b875c0227c5be9b5b819c9c071902f216399d679255": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 618
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 619
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 620
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 191
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 624
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 627
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 628
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 629
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 630
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 631
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 632
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 633
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 634
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 635
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 636
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 637
+      },
+      "200": {
+        "filename": "Selector.code",
+        "line": 638
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 639
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 640
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 641
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 642
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 643
+      },
+      "320": {
+        "filename": "Selector.code",
+        "line": 645
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 646
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 648
+      },
+      "344": {
+        "filename": "Selector.code",
+        "line": 649
+      },
+      "360": {
+        "filename": "Selector.code",
+        "line": 652
+      }
+    },
+    "1be6cac4918e82011d8c41e2b6b09a5a15734f5706fff9a48a2fc7d221ab1e9d": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 116
+      }
+    },
+    "2228a4f6900c1ef56fd24c8404ab110f39911fa4d2c20310b82afd3187438adb": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 1173
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 1174
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 1175
+      },
+      "64": {
+        "filename": "Selector.code",
+        "line": 1176
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 1179
+      },
+      "88": {
+        "filename": "Selector.code",
+        "line": 1180
+      },
+      "136": {
+        "filename": "Selector.code",
+        "line": 1181
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 1182
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 1185
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 1186
+      },
+      "216": {
+        "filename": "Selector.code",
+        "line": 1187
+      },
+      "224": {
+        "filename": "Selector.code",
+        "line": 1188
+      }
+    },
+    "2a436aac2fc122eeef6dc02a8654bd0124146dfa767e1896f5d9ff895dea0947": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 263
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 263
+      },
+      "88": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 263
+      },
+      "96": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 263
+      },
+      "144": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 263
+      },
+      "152": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 263
+      },
+      "200": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 263
+      },
+      "208": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 263
+      },
+      "256": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 263
+      }
+    },
+    "2d2a6d35ea33a801ca1e30cc5055b3184aee351d2495441aec88ad06a28ddcbb": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 194
+      }
+    },
+    "2d93c9b82ba4bd9064bdc97d3a08011e0904989549f19cb9ba3e29a6220ed792": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 983
+      },
+      "16": {
+        "filename": "Selector.code",
+        "line": 984
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 985
+      },
+      "40": {
+        "filename": "Selector.code",
+        "line": 986
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 987
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 988
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 989
+      },
+      "88": {
+        "filename": "Selector.code",
+        "line": 990
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 991
+      },
+      "136": {
+        "filename": "Selector.code",
+        "line": 992
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 993
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 994
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 995
+      },
+      "184": {
+        "filename": "Selector.code",
+        "line": 999
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 1000
+      },
+      "216": {
+        "filename": "Selector.code",
+        "line": 1001
+      },
+      "232": {
+        "filename": "Selector.code",
+        "line": 1002
+      },
+      "240": {
+        "filename": "Selector.code",
+        "line": 1003
+      },
+      "256": {
+        "filename": "Selector.code",
+        "line": 1007
+      },
+      "264": {
+        "filename": "Selector.code",
+        "line": 1008
+      },
+      "280": {
+        "filename": "Selector.code",
+        "line": 1011
+      }
+    },
+    "2ffe6fe00672931001f8c71927983098612f585766686e0d530d5d63b3bbe1b9": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 910
+      },
+      "16": {
+        "filename": "Selector.code",
+        "line": 911
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 912
+      },
+      "40": {
+        "filename": "Selector.code",
+        "line": 913
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 914
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 915
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 916
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 917
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 918
+      },
+      "120": {
+        "filename": "Selector.code",
+        "line": 919
+      },
+      "136": {
+        "filename": "Selector.code",
+        "line": 920
+      }
+    },
+    "310f70ae51306946d5183ec18024431cee4ed86e4076bdf2f4bb392806c35b0f": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 758
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 759
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 760
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 227
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 764
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 767
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 768
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 769
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 770
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 771
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 772
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 773
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 774
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 775
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 776
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 777
+      },
+      "200": {
+        "filename": "Selector.code",
+        "line": 778
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 779
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 780
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 781
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 782
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 783
+      },
+      "320": {
+        "filename": "Selector.code",
+        "line": 785
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 786
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 788
+      },
+      "344": {
+        "filename": "Selector.code",
+        "line": 789
+      },
+      "360": {
+        "filename": "Selector.code",
+        "line": 792
+      }
+    },
+    "35d5996bb392b1643852cbd40bf7d02ca62522083630053ab077e9ab49a2aa8d": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 1143
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 1144
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 1145
+      },
+      "64": {
+        "filename": "Selector.code",
+        "line": 1146
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 1149
+      },
+      "88": {
+        "filename": "Selector.code",
+        "line": 1150
+      },
+      "136": {
+        "filename": "Selector.code",
+        "line": 1151
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 1152
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 1155
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 1156
+      },
+      "216": {
+        "filename": "Selector.code",
+        "line": 1157
+      },
+      "224": {
+        "filename": "Selector.code",
+        "line": 1158
+      },
+      "240": {
+        "filename": "Selector.code",
+        "line": 1161
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 1162
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 1163
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 1164
+      }
+    },
+    "38621236b4c6eb669895979cd0f6e37668e8cbbad5852bd2b56fce6b17a6fd0e": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 166
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 167
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 168
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 70
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 172
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 175
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 176
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 177
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 178
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 179
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 180
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 181
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 182
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 183
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 184
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 185
+      },
+      "200": {
+        "filename": "Selector.code",
+        "line": 186
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 187
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 188
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 189
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 190
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 191
+      },
+      "320": {
+        "filename": "Selector.code",
+        "line": 193
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 194
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 196
+      },
+      "344": {
+        "filename": "Selector.code",
+        "line": 197
+      },
+      "360": {
+        "filename": "Selector.code",
+        "line": 200
+      }
+    },
+    "3cbed5acd7a44992d359c8e6b73f93d176f17f70bf7545a2c3178f2018904a13": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 42
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 42
+      },
+      "56": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 42
+      }
+    },
+    "3d0f0f4523b33c2e6e825ff9bcd073afc995966d05f94cfac8682bd952ab8436": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 205
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 205
+      },
+      "96": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 205
+      }
+    },
+    "407af0636a00eff2156ed0706e2e42cd5cbd2b93ff7420fc04956bd75cb11d41": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 374
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 375
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 376
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 125
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 380
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 383
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 384
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 385
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 386
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 387
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 388
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 389
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 390
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 391
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 392
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 393
+      },
+      "200": {
+        "filename": "Selector.code",
+        "line": 394
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 395
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 396
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 397
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 398
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 399
+      },
+      "320": {
+        "filename": "Selector.code",
+        "line": 401
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 402
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 404
+      },
+      "344": {
+        "filename": "Selector.code",
+        "line": 405
+      },
+      "360": {
+        "filename": "Selector.code",
+        "line": 408
+      }
+    },
+    "42cebf5c0c23fc20258e12b43e7944a9c2c90a83b352fccef5c0bce60f45ab18": {
+      "0": {
+        "filename": "<entry-selector>",
+        "line": 1
+      },
+      "8": {
+        "filename": "<entry-selector>",
+        "line": 2
+      },
+      "24": {
+        "filename": "<entry-selector>",
+        "line": 3
+      },
+      "32": {
+        "filename": "<entry-selector>",
+        "line": 4
+      },
+      "48": {
+        "filename": "<entry-selector>",
+        "line": 5
+      },
+      "56": {
+        "filename": "<entry-selector>",
+        "line": 6
+      },
+      "72": {
+        "filename": "<entry-selector>",
+        "line": 7
+      },
+      "88": {
+        "filename": "<entry-selector>",
+        "line": 8
+      },
+      "96": {
+        "filename": "<entry-selector>",
+        "line": 9
+      },
+      "112": {
+        "filename": "<entry-selector>",
+        "line": 10
+      },
+      "128": {
+        "filename": "<entry-selector>",
+        "line": 11
+      }
+    },
+    "4aa969e4243d7631c62a56ba5622dba02fec7fb9c2b68b7c8f3b429205a35bc2": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 224
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 225
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 226
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 89
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 230
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 233
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 234
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 235
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 236
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 237
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 238
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 239
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 240
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 241
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 242
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 243
+      },
+      "200": {
+        "filename": "Selector.code",
+        "line": 244
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 245
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 246
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 247
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 248
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 249
+      },
+      "320": {
+        "filename": "Selector.code",
+        "line": 251
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 252
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 254
+      },
+      "344": {
+        "filename": "Selector.code",
+        "line": 255
+      },
+      "360": {
+        "filename": "Selector.code",
+        "line": 258
+      }
+    },
+    "4c2f09baffbc27e74d318c9187d91061766709f4657655f2d9db62315631c691": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 51
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 51
+      },
+      "56": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 51
+      }
+    },
+    "5a8bbbe0707f13e61f0a87956817308b511f97675a063109507f5265e97ce25a": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 106
+      }
+    },
+    "6106e9b0411a424b9a71a6ed5a7dc25949dca4d50452e4b67ed326446904222d": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 426
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 427
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 428
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 141
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 432
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 435
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 436
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 437
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 438
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 439
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 440
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 441
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 442
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 443
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 444
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 445
+      },
+      "200": {
+        "filename": "Selector.code",
+        "line": 446
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 447
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 448
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 449
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 450
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 451
+      },
+      "320": {
+        "filename": "Selector.code",
+        "line": 453
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 454
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 456
+      },
+      "344": {
+        "filename": "Selector.code",
+        "line": 457
+      },
+      "360": {
+        "filename": "Selector.code",
+        "line": 460
+      }
+    },
+    "6455948b5cf500109b0c98c958385a77a4d019ddd78a1d2af4a925bb471c9ca2": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 92
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 92
+      },
+      "96": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 92
+      },
+      "104": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 92
+      },
+      "152": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 92
+      },
+      "160": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 92
+      },
+      "176": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 92
+      },
+      "184": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 92
+      },
+      "200": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 92
+      }
+    },
+    "645aae7e35e4b8f39e1a8adae5320f24317d483fedf806d78e3c12c1685c8ae3": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 476
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 477
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 478
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 155
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 482
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 485
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 486
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 487
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 488
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 489
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 490
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 491
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 492
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 493
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 494
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 495
+      },
+      "200": {
+        "filename": "Selector.code",
+        "line": 496
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 497
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 498
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 499
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 500
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 501
+      },
+      "320": {
+        "filename": "Selector.code",
+        "line": 503
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 504
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 506
+      },
+      "344": {
+        "filename": "Selector.code",
+        "line": 507
+      },
+      "360": {
+        "filename": "Selector.code",
+        "line": 510
+      }
+    },
+    "665da0e0e3df2108da46e6895ba679e4c615588375a67db318f2912c154f6863": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 1015
+      },
+      "16": {
+        "filename": "Selector.code",
+        "line": 1016
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 1017
+      },
+      "40": {
+        "filename": "Selector.code",
+        "line": 1018
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 1019
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 1020
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 1021
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 1024
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 1025
+      },
+      "120": {
+        "filename": "Selector.code",
+        "line": 1026
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 1027
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 1028
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 1029
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 1030
+      },
+      "184": {
+        "filename": "Selector.code",
+        "line": 1031
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 1032
+      },
+      "208": {
+        "filename": "Selector.code",
+        "line": 1033
+      },
+      "224": {
+        "filename": "Selector.code",
+        "line": 1034
+      },
+      "240": {
+        "filename": "Selector.code",
+        "line": 1036
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 1037
+      },
+      "264": {
+        "filename": "Selector.code",
+        "line": 1038
+      },
+      "272": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "288": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "296": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "304": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "320": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "328": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "344": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "368": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "376": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "416": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "424": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "432": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "448": {
+        "filename": "stdlib.sol",
+        "line": 63
+      },
+      "464": {
+        "filename": "Selector.code",
+        "line": 1040
+      },
+      "480": {
+        "filename": "Selector.code",
+        "line": 1041
+      },
+      "488": {
+        "filename": "Selector.code",
+        "line": 1042
+      },
+      "504": {
+        "filename": "Selector.code",
+        "line": 1045
+      }
+    },
+    "6c6b1426af500a792794a09535da204fc8291ec7b468f58b4ab99ca6e07c336a": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 282
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 283
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 284
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 103
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 288
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 291
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 292
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 293
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 294
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 295
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 296
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 297
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 298
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 299
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 300
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 301
+      },
+      "200": {
+        "filename": "Selector.code",
+        "line": 302
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 303
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 304
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 305
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 306
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 307
+      },
+      "320": {
+        "filename": "Selector.code",
+        "line": 309
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 310
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 312
+      },
+      "344": {
+        "filename": "Selector.code",
+        "line": 313
+      },
+      "360": {
+        "filename": "Selector.code",
+        "line": 316
+      }
+    },
+    "73867e37ec1ffb9ecb087a37d71892215b0b805a73c127da219a28729084e2e0": {
+      "0": {
+        "filename": "<internal-selector>",
+        "line": 1
+      },
+      "24": {
+        "filename": "<internal-selector>",
+        "line": 2
+      }
+    },
+    "750b03e85e27980cd3cbb71beebff36f1c9f8338293d2fc4553a826dc2d818fa": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 22
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 23
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 24
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 40
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 28
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 31
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 32
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 33
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 34
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 35
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 36
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 37
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 38
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 39
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 40
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 41
+      },
+      "200": {
+        "filename": "Selector.code",
+        "line": 42
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 43
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 44
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 45
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 46
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 47
+      },
+      "320": {
+        "filename": "Selector.code",
+        "line": 49
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 50
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 52
+      },
+      "344": {
+        "filename": "Selector.code",
+        "line": 53
+      },
+      "360": {
+        "filename": "Selector.code",
+        "line": 56
+      }
+    },
+    "80ed2f5c951bf1d81b70eac9751bc19dbebf240a92633b6fd064d2d7a93ee1d0": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 572
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 573
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 574
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 181
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 578
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 581
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 582
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 583
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 584
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 585
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 586
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 587
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 588
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 589
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 590
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 591
+      },
+      "200": {
+        "filename": "Selector.code",
+        "line": 592
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 593
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 594
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 595
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 596
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 597
+      },
+      "320": {
+        "filename": "Selector.code",
+        "line": 599
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 600
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 602
+      },
+      "344": {
+        "filename": "Selector.code",
+        "line": 603
+      },
+      "360": {
+        "filename": "Selector.code",
+        "line": 606
+      }
+    },
+    "81cd90a9bf155fbe6b2751ac8a57f03cfbc7bed5c03cc45e74a204da3d84d487": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 955
+      },
+      "16": {
+        "filename": "Selector.code",
+        "line": 956
+      },
+      "32": {
+        "filename": "Selector.code",
+        "line": 957
+      },
+      "48": {
+        "filename": "Selector.code",
+        "line": 958
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 959
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 960
+      },
+      "88": {
+        "filename": "Selector.code",
+        "line": 961
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 962
+      },
+      "120": {
+        "filename": "Selector.code",
+        "line": 963
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 964
+      }
+    },
+    "83759fd55527092213d8cc6ecce7abd43ceaa6e46ca9a2364bdc4ee7bc3f2ace": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 118
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 119
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 120
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 58
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 124
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 127
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 128
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 129
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 130
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 131
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 132
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 133
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 134
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 135
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 136
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 137
+      },
+      "200": {
+        "filename": "Selector.code",
+        "line": 138
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 139
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 140
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 141
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 142
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 143
+      },
+      "320": {
+        "filename": "Selector.code",
+        "line": 145
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 146
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 148
+      },
+      "344": {
+        "filename": "Selector.code",
+        "line": 149
+      },
+      "360": {
+        "filename": "Selector.code",
+        "line": 152
+      }
+    },
+    "84c3aa50e6a31878e45a913f2df086f8e05d6eb2a5b1f2049f4b67545170fb0e": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 230
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 230
+      },
+      "96": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 230
+      }
+    },
+    "873a35f99875cb0277c0f85b9fb6ffad7a38d3c21848556f22ebc60180794139": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 170
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 170
+      },
+      "96": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 170
+      },
+      "104": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 170
+      },
+      "152": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 170
+      }
+    },
+    "8b715c828109340a144ea20344422c1e39422b94f610cf35b651141242a3ccf9": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 70
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 71
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 72
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 49
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 76
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 79
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 80
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 81
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 82
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 83
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 84
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 85
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 86
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 87
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 88
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 89
+      },
+      "200": {
+        "filename": "Selector.code",
+        "line": 90
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 91
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 92
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 93
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 94
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 95
+      },
+      "320": {
+        "filename": "Selector.code",
+        "line": 97
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 98
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 100
+      },
+      "344": {
+        "filename": "Selector.code",
+        "line": 101
+      },
+      "360": {
+        "filename": "Selector.code",
+        "line": 104
+      }
+    },
+    "904f6d7f13ba3c670f65d57169daf75a0879e4948edaad5a7fe06faa95261f85": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 664
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 665
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 666
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 202
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 670
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 673
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 674
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 675
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 676
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 677
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 678
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 679
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 680
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 681
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 682
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 683
+      },
+      "200": {
+        "filename": "Selector.code",
+        "line": 684
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 685
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 686
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 687
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 688
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 689
+      },
+      "320": {
+        "filename": "Selector.code",
+        "line": 691
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 692
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 694
+      },
+      "344": {
+        "filename": "Selector.code",
+        "line": 695
+      },
+      "360": {
+        "filename": "Selector.code",
+        "line": 698
+      }
+    },
+    "9183e75b154e51c0fea901a11eb52ee6244a87bc1f2b01e7963c3d140ea6d275": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 1085
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 1086
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 1087
+      },
+      "64": {
+        "filename": "Selector.code",
+        "line": 1088
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 1091
+      },
+      "88": {
+        "filename": "Selector.code",
+        "line": 1092
+      },
+      "136": {
+        "filename": "Selector.code",
+        "line": 1093
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 1094
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 1097
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 1098
+      },
+      "216": {
+        "filename": "Selector.code",
+        "line": 1099
+      },
+      "224": {
+        "filename": "Selector.code",
+        "line": 1100
+      },
+      "240": {
+        "filename": "Selector.code",
+        "line": 1103
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 1104
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 1105
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 1106
+      }
+    },
+    "92ce4b109c0286bbe2f1e16d826c9a13895de36b2a442481c75ad864b9cd1456": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 522
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 523
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 524
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 167
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 528
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 531
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 532
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 533
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 534
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 535
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 536
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 537
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 538
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 539
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 540
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 541
+      },
+      "200": {
+        "filename": "Selector.code",
+        "line": 542
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 543
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 544
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 545
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 546
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 547
+      },
+      "320": {
+        "filename": "Selector.code",
+        "line": 549
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 550
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 552
+      },
+      "344": {
+        "filename": "Selector.code",
+        "line": 553
+      },
+      "360": {
+        "filename": "Selector.code",
+        "line": 556
+      }
+    },
+    "959e02ca234b20793537e5c381af968c143bcced470fb09a71b330c079079023": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 184
+      }
+    },
+    "9dc9929e978306007d18434ab7aa8b95d134200a2516de0b71d6c1dde50d45d3": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 1052
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 1053
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 1054
+      },
+      "64": {
+        "filename": "Selector.code",
+        "line": 1055
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 1081
+      },
+      "88": {
+        "filename": "Selector.code",
+        "line": 1082
+      },
+      "136": {
+        "filename": "Selector.code",
+        "line": 1083
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 1084
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 1110
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 1111
+      },
+      "216": {
+        "filename": "Selector.code",
+        "line": 1112
+      },
+      "224": {
+        "filename": "Selector.code",
+        "line": 1113
+      },
+      "240": {
+        "filename": "Selector.code",
+        "line": 1139
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 1140
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 1141
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 1142
+      }
+    },
+    "9de16d9be6aee0e860392809309f7df8ad1118b4ceec799539603d8c9d6f5846": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 4
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 5
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 6
+      },
+      "32": {
+        "filename": "Selector.code",
+        "line": 7
+      },
+      "48": {
+        "filename": "Selector.code",
+        "line": 10
+      },
+      "64": {
+        "filename": "Selector.code",
+        "line": 11
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 12
+      },
+      "88": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 33
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 16
+      },
+      "120": {
+        "filename": "Selector.code",
+        "line": 19
+      }
+    },
+    "9e50bb14f7f5e6bdc83aff9e838098c9c664c37257aaa7fdae88a498ddced838": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 712
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 713
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 714
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 215
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 718
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 721
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 722
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 723
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 724
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 725
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 726
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 727
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 728
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 729
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 730
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 731
+      },
+      "200": {
+        "filename": "Selector.code",
+        "line": 732
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 733
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 734
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 735
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 736
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 737
+      },
+      "320": {
+        "filename": "Selector.code",
+        "line": 739
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 740
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 742
+      },
+      "344": {
+        "filename": "Selector.code",
+        "line": 743
+      },
+      "360": {
+        "filename": "Selector.code",
+        "line": 746
+      }
+    },
+    "a5f51addd11a2cb31f241ba8ac458a3f77ee8f9a4ddb3bbd441baaf262d31f33": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 856
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 857
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 858
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 260
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 862
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 865
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 866
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 867
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 868
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 869
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 870
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 871
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 872
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 873
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 874
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 875
+      },
+      "200": {
+        "filename": "Selector.code",
+        "line": 876
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 877
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 878
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 879
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 880
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 881
+      },
+      "320": {
+        "filename": "Selector.code",
+        "line": 883
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 884
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 886
+      },
+      "344": {
+        "filename": "Selector.code",
+        "line": 887
+      },
+      "360": {
+        "filename": "Selector.code",
+        "line": 890
+      }
+    },
+    "ae353d4146baa2036caeb15bc6b8ff6e7d0122633bf0090a3e13968511b4dc0d": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 328
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 329
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 330
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 113
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 334
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 337
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 338
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 339
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 340
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 341
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 342
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 343
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 344
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 345
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 346
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 347
+      },
+      "200": {
+        "filename": "Selector.code",
+        "line": 348
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 349
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 350
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 351
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 352
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 353
+      },
+      "320": {
+        "filename": "Selector.code",
+        "line": 355
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 356
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 358
+      },
+      "344": {
+        "filename": "Selector.code",
+        "line": 359
+      },
+      "360": {
+        "filename": "Selector.code",
+        "line": 362
+      }
+    },
+    "b623ea74e92553cc73b25434e443bd560c7d5e93e0dcdfaf29b6a3b9757b1285": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 246
+      },
+      "40": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 246
+      },
+      "88": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 246
+      },
+      "96": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 246
+      },
+      "136": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 246
+      }
+    },
+    "b8bec6c1e64245abae79658bc4ad1d34e79a9754898a91f098fa820b42f2a847": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 128
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 128
+      },
+      "96": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 128
+      },
+      "104": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 128
+      },
+      "152": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 128
+      },
+      "160": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 128
+      },
+      "208": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 128
+      }
+    },
+    "c02c3e42be81744b6a31c1aebb31218144cc07b82484dc452405c55bc6215924": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 923
+      },
+      "16": {
+        "filename": "Selector.code",
+        "line": 924
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 925
+      },
+      "40": {
+        "filename": "Selector.code",
+        "line": 926
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 927
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 928
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 929
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 930
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 931
+      },
+      "120": {
+        "filename": "Selector.code",
+        "line": 932
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 933
+      },
+      "136": {
+        "filename": "Selector.code",
+        "line": 934
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 935
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 936
+      },
+      "184": {
+        "filename": "Selector.code",
+        "line": 937
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 938
+      },
+      "216": {
+        "filename": "Selector.code",
+        "line": 940
+      },
+      "224": {
+        "filename": "Selector.code",
+        "line": 941
+      },
+      "240": {
+        "filename": "Selector.code",
+        "line": 942
+      },
+      "256": {
+        "filename": "Selector.code",
+        "line": 943
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 944
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 945
+      },
+      "312": {
+        "filename": "Selector.code",
+        "line": 946
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 947
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 948
+      },
+      "352": {
+        "filename": "Selector.code",
+        "line": 950
+      }
+    },
+    "c4f71a0c18e718713dfc9a9735bb43962a64e0bb8835aae61974d80d96001741": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 73
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 73
+      },
+      "96": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 73
+      },
+      "104": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 73
+      },
+      "152": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 73
+      },
+      "160": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 73
+      },
+      "208": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 73
+      },
+      "216": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 73
+      },
+      "264": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 73
+      },
+      "272": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 73
+      },
+      "288": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 73
+      }
+    },
+    "cb75773ee091c6b2eea90f9d585330827b1ce7337d0bd144a99b06cb1faf665d": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 806
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 807
+      },
+      "24": {
+        "filename": "Selector.code",
+        "line": 808
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 243
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 812
+      },
+      "72": {
+        "filename": "Selector.code",
+        "line": 815
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 816
+      },
+      "96": {
+        "filename": "Selector.code",
+        "line": 817
+      },
+      "104": {
+        "filename": "Selector.code",
+        "line": 818
+      },
+      "112": {
+        "filename": "Selector.code",
+        "line": 819
+      },
+      "128": {
+        "filename": "Selector.code",
+        "line": 820
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 821
+      },
+      "152": {
+        "filename": "Selector.code",
+        "line": 822
+      },
+      "160": {
+        "filename": "Selector.code",
+        "line": 823
+      },
+      "168": {
+        "filename": "Selector.code",
+        "line": 824
+      },
+      "192": {
+        "filename": "Selector.code",
+        "line": 825
+      },
+      "200": {
+        "filename": "Selector.code",
+        "line": 826
+      },
+      "248": {
+        "filename": "Selector.code",
+        "line": 827
+      },
+      "272": {
+        "filename": "Selector.code",
+        "line": 828
+      },
+      "288": {
+        "filename": "Selector.code",
+        "line": 829
+      },
+      "296": {
+        "filename": "Selector.code",
+        "line": 830
+      },
+      "304": {
+        "filename": "Selector.code",
+        "line": 831
+      },
+      "320": {
+        "filename": "Selector.code",
+        "line": 833
+      },
+      "328": {
+        "filename": "Selector.code",
+        "line": 834
+      },
+      "336": {
+        "filename": "Selector.code",
+        "line": 836
+      },
+      "344": {
+        "filename": "Selector.code",
+        "line": 837
+      },
+      "360": {
+        "filename": "Selector.code",
+        "line": 840
+      }
+    },
+    "cce1dfefe7550a65ed743d72a8595061f7c10cc4a9c20b64e2fbf79c40ba335c": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 60
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 60
+      },
+      "56": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 60
+      }
+    },
+    "ebfd7d0934100f57ffeb90f612ee3c94d40ae9f7543f906306e7afd8ad7eb00f": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 144
+      },
+      "48": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 144
+      },
+      "96": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 144
+      },
+      "104": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 144
+      },
+      "152": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 144
+      }
+    },
+    "f24e1e7aa04d89aad2945816b6e9b921f2b3892da9ba53e2383c148351b96d0c": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 996
+      },
+      "16": {
+        "filename": "Selector.code",
+        "line": 997
+      }
+    },
+    "f5dcd3c5a8365f9ce61d9684d0588082c6ed2f34ad546b46ecd693c07f1aa854": {
+      "0": {
+        "filename": "Selector.code",
+        "line": 1048
+      },
+      "8": {
+        "filename": "Selector.code",
+        "line": 1049
+      },
+      "56": {
+        "filename": "Selector.code",
+        "line": 1050
+      },
+      "64": {
+        "filename": "Selector.code",
+        "line": 1051
+      },
+      "80": {
+        "filename": "Selector.code",
+        "line": 1169
+      },
+      "88": {
+        "filename": "Selector.code",
+        "line": 1170
+      },
+      "136": {
+        "filename": "Selector.code",
+        "line": 1171
+      },
+      "144": {
+        "filename": "Selector.code",
+        "line": 1172
+      }
+    },
+    "f9cedf959be8e33ee5200e54a4dbd8826c91ae3ee35e76efe494765ff2bc45bf": {
+      "0": {
+        "filename": "../contracts/TIP3Root/contracts/additional/Selector.tsol",
+        "line": 218
+      }
+    }
+  }
+}

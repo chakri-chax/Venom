@@ -9,16 +9,26 @@
 				{"name":"_assets","type":"address[]"},
 				{"name":"_assetsdecimals","type":"uint256[]"},
 				{"name":"_assetAllocations","type":"uint8[]"},
-				{"name":"owner","type":"address"},
+				{"name":"_assetsDexPairs","type":"address[]"},
+				{"name":"_owner","type":"address"},
 				{"name":"_deedNFT","type":"address"},
 				{"name":"_founderNFT","type":"address"},
-				{"name":"_genesisNFT","type":"address"},
 				{"name":"_mainWallet","type":"address"},
 				{"name":"_priceFeed","type":"address[]"},
 				{"name":"_deedToken","type":"address"},
 				{"name":"_DaiToEthPriceFeed","type":"address"},
 				{"name":"_depositingAddress","type":"address"},
-				{"name":"_WETH","type":"address"}
+				{"name":"_WETH","type":"address"},
+				{"name":"_nonce","type":"uint64"},
+				{"name":"exchangeContractAddress","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "onTokenWallet",
+			"inputs": [
+				{"name":"value","type":"address"}
 			],
 			"outputs": [
 			]
@@ -42,6 +52,22 @@
 			]
 		},
 		{
+			"name": "onDeployWallet",
+			"inputs": [
+				{"name":"_wallet","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setMainTokenWallet",
+			"inputs": [
+				{"name":"_mainTokWallet","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
 			"name": "deposit_admin",
 			"inputs": [
 				{"name":"users","type":"address[]"},
@@ -51,19 +77,144 @@
 			]
 		},
 		{
-			"name": "owner",
+			"name": "rootWalletAddress",
 			"inputs": [
+				{"name":"tokenIn","type":"address"}
 			],
 			"outputs": [
 				{"name":"value0","type":"address"}
 			]
 		},
 		{
-			"name": "transferOwnership",
+			"name": "makeSwap",
 			"inputs": [
-				{"name":"newOwner","type":"address"}
+				{"name":"queryId","type":"uint64"},
+				{"name":"tokenIn","type":"address"},
+				{"name":"amountIn","type":"uint128"},
+				{"name":"tokenOut","type":"address"},
+				{"name":"pair","type":"address"},
+				{"name":"deployWalletValue","type":"uint128"},
+				{"name":"expectedAmountOut","type":"uint128"},
+				{"name":"treasuryAddress","type":"address"}
 			],
 			"outputs": [
+			]
+		},
+		{
+			"name": "dexPairExchangeSuccess",
+			"inputs": [
+				{"name":"id","type":"uint64"},
+				{"name":"via_account","type":"bool"},
+				{"components":[{"name":"left_to_right","type":"bool"},{"name":"spent","type":"uint128"},{"name":"fee","type":"uint128"},{"name":"received","type":"uint128"}],"name":"result","type":"tuple"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "deposit",
+			"inputs": [
+				{"name":"daiAmount","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "_continueSwap",
+			"inputs": [
+				{"name":"user","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "asset1Swap",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "_asset2Swap",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "asset3Swap",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "onAcceptTokensTransfer",
+			"inputs": [
+				{"name":"tokenRoot","type":"address"},
+				{"name":"amount","type":"uint128"},
+				{"name":"sender","type":"address"},
+				{"name":"senderWallet","type":"address"},
+				{"name":"remainingGasTo","type":"address"},
+				{"name":"payload","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "calculateTotalDeposit",
+			"inputs": [
+				{"name":"users","type":"address[]"},
+				{"name":"daiAmounts","type":"uint256[]"}
+			],
+			"outputs": [
+				{"name":"totalAmount","type":"uint256"}
+			]
+		},
+		{
+			"name": "withdraw",
+			"inputs": [
+				{"name":"indices","type":"uint256[]"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "withdrawWvenom",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "withdrawW3W",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "fetchAssetPriceInUsd",
+			"inputs": [
+				{"name":"assetIndex","type":"uint256"},
+				{"name":"assetAmount","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256"}
+			]
+		},
+		{
+			"name": "getCallbackAmouhnt",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "owner",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"owner","type":"address"}
 			]
 		},
 		{
@@ -88,6 +239,14 @@
 			],
 			"outputs": [
 				{"name":"maxslippage","type":"uint256"}
+			]
+		},
+		{
+			"name": "mainTokenWallet",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"mainTokenWallet","type":"address"}
 			]
 		},
 		{
@@ -120,6 +279,14 @@
 			],
 			"outputs": [
 				{"name":"assetsdecimals","type":"uint256[]"}
+			]
+		},
+		{
+			"name": "assetsDexPairs",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"assetsDexPairs","type":"address[]"}
 			]
 		},
 		{
@@ -179,6 +346,30 @@
 			]
 		},
 		{
+			"name": "_distributedTokenRoot",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_distributedTokenRoot","type":"address"}
+			]
+		},
+		{
+			"name": "_distributedTokenWallet",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_distributedTokenWallet","type":"address"}
+			]
+		},
+		{
+			"name": "_exchangeContractAddress",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_exchangeContractAddress","type":"address"}
+			]
+		},
+		{
 			"name": "topTreasuryHolders",
 			"inputs": [
 			],
@@ -200,6 +391,14 @@
 			],
 			"outputs": [
 				{"name":"treasuryBalances","type":"map(address,uint256)"}
+			]
+		},
+		{
+			"name": "assetsZeroWallet",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"assetsZeroWallet","type":"address"}
 			]
 		},
 		{
@@ -273,9 +472,34 @@
 			"outputs": [
 				{"name":"lockTimestamps","type":"map(address,map(address,map(uint256,uint256)))"}
 			]
+		},
+		{
+			"name": "userSwapContext",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"totalAmount","type":"uint256"},{"name":"currentIndex","type":"uint8"}],"name":"userSwapContext","type":"map(address,tuple)"}
+			]
+		},
+		{
+			"name": "swapQueryToUser",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"swapQueryToUser","type":"map(uint64,address)"}
+			]
+		},
+		{
+			"name": "rootToWallet",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"rootToWallet","type":"map(address,address)"}
+			]
 		}
 	],
 	"data": [
+		{"key":1,"name":"nonce_","type":"uint64"}
 	],
 	"events": [
 		{
@@ -393,10 +617,89 @@
 			]
 		},
 		{
-			"name": "OwnershipTransferred",
+			"name": "SwapSuccess",
 			"inputs": [
-				{"name":"oldOwner","type":"address"},
-				{"name":"newOwner","type":"address"}
+				{"name":"queyId","type":"uint64"},
+				{"components":[{"name":"left_to_right","type":"bool"},{"name":"spent","type":"uint128"},{"name":"fee","type":"uint128"},{"name":"received","type":"uint128"}],"name":"result","type":"tuple"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "madeSwap",
+			"inputs": [
+				{"name":"tokenIn","type":"address"},
+				{"name":"tokenOut","type":"address"},
+				{"name":"amount","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "swapNextData",
+			"inputs": [
+				{"name":"id","type":"uint64"},
+				{"name":"_swapQueryToUser","type":"address"},
+				{"components":[{"name":"totalAmount","type":"uint256"},{"name":"currentIndex","type":"uint8"}],"name":"_ctx","type":"tuple"},
+				{"name":"index","type":"uint64"},
+				{"components":[{"name":"totalAmount","type":"uint256"},{"name":"currentIndex","type":"uint8"}],"name":"userCtx","type":"tuple"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "AllSwapsCompleted",
+			"inputs": [
+				{"name":"addr","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "withdrawCountEvent",
+			"inputs": [
+				{"name":"count","type":"uint64"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "ContinueSwapTriggered",
+			"inputs": [
+				{"name":"user","type":"address"},
+				{"name":"index","type":"uint8"},
+				{"name":"amount","type":"uint256"},
+				{"name":"tokenIn","type":"address"},
+				{"name":"tokenOut","type":"address"},
+				{"name":"pair","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "_continueSwapIndex",
+			"inputs": [
+				{"name":"index","type":"uint64"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "asset1SwapEvnet",
+			"inputs": [
+				{"name":"tokenIn","type":"address"},
+				{"name":"tokenOut","type":"address"},
+				{"name":"pair","type":"address"},
+				{"name":"amt","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "withdrawTriggerd",
+			"inputs": [
+				{"name":"status","type":"bool"},
+				{"name":"count","type":"uint64"}
 			],
 			"outputs": [
 			]
@@ -406,14 +709,17 @@
 		{"name":"_pubkey","type":"uint256"},
 		{"name":"_timestamp","type":"uint64"},
 		{"name":"_constructorFlag","type":"bool"},
-		{"name":"owner_","type":"address"},
+		{"name":"nonce_","type":"uint64"},
+		{"name":"owner","type":"address"},
 		{"name":"FULL_TERM_LOCK_PERIOD","type":"uint256"},
 		{"name":"WETH","type":"address"},
 		{"name":"maxslippage","type":"uint256"},
+		{"name":"mainTokenWallet","type":"address"},
 		{"name":"DEED_EMISSION_RATE","type":"uint256"},
 		{"name":"governance","type":"address"},
 		{"name":"assets","type":"address[]"},
 		{"name":"assetsdecimals","type":"uint256[]"},
+		{"name":"assetsDexPairs","type":"address[]"},
 		{"name":"priceFeed","type":"address[]"},
 		{"name":"assetAllocationRatio","type":"uint8[]"},
 		{"name":"mainWallet","type":"address"},
@@ -422,9 +728,13 @@
 		{"name":"depositingAddress","type":"address"},
 		{"name":"poolFeeTier","type":"uint16[]"},
 		{"name":"totalTreasuryPoints","type":"uint256"},
+		{"name":"_distributedTokenRoot","type":"address"},
+		{"name":"_distributedTokenWallet","type":"address"},
+		{"name":"_exchangeContractAddress","type":"address"},
 		{"name":"topTreasuryHolders","type":"address[]"},
 		{"name":"treasuryHolderIndex","type":"map(address,uint256)"},
 		{"name":"treasuryBalances","type":"map(address,uint256)"},
+		{"name":"assetsZeroWallet","type":"address"},
 		{"components":[{"name":"treasuryDeposit","type":"uint256"},{"name":"firstDepositTime","type":"uint256"}],"name":"userDeposits","type":"map(address,tuple[])"},
 		{"name":"deedNFT","type":"address"},
 		{"name":"founderNFT","type":"address"},
@@ -433,6 +743,11 @@
 		{"name":"lockedNFTs","type":"map(address,map(address,uint256[]))"},
 		{"name":"contractlockedNFTs","type":"map(address,map(address,uint256[]))"},
 		{"name":"isTopTreasuryHolder","type":"map(address,bool)"},
-		{"name":"lockTimestamps","type":"map(address,map(address,map(uint256,uint256)))"}
+		{"name":"lockTimestamps","type":"map(address,map(address,map(uint256,uint256)))"},
+		{"components":[{"name":"totalAmount","type":"uint256"},{"name":"currentIndex","type":"uint8"}],"name":"userSwapContext","type":"map(address,tuple)"},
+		{"name":"swapQueryToUser","type":"map(uint64,address)"},
+		{"name":"rootToWallet","type":"map(address,address)"},
+		{"name":"withdrawCount","type":"uint64"},
+		{"name":"nextQueryId","type":"uint64"}
 	]
 }

@@ -1,0 +1,149 @@
+import { Address, Contract, toNano } from "locklift";
+import { initializeExchangeContracts } from "./init-local-context";
+import { factorySource } from "../build/factorySource";
+import { TIP3_WALLET_ABI, TIP3Abi, USDT_DATA } from "../external_abi/TIP3";
+import { DexPairAbi } from "../external_abi/DexPair";
+import { DexTokenVaultABI } from "../external_abi/DexTokenVaultABI";
+import { DexRootABI } from "../external_abi/DexRootABI";
+async function main() {
+    //addresses
+    const dexPairAddress = new Address("0:56a3f53b5d07da8266c38eb7b4fe1b0e3f3dac6b88ef23a1634d4b9bd4eb2bbe");
+    const usdt = new Address("0:8a4ed4483500caf2d4bb4b56c84df41009cc3d0ed6a9de05d853e26a30faeced");
+    const usdtOwner = new Address("0:cfaacde75ac726e818c7c764f5c91bb7264d1156a4b200817455d58d32781203");
+    const wrappedVenom = new Address("0:77d36848bb159fa485628bc38dc37eadb74befa514395e09910f601b841f749e");
+    const dai = new Address("0:0447c738d8549c5ea92f1c945628367db4adcc706685f760c93f8b236bf8e7e4");
+    
+    // init context
+    console.log("Initializing context...");
+    /* Note: In real network, you don't need to do it, all of this entities should be available in the network
+      - userUsdtWallet is a user wallet for USDT token
+      - user is a user wallet e.g. EverWallet or other type of wallet
+      - pairContract is a DexPair contract that is used for swapping tokens inside the ExchangeContract
+     */
+    //   const { userUsdtWallet, user, pairContract, _ } = await initializeExchangeContracts({
+    //     dexPair: dexPairAddress,
+    //     usdt,
+    //     usdtOwner,
+    //   });
+
+
+    const user = new Address("0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081")
+    // const userUsdtWalletAddress = new Address("0:9cd81b2945fe1ae23548ff4f34c73bb5c4a6e1f2faa9610c4b446b36b8d54c29")
+    let pairContract: Contract<(typeof DexPairAbi)>;
+
+    const usdtContract = locklift.network.insertAccount({
+        address: usdt,
+        type: "accountStuffBoc",
+        abi: TIP3Abi,
+        boc: USDT_DATA,
+    });
+    const userUsdtWallet = await usdtContract.methods
+        .walletOf({
+            answerId: 0,
+            walletOwner: user,
+        })
+        .call()
+        .then(res => new locklift.provider.Contract(TIP3_WALLET_ABI, res.value0));
+
+    // pairContract = locklift.factory.getDeployedContract("DexPair", dexPairAddress);
+    pairContract = new locklift.provider.Contract(DexPairAbi, dexPairAddress);
+    const zeroAddress = new Address("0:0000000000000000000000000000000000000000000000000000000000000000");
+
+    const swapPayload = await pairContract.methods
+        .buildExchangePayloadV2({
+            _id: 1,
+            _toNative: false,
+            _cancelPayload: null,
+            _successPayload: null,
+            _referrer: zeroAddress,
+            _deployWalletGrams: toNano(1),
+            _expectedAmount: 0,
+            _recipient: user,
+        })
+        .call()
+        .then(res => res.value0);
+
+    console.log('swapPayload', swapPayload);
+
+    const balance = await userUsdtWallet.methods
+        .balance({
+            answerId: 0,
+        })
+        .call();
+
+    console.log("User USDT balance before:", Number(balance.value0) / 10 ** 6);
+
+    const { traceTree } = await locklift.tracing.trace(
+        userUsdtWallet.methods
+            .transfer({
+                payload: swapPayload,
+                amount: 0.002 * 10 ** 6, // 50 USDT
+                notify: true,
+                recipient: pairContract.address,
+                deployWalletValue: 0,
+                remainingGasTo: user,
+            })
+            .send({
+                amount: toNano(2),
+                from: user,
+            }),
+    );
+
+
+    await traceTree?.beautyPrint();
+
+    const dexTokenVault = await pairContract.methods
+        .getRoot({
+            answerId: 0,
+        })
+        .call()
+        .then(res =>
+            new locklift.provider.Contract(DexRootABI, res.dex_root)
+                .methods.getExpectedTokenVaultAddress({
+                    answerId: 0,
+                    _tokenRoot: wrappedVenom,
+                })
+                .call(),
+        )
+        .then(res => { new locklift.provider.Contract(DexTokenVaultABI, res.value0) });
+
+    // usdt balance after swap
+
+    const balanceAfter = await userUsdtWallet.methods
+        .balance({
+            answerId: 0,
+        })
+        .call();
+
+    console.log("User USDT balance after:", Number(balanceAfter.value0) / 10 ** 6);
+
+    let dexTokenVaultContract:Contract<typeof DexTokenVaultABI>;
+    dexTokenVaultContract = dexTokenVault!;
+        console.log("traceTree",await traceTree?.beautyPrint());
+        
+    console.log("traceTree",await traceTree?.findEventsForContract({
+        contract: dexTokenVaultContract,
+        name: "PairTransferTokens" as const,
+    }));
+    
+    const swapEvent = traceTree?.findEventsForContract({
+        contract: dexTokenVaultContract,
+        name: "PairTransferTokens" as const,
+    })[0]!;
+    if (swapEvent) {
+        console.log(swapEvent);
+    }
+    if (!swapEvent) {
+        throw new Error("Swap event not found");
+    }
+    console.log(
+        `Swap executed successfully! ${50} USDT swapped for ${(swapEvent.amount as unknown as number) / 10 ** 9} Wrapped Venom`,
+    );
+}
+
+main()
+    .then(() => process.exit(0))
+    .catch(e => {
+        console.log(e);
+        process.exit(1);
+    });

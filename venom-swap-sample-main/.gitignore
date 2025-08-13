@@ -1,0 +1,8 @@
+.idea
+node_modules
+.temp
+.vscode
+dePools
+addresses
+.env
+.cache
