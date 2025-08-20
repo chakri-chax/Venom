@@ -96,19 +96,19 @@ async function tokenWalletInstanceTIP3(userAddres: Address, tokenAddress: Addres
     return userTokenWalletContract;
 }
 
-const contrac = new Address("0:a60df6a42b1c0cec1eb95a522d72d71eec4c8ab853adb70818b9b1e49320444d")
+const contrac = new Address("0:02ce6fc0f58c836d72d52a71ef19936988a98b3b1749a31ed8837499516480c3")
 
 console.log("USDT contract Balance");
 checkBalance(contrac, USDT);
 // getAllTokenWallets(contrac);
 
 
-// console.log("DAI contract Balance");
-// checkBalance(contrac, WETH);
+console.log("DAI contract Balance");
+checkBalance(contrac, DAI);
 
-// console.log("W3W contract balance");
-checkBalance(contrac, W3W);
+// // console.log("W3W contract balance");
+// checkBalance(contrac, W3W);
 
 
-// console.log("Wvenom contract Balance");
-checkBalance(contrac, WVENOM);
+// // console.log("Wvenom contract Balance");
+// checkBalance(contrac, WVENOM);

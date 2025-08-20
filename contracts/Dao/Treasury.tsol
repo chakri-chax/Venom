@@ -101,6 +101,8 @@ contract Treasury is IAcceptTokensTransferCallback {
 	mapping(address => uint256) public treasuryHolderIndex;
 	mapping(address => uint256) public treasuryBalances;
 
+	uint256 public primaryTokenLockedAmount;
+
 	address public assetsZeroWallet;
 	struct User {
 		uint256 treasuryDeposit;
@@ -164,14 +166,14 @@ contract Treasury is IAcceptTokensTransferCallback {
 		address exchangeContractAddress
 	) public {
 		tvm.accept();
-		tvm.rawReserve(2 ever, 0);
+		tvm.rawReserve(0.5 ever, 0);
 		require(_assets.length == _priceFeed.length, MISMATCHED_ARRAYS_LENGTH);
 		require(
 			_assets.length == _assetsdecimals.length,
 			MISMATCHED_ARRAYS_LENGTH
 		);
 		require(
-			_assets.length == _assetsDexPairs.length,
+			_assets.length - 1 == _assetsDexPairs.length,
 			MISMATCHED_ARRAYS_LENGTH
 		);
 		require(
@@ -218,10 +220,25 @@ contract Treasury is IAcceptTokensTransferCallback {
 		// tvm.rawReserve(1 ever, 0);
 		_distributedTokenWallet = value; // store deployed tip3 wallet address
 		require(_distributedTokenWallet != address(0), INVALID_ADDRESS);
-		// owner.transfer({value: 0, flag: 128, bounce: false}); // sending remaining gas after setups
+		owner.transfer({value: 0, flag: 128, bounce: false}); // sending remaining gas after setups
 	}
 
-	
+	 function onAcceptTokensTransfer(
+        address tokenRoot,
+        uint128 amount,
+        address sender,
+        address senderWallet,
+        address remainingGasTo,
+        TvmCell payload
+    ) external override {
+
+        rootToWallet[tokenRoot] = msg.sender;
+        remainingGasTo.transfer({
+            value: 0,
+            flag: 64
+        });
+
+    }
 
 	function calculateSumOfRatios(uint8[] _ratios) public pure {
 		// require(_ratios.length == 5, "Need ratios for 5 assets");
@@ -334,7 +351,7 @@ contract Treasury is IAcceptTokensTransferCallback {
 		// 	callback: setMainTokenWallet
 		// }(owner);
 
-		require(mainTokenWallet != address(0), 224);
+		// require(mainTokenWallet != address(0), 224);
 
 		ITokenWallet(_distributedTokenWallet).transfer({
 			amount: 10,
@@ -345,7 +362,12 @@ contract Treasury is IAcceptTokensTransferCallback {
 			payload: e
 		});
 
-		
+		// bool success = IERC20(assets[0]).transferFrom(
+		// 	msg.sender,
+		// 	address(this),
+		// 	totalAmount
+		// );
+		// require(success, "Transfer to treasury failed");
 
 		//swapping and splitting wiill be done here
 		deposit(daiAmountToSwap);
@@ -370,17 +392,8 @@ contract Treasury is IAcceptTokensTransferCallback {
 		totalTreasuryPoints += totalAmount;
 		emit DepositBatch(lengthh, totalAmount);
 	}
-	function rootWalletAddress(address tokenIn) public returns (address){
-		return rootToWallet[tokenIn];
-	}
-	// *****************************************************************//
-struct SwapContext {
-    uint256 totalAmount;
-    uint8 currentIndex;
-}
-mapping(address => SwapContext) public userSwapContext;
-mapping(uint64 => address) public swapQueryToUser;
 
+	// *****************************************************************//
 	  event SwapSuccess(uint64 queyId ,IExchangeResult.ExchangeResult result);
     event madeSwap(address tokenIn,address tokenOut,uint128 amount);
     mapping(address => address) public rootToWallet;
@@ -404,7 +417,6 @@ mapping(uint64 => address) public swapQueryToUser;
         uint128 gasValue = gas.dynamicGas + gas.fixedValue;
         require(msg.value >= gasValue, NOT_ENOUGH_VALUE);
         TvmCell e;
-		
         TvmCell swapPayload = PairPayload.buildExchangePayloadV2(
             queryId,
             deployWalletValue,
@@ -417,8 +429,7 @@ mapping(uint64 => address) public swapQueryToUser;
             null
         );
 
-
-        ITokenWallet(tokenWallet).transfer{value: 1 ever, flag: 64}(
+        ITokenWallet(tokenWallet).transfer{value: 0, flag: 64}(
             amountIn,
             pair,
             deployWalletValue,
@@ -426,165 +437,59 @@ mapping(uint64 => address) public swapQueryToUser;
             true,
             swapPayload
         );
+        // Treasury(treasuryAddress).onSwapComplete();
     emit madeSwap(tokenIn,tokenOut,amountIn);
- 
+
+
+        
     }
-	event swapNextData(uint64 id,address _swapQueryToUser,SwapContext _ctx,uint64 index,SwapContext userCtx); 
-	event  AllSwapsCompleted(address addr);
-	uint64 withdrawCount = 1;
-	event  withdrawCountEvent(uint64 count);
-	function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.ExchangeResult result) external {
-    emit SwapSuccess(id, result);
-
-	if(withdrawCount<=3){
-		emit withdrawCountEvent(withdrawCount);
-
-		withdrawCount++;
-	this.withdrawWvenom{value: 1 ever, flag:64}();
-	}
-
-	// this._asset2Swap{value: 1 ever, flag:64}();
-    // address user = swapQueryToUser[id];
-    // delete swapQueryToUser[id];
-
-    // SwapContext ctx = userSwapContext[user];
-
-    // ctx.currentIndex++;
-    // userSwapContext[user] = ctx;
-
-    // emit swapNextData(id, user, ctx, ctx.currentIndex, ctx);
-// if (ctx.currentIndex >= assets.length) {
-//     delete userSwapContext[user];
-//     emit AllSwapsCompleted(user);
-// }
-//     // Continue only if more swaps are pending
-//     if (ctx.currentIndex < assets.length) {
-//         this._continueSwap{value: 1 ever, flag: 64}(user);
-//     } else {
-//         // All swaps complete
-//         delete userSwapContext[user];
-//     }
-}
-
-
+function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.ExchangeResult result) external {
+        // will be call before tokens actually transferred
+        emit SwapSuccess(id, result);
+    }
+	// *****************************************************************//
 
 	function deposit(uint256 daiAmount) public {
-    userSwapContext[msg.sender] = SwapContext(daiAmount, 1);
-	this._continueSwap{value: 1 ever, flag: 64}(msg.sender);
-    // _continueSwap(msg.sender);
-	//  Treasury(address(this))._continueSwap{value: 1 ever, flag: 64}(msg.sender);
-}
-uint64 private nextQueryId;
-event ContinueSwapTriggered(address user, uint8 index, uint256 amount,address tokenIn, address tokenOut,address pair);
-event _continueSwapIndex(uint64 index);
+		// Approve DAI for the swap router
+		// TransferHelper.safeApprove(assets[0], SWAP_ROUTER_02, daiAmount);
 
-function _continueSwap(address user) public {
+		// Calculate the amount of DAI to be swapped for each asset
+		uint256 n = assets.length;
 
-	require(msg.sender == address(this), 104);
+		uint256 primaryLockingAmount = (daiAmount * assetAllocationRatio[0]) / 100;
+		primaryTokenLockedAmount+=primaryLockingAmount;
 
-    SwapContext ctx = userSwapContext[user];
-	emit _continueSwapIndex(ctx.currentIndex);
-    if (ctx.currentIndex >= assets.length) {
-        // delete userSwapContext[user];
-		// emit AllSwapsCompleted(user);
-        return; // All swaps complete
-    }
+		for (uint256 i = 1; i < n; i++) {
+			uint256 amountIn = (daiAmount * assetAllocationRatio[i]) / 100;
+			// uint8 decimals = uint8(assetsdecimals[i];)
+			// uint256 amountinusd = (amountIn * 10 ** 8) / (10 ** 18);
+			// uint256 examountout = 100; //fetchUsdIntoAssetsPrice(i, amountinusd);
+			// // uint256 slipage = 5;
+			// uint256 slipageamount = (examountout * maxslippage) / 100;
+			// uint256 minamountout = examountout - slipageamount;
 
-    uint256 amountIn = (ctx.totalAmount * assetAllocationRatio[ctx.currentIndex]) / 100;
- 		nextQueryId += 1;
-        uint64 queryId = nextQueryId;
-        swapQueryToUser[queryId] = user;
-    	makeSwap(
-        queryId, 
-        assets[0],
-        uint128(amountIn),
-        assets[ctx.currentIndex],
-        assetsDexPairs[ctx.currentIndex],
-        1 ever,
-        0,
-        address(this)
-    );
-	emit ContinueSwapTriggered(user, ctx.currentIndex, amountIn,assets[0],assets[ctx.currentIndex],assetsDexPairs[ctx.currentIndex ]);
+			// require(minamountout > 0, SLIPPAGE_TOO_HIGH);
 
-  
-}
-fallback() external {
-    tvm.accept();
-    // Optional logging here
-}
-
-	// 		makeSwap(
-	// 			1,
-	// 			assets[0],
-	// 			uint128(amountIn),
-	// 			assets[i],
-	// 			assetsDexPairs[i - 1],
-	// 			1 ever,
-	// 			0,
-	// 			address(this)
-	// 		);
-
-event  asset1SwapEvnet(address tokenIn,address tokenOut,address pair,uint128 amt);
-function asset1Swap() public {
 			makeSwap(
-				15,
+				1,
 				assets[0],
-				uint128(2),
-				assets[1],
-				assetsDexPairs[1],
+				uint128(amountIn),
+				assets[i],
+				assetsDexPairs[i - 1],
 				1 ever,
 				0,
 				address(this)
 			);
-			emit asset1SwapEvnet(assets[0],assets[1],assetsDexPairs[1],uint128(2));
-}
-function _asset2Swap() public {
-			makeSwap(
-				16,
-				assets[0],
-				uint128(2),
-				assets[2],
-				assetsDexPairs[2],
-				1 ever,
-				0,
-				address(this)
-			);
-			emit asset1SwapEvnet(assets[0],assets[2],assetsDexPairs[2],uint128(2));
-}
-function asset3Swap() public {
-			makeSwap(
-				17,
-				assets[0],
-				uint128(1),
-				assets[3],
-				assetsDexPairs[3],
-				1 ever,
-				0,
-				address(this)
-			);
-			emit asset1SwapEvnet(assets[0],assets[3],assetsDexPairs[3],uint128(1));
-}
- function onAcceptTokensTransfer(
-        address tokenRoot,
-        uint128 amount,
-        address sender,
-        address senderWallet,
-        address remainingGasTo,
-        TvmCell payload
-    ) external override {
-
-        rootToWallet[tokenRoot] = msg.sender;
-        remainingGasTo.transfer({
-            value: 0,
-            flag: 64
-        });
-
-    }
-// ***********************END******************************************//
-
-
-
-
+			// Adjust for decimals of the asset
+			// swapExactInputSingle(
+			// 	assets[0],
+			// 	assets[i],
+			// 	amountIn,
+			// 	poolFeeTier[i - 1],
+			// 	minamountout
+			// );
+		}
+	}
 
 	uint16 public constant ZERO_AMOUNT = 231;
 	uint16 public constant INVALID_USER = 232;
@@ -607,7 +512,37 @@ function asset3Swap() public {
 
 	uint16 public constant SLIPPAGE_TOO_HIGH = 233;
 
-	
+	// function fetchUsdIntoAssetsPrice(
+	// 	uint256 assetIndex,
+	// 	uint256 usdAmount
+	// ) internal view returns (uint256) {
+	// 	require(assetIndex < assets.length, "Invalid asset index");
+	// 	// AggregatorV3Interface pricefeed = AggregatorV3Interface(
+	// 	//     priceFeed[assetIndex]
+	// 	// );
+
+	// 	uint8 decimals = uint8(assetsdecimals[assetIndex]);
+	// 	uint256 assetAmount;
+
+	// 	if (assets[assetIndex] == WETH) {
+	// 		// Convert USD to DAI first, then DAI to WETH
+	// 		uint256 usdToDaiAmount = getUsdToDaiAmount(
+	// 			usdAmount,
+	// 			AggregatorV3Interface(priceFeed[0])
+	// 		); // DAI/USD feed
+	// 		uint256 daiToWethAmount = getDaitoWethAmount(
+	// 			usdToDaiAmount,
+	// 			pricefeed
+	// 		); // DAI/ETH feed
+	// 		assetAmount = daiToWethAmount;
+	// 	} else {
+	// 		uint8 decimal = uint8(assetsdecimals[assetIndex]);
+	// 		assetAmount = getusdAmountInassets(usdAmount, pricefeed, decimal);
+	// 	}
+
+	// 	return assetAmount;
+	// }
+
 	uint16 public constant INVALID_INDEX = 234;
 	uint16 public constant DEPOSIT_NOT_ELIGIBLE = 235;
 	uint16 public constant NO_VALID_DEPOSITS = 236;
@@ -615,155 +550,202 @@ function asset3Swap() public {
 	function withdraw(uint256[] indices) external {
 		uint256 totalAmount;
 
-		for (uint256 index = 1; index < 3; index++) {
-					makeSwap(
-				uint64(index)+1,
-				assets[index],
+		uint256 userDepositCount = userDeposits[msg.sender].length;
+		require(userDepositCount > 0, NO_VALID_DEPOSITS);
+
+		// Calculate total amount eligible for withdrawal
+		uint256 cnt = indices.length;
+		uint256 userPrimaryTokenUnlockingAmt; // usdt user share
+
+		for (uint256 i = 0; i < cnt; i++) {
+			require(indices[i] < userDepositCount, INVALID_INDEX);
+			User userDeposit = userDeposits[msg.sender][indices[i]];
+			// require(
+			// 	block.timestamp >=
+			// 		userDeposit.firstDepositTime + FULL_TERM_LOCK_PERIOD,
+			// 	DEPOSIT_NOT_ELIGIBLE
+			// );
+
+			
+			totalAmount += userDeposit.treasuryDeposit; //in Usdt 6 decimals
+			userDeposit.treasuryDeposit = 0;
+			userDeposit.firstDepositTime = 0; // Set deposit to 0 to prevent double withdrawal
+			
+		}
+		require(totalAmount > 0, NO_VALID_DEPOSITS);
+
+		
+		// Calculate total user deposit assets in USDT after a year
+		uint256 totalAmountInUsd;
+		uint256 len = assets.length;
+
+		for (uint256 i = 0; i < len; i++) {
+			// uint256 treasuryBal = 100; //IERC20(assets[i]).balanceOf(address(this));
+			// uint256 userShare = (treasuryBal * totalAmount) /
+			// totalTreasuryPoints; //in asset decimals
+			uint256 userShare = totalAmount; 
+			uint256 assetPriceInUsd;
+
+			// if (assets[i] == WETH) {
+			//     // Special case for WETH
+			//     uint256 wethPriceInDai = getWethToDaiAmount(
+			//         userShare,
+			//         AggregatorV3Interface(DaiToEthPriceFeed)
+			//     );
+			//     assetPriceInUsd = fetchAssetPriceInUsd(0, wethPriceInDai);
+			// } else {
+			//     // Fetch asset price in USD
+			//     assetPriceInUsd = fetchAssetPriceInUsd(i, userShare);
+			// }
+
+			totalAmountInUsd += assetPriceInUsd;
+			uint256 assetPriceindai = (assetPriceInUsd * 10 ** 18) / 10 ** 8;
+			uint256 slipageamount = (assetPriceindai * maxslippage) / 100;
+			uint256 minamountout = assetPriceindai - slipageamount;
+			
+			if (assets[i] == assets[0]) {
+				// IERC20(assets[0]).transfer(mainWallet, userShare);
+				// transfer usdt user share to mainWallet
+
+			uint256 primaryUnLockingAmount = (userShare * assetAllocationRatio[0]) / 100;
+			userPrimaryTokenUnlockingAmt+=primaryUnLockingAmount;
+			primaryTokenLockedAmount -= primaryUnLockingAmount; // unlocking usdt amount
+
+			uint256 share = (userShare * assetAllocationRatio[0])/100;
+			TvmCell e;
+				ITokenWallet(_distributedTokenWallet).transfer({
+					amount: uint128(share),
+					recipient: mainWallet,
+					deployWalletValue: 10000,
+					remainingGasTo: owner,
+					notify: true,
+					payload: e
+					});
+
+			} else {
+				emit swaplog(assets[i], assets[0], userShare);
+				uint256 userDaiShareInUsdt = (userShare * assetAllocationRatio[i])/100;
+
+				uint256 swapAmtInDai = usdtRate(uint16(i),userDaiShareInUsdt);
+
+				makeSwap(
 				1,
+				assets[i],
+				uint128(swapAmtInDai),
 				assets[0],
-				assetsDexPairs[index],
+				assetsDexPairs[i - 1],
 				1 ever,
 				0,
 				address(this)
 			);
+	TvmCell e;
+			ITokenWallet(_distributedTokenWallet).transfer({
+					amount: uint128(userDaiShareInUsdt),
+					recipient: mainWallet,
+					deployWalletValue: 10000,
+					remainingGasTo: owner,
+					notify: true,
+					payload: e
+					});
+				// uint256 usershareInDai = swap(
+				//     assets[i],
+				//     assets[0],
+				//     userShare,
+				//     poolFeeTier[i - 1],
+				//     minamountout
+				// );
+				// IERC20(assets[0]).transfer(mainWallet, usershareInDai);
+			}
+			// q should transfer only usershare or userShareInDai
 		}
 
-		// uint256 userDepositCount = userDeposits[msg.sender].length;
-		// require(userDepositCount > 0, NO_VALID_DEPOSITS);
 
-		// // Calculate total amount eligible for withdrawal
-		// uint256 cnt = indices.length;
-		// for (uint256 i = 0; i < cnt; i++) {
-		// 	require(indices[i] < userDepositCount, INVALID_INDEX);
-		// 	User userDeposit = userDeposits[msg.sender][indices[i]];
-		// 	require(
-		// 		block.timestamp >=
-		// 			userDeposit.firstDepositTime + FULL_TERM_LOCK_PERIOD,
-		// 		DEPOSIT_NOT_ELIGIBLE
-		// 	);
+// **************************** Fee Start ****************************************//
+		uint256 totalamount2 = totalAmount;
+		uint256 totalDepositInUsd = fetchAssetPriceInUsd(0, totalamount2);
 
-		// 	totalAmount += userDeposit.treasuryDeposit; //in 18 decimals
-		// 	userDeposit.treasuryDeposit = 0;
-		// 	userDeposit.firstDepositTime = 0; // Set deposit to 0 to prevent double withdrawal
-		// }
-		// require(totalAmount > 0, NO_VALID_DEPOSITS);
+		// // Determine fee percentage
+		uint256 feePercentage = totalAmountInUsd > (totalDepositInUsd * 2)
+			? 20
+			: 10;
+		uint256 totalAmountInDaiSwap = 100; //getUsdToDaiAmount(
+		//     totalAmountInUsd,
+		//     AggregatorV3Interface(priceFeed[0])
+		// );
 
-		// // Calculate total user deposit assets in USD after a year
-		// uint256 totalAmountInUsd;
-		// uint256 len = assets.length;
-		// for (uint256 i = 0; i < len; i++) {
-		// 	uint256 treasuryBal = 100; //IERC20(assets[i]).balanceOf(address(this));
-		// 	uint256 userShare = (treasuryBal * totalAmount) /
-		// 		totalTreasuryPoints; //in asset decimals
-		// 	uint256 assetPriceInUsd;
+		uint256 feeAmount;
+		uint256 amountAfterFee;
+		uint256 daiAmountToMint;
+		if (totalamount2 < totalAmountInDaiSwap) {
+			feeAmount = (totalAmountInDaiSwap * feePercentage) / 100;
 
-		// 	// if (assets[i] == WETH) {
-		// 	//     // Special case for WETH
-		// 	//     uint256 wethPriceInDai = getWethToDaiAmount(
-		// 	//         userShare,
-		// 	//         AggregatorV3Interface(DaiToEthPriceFeed)
-		// 	//     );
-		// 	//     assetPriceInUsd = fetchAssetPriceInUsd(0, wethPriceInDai);
-		// 	// } else {
-		// 	//     // Fetch asset price in USD
-		// 	//     assetPriceInUsd = fetchAssetPriceInUsd(i, userShare);
-		// 	// }
-		// 	totalAmountInUsd += assetPriceInUsd;
-		// 	uint256 assetPriceindai = (assetPriceInUsd * 10 ** 18) / 10 ** 8;
-		// 	uint256 slipageamount = (assetPriceindai * maxslippage) / 100;
-		// 	uint256 minamountout = assetPriceindai - slipageamount;
+			amountAfterFee = totalAmountInDaiSwap - feeAmount;
 
-		// 	if (assets[i] == assets[0]) {
-		// 		// IERC20(assets[0]).transfer(mainWallet, userShare);
-		// 	} else {
-		// 		emit swaplog(assets[i], assets[0], userShare);
-		// 		// uint256 usershareInDai = swap(
-		// 		//     assets[i],
-		// 		//     assets[0],
-		// 		//     userShare,
-		// 		//     poolFeeTier[i - 1],
-		// 		//     minamountout
-		// 		// );
-		// 		// IERC20(assets[0]).transfer(mainWallet, usershareInDai);
-		// 	}
-		// 	//  should transfer only usershare or userShareInDai
-		// }
+			daiAmountToMint =
+				(amountAfterFee * DEED_EMISSION_RATE * 10 ** 8) /
+				(10 ** 18);
+		} else {
+			feeAmount = (totalamount2 * feePercentage) / 100;
 
-		// uint256 totalamount2 = totalAmount;
-		// uint256 totalDepositInUsd = fetchAssetPriceInUsd(0, totalamount2);
+			amountAfterFee = totalamount2 - feeAmount;
 
-		// // // Determine fee percentage
-		// uint256 feePercentage = totalAmountInUsd > (totalDepositInUsd * 2)
-		// 	? 20
-		// 	: 10;
-		// uint256 totalAmountInDaiSwap = 100; //getUsdToDaiAmount(
-		// //     totalAmountInUsd,
-		// //     AggregatorV3Interface(priceFeed[0])
-		// // );
+			daiAmountToMint =
+				(amountAfterFee * DEED_EMISSION_RATE * 10 ** 8) /
+				(10 ** 18);
+		}
 
-		// uint256 feeAmount;
-		// uint256 amountAfterFee;
-		// uint256 daiAmountToMint;
-		// if (totalamount2 < totalAmountInDaiSwap) {
-		// 	feeAmount = (totalAmountInDaiSwap * feePercentage) / 100;
+		IDeedToken(deedToken).mintForTreasury(msg.sender, daiAmountToMint);
 
-		// 	amountAfterFee = totalAmountInDaiSwap - feeAmount;
+		totalTreasuryPoints -= totalAmount;
+		// Update treasury points for user
+		treasuryBalances[msg.sender] -= totalAmount;
 
-		// 	daiAmountToMint =
-		// 		(amountAfterFee * DEED_EMISSION_RATE * 10 ** 8) /
-		// 		(10 ** 18);
-		// } else {
-		// 	feeAmount = (totalamount2 * feePercentage) / 100;
+		// // Remove withdrawn deposits from userDeposits array
+		removeUserDeposits(msg.sender, indices);
+		emit Withdraw(msg.sender, totalAmount, daiAmountToMint);
 
-		// 	amountAfterFee = totalamount2 - feeAmount;
-
-		// 	daiAmountToMint =
-		// 		(amountAfterFee * DEED_EMISSION_RATE * 10 ** 8) /
-		// 		(10 ** 18);
-		// }
-
-		// IDeedToken(deedToken).mintForTreasury(msg.sender, daiAmountToMint);
-
-		// totalTreasuryPoints -= totalAmount;
-		// // Update treasury points for user
-		// treasuryBalances[msg.sender] -= totalAmount;
-
-		// // // Remove withdrawn deposits from userDeposits array
-		// removeUserDeposits(msg.sender, indices);
-		// emit Withdraw(msg.sender, totalAmount, daiAmountToMint);
-
-
+// *********************************** Fee ENd *********************************//
 
 	}
-	event withdrawTriggerd(bool status,uint64 count);
-	function withdrawWvenom( ) public {
-		emit withdrawTriggerd(true,withdrawCount);
-		makeSwap(
-				18,
-				assets[2],
-				uint128(1000000),
-				assets[0],
-				assetsDexPairs[2],
-				1 ever,
-				0,
-				address(this)
-			);
-			emit asset1SwapEvnet(assets[2],assets[0],assetsDexPairs[2],uint128(1));
-	}
-	function withdrawW3W( ) public {
-		emit withdrawTriggerd(true,withdrawCount);
-		makeSwap(
-				18,
+	event WithdrawDai(address asset1, address asset2, uint256 userDaiShareInUsdt,uint256 swapAmtInDai);
+	function withdrawDaiAmount(uint256 userShare) public {
+
+				uint256 userDaiShareInUsdt = (userShare * assetAllocationRatio[1])/100;
+
+				uint256 swapAmtInDai = usdtRate(1,userDaiShareInUsdt);
+
+				makeSwap(
+				1,
 				assets[1],
-				uint128(1000000),
+				uint128(swapAmtInDai),
 				assets[0],
-				assetsDexPairs[1],
+				assetsDexPairs[0],
 				1 ever,
 				0,
 				address(this)
 			);
-			emit asset1SwapEvnet(assets[1],assets[0],assetsDexPairs[1],uint128(1));
+	TvmCell e;
+			ITokenWallet(_distributedTokenWallet).transfer({
+					amount: uint128(userDaiShareInUsdt),
+					recipient: mainWallet,
+					deployWalletValue: 10000,
+					remainingGasTo: owner,
+					notify: true,
+					payload: e
+					});
+emit WithdrawDai(assets[1],assets[0],userDaiShareInUsdt, swapAmtInDai);
 	}
+	function usdtRate(uint16 index,uint256 _usdtAmount) public returns (uint256 daiAmount) {
+        // Scale USDT to 18 decimals before applying rate
+		uint256 RATE ;
+		if(index == 1){
+				RATE = 949038394185496310;
+		}
+		
+        uint256 usdt18 = _usdtAmount * 1e12; 
+
+        daiAmount = (usdt18 * RATE) / 1e18;
+    }
 
 	uint16 public constant INVALID_ASSET_INDEX = 237;
 
@@ -854,44 +836,9 @@ function asset3Swap() public {
 	function getCallbackAmouhnt() public {
 		msg.sender.transfer({value: 1 ever, flag: 128, bounce: false});
 	}
+
+	fallback() external {
+    tvm.accept();
+    // Optional logging here
 }
-
-
-
-// function deposit(uint256 daiAmount) public {
-	// 	// Approve DAI for the swap router
-	// 	// TransferHelper.safeApprove(assets[0], SWAP_ROUTER_02, daiAmount);
-
-	// 	// Calculate the amount of DAI to be swapped for each asset
-	// 	uint256 n = assets.length;
-	// 	for (uint256 i = 1; i < n; i++) {
-	// 		uint256 amountIn = (daiAmount * assetAllocationRatio[i]) / 100;
-	// 		// uint8 decimals = uint8(assetsdecimals[i];)
-	// 		// uint256 amountinusd = (amountIn * 10 ** 8) / (10 ** 18);
-	// 		// uint256 examountout = 100; //fetchUsdIntoAssetsPrice(i, amountinusd);
-	// 		// // uint256 slipage = 5;
-	// 		// uint256 slipageamount = (examountout * maxslippage) / 100;
-	// 		// uint256 minamountout = examountout - slipageamount;
-
-	// 		// require(minamountout > 0, SLIPPAGE_TOO_HIGH);
-
-	// 		makeSwap(
-	// 			1,
-	// 			assets[0],
-	// 			uint128(amountIn),
-	// 			assets[i],
-	// 			assetsDexPairs[i - 1],
-	// 			1 ever,
-	// 			0,
-	// 			address(this)
-	// 		);
-	// 		// Adjust for decimals of the asset
-	// 		// swapExactInputSingle(
-	// 		// 	assets[0],
-	// 		// 	assets[i],
-	// 		// 	amountIn,
-	// 		// 	poolFeeTier[i - 1],
-	// 		// 	minamountout
-	// 		// );
-	// 	}
-	// }
+}

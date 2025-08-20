@@ -45,15 +45,15 @@ async function mainS() {
             nonce_: locklift.utils.getRandomNonce(),
         },
         constructorParams: {
-            _assets: [USDT, W3W, WVENOM, WETH],
-            _assetsdecimals: [6, 9, 9, 18],
-            _assetAllocations: [10, 20, 40, 30],
-            _assetsDexPairs: [USDT, USDT_W3W_DEX_PAIR, USDT_WVENOM_DEX_PAIR, USDT_WETH_DEX_PAIR],
+            _assets: [USDT, DAI],
+            _assetsdecimals: [6, 18],
+            _assetAllocations: [30, 70],
+            _assetsDexPairs: [ USDT_DAI_DEX_PAIR],
             _owner: OWNER,
             _deedNFT: deedNFT,
             _founderNFT: deedNFT,
             _mainWallet: OWNER,
-            _priceFeed: [USDT, W3W, WVENOM, WETH],
+            _priceFeed: [USDT, DAI],
             _deedToken: USDT,
             _DaiToEthPriceFeed: new Address("0:72a4629b7c0f9ffdffa141521658cdbba2e66aac2d70f640e504e60ea0a9b4dd"),
             _depositingAddress: OWNER,
@@ -62,7 +62,7 @@ async function mainS() {
             exchangeContractAddress: new Address("0:0ec4f4d06dd7abd671f272bb5429426c98971cb2227a5d1b80344e066efdbddd"),
             // userAssetZeroTokenWallet:new Address("")
         },
-        value: locklift.utils.toNano(5),
+        value: locklift.utils.toNano(3),
     });
 
     console.log(`Treasury deployed at :: ${treasuryContractInstance.address.toString()}`);
@@ -114,47 +114,47 @@ async function mainS() {
     //     await traceTree?.beautyPrint();
     // }
 
-    const userW3wTokenWallet = new locklift.provider.Contract(TIP3_WALLET_ABI, userW3wTokenWalletAddress);
-    {
-        const { traceTree } = await locklift.tracing.trace(
-            userW3wTokenWallet.methods
-                .transfer({
-                    amount: 5000000,
-                    deployWalletValue: toNano(1),
-                    notify: true,
-                    payload: "",
-                    recipient: treasuryContractInstance.address,
-                    remainingGasTo: new Address("0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081"),
-                })
-                .send({
-                    from: OWNER,
-                    amount: toNano(2),
-                }),
-        );
+    // const userW3wTokenWallet = new locklift.provider.Contract(TIP3_WALLET_ABI, userW3wTokenWalletAddress);
+    // {
+    //     const { traceTree } = await locklift.tracing.trace(
+    //         userW3wTokenWallet.methods
+    //             .transfer({
+    //                 amount: 5000000,
+    //                 deployWalletValue: toNano(1),
+    //                 notify: true,
+    //                 payload: "",
+    //                 recipient: treasuryContractInstance.address,
+    //                 remainingGasTo: new Address("0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081"),
+    //             })
+    //             .send({
+    //                 from: OWNER,
+    //                 amount: toNano(2),
+    //             }),
+    //     );
 
-        await traceTree?.beautyPrint();
-    }
+    //     await traceTree?.beautyPrint();
+    // }
 
-    const userWvenomTokenWallet = new locklift.provider.Contract(TIP3_WALLET_ABI, userWvenomTokenWalletAddress);
-    {
-        const { traceTree } = await locklift.tracing.trace(
-            userWvenomTokenWallet.methods
-                .transfer({
-                    amount: 50000000 ,
-                    deployWalletValue: toNano(1),
-                    notify: true,
-                    payload: "",
-                    recipient: treasuryContractInstance.address,
-                    remainingGasTo: new Address("0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081"),
-                })
-                .send({
-                    from: OWNER,
-                    amount: toNano(2),
-                }),
-        );
+    // const userWvenomTokenWallet = new locklift.provider.Contract(TIP3_WALLET_ABI, userWvenomTokenWalletAddress);
+    // {
+    //     const { traceTree } = await locklift.tracing.trace(
+    //         userWvenomTokenWallet.methods
+    //             .transfer({
+    //                 amount: 50000000 ,
+    //                 deployWalletValue: toNano(1),
+    //                 notify: true,
+    //                 payload: "",
+    //                 recipient: treasuryContractInstance.address,
+    //                 remainingGasTo: new Address("0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081"),
+    //             })
+    //             .send({
+    //                 from: OWNER,
+    //                 amount: toNano(2),
+    //             }),
+    //     );
 
-        await traceTree?.beautyPrint();
-    }
+    //     await traceTree?.beautyPrint();
+    // }
 
     // const userWethTokenWallet = new locklift.provider.Contract(TIP3_WALLET_ABI, userWethTokenWalletAddress);
     // {
