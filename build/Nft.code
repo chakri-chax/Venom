@@ -22,11 +22,17 @@ ENDS
 CTOS
 LDMSGADDR
 LDU 128
+LDU 256
 LDREF
-LDU 128
-LDU 128
+LDREF
+LDREF
 ENDS
-BLKSWAP 3, 3
+CTOS
+LDU 128
+LDU 128
+LDREF
+ENDS
+BLKSWAP 3, 6
 .loc ../node_modules/@broxus/tip4/contracts/TIP4_1/TIP4_1Nft.tsol, 54
 MYCODE
 
@@ -135,13 +141,21 @@ ROTREV
 PUSHINT 32
 DICTUSETB
 SETGLOB 10
-.loc ../node_modules/@broxus/tip4/contracts/TIP4_2_2/TIP4_2_2Nft.tsol, 0
-ROT
 .loc ../node_modules/@broxus/tip4/contracts/TIP4_3/TIP4_3Nft.tsol, 30
 CALLREF {
 	CALL $_init4_3_8f662628_internal_macro$
 }
-.loc ../contracts/Nft.tsol, 0
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 49
+ACCEPT
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 50
+ROT
+SETGLOB 18
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 51
+SWAP
+SETGLOB 19
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 52
+SETGLOB 20
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
 CALLREF {
 	CALL $c7_to_c4$
 }
@@ -152,12 +166,12 @@ THROW 0
 CALL $_beforeTransfer_4721b701_internal_macro$
 
 .macro _beforeTransfer_4721b701_internal_macro
-.loc ../contracts/Nft.tsol, 43
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 70
 DROP
 CALLREF {
 	CALL $_destructIndex_d3dd7d3c_internal_macro$
 }
-.loc ../contracts/Nft.tsol, 0
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
 DROP
 
 .globl	_afterTransfer_41f289ae_internal
@@ -165,24 +179,24 @@ DROP
 CALL $_afterTransfer_41f289ae_internal_macro$
 
 .macro _afterTransfer_41f289ae_internal_macro
-.loc ../contracts/Nft.tsol, 51
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 78
 BLKDROP 3
 CALLREF {
 	CALL $_deployIndex_367ac79d_internal_macro$
 }
-.loc ../contracts/Nft.tsol, 0
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
 
 .globl	_beforeChangeOwner_14992e29_internal
 .type	_beforeChangeOwner_14992e29_internal, @function
 CALL $_beforeChangeOwner_14992e29_internal_macro$
 
 .macro _beforeChangeOwner_14992e29_internal_macro
-.loc ../contracts/Nft.tsol, 60
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 87
 DROP
 CALLREF {
 	CALL $_destructIndex_d3dd7d3c_internal_macro$
 }
-.loc ../contracts/Nft.tsol, 0
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
 DROP2
 
 .globl	_afterChangeOwner_4a7c15bb_internal
@@ -190,30 +204,301 @@ DROP2
 CALL $_afterChangeOwner_4a7c15bb_internal_macro$
 
 .macro _afterChangeOwner_4a7c15bb_internal_macro
-.loc ../contracts/Nft.tsol, 69
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 96
 BLKDROP 4
 CALLREF {
 	CALL $_deployIndex_367ac79d_internal_macro$
 }
-.loc ../contracts/Nft.tsol, 0
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
 
 .globl	_beforeChangeManager_98a59d63_internal
 .type	_beforeChangeManager_98a59d63_internal, @function
 CALL $_beforeChangeManager_98a59d63_internal_macro$
 
 .macro _beforeChangeManager_98a59d63_internal_macro
-.loc ../contracts/Nft.tsol, 78
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 105
 BLKDROP 4
-.loc ../contracts/Nft.tsol, 0
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
 
 .globl	_afterChangeManager_83a727c6_internal
 .type	_afterChangeManager_83a727c6_internal, @function
 CALL $_afterChangeManager_83a727c6_internal_macro$
 
 .macro _afterChangeManager_83a727c6_internal_macro
-.loc ../contracts/Nft.tsol, 87
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 114
 BLKDROP 4
-.loc ../contracts/Nft.tsol, 0
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+
+.macro setTypeName
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 117
+LDREF
+ENDS
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+CALLREF {
+	CALL $setTypeName_404a4eb4_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.macro setTypeName_404a4eb4_internal_macro
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 61
+GETGLOB 9
+GETGLOB 12
+SDEQ
+THROWIFNOT 241
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 118
+DUP
+PUSHPOW2DEC 32
+CDATASIZE
+DROP
+NIP
+RSHIFT 3
+LESSINT 101
+THROWIFNOT 242
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 119
+GETGLOB 12
+PUSHREFSLICE {
+	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+}
+SDEQ
+THROWIF 243
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 120
+GETGLOB 19
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 121
+SWAP
+SETGLOB 19
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 122
+DUP
+GETGLOB 19
+GETGLOB 18
+GETGLOB 12
+TRUE
+NEWC
+STSLICECONST x6_
+STI 1
+STSLICECONST x1_
+STSLICE
+PUSHINT 1296232016
+STUR 143
+STU 256
+STREF
+STREF
+ENDC
+PUSHINT 64
+SENDRAWMSG
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 127
+GETGLOB 19
+SWAP
+GETGLOB 18
+PUSHSLICE xc000000000000000000000000010352115
+NEWC
+STSLICE
+STU 256
+STREF
+STREF
+ENDC
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+
+.macro setNickName
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 130
+LDREF
+ENDS
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+CALLREF {
+	CALL $setNickName_c73ea367_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.macro setNickName_c73ea367_internal_macro
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 56
+GETGLOB 9
+GETGLOB 14
+SDEQ
+GETGLOB 9
+GETGLOB 12
+SDEQ
+OR
+THROWIFNOT 240
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 131
+DUP
+PUSHPOW2DEC 32
+CDATASIZE
+DROP
+NIP
+RSHIFT 3
+LESSINT 101
+THROWIFNOT 242
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 132
+GETGLOB 12
+PUSHREFSLICE {
+	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+}
+SDEQ
+THROWIF 243
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 133
+GETGLOB 20
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 134
+SWAP
+SETGLOB 20
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 135
+GETGLOB 9
+OVER
+GETGLOB 20
+GETGLOB 18
+GETGLOB 12
+TRUE
+NEWC
+STSLICECONST x6_
+STI 1
+STSLICECONST x1_
+STSLICE
+PUSHINT 1
+STUR 111
+ROLLREV 4
+NEWC
+STSLICECONST x47f0340a
+STU 256
+STREF
+STREF
+STSLICE
+STBREFR
+ENDC
+PUSHINT 64
+SENDRAWMSG
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 140
+GETGLOB 20
+SWAP
+GETGLOB 18
+PUSHSLICE xc00000000000000000000000005b4216e7
+NEWC
+STSLICE
+STU 256
+STREF
+STREF
+ENDC
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+
+.macro getNftInfo
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 143
+LDU 32
+GETGLOB 4
+ROT
+SETINDEXQ 5
+SETGLOB 4
+ENDS
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+CALLREF {
+	CALL $getNftInfo_7ca5685f_internal_macro$
+}
+PUSH S3
+PUSHCONT {
+	PUSH S5
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 98
+	STZEROES
+	REVERSE 3, 1
+	STSLICECONST xa1c20981
+	STU 256
+	STREF
+	STREF
+	ENDC
+	PUSHINT 0
+}
+PUSHCONT {
+	GETGLOB 4
+	DUP
+	INDEX 3
+	OVER
+	THIRD
+	GETGLOB 9
+	ROLL 3
+	SECOND
+	NEWC
+	STSLICECONST x2_
+	STI 1
+	STSLICECONST x1_
+	STSLICE
+	SWAP
+	STGRAMS
+	STDICT
+	PUSHINT 1
+	STUR 106
+	REVERSE 4, 0
+	NEWC
+	GETGLOB 4
+	INDEX 5
+	STUR 32
+	STU 256
+	STREF
+	STREF
+	STBREFR
+	ENDC
+	GETGLOB 4
+	INDEX 4
+}
+IFELSE
+SENDRAWMSG
+IFREF {
+	CALL $upd_only_time_in_c4$
+}
+THROW 0
+
+.macro getNftInfo_7ca5685f_internal_macro
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 144
+GETGLOB 4
+PUSHINT 0
+SETINDEXQ 2
+FALSE
+SETINDEXQ 1
+PUSHINT 64
+SETINDEXQ 4
+SETGLOB 4
+GETGLOB 18
+GETGLOB 19
+GETGLOB 20
+.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
 
 .globl	_init4_3_8f662628_internal
 .type	_init4_3_8f662628_internal, @function
@@ -1985,7 +2270,16 @@ LDMSGADDR
 LDU 128
 LDU 128
 LDREF
+LDREF
 ENDS
+CTOS
+LDU 256
+LDREF
+LDREF
+ENDS
+SETGLOB 20
+SETGLOB 19
+SETGLOB 18
 SETGLOB 17
 SETGLOB 16
 SETGLOB 15
@@ -2025,6 +2319,13 @@ PUSHCONT {
 	DUP
 	PUSHREF {
 	}
+	PUSHINT 0
+	PUSHREF {
+	}
+	DUP
+	SETGLOB 20
+	SETGLOB 19
+	SETGLOB 18
 	SETGLOB 17
 	SETGLOB 16
 	SETGLOB 15
@@ -2046,6 +2347,9 @@ IFREFELSE {
 }
 
 .macro c7_to_c4
+GETGLOB 20
+GETGLOB 19
+GETGLOB 18
 GETGLOB 17
 GETGLOB 16
 GETGLOB 15
@@ -2062,18 +2366,24 @@ STU 64
 STONE
 STDICT
 STU 256
-ROLLREV 6
+ROLLREV 9
 NEWC
 STSLICE
-ROLLREV 5
+ROLLREV 8
 NEWC
 STSLICE
-ROLLREV 4
+ROLLREV 7
 NEWC
 STSLICE
 STU 128
 STU 128
 STREF
+ROLLREV 3
+NEWC
+STU 256
+STREF
+STREF
+STBREFR
 STBREFR
 STBREFR
 STBREFR
@@ -2199,11 +2509,77 @@ CALLREF {
 }
 THROW 60
 
+.macro nftId
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 18
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000fb2f50d4
+	NEWC
+	STSLICE
+	STU 256
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro typeName
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 19
+OVER
+PUSHCONT {
+	PUSHSLICE xc000000000000000000000000095d475a9
+	NEWC
+	STSLICE
+	STREF
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro nickName
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 20
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000f5ed8209
+	NEWC
+	STSLICE
+	STREF
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
 .macro public_function_selector
 DUP
-PUSHINT 299736722
+PUSHINT 297752426
 LEQ
 IFJMPREF {
+	DUP
+	PUSHINT 51819148
+	EQUAL
+	IFJMPREF {
+		CALL $setTypeName$
+	}
 	DUP
 	PUSHINT 64331365
 	EQUAL
@@ -2222,17 +2598,17 @@ IFJMPREF {
 	IFJMPREF {
 		CALL $getInfo$
 	}
+}
+DUP
+PUSHINT 545265810
+LEQ
+IFJMPREF {
 	DUP
 	PUSHINT 299736722
 	EQUAL
 	IFJMPREF {
 		CALL $transfer$
 	}
-}
-DUP
-PUSHINT 1525619880
-LEQ
-IFJMPREF {
 	DUP
 	PUSHINT 348956614
 	EQUAL
@@ -2240,10 +2616,27 @@ IFJMPREF {
 		CALL $indexCodeHash$
 	}
 	DUP
-	PUSHINT 469736223
+	PUSHINT 366245289
+	EQUAL
+	IFJMPREF {
+		CALL $typeName$
+	}
+	DUP
+	PUSHINT 545265810
 	EQUAL
 	IFJMPREF {
 		CALL $constructor$
+	}
+}
+DUP
+PUSHINT 1904151404
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 566364545
+	EQUAL
+	IFJMPREF {
+		CALL $getNftInfo$
 	}
 	DUP
 	PUSHINT 839183401
@@ -2257,22 +2650,40 @@ IFJMPREF {
 	IFJMPREF {
 		CALL $resolveIndex$
 	}
-}
-DUP
-PUSHINT 1916393393
-LEQ
-IFJMPREF {
 	DUP
 	PUSHINT 1904151404
 	EQUAL
 	IFJMPREF {
 		CALL $changeOwner$
 	}
+}
+DUP
+PUSHINT 2077890830
+LEQ
+IFJMPREF {
 	DUP
 	PUSHINT 1916393393
 	EQUAL
 	IFJMPREF {
 		CALL $getUrlParts$
+	}
+	DUP
+	PUSHINT 1978499593
+	EQUAL
+	IFJMPREF {
+		CALL $nickName$
+	}
+	DUP
+	PUSHINT 2066698452
+	EQUAL
+	IFJMPREF {
+		CALL $nftId$
+	}
+	DUP
+	PUSHINT 2077890830
+	EQUAL
+	IFJMPREF {
+		CALL $setNickName$
 	}
 }
 

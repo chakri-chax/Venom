@@ -139,6 +139,13 @@
 			]
 		},
 		{
+			"name": "getCallbackAmouhnt",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
 			"name": "owner",
 			"inputs": [
 			],

@@ -10,7 +10,7 @@ async function main() {
   const owner = new Address(
     "0:41d0f5b6e283001fe430f9ccc71cd04f0ed8f2962220b5a5ec21c7c007dc9f2a"
   );
-
+  const chakri = new Address("0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081");
   const burner = new Address("0:52f753f74a0bff42ad26d76a9c1a648a8964459aa5f239268ab83b607658afed");
   const warehouse = new Address("0:8a614d32625c62af8ebd2cad97e257991043aa6ce6c937bfbf0cd18ad7f0d813");
 // const warehouseWallet = new Address("0:1c91894d1170cc8b9465b45d2aaaa0110ec3c0bb9e450aba57f0361408fb5263");
@@ -45,7 +45,7 @@ async function main() {
       codeNft: nftArtifacts.code,
       codeIndex: indexArtifacts.code,
       codeIndexBasis: indexBasisArtifacts.code,
-      owner: burner,
+      owner: owner,
       remainOnNft: locklift.utils.toNano(0.2),
       baseNftUrl: `https://purple-definite-trout-798.mypinata.cloud/ipfs/QmNT6pU4kLmQ9AKJ9WWjyqsoemNPecCbbRsjJNKUv4MN9j/`, // 	string baseNftUrl,
       collectionUrl: `https://coral-naval-clam-30.mypinata.cloud/ipfs/bafkreibjex2gx4xhkelgihafsv6i7c5enfsm4c3ks32d23ydeqvd3gelua`, //     string collectionUrl,

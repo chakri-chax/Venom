@@ -2,7 +2,10 @@ import { Address } from "locklift";
 
 async function mainS() {
     const signer = (await locklift.keystore.getSigner("0"))!;
-    const walletAddress = "0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081";
+    // const walletAddress = "0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081";
+    const owner = new Address(
+      "0:41d0f5b6e283001fe430f9ccc71cd04f0ed8f2962220b5a5ec21c7c007dc9f2a"
+    );
     console.log(" Signer address:", signer.publicKey!);
     
     const { contract: commissionDistribution, tx } = await locklift.factory.deployContract({
@@ -12,7 +15,7 @@ async function mainS() {
         nonce_: locklift.utils.getRandomNonce(),
       },
       constructorParams: {
-        _lpWallet: new Address(walletAddress),
+        _lpWallet: owner,
         _nonce: locklift.utils.getRandomNonce(),
       },
       value: locklift.utils.toNano(1.5),

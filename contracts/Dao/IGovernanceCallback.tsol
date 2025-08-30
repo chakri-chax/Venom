@@ -1,0 +1,7 @@
+pragma ever-solidity >=0.62.0;
+
+import "./ILockedNFT.tsol";
+
+interface IGovernanceCallback {
+    function onLockedNFTBalances(LockedNFTBalances balances) external;
+}

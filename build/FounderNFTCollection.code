@@ -154,38 +154,38 @@ ROLL 5
 CALLREF {
 	CALL $_transferOwnership_d29d44ee_internal_macro$
 }
-.loc ../contracts/FounderNFTCollection.tsol, 76
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 76
 ACCEPT
-.loc ../contracts/FounderNFTCollection.tsol, 77
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 77
 PUSHINT 1000000000
 PUSHINT 0
 RAWRESERVE
-.loc ../contracts/FounderNFTCollection.tsol, 78
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 78
 PUSH S3
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 101
-.loc ../contracts/FounderNFTCollection.tsol, 79
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 79
 PUSH S2
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 102
-.loc ../contracts/FounderNFTCollection.tsol, 81
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 81
 ROLL 3
 SETGLOB 26
-.loc ../contracts/FounderNFTCollection.tsol, 82
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 82
 ROT
 SETGLOB 27
-.loc ../contracts/FounderNFTCollection.tsol, 83
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 83
 SWAP
 SETGLOB 28
-.loc ../contracts/FounderNFTCollection.tsol, 84
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 84
 SETGLOB 21
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 DROP
 CALLREF {
 	CALL $c7_to_c4$
@@ -201,9 +201,9 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/FounderNFTCollection.tsol, 87
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 87
 ENDS
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 CALLREF {
 	CALL $codeDepth_b85a2af4_internal_macro$
 }
@@ -239,20 +239,20 @@ THROW 0
 CALL $codeDepth_b85a2af4_internal_macro$
 
 .macro codeDepth_b85a2af4_internal_macro
-.loc ../contracts/FounderNFTCollection.tsol, 88
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 88
 MYADDR
 CALLREF {
 	CALL $_buildNftCode_c58e679e_internal_macro$
 }
 CDEPTH
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
 .globl	_buildNftState_c971fdf8_internal
 .type	_buildNftState_c971fdf8_internal, @function
 CALL $_buildNftState_c971fdf8_internal_macro$
 
 .macro _buildNftState_c971fdf8_internal_macro
-.loc ../contracts/FounderNFTCollection.tsol, 98
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 98
 PUSHINT 0
 NEWC
 STU 256
@@ -277,7 +277,7 @@ STOPTREF
 STOPTREF
 STZERO
 ENDC
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
 .macro getIndexFromRequestId
 DROP
@@ -288,7 +288,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/FounderNFTCollection.tsol, 101
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 101
 OVER
 PUSHCONT {
 	LDREF
@@ -298,7 +298,7 @@ PUSHCONT {
 IF
 LDU 256
 ENDS
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 CALLREF {
 	CALL $getIndexFromRequestId_a715ab3e_internal_macro$
 }
@@ -334,7 +334,7 @@ THROW 0
 CALL $getIndexFromRequestId_a715ab3e_internal_macro$
 
 .macro getIndexFromRequestId_a715ab3e_internal_macro
-.loc ../contracts/FounderNFTCollection.tsol, 102
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 102
 DUP
 GTINT -1
 OVER
@@ -342,7 +342,7 @@ GETGLOB 24
 LESS
 AND
 THROWIFNOT 109
-.loc ../contracts/FounderNFTCollection.tsol, 103
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 103
 GETGLOB 31
 PUSHPOW2 8
 DICTUGET
@@ -351,7 +351,7 @@ PUSHCONT {
 	PLDU 256
 }
 IF
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
 .macro initiateMint
 DROP
@@ -362,7 +362,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/FounderNFTCollection.tsol, 106
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 106
 OVER
 PUSHCONT {
 	LDREF
@@ -373,7 +373,7 @@ IF
 LDMSGADDR
 LDU 256
 ENDS
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 CALLREF {
 	CALL $initiateMint_5b867de7_internal_macro$
 }
@@ -384,34 +384,34 @@ CALLREF {
 THROW 0
 
 .macro initiateMint_5b867de7_internal_macro
-.loc ../contracts/FounderNFTCollection.tsol, 107
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 107
 OVER
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 103
-.loc ../contracts/FounderNFTCollection.tsol, 108
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 108
 DUP
 GTINT 0
 THROWIFNOT 104
-.loc ../contracts/FounderNFTCollection.tsol, 109
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 109
 GETGLOB 9
 GETGLOB 27
 SDEQ
 THROWIFNOT 105
-.loc ../contracts/FounderNFTCollection.tsol, 110
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 110
 GETGLOB 23
 PUSHINT 222000
 LESS
 THROWIFNOT 106
-.loc ../contracts/FounderNFTCollection.tsol, 111
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 111
 GETGLOB 24
 DUP
-.loc ../contracts/FounderNFTCollection.tsol, 113
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 113
 INC
 SETGLOB 24
-.loc ../contracts/FounderNFTCollection.tsol, 114
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 114
 GETGLOB 30
 OVER2
 GETGLOB 24
@@ -440,7 +440,7 @@ DICTUSETREF
 PAIR
 DUP
 SETGLOB 30
-.loc ../contracts/FounderNFTCollection.tsol, 122
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 122
 FIRST
 DEC
 UFITS 256
@@ -453,7 +453,7 @@ ROTREV
 PUSHPOW2 8
 DICTUSETB
 SETGLOB 31
-.loc ../contracts/FounderNFTCollection.tsol, 123
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 123
 BLKPUSH 2, 2
 GETGLOB 24
 FALSE
@@ -480,7 +480,7 @@ PUSHPOW2 8
 DICTUSETREF
 PUSHINT 32
 SETGLOBVAR
-.loc ../contracts/FounderNFTCollection.tsol, 130
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 130
 ROT
 PUSHSLICE xc0000000000000000000000001
 NEWC
@@ -498,7 +498,7 @@ STBREFR
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
 .macro getAllPendingMints
 DROP
@@ -509,9 +509,9 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/FounderNFTCollection.tsol, 133
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 133
 ENDS
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 CALLREF {
 	CALL $getAllPendingMints_d05bac41_internal_macro$
 }
@@ -547,9 +547,9 @@ IFREF {
 THROW 0
 
 .macro getAllPendingMints_d05bac41_internal_macro
-.loc ../contracts/FounderNFTCollection.tsol, 134
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 134
 GETGLOB 30
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
 .macro getAllNfts
 DROP
@@ -560,9 +560,9 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/FounderNFTCollection.tsol, 136
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 136
 ENDS
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 CALLREF {
 	CALL $getAllNfts_732e8d73_internal_macro$
 }
@@ -598,9 +598,9 @@ IFREF {
 THROW 0
 
 .macro getAllNfts_732e8d73_internal_macro
-.loc ../contracts/FounderNFTCollection.tsol, 137
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 137
 GETGLOB 29
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
 .macro getPendingMintByIndex
 DROP
@@ -611,7 +611,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/FounderNFTCollection.tsol, 140
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 140
 OVER
 PUSHCONT {
 	LDREF
@@ -621,7 +621,7 @@ PUSHCONT {
 IF
 LDU 256
 ENDS
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 CALLREF {
 	CALL $getPendingMintByIndex_c9caba6a_internal_macro$
 }
@@ -666,7 +666,7 @@ IFREF {
 THROW 0
 
 .macro getPendingMintByIndex_c9caba6a_internal_macro
-.loc ../contracts/FounderNFTCollection.tsol, 141
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 141
 PUSHINT 32
 GETGLOBVAR
 PUSHPOW2 8
@@ -694,7 +694,7 @@ PUSHCONT {
 	TUPLE 4
 }
 IFELSE
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
 .macro completeMint
 DROP
@@ -705,7 +705,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/FounderNFTCollection.tsol, 144
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 144
 OVER
 PUSHCONT {
 	LDREF
@@ -715,7 +715,7 @@ PUSHCONT {
 IF
 LDU 256
 ENDS
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 CALLREF {
 	CALL $completeMint_f96cb26c_internal_macro$
 }
@@ -726,7 +726,7 @@ CALLREF {
 THROW 0
 
 .macro completeMint_f96cb26c_internal_macro
-.loc ../contracts/FounderNFTCollection.tsol, 145
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 145
 GETGLOB 9
 CALLREF {
 	CALL $owner_8da5cb5b_internal_macro$
@@ -737,17 +737,17 @@ GETGLOB 27
 SDEQ
 OR
 THROWIFNOT 201
-.loc ../contracts/FounderNFTCollection.tsol, 146
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 146
 CALLREF {
 	CALL $getIndexFromRequestId_a715ab3e_internal_macro$
 }
-.loc ../contracts/FounderNFTCollection.tsol, 147
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 147
 DUP
 GETGLOB 30
 FIRST
 LEQ
 THROWIFNOT 107
-.loc ../contracts/FounderNFTCollection.tsol, 148
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 148
 DUP
 GETGLOB 30
 SECOND
@@ -766,15 +766,15 @@ CALLREF {
 	ENDS
 	TUPLE 4
 }
-.loc ../contracts/FounderNFTCollection.tsol, 149
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 149
 DUP
 INDEX 3
 THROWIF 108
-.loc ../contracts/FounderNFTCollection.tsol, 150
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 150
 DUP
 SECOND
 UFITS 128
-.loc ../contracts/FounderNFTCollection.tsol, 152
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 152
 GETGLOB 23
 PUSHCONT {
 	DUP
@@ -785,31 +785,31 @@ PUSHCONT {
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/FounderNFTCollection.tsol, 153
+	.loc ../contracts/Dao/FounderNFTCollection.tsol, 153
 	PUSH S2
 	FIRST
 	OVER
 	CALLREF {
 		CALL $mintNft_d1194e2b_internal_macro$
 	}
-	.loc ../contracts/FounderNFTCollection.tsol, 152
+	.loc ../contracts/Dao/FounderNFTCollection.tsol, 152
 	INC
-	.loc ../contracts/FounderNFTCollection.tsol, 0
+	.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 }
 WHILE
 DROP
-.loc ../contracts/FounderNFTCollection.tsol, 155
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 155
 GETGLOB 23
 OVER
 ADD
 UFITS 128
 SETGLOB 23
-.loc ../contracts/FounderNFTCollection.tsol, 156
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 156
 OVER
 TRUE
 SETINDEX 3
 POP S2
-.loc ../contracts/FounderNFTCollection.tsol, 160
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 160
 OVER
 THIRD
 ROT
@@ -830,27 +830,27 @@ STBREFR
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/FounderNFTCollection.tsol, 162
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 162
 CALLREF {
 	CALL $_removePendingMint_596a4214_internal_macro$
 }
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
 .globl	_removePendingMint_596a4214_internal
 .type	_removePendingMint_596a4214_internal, @function
 CALL $_removePendingMint_596a4214_internal_macro$
 
 .macro _removePendingMint_596a4214_internal_macro
-.loc ../contracts/FounderNFTCollection.tsol, 166
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 166
 GETGLOB 30
 FIRST
 DEC
 UFITS 256
-.loc ../contracts/FounderNFTCollection.tsol, 168
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 168
 DUP2
 NEQ
 PUSHCONT {
-	.loc ../contracts/FounderNFTCollection.tsol, 169
+	.loc ../contracts/Dao/FounderNFTCollection.tsol, 169
 	DUP
 	GETGLOB 30
 	SECOND
@@ -869,7 +869,7 @@ PUSHCONT {
 		ENDS
 		TUPLE 4
 	}
-	.loc ../contracts/FounderNFTCollection.tsol, 170
+	.loc ../contracts/Dao/FounderNFTCollection.tsol, 170
 	DUP
 	GETGLOB 30
 	UNPAIR
@@ -896,7 +896,7 @@ PUSHCONT {
 	DICTUSETREF
 	PAIR
 	SETGLOB 30
-	.loc ../contracts/FounderNFTCollection.tsol, 171
+	.loc ../contracts/Dao/FounderNFTCollection.tsol, 171
 	PUSH S2
 	GETGLOB 31
 	ROT
@@ -908,10 +908,10 @@ PUSHCONT {
 	PUSHPOW2 8
 	DICTUSETB
 	SETGLOB 31
-	.loc ../contracts/FounderNFTCollection.tsol, 0
+	.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 }
 IF
-.loc ../contracts/FounderNFTCollection.tsol, 174
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 174
 DROP2
 GETGLOB 30
 UNPAIR
@@ -926,7 +926,7 @@ DICTUDEL
 DROP
 PAIR
 SETGLOB 30
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
 .macro mintBatchToHolders
 DROP
@@ -937,7 +937,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/FounderNFTCollection.tsol, 176
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 176
 LDU 32
 LDDICT
 ROTREV
@@ -949,7 +949,7 @@ ROTREV
 PAIR
 SWAP
 ENDS
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 CALLREF {
 	CALL $mintBatchToHolders_1611a56b_internal_macro$
 }
@@ -960,72 +960,72 @@ CALLREF {
 THROW 0
 
 .macro mintBatchToHolders_1611a56b_internal_macro
-.loc ../contracts/FounderNFTCollection.tsol, 177
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 177
 GETGLOB 9
 GETGLOB 26
 SDEQ
 THROWIFNOT 201
-.loc ../contracts/FounderNFTCollection.tsol, 179
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 179
 OVER
 FIRST
 OVER
 FIRST
 EQUAL
 THROWIFNOT 202
-.loc ../contracts/FounderNFTCollection.tsol, 181
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 181
 OVER
 FIRST
-.loc ../contracts/FounderNFTCollection.tsol, 182
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 182
 PUSHINT 0
 PUSHCONT {
 	PUSH2 S0, S1
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/FounderNFTCollection.tsol, 183
+	.loc ../contracts/Dao/FounderNFTCollection.tsol, 183
 	PUSH2 S0, S3
 	SECOND
 	PUSHINT 32
 	DICTUGET
 	THROWIFNOT 50
-	.loc ../contracts/FounderNFTCollection.tsol, 184
+	.loc ../contracts/Dao/FounderNFTCollection.tsol, 184
 	PUSH2 S1, S3
 	SECOND
 	PUSHINT 32
 	DICTUGET
 	THROWIFNOT 50
 	PLDU 256
-	.loc ../contracts/FounderNFTCollection.tsol, 187
+	.loc ../contracts/Dao/FounderNFTCollection.tsol, 187
 	PUSHINT 0
 	PUSHCONT {
 		PUSH2 S0, S1
 		LESS
 	}
 	PUSHCONT {
-		.loc ../contracts/FounderNFTCollection.tsol, 188
+		.loc ../contracts/Dao/FounderNFTCollection.tsol, 188
 		PUSH S2
 		GETGLOB 23
 		CALLREF {
 			CALL $mintNft_d1194e2b_internal_macro$
 		}
-		.loc ../contracts/FounderNFTCollection.tsol, 189
+		.loc ../contracts/Dao/FounderNFTCollection.tsol, 189
 		GETGLOB 23
 		INC
 		UFITS 128
 		SETGLOB 23
-		.loc ../contracts/FounderNFTCollection.tsol, 187
+		.loc ../contracts/Dao/FounderNFTCollection.tsol, 187
 		INC
-		.loc ../contracts/FounderNFTCollection.tsol, 0
+		.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 	}
 	WHILE
 	BLKDROP 3
-	.loc ../contracts/FounderNFTCollection.tsol, 182
+	.loc ../contracts/Dao/FounderNFTCollection.tsol, 182
 	INC
-	.loc ../contracts/FounderNFTCollection.tsol, 0
+	.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 }
 WHILE
 DROP
-.loc ../contracts/FounderNFTCollection.tsol, 193
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 193
 PUSHSLICE xc000000000000000000000000008f69127
 NEWC
 STSLICE
@@ -1034,40 +1034,40 @@ ENDC
 PUSHINT 0
 SENDRAWMSG
 DROP2
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
 .globl	mintNft_d1194e2b_internal
 .type	mintNft_d1194e2b_internal, @function
 CALL $mintNft_d1194e2b_internal_macro$
 
 .macro mintNft_d1194e2b_internal_macro
-.loc ../contracts/FounderNFTCollection.tsol, 196
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 196
 DEPTH
 ADDCONST -2
 PICK
 PUSHINT 400000000
 GREATER
 THROWIFNOT 101
-.loc ../contracts/FounderNFTCollection.tsol, 197
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 197
 PUSHINT 0
 PUSHINT 4
 RAWRESERVE
-.loc ../contracts/FounderNFTCollection.tsol, 201
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 201
 DUP
 PUSHINT 222000
 LESS
 THROWIFNOT 102
-.loc ../contracts/FounderNFTCollection.tsol, 202
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 202
 GETGLOB 12
 INC
 UFITS 128
 SETGLOB 12
-.loc ../contracts/FounderNFTCollection.tsol, 205
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 205
 MYADDR
 CALLREF {
 	CALL $_buildNftCode_c58e679e_internal_macro$
 }
-.loc ../contracts/FounderNFTCollection.tsol, 206
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 206
 PUSHINT 0
 NEWC
 STU 256
@@ -1092,7 +1092,7 @@ STOPTREF
 STOPTREF
 STZERO
 ENDC
-.loc ../contracts/FounderNFTCollection.tsol, 211
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 211
 GETGLOB 18
 GETGLOB 17
 GETGLOB 15
@@ -1155,7 +1155,7 @@ STBREFR
 ENDC
 PUSHPOW2 7
 SENDRAWMSG
-.loc ../contracts/FounderNFTCollection.tsol, 223
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 223
 GETGLOB 29
 PUSH3 S2, S3, S1
 TRIPLE
@@ -1180,7 +1180,7 @@ PUSHINT 32
 DICTUSETREF
 PAIR
 SETGLOB 29
-.loc ../contracts/FounderNFTCollection.tsol, 229
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 229
 PUSH2 S0, S1
 PUSHINT 34
 GETGLOBVAR
@@ -1188,7 +1188,7 @@ PUSHPOW2 8
 DICTUSET
 PUSHINT 34
 SETGLOBVAR
-.loc ../contracts/FounderNFTCollection.tsol, 230
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 230
 ROT
 PUSHSLICE xc0000000000000000000000001
 NEWC
@@ -1206,7 +1206,7 @@ STBREFR
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
 .macro setWarehouseWallet
 DROP
@@ -1217,7 +1217,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/FounderNFTCollection.tsol, 234
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 234
 OVER
 PUSHCONT {
 	LDREF
@@ -1227,7 +1227,7 @@ PUSHCONT {
 IF
 LDMSGADDR
 ENDS
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 CALLREF {
 	CALL $setWarehouseWallet_70bdcf05_internal_macro$
 }
@@ -1238,21 +1238,21 @@ CALLREF {
 THROW 0
 
 .macro setWarehouseWallet_70bdcf05_internal_macro
-.loc ../contracts/FounderNFTCollection.tsol, 235
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 235
 GETGLOB 9
 GETGLOB 26
 SDEQ
 THROWIFNOT 201
-.loc ../contracts/FounderNFTCollection.tsol, 237
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 237
 DUP
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 103
-.loc ../contracts/FounderNFTCollection.tsol, 238
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 238
 SETGLOB 26
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
 .macro setRoutingWallet
 DROP
@@ -1263,7 +1263,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/FounderNFTCollection.tsol, 240
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 240
 OVER
 PUSHCONT {
 	LDREF
@@ -1273,7 +1273,7 @@ PUSHCONT {
 IF
 LDMSGADDR
 ENDS
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 CALLREF {
 	CALL $setRoutingWallet_bf2033ea_internal_macro$
 }
@@ -1284,21 +1284,21 @@ CALLREF {
 THROW 0
 
 .macro setRoutingWallet_bf2033ea_internal_macro
-.loc ../contracts/FounderNFTCollection.tsol, 241
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 241
 GETGLOB 9
 GETGLOB 26
 SDEQ
 THROWIFNOT 201
-.loc ../contracts/FounderNFTCollection.tsol, 243
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 243
 DUP
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 103
-.loc ../contracts/FounderNFTCollection.tsol, 244
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 244
 SETGLOB 27
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
 .macro getWarehouseWallet
 DROP
@@ -1309,9 +1309,9 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/FounderNFTCollection.tsol, 246
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 246
 ENDS
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 CALLREF {
 	CALL $getWarehouseWallet_052c03e2_internal_macro$
 }
@@ -1351,9 +1351,9 @@ THROW 0
 CALL $getWarehouseWallet_052c03e2_internal_macro$
 
 .macro getWarehouseWallet_052c03e2_internal_macro
-.loc ../contracts/FounderNFTCollection.tsol, 247
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 247
 GETGLOB 26
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
 .macro getRoutingWallet
 DROP
@@ -1364,9 +1364,9 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/FounderNFTCollection.tsol, 249
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 249
 ENDS
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 CALLREF {
 	CALL $getRoutingWallet_4ee1f08e_internal_macro$
 }
@@ -1406,9 +1406,9 @@ THROW 0
 CALL $getRoutingWallet_4ee1f08e_internal_macro$
 
 .macro getRoutingWallet_4ee1f08e_internal_macro
-.loc ../contracts/FounderNFTCollection.tsol, 250
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 250
 GETGLOB 27
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
 .macro getNftAddress
 DROP
@@ -1419,7 +1419,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/FounderNFTCollection.tsol, 252
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 252
 OVER
 PUSHCONT {
 	LDREF
@@ -1429,7 +1429,7 @@ PUSHCONT {
 IF
 LDU 256
 ENDS
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 CALLREF {
 	CALL $getNftAddress_e8072bd4_internal_macro$
 }
@@ -1469,7 +1469,7 @@ THROW 0
 CALL $getNftAddress_e8072bd4_internal_macro$
 
 .macro getNftAddress_e8072bd4_internal_macro
-.loc ../contracts/FounderNFTCollection.tsol, 253
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 253
 PUSHINT 34
 GETGLOBVAR
 PUSHPOW2 8
@@ -1480,7 +1480,7 @@ PUSHCONT {
 	}
 }
 IFNOT
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
 .macro _baseURI
 DROP
@@ -1491,9 +1491,9 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/FounderNFTCollection.tsol, 257
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 257
 ENDS
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 CALLREF {
 	CALL $_baseURI_743976a0_internal_macro$
 }
@@ -1529,9 +1529,47 @@ THROW 0
 CALL $_baseURI_743976a0_internal_macro$
 
 .macro _baseURI_743976a0_internal_macro
-.loc ../contracts/FounderNFTCollection.tsol, 258
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 258
 GETGLOB 28
-.loc ../contracts/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+
+.macro getCallbackAmouhnt
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 261
+ENDS
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+CALLREF {
+	CALL $getCallbackAmouhnt_02098655_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	getCallbackAmouhnt_02098655_internal
+.type	getCallbackAmouhnt_02098655_internal, @function
+CALL $getCallbackAmouhnt_02098655_internal_macro$
+
+.macro getCallbackAmouhnt_02098655_internal_macro
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 262
+GETGLOB 9
+NEWC
+STSLICECONST x42_
+STSLICE
+PUSHINT 2949852426645541256083542794369173188247552
+STUR 143
+ENDC
+PUSHPOW2 7
+SENDRAWMSG
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
 .macro owner
 DROP
@@ -4099,7 +4137,7 @@ IFJMPREF {
 	}
 }
 DUP
-PUSHINT 1833689300
+PUSHINT 1827261197
 LEQ
 IFJMPREF {
 	DUP
@@ -4190,7 +4228,7 @@ IFJMPREF {
 		}
 	}
 	DUP
-	PUSHINT 1833689300
+	PUSHINT 1827261197
 	LEQ
 	IFJMPREF {
 		DUP
@@ -4212,10 +4250,10 @@ IFJMPREF {
 			CALL $_getPendingMintByIndex$
 		}
 		DUP
-		PUSHINT 1833689300
+		PUSHINT 1827261197
 		EQUAL
 		IFJMPREF {
-			CALL $getNftAddress$
+			CALL $getCallbackAmouhnt$
 		}
 	}
 }
@@ -4224,9 +4262,15 @@ PUSHINT 2131972763
 LEQ
 IFJMPREF {
 	DUP
-	PUSHINT 1936958278
+	PUSHINT 1933051457
 	LEQ
 	IFJMPREF {
+		DUP
+		PUSHINT 1833689300
+		EQUAL
+		IFJMPREF {
+			CALL $getNftAddress$
+		}
 		DUP
 		PUSHINT 1860340199
 		EQUAL
@@ -4245,17 +4289,17 @@ IFJMPREF {
 		IFJMPREF {
 			CALL $nftAddressOf$
 		}
+	}
+	DUP
+	PUSHINT 2131972763
+	LEQ
+	IFJMPREF {
 		DUP
 		PUSHINT 1936958278
 		EQUAL
 		IFJMPREF {
 			CALL $getIndexFromRequestId$
 		}
-	}
-	DUP
-	PUSHINT 2131972763
-	LEQ
-	IFJMPREF {
 		DUP
 		PUSHINT 1997736283
 		EQUAL

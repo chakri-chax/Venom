@@ -5,7 +5,7 @@ pragma AbiHeader time;
 pragma AbiHeader pubkey;
 
 import "@broxus/tip4/contracts/TIP4_2_2/interfaces/ITIP4_2_2Collection.tsol";
-
+import "@broxus/tip4/contracts/TIP4_3/TIP4_3Collection.tsol";
 import "@broxus/tip4/contracts/TIP4_3/interfaces/ITIP4_3Collection.tsol";
 
 import "@broxus/contracts/contracts/access/ExternalOwner.tsol";
@@ -13,14 +13,19 @@ import "@broxus/contracts/contracts/access/InternalOwner.tsol";
 
 import "../TIP3Root/contracts/interfaces/ITokenRoot.tsol";
 import "../TIP3Root/contracts/interfaces/ITokenWallet.tsol";
+// import "../TIP3Root/contracts/structures/ICallbackParamsStructure.tsol";
+
 
 import "../TIP3Root/contracts/interfaces/IAcceptTokensTransferCallback.tsol";
 
 import "./ITreasury.tsol";
 
 import "./ExchangeContract.tsol";
-
 import "dex/contracts/libraries/PairPayload.tsol";
+
+import "./FounderNFTCollection.tsol";
+import "./Nft.tsol";
+
 import "../TIP3Root/contracts/interfaces/IAcceptTokensTransferCallback.tsol";
 import {GasValues} from "dex/contracts/libraries/GasValues.tsol";
 import {IExchangeResult} from "dex/contracts/structures/IExchangeResult.tsol";
@@ -28,6 +33,7 @@ import {IGasValueStructure} from "dex/contracts/structures/IGasValueStructure.ts
 // import {ITokenWallet} from "tip3-contracts/contracts/interfaces/ITokenWallet.tsol";
 import "../TIP3Root/contracts/interfaces/ITokenRoot.tsol";
 import "../TIP3Root/contracts/interfaces/ITokenWallet.tsol";
+
 
 interface IMyERC20 {
 	function mint(address to, uint256 amount) external;
@@ -69,9 +75,10 @@ interface AggregatorV3Interface {
 		);
 }
 
-contract Treasury is IAcceptTokensTransferCallback {
+
+contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 	uint64 static nonce_;
-	address public owner;
+	address public treasuryOwner;
 
 	uint256 public FULL_TERM_LOCK_PERIOD = 2 * 6 * 30 * 24 * 60 * 60;
 	address public WETH;
@@ -114,7 +121,7 @@ contract Treasury is IAcceptTokensTransferCallback {
 	address public deedNFT;
 	address public founderNFT;
 	address public genesisNFT;
-	bool public forceUnlock = false;
+	bool public forceUnlock = true;
 
 	mapping(address => mapping(address => uint256[])) public lockedNFTs;
 	mapping(address => mapping(address => uint256[])) public contractlockedNFTs;
@@ -147,6 +154,8 @@ contract Treasury is IAcceptTokensTransferCallback {
 	uint16 public constant INVALID_ASSET = 225;
 	uint16 public constant INVALID_RATIO = 222;
 
+	// mapping (address=>address) tokenWallet;
+// mapping(address => address) rootToWallet;
 	constructor(
 		address[] _assets,
 		uint256[] _assetsdecimals,
@@ -200,7 +209,7 @@ contract Treasury is IAcceptTokensTransferCallback {
 		DaiToEthPriceFeed = _DaiToEthPriceFeed;
 		WETH = _WETH;
 		nonce_ = _nonce;
-		owner = _owner;
+		treasuryOwner = _owner;
 		_distributedTokenRoot = _assets[0];
 		_exchangeContractAddress = exchangeContractAddress;
 		ITokenRoot(_distributedTokenRoot).deployWallet{
@@ -208,9 +217,21 @@ contract Treasury is IAcceptTokensTransferCallback {
 			flag: 1,
 			callback: Treasury.onTokenWallet
 		}(address(this), 0.1 ever); // this callback will be called by TokenRoot after deploying wallet for treasury
+		
+		// for (uint256 i=0; i< assets.length; i++){
+		// 	ITokenRoot(assets[i]).deployWallet{
+		// 	value: 0.2 ever,
+		// 	flag: 1,
+		// 	callback: Treasury.deployWallets
+		// }(address(this), 0.1 ever); // this callback will be called by TokenRoot after deploying wallet for treasury
+		
+		// }
+		
 		// sending remaining gas after setups
 		// owner.transfer({value: 0, flag: 128, bounce: false});
 	}
+
+
 
 	function onTokenWallet(address value) external {
 		require(
@@ -219,8 +240,9 @@ contract Treasury is IAcceptTokensTransferCallback {
 		);
 		// tvm.rawReserve(1 ever, 0);
 		_distributedTokenWallet = value; // store deployed tip3 wallet address
+		// tokenWallet[assets[0]] = value;
 		require(_distributedTokenWallet != address(0), INVALID_ADDRESS);
-		owner.transfer({value: 0, flag: 128, bounce: false}); // sending remaining gas after setups
+		// owner.transfer({value: 0, flag: 128, bounce: false}); // sending remaining gas after setups
 	}
 
 	 function onAcceptTokensTransfer(
@@ -240,6 +262,10 @@ contract Treasury is IAcceptTokensTransferCallback {
 
     }
 
+	// function getTreasuryBalance(address user) public view returns(uint256){
+	// 	require(user != address(0), INVALID_ADDRESS);
+	// 	return treasuryBalances[user] ;
+	// }
 	function calculateSumOfRatios(uint8[] _ratios) public pure {
 		// require(_ratios.length == 5, "Need ratios for 5 assets");
 		uint8 sum = 0;
@@ -262,7 +288,7 @@ contract Treasury is IAcceptTokensTransferCallback {
 
 	modifier onlyOwnerOrGovernance() {
 		require(
-			msg.sender == owner || msg.sender == governance,
+			msg.sender == treasuryOwner || msg.sender == governance,
 			NOT_OWNER_OR_GOVERNANCE
 		);
 		_;
@@ -270,7 +296,7 @@ contract Treasury is IAcceptTokensTransferCallback {
 
 	modifier onlyOwnerOrDepositingAddress() {
 		require(
-			msg.sender == owner || msg.sender == depositingAddress,
+			msg.sender == treasuryOwner || msg.sender == depositingAddress,
 			NOT_DEPOSITING_ADDRESS_OR_OWNER
 		);
 		_;
@@ -334,8 +360,9 @@ contract Treasury is IAcceptTokensTransferCallback {
 
 	function deposit_admin(
 		address[] users,
-		uint256[] daiAmounts
+		uint256[] usdtAmounts
 	) external onlyOwnerOrDepositingAddress {
+		uint256[] daiAmounts = usdtAmounts;
 		require(users.length == daiAmounts.length, LENGTH_MISMATCH);
 		TvmCell e;
 		uint256 totalAmount = calculateTotalDeposit(users, daiAmounts);
@@ -357,7 +384,7 @@ contract Treasury is IAcceptTokensTransferCallback {
 			amount: 10,
 			recipient: address(this),
 			deployWalletValue: 10000,
-			remainingGasTo: owner,
+			remainingGasTo: treasuryOwner,
 			notify: true,
 			payload: e
 		});
@@ -449,15 +476,16 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
     }
 	// *****************************************************************//
 
-	function deposit(uint256 daiAmount) public {
+	function deposit(uint256 usdtAmount) public {
+		uint256 daiAmount = usdtAmount;
 		// Approve DAI for the swap router
 		// TransferHelper.safeApprove(assets[0], SWAP_ROUTER_02, daiAmount);
 
 		// Calculate the amount of DAI to be swapped for each asset
 		uint256 n = assets.length;
 
-		uint256 primaryLockingAmount = (daiAmount * assetAllocationRatio[0]) / 100;
-		primaryTokenLockedAmount+=primaryLockingAmount;
+		// uint256 primaryLockingAmount = (daiAmount * assetAllocationRatio[0]) / 100;
+		// primaryTokenLockedAmount+=primaryLockingAmount;
 
 		for (uint256 i = 1; i < n; i++) {
 			uint256 amountIn = (daiAmount * assetAllocationRatio[i]) / 100;
@@ -493,6 +521,10 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 
 	uint16 public constant ZERO_AMOUNT = 231;
 	uint16 public constant INVALID_USER = 232;
+
+	function rootToWalletAddress (address _root) public returns(address) {
+		return rootToWallet[_root];
+	}
 
 	function calculateTotalDeposit(
 		address[] users,
@@ -579,7 +611,7 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 		uint256 totalAmountInUsd;
 		uint256 len = assets.length;
 
-		for (uint256 i = 0; i < len; i++) {
+		for (uint256 i = 1; i < len; i++) {
 			// uint256 treasuryBal = 100; //IERC20(assets[i]).balanceOf(address(this));
 			// uint256 userShare = (treasuryBal * totalAmount) /
 			// totalTreasuryPoints; //in asset decimals
@@ -607,9 +639,9 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 				// IERC20(assets[0]).transfer(mainWallet, userShare);
 				// transfer usdt user share to mainWallet
 
-			uint256 primaryUnLockingAmount = (userShare * assetAllocationRatio[0]) / 100;
-			userPrimaryTokenUnlockingAmt+=primaryUnLockingAmount;
-			primaryTokenLockedAmount -= primaryUnLockingAmount; // unlocking usdt amount
+			// uint256 primaryUnLockingAmount = (userShare * assetAllocationRatio[0]) / 100;
+			// userPrimaryTokenUnlockingAmt+=primaryUnLockingAmount;
+			// primaryTokenLockedAmount -= primaryUnLockingAmount; // unlocking usdt amount
 
 			uint256 share = (userShare * assetAllocationRatio[0])/100;
 			TvmCell e;
@@ -617,7 +649,7 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 					amount: uint128(share),
 					recipient: mainWallet,
 					deployWalletValue: 10000,
-					remainingGasTo: owner,
+					remainingGasTo: treasuryOwner,
 					notify: true,
 					payload: e
 					});
@@ -627,7 +659,7 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 				uint256 userDaiShareInUsdt = (userShare * assetAllocationRatio[i])/100;
 
 				uint256 swapAmtInDai = usdtRate(uint16(i),userDaiShareInUsdt);
-
+				swapAmtInDai = swapAmtInDai/10;
 				makeSwap(
 				1,
 				assets[i],
@@ -638,12 +670,12 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 				0,
 				address(this)
 			);
-	TvmCell e;
+			TvmCell e;
 			ITokenWallet(_distributedTokenWallet).transfer({
 					amount: uint128(userDaiShareInUsdt),
 					recipient: mainWallet,
 					deployWalletValue: 10000,
-					remainingGasTo: owner,
+					remainingGasTo: treasuryOwner,
 					notify: true,
 					payload: e
 					});
@@ -663,12 +695,12 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 // **************************** Fee Start ****************************************//
 		uint256 totalamount2 = totalAmount;
 		uint256 totalDepositInUsd = fetchAssetPriceInUsd(0, totalamount2);
-
+		
 		// // Determine fee percentage
 		uint256 feePercentage = totalAmountInUsd > (totalDepositInUsd * 2)
 			? 20
 			: 10;
-		uint256 totalAmountInDaiSwap = 100; //getUsdToDaiAmount(
+		uint256 totalAmountInDaiSwap = 100; //57675 //getUsdToDaiAmount(
 		//     totalAmountInUsd,
 		//     AggregatorV3Interface(priceFeed[0])
 		// );
@@ -694,6 +726,7 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 				(10 ** 18);
 		}
 
+
 		IDeedToken(deedToken).mintForTreasury(msg.sender, daiAmountToMint);
 
 		totalTreasuryPoints -= totalAmount;
@@ -704,16 +737,48 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 		removeUserDeposits(msg.sender, indices);
 		emit Withdraw(msg.sender, totalAmount, daiAmountToMint);
 
-// *********************************** Fee ENd *********************************//
+// *********************************** Fee End *********************************//
 
 	}
 	event WithdrawDai(address asset1, address asset2, uint256 userDaiShareInUsdt,uint256 swapAmtInDai);
-	function withdrawDaiAmount(uint256 userShare) public {
+	
 
-				uint256 userDaiShareInUsdt = (userShare * assetAllocationRatio[1])/100;
+	function swapWvenom(uint128 amountIn) public {
+		makeSwap(
+				1,
+				assets[1],
+				uint128(amountIn),
+				assets[0],
+				assetsDexPairs[0],
+				1 ever,
+				0,
+				address(this)
+			);
+	}	
+	// function transferWvenomToAddres(uint128 amount) public {
+	// 		TvmCell e;
 
-				uint256 swapAmtInDai = usdtRate(1,userDaiShareInUsdt);
+	// 	address venomContractWallet = rootToWallet[assets[1]];
+	// 				require(venomContractWallet !=address(0) , 555);
+	// 	ITokenWallet(venomContractWallet).transfer({
+	// 				amount: uint128(amount),
+	// 				recipient: mainWallet,
+	// 				deployWalletValue: 10000,
+	// 				remainingGasTo: owner,
+	// 				notify: true,
+	// 				payload: e
+	// 				});
+	// }
+	function withdrawWvenAmount(uint256 userShare) public {
 
+			TvmCell e;
+
+				uint256 userDaiShareInUsdt = (userShare * assetAllocationRatio[1])/100; // 10 contract
+				// uint256 userUSDTShare = (userShare * assetAllocationRatio[0])/100;
+				uint256 swapAmtInDai = usdtRate(1,userDaiShareInUsdt); // 576458  contract 
+
+					
+					
 				makeSwap(
 				1,
 				assets[1],
@@ -724,28 +789,42 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 				0,
 				address(this)
 			);
-	TvmCell e;
+
+				// venom == 0 
+				// usdt ++ 
+
+
 			ITokenWallet(_distributedTokenWallet).transfer({
-					amount: uint128(userDaiShareInUsdt),
+					amount: uint128(userShare),
 					recipient: mainWallet,
 					deployWalletValue: 10000,
-					remainingGasTo: owner,
+					remainingGasTo: treasuryOwner,
 					notify: true,
 					payload: e
 					});
-emit WithdrawDai(assets[1],assets[0],userDaiShareInUsdt, swapAmtInDai);
+			emit WithdrawDai(assets[1],assets[0],userDaiShareInUsdt, swapAmtInDai);
 	}
-	function usdtRate(uint16 index,uint256 _usdtAmount) public returns (uint256 daiAmount) {
-        // Scale USDT to 18 decimals before applying rate
-		uint256 RATE ;
-		if(index == 1){
-				RATE = 949038394185496310;
-		}
-		
-        uint256 usdt18 = _usdtAmount * 1e12; 
+	function usdtRate(uint16 index, uint256 _usdtAmount) public pure returns (uint256 outAmount) {
+    uint256 RATE;
 
-        daiAmount = (usdt18 * RATE) / 1e18;
+    if (index == 1) {
+        // USDT -> WVENOM
+        RATE = 57456; // 9 decimals
+        uint256 usdt9 = (_usdtAmount * 1e6) * 1e3; // scale USDT tokens -> 6 decimals -> 9 decimals
+        outAmount = (usdt9 * RATE) / 1e9;
+    } 
+    else if (index == 3) {
+        // USDT -> DAI
+        RATE = 949038394185496310; // 18 decimals
+        uint256 usdt18 = (_usdtAmount * 1e6) * 1e12; // scale USDT tokens -> 6 decimals -> 18 decimals
+        outAmount = (usdt18 * RATE) / 1e18;
+    } 
+    else {
+        outAmount = 0;
     }
+}
+
+
 
 	uint16 public constant INVALID_ASSET_INDEX = 237;
 
@@ -837,8 +916,282 @@ emit WithdrawDai(assets[1],assets[0],userDaiShareInUsdt, swapAmtInDai);
 		msg.sender.transfer({value: 1 ever, flag: 128, bounce: false});
 	}
 
+
+	// Custom error codes
+uint32 constant NFT_LOCKED_OR_NOT_OWNED = 257;
+uint32 constant NOT_NFT_OWNER = 258;
+uint32 constant CONTRACT_NOT_APPROVED = 259;
+uint32 constant NFT_STILL_LOCKED_TERM_NOT_ENDS = 260;
+
+
+
+
+	address public currentNftAddress;
+	address public currentNftOwner;
+
+	mapping (uint256=>address) public nftAddressOfId ;
+	mapping (uint256=>address) public FounderNftAddressOfId ;
+
+
+	mapping (uint256=>address) public nftOwnerOfId ;
+	mapping (uint256=>address) public FounderNftOwnerOfId ;
+
+	
+
+	function getNftAddrOfNftIdMap(uint256 id) public view returns (address){
+		return nftAddressOfId[id];
+	}
+	function getNftOwnerOfNftIdMap(uint256 id) public view returns (address){
+		return nftOwnerOfId[id];
+	}
+function checkOwnerOfNft(address collection, uint256 id) public {
+        tvm.accept();
+
+        FounderNFTCollection(collection).nftAddress{
+            value: 0.2 ever,
+            flag: 1,
+            callback: Treasury.onNftAddress
+        }(id);
+
+        // we don’t set directly, we wait for callback
+    }
+	event onCollectionEvent(address nftAddres);
+	event onNFTEvent(address nftAddres);
+
+    /// Step 2: callback from collection with NFT address
+    function onNftAddress(address value) external {
+        require(value != address(0), INVALID_ADDRESS);
+        currentNftAddress = value;
+        nftAddressOfId[uint256(0)] = value; // can replace 0 with request id if multiple requests
+		emit onCollectionEvent(value);
+        // Now query the NFT contract for its owner
+        Nft(value).getInfo{
+            value: 0.2 ever,
+            flag: 1,
+            callback: Treasury.onNftOwner
+        }();
+    }
+
+    /// Step 3: callback from NFT contract with owner info
+    function onNftOwner(
+        uint256 id,
+        address owner,
+        address manager,
+        address collection
+    ) external {
+        require(owner != address(0), INVALID_ADDRESS);
+
+        currentNftOwner = owner;
+        nftOwnerOfId[id] = owner;
+		emit onNFTEvent(owner);
+    }
+
+// Functions to lock Deed, Founder, and Genesis NFTs
+
+function lockDeedNFT(uint256 tokenId) external {
+	// checkOwnerOfNft(deedNFT,tokenId);
+    require(
+        !_isLocked(msg.sender, deedNFT, tokenId),
+        NFT_LOCKED_OR_NOT_OWNED
+    );
+    require(
+       nftOwnerOfId[tokenId] == msg.sender,
+        NOT_NFT_OWNER
+    );
+	address _nftAddr = nftAddressOfId[tokenId];
+
+
+
+ mapping(address => ICallbackParamsStructure.CallbackParams) callbacks;
+    TvmCell payload = abi.encode(tokenId);  // custom payload (here we send tokenId)
+    callbacks[address(this)] = ICallbackParamsStructure.CallbackParams(0.05 ever, payload);
+
+	Nft(_nftAddr).changeManager{
+        value: 0.3 ever,
+        flag: 1
+		
+    }(address(this), msg.sender,callbacks);
+
+    Nft(_nftAddr).transfer{
+        value: 0.3 ever,
+        flag: 1
+		
+    }(
+        address(this),   // new owner (Treasury)
+        msg.sender,      // refund gas to user
+        callbacks            // no callbacks
+    );
+
+
+
+    // lockedDeedNFTBalance[msg.sender]++;
+    lockTimestamps[msg.sender][deedNFT][tokenId] = block.timestamp;
+    lockedNFTs[msg.sender][deedNFT].push(tokenId);
+    contractlockedNFTs[address(this)][deedNFT].push(tokenId);
+    emit NFTLocked(msg.sender, deedNFT, tokenId);
+}
+function lockFounderNFT(uint256 tokenId) external {
+	// checkOwnerOfNft(FounderNFT,tokenId);
+    require(
+        !_isLocked(msg.sender, FounderNFT, tokenId),
+        NFT_LOCKED_OR_NOT_OWNED
+    );
+    require(
+       founderNftOwnerOfId[tokenId] == msg.sender,
+        NOT_NFT_OWNER
+    );
+	address _nftAddr = FounderNftAddressOfId[tokenId];
+	
+
+
+
+ mapping(address => ICallbackParamsStructure.CallbackParams) callbacks;
+    TvmCell payload = abi.encode(tokenId);  // custom payload (here we send tokenId)
+    callbacks[address(this)] = ICallbackParamsStructure.CallbackParams(0.05 ever, payload);
+
+	Nft(_nftAddr).changeManager{
+        value: 0.3 ever,
+        flag: 1
+		
+    }(address(this), msg.sender,callbacks);
+
+    Nft(_nftAddr).transfer{
+        value: 0.3 ever,
+        flag: 1
+		
+    }(
+        address(this),   // new owner (Treasury)
+        msg.sender,      // refund gas to user
+        callbacks            // no callbacks
+    );
+
+
+
+    // lockedDeedNFTBalance[msg.sender]++;
+    lockTimestamps[msg.sender][FounderNFT][tokenId] = block.timestamp;
+    lockedNFTs[msg.sender][FounderNFT].push(tokenId);
+    contractlockedNFTs[address(this)][FounderNFT].push(tokenId);
+    emit NFTLocked(msg.sender, FounderNFT, tokenId);
+}
+
+function unlockNFT(
+        address _nftContract,
+        uint256 _tokenId
+    ) external  {
+        require(
+            _isLocked(msg.sender, _nftContract, _tokenId),
+           NFT_LOCKED_OR_NOT_OWNED
+        );
+
+        require(
+            forceUnlock ||
+                block.timestamp >=
+                lockTimestamps[msg.sender][_nftContract][_tokenId] +
+                    FULL_TERM_LOCK_PERIOD,
+            NFT_STILL_LOCKED_TERM_NOT_ENDS
+        );
+
+        _removeLockedNFT(msg.sender, _nftContract, _tokenId);
+        uint256[] tokens = contractlockedNFTs[address(this)][
+            _nftContract
+        ];
+        uint256 lengthh = tokens.length;
+        for (uint256 i = 0; i < lengthh; i++) {
+            if (tokens[i] == _tokenId) {
+                tokens[i] = tokens[lengthh - 1];
+                tokens.pop();
+                break;
+            }
+        }
+
+        // IERC721(_nftContract).approve(msg.sender, _tokenId);
+        // IERC721(_nftContract).safeTransferFrom(
+        //     address(this),
+        //     msg.sender,
+        //     _tokenId
+        // );
+        emit NFTUnlocked(msg.sender, _nftContract, _tokenId);
+    }
+function _isLocked(
+        address user,
+        address nftContract,
+        uint256 tokenId
+    ) internal view returns (bool) {
+        uint256[]  lockedTokens = lockedNFTs[user][nftContract];
+        uint256 length = lockedTokens.length;
+        for (uint256 i = 0; i < length; i++) {
+            if (lockedTokens[i] == tokenId) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+event unLocked(address nftCollection, uint256 id);
+    // Internal function to remove NFT from locked list
+    function _removeLockedNFT(
+        address user,
+        address nftContract,
+        uint256 tokenId
+    ) internal {
+        uint256[] lockedTokens = lockedNFTs[user][nftContract];
+        uint256 length = lockedTokens.length;
+        for (uint256 i = 0; i < length; i++) {
+            if (lockedTokens[i] == tokenId ) {
+                lockedTokens[i] = lockedTokens[length - 1];
+                lockedTokens.pop();
+                break;
+            }
+        }
+		emit unLocked(nftContract,tokenId);
+    }
+
+    // Function to get the list of locked token IDs for a specific NFT contract
+    function getLockedNFTs(
+        address user,
+        address nftContract
+    ) external view returns (uint256[] ) {
+        return lockedNFTs[user][nftContract];
+    }
+// struct LockedNFTBalances {
+//     uint256 deedNFTCount;
+//     uint256 founderNFTCount;
+//     uint256 genesisNFTCount;
+// }
+   function getTreasuryBalance(address _user)
+    external
+    view
+	override
+    responsible
+    returns (uint256,address)
+{
+    return {value: 0, flag: 64,bounce :false}(treasuryBalances[_user],_user);
+}
+function getLockedNFTBalances(address _user)
+    external
+    view
+	override
+    responsible
+    returns (LockedNFTBalances balances, address user)
+{
+    LockedNFTBalances res = LockedNFTBalances(
+        lockedNFTs[_user][deedNFT].length,
+        lockedNFTs[_user][founderNFT].length,
+        lockedNFTs[_user][genesisNFT].length
+    );
+    return {value: 0, flag: 64, bounce: false}(res, _user);
+}
+
+
+
 	fallback() external {
     tvm.accept();
     // Optional logging here
 }
+
+
 }
+
+
+// 0:98f6da4d2c283018b9174d2c6863d458bc925fb84a52697dc129f618a9f84e13
+// 0:63e1aac8fa36ab60ba041b09888da2eda43b4d1489480fcd9f0b2e86e0a1270a

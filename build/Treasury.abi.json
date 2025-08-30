@@ -84,7 +84,7 @@
 			"name": "deposit_admin",
 			"inputs": [
 				{"name":"users","type":"address[]"},
-				{"name":"daiAmounts","type":"uint256[]"}
+				{"name":"usdtAmounts","type":"uint256[]"}
 			],
 			"outputs": [
 			]
@@ -117,9 +117,18 @@
 		{
 			"name": "deposit",
 			"inputs": [
-				{"name":"daiAmount","type":"uint256"}
+				{"name":"usdtAmount","type":"uint256"}
 			],
 			"outputs": [
+			]
+		},
+		{
+			"name": "rootToWalletAddress",
+			"inputs": [
+				{"name":"_root","type":"address"}
+			],
+			"outputs": [
+				{"name":"value0","type":"address"}
 			]
 		},
 		{
@@ -141,7 +150,15 @@
 			]
 		},
 		{
-			"name": "withdrawDaiAmount",
+			"name": "swapWvenom",
+			"inputs": [
+				{"name":"amountIn","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "withdrawWvenAmount",
 			"inputs": [
 				{"name":"userShare","type":"uint256"}
 			],
@@ -155,7 +172,7 @@
 				{"name":"_usdtAmount","type":"uint256"}
 			],
 			"outputs": [
-				{"name":"daiAmount","type":"uint256"}
+				{"name":"outAmount","type":"uint256"}
 			]
 		},
 		{
@@ -176,11 +193,106 @@
 			]
 		},
 		{
-			"name": "owner",
+			"name": "getNftAddrOfNftIdMap",
+			"inputs": [
+				{"name":"id","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"address"}
+			]
+		},
+		{
+			"name": "getNftOwnerOfNftIdMap",
+			"inputs": [
+				{"name":"id","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"address"}
+			]
+		},
+		{
+			"name": "checkOwnerOfNft",
+			"inputs": [
+				{"name":"collection","type":"address"},
+				{"name":"id","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "onNftAddress",
+			"inputs": [
+				{"name":"value","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "onNftOwner",
+			"inputs": [
+				{"name":"id","type":"uint256"},
+				{"name":"owner","type":"address"},
+				{"name":"manager","type":"address"},
+				{"name":"collection","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "lockDeedNFT",
+			"inputs": [
+				{"name":"tokenId","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "unlockNFT",
+			"inputs": [
+				{"name":"_nftContract","type":"address"},
+				{"name":"_tokenId","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getLockedNFTs",
+			"inputs": [
+				{"name":"user","type":"address"},
+				{"name":"nftContract","type":"address"}
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256[]"}
+			]
+		},
+		{
+			"name": "getTreasuryBalance",
+			"inputs": [
+				{"name":"answerId","type":"uint32"},
+				{"name":"_user","type":"address"}
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256"},
+				{"name":"value1","type":"address"}
+			]
+		},
+		{
+			"name": "getLockedNFTBalances",
+			"inputs": [
+				{"name":"answerId","type":"uint32"},
+				{"name":"_user","type":"address"}
+			],
+			"outputs": [
+				{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"balances","type":"tuple"},
+				{"name":"user","type":"address"}
+			]
+		},
+		{
+			"name": "treasuryOwner",
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"owner","type":"address"}
+				{"name":"treasuryOwner","type":"address"}
 			]
 		},
 		{
@@ -454,6 +566,38 @@
 			"outputs": [
 				{"name":"rootToWallet","type":"map(address,address)"}
 			]
+		},
+		{
+			"name": "currentNftAddress",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"currentNftAddress","type":"address"}
+			]
+		},
+		{
+			"name": "currentNftOwner",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"currentNftOwner","type":"address"}
+			]
+		},
+		{
+			"name": "nftAddressOfId",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"nftAddressOfId","type":"map(uint256,address)"}
+			]
+		},
+		{
+			"name": "nftOwnerOfId",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"nftOwnerOfId","type":"map(uint256,address)"}
+			]
 		}
 	],
 	"data": [
@@ -603,6 +747,31 @@
 			],
 			"outputs": [
 			]
+		},
+		{
+			"name": "onCollectionEvent",
+			"inputs": [
+				{"name":"nftAddres","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "onNFTEvent",
+			"inputs": [
+				{"name":"nftAddres","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "unLocked",
+			"inputs": [
+				{"name":"nftCollection","type":"address"},
+				{"name":"id","type":"uint256"}
+			],
+			"outputs": [
+			]
 		}
 	],
 	"fields": [
@@ -610,7 +779,7 @@
 		{"name":"_timestamp","type":"uint64"},
 		{"name":"_constructorFlag","type":"bool"},
 		{"name":"nonce_","type":"uint64"},
-		{"name":"owner","type":"address"},
+		{"name":"treasuryOwner","type":"address"},
 		{"name":"FULL_TERM_LOCK_PERIOD","type":"uint256"},
 		{"name":"WETH","type":"address"},
 		{"name":"maxslippage","type":"uint256"},
@@ -645,6 +814,10 @@
 		{"name":"contractlockedNFTs","type":"map(address,map(address,uint256[]))"},
 		{"name":"isTopTreasuryHolder","type":"map(address,bool)"},
 		{"name":"lockTimestamps","type":"map(address,map(address,map(uint256,uint256)))"},
-		{"name":"rootToWallet","type":"map(address,address)"}
+		{"name":"rootToWallet","type":"map(address,address)"},
+		{"name":"currentNftAddress","type":"address"},
+		{"name":"currentNftOwner","type":"address"},
+		{"name":"nftAddressOfId","type":"map(uint256,address)"},
+		{"name":"nftOwnerOfId","type":"map(uint256,address)"}
 	]
 }

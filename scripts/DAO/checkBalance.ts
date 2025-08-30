@@ -57,16 +57,43 @@ const getAllTokenWallets = async (contractAddress: Address) => {
     // console.log("DAIRootInstanceContractAddress", DAIRootInstance.address.toString());
 
 }
-const checkBalance = async (userAddres: Address, tokenAddress: Address) => {
 
+
+const checkBalance = async (userAddres: Address, tokenAddress: Address) => {
+    let tokenName;
+    switch (tokenAddress.toString()) {
+        case DAI.toString():
+            tokenName = "DAI"
+            
+            break;
+    
+        case USDT.toString():
+            tokenName = "USDT"
+            break;
+    
+        case WVENOM.toString():
+            tokenName = "WVENOM"
+            break;
+    
+        case W3W.toString():
+            tokenName = "W3W"
+            break;
+    
+        case WETH.toString():
+            tokenName = "WETH"
+            break;
+    
+        default:
+            break;
+    }
     // load contract 
     // const tokenRoot =await tokenRootInstanceTIP3(tokenAddress);
 
     const tokenWallet = await tokenWalletInstanceTIP3(userAddres, tokenAddress)
-    console.log("tokenWallet", tokenWallet.address.toString());
+    console.log(`${tokenName} wallet of ${truncateAddress(userAddres.toString())} `, tokenWallet.address.toString());
 
     const balance = await tokenWallet.methods.balance({ answerId: 0 }).call()
-    console.log("balance", balance);
+    console.log(`${tokenName} balance of ${truncateAddress(userAddres.toString())}:`, balance);
 
 
 }
@@ -96,19 +123,38 @@ async function tokenWalletInstanceTIP3(userAddres: Address, tokenAddress: Addres
     return userTokenWalletContract;
 }
 
-const contrac = new Address("0:02ce6fc0f58c836d72d52a71ef19936988a98b3b1749a31ed8837499516480c3")
+const contrac = new Address("0:caf068b21c6a41d92d15d066f12e5952a8fd22357f23eb73e9892c21d917bcf5")
 
-console.log("USDT contract Balance");
+
 checkBalance(contrac, USDT);
+checkBalance(myAccount, USDT);
 // getAllTokenWallets(contrac);
 
 
-console.log("DAI contract Balance");
-checkBalance(contrac, DAI);
+// console.log("DAI contract Balance");
+// checkBalance(contrac, DAI);
 
 // // console.log("W3W contract balance");
 // checkBalance(contrac, W3W);
 
 
-// // console.log("Wvenom contract Balance");
-// checkBalance(contrac, WVENOM);
+console.log("Wvenom contract Balance");
+checkBalance(contrac, WVENOM);
+
+
+checkBalance(myAccount, WVENOM);
+
+
+// tran ==> 12 usdt 
+// we are utiltilze == =>  10 deposit admin ==>12-10 = 2
+// 30 % ===> 3 usdt
+// 70 % ===>7 usdt
+
+
+// total usdt = 5
+// toal daiInUsdt == 7 
+// dai  = 60000000....
+// 
+
+
+/// deposit 10 usdt to the contract 

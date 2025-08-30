@@ -26,8 +26,8 @@ async function mainS() {
     const USDT_W3W_DEX_PAIR = new Address("0:16b5e7dceb434fb5cdccd6d992987af207d50f20566a1439cb80f9d3e7d1fafd")
     const USDT_WETH_DEX_PAIR = new Address("0:72a4629b7c0f9ffdffa141521658cdbba2e66aac2d70f640e504e60ea0a9b4dd")
 
-
-    const deedNFT = new Address("0:a75719da389ed281dfa6182418ede140415441a0fc564c5788b24baba19ced9d");
+    const FounderNFT = new Address("0:63e1aac8fa36ab60ba041b09888da2eda43b4d1489480fcd9f0b2e86e0a1270a");
+    const deedNFT = new Address("0:22ea8c7db9c23ed37e10504f78ff843cb7222a24bbbde8bc5efdf6829f119ced");
     // const walletAddress = "0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081";
     const usdtTokenOwnerWallet = new Address("0:9cd81b2945fe1ae23548ff4f34c73bb5c4a6e1f2faa9610c4b446b36b8d54c29");
     const userDaiTokenWalletAddress = new Address("0:d1bef2b6244fa6896ebdeb9d95ff4299ce3e486e297ddcd18cb3ec20e1cdea08")
@@ -45,15 +45,15 @@ async function mainS() {
             nonce_: locklift.utils.getRandomNonce(),
         },
         constructorParams: {
-            _assets: [USDT, DAI],
-            _assetsdecimals: [6, 18],
-            _assetAllocations: [30, 70],
-            _assetsDexPairs: [ USDT_DAI_DEX_PAIR],
+            _assets: [USDT, WVENOM],
+            _assetsdecimals: [6, 9],
+            _assetAllocations: [0, 100],
+            _assetsDexPairs: [ USDT_WVENOM_DEX_PAIR],
             _owner: OWNER,
             _deedNFT: deedNFT,
-            _founderNFT: deedNFT,
+            _founderNFT: FounderNFT,
             _mainWallet: OWNER,
-            _priceFeed: [USDT, DAI],
+            _priceFeed: [USDT, WVENOM],
             _deedToken: USDT,
             _DaiToEthPriceFeed: new Address("0:72a4629b7c0f9ffdffa141521658cdbba2e66aac2d70f640e504e60ea0a9b4dd"),
             _depositingAddress: OWNER,
@@ -68,30 +68,32 @@ async function mainS() {
     console.log(`Treasury deployed at :: ${treasuryContractInstance.address.toString()}`);
 
     //
-
+    
     // const TreasuryArtifacts = locklift.factory.getContractArtifacts("Treasury");
     // const treasuryContract = await locklift.factory.getDeployedContract("Treasury", await treasuryContractInstance.address);
 
-    const userUsdtWallet = new locklift.provider.Contract(TIP3_WALLET_ABI, usdtTokenOwnerWallet);
-    {
-        const { traceTree } = await locklift.tracing.trace(
-            userUsdtWallet.methods
-                .transfer({
-                    amount: 12,
-                    deployWalletValue: toNano(1),
-                    notify: true,
-                    payload: "",
-                    recipient: treasuryContractInstance.address,
-                    remainingGasTo: new Address("0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081"),
-                })
-                .send({
-                    from: OWNER,
-                    amount: toNano(2),
-                }),
-        );
+    // const userUsdtWallet = new locklift.provider.Contract(TIP3_WALLET_ABI, usdtTokenOwnerWallet);
+    // {
+    //     const { traceTree } = await locklift.tracing.trace(
+    //         userUsdtWallet.methods
+    //             .transfer({
+    //                 amount: 50,
+    //                 deployWalletValue: toNano(1),
+    //                 notify: true,
+    //                 payload: "",
+    //                 recipient: treasuryContractInstance.address,
+    //                 remainingGasTo: new Address("0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081"),
+    //             })
+    //             .send({
+    //                 from: OWNER,
+    //                 amount: toNano(2),
+    //             }),
+    //     );
 
-        await traceTree?.beautyPrint();
-    }
+    //     await traceTree?.beautyPrint();
+    // }
+    // deposit admin func 
+
 
     // const userDaiTokenWallet = new locklift.provider.Contract(TIP3_WALLET_ABI, userDaiTokenWalletAddress);
     // {

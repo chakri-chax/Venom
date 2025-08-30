@@ -1,45 +1,105 @@
-pragma ever-solidity >= 0.62.0;
+pragma ever-solidity >=0.62.0;
+import "./~ILockedNFT.tsol";
+
 interface ITreasury {
-    event Deposit(address user, uint256 treasuryPoints);
-    event GovernanceUpdated(address oldGovernance, address newGovernance);
-    event NFTLocked(address indexed user, address nftContract, uint256 tokenId);
-    event NFTUnlocked(address indexed user, address nftContract, uint256 tokenId);
+     function getTreasuryBalance(address _user)
+        external
+        view
+        responsible
+        returns (uint256 value, address user);
 
-    function PRE_TERM_LOCK_PERIOD() external view returns (uint256);
-    function FULL_TERM_LOCK_PERIOD() external view returns (uint256);
-    function deedTokenPrice() external view returns (uint256);
-    function governance() external view returns (address);
-    function assets(uint256 index) external view returns (address);
-    function assetsdecimals(uint256 index) external view returns (uint256);
-    function assetAllocationRatio(uint256 index) external view returns (uint8);
-    function deedToken() external view returns (address);
-    function totalTreasuryPoints() external view returns (uint256);
-    function topTreasuryHolders(uint256 index) external view returns (address);
-    function treasuryHolderIndex(address user) external view returns (uint256);
-    function treasuryBalances(address user) external view returns (uint256);
-    function userDeposits(address user) external view returns (uint256 treasuryDeposit, uint256 firstDepositTime);
-    function deedNFT() external view returns (address);
-    function founderNFT() external view returns (address);
-    function genesisNFT() external view returns (address);
-    function lockedNFTs(address user, address nftContract, uint256 index) external view returns (uint256);
-
-    function lockDeedNFT(uint256 tokenId) external;
-    function lockFounderNFT(uint256 tokenId) external;
-    function lockGenesisNFT(uint256 tokenId) external;
-    function unlockNFT(address _nftContract, uint256 _tokenId) external;
-    function getLockedNFTBalances(address _user) external view returns (uint256 deedNFTCount, uint256 founderNFTCount, uint256 genesisNFTCount);
-    function deposit_admin2(address[] users, uint256[] usdcAmounts) external;
-    function calculateTotalDeposit(address[] users, uint256[] usdcAmounts) external pure returns (uint256 totalAmount);
-    function setAllocationRatios(uint8[] _allocationRatios) external;
-    function calculateSumOfRatios(uint8[] _ratios) external pure returns (uint8);
-    function approveGovernance() external;
-    function revokeGovernance() external;
-    function updateGovernance(address _newGovernance) external;
-    function updateTopTreasuryHolders(address _user) external;
-    function sortTopHolders() external;
-    function getTreasuryBalance(address _user) external view returns (uint256 treasuryBal);
-    function getTopTreasuryHolders() external view returns (address[]);
-    function swapAndTransferToGovernance(uint256 amount,address receiver) external;
-     function _continueSwap(address user) external;
-
+    function getLockedNFTBalances(address _user)
+        external
+        view
+        responsible
+        returns (LockedNFTBalances balances, address user);
 }
+
+// interface ITreasury {
+// 	event Deposit(address user, uint256 treasuryPoints);
+// 	event GovernanceUpdated(address oldGovernance, address newGovernance);
+// 	event NFTLocked(address indexed user, address nftContract, uint256 tokenId);
+// 	event NFTUnlocked(
+// 		address indexed user,
+// 		address nftContract,
+// 		uint256 tokenId
+// 	);
+
+// 	function PRE_TERM_LOCK_PERIOD() external view returns (uint256);
+
+// 	function FULL_TERM_LOCK_PERIOD() external view returns (uint256);
+
+// 	// function deedTokenPrice() external view returns (uint256);
+
+// 	function governance() external view returns (address);
+
+// 	function assets(uint256 index) external view returns (address);
+
+// 	function assetsdecimals(uint256 index) external view returns (uint256);
+
+// 	function assetAllocationRatio(uint256 index) external view returns (uint8);
+
+// 	function deedToken() external view returns (address);
+
+// 	function totalTreasuryPoints() external view returns (uint256);
+
+// 	function topTreasuryHolders(uint256 index) external view returns (address);
+
+// 	function treasuryHolderIndex(address user) external view returns (uint256);
+
+// 	function treasuryBalances(address user) external view returns (uint256);
+
+// 	// function userDeposits(address user) external view returns (uint256 treasuryDeposit, uint256 firstDepositTime);
+// 	function deedNFT() external view returns (address);
+
+// 	function founderNFT() external view returns (address);
+
+// 	function genesisNFT() external view returns (address);
+
+// 	function lockedNFTs(
+// 		address user,
+// 		address nftContract,
+// 		uint256 index
+// 	) external view returns (uint256);
+
+// 	function lockDeedNFT(uint256 tokenId) external;
+
+// 	// function lockFounderNFT(uint256 tokenId) external;
+// 	// function lockGenesisNFT(uint256 tokenId) external;
+// 	function unlockNFT(address _nftContract, uint256 _tokenId) external;
+
+// 	// function getLockedNFTBalances(address _user) external view returns (uint256 deedNFTCount, uint256 founderNFTCount, uint256 genesisNFTCount);
+// 	function getLockedNFTBalances(
+// 		address _user
+// 	)
+// 		external
+// 		view
+// 		responsible
+// 		returns (LockedNFTBalances balances, address user);
+
+// 	// function deposit_admin2(address[] users, uint256[] usdcAmounts) external;
+
+// 	function calculateTotalDeposit(
+// 		address[] users,
+// 		uint256[] usdcAmounts
+// 	) external pure returns (uint256 totalAmount);
+
+// 	// function setAllocationRatios(uint8[] _allocationRatios) external;
+// 	function calculateSumOfRatios(
+// 		uint8[] _ratios
+// 	) external pure returns (uint8);
+
+// 	// function approveGovernance() external;
+
+// 	// function revokeGovernance() external;
+// 	// function updateGovernance(address _newGovernance) external;
+// 	// function updateTopTreasuryHolders(address _user) external;
+// 	// function sortTopHolders() external;
+// 	function getTreasuryBalance(
+// 		address _user
+// 	) external view responsible returns (uint256 value, address user);
+
+// 	// function getTopTreasuryHolders() external view returns (address[]);
+// 	// function swapAndTransferToGovernance(uint256 amount,address receiver) external;
+// 	function _continueSwap(address user) external;
+// }
