@@ -194,6 +194,24 @@
 			]
 		},
 		{
+			"name": "nftAddressWithId",
+			"inputs": [
+				{"name":"id","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256"},
+				{"name":"value1","type":"address"},
+				{"name":"value2","type":"address"}
+			]
+		},
+		{
+			"name": "getCallbackAmount",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
 			"name": "owner",
 			"inputs": [
 			],
@@ -327,6 +345,14 @@
 			"outputs": [
 				{"name":"mintNftStatus","type":"uint8"}
 			]
+		},
+		{
+			"name": "_nftAddress",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_nftAddress","type":"map(uint256,address)"}
+			]
 		}
 	],
 	"data": [
@@ -451,6 +477,7 @@
 		{"name":"_totalMinted","type":"uint256"},
 		{"name":"_remainOnNft","type":"uint128"},
 		{"name":"mintNftStatus","type":"uint8"},
-		{"name":"nftTypes","type":"map(uint16,string)"}
+		{"name":"nftTypes","type":"map(uint16,string)"},
+		{"name":"_nftAddress","type":"map(uint256,address)"}
 	]
 }

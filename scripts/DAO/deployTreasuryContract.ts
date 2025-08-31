@@ -26,8 +26,8 @@ async function mainS() {
     const USDT_W3W_DEX_PAIR = new Address("0:16b5e7dceb434fb5cdccd6d992987af207d50f20566a1439cb80f9d3e7d1fafd")
     const USDT_WETH_DEX_PAIR = new Address("0:72a4629b7c0f9ffdffa141521658cdbba2e66aac2d70f640e504e60ea0a9b4dd")
 
-    const FounderNFT = new Address("0:63e1aac8fa36ab60ba041b09888da2eda43b4d1489480fcd9f0b2e86e0a1270a");
-    const deedNFT = new Address("0:22ea8c7db9c23ed37e10504f78ff843cb7222a24bbbde8bc5efdf6829f119ced");
+    const FounderNFT = new Address("0:3694a43f03f85f2c95fd9d8ec48d2da0f75b4f9c6587bb62f622e66db7940acf");
+    const deedNFT = new Address("0:52081f1a26bde85050f608b4aa718618f31515c3624e2bd1800a07478a392927");
     // const walletAddress = "0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081";
     const usdtTokenOwnerWallet = new Address("0:9cd81b2945fe1ae23548ff4f34c73bb5c4a6e1f2faa9610c4b446b36b8d54c29");
     const userDaiTokenWalletAddress = new Address("0:d1bef2b6244fa6896ebdeb9d95ff4299ce3e486e297ddcd18cb3ec20e1cdea08")

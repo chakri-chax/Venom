@@ -1098,72 +1098,6 @@
         "line": 723
       }
     },
-    "0f8bb5784432f1f2462ebe26c226cdc86e50735d56843a3a11aaa1e1a142abbd": {
-      "0": {
-        "filename": "GovernanceToken.code",
-        "line": 6183
-      },
-      "8": {
-        "filename": "GovernanceToken.code",
-        "line": 6184
-      },
-      "56": {
-        "filename": "GovernanceToken.code",
-        "line": 6185
-      },
-      "64": {
-        "filename": "GovernanceToken.code",
-        "line": 6186
-      },
-      "80": {
-        "filename": "GovernanceToken.code",
-        "line": 6304
-      },
-      "88": {
-        "filename": "GovernanceToken.code",
-        "line": 6305
-      },
-      "136": {
-        "filename": "GovernanceToken.code",
-        "line": 6306
-      },
-      "144": {
-        "filename": "GovernanceToken.code",
-        "line": 6307
-      },
-      "160": {
-        "filename": "GovernanceToken.code",
-        "line": 6425
-      },
-      "168": {
-        "filename": "GovernanceToken.code",
-        "line": 6426
-      },
-      "216": {
-        "filename": "GovernanceToken.code",
-        "line": 6427
-      },
-      "224": {
-        "filename": "GovernanceToken.code",
-        "line": 6428
-      },
-      "240": {
-        "filename": "GovernanceToken.code",
-        "line": 6546
-      },
-      "248": {
-        "filename": "GovernanceToken.code",
-        "line": 6547
-      },
-      "296": {
-        "filename": "GovernanceToken.code",
-        "line": 6548
-      },
-      "304": {
-        "filename": "GovernanceToken.code",
-        "line": 6549
-      }
-    },
     "1186a5902308f41d4d53019199213efeabd2e882f6b15ec25e6d9b22a714ca41": {
       "0": {
         "filename": "../contracts/Dao/GovernanceToken.tsol",
@@ -1654,6 +1588,72 @@
         "line": 5476
       }
     },
+    "18d8db3859659c74bdfb4bf1ebbda591beeb7286dfe63e1bb3ba1134526db1d7": {
+      "0": {
+        "filename": "GovernanceToken.code",
+        "line": 6187
+      },
+      "8": {
+        "filename": "GovernanceToken.code",
+        "line": 6188
+      },
+      "48": {
+        "filename": "GovernanceToken.code",
+        "line": 6189
+      },
+      "56": {
+        "filename": "GovernanceToken.code",
+        "line": 6190
+      },
+      "72": {
+        "filename": "GovernanceToken.code",
+        "line": 6216
+      },
+      "80": {
+        "filename": "GovernanceToken.code",
+        "line": 6217
+      },
+      "128": {
+        "filename": "GovernanceToken.code",
+        "line": 6218
+      },
+      "136": {
+        "filename": "GovernanceToken.code",
+        "line": 6219
+      },
+      "152": {
+        "filename": "GovernanceToken.code",
+        "line": 6245
+      },
+      "160": {
+        "filename": "GovernanceToken.code",
+        "line": 6246
+      },
+      "208": {
+        "filename": "GovernanceToken.code",
+        "line": 6247
+      },
+      "216": {
+        "filename": "GovernanceToken.code",
+        "line": 6248
+      },
+      "232": {
+        "filename": "GovernanceToken.code",
+        "line": 6274
+      },
+      "240": {
+        "filename": "GovernanceToken.code",
+        "line": 6275
+      },
+      "288": {
+        "filename": "GovernanceToken.code",
+        "line": 6276
+      },
+      "296": {
+        "filename": "GovernanceToken.code",
+        "line": 6277
+      }
+    },
     "1a1ffc95735e220f81455c0562dbf454373115505494cc1e9763b00a85508567": {
       "0": {
         "filename": "GovernanceToken.code",
@@ -1922,6 +1922,196 @@
       "464": {
         "filename": "GovernanceToken.code",
         "line": 1646
+      }
+    },
+    "1a6af5dbb9f5c80bd5400c96935b8a533c83c3c575d8179ffb9e82589a8b5510": {
+      "0": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 339
+      },
+      "8": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 339
+      },
+      "24": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 339
+      },
+      "40": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 340
+      },
+      "48": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 340
+      },
+      "64": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 340
+      },
+      "80": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 341
+      },
+      "96": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 341
+      },
+      "112": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 341
+      },
+      "128": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 342
+      },
+      "144": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 342
+      },
+      "160": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 342
+      },
+      "176": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 342
+      },
+      "192": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 342
+      },
+      "208": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 342
+      },
+      "216": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 346
+      },
+      "232": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 346
+      },
+      "248": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 346
+      },
+      "264": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 346
+      },
+      "280": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 346
+      },
+      "288": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 346
+      },
+      "304": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 346
+      },
+      "312": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 346
+      },
+      "320": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 346
+      },
+      "344": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 346
+      },
+      "360": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 346
+      },
+      "376": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 359
+      },
+      "392": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 359
+      },
+      "400": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 359
+      },
+      "424": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 359
+      },
+      "432": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 359
+      },
+      "592": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 359
+      },
+      "616": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 359
+      },
+      "632": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 359
+      },
+      "712": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 359
+      },
+      "720": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 359
+      },
+      "728": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 359
+      },
+      "736": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 359
+      },
+      "744": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 359
+      },
+      "752": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 359
+      },
+      "760": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 359
+      },
+      "776": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 365
+      },
+      "792": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 365
+      },
+      "800": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 365
+      },
+      "824": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 365
+      },
+      "832": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 365
+      },
+      "992": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 365
       }
     },
     "1aae8cec2f5063f20f095f2ae413175400f7531512a29994dbb4597e0c830253": {
@@ -3864,6 +4054,72 @@
         "line": 3867
       }
     },
+    "2ecd9e32b37eeee5f3499af01d181a96967182e27f490fd8f310f7792f518cd3": {
+      "0": {
+        "filename": "GovernanceToken.code",
+        "line": 6278
+      },
+      "8": {
+        "filename": "GovernanceToken.code",
+        "line": 6279
+      },
+      "56": {
+        "filename": "GovernanceToken.code",
+        "line": 6280
+      },
+      "64": {
+        "filename": "GovernanceToken.code",
+        "line": 6281
+      },
+      "80": {
+        "filename": "GovernanceToken.code",
+        "line": 6284
+      },
+      "88": {
+        "filename": "GovernanceToken.code",
+        "line": 6285
+      },
+      "136": {
+        "filename": "GovernanceToken.code",
+        "line": 6286
+      },
+      "144": {
+        "filename": "GovernanceToken.code",
+        "line": 6287
+      },
+      "160": {
+        "filename": "GovernanceToken.code",
+        "line": 6290
+      },
+      "168": {
+        "filename": "GovernanceToken.code",
+        "line": 6291
+      },
+      "216": {
+        "filename": "GovernanceToken.code",
+        "line": 6292
+      },
+      "224": {
+        "filename": "GovernanceToken.code",
+        "line": 6293
+      },
+      "240": {
+        "filename": "GovernanceToken.code",
+        "line": 6296
+      },
+      "248": {
+        "filename": "GovernanceToken.code",
+        "line": 6297
+      },
+      "296": {
+        "filename": "GovernanceToken.code",
+        "line": 6298
+      },
+      "304": {
+        "filename": "GovernanceToken.code",
+        "line": 6299
+      }
+    },
     "2fa5ef32b1dad419460eb13614712d703d1cc5a44251496794bbf732cc5341c6": {
       "0": {
         "filename": "GovernanceToken.code",
@@ -4978,6 +5234,160 @@
         "line": 5998
       }
     },
+    "4c4822b7170597f86156d62932fef9f2f4a9dc90b04f792f2b354346c5573cb8": {
+      "0": {
+        "filename": "GovernanceToken.code",
+        "line": 359
+      },
+      "8": {
+        "filename": "GovernanceToken.code",
+        "line": 360
+      },
+      "24": {
+        "filename": "GovernanceToken.code",
+        "line": 361
+      },
+      "48": {
+        "filename": "GovernanceToken.code",
+        "line": 362
+      },
+      "64": {
+        "filename": "GovernanceToken.code",
+        "line": 363
+      },
+      "72": {
+        "filename": "GovernanceToken.code",
+        "line": 364
+      },
+      "88": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "96": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "104": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "112": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "120": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "128": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "136": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "144": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "152": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "160": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "168": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "176": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "192": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "208": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "224": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "232": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "248": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "272": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "288": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "296": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "304": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "312": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "328": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "344": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "352": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "360": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "368": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "384": {
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 328
+      },
+      "392": {
+        "filename": "GovernanceToken.code",
+        "line": 399
+      },
+      "408": {
+        "filename": "GovernanceToken.code",
+        "line": 402
+      },
+      "416": {
+        "filename": "GovernanceToken.code",
+        "line": 403
+      },
+      "432": {
+        "filename": "GovernanceToken.code",
+        "line": 406
+      }
+    },
     "4cae6bb1934e645fb2bc089b97e2a53568b4039044e94fdda8c688d4d2f72951": {
       "0": {
         "filename": "../contracts/Dao/GovernanceToken.tsol",
@@ -5984,262 +6394,6 @@
         "line": 6098
       }
     },
-    "5aa47923f12e7f308a5662a8e6ced3575655d2375d702ab417fc2b4352451663": {
-      "0": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 339
-      },
-      "8": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 339
-      },
-      "24": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 339
-      },
-      "40": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 340
-      },
-      "48": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 340
-      },
-      "64": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 340
-      },
-      "80": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 341
-      },
-      "96": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 341
-      },
-      "112": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 341
-      },
-      "128": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 342
-      },
-      "144": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 342
-      },
-      "160": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 342
-      },
-      "176": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 342
-      },
-      "192": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 342
-      },
-      "208": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 342
-      },
-      "216": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 346
-      },
-      "232": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 346
-      },
-      "248": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 346
-      },
-      "264": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 346
-      },
-      "280": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 346
-      },
-      "288": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 346
-      },
-      "304": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 346
-      },
-      "312": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 346
-      },
-      "320": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 346
-      },
-      "344": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 346
-      },
-      "360": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 346
-      },
-      "376": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 359
-      },
-      "392": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 359
-      },
-      "400": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 359
-      },
-      "424": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 359
-      },
-      "432": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 359
-      },
-      "592": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 359
-      },
-      "616": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 359
-      },
-      "632": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 359
-      },
-      "712": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 359
-      },
-      "720": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 359
-      },
-      "728": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 359
-      },
-      "736": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 359
-      },
-      "744": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 359
-      },
-      "752": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 359
-      },
-      "760": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 359
-      },
-      "776": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 365
-      },
-      "792": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 365
-      },
-      "800": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 365
-      },
-      "824": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 365
-      },
-      "832": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 365
-      },
-      "992": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 365
-      }
-    },
-    "5ac2b771aef68087dec753f4a08af6f5bc50208be9f66e07d3d67e6b6e15eac8": {
-      "0": {
-        "filename": "GovernanceToken.code",
-        "line": 6187
-      },
-      "8": {
-        "filename": "GovernanceToken.code",
-        "line": 6188
-      },
-      "48": {
-        "filename": "GovernanceToken.code",
-        "line": 6189
-      },
-      "56": {
-        "filename": "GovernanceToken.code",
-        "line": 6190
-      },
-      "72": {
-        "filename": "GovernanceToken.code",
-        "line": 6216
-      },
-      "80": {
-        "filename": "GovernanceToken.code",
-        "line": 6217
-      },
-      "128": {
-        "filename": "GovernanceToken.code",
-        "line": 6218
-      },
-      "136": {
-        "filename": "GovernanceToken.code",
-        "line": 6219
-      },
-      "152": {
-        "filename": "GovernanceToken.code",
-        "line": 6245
-      },
-      "160": {
-        "filename": "GovernanceToken.code",
-        "line": 6246
-      },
-      "208": {
-        "filename": "GovernanceToken.code",
-        "line": 6247
-      },
-      "216": {
-        "filename": "GovernanceToken.code",
-        "line": 6248
-      },
-      "232": {
-        "filename": "GovernanceToken.code",
-        "line": 6274
-      },
-      "240": {
-        "filename": "GovernanceToken.code",
-        "line": 6275
-      },
-      "288": {
-        "filename": "GovernanceToken.code",
-        "line": 6276
-      },
-      "296": {
-        "filename": "GovernanceToken.code",
-        "line": 6277
-      }
-    },
     "5b145ad0d86a0a7ebbf0746dceccac4802fbdfd32e3650951834bbdc87da9666": {
       "0": {
         "filename": "../contracts/Dao/GovernanceToken.tsol",
@@ -6302,244 +6456,6 @@
       "200": {
         "filename": "GovernanceToken.code",
         "line": 3233
-      }
-    },
-    "5eeca5114bf76cc05c5f85c06c1f0a70e16fdaee110b43c2029be370e3e94a6b": {
-      "0": {
-        "filename": "GovernanceToken.code",
-        "line": 5688
-      },
-      "16": {
-        "filename": "GovernanceToken.code",
-        "line": 5689
-      },
-      "24": {
-        "filename": "GovernanceToken.code",
-        "line": 5690
-      },
-      "40": {
-        "filename": "GovernanceToken.code",
-        "line": 5691
-      },
-      "56": {
-        "filename": "GovernanceToken.code",
-        "line": 5692
-      },
-      "72": {
-        "filename": "GovernanceToken.code",
-        "line": 5693
-      },
-      "80": {
-        "filename": "GovernanceToken.code",
-        "line": 5696
-      },
-      "96": {
-        "filename": "GovernanceToken.code",
-        "line": 5697
-      },
-      "104": {
-        "filename": "GovernanceToken.code",
-        "line": 5698
-      },
-      "120": {
-        "filename": "GovernanceToken.code",
-        "line": 5701
-      },
-      "136": {
-        "filename": "GovernanceToken.code",
-        "line": 5702
-      },
-      "144": {
-        "filename": "GovernanceToken.code",
-        "line": 5703
-      },
-      "160": {
-        "filename": "GovernanceToken.code",
-        "line": 5704
-      },
-      "176": {
-        "filename": "GovernanceToken.code",
-        "line": 5705
-      },
-      "192": {
-        "filename": "GovernanceToken.code",
-        "line": 5706
-      },
-      "200": {
-        "filename": "GovernanceToken.code",
-        "line": 5707
-      },
-      "216": {
-        "filename": "GovernanceToken.code",
-        "line": 5708
-      },
-      "224": {
-        "filename": "GovernanceToken.code",
-        "line": 5709
-      },
-      "240": {
-        "filename": "GovernanceToken.code",
-        "line": 5710
-      },
-      "248": {
-        "filename": "GovernanceToken.code",
-        "line": 5711
-      },
-      "256": {
-        "filename": "GovernanceToken.code",
-        "line": 5712
-      },
-      "272": {
-        "filename": "GovernanceToken.code",
-        "line": 5713
-      },
-      "280": {
-        "filename": "GovernanceToken.code",
-        "line": 5714
-      },
-      "288": {
-        "filename": "GovernanceToken.code",
-        "line": 5716
-      },
-      "296": {
-        "filename": "GovernanceToken.code",
-        "line": 5717
-      },
-      "304": {
-        "filename": "GovernanceToken.code",
-        "line": 5718
-      },
-      "320": {
-        "filename": "GovernanceToken.code",
-        "line": 5720
-      },
-      "328": {
-        "filename": "GovernanceToken.code",
-        "line": 5721
-      },
-      "344": {
-        "filename": "GovernanceToken.code",
-        "line": 5722
-      },
-      "360": {
-        "filename": "GovernanceToken.code",
-        "line": 5724
-      },
-      "368": {
-        "filename": "GovernanceToken.code",
-        "line": 5725
-      },
-      "384": {
-        "filename": "GovernanceToken.code",
-        "line": 5726
-      },
-      "392": {
-        "filename": "GovernanceToken.code",
-        "line": 5727
-      },
-      "408": {
-        "filename": "GovernanceToken.code",
-        "line": 5729
-      },
-      "416": {
-        "filename": "GovernanceToken.code",
-        "line": 5730
-      },
-      "432": {
-        "filename": "GovernanceToken.code",
-        "line": 5731
-      },
-      "440": {
-        "filename": "stdlib.sol",
-        "line": 61
-      },
-      "456": {
-        "filename": "stdlib.sol",
-        "line": 61
-      },
-      "464": {
-        "filename": "stdlib.sol",
-        "line": 61
-      },
-      "472": {
-        "filename": "stdlib.sol",
-        "line": 61
-      },
-      "488": {
-        "filename": "stdlib.sol",
-        "line": 62
-      },
-      "496": {
-        "filename": "stdlib.sol",
-        "line": 62
-      },
-      "512": {
-        "filename": "stdlib.sol",
-        "line": 62
-      },
-      "536": {
-        "filename": "stdlib.sol",
-        "line": 62
-      },
-      "544": {
-        "filename": "stdlib.sol",
-        "line": 62
-      },
-      "584": {
-        "filename": "stdlib.sol",
-        "line": 62
-      },
-      "592": {
-        "filename": "stdlib.sol",
-        "line": 62
-      },
-      "600": {
-        "filename": "stdlib.sol",
-        "line": 62
-      },
-      "616": {
-        "filename": "stdlib.sol",
-        "line": 63
-      },
-      "632": {
-        "filename": "GovernanceToken.code",
-        "line": 5733
-      },
-      "648": {
-        "filename": "GovernanceToken.code",
-        "line": 5734
-      },
-      "656": {
-        "filename": "GovernanceToken.code",
-        "line": 5735
-      },
-      "672": {
-        "filename": "GovernanceToken.code",
-        "line": 5736
-      },
-      "680": {
-        "filename": "GovernanceToken.code",
-        "line": 5737
-      },
-      "696": {
-        "filename": "GovernanceToken.code",
-        "line": 5738
-      },
-      "712": {
-        "filename": "GovernanceToken.code",
-        "line": 5739
-      },
-      "720": {
-        "filename": "GovernanceToken.code",
-        "line": 5740
-      },
-      "736": {
-        "filename": "GovernanceToken.code",
-        "line": 5743
-      },
-      "744": {
-        "filename": "GovernanceToken.code",
-        "line": 5744
       }
     },
     "5f4f279f371b7a96bb6288b8f8abd5677eb8b78dc7850e43c0c615ec500c45d3": {
@@ -8002,52 +7918,6 @@
       "304": {
         "filename": "GovernanceToken.code",
         "line": 6038
-      }
-    },
-    "6a0f8b9c854dac2373b4829a2de5567d6de3a5a430bf1667a21915158fa5d7bb": {
-      "0": {
-        "filename": "<entry-selector>",
-        "line": 1
-      },
-      "8": {
-        "filename": "<entry-selector>",
-        "line": 2
-      },
-      "24": {
-        "filename": "<entry-selector>",
-        "line": 3
-      },
-      "32": {
-        "filename": "<entry-selector>",
-        "line": 4
-      },
-      "48": {
-        "filename": "<entry-selector>",
-        "line": 5
-      },
-      "56": {
-        "filename": "<entry-selector>",
-        "line": 6
-      },
-      "72": {
-        "filename": "<entry-selector>",
-        "line": 7
-      },
-      "88": {
-        "filename": "<entry-selector>",
-        "line": 8
-      },
-      "96": {
-        "filename": "<entry-selector>",
-        "line": 9
-      },
-      "112": {
-        "filename": "<entry-selector>",
-        "line": 10
-      },
-      "128": {
-        "filename": "<entry-selector>",
-        "line": 11
       }
     },
     "6a5e27103531987a4efb2db503bfec200458ca9f4cd36c75f0fb262d91586bc8": {
@@ -9572,100 +9442,6 @@
         "line": 3164
       }
     },
-    "7ecbb0a9f7589faac393b2bc09ac77d45b1d6f8041ae600cfffed8cc55b465b7": {
-      "0": {
-        "filename": "GovernanceToken.code",
-        "line": 5643
-      },
-      "16": {
-        "filename": "GovernanceToken.code",
-        "line": 5644
-      },
-      "24": {
-        "filename": "GovernanceToken.code",
-        "line": 5645
-      },
-      "40": {
-        "filename": "GovernanceToken.code",
-        "line": 5646
-      },
-      "56": {
-        "filename": "GovernanceToken.code",
-        "line": 5647
-      },
-      "72": {
-        "filename": "GovernanceToken.code",
-        "line": 5648
-      },
-      "80": {
-        "filename": "GovernanceToken.code",
-        "line": 5649
-      },
-      "88": {
-        "filename": "GovernanceToken.code",
-        "line": 5650
-      },
-      "104": {
-        "filename": "GovernanceToken.code",
-        "line": 5651
-      },
-      "120": {
-        "filename": "GovernanceToken.code",
-        "line": 5652
-      },
-      "128": {
-        "filename": "GovernanceToken.code",
-        "line": 5653
-      },
-      "144": {
-        "filename": "GovernanceToken.code",
-        "line": 5654
-      },
-      "168": {
-        "filename": "GovernanceToken.code",
-        "line": 5655
-      },
-      "176": {
-        "filename": "GovernanceToken.code",
-        "line": 5656
-      },
-      "184": {
-        "filename": "GovernanceToken.code",
-        "line": 5657
-      },
-      "200": {
-        "filename": "GovernanceToken.code",
-        "line": 5658
-      },
-      "216": {
-        "filename": "GovernanceToken.code",
-        "line": 5662
-      },
-      "224": {
-        "filename": "GovernanceToken.code",
-        "line": 5663
-      },
-      "248": {
-        "filename": "GovernanceToken.code",
-        "line": 5664
-      },
-      "264": {
-        "filename": "GovernanceToken.code",
-        "line": 5671
-      },
-      "272": {
-        "filename": "GovernanceToken.code",
-        "line": 5672
-      },
-      "280": {
-        "filename": "GovernanceToken.code",
-        "line": 5673
-      },
-      "296": {
-        "filename": "GovernanceToken.code",
-        "line": 5677
-      }
-    },
     "7f7aa897bb69d32515d5aed3ad632049250a6bfcae3927ea43083e3571c99003": {
       "0": {
         "filename": "../contracts/Dao/GovernanceToken.tsol",
@@ -10304,72 +10080,6 @@
         "line": 1302
       }
     },
-    "87052edcc2d39a0e4baa411f67de2460b37f0509e00be2f4da5a5dcf363608d3": {
-      "0": {
-        "filename": "GovernanceToken.code",
-        "line": 6278
-      },
-      "8": {
-        "filename": "GovernanceToken.code",
-        "line": 6279
-      },
-      "56": {
-        "filename": "GovernanceToken.code",
-        "line": 6280
-      },
-      "64": {
-        "filename": "GovernanceToken.code",
-        "line": 6281
-      },
-      "80": {
-        "filename": "GovernanceToken.code",
-        "line": 6284
-      },
-      "88": {
-        "filename": "GovernanceToken.code",
-        "line": 6285
-      },
-      "136": {
-        "filename": "GovernanceToken.code",
-        "line": 6286
-      },
-      "144": {
-        "filename": "GovernanceToken.code",
-        "line": 6287
-      },
-      "160": {
-        "filename": "GovernanceToken.code",
-        "line": 6290
-      },
-      "168": {
-        "filename": "GovernanceToken.code",
-        "line": 6291
-      },
-      "216": {
-        "filename": "GovernanceToken.code",
-        "line": 6292
-      },
-      "224": {
-        "filename": "GovernanceToken.code",
-        "line": 6293
-      },
-      "240": {
-        "filename": "GovernanceToken.code",
-        "line": 6296
-      },
-      "248": {
-        "filename": "GovernanceToken.code",
-        "line": 6297
-      },
-      "296": {
-        "filename": "GovernanceToken.code",
-        "line": 6298
-      },
-      "304": {
-        "filename": "GovernanceToken.code",
-        "line": 6299
-      }
-    },
     "874965881e083a3c8ea436e08d6354010e85e05f2f92fb9b6986bd28be81f833": {
       "0": {
         "filename": "GovernanceToken.code",
@@ -10978,160 +10688,6 @@
       "1000": {
         "filename": "../contracts/Dao/GovernanceToken.tsol",
         "line": 428
-      }
-    },
-    "957cc5b6fb500856cb36759b75e2288b33803824a790a188128640068332931e": {
-      "0": {
-        "filename": "GovernanceToken.code",
-        "line": 359
-      },
-      "8": {
-        "filename": "GovernanceToken.code",
-        "line": 360
-      },
-      "24": {
-        "filename": "GovernanceToken.code",
-        "line": 361
-      },
-      "48": {
-        "filename": "GovernanceToken.code",
-        "line": 362
-      },
-      "64": {
-        "filename": "GovernanceToken.code",
-        "line": 363
-      },
-      "72": {
-        "filename": "GovernanceToken.code",
-        "line": 364
-      },
-      "88": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "96": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "104": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "112": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "120": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "128": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "136": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "144": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "152": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "160": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "168": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "176": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "192": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "208": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "224": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "232": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "248": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "272": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "288": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "296": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "304": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "312": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "328": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "344": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "352": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "360": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "368": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "384": {
-        "filename": "../contracts/Dao/GovernanceToken.tsol",
-        "line": 328
-      },
-      "392": {
-        "filename": "GovernanceToken.code",
-        "line": 399
-      },
-      "408": {
-        "filename": "GovernanceToken.code",
-        "line": 402
-      },
-      "416": {
-        "filename": "GovernanceToken.code",
-        "line": 403
-      },
-      "432": {
-        "filename": "GovernanceToken.code",
-        "line": 406
       }
     },
     "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7": {
@@ -13298,6 +12854,100 @@
         "line": 5830
       }
     },
+    "b80dadc27fa9be57e0808a07b36fb72749e2f17ca8f011665e4e44f9bfc6d323": {
+      "0": {
+        "filename": "GovernanceToken.code",
+        "line": 5643
+      },
+      "16": {
+        "filename": "GovernanceToken.code",
+        "line": 5644
+      },
+      "24": {
+        "filename": "GovernanceToken.code",
+        "line": 5645
+      },
+      "40": {
+        "filename": "GovernanceToken.code",
+        "line": 5646
+      },
+      "56": {
+        "filename": "GovernanceToken.code",
+        "line": 5647
+      },
+      "72": {
+        "filename": "GovernanceToken.code",
+        "line": 5648
+      },
+      "80": {
+        "filename": "GovernanceToken.code",
+        "line": 5649
+      },
+      "88": {
+        "filename": "GovernanceToken.code",
+        "line": 5650
+      },
+      "104": {
+        "filename": "GovernanceToken.code",
+        "line": 5651
+      },
+      "120": {
+        "filename": "GovernanceToken.code",
+        "line": 5652
+      },
+      "128": {
+        "filename": "GovernanceToken.code",
+        "line": 5653
+      },
+      "144": {
+        "filename": "GovernanceToken.code",
+        "line": 5654
+      },
+      "168": {
+        "filename": "GovernanceToken.code",
+        "line": 5655
+      },
+      "176": {
+        "filename": "GovernanceToken.code",
+        "line": 5656
+      },
+      "184": {
+        "filename": "GovernanceToken.code",
+        "line": 5657
+      },
+      "200": {
+        "filename": "GovernanceToken.code",
+        "line": 5658
+      },
+      "216": {
+        "filename": "GovernanceToken.code",
+        "line": 5662
+      },
+      "224": {
+        "filename": "GovernanceToken.code",
+        "line": 5663
+      },
+      "248": {
+        "filename": "GovernanceToken.code",
+        "line": 5664
+      },
+      "264": {
+        "filename": "GovernanceToken.code",
+        "line": 5671
+      },
+      "272": {
+        "filename": "GovernanceToken.code",
+        "line": 5672
+      },
+      "280": {
+        "filename": "GovernanceToken.code",
+        "line": 5673
+      },
+      "296": {
+        "filename": "GovernanceToken.code",
+        "line": 5677
+      }
+    },
     "b932e31f2d2b9eb486e73643531df99e5c37446de488aadfaf381bfb272256ef": {
       "0": {
         "filename": "../contracts/Dao/GovernanceToken.tsol",
@@ -13464,6 +13114,52 @@
         "line": 5910
       }
     },
+    "bd7e936356790075716636b45cfc64e860caccf7d0b42f10e7627b0e556ba291": {
+      "0": {
+        "filename": "<entry-selector>",
+        "line": 1
+      },
+      "8": {
+        "filename": "<entry-selector>",
+        "line": 2
+      },
+      "24": {
+        "filename": "<entry-selector>",
+        "line": 3
+      },
+      "32": {
+        "filename": "<entry-selector>",
+        "line": 4
+      },
+      "48": {
+        "filename": "<entry-selector>",
+        "line": 5
+      },
+      "56": {
+        "filename": "<entry-selector>",
+        "line": 6
+      },
+      "72": {
+        "filename": "<entry-selector>",
+        "line": 7
+      },
+      "88": {
+        "filename": "<entry-selector>",
+        "line": 8
+      },
+      "96": {
+        "filename": "<entry-selector>",
+        "line": 9
+      },
+      "112": {
+        "filename": "<entry-selector>",
+        "line": 10
+      },
+      "128": {
+        "filename": "<entry-selector>",
+        "line": 11
+      }
+    },
     "bdb989cdf75bb46fb25940dfc9279284b3ad2573fff257b138fd2fc94358ca6b": {
       "0": {
         "filename": "../contracts/Dao/GovernanceToken.tsol",
@@ -13568,20 +13264,6 @@
       "384": {
         "filename": "../contracts/Dao/GovernanceToken.tsol",
         "line": 725
-      }
-    },
-    "bf8f94919eff65c84f5efa9a4aacb0e9e656babbd07df1a368efba4223410129": {
-      "0": {
-        "filename": "GovernanceToken.code",
-        "line": 5678
-      },
-      "16": {
-        "filename": "GovernanceToken.code",
-        "line": 5681
-      },
-      "24": {
-        "filename": "GovernanceToken.code",
-        "line": 5682
       }
     },
     "c08cf845cfd1ad7d3409063e1e7db65f80551645c5c16bc4efcea5774ba04772": {
@@ -14578,6 +14260,244 @@
         "line": 1102
       }
     },
+    "d2e41bda1f5bf6b26aa46b2d94548ad9440bfd0cd0924b9485cb5acf2f130e89": {
+      "0": {
+        "filename": "GovernanceToken.code",
+        "line": 5688
+      },
+      "16": {
+        "filename": "GovernanceToken.code",
+        "line": 5689
+      },
+      "24": {
+        "filename": "GovernanceToken.code",
+        "line": 5690
+      },
+      "40": {
+        "filename": "GovernanceToken.code",
+        "line": 5691
+      },
+      "56": {
+        "filename": "GovernanceToken.code",
+        "line": 5692
+      },
+      "72": {
+        "filename": "GovernanceToken.code",
+        "line": 5693
+      },
+      "80": {
+        "filename": "GovernanceToken.code",
+        "line": 5696
+      },
+      "96": {
+        "filename": "GovernanceToken.code",
+        "line": 5697
+      },
+      "104": {
+        "filename": "GovernanceToken.code",
+        "line": 5698
+      },
+      "120": {
+        "filename": "GovernanceToken.code",
+        "line": 5701
+      },
+      "136": {
+        "filename": "GovernanceToken.code",
+        "line": 5702
+      },
+      "144": {
+        "filename": "GovernanceToken.code",
+        "line": 5703
+      },
+      "160": {
+        "filename": "GovernanceToken.code",
+        "line": 5704
+      },
+      "176": {
+        "filename": "GovernanceToken.code",
+        "line": 5705
+      },
+      "192": {
+        "filename": "GovernanceToken.code",
+        "line": 5706
+      },
+      "200": {
+        "filename": "GovernanceToken.code",
+        "line": 5707
+      },
+      "216": {
+        "filename": "GovernanceToken.code",
+        "line": 5708
+      },
+      "224": {
+        "filename": "GovernanceToken.code",
+        "line": 5709
+      },
+      "240": {
+        "filename": "GovernanceToken.code",
+        "line": 5710
+      },
+      "248": {
+        "filename": "GovernanceToken.code",
+        "line": 5711
+      },
+      "256": {
+        "filename": "GovernanceToken.code",
+        "line": 5712
+      },
+      "272": {
+        "filename": "GovernanceToken.code",
+        "line": 5713
+      },
+      "280": {
+        "filename": "GovernanceToken.code",
+        "line": 5714
+      },
+      "288": {
+        "filename": "GovernanceToken.code",
+        "line": 5716
+      },
+      "296": {
+        "filename": "GovernanceToken.code",
+        "line": 5717
+      },
+      "304": {
+        "filename": "GovernanceToken.code",
+        "line": 5718
+      },
+      "320": {
+        "filename": "GovernanceToken.code",
+        "line": 5720
+      },
+      "328": {
+        "filename": "GovernanceToken.code",
+        "line": 5721
+      },
+      "344": {
+        "filename": "GovernanceToken.code",
+        "line": 5722
+      },
+      "360": {
+        "filename": "GovernanceToken.code",
+        "line": 5724
+      },
+      "368": {
+        "filename": "GovernanceToken.code",
+        "line": 5725
+      },
+      "384": {
+        "filename": "GovernanceToken.code",
+        "line": 5726
+      },
+      "392": {
+        "filename": "GovernanceToken.code",
+        "line": 5727
+      },
+      "408": {
+        "filename": "GovernanceToken.code",
+        "line": 5729
+      },
+      "416": {
+        "filename": "GovernanceToken.code",
+        "line": 5730
+      },
+      "432": {
+        "filename": "GovernanceToken.code",
+        "line": 5731
+      },
+      "440": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "456": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "464": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "472": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "488": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "496": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "512": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "536": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "544": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "584": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "592": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "600": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "616": {
+        "filename": "stdlib.sol",
+        "line": 63
+      },
+      "632": {
+        "filename": "GovernanceToken.code",
+        "line": 5733
+      },
+      "648": {
+        "filename": "GovernanceToken.code",
+        "line": 5734
+      },
+      "656": {
+        "filename": "GovernanceToken.code",
+        "line": 5735
+      },
+      "672": {
+        "filename": "GovernanceToken.code",
+        "line": 5736
+      },
+      "680": {
+        "filename": "GovernanceToken.code",
+        "line": 5737
+      },
+      "696": {
+        "filename": "GovernanceToken.code",
+        "line": 5738
+      },
+      "712": {
+        "filename": "GovernanceToken.code",
+        "line": 5739
+      },
+      "720": {
+        "filename": "GovernanceToken.code",
+        "line": 5740
+      },
+      "736": {
+        "filename": "GovernanceToken.code",
+        "line": 5743
+      },
+      "744": {
+        "filename": "GovernanceToken.code",
+        "line": 5744
+      }
+    },
     "d7ff8e98bcf45399408e7be2b4cadc2f0796171b6dc29d70adda47952e89f457": {
       "0": {
         "filename": "../contracts/Dao/GovernanceToken.tsol",
@@ -15200,6 +15120,72 @@
       "296": {
         "filename": "GovernanceToken.code",
         "line": 5810
+      }
+    },
+    "e19aab09dc00d92b6c3a5ce309abe6da911c39fdf481c953a442b99b178a7f8b": {
+      "0": {
+        "filename": "GovernanceToken.code",
+        "line": 6183
+      },
+      "8": {
+        "filename": "GovernanceToken.code",
+        "line": 6184
+      },
+      "56": {
+        "filename": "GovernanceToken.code",
+        "line": 6185
+      },
+      "64": {
+        "filename": "GovernanceToken.code",
+        "line": 6186
+      },
+      "80": {
+        "filename": "GovernanceToken.code",
+        "line": 6304
+      },
+      "88": {
+        "filename": "GovernanceToken.code",
+        "line": 6305
+      },
+      "136": {
+        "filename": "GovernanceToken.code",
+        "line": 6306
+      },
+      "144": {
+        "filename": "GovernanceToken.code",
+        "line": 6307
+      },
+      "160": {
+        "filename": "GovernanceToken.code",
+        "line": 6425
+      },
+      "168": {
+        "filename": "GovernanceToken.code",
+        "line": 6426
+      },
+      "216": {
+        "filename": "GovernanceToken.code",
+        "line": 6427
+      },
+      "224": {
+        "filename": "GovernanceToken.code",
+        "line": 6428
+      },
+      "240": {
+        "filename": "GovernanceToken.code",
+        "line": 6546
+      },
+      "248": {
+        "filename": "GovernanceToken.code",
+        "line": 6547
+      },
+      "296": {
+        "filename": "GovernanceToken.code",
+        "line": 6548
+      },
+      "304": {
+        "filename": "GovernanceToken.code",
+        "line": 6549
       }
     },
     "e2bc798b6b8dc49f0d2bfecb939098bdf2cc8bd6ffa9e81d6c62ade7ec100363": {
@@ -16324,6 +16310,20 @@
       "328": {
         "filename": "GovernanceToken.code",
         "line": 3341
+      }
+    },
+    "f7e649f31c787c6d813b3e25381e26668bb444323b590d5f727b65f7975d3db4": {
+      "0": {
+        "filename": "GovernanceToken.code",
+        "line": 5678
+      },
+      "16": {
+        "filename": "GovernanceToken.code",
+        "line": 5681
+      },
+      "24": {
+        "filename": "GovernanceToken.code",
+        "line": 5682
       }
     },
     "f8029b0d1a4233395f34f5c55c549d65b5bced08d2a24db0a238cb4fc1c208ad": {

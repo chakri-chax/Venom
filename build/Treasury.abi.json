@@ -186,35 +186,8 @@
 			]
 		},
 		{
-			"name": "getCallbackAmouhnt",
+			"name": "getCallbackAmount",
 			"inputs": [
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "getNftAddrOfNftIdMap",
-			"inputs": [
-				{"name":"id","type":"uint256"}
-			],
-			"outputs": [
-				{"name":"value0","type":"address"}
-			]
-		},
-		{
-			"name": "getNftOwnerOfNftIdMap",
-			"inputs": [
-				{"name":"id","type":"uint256"}
-			],
-			"outputs": [
-				{"name":"value0","type":"address"}
-			]
-		},
-		{
-			"name": "checkOwnerOfNft",
-			"inputs": [
-				{"name":"collection","type":"address"},
-				{"name":"id","type":"uint256"}
 			],
 			"outputs": [
 			]
@@ -222,7 +195,9 @@
 		{
 			"name": "onNftAddress",
 			"inputs": [
-				{"name":"value","type":"address"}
+				{"name":"tokenId","type":"uint256"},
+				{"name":"value","type":"address"},
+				{"name":"collection","type":"address"}
 			],
 			"outputs": [
 			]
@@ -240,6 +215,14 @@
 		},
 		{
 			"name": "lockDeedNFT",
+			"inputs": [
+				{"name":"tokenId","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "lockFounderNFT",
 			"inputs": [
 				{"name":"tokenId","type":"uint256"}
 			],
@@ -584,19 +567,35 @@
 			]
 		},
 		{
-			"name": "nftAddressOfId",
+			"name": "nftAddressOfCollectionAndId",
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"nftAddressOfId","type":"map(uint256,address)"}
+				{"name":"nftAddressOfCollectionAndId","type":"map(address,map(uint256,address))"}
 			]
 		},
 		{
-			"name": "nftOwnerOfId",
+			"name": "nftOwnerOfCollectionAndId",
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"nftOwnerOfId","type":"map(uint256,address)"}
+				{"name":"nftOwnerOfCollectionAndId","type":"map(address,map(uint256,address))"}
+			]
+		},
+		{
+			"name": "pendingLocks",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"user","type":"address"},{"name":"tokenId","type":"uint256"},{"name":"nftType","type":"address"}],"name":"pendingLocks","type":"map(uint256,tuple)"}
+			]
+		},
+		{
+			"name": "lockRequestId",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"lockRequestId","type":"uint256"}
 			]
 		}
 	],
@@ -751,7 +750,8 @@
 		{
 			"name": "onCollectionEvent",
 			"inputs": [
-				{"name":"nftAddres","type":"address"}
+				{"name":"tokenId","type":"uint256"},
+				{"name":"nftAddress","type":"address"}
 			],
 			"outputs": [
 			]
@@ -759,7 +759,8 @@
 		{
 			"name": "onNFTEvent",
 			"inputs": [
-				{"name":"nftAddres","type":"address"}
+				{"name":"tokenId","type":"uint256"},
+				{"name":"owner","type":"address"}
 			],
 			"outputs": [
 			]
@@ -817,7 +818,9 @@
 		{"name":"rootToWallet","type":"map(address,address)"},
 		{"name":"currentNftAddress","type":"address"},
 		{"name":"currentNftOwner","type":"address"},
-		{"name":"nftAddressOfId","type":"map(uint256,address)"},
-		{"name":"nftOwnerOfId","type":"map(uint256,address)"}
+		{"name":"nftAddressOfCollectionAndId","type":"map(address,map(uint256,address))"},
+		{"name":"nftOwnerOfCollectionAndId","type":"map(address,map(uint256,address))"},
+		{"components":[{"name":"user","type":"address"},{"name":"tokenId","type":"uint256"},{"name":"nftType","type":"address"}],"name":"pendingLocks","type":"map(uint256,tuple)"},
+		{"name":"lockRequestId","type":"uint256"}
 	]
 }

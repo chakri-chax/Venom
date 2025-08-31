@@ -408,11 +408,11 @@ THROW 0
 .macro createProposalRequest_6021d0a1_internal_macro
 .loc ../contracts/Dao/GovernanceToken.tsol, 339
 PUSH S2
-GTINT 40
+GTINT 10
 THROWIFNOT 60
 .loc ../contracts/Dao/GovernanceToken.tsol, 340
 PUSH S3
-GTINT 1
+GTINT 0
 THROWIFNOT 61
 .loc ../contracts/Dao/GovernanceToken.tsol, 341
 GETGLOB 9

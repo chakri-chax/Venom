@@ -16,7 +16,15 @@ contract Nft is TIP4_1Nft, TIP4_2_2Nft, TIP4_3Nft {
 
     address public  nftOwner;
     // just call constructors of all implemented classes
-    
+    //  address owner,
+    //     address sendGasTo,
+    //     uint128 remainOnNft,
+    //     uint256 nftId_,
+    //     string typeName_,
+    //     string nickName_,
+    //     uint128 indexDeployValue,
+    //     uint128 indexDestroyValue,
+    //     TvmCell codeIndex  
     constructor(
         address owner,
         address sendGasTo,

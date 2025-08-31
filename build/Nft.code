@@ -145,17 +145,17 @@ SETGLOB 10
 CALLREF {
 	CALL $_init4_3_8f662628_internal_macro$
 }
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 49
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 49
 ACCEPT
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 50
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 50
 ROT
 SETGLOB 18
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 51
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 51
 SWAP
 SETGLOB 19
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 52
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 52
 SETGLOB 20
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 0
 CALLREF {
 	CALL $c7_to_c4$
 }
@@ -166,12 +166,12 @@ THROW 0
 CALL $_beforeTransfer_4721b701_internal_macro$
 
 .macro _beforeTransfer_4721b701_internal_macro
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 70
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 70
 DROP
 CALLREF {
 	CALL $_destructIndex_d3dd7d3c_internal_macro$
 }
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 0
 DROP
 
 .globl	_afterTransfer_41f289ae_internal
@@ -179,24 +179,24 @@ DROP
 CALL $_afterTransfer_41f289ae_internal_macro$
 
 .macro _afterTransfer_41f289ae_internal_macro
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 78
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 78
 BLKDROP 3
 CALLREF {
 	CALL $_deployIndex_367ac79d_internal_macro$
 }
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 0
 
 .globl	_beforeChangeOwner_14992e29_internal
 .type	_beforeChangeOwner_14992e29_internal, @function
 CALL $_beforeChangeOwner_14992e29_internal_macro$
 
 .macro _beforeChangeOwner_14992e29_internal_macro
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 87
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 87
 DROP
 CALLREF {
 	CALL $_destructIndex_d3dd7d3c_internal_macro$
 }
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 0
 DROP2
 
 .globl	_afterChangeOwner_4a7c15bb_internal
@@ -204,30 +204,30 @@ DROP2
 CALL $_afterChangeOwner_4a7c15bb_internal_macro$
 
 .macro _afterChangeOwner_4a7c15bb_internal_macro
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 96
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 96
 BLKDROP 4
 CALLREF {
 	CALL $_deployIndex_367ac79d_internal_macro$
 }
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 0
 
 .globl	_beforeChangeManager_98a59d63_internal
 .type	_beforeChangeManager_98a59d63_internal, @function
 CALL $_beforeChangeManager_98a59d63_internal_macro$
 
 .macro _beforeChangeManager_98a59d63_internal_macro
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 105
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 105
 BLKDROP 4
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 0
 
 .globl	_afterChangeManager_83a727c6_internal
 .type	_afterChangeManager_83a727c6_internal, @function
 CALL $_afterChangeManager_83a727c6_internal_macro$
 
 .macro _afterChangeManager_83a727c6_internal_macro
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 114
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 114
 BLKDROP 4
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 0
 
 .macro setTypeName
 DROP
@@ -238,10 +238,10 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 117
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 117
 LDREF
 ENDS
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 0
 CALLREF {
 	CALL $setTypeName_404a4eb4_internal_macro$
 }
@@ -252,12 +252,12 @@ CALLREF {
 THROW 0
 
 .macro setTypeName_404a4eb4_internal_macro
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 61
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 61
 GETGLOB 9
 GETGLOB 12
 SDEQ
 THROWIFNOT 241
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 118
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 118
 DUP
 PUSHPOW2DEC 32
 CDATASIZE
@@ -266,19 +266,19 @@ NIP
 RSHIFT 3
 LESSINT 101
 THROWIFNOT 242
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 119
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 119
 GETGLOB 12
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 243
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 120
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 120
 GETGLOB 19
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 121
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 121
 SWAP
 SETGLOB 19
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 122
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 122
 DUP
 GETGLOB 19
 GETGLOB 18
@@ -297,7 +297,7 @@ STREF
 ENDC
 PUSHINT 64
 SENDRAWMSG
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 127
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 127
 GETGLOB 19
 SWAP
 GETGLOB 18
@@ -310,7 +310,7 @@ STREF
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 0
 
 .macro setNickName
 DROP
@@ -321,10 +321,10 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 130
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 130
 LDREF
 ENDS
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 0
 CALLREF {
 	CALL $setNickName_c73ea367_internal_macro$
 }
@@ -335,7 +335,7 @@ CALLREF {
 THROW 0
 
 .macro setNickName_c73ea367_internal_macro
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 56
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 56
 GETGLOB 9
 GETGLOB 14
 SDEQ
@@ -344,7 +344,7 @@ GETGLOB 12
 SDEQ
 OR
 THROWIFNOT 240
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 131
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 131
 DUP
 PUSHPOW2DEC 32
 CDATASIZE
@@ -353,19 +353,19 @@ NIP
 RSHIFT 3
 LESSINT 101
 THROWIFNOT 242
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 132
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 132
 GETGLOB 12
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 243
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 133
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 133
 GETGLOB 20
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 134
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 134
 SWAP
 SETGLOB 20
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 135
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 135
 GETGLOB 9
 OVER
 GETGLOB 20
@@ -390,7 +390,7 @@ STBREFR
 ENDC
 PUSHINT 64
 SENDRAWMSG
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 140
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 140
 GETGLOB 20
 SWAP
 GETGLOB 18
@@ -403,7 +403,7 @@ STREF
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 0
 
 .macro getNftInfo
 DROP
@@ -414,14 +414,14 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 143
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 143
 LDU 32
 GETGLOB 4
 ROT
 SETINDEXQ 5
 SETGLOB 4
 ENDS
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 0
 CALLREF {
 	CALL $getNftInfo_7ca5685f_internal_macro$
 }
@@ -486,7 +486,7 @@ IFREF {
 THROW 0
 
 .macro getNftInfo_7ca5685f_internal_macro
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 144
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 144
 GETGLOB 4
 PUSHINT 0
 SETINDEXQ 2
@@ -498,7 +498,7 @@ SETGLOB 4
 GETGLOB 18
 GETGLOB 19
 GETGLOB 20
-.loc ../contracts/DeedCollection4_2_2/Nft.tsol, 0
+.loc ../contracts/Dao/DeedCollection4_2_2/Nft.tsol, 0
 
 .globl	_init4_3_8f662628_internal
 .type	_init4_3_8f662628_internal, @function

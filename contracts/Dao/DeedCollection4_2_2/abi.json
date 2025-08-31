@@ -13,10 +13,10 @@
 				{"name":"remainOnNft","type":"uint128"},
 				{"name":"baseNftUrl","type":"string"},
 				{"name":"collectionUrl","type":"string"},
-				{"name":"_warehouseWallet","type":"address"},
-				{"name":"_routingWallet","type":"address"},
-				{"name":"_baseTokenURI","type":"string"},
-				{"name":"_nonce","type":"uint64"}
+				{"name":"genesisNftOwner","type":"address"},
+				{"name":"genesisNickName","type":"string"},
+				{"name":"nonce","type":"uint64"},
+				{"name":"_burnerWallet","type":"address"}
 			],
 			"outputs": [
 			]
@@ -30,130 +30,185 @@
 			]
 		},
 		{
-			"name": "getIndexFromRequestId",
+			"name": "setBurnerWallet",
 			"inputs": [
-				{"name":"_requestId","type":"uint256"}
-			],
-			"outputs": [
-				{"name":"value0","type":"uint256"}
-			]
-		},
-		{
-			"name": "initiateMint",
-			"inputs": [
-				{"name":"_to","type":"address"},
-				{"name":"_amount","type":"uint256"}
+				{"name":"burnerWallet_","type":"address"}
 			],
 			"outputs": [
 			]
 		},
 		{
-			"name": "getAllPendingMints",
+			"name": "getBurnerWallet",
 			"inputs": [
-			],
-			"outputs": [
-				{"components":[{"name":"to","type":"address"},{"name":"amount","type":"uint256"},{"name":"requestId","type":"uint256"},{"name":"completed","type":"bool"}],"name":"value0","type":"tuple[]"}
-			]
-		},
-		{
-			"name": "getAllNfts",
-			"inputs": [
-			],
-			"outputs": [
-				{"components":[{"name":"id","type":"uint256"},{"name":"owner","type":"address"},{"name":"nftAddress","type":"address"}],"name":"value0","type":"tuple[]"}
-			]
-		},
-		{
-			"name": "getPendingMintByIndex",
-			"inputs": [
-				{"name":"_index","type":"uint256"}
-			],
-			"outputs": [
-				{"components":[{"name":"to","type":"address"},{"name":"amount","type":"uint256"},{"name":"requestId","type":"uint256"},{"name":"completed","type":"bool"}],"name":"value0","type":"tuple"}
-			]
-		},
-		{
-			"name": "completeMint",
-			"inputs": [
-				{"name":"_requestId","type":"uint256"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "mintBatchToHolders",
-			"inputs": [
-				{"name":"holders","type":"address[]"},
-				{"name":"amounts","type":"uint256[]"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "setWarehouseWallet",
-			"inputs": [
-				{"name":"_warehouseWallet","type":"address"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "setRoutingWallet",
-			"inputs": [
-				{"name":"_routingWallet","type":"address"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "getWarehouseWallet",
-			"inputs": [
+				{"name":"answerId","type":"uint32"}
 			],
 			"outputs": [
 				{"name":"value0","type":"address"}
 			]
 		},
 		{
-			"name": "getRoutingWallet",
+			"name": "resolveIndexCodeHash",
 			"inputs": [
+				{"name":"collection","type":"address"},
+				{"name":"owner","type":"address"}
 			],
 			"outputs": [
-				{"name":"value0","type":"address"}
+				{"name":"hash","type":"uint256"}
 			]
 		},
 		{
-			"name": "getNftAddress",
+			"name": "mintNftByType",
 			"inputs": [
-				{"name":"id","type":"uint256"}
-			],
-			"outputs": [
-				{"name":"value0","type":"address"}
-			]
-		},
-		{
-			"name": "_baseURI",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"value0","type":"string"}
-			]
-		},
-		{
-			"name": "getCallbackAmount",
-			"inputs": [
+				{"name":"owner","type":"address"},
+				{"name":"nftTypeIndex","type":"uint8"},
+				{"name":"nickName","type":"string"}
 			],
 			"outputs": [
 			]
 		},
 		{
-			"name": "nftAddressWithId",
+			"name": "totalMinted",
 			"inputs": [
-				{"name":"id","type":"uint256"}
+				{"name":"answerId","type":"uint32"}
 			],
 			"outputs": [
-				{"name":"value0","type":"uint256"},
-				{"name":"value1","type":"address"},
-				{"name":"value2","type":"address"}
+				{"name":"count","type":"uint256"}
+			]
+		},
+		{
+			"name": "setMinitingStatus",
+			"inputs": [
+				{"name":"mintNftStatus_","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setRemainOnNft",
+			"inputs": [
+				{"name":"remainOnNft","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getRemainOnNft",
+			"inputs": [
+				{"name":"answerId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"remainOnNft","type":"uint256"}
+			]
+		},
+		{
+			"name": "changeNftTypeName",
+			"inputs": [
+				{"name":"nftId","type":"uint256"},
+				{"name":"nftAddress","type":"address"},
+				{"name":"nftTypeIndex","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "acceptNftTypeNameChange",
+			"inputs": [
+				{"name":"nftId","type":"uint256"},
+				{"name":"newNftTypeName","type":"string"},
+				{"name":"oldNftTypeName","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "changeNftNickName",
+			"inputs": [
+				{"name":"nftId","type":"uint256"},
+				{"name":"nftAddress","type":"address"},
+				{"name":"nickName","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "acceptNftNickNameChange",
+			"inputs": [
+				{"name":"nftId","type":"uint256"},
+				{"name":"newNftNickName","type":"string"},
+				{"name":"oldNftNickName","type":"string"},
+				{"name":"sendRemainGasTo","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getNftType",
+			"inputs": [
+				{"name":"answerId","type":"uint32"},
+				{"name":"index","type":"uint8"}
+			],
+			"outputs": [
+				{"name":"value0","type":"optional(string)"}
+			]
+		},
+		{
+			"name": "getAllNftTypesIndexes",
+			"inputs": [
+				{"name":"answerId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"value0","type":"uint16[]"}
+			]
+		},
+		{
+			"name": "isNftTypeExists",
+			"inputs": [
+				{"name":"answerId","type":"uint32"},
+				{"name":"index","type":"uint8"}
+			],
+			"outputs": [
+				{"name":"value0","type":"bool"}
+			]
+		},
+		{
+			"name": "addUpdateNftType",
+			"inputs": [
+				{"name":"index","type":"uint8"},
+				{"name":"name","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "deleteNftType",
+			"inputs": [
+				{"name":"index","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setBaseUrl",
+			"inputs": [
+				{"name":"_baseNftUrl","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setCollectionUrl",
+			"inputs": [
+				{"name":"_url","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "withdrawBalance",
+			"inputs": [
+				{"name":"to","type":"address"}
+			],
+			"outputs": [
 			]
 		},
 		{
@@ -284,83 +339,11 @@
 			]
 		},
 		{
-			"name": "_totalMinted",
+			"name": "mintNftStatus",
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"_totalMinted","type":"uint256"}
-			]
-		},
-		{
-			"name": "_tokenId",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"_tokenId","type":"uint128"}
-			]
-		},
-		{
-			"name": "requestId",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"requestId","type":"uint256"}
-			]
-		},
-		{
-			"name": "lastHolderIndex",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"lastHolderIndex","type":"uint256"}
-			]
-		},
-		{
-			"name": "warehouseWallet",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"warehouseWallet","type":"address"}
-			]
-		},
-		{
-			"name": "routingWallet",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"routingWallet","type":"address"}
-			]
-		},
-		{
-			"name": "allNfts",
-			"inputs": [
-			],
-			"outputs": [
-				{"components":[{"name":"id","type":"uint256"},{"name":"owner","type":"address"},{"name":"nftAddress","type":"address"}],"name":"allNfts","type":"tuple[]"}
-			]
-		},
-		{
-			"name": "pendingMints",
-			"inputs": [
-			],
-			"outputs": [
-				{"components":[{"name":"to","type":"address"},{"name":"amount","type":"uint256"},{"name":"requestId","type":"uint256"},{"name":"completed","type":"bool"}],"name":"pendingMints","type":"tuple[]"}
-			]
-		},
-		{
-			"name": "_getPendingMintByIndex",
-			"inputs": [
-			],
-			"outputs": [
-				{"components":[{"name":"to","type":"address"},{"name":"amount","type":"uint256"},{"name":"requestId","type":"uint256"},{"name":"completed","type":"bool"}],"name":"_getPendingMintByIndex","type":"map(uint256,tuple)"}
-			]
-		},
-		{
-			"name": "nftAddressOf",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"nftAddressOf","type":"map(uint256,address)"}
+				{"name":"mintNftStatus","type":"uint8"}
 			]
 		}
 	],
@@ -369,49 +352,53 @@
 	],
 	"events": [
 		{
-			"name": "MintInitiated",
+			"name": "NftTypeAdded",
 			"inputs": [
-				{"name":"to","type":"address"},
-				{"name":"requestId","type":"uint256"},
-				{"name":"amount","type":"uint256"}
+				{"name":"_sender","type":"address"},
+				{"name":"_index","type":"uint8"},
+				{"name":"_name","type":"string"}
 			],
 			"outputs": [
 			]
 		},
 		{
-			"name": "MintCompleted",
+			"name": "NftTypeUpdated",
 			"inputs": [
-				{"name":"to","type":"address"},
-				{"name":"requestId","type":"uint256"},
-				{"name":"amount","type":"uint256"}
+				{"name":"_sender","type":"address"},
+				{"name":"_index","type":"uint8"},
+				{"name":"_name","type":"string"}
 			],
 			"outputs": [
 			]
 		},
 		{
-			"name": "NftMinted",
+			"name": "NftTypeDeleted",
 			"inputs": [
-				{"name":"to","type":"address"},
+				{"name":"_sender","type":"address"},
+				{"name":"_index","type":"uint8"},
+				{"name":"_name","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "NftTypeNameChanged",
+			"inputs": [
+				{"name":"nftId","type":"uint256"},
 				{"name":"nftAddress","type":"address"},
-				{"name":"tokenId","type":"uint256"}
+				{"name":"oldTypeName","type":"string"},
+				{"name":"newTypeName","type":"string"}
 			],
 			"outputs": [
 			]
 		},
 		{
-			"name": "BatchMintCompleted",
+			"name": "NftNickNameChanged",
 			"inputs": [
-				{"name":"totalAddresses","type":"uint256"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "CompletedNft",
-			"inputs": [
-				{"name":"id","type":"uint256"},
-				{"name":"to","type":"address"},
-				{"name":"nftAddress","type":"address"}
+				{"name":"nftId","type":"uint256"},
+				{"name":"nftAddress","type":"address"},
+				{"name":"oldNickName","type":"string"},
+				{"name":"newNickName","type":"string"}
 			],
 			"outputs": [
 			]
@@ -479,18 +466,10 @@
 		{"name":"_deployIndexBasisValue","type":"uint128"},
 		{"name":"owner_","type":"address"},
 		{"name":"nonce_","type":"uint64"},
+		{"name":"burnerWallet","type":"address"},
 		{"name":"_totalMinted","type":"uint256"},
-		{"name":"_tokenId","type":"uint128"},
-		{"name":"requestId","type":"uint256"},
-		{"name":"lastHolderIndex","type":"uint256"},
-		{"name":"warehouseWallet","type":"address"},
-		{"name":"routingWallet","type":"address"},
-		{"name":"baseTokenURI","type":"string"},
-		{"components":[{"name":"id","type":"uint256"},{"name":"owner","type":"address"},{"name":"nftAddress","type":"address"}],"name":"allNfts","type":"tuple[]"},
-		{"components":[{"name":"to","type":"address"},{"name":"amount","type":"uint256"},{"name":"requestId","type":"uint256"},{"name":"completed","type":"bool"}],"name":"pendingMints","type":"tuple[]"},
-		{"name":"requestIdToIndex","type":"map(uint256,uint256)"},
-		{"components":[{"name":"to","type":"address"},{"name":"amount","type":"uint256"},{"name":"requestId","type":"uint256"},{"name":"completed","type":"bool"}],"name":"_getPendingMintByIndex","type":"map(uint256,tuple)"},
-		{"name":"holderTokenCount","type":"map(address,uint256)"},
-		{"name":"nftAddressOf","type":"map(uint256,address)"}
+		{"name":"_remainOnNft","type":"uint128"},
+		{"name":"mintNftStatus","type":"uint8"},
+		{"name":"nftTypes","type":"map(uint16,string)"}
 	]
 }

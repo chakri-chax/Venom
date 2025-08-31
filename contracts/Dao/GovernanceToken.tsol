@@ -336,8 +336,8 @@ contract Governance is IGovernanceCallback {
 		uint amount,
 		address _blockAddress
 	) external {
-		require(_minPercent > 40, MIN_PERCENTAGE_TOO_LOW);
-		require(_minVoters >= 2, MIN_VOTERS_TOO_LOW);
+		require(_minPercent > 10, MIN_PERCENTAGE_TOO_LOW);
+		require(_minVoters >= 1, MIN_VOTERS_TOO_LOW);
 		require(!isUserBlacklisted(msg.sender), USER_IS_BLOCKED);
 		uint voteEndTme = block.timestamp + _vote_end * 24 * 60 * 60;
 		// require(msg.value == CREATE_PROPOSAL_COST, AMOUNT_TOO_LOW);

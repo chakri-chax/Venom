@@ -40,8 +40,8 @@ console.log("create a proposal",new Date().getTime());
                   _vote_start: 0, 
                   _vote_end: 10,
                   _ptype: 2,
-                  _minVoters: 3,
-                  _minPercent: 60,
+                  _minVoters: 1,
+                  _minPercent: 20,
                   amount: (0),
                   _blockAddress: new Address("0:0000000000000000000000000000000000000000000000000000000000000000"),
 
