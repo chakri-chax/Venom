@@ -29,17 +29,17 @@ async function main() {
   );
 
   // create a proposal 
-  console.log("create a proposal", new Date().getTime());
+  console.log("create a proposal --> BLOCK USER", new Date().getTime());
 
   {
     const { traceTree } = await locklift.tracing.trace(
       sample.methods
         .createProposalRequest({
-          _title: "My First Proposal ",
-          _description: "This is my first proposal",
+          _title: "Blocking Address ",
+          _description: "Blocking proposal",
           _vote_start: 0,
           _vote_end: 10,
-          _ptype: 4,
+          _ptype: 4, // ProposalType.BLOCK_USER
           _minVoters: 1,
           _minPercent: 50,
           amount: (0),
@@ -54,15 +54,57 @@ async function main() {
 
     await traceTree?.beautyPrint();
   }
+  console.log("create a proposal -->UN BLOCK USER", new Date().getTime());
 
+  {
+    const { traceTree } = await locklift.tracing.trace(
+      sample.methods
+        .createProposalRequest({
+          _title: "UnBlocking Address ",
+          _description: "This is my first proposal",
+          _vote_start: 0,
+          _vote_end: 10,
+          _ptype: 5, // ProposalType.UNBLOCK_USER
+          _minVoters: 1,
+          _minPercent: 50,
+          amount: (0),
+          _blockAddress: new Address("0:7179e9aeb58d6fe97610ffcf605eded4f3a161cee84bc0d67bfdf55e6a6a6491"),
+
+        })
+        .send({
+          from: chakri,
+          amount: toNano(1),
+        }),
+    );
+
+    await traceTree?.beautyPrint();
+  }
   // vote on the proposal
-  console.log("vote on the proposal", new Date().getTime());
+  console.log("vote on the proposal --> BLOCK USER", new Date().getTime());
 
   {
     const { traceTree } = await locklift.tracing.trace(
       sample.methods
         .voteByUser({
           _propID: 0,
+          _supports: true,
+        })
+        .send({
+          from: chakri,
+          amount: toNano(1),
+        }),
+    );
+
+    await traceTree?.beautyPrint();
+  }
+
+  console.log("vote on the proposal --> UN BLOCK USER", new Date().getTime());
+
+   {
+    const { traceTree } = await locklift.tracing.trace(
+      sample.methods
+        .voteByUser({
+          _propID: 1,
           _supports: true,
         })
         .send({
