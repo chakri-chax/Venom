@@ -383,6 +383,7 @@ contract Governance is IGovernanceCallback {
 		_finalizeProposal(user);
 	}
 
+
 	uint32 constant ZERO_AMOUNT = 300;
 
 	function _finalizeProposal(address user) internal {
