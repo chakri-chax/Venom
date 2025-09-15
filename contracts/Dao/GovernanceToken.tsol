@@ -382,7 +382,7 @@ contract Governance is IGovernanceCallback {
 		tempLockedBalances[user] = balances;
 		_finalizeProposal(user);
 	}
-
+ 
 
 	uint32 constant ZERO_AMOUNT = 300;
 
