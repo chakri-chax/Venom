@@ -709,11 +709,6 @@ INDEX 7
 SWAP
 LEQ
 THROWIFNOT 59
-.loc ../contracts/Dao/GovernanceToken.tsol, 398
-DUP
-SECOND
-GTINT 0
-THROWIFNOT 64
 .loc ../contracts/Dao/GovernanceToken.tsol, 401
 GETGLOB 12
 FIRST

@@ -390,12 +390,11 @@ contract Governance is IGovernanceCallback {
 		uint256 treasuryDeposit = tempTreasuryBalance[user];
 		LockedNFTBalances LB = tempLockedBalances[user];
 
-		// validate and build proposal (same logic as before)
 		uint maxFundingAmount = treasuryDeposit *
 			100 *
 			(LB.deedNFTCount + LB.founderNFTCount);
 		require(draft.amount <= maxFundingAmount, FUNDING_LIMIT_EXCEEDED);
-		require(LB.founderNFTCount >= 1, FOUNDER_NFT_LOCKED);
+		// require(LB.founderNFTCount >= 1, FOUNDER_NFT_LOCKED);
 
 		Proposal p;
 		p.PID = proposals.length;
