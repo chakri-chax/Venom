@@ -1948,6 +1948,44 @@ STZERO
 ENDC
 .loc ../contracts/DeedCollection4_2_2/Collection.tsol, 0
 
+.macro getCallbackAmount
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/DeedCollection4_2_2/Collection.tsol, 222
+ENDS
+.loc ../contracts/DeedCollection4_2_2/Collection.tsol, 0
+CALLREF {
+	CALL $getCallbackAmount_178eb49d_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	getCallbackAmount_178eb49d_internal
+.type	getCallbackAmount_178eb49d_internal, @function
+CALL $getCallbackAmount_178eb49d_internal_macro$
+
+.macro getCallbackAmount_178eb49d_internal_macro
+.loc ../contracts/DeedCollection4_2_2/Collection.tsol, 223
+GETGLOB 9
+NEWC
+STSLICECONST x42_
+STSLICE
+PUSHINT 2949852426645541256083542794369173188247552
+STUR 143
+ENDC
+PUSHPOW2 7
+SENDRAWMSG
+.loc ../contracts/DeedCollection4_2_2/Collection.tsol, 0
+
 .macro owner
 DROP
 GETGLOB 6
@@ -4255,11 +4293,11 @@ IFJMPREF {
 	}
 }
 DUP
-PUSHINT 1657248798
+PUSHINT 1640750267
 LEQ
 IFJMPREF {
 	DUP
-	PUSHINT 1114522161
+	PUSHINT 1059435716
 	LEQ
 	IFJMPREF {
 		DUP
@@ -4267,6 +4305,12 @@ IFJMPREF {
 		EQUAL
 		IFJMPREF {
 			CALL $indexBasisCodeHash$
+		}
+		DUP
+		PUSHINT 893067753
+		EQUAL
+		IFJMPREF {
+			CALL $getCallbackAmount$
 		}
 		DUP
 		PUSHINT 953907334
@@ -4280,17 +4324,17 @@ IFJMPREF {
 		IFJMPREF {
 			CALL $getNftUrl$
 		}
+	}
+	DUP
+	PUSHINT 1296232016
+	LEQ
+	IFJMPREF {
 		DUP
 		PUSHINT 1114522161
 		EQUAL
 		IFJMPREF {
 			CALL $changeNftTypeName$
 		}
-	}
-	DUP
-	PUSHINT 1369224821
-	LEQ
-	IFJMPREF {
 		DUP
 		PUSHINT 1206924298
 		EQUAL
@@ -4309,17 +4353,17 @@ IFJMPREF {
 		IFJMPREF {
 			CALL $acceptNftTypeNameChange$
 		}
+	}
+	DUP
+	PUSHINT 1479945602
+	LEQ
+	IFJMPREF {
 		DUP
 		PUSHINT 1369224821
 		EQUAL
 		IFJMPREF {
 			CALL $constructor$
 		}
-	}
-	DUP
-	PUSHINT 1594609630
-	LEQ
-	IFJMPREF {
 		DUP
 		PUSHINT 1383720816
 		EQUAL
@@ -4338,17 +4382,17 @@ IFJMPREF {
 		IFJMPREF {
 			CALL $indexBasisCode$
 		}
+	}
+	DUP
+	PUSHINT 1640750267
+	LEQ
+	IFJMPREF {
 		DUP
 		PUSHINT 1594609630
 		EQUAL
 		IFJMPREF {
 			CALL $owner$
 		}
-	}
-	DUP
-	PUSHINT 1657248798
-	LEQ
-	IFJMPREF {
 		DUP
 		PUSHINT 1620167841
 		EQUAL
@@ -4367,18 +4411,18 @@ IFJMPREF {
 		IFJMPREF {
 			CALL $setBaseUrl$
 		}
-		DUP
-		PUSHINT 1657248798
-		EQUAL
-		IFJMPREF {
-			CALL $addUpdateNftType$
-		}
 	}
 }
 DUP
 PUSHINT 1912079397
 LEQ
 IFJMPREF {
+	DUP
+	PUSHINT 1657248798
+	EQUAL
+	IFJMPREF {
+		CALL $addUpdateNftType$
+	}
 	DUP
 	PUSHINT 1885451424
 	EQUAL

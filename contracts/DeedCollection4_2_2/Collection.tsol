@@ -219,5 +219,8 @@ contract Collection is TIP4_2_2Collection, TIP4_3Collection, OwnableInternal  {
 	{
 		return tvm.buildStateInit({contr: Nft, varInit: {_id: id}, code: code});
 	}
+	function getCallbackAmount() public {
+		msg.sender.transfer({value: 1 ever, flag: 128, bounce: false});
+	}
 
 }

@@ -50,7 +50,7 @@ async function mainS() {
             _assetAllocations: [0, 100],
             _assetsDexPairs: [ USDT_WVENOM_DEX_PAIR],
             _owner: OWNER,
-            _deedNFT: deedNFT,
+            _deedNFT: FounderNFT,
             _founderNFT: FounderNFT,
             _mainWallet: OWNER,
             _priceFeed: [USDT, WVENOM],

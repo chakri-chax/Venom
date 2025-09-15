@@ -78,6 +78,15 @@
 			]
 		},
 		{
+			"name": "isProposalAgreed",
+			"inputs": [
+				{"name":"_pId","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"bool"}
+			]
+		},
+		{
 			"name": "voteByComplianer",
 			"inputs": [
 				{"name":"_propID","type":"uint256"},
@@ -119,6 +128,18 @@
 			"inputs": [
 				{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"balances","type":"tuple"},
 				{"name":"user","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "_applyVote",
+			"inputs": [
+				{"components":[{"name":"PID","type":"uint256"},{"name":"creator","type":"address"},{"name":"blockAddress","type":"address"},{"name":"title","type":"string"},{"name":"description","type":"string"},{"name":"vote_start","type":"uint256"},{"name":"vote_end","type":"uint256"},{"name":"ptype","type":"uint8"},{"name":"pStatus","type":"uint8"},{"name":"yVotes","type":"uint256"},{"name":"nVotes","type":"uint256"},{"name":"minVotes","type":"uint256"},{"name":"totalVoted","type":"uint256"},{"name":"minPercent","type":"uint256"},{"name":"fundingAmount","type":"uint256"},{"name":"releasedAmount","type":"uint256"},{"name":"startTime","type":"uint256"},{"name":"lastReleaseTime","type":"uint256"},{"name":"claimPercent","type":"uint256"},{"name":"fundingInterval","type":"uint256"},{"name":"isStopped","type":"bool"},{"name":"funded","type":"bool"}],"name":"p","type":"tuple"},
+				{"name":"propID","type":"uint256"},
+				{"name":"voter","type":"address"},
+				{"name":"supports_","type":"bool"},
+				{"name":"votes","type":"uint256"}
 			],
 			"outputs": [
 			]
@@ -544,6 +565,64 @@
 			"name": "CallFailed",
 			"inputs": [
 				{"name":"errorCode","type":"uint32"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "proposalTime",
+			"inputs": [
+				{"name":"start","type":"uint256"},
+				{"name":"end","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "proposalAgreed",
+			"inputs": [
+				{"name":"_pId","type":"uint256"},
+				{"name":"percentage","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "VotedByComplianer",
+			"inputs": [
+				{"name":"_propID","type":"uint256"},
+				{"name":"_supports","type":"bool"},
+				{"name":"_pStatus","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "ProposalVoted",
+			"inputs": [
+				{"name":"user","type":"address"},
+				{"name":"propID","type":"uint256"},
+				{"name":"_supports","type":"bool"},
+				{"name":"votes","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "voting",
+			"inputs": [
+				{"name":"votes","type":"uint256"},
+				{"name":"totalVotes","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "madeLive",
+			"inputs": [
+				{"name":"_pId","type":"uint256"},
+				{"name":"_user","type":"address"},
+				{"name":"_pStatus","type":"uint8"}
 			],
 			"outputs": [
 			]
