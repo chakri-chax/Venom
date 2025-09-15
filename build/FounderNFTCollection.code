@@ -1533,7 +1533,7 @@ CALL $_baseURI_743976a0_internal_macro$
 GETGLOB 28
 .loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
-.macro getCallbackAmouhnt
+.macro getCallbackAmount
 DROP
 GETGLOB 6
 THROWIFNOT 76
@@ -1546,7 +1546,7 @@ IFREF {
 ENDS
 .loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 CALLREF {
-	CALL $getCallbackAmouhnt_02098655_internal_macro$
+	CALL $getCallbackAmount_178eb49d_internal_macro$
 }
 DROP
 CALLREF {
@@ -1554,11 +1554,11 @@ CALLREF {
 }
 THROW 0
 
-.globl	getCallbackAmouhnt_02098655_internal
-.type	getCallbackAmouhnt_02098655_internal, @function
-CALL $getCallbackAmouhnt_02098655_internal_macro$
+.globl	getCallbackAmount_178eb49d_internal
+.type	getCallbackAmount_178eb49d_internal, @function
+CALL $getCallbackAmount_178eb49d_internal_macro$
 
-.macro getCallbackAmouhnt_02098655_internal_macro
+.macro getCallbackAmount_178eb49d_internal_macro
 .loc ../contracts/Dao/FounderNFTCollection.tsol, 262
 GETGLOB 9
 NEWC
@@ -4137,13 +4137,19 @@ IFJMPREF {
 	}
 }
 DUP
-PUSHINT 1827261197
+PUSHINT 1809827988
 LEQ
 IFJMPREF {
 	DUP
-	PUSHINT 1059435716
+	PUSHINT 1011499017
 	LEQ
 	IFJMPREF {
+		DUP
+		PUSHINT 893067753
+		EQUAL
+		IFJMPREF {
+			CALL $getCallbackAmount$
+		}
 		DUP
 		PUSHINT 953907334
 		EQUAL
@@ -4162,17 +4168,17 @@ IFJMPREF {
 		IFJMPREF {
 			CALL $_baseURI$
 		}
+	}
+	DUP
+	PUSHINT 1383720816
+	LEQ
+	IFJMPREF {
 		DUP
 		PUSHINT 1059435716
 		EQUAL
 		IFJMPREF {
 			CALL $getNftUrl$
 		}
-	}
-	DUP
-	PUSHINT 1479945602
-	LEQ
-	IFJMPREF {
 		DUP
 		PUSHINT 1061334069
 		EQUAL
@@ -4191,17 +4197,17 @@ IFJMPREF {
 		IFJMPREF {
 			CALL $nftAddress$
 		}
+	}
+	DUP
+	PUSHINT 1521930418
+	LEQ
+	IFJMPREF {
 		DUP
 		PUSHINT 1479945602
 		EQUAL
 		IFJMPREF {
 			CALL $indexBasisCode$
 		}
-	}
-	DUP
-	PUSHINT 1594609630
-	LEQ
-	IFJMPREF {
 		DUP
 		PUSHINT 1497069362
 		EQUAL
@@ -4220,17 +4226,17 @@ IFJMPREF {
 		IFJMPREF {
 			CALL $routingWallet$
 		}
+	}
+	DUP
+	PUSHINT 1809827988
+	LEQ
+	IFJMPREF {
 		DUP
 		PUSHINT 1594609630
 		EQUAL
 		IFJMPREF {
 			CALL $owner$
 		}
-	}
-	DUP
-	PUSHINT 1827261197
-	LEQ
-	IFJMPREF {
 		DUP
 		PUSHINT 1629421668
 		EQUAL
@@ -4248,12 +4254,6 @@ IFJMPREF {
 		EQUAL
 		IFJMPREF {
 			CALL $_getPendingMintByIndex$
-		}
-		DUP
-		PUSHINT 1827261197
-		EQUAL
-		IFJMPREF {
-			CALL $getCallbackAmouhnt$
 		}
 	}
 }

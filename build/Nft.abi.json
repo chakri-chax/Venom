@@ -9,41 +9,11 @@
 				{"name":"owner","type":"address"},
 				{"name":"sendGasTo","type":"address"},
 				{"name":"remainOnNft","type":"uint128"},
-				{"name":"nftId_","type":"uint256"},
-				{"name":"typeName_","type":"string"},
-				{"name":"nickName_","type":"string"},
+				{"name":"codeIndex","type":"cell"},
 				{"name":"indexDeployValue","type":"uint128"},
-				{"name":"indexDestroyValue","type":"uint128"},
-				{"name":"codeIndex","type":"cell"}
+				{"name":"indexDestroyValue","type":"uint128"}
 			],
 			"outputs": [
-			]
-		},
-		{
-			"name": "setTypeName",
-			"inputs": [
-				{"name":"typeName_","type":"string"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "setNickName",
-			"inputs": [
-				{"name":"nickName_","type":"string"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "getNftInfo",
-			"inputs": [
-				{"name":"answerId","type":"uint32"}
-			],
-			"outputs": [
-				{"name":"nftId_","type":"uint256"},
-				{"name":"typeName_","type":"string"},
-				{"name":"nickName_","type":"string"}
 			]
 		},
 		{
@@ -137,27 +107,11 @@
 			]
 		},
 		{
-			"name": "nftId",
+			"name": "nftOwner",
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"nftId","type":"uint256"}
-			]
-		},
-		{
-			"name": "typeName",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"typeName","type":"string"}
-			]
-		},
-		{
-			"name": "nickName",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"nickName","type":"string"}
+				{"name":"nftOwner","type":"address"}
 			]
 		}
 	],
@@ -165,26 +119,6 @@
 		{"key":1,"name":"_id","type":"uint256"}
 	],
 	"events": [
-		{
-			"name": "NftTypeNameChanged",
-			"inputs": [
-				{"name":"nftId","type":"uint256"},
-				{"name":"oldTypeName","type":"string"},
-				{"name":"newTypeName","type":"string"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "NftNickNameChanged",
-			"inputs": [
-				{"name":"nftId","type":"uint256"},
-				{"name":"oldNickName","type":"string"},
-				{"name":"newNickName","type":"string"}
-			],
-			"outputs": [
-			]
-		},
 		{
 			"name": "MetadataUpdated",
 			"inputs": [
@@ -245,8 +179,6 @@
 		{"name":"_indexDeployValue","type":"uint128"},
 		{"name":"_indexDestroyValue","type":"uint128"},
 		{"name":"_codeIndex","type":"cell"},
-		{"name":"nftId","type":"uint256"},
-		{"name":"typeName","type":"string"},
-		{"name":"nickName","type":"string"}
+		{"name":"nftOwner","type":"address"}
 	]
 }

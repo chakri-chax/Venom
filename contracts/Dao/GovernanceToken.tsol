@@ -382,7 +382,9 @@ contract Governance is IGovernanceCallback {
 		tempLockedBalances[user] = balances;
 		_finalizeProposal(user);
 	}
+
 	uint32 constant ZERO_AMOUNT = 300;
+
 	function _finalizeProposal(address user) internal {
 		ProposalDraft draft = pendingProposalDraft[user];
 		uint256 treasuryDeposit = tempTreasuryBalance[user];
@@ -407,21 +409,29 @@ contract Governance is IGovernanceCallback {
 		p.ptype = draft.pType;
 		p.fundingAmount = draft.amount;
 		p.blockAddress = draft.blockAddress;
-		
-        if (p.ptype == ProposalType.COMPLIANCE) {
-            p.pStatus = ProposalStatus.LIVE;
-        } else {
-            pendingProposals++;
-        }
-        if(p.ptype == ProposalType.OPEN){
-            require(LB.deedNFTCount > 0,ONLY_DEED_NFT_HOLDER_CAN_CREATE_OPEN_PROPOSAL);
-        }
-        else if(p.ptype == ProposalType.TREASURY){
-            require(treasuryDeposit > 0,ZERO_AMOUNT);
-        }
-        else if(p.ptype == ProposalType.BLOCK_USER || p.ptype == ProposalType.UNBLOCK_USER){
-            require(LB.deedNFTCount > 0 || isComplianceMember(msg.sender), ONLY_DEED_NFT_HOLDER_CAN_CREATE_OPEN_PROPOSAL);
-        }
+
+		if (p.ptype == ProposalType.COMPLIANCE) {
+			p.pStatus = ProposalStatus.LIVE;
+		} else {
+			pendingProposals++;
+		}
+		if (p.ptype == ProposalType.OPEN) {
+			require(
+				LB.deedNFTCount > 0,
+				ONLY_DEED_NFT_HOLDER_CAN_CREATE_OPEN_PROPOSAL
+			);
+		} else if (p.ptype == ProposalType.TREASURY) {
+			require(treasuryDeposit > 0, ZERO_AMOUNT);
+		} else if (
+			p.ptype == ProposalType.BLOCK_USER ||
+			p.ptype == ProposalType.UNBLOCK_USER
+		) {
+			require(
+				LB.deedNFTCount > 0 || isComplianceMember(msg.sender),
+				ONLY_DEED_NFT_HOLDER_CAN_CREATE_OPEN_PROPOSAL
+			);
+			p.pStatus = ProposalStatus.LIVE;
+		}
 		proposals.push(p);
 		uProposals[user].push(p.PID);
 
@@ -712,77 +722,91 @@ contract Governance is IGovernanceCallback {
 	function onNFTVoteBalance(
 		LockedNFTBalances balances,
 		address user
-	) external  {
+	) external {
 		require(msg.sender == treasury, INVALID_CALLER);
 		tempVoteNFTs[user] = balances;
 		_finalizeVote(user); // finalize when both callbacks complete
 	}
 
-    function _finalizeVote(address user) internal {
-    VoteDraft  vd = pendingVotes[user];
-    Proposal  p = proposals[vd.propID_];
+	function _finalizeVote(address user) internal {
+		VoteDraft vd = pendingVotes[user];
+		Proposal p = proposals[vd.propID_];
 
-    uint votes = _calculateVotingPower(user, tempVoteTreasury[user], tempVoteNFTs[user]);
+		uint votes = _calculateVotingPower(
+			user,
+			tempVoteTreasury[user],
+			tempVoteNFTs[user]
+		);
 
-    if (
-        p.ptype == ProposalType.OPEN ||
-        p.ptype == ProposalType.BLOCK_USER ||
-        p.ptype == ProposalType.UNBLOCK_USER
-    ) {
-        require(tempVoteNFTs[user].deedNFTCount > 0, DEED_NFT_REQUIRED);
-        _applyVote(p, vd.propID_, user, vd.supports_, votes);
-    } 
-    else if (p.ptype == ProposalType.TREASURY) {
-        require(tempVoteTreasury[user] > 0, TREASURY_BAL_REQUIRED);
-        _applyVote(p, vd.propID_, user, vd.supports_, votes);
-    } 
-    else if (p.ptype == ProposalType.COMPLIANCE && isComplianceMember(user)) {
-        _applyVote(p, vd.propID_, user, vd.supports_, 1);
-    } 
-    else if (p.ptype == ProposalType.TREASURY_MAN && isTopTreasury(user)) {
-        _applyVote(p, vd.propID_, user, vd.supports_, votes);
-    }
+		if (
+			p.ptype == ProposalType.OPEN ||
+			p.ptype == ProposalType.BLOCK_USER ||
+			p.ptype == ProposalType.UNBLOCK_USER
+		) {
+			require(tempVoteNFTs[user].deedNFTCount > 0, DEED_NFT_REQUIRED);
+			_applyVote( vd.propID_, user, vd.supports_, votes);
+		} else if (p.ptype == ProposalType.TREASURY) {
+			require(tempVoteTreasury[user] > 0, TREASURY_BAL_REQUIRED);
+			_applyVote( vd.propID_, user, vd.supports_, votes);
+		} else if (
+			p.ptype == ProposalType.COMPLIANCE && isComplianceMember(user)
+		) {
+			_applyVote( vd.propID_, user, vd.supports_, 1);
+		} else if (
+			p.ptype == ProposalType.TREASURY_MAN && isTopTreasury(user)
+		) {
+			_applyVote( vd.propID_, user, vd.supports_, votes);
+		}
 
-    emit Voted(p.PID, vd.supports_, user);
+		emit Voted(p.PID, vd.supports_, user);
 
-    // cleanup
-    // delete pendingVotes[user];
-    // delete tempVoteTreasury[user];
-    // delete tempVoteNFTs[user];
-}
-function _applyVote(
-    Proposal p, 
-    uint propID, 
-    address voter, 
-    bool supports_, 
-    uint votes
-) internal {
-    if (supports_) {
-        p.yVotes += votes;
-        voterVotes[propID][voter] = int256(votes);
-    } else {
-        p.nVotes += votes;
-        voterVotes[propID][voter] = -int256(votes);
-    }
-    p.totalVoted += 1;
-}
+		// cleanup
+		// delete pendingVotes[user];
+		// delete tempVoteTreasury[user];
+		// delete tempVoteNFTs[user];
+	}
 
-function _calculateVotingPower(
-    address voter,
-    uint256 treasuryDeposit,
-    LockedNFTBalances  LB
-) public pure returns (uint) {
-    uint total_votes = LB.deedNFTCount;
-    uint votes = total_votes > 11 ? 11 : total_votes;
+	event appliedVote(
+		uint indexed proposalID,
+		address indexed user,
+		bool supports_,
+		uint votes
+	);
 
-    uint256 treasuryBal = treasuryDeposit / 1e9;
-    if (treasuryBal >= 10) {
-        votes *= (treasuryBal / 10);
-    }
+	function _applyVote(
+		uint propID,
+		address voter,
+		bool supports_,
+		uint votes
+	) internal {
+		if (supports_) {
+			proposals[propID].yVotes += votes;
+			voterVotes[propID][voter] = int256(votes);
+		} else {
+			proposals[propID].nVotes += votes;
+			voterVotes[propID][voter] = -int256(votes);
+		}
+		proposals[propID].totalVoted += 1;
 
-    votes = votes * (1  + LB.founderNFTCount);
-    return votes;
-}
+		emit appliedVote(propID, voter, supports_, votes);
+	}
+
+	function _calculateVotingPower(
+		address voter,
+		uint256 treasuryDeposit,
+		LockedNFTBalances LB
+	) public pure returns (uint) {
+		uint total_votes = LB.deedNFTCount;
+		uint votes = total_votes > 11 ? 11 : total_votes;
+
+		uint256 treasuryBal = treasuryDeposit / 1e9;
+		if (treasuryBal >= 10) {
+			votes *= (treasuryBal / 10);
+		}
+
+		votes = votes * (1 + LB.founderNFTCount);
+		return votes;
+	}
 
 	// ******************************************* Test on voting ***********************************
 

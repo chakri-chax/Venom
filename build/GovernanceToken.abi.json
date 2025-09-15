@@ -547,6 +547,17 @@
 			],
 			"outputs": [
 			]
+		},
+		{
+			"name": "appliedVote",
+			"inputs": [
+				{"name":"proposalID","type":"uint256"},
+				{"name":"user","type":"address"},
+				{"name":"supports_","type":"bool"},
+				{"name":"votes","type":"uint256"}
+			],
+			"outputs": [
+			]
 		}
 	],
 	"fields": [
