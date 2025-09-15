@@ -40,8 +40,8 @@ async function main() {
           _vote_start: 0,
           _vote_end: 10,
           _ptype: 4,
-          _minVoters: 3,
-          _minPercent: 60,
+          _minVoters: 1,
+          _minPercent: 50,
           amount: (0),
           _blockAddress: new Address("0:7179e9aeb58d6fe97610ffcf605eded4f3a161cee84bc0d67bfdf55e6a6a6491"),
 
