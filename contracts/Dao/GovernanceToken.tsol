@@ -385,7 +385,7 @@ contract Governance is IGovernanceCallback {
  
 
 	uint32 constant ZERO_AMOUNT = 300;
-
+ 
 	function _finalizeProposal(address user) internal {
 		ProposalDraft draft = pendingProposalDraft[user];
 		uint256 treasuryDeposit = tempTreasuryBalance[user];
