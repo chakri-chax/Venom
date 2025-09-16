@@ -1,0 +1,102 @@
+pragma ever-solidity >=0.62.0;
+pragma AbiHeader expire;
+pragma AbiHeader time;
+pragma AbiHeader pubkey;
+
+// Minimal callback struct that matches TIP4-style CallbackParams
+interface ICallbackParamsStructure {
+    struct CallbackParams {
+        uint128 value;
+        TvmCell payload;
+    }
+}
+
+// Extended NFT interface (TIP-4 style)
+interface INft {
+    // Manager-only transfer
+    function transfer(
+        address newOwner,
+        address sendGasTo,
+        mapping(address => ICallbackParamsStructure.CallbackParams) callbacks
+    ) external;
+
+    // Manager-only change owner
+    function changeOwner(
+        address newOwner,
+        address sendGasTo,
+        mapping(address => ICallbackParamsStructure.CallbackParams) callbacks
+    ) external;
+
+    // Manager-only change manager (optional helper)
+    function changeManager(
+        address newManager,
+        address sendGasTo,
+        mapping(address => ICallbackParamsStructure.CallbackParams) callbacks
+    ) external;
+}
+
+contract TransferNfts {
+    uint64 static nonce_;
+    mapping(address => ICallbackParamsStructure.CallbackParams) callbacks;
+
+    modifier accept {
+        tvm.accept();
+        _;
+    }
+
+    /*
+     * transferAsManager
+     * - transfer NFT to any recipient (requires this contract to be manager)
+     */
+    function transferAsManager(address nftAddr, uint256 tokenId, address to) public accept {
+        // Build payload: adapt depending on your NFT implementation
+        TvmCell payload = abi.encode(tokenId);
+
+        mapping(address => ICallbackParamsStructure.CallbackParams) localCallbacks;
+        localCallbacks[address(this)] = ICallbackParamsStructure.CallbackParams({
+            value: 0.05 ever,
+            payload: payload
+        });
+
+        INft(nftAddr).transfer{value: 3 ever, flag: 1}(to, msg.sender, localCallbacks);
+    }
+
+    /*
+     * takeOwnership
+     * - makes this contract the owner of the NFT
+     * - only works if this contract is already manager of the NFT
+     */
+    function takeOwnership(address nftAddr) public accept {
+        mapping(address => ICallbackParamsStructure.CallbackParams) localCallbacks;
+
+        INft(nftAddr).changeOwner{value: 3 ever, flag: 1}(
+            address(this),   // new owner = this contract
+            msg.sender,      // send gas refunds back to caller
+            localCallbacks   // no special callbacks
+        );
+    }
+
+    /*
+     * changeManagerTo
+     * - helper to change NFT manager (if this contract is already manager)
+     */
+    function changeManagerTo(address nftAddr, address newManager) public accept {
+        mapping(address => ICallbackParamsStructure.CallbackParams) localCallbacks;
+
+        INft(nftAddr).changeManager{value: 3 ever, flag: 1}(
+            newManager,
+            msg.sender,
+            localCallbacks
+        );
+    }
+
+    // Withdraw all funds to an address
+    function withdraw(address to) public accept {
+        to.transfer({value: address(this).balance, flag: 128});
+    }
+
+    // Test callback receiver
+    function getCallbackAmount() public {
+        msg.sender.transfer({value: 1 ever, flag: 128, bounce: false});
+    }
+}

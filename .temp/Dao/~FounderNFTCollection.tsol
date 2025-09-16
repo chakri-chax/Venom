@@ -258,7 +258,7 @@ function _baseURI() public view returns (string ) {
         return baseTokenURI;
     }
 
-	function getCallbackAmouhnt() public {
+	function getCallbackAmount() public {
 		msg.sender.transfer({value: 1 ever, flag: 128, bounce: false});
 	}
 }

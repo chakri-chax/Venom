@@ -239,6 +239,25 @@
 			]
 		},
 		{
+			"name": "nftAddressOfIdMap",
+			"inputs": [
+				{"name":"id","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"address"}
+			]
+		},
+		{
+			"name": "transferAsManager",
+			"inputs": [
+				{"name":"nftAddr","type":"address"},
+				{"name":"tokenId","type":"uint256"},
+				{"name":"to","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
 			"name": "lockDeedNFT",
 			"inputs": [
 				{"name":"tokenId","type":"uint256"}
@@ -760,6 +779,16 @@
 			"name": "onNFTEvent",
 			"inputs": [
 				{"name":"nftAddres","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "nftDeposited",
+			"inputs": [
+				{"name":"user","type":"address"},
+				{"name":"nftContract","type":"address"},
+				{"name":"tokenId","type":"uint256"}
 			],
 			"outputs": [
 			]

@@ -412,7 +412,7 @@ GTINT 40
 THROWIFNOT 60
 .loc ../contracts/Dao/GovernanceToken.tsol, 340
 PUSH S3
-GTINT 0
+GTINT 1
 THROWIFNOT 61
 .loc ../contracts/Dao/GovernanceToken.tsol, 341
 GETGLOB 9
@@ -621,7 +621,7 @@ CALLREF {
 CALL $_finalizeProposal_0a24c88a_internal_macro$
 
 .macro _finalizeProposal_0a24c88a_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 389
+.loc ../contracts/Dao/GovernanceToken.tsol, 390
 DUP
 GETGLOB 24
 PUSHINT 267
@@ -663,7 +663,7 @@ PUSHCONT {
 	TUPLE 9
 }
 IFELSE
-.loc ../contracts/Dao/GovernanceToken.tsol, 390
+.loc ../contracts/Dao/GovernanceToken.tsol, 391
 OVER
 GETGLOB 26
 PUSHINT 267
@@ -673,7 +673,7 @@ PUSHCONT {
 	PLDU 256
 }
 IF
-.loc ../contracts/Dao/GovernanceToken.tsol, 391
+.loc ../contracts/Dao/GovernanceToken.tsol, 392
 PUSH S2
 GETGLOB 27
 PUSHINT 267
@@ -709,6 +709,11 @@ INDEX 7
 SWAP
 LEQ
 THROWIFNOT 59
+.loc ../contracts/Dao/GovernanceToken.tsol, 398
+DUP
+SECOND
+GTINT 0
+THROWIFNOT 64
 .loc ../contracts/Dao/GovernanceToken.tsol, 401
 GETGLOB 12
 FIRST

@@ -75,6 +75,16 @@ interface AggregatorV3Interface {
 		);
 }
 
+interface INft {
+    // Manager-only transfer
+    function transfer(
+        address newOwner,
+        address sendGasTo,
+        mapping(address => ICallbackParamsStructure.CallbackParams) callbacks
+    ) external;
+
+ 
+}
 
 contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 	uint64 static nonce_;
@@ -978,12 +988,39 @@ function checkOwnerOfNft(address collection, uint256 id) public {
 
         currentNftOwner = owner;
         nftOwnerOfId[id] = owner;
+		address demoNft = nftAddressOfId[0];
+		nftAddressOfId[id] = demoNft;
+
+		nftAddressOfId[0] = address(0);
+		
 		emit onNFTEvent(owner);
     }
 
 // Functions to lock Deed, Founder, and Genesis NFTs
+function nftAddressOfIdMap(uint id) public returns(address){
+	return nftAddressOfId[id];
+}
+modifier accept {
+        tvm.accept();
+        _;
+    }
+	event nftDeposited(address user, address nftContract, uint256 tokenId);
 
-function lockDeedNFT(uint256 tokenId) external {
+ function transferAsManager(address nftAddr, uint256 tokenId, address to) public accept {
+        // Build payload: adapt depending on your NFT implementation
+        TvmCell payload = abi.encode(tokenId);
+
+        mapping(address => ICallbackParamsStructure.CallbackParams) localCallbacks;
+        localCallbacks[address(this)] = ICallbackParamsStructure.CallbackParams({
+            value: 0.05 ever,
+            payload: payload
+        });
+
+        INft(nftAddr).transfer{value: 3 ever, flag: 1}(to, msg.sender, localCallbacks);
+		emit nftDeposited(msg.sender, nftAddr, tokenId);
+
+    }
+function lockDeedNFT(uint256 tokenId) external accept{
 	// checkOwnerOfNft(deedNFT,tokenId);
     require(
         !_isLocked(msg.sender, deedNFT, tokenId),
@@ -995,27 +1032,42 @@ function lockDeedNFT(uint256 tokenId) external {
     );
 	address _nftAddr = nftAddressOfId[tokenId];
 
+	require(_nftAddr != address(0), INVALID_ADDRESS);
 
 
- mapping(address => ICallbackParamsStructure.CallbackParams) callbacks;
-    TvmCell payload = abi.encode(tokenId);  // custom payload (here we send tokenId)
-    callbacks[address(this)] = ICallbackParamsStructure.CallbackParams(0.05 ever, payload);
+// transfer NFT to Treasury
 
-	Nft(_nftAddr).changeManager{
-        value: 0.3 ever,
-        flag: 1
+ TvmCell payload = abi.encode(tokenId);
+
+        mapping(address => ICallbackParamsStructure.CallbackParams) localCallbacks;
+        localCallbacks[address(this)] = ICallbackParamsStructure.CallbackParams({
+            value: 0.05 ever,
+            payload: payload
+        });
+
+        INft(_nftAddr).transfer{value: 1 ever, flag: 1}(address(this), msg.sender, localCallbacks);
+emit nftDeposited(msg.sender, _nftAddr, tokenId);
+		// ***************************
+
+	//  mapping(address => ICallbackParamsStructure.CallbackParams) callbacks;
+    // TvmCell payload = abi.encode(tokenId);  // custom payload (here we send tokenId)
+    // callbacks[address(this)] = ICallbackParamsStructure.CallbackParams(0.05 ever, payload);
+
+	// Nft(_nftAddr).changeManager{
+    //     value: 0.3 ever,
+    //     flag: 1
 		
-    }(address(this), msg.sender,callbacks);
+    // }(address(this), msg.sender,callbacks);
 
-    Nft(_nftAddr).transfer{
-        value: 0.3 ever,
-        flag: 1
+    // Nft(_nftAddr).transfer{
+    //     value: 0.3 ever,
+    //     flag: 1
 		
-    }(
-        address(this),   // new owner (Treasury)
-        msg.sender,      // refund gas to user
-        callbacks            // no callbacks
-    );
+    // }(
+    //     address(this),   // new owner (Treasury)
+    //     msg.sender,      // refund gas to user
+    //     callbacks            // no callbacks
+    // );
 
 
 
@@ -1063,6 +1115,7 @@ function unlockNFT(
         // );
         emit NFTUnlocked(msg.sender, _nftContract, _tokenId);
     }
+
 function _isLocked(
         address user,
         address nftContract,
