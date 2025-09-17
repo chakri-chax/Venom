@@ -16,7 +16,7 @@ async function main() {
   );
 
   const { contract: sample, tx } = await locklift.factory.deployContract({
-    contract: "Collection",
+    contract: "DeedNFTCollection",
     publicKey: signer.publicKey,
     initParams: {
       nonce_: getRandomNonce(),
