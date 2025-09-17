@@ -211,9 +211,8 @@
 			]
 		},
 		{
-			"name": "checkOwnerOfNft",
+			"name": "lockFounderNFT",
 			"inputs": [
-				{"name":"collection","type":"address"},
 				{"name":"id","type":"uint256"}
 			],
 			"outputs": [
@@ -248,27 +247,9 @@
 			]
 		},
 		{
-			"name": "transferAsManager",
-			"inputs": [
-				{"name":"nftAddr","type":"address"},
-				{"name":"tokenId","type":"uint256"},
-				{"name":"to","type":"address"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "lockDeedNFT",
-			"inputs": [
-				{"name":"tokenId","type":"uint256"}
-			],
-			"outputs": [
-			]
-		},
-		{
 			"name": "unlockNFT",
 			"inputs": [
-				{"name":"_nftContract","type":"address"},
+				{"name":"collectionAddress","type":"address"},
 				{"name":"_tokenId","type":"uint256"}
 			],
 			"outputs": [
@@ -278,7 +259,7 @@
 			"name": "getLockedNFTs",
 			"inputs": [
 				{"name":"user","type":"address"},
-				{"name":"nftContract","type":"address"}
+				{"name":"collectionAddress","type":"address"}
 			],
 			"outputs": [
 				{"name":"value0","type":"uint256[]"}
@@ -794,10 +775,19 @@
 			]
 		},
 		{
+			"name": "step",
+			"inputs": [
+				{"name":"_step","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
 			"name": "unLocked",
 			"inputs": [
 				{"name":"nftCollection","type":"address"},
-				{"name":"id","type":"uint256"}
+				{"name":"id","type":"uint256"},
+				{"name":"length","type":"uint256"}
 			],
 			"outputs": [
 			]

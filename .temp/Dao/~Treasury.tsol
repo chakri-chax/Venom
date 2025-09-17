@@ -163,7 +163,6 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 	uint16 public constant INVALID_ADDRESS = 224;
 	uint16 public constant INVALID_ASSET = 225;
 	uint16 public constant INVALID_RATIO = 222;
-
 	// mapping (address=>address) tokenWallet;
 // mapping(address => address) rootToWallet;
 	constructor(
@@ -949,7 +948,8 @@ uint32 constant NFT_STILL_LOCKED_TERM_NOT_ENDS = 260;
 	function getNftOwnerOfNftIdMap(uint256 id) public view returns (address){
 		return nftOwnerOfId[id];
 	}
-function checkOwnerOfNft(address collection, uint256 id) public {
+function lockFounderNFT( uint256 id) public {
+	address collection = founderNFT;
         tvm.accept();
 
         FounderNFTCollection(collection).nftAddress{
@@ -958,18 +958,16 @@ function checkOwnerOfNft(address collection, uint256 id) public {
             callback: Treasury.onNftAddress
         }(id);
 
-        // we don’t set directly, we wait for callback
     }
 	event onCollectionEvent(address nftAddres);
 	event onNFTEvent(address nftAddres);
 
-    /// Step 2: callback from collection with NFT address
     function onNftAddress(address value) external {
         require(value != address(0), INVALID_ADDRESS);
         currentNftAddress = value;
-        nftAddressOfId[uint256(0)] = value; // can replace 0 with request id if multiple requests
+        nftAddressOfId[uint256(9999999999999)] = value; 
 		emit onCollectionEvent(value);
-        // Now query the NFT contract for its owner
+       
         Nft(value).getInfo{
             value: 0.2 ever,
             flag: 1,
@@ -988,15 +986,21 @@ function checkOwnerOfNft(address collection, uint256 id) public {
 
         currentNftOwner = owner;
         nftOwnerOfId[id] = owner;
-		address demoNft = nftAddressOfId[0];
+		address demoNft = nftAddressOfId[9999999999999];
 		nftAddressOfId[id] = demoNft;
 
-		nftAddressOfId[0] = address(0);
+		nftAddressOfId[9999999999999] = address(0);
 		
 		emit onNFTEvent(owner);
+
+		// lockDeedNFT(id);
+
+		lockFounderNFTInternal(owner,nftAddressOfId[id], id);
+
+
     }
 
-// Functions to lock Deed, Founder, and Genesis NFTs
+
 function nftAddressOfIdMap(uint id) public returns(address){
 	return nftAddressOfId[id];
 }
@@ -1006,20 +1010,7 @@ modifier accept {
     }
 	event nftDeposited(address user, address nftContract, uint256 tokenId);
 
- function transferAsManager(address nftAddr, uint256 tokenId, address to) public accept {
-        // Build payload: adapt depending on your NFT implementation
-        TvmCell payload = abi.encode(tokenId);
 
-        mapping(address => ICallbackParamsStructure.CallbackParams) localCallbacks;
-        localCallbacks[address(this)] = ICallbackParamsStructure.CallbackParams({
-            value: 0.05 ever,
-            payload: payload
-        });
-
-        INft(nftAddr).transfer{value: 3 ever, flag: 1}(to, msg.sender, localCallbacks);
-		emit nftDeposited(msg.sender, nftAddr, tokenId);
-
-    }
 function lockDeedNFT(uint256 tokenId) external accept{
 	// checkOwnerOfNft(deedNFT,tokenId);
     require(
@@ -1035,7 +1026,7 @@ function lockDeedNFT(uint256 tokenId) external accept{
 	require(_nftAddr != address(0), INVALID_ADDRESS);
 
 
-// transfer NFT to Treasury
+
 
  TvmCell payload = abi.encode(tokenId);
 
@@ -1046,30 +1037,9 @@ function lockDeedNFT(uint256 tokenId) external accept{
         });
 
         INft(_nftAddr).transfer{value: 1 ever, flag: 1}(address(this), msg.sender, localCallbacks);
-emit nftDeposited(msg.sender, _nftAddr, tokenId);
-		// ***************************
+		emit nftDeposited(msg.sender, _nftAddr, tokenId);
 
-	//  mapping(address => ICallbackParamsStructure.CallbackParams) callbacks;
-    // TvmCell payload = abi.encode(tokenId);  // custom payload (here we send tokenId)
-    // callbacks[address(this)] = ICallbackParamsStructure.CallbackParams(0.05 ever, payload);
-
-	// Nft(_nftAddr).changeManager{
-    //     value: 0.3 ever,
-    //     flag: 1
-		
-    // }(address(this), msg.sender,callbacks);
-
-    // Nft(_nftAddr).transfer{
-    //     value: 0.3 ever,
-    //     flag: 1
-		
-    // }(
-    //     address(this),   // new owner (Treasury)
-    //     msg.sender,      // refund gas to user
-    //     callbacks            // no callbacks
-    // );
-
-
+	
 
     // lockedDeedNFTBalance[msg.sender]++;
     lockTimestamps[msg.sender][deedNFT][tokenId] = block.timestamp;
@@ -1077,26 +1047,73 @@ emit nftDeposited(msg.sender, _nftAddr, tokenId);
     contractlockedNFTs[address(this)][deedNFT].push(tokenId);
     emit NFTLocked(msg.sender, deedNFT, tokenId);
 }
+event step(uint _step); 
+function lockFounderNFTInternal(address user, address nftAddr, uint256 tokenId) internal accept{
+    require(
+        !_isLocked(user, founderNFT, tokenId),
+        NFT_LOCKED_OR_NOT_OWNED
+    );
+    require(
+       nftOwnerOfId[tokenId] == user,
+        NOT_NFT_OWNER
+    );
+	address _nftAddr = nftAddressOfId[tokenId];
+	require(_nftAddr != address(0), INVALID_ADDRESS);
+
+
+
+
+		 TvmCell payload = abi.encode(tokenId);
+
+        mapping(address => ICallbackParamsStructure.CallbackParams) localCallbacks;
+        localCallbacks[address(this)] = ICallbackParamsStructure.CallbackParams({
+            value: 0.05 ever,
+            payload: payload
+        });
+
+        INft(_nftAddr).transfer{value: 1 ever, flag: 1}(address(this), user, localCallbacks);
+		emit nftDeposited(user, _nftAddr, tokenId);
+
+
+    // lockedDeedNFTBalance[msg.sender]++;
+    lockTimestamps[user][founderNFT][tokenId] = block.timestamp;
+    lockedNFTs[user][founderNFT].push(tokenId);
+    contractlockedNFTs[address(this)][founderNFT].push(tokenId);
+    emit NFTLocked(user, founderNFT, tokenId);
+}
+
 function unlockNFT(
-        address _nftContract,
+        address collectionAddress,
         uint256 _tokenId
     ) external  {
         require(
-            _isLocked(msg.sender, _nftContract, _tokenId),
+            _isLocked(msg.sender, collectionAddress, _tokenId),
            NFT_LOCKED_OR_NOT_OWNED
         );
 
         require(
             forceUnlock ||
                 block.timestamp >=
-                lockTimestamps[msg.sender][_nftContract][_tokenId] +
+                lockTimestamps[msg.sender][collectionAddress][_tokenId] +
                     FULL_TERM_LOCK_PERIOD,
             NFT_STILL_LOCKED_TERM_NOT_ENDS
         );
 
-        _removeLockedNFT(msg.sender, _nftContract, _tokenId);
+        // _removeLockedNFT(msg.sender, collectionAddress, _tokenId);
+
+		uint256[] lockedTokens = lockedNFTs[msg.sender][collectionAddress];
+		require(lockedTokens.length > 0, NO_VALID_DEPOSITS);
+        uint256 length = lockedTokens.length;
+        for (uint256 i = 0; i < length; i++) {
+            if (lockedTokens[i] == _tokenId ) {
+                lockedTokens[i] = lockedTokens[length - 1];
+                lockedTokens.pop();
+                break;
+            }
+        }
+		
         uint256[] tokens = contractlockedNFTs[address(this)][
-            _nftContract
+            collectionAddress
         ];
         uint256 lengthh = tokens.length;
         for (uint256 i = 0; i < lengthh; i++) {
@@ -1106,21 +1123,30 @@ function unlockNFT(
                 break;
             }
         }
+		address _nftAddr = nftAddressOfId[_tokenId];
+		 TvmCell payload = abi.encode(_tokenId);
 
-        // IERC721(_nftContract).approve(msg.sender, _tokenId);
-        // IERC721(_nftContract).safeTransferFrom(
-        //     address(this),
-        //     msg.sender,
-        //     _tokenId
-        // );
-        emit NFTUnlocked(msg.sender, _nftContract, _tokenId);
+        mapping(address => ICallbackParamsStructure.CallbackParams) localCallbacks;
+        localCallbacks[address(this)] = ICallbackParamsStructure.CallbackParams({
+            value: 0.05 ever,
+            payload: payload
+        });
+
+        INft(_nftAddr).transfer{value: 1 ever, flag: 1}(msg.sender, msg.sender, localCallbacks);
+		emit nftDeposited(msg.sender, _nftAddr, _tokenId);
+
+
+        emit NFTUnlocked(msg.sender, collectionAddress, _tokenId);
     }
+
+
+
 function _isLocked(
         address user,
-        address nftContract,
+        address collectionAddress,
         uint256 tokenId
     ) internal view returns (bool) {
-        uint256[]  lockedTokens = lockedNFTs[user][nftContract];
+        uint256[]  lockedTokens = lockedNFTs[user][collectionAddress];
         uint256 length = lockedTokens.length;
         for (uint256 i = 0; i < length; i++) {
             if (lockedTokens[i] == tokenId) {
@@ -1130,14 +1156,15 @@ function _isLocked(
         return false;
     }
 
-event unLocked(address nftCollection, uint256 id);
-    // Internal function to remove NFT from locked list
+event unLocked(address nftCollection, uint256 id, uint length);
     function _removeLockedNFT(
         address user,
-        address nftContract,
+        address collectionAddress,
         uint256 tokenId
     ) internal {
-        uint256[] lockedTokens = lockedNFTs[user][nftContract];
+        uint256[] lockedTokens = lockedNFTs[user][collectionAddress];
+		emit unLocked(collectionAddress,tokenId,lockedTokens.length);
+
         uint256 length = lockedTokens.length;
         for (uint256 i = 0; i < length; i++) {
             if (lockedTokens[i] == tokenId ) {
@@ -1146,15 +1173,15 @@ event unLocked(address nftCollection, uint256 id);
                 break;
             }
         }
-		emit unLocked(nftContract,tokenId);
+		emit unLocked(collectionAddress,tokenId,lockedTokens.length);
     }
 
     // Function to get the list of locked token IDs for a specific NFT contract
     function getLockedNFTs(
         address user,
-        address nftContract
+        address collectionAddress
     ) external view returns (uint256[] ) {
-        return lockedNFTs[user][nftContract];
+        return lockedNFTs[user][collectionAddress];
     }
 // struct LockedNFTBalances {
 //     uint256 deedNFTCount;
