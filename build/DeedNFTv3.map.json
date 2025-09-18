@@ -2,51 +2,51 @@
   "map": {
     "01291326db40a87b2dc90c9c6d25866da0d7babb16a9bdb49afd5b550ac0d3a4": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 233
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 234
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 235
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 236
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 237
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 238
       },
       "88": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 117
       },
       "96": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 117
       },
       "104": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 245
       },
       "120": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 248
       },
       "128": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 249
       },
       "144": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 252
       }
     },
@@ -82,63 +82,63 @@
     },
     "0d3a5325df5bb69161a2afd33378b6bc028978168096d9d6c78b599e65eb1629": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2513
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2514
       },
       "16": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2515
       },
       "32": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2518
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2519
       },
       "56": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2520
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2521
       },
       "232": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2522
       },
       "240": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2523
       },
       "248": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2524
       },
       "264": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2525
       },
       "272": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2526
       },
       "280": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2527
       },
       "296": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2529
       },
       "304": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2530
       }
     },
@@ -328,35 +328,35 @@
         "line": 162
       },
       "584": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1756
       },
       "600": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1757
       },
       "624": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1758
       },
       "640": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1759
       },
       "648": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1760
       },
       "656": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1761
       },
       "672": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1763
       },
       "688": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1771
       }
     },
@@ -526,15 +526,15 @@
     },
     "1991dc5e54347021b7011bce70916ffa7227f9e324a8db16ebd73a5694867b4c": {
       "0": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 70
       },
       "8": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 70
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 175
       }
     },
@@ -724,35 +724,35 @@
         "line": 219
       },
       "584": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1967
       },
       "600": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1968
       },
       "624": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1969
       },
       "640": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1970
       },
       "648": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1971
       },
       "656": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1972
       },
       "672": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1974
       },
       "688": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1982
       }
     },
@@ -896,11 +896,11 @@
         "line": 241
       },
       "376": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2041
       },
       "384": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2043
       }
     },
@@ -954,471 +954,471 @@
     },
     "3e7c68d375d1f30c74747f892b351b297d9bde550d31ae4ba44dfe0596d8f652": {
       "0": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 56
       },
       "16": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 56
       },
       "32": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 56
       },
       "48": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 56
       },
       "64": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 56
       },
       "80": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 56
       },
       "96": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 56
       },
       "104": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 56
       },
       "128": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 131
       },
       "136": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 131
       },
       "152": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 131
       },
       "168": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 131
       },
       "176": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 131
       },
       "184": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 131
       },
       "200": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 131
       },
       "216": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 131
       },
       "240": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 132
       },
       "256": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 132
       },
       "264": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 132
       },
       "280": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 132
       },
       "304": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 133
       },
       "320": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 134
       },
       "328": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 134
       },
       "344": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "360": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "368": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "384": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "400": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "416": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "424": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "432": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "456": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "472": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "496": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "504": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "512": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "536": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "552": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "560": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "608": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "624": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "632": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "640": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "648": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "656": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "664": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "680": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 135
       },
       "696": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 140
       },
       "712": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 140
       },
       "720": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 140
       },
       "736": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 140
       },
       "896": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 140
       },
       "904": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 140
       },
       "912": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 140
       },
       "928": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 140
       },
       "936": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 140
       },
       "944": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 140
       },
       "952": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 140
       },
       "960": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 140
       }
     },
     "4024a60cf798b82dc2d495e50d06f3ffd2fd61bd911d796a590a816f3e54c6ff": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2350
       },
       "16": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2351
       },
       "32": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2352
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2353
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2354
       },
       "80": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2355
       },
       "96": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2356
       },
       "112": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2357
       },
       "128": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2358
       },
       "144": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2359
       },
       "160": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2360
       },
       "176": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2361
       },
       "192": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2362
       },
       "208": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2363
       },
       "216": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2364
       },
       "232": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2365
       },
       "248": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2366
       },
       "264": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2367
       },
       "280": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2368
       },
       "296": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2369
       },
       "312": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2370
       },
       "320": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2371
       },
       "328": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2372
       },
       "344": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2373
       },
       "352": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2374
       },
       "360": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2375
       },
       "376": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2376
       },
       "384": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2377
       },
       "392": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2378
       },
       "408": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2379
       },
       "424": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2380
       },
       "432": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2381
       },
       "448": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2382
       },
       "456": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2383
       },
       "472": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2384
       },
       "480": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2385
       },
       "488": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2386
       },
       "496": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2387
       },
       "504": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2388
       },
       "512": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2389
       },
       "520": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2390
       },
       "528": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2391
       }
     },
     "4148a0d28fef9a631aebfa0466556ff461644e7cc43d999ab66aa9835caf9001": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2533
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2534
       },
       "16": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2535
       },
       "32": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2538
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2539
       },
       "56": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2540
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2541
       },
       "232": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2542
       },
       "240": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2543
       },
       "248": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2544
       },
       "256": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2545
       },
       "264": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2546
       },
       "272": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2547
       },
       "288": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2549
       },
       "296": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2550
       }
     },
@@ -1502,189 +1502,189 @@
     },
     "45fffa4d3121d4a19bbd92cfdd1d6fac9aa0dacaf062a9f4f71523a2c0f5c936": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 316
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 317
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 318
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 319
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 320
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 321
       },
       "88": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 130
       },
       "96": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 130
       },
       "104": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 328
       },
       "120": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 331
       },
       "128": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 332
       },
       "144": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 335
       }
     },
     "474aa46023d58e274bbff1156cde363763222a5f471afcd8d84a2eff134fb898": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2410
       },
       "16": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2411
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2412
       },
       "40": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2413
       },
       "56": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2414
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2415
       },
       "80": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2416
       },
       "88": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2417
       },
       "104": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2418
       },
       "120": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2419
       },
       "128": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2420
       },
       "144": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2421
       },
       "168": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2422
       },
       "184": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2423
       },
       "192": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2424
       },
       "208": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2425
       },
       "248": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2426
       },
       "264": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2427
       },
       "272": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2428
       },
       "288": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2429
       },
       "296": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2430
       },
       "312": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2431
       },
       "328": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2432
       },
       "336": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2433
       },
       "344": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2434
       },
       "360": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2435
       },
       "376": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2439
       },
       "384": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2440
       },
       "408": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2441
       },
       "424": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2442
       },
       "432": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2443
       },
       "448": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2447
       },
       "456": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2448
       },
       "472": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2451
       }
     },
@@ -1978,41 +1978,41 @@
     },
     "53b29ec87af84dd4f00f927965e3d5c8e1b57dcaba97868338139039ffe35ac8": {
       "0": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 87
       },
       "8": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 87
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 200
       }
     },
     "565a2722f502d783b189f0f409bfc0c56dd68afba09c74f7f5a3fefc28c860b7": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 861
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 862
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 863
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 864
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 865
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 866
       },
       "88": {
@@ -2040,203 +2040,203 @@
         "line": 106
       },
       "168": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 877
       },
       "184": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 880
       },
       "192": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 881
       },
       "208": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 882
       },
       "216": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 883
       },
       "224": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 884
       },
       "240": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 885
       },
       "256": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 886
       },
       "264": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 887
       },
       "272": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 888
       },
       "280": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 889
       },
       "304": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 890
       },
       "312": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 891
       },
       "360": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 892
       },
       "384": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 893
       },
       "400": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 894
       },
       "408": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 895
       },
       "416": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 897
       },
       "432": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 898
       },
       "448": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 899
       },
       "456": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 900
       },
       "472": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 901
       },
       "480": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 902
       },
       "496": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 903
       },
       "512": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 904
       },
       "528": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 905
       },
       "544": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 906
       },
       "552": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 907
       },
       "576": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 908
       },
       "592": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 909
       },
       "616": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 910
       },
       "624": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 911
       },
       "632": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 912
       },
       "648": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 913
       },
       "664": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 914
       },
       "672": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 915
       },
       "696": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 916
       },
       "704": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 917
       },
       "712": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 918
       },
       "728": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 919
       },
       "744": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 920
       },
       "768": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 921
       },
       "784": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 922
       },
       "792": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 923
       },
       "800": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 924
       },
       "816": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 925
       },
       "832": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 927
       },
       "840": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 928
       },
       "856": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 929
       },
       "872": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 932
       }
     },
@@ -2352,41 +2352,41 @@
         "line": 30
       },
       "192": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 49
       },
       "208": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 50
       },
       "216": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 50
       },
       "232": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 51
       },
       "240": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 51
       },
       "256": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 52
       },
       "272": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 159
       },
       "288": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 162
       }
     },
     "61ab4641fa30d9310391025086eec65d200d79268e1b7cd402565e01ba64be3c": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2461
       }
     },
@@ -2600,119 +2600,119 @@
     },
     "64220d385b3ca765073c625fe52100fcc334c6764c4a1cc7148d241feb309d36": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 4
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 5
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 6
       },
       "32": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 7
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 10
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 11
       },
       "80": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 12
       },
       "88": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 13
       },
       "96": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 14
       },
       "104": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 15
       },
       "112": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 16
       },
       "120": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 18
       },
       "128": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 19
       },
       "144": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 20
       },
       "152": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 21
       },
       "160": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 22
       },
       "168": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 23
       },
       "184": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 24
       },
       "200": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 25
       },
       "216": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 26
       },
       "224": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 27
       },
       "232": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 28
       },
       "240": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 29
       },
       "248": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 30
       },
       "256": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 31
       },
       "272": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 32
       },
       "288": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 33
       },
       "296": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 34
       },
       "304": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 35
       },
       "320": {
@@ -2864,27 +2864,27 @@
     },
     "65165cb7684d2160bfe9c74a647ef6f57b862fb1bf0f2e56b8985e60aa852d01": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1432
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1433
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1434
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1435
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1436
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1437
       },
       "88": {
@@ -2940,19 +2940,19 @@
         "line": 100
       },
       "216": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1456
       },
       "232": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1459
       },
       "240": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1460
       },
       "256": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1463
       }
     },
@@ -3162,159 +3162,159 @@
     },
     "6887d107b7c44b725dd2d2849653e67000ce278e9ad3bdb3149c2ec88e3481b7": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2300
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2301
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2302
       },
       "32": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2303
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2304
       },
       "56": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2305
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2306
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2307
       },
       "88": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2308
       },
       "104": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2309
       },
       "120": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2310
       },
       "128": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2311
       },
       "152": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2313
       },
       "160": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2314
       },
       "168": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2317
       },
       "184": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2318
       },
       "192": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2319
       },
       "200": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2320
       },
       "208": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2322
       },
       "216": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2323
       },
       "224": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2325
       },
       "232": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2326
       },
       "248": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2327
       },
       "264": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2328
       },
       "280": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2329
       },
       "296": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2330
       },
       "312": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2331
       },
       "328": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2332
       },
       "344": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2333
       },
       "360": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2334
       },
       "376": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2335
       },
       "392": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2336
       },
       "408": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2337
       },
       "424": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2338
       },
       "440": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2339
       },
       "456": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2340
       },
       "480": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2341
       },
       "496": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2342
       },
       "504": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2343
       }
     },
@@ -3334,67 +3334,67 @@
     },
     "729c047bd2837a1b052ae5dff38fbd0681dc3f659bdc24830bdd52d20532bdbc": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2606
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2607
       },
       "56": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2608
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2609
       },
       "80": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2612
       },
       "88": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2613
       },
       "136": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2614
       },
       "144": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2615
       },
       "160": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2618
       },
       "168": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2619
       },
       "216": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2620
       },
       "224": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2621
       },
       "240": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2624
       },
       "248": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2625
       },
       "296": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2626
       },
       "304": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2627
       }
     },
@@ -3434,11 +3434,11 @@
         "line": 218
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1984
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1985
       },
       "88": {
@@ -3498,11 +3498,11 @@
         "line": 227
       },
       "296": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2004
       },
       "304": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2006
       }
     },
@@ -3640,175 +3640,175 @@
     },
     "82035019c2ae8da72784194f52ec61af816be8a2440006e558674b97c48d84b6": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2250
       },
       "16": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2251
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2252
       },
       "40": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2253
       },
       "56": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2254
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2255
       },
       "80": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2256
       },
       "96": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2257
       },
       "112": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2258
       },
       "120": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2259
       },
       "128": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2260
       },
       "136": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2261
       },
       "152": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2262
       },
       "160": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2263
       },
       "168": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2264
       },
       "176": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2265
       },
       "192": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2266
       },
       "200": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2267
       },
       "208": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2268
       },
       "216": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2269
       },
       "232": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2270
       },
       "248": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2271
       },
       "264": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2272
       },
       "272": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2273
       },
       "280": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2274
       },
       "288": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2275
       },
       "296": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2276
       },
       "312": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2277
       },
       "320": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2278
       },
       "328": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2279
       },
       "336": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2280
       },
       "352": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2281
       },
       "368": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2282
       },
       "384": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2283
       },
       "400": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2284
       },
       "416": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2285
       },
       "432": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2286
       },
       "448": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2287
       },
       "464": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2288
       },
       "480": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2289
       },
       "496": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2290
       },
       "512": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2291
       },
       "528": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2292
       }
     },
@@ -3866,209 +3866,209 @@
     },
     "8df652e852e58cc015096c497c4271aeab6e8dce699f1023c7fcfccb1a1e2923": {
       "0": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 61
       },
       "16": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 61
       },
       "32": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 61
       },
       "48": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 61
       },
       "72": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 118
       },
       "80": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 118
       },
       "96": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 118
       },
       "112": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 118
       },
       "120": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 118
       },
       "128": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 118
       },
       "144": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 118
       },
       "160": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 118
       },
       "184": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 119
       },
       "200": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 119
       },
       "208": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 119
       },
       "224": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 119
       },
       "248": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 120
       },
       "264": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 121
       },
       "272": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 121
       },
       "288": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 122
       },
       "296": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 122
       },
       "312": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 122
       },
       "328": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 122
       },
       "344": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 122
       },
       "352": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 122
       },
       "360": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 122
       },
       "384": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 122
       },
       "400": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 122
       },
       "424": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 122
       },
       "432": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 122
       },
       "480": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 122
       },
       "504": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 122
       },
       "520": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 122
       },
       "528": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 122
       },
       "536": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 122
       },
       "544": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 122
       },
       "560": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 122
       },
       "576": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 127
       },
       "592": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 127
       },
       "600": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 127
       },
       "616": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 127
       },
       "776": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 127
       },
       "784": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 127
       },
       "792": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 127
       },
       "808": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 127
       },
       "816": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 127
       },
       "824": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 127
       },
       "832": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 127
       },
       "840": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 127
       }
     },
     "903395859dde2ccda5610dde37c5d238f8d73d4ff9b51e4d866179367ef57e90": {
       "0": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 96
       },
       "16": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 96
       }
     },
@@ -4165,27 +4165,27 @@
     },
     "97fd6cb22393cf1fe032f7c5afe3303b0032dd541405728b5d8114bbf0db575f": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 777
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 778
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 779
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 780
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 781
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 782
       },
       "88": {
@@ -4213,191 +4213,191 @@
         "line": 102
       },
       "168": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 793
       },
       "184": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 796
       },
       "192": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 797
       },
       "208": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 798
       },
       "216": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 799
       },
       "224": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 800
       },
       "240": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 801
       },
       "256": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 802
       },
       "264": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 803
       },
       "272": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 804
       },
       "280": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 805
       },
       "304": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 806
       },
       "312": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 807
       },
       "360": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 808
       },
       "384": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 809
       },
       "392": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 810
       },
       "400": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 811
       },
       "408": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 813
       },
       "424": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 814
       },
       "440": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 815
       },
       "448": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 816
       },
       "464": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 817
       },
       "472": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 818
       },
       "488": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 819
       },
       "504": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 820
       },
       "520": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 821
       },
       "536": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 822
       },
       "544": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 823
       },
       "568": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 824
       },
       "584": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 825
       },
       "608": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 826
       },
       "616": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 827
       },
       "624": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 828
       },
       "640": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 829
       },
       "656": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 830
       },
       "672": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 831
       },
       "688": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 832
       },
       "704": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 833
       },
       "720": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 834
       },
       "744": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 835
       },
       "752": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 836
       },
       "760": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 837
       },
       "776": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 838
       },
       "792": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 840
       },
       "800": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 841
       },
       "816": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 842
       },
       "832": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 845
       }
     },
@@ -4457,27 +4457,27 @@
     },
     "9fa06fc91e16512bfd822566b6061ed95d1af7d6916eb6e41317a33b7234e986": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2046
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2047
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2048
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2049
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2050
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2051
       },
       "88": {
@@ -4505,123 +4505,123 @@
         "line": 253
       },
       "168": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2062
       },
       "184": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2065
       },
       "192": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2066
       },
       "208": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2067
       },
       "216": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2068
       },
       "224": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2069
       },
       "240": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2070
       },
       "256": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2071
       },
       "264": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2072
       },
       "272": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2073
       },
       "280": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2074
       },
       "304": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2075
       },
       "312": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2076
       },
       "320": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2077
       },
       "344": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2078
       },
       "360": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2079
       },
       "368": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2080
       },
       "416": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2081
       },
       "432": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2082
       },
       "440": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2083
       },
       "448": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2084
       },
       "456": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2085
       },
       "464": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2086
       },
       "472": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2087
       },
       "480": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2088
       },
       "488": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2089
       },
       "496": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2090
       },
       "504": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2091
       },
       "512": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2092
       },
       "520": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2093
       }
     },
@@ -4829,11 +4829,11 @@
         "line": 161
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1773
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1774
       },
       "88": {
@@ -4893,87 +4893,87 @@
         "line": 170
       },
       "296": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1793
       },
       "304": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1795
       }
     },
     "b0ed73be1c1adddbdb90e6eb32145185239a64de07c2e709a7d215b8cc28a278": {
       "0": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 78
       },
       "16": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 78
       }
     },
     "b709e9cd894c8ae700d25cb622f9159ae0fca52e220582bf99671dad8cabe04f": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2573
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2574
       },
       "56": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2575
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2576
       },
       "80": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2602
       },
       "88": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2603
       },
       "136": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2604
       },
       "144": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2605
       },
       "160": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2631
       },
       "168": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2632
       },
       "216": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2633
       },
       "224": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2634
       },
       "240": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2660
       },
       "248": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2661
       },
       "296": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2662
       },
       "304": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2663
       }
     },
@@ -5109,11 +5109,11 @@
         "line": 116
       },
       "168": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1595
       },
       "176": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1596
       },
       "192": {
@@ -5173,77 +5173,77 @@
         "line": 125
       },
       "400": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1615
       },
       "408": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1617
       }
     },
     "c713eb7d710522b6380d785bfd4146e7c4faa768a72b2f5e0c7aeb9dc48c803e": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2577
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2578
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2579
       },
       "56": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2580
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2583
       },
       "80": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2584
       },
       "120": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2585
       },
       "128": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2586
       },
       "144": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2589
       },
       "152": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2590
       },
       "200": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2591
       },
       "208": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2592
       },
       "224": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2595
       },
       "232": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2596
       },
       "280": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2597
       },
       "288": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2598
       }
     },
@@ -5299,147 +5299,147 @@
     },
     "cc0c493222ebfea1f51e7e187ece0f4b2a29fe5ed7b522a57910edd68c62674f": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2455
       },
       "16": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2456
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2457
       },
       "40": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2458
       },
       "56": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2459
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2460
       },
       "80": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2463
       },
       "96": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2464
       },
       "104": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2465
       },
       "120": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2468
       },
       "136": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2469
       },
       "144": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2470
       },
       "160": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2471
       },
       "176": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2472
       },
       "192": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2473
       },
       "200": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2474
       },
       "216": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2475
       },
       "224": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2476
       },
       "240": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2477
       },
       "248": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2478
       },
       "256": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2479
       },
       "272": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2480
       },
       "280": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2481
       },
       "288": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2483
       },
       "296": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2484
       },
       "304": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2485
       },
       "320": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2487
       },
       "328": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2488
       },
       "344": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2489
       },
       "360": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2491
       },
       "368": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2492
       },
       "384": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2493
       },
       "392": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2494
       },
       "408": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2496
       },
       "416": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2497
       },
       "432": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2498
       },
       "440": {
@@ -5495,131 +5495,131 @@
         "line": 63
       },
       "632": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2500
       },
       "648": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2501
       },
       "656": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2502
       },
       "672": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2503
       },
       "680": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2504
       },
       "696": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2505
       },
       "712": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2506
       },
       "720": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2507
       },
       "736": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2510
       }
     },
     "cd5ea6d1215adce9eb3c6dd4091ea43a0bb98e2574610f1a32a8842f44aef027": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2635
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2636
       },
       "56": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2637
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2638
       },
       "80": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2641
       },
       "88": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2642
       },
       "136": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2643
       },
       "144": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2644
       },
       "160": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2647
       },
       "168": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2648
       },
       "216": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2649
       },
       "224": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2650
       },
       "240": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2653
       },
       "248": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2654
       },
       "296": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2655
       },
       "304": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2656
       }
     },
     "cdff16b8e42b6fdfdb6ac534e2e0d7e1620c7e63f3b824521de142f809d895a4": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 953
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 954
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 955
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 956
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 957
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 958
       },
       "88": {
@@ -5691,461 +5691,461 @@
         "line": 110
       },
       "272": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 981
       },
       "288": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 984
       },
       "296": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 985
       },
       "312": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 986
       },
       "320": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 987
       },
       "328": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 988
       },
       "344": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 989
       },
       "360": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 990
       },
       "368": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 991
       },
       "376": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 992
       },
       "384": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 993
       },
       "408": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 994
       },
       "416": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 995
       },
       "424": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 996
       },
       "448": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 997
       },
       "456": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 998
       },
       "464": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 999
       },
       "512": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1000
       },
       "520": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1001
       },
       "528": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1002
       },
       "536": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1003
       },
       "544": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1005
       },
       "560": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1006
       },
       "576": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1007
       },
       "584": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1008
       },
       "600": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1009
       },
       "608": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1010
       },
       "624": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1011
       },
       "640": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1012
       },
       "656": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1013
       },
       "672": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1014
       },
       "680": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1015
       },
       "704": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1016
       },
       "720": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1017
       },
       "744": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1018
       },
       "752": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1019
       },
       "760": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1020
       },
       "776": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1021
       },
       "792": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1022
       },
       "800": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1023
       },
       "824": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1024
       },
       "832": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1025
       },
       "840": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1026
       },
       "856": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1027
       },
       "872": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1028
       },
       "896": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1029
       },
       "904": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1030
       },
       "912": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1031
       },
       "920": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1032
       },
       "936": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1033
       },
       "952": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1035
       },
       "960": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1036
       },
       "976": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1037
       },
       "992": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1040
       }
     },
     "d082360653755262835885e042ffb0365b56f18cdb074a101d3ea551406583e8": {
       "0": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 105
       }
     },
     "d0a9b13b0ece97db806e5637b87de6b4c04d4281fbd2620888aae114f74c00a6": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2095
       },
       "16": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2096
       },
       "32": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2097
       },
       "40": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2098
       },
       "56": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2099
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2100
       },
       "80": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2101
       },
       "96": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2102
       },
       "112": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2103
       },
       "128": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2104
       },
       "136": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2105
       },
       "160": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2106
       },
       "176": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2107
       },
       "200": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2108
       },
       "208": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2109
       },
       "216": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2110
       },
       "232": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2111
       },
       "248": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2112
       },
       "256": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2113
       },
       "280": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2114
       },
       "296": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2115
       },
       "304": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2116
       },
       "320": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2117
       },
       "336": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2118
       },
       "360": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2119
       },
       "376": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2120
       },
       "384": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2121
       },
       "392": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2122
       },
       "400": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2123
       },
       "408": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2124
       },
       "416": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2125
       },
       "424": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2126
       },
       "432": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2127
       },
       "440": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2128
       },
       "448": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2129
       },
       "456": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2130
       },
       "464": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2131
       },
       "480": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2132
       },
       "496": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2134
       },
       "504": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2135
       },
       "520": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2136
       },
       "536": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2139
       }
     },
     "d0cd3161b39c0db6e75bf68c326c0118f3eecaa45bdbf5eeba5a438b06685aaf": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2664
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2665
       },
       "56": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2666
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2667
       },
       "80": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2670
       },
       "88": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2671
       },
       "136": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2672
       },
       "144": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2673
       },
       "160": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2676
       },
       "168": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2677
       },
       "216": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2678
       },
       "224": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2679
       },
       "240": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2682
       },
       "248": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2683
       },
       "296": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2684
       },
       "304": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2685
       }
     },
@@ -6177,27 +6177,27 @@
     },
     "d320f585f63146c6da77a94fc185e44e603e46a2f4c8bd303404e6d9f6ee4ba3": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1620
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1621
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1622
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1623
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1624
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1625
       },
       "88": {
@@ -6253,19 +6253,19 @@
         "line": 147
       },
       "216": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1644
       },
       "232": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1647
       },
       "240": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1648
       },
       "256": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1651
       }
     },
@@ -6375,47 +6375,47 @@
     },
     "d68620adf8b411c9c8101ebfe7ef8b836d049d7cce8dfd5358f1dceb387a7425": {
       "0": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 144
       },
       "16": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 144
       },
       "24": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 144
       },
       "40": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 144
       },
       "48": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 144
       },
       "64": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 144
       },
       "80": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 144
       },
       "96": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 144
       },
       "112": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 144
       },
       "128": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 144
       },
       "144": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 144
       }
     },
@@ -6431,329 +6431,329 @@
     },
     "e6936e8f0e7b8fe98c2ca66eee9d4e9dafcfc747defef9cb795288fabb1b7ef3": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2394
       },
       "16": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2395
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2396
       },
       "40": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2397
       },
       "56": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2398
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2399
       },
       "80": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2400
       },
       "88": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2401
       },
       "96": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2402
       },
       "112": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2403
       },
       "128": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2404
       },
       "136": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2405
       },
       "144": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2406
       }
     },
     "e945f9f8cde8cf18c07fd05810908833dace556b41f70394935cc5eaace2bf52": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 409
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 410
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 411
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 412
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 413
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 414
       },
       "88": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 143
       },
       "104": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 143
       },
       "120": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 143
       },
       "128": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 143
       },
       "144": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 143
       },
       "160": {
-        "filename": "../contracts/DeedNFTCollectionV3/Nft.tsol",
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTv3.tsol",
         "line": 143
       },
       "168": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 425
       },
       "184": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 428
       },
       "192": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 429
       },
       "208": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 430
       },
       "216": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 431
       },
       "224": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 432
       },
       "240": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 433
       },
       "256": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 434
       },
       "264": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 435
       },
       "272": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 436
       },
       "280": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 437
       },
       "304": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 438
       },
       "312": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 439
       },
       "328": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 440
       },
       "344": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 441
       },
       "360": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 442
       },
       "408": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 443
       },
       "424": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 444
       },
       "432": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 445
       },
       "440": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 446
       },
       "448": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 447
       },
       "456": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 449
       },
       "472": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 450
       },
       "488": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 451
       },
       "496": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 452
       },
       "512": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 453
       },
       "520": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 454
       },
       "536": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 455
       },
       "552": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 456
       },
       "568": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 457
       },
       "584": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 458
       },
       "592": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 459
       },
       "616": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 460
       },
       "632": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 461
       },
       "656": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 462
       },
       "664": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 463
       },
       "672": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 464
       },
       "688": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 465
       },
       "704": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 466
       },
       "712": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 467
       },
       "736": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 468
       },
       "752": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 469
       },
       "760": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 470
       },
       "776": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 471
       },
       "792": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 472
       },
       "816": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 473
       },
       "832": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 474
       },
       "840": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 475
       },
       "848": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 476
       },
       "856": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 477
       },
       "864": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 478
       },
       "880": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 479
       },
       "896": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 481
       },
       "904": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 482
       },
       "920": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 483
       },
       "936": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 486
       }
     },
@@ -6959,61 +6959,61 @@
         "line": 117
       },
       "624": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1578
       },
       "640": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1579
       },
       "664": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1580
       },
       "680": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1581
       },
       "688": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1582
       },
       "696": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1583
       },
       "712": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1585
       },
       "728": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1593
       }
     },
     "eb6752dbeee1ca37a16a3bb11c25d85e31d2d12c18c8c7829fddaaf431f6aab7": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2158
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2159
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2160
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2161
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2162
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2163
       },
       "88": {
@@ -7045,217 +7045,217 @@
         "line": 13
       },
       "184": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2175
       },
       "200": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2178
       },
       "208": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2179
       },
       "224": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2180
       },
       "232": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2181
       },
       "240": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2182
       },
       "256": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2183
       },
       "272": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2184
       },
       "280": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2185
       },
       "288": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2186
       },
       "296": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2187
       },
       "320": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2188
       },
       "328": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2189
       },
       "376": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2190
       },
       "400": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2191
       },
       "416": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2192
       },
       "424": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2193
       },
       "432": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2195
       },
       "448": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2196
       },
       "464": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2197
       },
       "472": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2198
       },
       "488": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2199
       },
       "496": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2200
       },
       "512": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2201
       },
       "528": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2202
       },
       "544": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2203
       },
       "560": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2204
       },
       "568": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2205
       },
       "592": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2206
       },
       "608": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2207
       },
       "632": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2208
       },
       "640": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2209
       },
       "648": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2210
       },
       "664": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2211
       },
       "680": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2212
       },
       "696": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2213
       },
       "712": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2214
       },
       "728": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2215
       },
       "744": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2216
       },
       "768": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2217
       },
       "784": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2218
       },
       "792": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2219
       },
       "808": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2220
       },
       "824": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2222
       },
       "832": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2223
       },
       "848": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2224
       },
       "864": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2227
       }
     },
     "ed62bc9e7c0d77f76f64e78884eb5a2ed48665ea9ed4dd33a205a216e96d8619": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1835
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1836
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1837
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1838
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1839
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1840
       },
       "88": {
@@ -7311,19 +7311,19 @@
         "line": 204
       },
       "216": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1859
       },
       "232": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1862
       },
       "240": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1863
       },
       "256": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1866
       }
     },
@@ -7417,11 +7417,11 @@
         "line": 185
       },
       "376": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1830
       },
       "384": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1832
       }
     },
@@ -7441,125 +7441,125 @@
     },
     "f24e1e7aa04d89aad2945816b6e9b921f2b3892da9ba53e2383c148351b96d0c": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2436
       },
       "16": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2437
       }
     },
     "f787e83f65358182e518b7ca79c421196f427132f189c4ce880dff3998d3f613": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2295
       },
       "16": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2296
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2297
       },
       "40": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2298
       },
       "56": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2299
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2345
       }
     },
     "fc31f957ed5f4e3b6530a73f6e8766df9265ca8b754d257e2d462274993a107b": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2553
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2554
       },
       "16": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2555
       },
       "32": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2558
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2559
       },
       "56": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2560
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2561
       },
       "232": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2562
       },
       "240": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2563
       },
       "248": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2564
       },
       "256": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2565
       },
       "264": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2566
       },
       "272": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2567
       },
       "288": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2569
       },
       "296": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 2570
       }
     },
     "fdc5eee92316febf4419c8c8fd4b5d8d72353f2b1c68cb38e64447b34f85f873": {
       "0": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1254
       },
       "8": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1255
       },
       "24": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1256
       },
       "48": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1257
       },
       "64": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1258
       },
       "72": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1259
       },
       "88": {
@@ -7587,191 +7587,191 @@
         "line": 32
       },
       "168": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1270
       },
       "184": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1273
       },
       "192": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1274
       },
       "208": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1275
       },
       "216": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1276
       },
       "224": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1277
       },
       "240": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1278
       },
       "256": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1279
       },
       "264": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1280
       },
       "272": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1281
       },
       "280": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1282
       },
       "304": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1283
       },
       "312": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1284
       },
       "360": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1285
       },
       "384": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1286
       },
       "392": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1287
       },
       "400": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1288
       },
       "408": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1290
       },
       "424": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1291
       },
       "440": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1292
       },
       "448": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1293
       },
       "464": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1294
       },
       "472": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1295
       },
       "488": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1296
       },
       "504": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1297
       },
       "520": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1298
       },
       "536": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1299
       },
       "544": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1300
       },
       "568": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1301
       },
       "584": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1302
       },
       "608": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1303
       },
       "616": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1304
       },
       "624": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1305
       },
       "640": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1306
       },
       "656": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1307
       },
       "672": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1308
       },
       "688": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1309
       },
       "704": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1310
       },
       "720": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1311
       },
       "744": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1312
       },
       "752": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1313
       },
       "760": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1314
       },
       "776": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1315
       },
       "792": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1317
       },
       "800": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1318
       },
       "816": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1319
       },
       "832": {
-        "filename": "Nft.code",
+        "filename": "DeedNFTv3.code",
         "line": 1322
       }
     }

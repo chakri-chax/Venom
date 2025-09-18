@@ -3,7 +3,7 @@ import { toNano, WalletTypes, Address,getRandomNonce } from "locklift";
 async function main() {
   const signer = (await locklift.keystore.getSigner("0"))!;
 
-  const nftArtifacts = await locklift.factory.getContractArtifacts("Nft");
+  const nftArtifacts = await locklift.factory.getContractArtifacts("DeedNFTv3");
   const indexArtifacts = await locklift.factory.getContractArtifacts("Index");
   const indexBasisArtifacts =
     await locklift.factory.getContractArtifacts("IndexBasis");
@@ -14,7 +14,7 @@ async function main() {
   );
 
   const { contract: sample, tx } = await locklift.factory.deployContract({
-    contract: "Collection",
+    contract: "DeedNFTCollectionV3",
     publicKey: signer.publicKey,
     initParams: {
       nonce_: getRandomNonce(),
@@ -37,7 +37,7 @@ async function main() {
   });
   // console.log("sample", sample);
 
-  console.log(`Collection deployed at: ${sample.address.toString()}`);
+  console.log(`DeedNFTCollectionV3 Collection deployed at: ${sample.address.toString()}`);
 }
 
 main()

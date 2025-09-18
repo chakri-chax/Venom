@@ -15,8 +15,7 @@
 				{"name":"collectionUrl","type":"string"},
 				{"name":"genesisNftOwner","type":"address"},
 				{"name":"genesisNickName","type":"string"},
-				{"name":"nonce","type":"uint64"},
-				{"name":"_burnerWallet","type":"address"}
+				{"name":"nonce","type":"uint64"}
 			],
 			"outputs": [
 			]
@@ -27,23 +26,6 @@
 			],
 			"outputs": [
 				{"name":"value0","type":"uint16"}
-			]
-		},
-		{
-			"name": "setBurnerWallet",
-			"inputs": [
-				{"name":"burnerWallet_","type":"address"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "getBurnerWallet",
-			"inputs": [
-				{"name":"answerId","type":"uint32"}
-			],
-			"outputs": [
-				{"name":"value0","type":"address"}
 			]
 		},
 		{
@@ -207,6 +189,13 @@
 			"name": "withdrawBalance",
 			"inputs": [
 				{"name":"to","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getCallbackAmount",
+			"inputs": [
 			],
 			"outputs": [
 			]
@@ -466,7 +455,6 @@
 		{"name":"_deployIndexBasisValue","type":"uint128"},
 		{"name":"owner_","type":"address"},
 		{"name":"nonce_","type":"uint64"},
-		{"name":"burnerWallet","type":"address"},
 		{"name":"_totalMinted","type":"uint256"},
 		{"name":"_remainOnNft","type":"uint128"},
 		{"name":"mintNftStatus","type":"uint8"},

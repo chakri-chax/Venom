@@ -194,6 +194,18 @@
 			]
 		},
 		{
+			"name": "_mintNft",
+			"inputs": [
+				{"name":"owner","type":"address"},
+				{"name":"nftType","type":"string"},
+				{"name":"nickName","type":"string"},
+				{"name":"value","type":"uint128"},
+				{"name":"flag","type":"uint16"}
+			],
+			"outputs": [
+			]
+		},
+		{
 			"name": "getCallbackAmount",
 			"inputs": [
 			],

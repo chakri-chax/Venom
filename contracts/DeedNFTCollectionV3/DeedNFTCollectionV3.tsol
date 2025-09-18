@@ -4,14 +4,14 @@ pragma AbiHeader expire;
 pragma AbiHeader time;
 pragma AbiHeader pubkey;
 
-import "./DeedNFT.tsol";
+import "./DeedNFTv3.tsol";
 import "./interfaces/INft.tsol";
 import "./libraries/Errors.tsol";
 import "@broxus/tip4/contracts/TIP4_2_2/TIP4_2_2Collection.tsol";
 import "@broxus/tip4/contracts/TIP4_3/TIP4_3Collection.tsol";
 import "@broxus/tip4/contracts/access/OwnableInternal.tsol";
 
-contract DeedNFTCollection is TIP4_2_2Collection, TIP4_3Collection, OwnableInternal  {
+contract DeedNFTCollectionV3 is TIP4_2_2Collection, TIP4_3Collection, OwnableInternal  {
 	
 	uint64 static nonce_;
 
@@ -195,7 +195,7 @@ contract DeedNFTCollection is TIP4_2_2Collection, TIP4_3Collection, OwnableInter
 
 		TvmCell codeNft = _buildNftCode(address(this));
 		TvmCell stateNft = _buildNftState(codeNft, id);
-		address nftAddr = new DeedNFT{stateInit: stateNft, value: value, flag: flag}(
+		address nftAddr = new DeedNFTv3{stateInit: stateNft, value: value, flag: flag}(
 			owner,
 			msg.sender,
 			_remainOnNft,
@@ -217,11 +217,10 @@ contract DeedNFTCollection is TIP4_2_2Collection, TIP4_3Collection, OwnableInter
 		override (TIP4_2_2Collection, TIP4_3Collection)
 		returns (TvmCell)
 	{
-		return tvm.buildStateInit({contr: DeedNFT, varInit: {_id: id}, code: code});
+		return tvm.buildStateInit({contr: DeedNFTv3, varInit: {_id: id}, code: code});
 	}
 
 	function getCallbackAmount() public {
 		msg.sender.transfer({value: 1 ever, flag: 128, bounce: false});
 	}
-
 }
