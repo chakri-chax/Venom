@@ -15,8 +15,8 @@ async function main() {
     },
     constructorParams: {
 
-      treasuryAddress: new Address("0:d057a09fb20826c425bb86751cac9d71feafd47a106c9f31ad6eb8f8bda5820b"),
-      _deedNFT: new Address("0:63e1aac8fa36ab60ba041b09888da2eda43b4d1489480fcd9f0b2e86e0a1270a"),
+      treasuryAddress: new Address("0:09717aa05c0ed594d58fc5fe5847fe6dc1cfcb520b3831f79e61889238988b92"),
+      _deedNFT: new Address("0:9fae74f1be8463f2d707946ef0ec041a36e74bf93e1d3d8ec7556c3d316dc33f"),
       _founderNFT: new Address("0:63e1aac8fa36ab60ba041b09888da2eda43b4d1489480fcd9f0b2e86e0a1270a"),
       _admin: chakri,
       _complianers: [chakri]

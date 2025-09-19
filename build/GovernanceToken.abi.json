@@ -452,6 +452,14 @@
 			]
 		},
 		{
+			"name": "userVotesByProposalId",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"userVotesByProposalId","type":"map(uint256,map(address,tuple))"}
+			]
+		},
+		{
 			"name": "tempVoteTreasury",
 			"inputs": [
 			],
@@ -582,6 +590,7 @@
 		{"name":"INVALID_CALLER","type":"uint32"},
 		{"name":"tempTreasuryBalance","type":"map(address,uint256)"},
 		{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"tempLockedBalances","type":"map(address,tuple)"},
+		{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"userVotesByProposalId","type":"map(uint256,map(address,tuple))"},
 		{"name":"tempVoteTreasury","type":"map(address,uint256)"},
 		{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"tempVoteNFTs","type":"map(address,tuple)"},
 		{"components":[{"name":"propID_","type":"uint256"},{"name":"supports_","type":"bool"}],"name":"pendingVotes","type":"map(address,tuple)"}

@@ -4,35 +4,35 @@ pragma AbiHeader expire;
 pragma AbiHeader time;
 pragma AbiHeader pubkey;
 
-import "@broxus/tip4/contracts/TIP4_2_2/interfaces/ITIP4_2_2Collection.tsol";
-import "@broxus/tip4/contracts/TIP4_3/TIP4_3Collection.tsol";
-import "@broxus/tip4/contracts/TIP4_3/interfaces/ITIP4_3Collection.tsol";
+import "/home/gaian/venomChain/Venom/node_modules/@broxus/tip4/contracts/TIP4_2_2/interfaces/ITIP4_2_2Collection.tsol";
+import "/home/gaian/venomChain/Venom/node_modules/@broxus/tip4/contracts/TIP4_3/TIP4_3Collection.tsol";
+import "/home/gaian/venomChain/Venom/node_modules/@broxus/tip4/contracts/TIP4_3/interfaces/ITIP4_3Collection.tsol";
 
-import "@broxus/contracts/contracts/access/ExternalOwner.tsol";
-import "@broxus/contracts/contracts/access/InternalOwner.tsol";
+import "/home/gaian/venomChain/Venom/node_modules/@broxus/contracts/contracts/access/ExternalOwner.tsol";
+import "/home/gaian/venomChain/Venom/node_modules/@broxus/contracts/contracts/access/InternalOwner.tsol";
 
-import "../TIP3Root/contracts/interfaces/ITokenRoot.tsol";
-import "../TIP3Root/contracts/interfaces/ITokenWallet.tsol";
-// import "../TIP3Root/contracts/structures/ICallbackParamsStructure.tsol";
+import "../TIP3Root/contracts/interfaces/~ITokenRoot.tsol";
+import "../TIP3Root/contracts/interfaces/~ITokenWallet.tsol";
+// import "../TIP3Root/contracts/structures/~ICallbackParamsStructure.tsol";
 
 
-import "../TIP3Root/contracts/interfaces/IAcceptTokensTransferCallback.tsol";
+import "../TIP3Root/contracts/interfaces/~IAcceptTokensTransferCallback.tsol";
 
-import "./ITreasury.tsol";
+import "./~ITreasury.tsol";
 
-import "./ExchangeContract.tsol";
-import "dex/contracts/libraries/PairPayload.tsol";
+import "./~ExchangeContract.tsol";
+import "/home/gaian/venomChain/Venom/node_modules/dex/contracts/libraries/PairPayload.tsol";
 
-import "./FounderNFTCollection.tsol";
-import "./Nft.tsol";
+import "./~FounderNFTCollection.tsol";
+import "./~Nft.tsol";
 
-import "../TIP3Root/contracts/interfaces/IAcceptTokensTransferCallback.tsol";
-import {GasValues} from "dex/contracts/libraries/GasValues.tsol";
-import {IExchangeResult} from "dex/contracts/structures/IExchangeResult.tsol";
-import {IGasValueStructure} from "dex/contracts/structures/IGasValueStructure.tsol";
+import "../TIP3Root/contracts/interfaces/~IAcceptTokensTransferCallback.tsol";
+import {GasValues} from "/home/gaian/venomChain/Venom/node_modules/dex/contracts/libraries/GasValues.tsol";
+import {IExchangeResult} from "/home/gaian/venomChain/Venom/node_modules/dex/contracts/structures/IExchangeResult.tsol";
+import {IGasValueStructure} from "/home/gaian/venomChain/Venom/node_modules/dex/contracts/structures/IGasValueStructure.tsol";
 // import {ITokenWallet} from "tip3-contracts/contracts/interfaces/ITokenWallet.tsol";
-import "../TIP3Root/contracts/interfaces/ITokenRoot.tsol";
-import "../TIP3Root/contracts/interfaces/ITokenWallet.tsol";
+import "../TIP3Root/contracts/interfaces/~ITokenRoot.tsol";
+import "../TIP3Root/contracts/interfaces/~ITokenWallet.tsol";
 
 
 interface IMyERC20 {
