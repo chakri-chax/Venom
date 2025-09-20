@@ -163,6 +163,7 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 	uint16 public constant INVALID_ADDRESS = 224;
 	uint16 public constant INVALID_ASSET = 225;
 	uint16 public constant INVALID_RATIO = 222;
+	uint16 public constant NOT_TOP_HOLDER = 237;
 	// mapping (address=>address) tokenWallet;
 // mapping(address => address) rootToWallet;
 	constructor(
@@ -416,12 +417,10 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 				firstDepositTime: block.timestamp
 			});
 
-			// Push the new deposit entry into the userDeposits array
 			userDeposits[users[i]].push(newUserDeposit);
 
-			// Update the overall treasury balance
 			treasuryBalances[users[i]] += daiAmounts[i];
-			// updateTopTreasuryHolders(users[i]);
+			updateTopTreasuryHolders(users[i]);
 		}
 
 		// Update total treasury points
@@ -436,6 +435,104 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 
 	 uint16 constant WALLET_NOT_EXISTS = 101;
     uint16 constant NOT_ENOUGH_VALUE = 102;
+ function updateTopTreasuryHolders(address user) public  {
+	require(msg.sender == treasuryOwner, ONLY_OWNER_CAN_CALL);
+        if (treasuryBalances[user] > 0) {
+            if (isTopTreasuryHolder[user]) {
+                // Update existing top holder entry
+                uint256 index = treasuryHolderIndex[user];
+                topTreasuryHolders[index] = user;
+                // sortTopHolders();
+            } else {
+                // Add new top holder if there is space
+                uint len = topTreasuryHolders.length;
+                if (len < 10) {
+                    topTreasuryHolders.push(user);
+                    isTopTreasuryHolder[user] = true;
+                    treasuryHolderIndex[user] = topTreasuryHolders.length - 1;
+                } else {
+                    // Replace the smallest holder if there are already 10 entries
+                    _replaceSmallestHolder(user);
+                }
+            }
+            sortTopHolders();
+        } else {
+            // Remove from top holders if the balance is zero
+            if (isTopTreasuryHolder[user]) {
+                uint256 index = treasuryHolderIndex[user];
+                _removeTopHolder(user, index);
+            }
+        }
+    }
+	 function _replaceSmallestHolder(address newUser) internal {
+        // Get the smallest holder and their balance
+        address smallestHolder = topTreasuryHolders[0];
+        uint256 smallestBalance = treasuryBalances[smallestHolder];
+        uint256 indexToReplace = 0;
+
+        // Loop through the top treasury holders to find the smallest balance
+        uint256 len = topTreasuryHolders.length;
+        for (uint256 i = 1; i < len; i++) {
+            address holder = topTreasuryHolders[i];
+            if (treasuryBalances[holder] < smallestBalance) {
+                smallestHolder = holder;
+                smallestBalance = treasuryBalances[holder];
+                indexToReplace = i;
+            }
+        }
+
+        // Only replace if the newUser's balance is larger than the smallest holder's balance
+        uint256 newUserBalance = treasuryBalances[newUser];
+        if (newUserBalance > smallestBalance) {
+            _removeTopHolder(smallestHolder, indexToReplace);
+            topTreasuryHolders[indexToReplace] = newUser;
+            treasuryHolderIndex[newUser] = indexToReplace;
+            isTopTreasuryHolder[newUser] = true;
+        }
+    }
+
+	function sortTopHolders() internal {
+        uint256 n = topTreasuryHolders.length;
+        if (n <= 1) {
+            return; // No need to sort if there is only one or no holder
+        }
+
+        // Bubble Sort Algorithm to sort topTreasuryHolders by their balances in descending order
+        for (uint256 i = 0; i < n - 1; i++) {
+            for (uint256 j = 0; j < n - i - 1; j++) {
+                address holder1 = topTreasuryHolders[j];
+                address holder2 = topTreasuryHolders[j + 1];
+
+                // Compare balances of holder1 and holder2
+                if (treasuryBalances[holder1] < treasuryBalances[holder2]) {
+                    // Swap the positions
+                    (topTreasuryHolders[j], topTreasuryHolders[j + 1]) = (
+                        topTreasuryHolders[j + 1],
+                        topTreasuryHolders[j]
+                    );
+
+                    // Update the treasuryHolderIndex mapping
+                    treasuryHolderIndex[holder1] = j + 1;
+                    treasuryHolderIndex[holder2] = j;
+                }
+            }
+        }
+    }
+
+	 function _removeTopHolder(address user, uint256 index) internal {
+        require(isTopTreasuryHolder[user], NOT_TOP_HOLDER);
+
+        uint256 lastIndex = topTreasuryHolders.length - 1;
+        if (index < lastIndex) {
+            address lastHolder = topTreasuryHolders[lastIndex];
+            topTreasuryHolders[index] = lastHolder;
+            treasuryHolderIndex[lastHolder] = index;
+        }
+
+        topTreasuryHolders.pop();
+        isTopTreasuryHolder[user] = false;
+        delete treasuryHolderIndex[user];
+    }
 
 	 function makeSwap(
         uint64 queryId,
@@ -924,9 +1021,28 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 	function getCallbackAmount() public {
 		msg.sender.transfer({value: 1 ever, flag: 128, bounce: false});
 	}
+	 function updateGovernance(address _newGovernance) external onlyOwnerOrDepositingAddress {
+        require(_newGovernance != address(0), INVALID_ADDRESS);
+        address oldGovernance = governance;
+        governance = _newGovernance;
+        emit GovernanceUpdated(oldGovernance, _newGovernance);
+    }
+	function swapAndTransferToGovernance(uint256 amount, address receiver) public onlyGovernance {
+		require(amount > 0, ZERO_AMOUNT);
+		require(receiver != address(0), INVALID_ADDRESS);
+		makeSwap(
+			1,
+			assets[0],
+			uint128(amount),
+			assets[1],
+			assetsDexPairs[0],
+			1 ever,
+			0,
+			receiver
+		);
+		
+	}
 
-
-	// Custom error codes
 uint32 constant NFT_LOCKED_OR_NOT_OWNED = 257;
 uint32 constant NOT_NFT_OWNER = 258;
 uint32 constant CONTRACT_NOT_APPROVED = 259;
@@ -1173,7 +1289,9 @@ function unlockNFT(
         emit NFTUnlocked(msg.sender, collectionAddress, _tokenId);
     }
 
-
+function getTopTreasuryHolders() public responsible view returns (address[]) {
+        return {value: 0, flag: 64,bounce :false}(topTreasuryHolders) ;
+    }
 
 function _isLocked(
         address user,

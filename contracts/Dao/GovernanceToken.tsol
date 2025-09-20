@@ -110,7 +110,7 @@ contract Governance is IGovernanceCallback {
 		bool result,
 		uint approvalRate
 	);
-	
+
 	address[] public complianceMembers;
 
 	constructor(
@@ -131,7 +131,6 @@ contract Governance is IGovernanceCallback {
 		);
 		require(_admin != address(0), ZERO_ADDRESS);
 
-	
 		admin = _admin;
 		complianceMembers = _complianers;
 		treasury = treasuryAddress;
@@ -169,6 +168,7 @@ contract Governance is IGovernanceCallback {
 		}
 	}
 
+	uint16 public constant REQUEST_ALREADY_PENDING = 58;
 	uint16 public constant FUNDING_LIMIT_EXCEEDED = 59;
 	uint16 public constant MIN_PERCENTAGE_TOO_LOW = 60;
 	uint16 public constant MIN_VOTERS_TOO_LOW = 61;
@@ -181,7 +181,7 @@ contract Governance is IGovernanceCallback {
 		public constant ONLY_DEED_NFT_HOLDER_OR_COMPLIANCE_MEMBER_CAN_CREATE_PROPOSAL =
 		67;
 
-	fallback() external {
+	fallback() external pure {
 		emit CallFailed(505);
 	}
 
@@ -214,7 +214,6 @@ contract Governance is IGovernanceCallback {
 		uint256 amount
 	);
 
-	
 	struct ProposalDraft {
 		string title;
 		string description;
@@ -231,8 +230,6 @@ contract Governance is IGovernanceCallback {
 
 	event TreasuryBalanceReceived(uint256 value, address user);
 	event CallFailed(uint32 errorCode);
-
-
 
 	mapping(address => uint256) public tempTreasuryBalance;
 	mapping(address => LockedNFTBalances) public tempLockedBalances;
@@ -253,6 +250,7 @@ contract Governance is IGovernanceCallback {
 		require(!isUserBlacklisted(msg.sender), USER_IS_BLOCKED);
 		uint voteEndTme = block.timestamp + _vote_end * 24 * 60 * 60;
 		// require(msg.value == CREATE_PROPOSAL_COST, AMOUNT_TOO_LOW);
+		tvm.rawReserve(1 ever, 0);
 
 		pendingProposalDraft[msg.sender] = ProposalDraft(
 			_title,
@@ -292,67 +290,76 @@ contract Governance is IGovernanceCallback {
 		tempLockedBalances[user] = balances;
 		_finalizeProposal(user);
 	}
- 
 
 	uint32 constant ZERO_AMOUNT = 300;
- 
+	mapping(uint256 => mapping(address => LockedNFTBalances))
+		public userNFTsByProposalId;
+
 	function _finalizeProposal(address user) internal {
 		ProposalDraft draft = pendingProposalDraft[user];
-		uint256 treasuryDeposit = tempTreasuryBalance[user];
-		LockedNFTBalances LB = tempLockedBalances[user];
 
-		uint maxFundingAmount = treasuryDeposit *
-			100 *
-			(LB.deedNFTCount + LB.founderNFTCount);
-		require(draft.amount <= maxFundingAmount, FUNDING_LIMIT_EXCEEDED);
-		require(LB.founderNFTCount >= 1, FOUNDER_NFT_LOCKED);
+		if (draft.amount == 0) {
+			uint256 treasuryDeposit = tempTreasuryBalance[user];
+			LockedNFTBalances LB = tempLockedBalances[user];
+			userNFTsByProposalId[proposals.length][user] = LB;
+			uint maxFundingAmount = treasuryDeposit *
+				100 *
+				(LB.deedNFTCount + LB.founderNFTCount);
+			require(draft.amount <= maxFundingAmount, FUNDING_LIMIT_EXCEEDED);
+			require(LB.founderNFTCount >= 1, FOUNDER_NFT_LOCKED);
 
-		Proposal p;
-		p.PID = proposals.length;
-		p.creator = user;
-		p.title = draft.title;
-		p.description = draft.description;
-		p.vote_start = draft.voteStart;
-		p.vote_end = draft.voteEnd;
-		p.minVotes = draft.minVoters;
-		p.minPercent = draft.minPercent;
-		p.ptype = draft.pType;
-		p.fundingAmount = draft.amount;
-		p.blockAddress = draft.blockAddress;
+			Proposal p;
+			p.PID = proposals.length;
+			p.creator = user;
+			p.title = draft.title;
+			p.description = draft.description;
+			p.vote_start = draft.voteStart;
+			p.vote_end = draft.voteEnd;
+			p.minVotes = draft.minVoters;
+			p.minPercent = draft.minPercent;
+			p.ptype = draft.pType;
+			p.fundingAmount = draft.amount;
+			p.blockAddress = draft.blockAddress;
 
-		if (p.ptype == ProposalType.COMPLIANCE) {
-			p.pStatus = ProposalStatus.LIVE;
+			if (p.ptype == ProposalType.COMPLIANCE) {
+				p.pStatus = ProposalStatus.LIVE;
+			} else {
+				pendingProposals++;
+			}
+			if (p.ptype == ProposalType.OPEN) {
+				require(
+					LB.deedNFTCount > 0,
+					ONLY_DEED_NFT_HOLDER_CAN_CREATE_OPEN_PROPOSAL
+				);
+			} else if (p.ptype == ProposalType.TREASURY) {
+				require(treasuryDeposit > 0, ZERO_AMOUNT);
+			} else if (
+				p.ptype == ProposalType.BLOCK_USER ||
+				p.ptype == ProposalType.UNBLOCK_USER
+			) {
+				require(
+					LB.deedNFTCount > 0 || isComplianceMember(msg.sender),
+					ONLY_DEED_NFT_HOLDER_CAN_CREATE_OPEN_PROPOSAL
+				);
+				p.pStatus = ProposalStatus.LIVE;
+			}
+			proposals.push(p);
+			uProposals[user].push(p.PID);
+
+			emit ProposalCreated(p.PID, user, draft.pType, draft.amount);
+			// cleanup
+			delete pendingProposalDraft[user];
+			delete tempTreasuryBalance[user];
+			delete tempLockedBalances[user];
 		} else {
-			pendingProposals++;
+			isFundingProposal = true;
+			getVotingPower(user);
 		}
-		if (p.ptype == ProposalType.OPEN) {
-			require(
-				LB.deedNFTCount > 0,
-				ONLY_DEED_NFT_HOLDER_CAN_CREATE_OPEN_PROPOSAL
-			);
-		} else if (p.ptype == ProposalType.TREASURY) {
-			require(treasuryDeposit > 0, ZERO_AMOUNT);
-		} else if (
-			p.ptype == ProposalType.BLOCK_USER ||
-			p.ptype == ProposalType.UNBLOCK_USER
-		) {
-			require(
-				LB.deedNFTCount > 0 || isComplianceMember(msg.sender),
-				ONLY_DEED_NFT_HOLDER_CAN_CREATE_OPEN_PROPOSAL
-			);
-			p.pStatus = ProposalStatus.LIVE;
-		}
-		proposals.push(p);
-		uProposals[user].push(p.PID);
-
-		emit ProposalCreated(p.PID, user, draft.pType, draft.amount);
-
-		// cleanup
-		delete pendingProposalDraft[user];
-		delete tempTreasuryBalance[user];
-		delete tempLockedBalances[user];
 	}
 
+	function fundingProposal(ProposalDraft draft, address user,LockedNFTBalances LB, uint256 treasuryDeposit) public {
+		
+	}
 
 	function isProposalAgreed(uint _pId) internal view returns (bool) {
 		uint agreed = 0;
@@ -370,8 +377,6 @@ contract Governance is IGovernanceCallback {
 
 	uint16 public constant INVALID_ID = 68;
 	uint16 public constant PROPOSAL_IS_NOT_PENDING_FOR_COMPLIANCE_MEMBERS = 70;
-
-
 
 	function voteByComplianer(
 		uint _propID,
@@ -391,9 +396,9 @@ contract Governance is IGovernanceCallback {
 
 		if (p.vote_start < block.timestamp) {
 			if (isProposalAgreed(p.PID)) {
-				p.pStatus = ProposalStatus.LIVE;
+				proposals[_propID].pStatus = ProposalStatus.LIVE;
 			} else {
-				p.pStatus = ProposalStatus.FAILED;
+				proposals[_propID].pStatus = ProposalStatus.FAILED;
 			}
 			pendingProposals--;
 		}
@@ -409,93 +414,11 @@ contract Governance is IGovernanceCallback {
 	uint16 public constant DEED_NFT_REQUIRED = 88; // 88
 	uint16 public constant TREASURY_BAL_REQUIRED = 89; // 89
 
-	
-	// Continuing error codes (previous last was 89)
 	uint16 public constant USER_NOT_VOTED = 90; // 90
 	uint16 public constant DEED_NFT_REQUIRED_WITHDRAW = 91; // 91 (reuses same requirement as voting)
 	uint16 public constant TREASURY_BAL_REQUIRED_WITHDRAW = 92; // 92 (reuses same requirement as voting)
 
-	function withdrawVote(uint _propID) public returns (bool) {
-		require(voterVotes[_propID][msg.sender] != 0, USER_NOT_VOTED); // 90
-		require(_propID < proposals.length, INVALID_PROPOSAL_ID); // Reused 83
-
-		Proposal p = proposals[_propID];
-		int votes = int256(voterVotes[_propID][msg.sender]);
-		require(p.pStatus == ProposalStatus.LIVE && votes != 0);
-
-		voterVotes[_propID][msg.sender] = 0;
-
-		bool _supports = votes > 0;
-		// (uint256 deedNFTCount, , ) = ITreasury(treasury).getLockedNFTBalances(
-		//     msg.sender
-		// );
-		uint256 deedNFTCount = 1; // ITreasury(treasury).getLockedNFTBalances(msg.sender);
-
-		if (
-			p.ptype == ProposalType.OPEN ||
-			p.ptype == ProposalType.BLOCK_USER ||
-			p.ptype == ProposalType.UNBLOCK_USER
-		) {
-			require(
-				deedNFTCount > 0,
-				DEED_NFT_REQUIRED_WITHDRAW // 91
-			);
-			if (_supports) {
-				p.yVotes -= uint256(votes);
-			} else {
-				int256 result = int256(p.nVotes) + votes;
-				p.nVotes = uint256(result);
-			}
-			p.totalVoted -= 1;
-		} else if (p.ptype == ProposalType.TREASURY) {
-			// uint256 treasuryDeposit = ITreasury(treasury).treasuryBalances(
-			//     msg.sender
-			// );
-			uint256 treasuryDeposit = 100; // ITreasury(treasury).treasuryBalances(msg.sender);
-			uint256 treasuryBal = treasuryDeposit;
-			require(treasuryBal > 0, TREASURY_BAL_REQUIRED_WITHDRAW); // 92
-			if (_supports) {
-				p.yVotes -= uint256(votes);
-			} else {
-				int256 result = int256(p.nVotes) + votes;
-				p.nVotes = uint256(result);
-			}
-			p.totalVoted -= 1;
-		} else if (
-			p.ptype == ProposalType.COMPLIANCE && isComplianceMember(msg.sender)
-		) {
-			if (_supports) {
-				p.yVotes -= 1;
-			} else {
-				p.nVotes -= 1;
-			}
-			p.totalVoted -= 1;
-		} else if (
-			p.ptype == ProposalType.TREASURY_MAN && isTopTreasury(msg.sender)
-		) {
-			// uint256 treasuryDeposit = ITreasury(treasury).treasuryBalances(
-			//     msg.sender
-			// );
-			uint256 treasuryDeposit = 100; // ITreasury(treasury).treasuryBalances(msg.sender);
-			uint256 treasuryBal = treasuryDeposit;
-			// (, uint r) = treasuryBal.tryDiv(10);
-			uint r = treasuryBal / 10;
-			if (_supports) {
-				p.yVotes -= r;
-			} else {
-				p.nVotes -= r;
-			}
-			p.totalVoted -= 1;
-		}
-
-		return true;
-	}
-
 	uint16 public constant VOTING_NOT_STARTED = 71;
-
-	// ******************************** Voting on Proposals fns End**************************************
-
-	// ******************************************* Test on voting ***********************************
 
 	function voteByUser(uint _propID, bool _supports) external {
 		require(_propID < proposals.length, INVALID_PROPOSAL_ID);
@@ -503,13 +426,11 @@ contract Governance is IGovernanceCallback {
 
 		require(voterVotes[_propID][msg.sender] == 0, USER_ALREADY_VOTED);
 		require(p.pStatus == ProposalStatus.LIVE, PROPOSAL_NOT_LIVE);
-		// require(
-		// 	block.timestamp >= p.vote_start && block.timestamp <= p.vote_end,
-		// 	VOTING_CLOSED
-		// );
+
 		require(!isUserBlacklisted(msg.sender), USER_BLOCKED);
 
 		pendingVotes[msg.sender] = VoteDraft(_propID, _supports);
+		tvm.rawReserve(1 ever, 0);
 
 		Treasury(treasury).getTreasuryBalance{
 			value: 0.2 ever,
@@ -563,26 +484,26 @@ contract Governance is IGovernanceCallback {
 			p.ptype == ProposalType.UNBLOCK_USER
 		) {
 			require(tempVoteNFTs[user].deedNFTCount > 0, DEED_NFT_REQUIRED);
-			_applyVote( vd.propID_, user, vd.supports_, votes);
+			_applyVote(vd.propID_, user, vd.supports_, votes);
 		} else if (p.ptype == ProposalType.TREASURY) {
 			require(tempVoteTreasury[user] > 0, TREASURY_BAL_REQUIRED);
-			_applyVote( vd.propID_, user, vd.supports_, votes);
+			_applyVote(vd.propID_, user, vd.supports_, votes);
 		} else if (
 			p.ptype == ProposalType.COMPLIANCE && isComplianceMember(user)
 		) {
-			_applyVote( vd.propID_, user, vd.supports_, 1);
+			_applyVote(vd.propID_, user, vd.supports_, 1);
 		} else if (
 			p.ptype == ProposalType.TREASURY_MAN && isTopTreasury(user)
 		) {
-			_applyVote( vd.propID_, user, vd.supports_, votes);
+			_applyVote(vd.propID_, user, vd.supports_, votes);
 		}
 
 		emit Voted(p.PID, vd.supports_, user);
 
 		// cleanup
-		// delete pendingVotes[user];
-		// delete tempVoteTreasury[user];
-		// delete tempVoteNFTs[user];
+		delete pendingVotes[user];
+		delete tempVoteTreasury[user];
+		delete tempVoteNFTs[user];
 	}
 
 	event appliedVote(
@@ -610,6 +531,124 @@ contract Governance is IGovernanceCallback {
 		emit appliedVote(propID, voter, supports_, votes);
 	}
 
+	struct WithdrawDraft {
+		uint propID_;
+		bool supports_;
+		int256 votes_;
+	}
+
+	mapping(address => WithdrawDraft) public pendingWithdraws;
+	mapping(address => uint256) public tempWithdrawTreasury;
+	mapping(address => LockedNFTBalances) public tempWithdrawNFTs;
+
+	function withdrawVote(uint _propID) external {
+		require(voterVotes[_propID][msg.sender] != 0, USER_NOT_VOTED);
+		require(_propID < proposals.length, INVALID_PROPOSAL_ID);
+
+		Proposal p = proposals[_propID];
+		int votes = int256(voterVotes[_propID][msg.sender]);
+		require(p.pStatus == ProposalStatus.LIVE && votes != 0, VOTING_CLOSED);
+
+		bool _supports = votes > 0;
+
+		// Store draft
+		pendingWithdraws[msg.sender] = WithdrawDraft(_propID, _supports, votes);
+
+		// async calls like voteByUser
+		Treasury(treasury).getTreasuryBalance{
+			value: 0.2 ever,
+			flag: 1,
+			callback: Governance.onTreasuryWithdrawBalance
+		}(msg.sender);
+
+		Treasury(treasury).getLockedNFTBalances{
+			value: 0.2 ever,
+			flag: 1,
+			callback: Governance.onNFTWithdrawBalance
+		}(msg.sender);
+	}
+
+	function onTreasuryWithdrawBalance(uint256 value, address user) external {
+		require(msg.sender == treasury, INVALID_CALLER);
+		tempWithdrawTreasury[user] = value;
+	}
+
+	function onNFTWithdrawBalance(
+		LockedNFTBalances balances,
+		address user
+	) external {
+		require(msg.sender == treasury, INVALID_CALLER);
+		tempWithdrawNFTs[user] = balances;
+
+		_finalizeWithdraw(user);
+	}
+
+	function _finalizeWithdraw(address user) internal {
+		WithdrawDraft wd = pendingWithdraws[user];
+		Proposal p = proposals[wd.propID_];
+
+		if (
+			p.ptype == ProposalType.OPEN ||
+			p.ptype == ProposalType.BLOCK_USER ||
+			p.ptype == ProposalType.UNBLOCK_USER
+		) {
+			require(
+				tempWithdrawNFTs[user].deedNFTCount > 0,
+				DEED_NFT_REQUIRED_WITHDRAW
+			);
+			_applyWithdraw(wd.propID_, user, wd.supports_, wd.votes_);
+		} else if (p.ptype == ProposalType.TREASURY) {
+			require(
+				tempWithdrawTreasury[user] > 0,
+				TREASURY_BAL_REQUIRED_WITHDRAW
+			);
+			_applyWithdraw(wd.propID_, user, wd.supports_, wd.votes_);
+		} else if (
+			p.ptype == ProposalType.COMPLIANCE && isComplianceMember(user)
+		) {
+			_applyWithdraw(wd.propID_, user, wd.supports_, wd.votes_);
+		} else if (
+			p.ptype == ProposalType.TREASURY_MAN && isTopTreasury(user)
+		) {
+			_applyWithdraw(wd.propID_, user, wd.supports_, wd.votes_);
+		}
+
+		emit VoteWithdrawn(p.PID, wd.supports_, user, wd.votes_);
+
+		// cleanup
+		delete voterVotes[wd.propID_][user];
+		delete pendingWithdraws[user];
+		delete tempWithdrawTreasury[user];
+		delete tempWithdrawNFTs[user];
+	}
+
+	function _applyWithdraw(
+		uint propID,
+		address voter,
+		bool supports_,
+		int256 votes
+	) internal {
+		if (proposals[propID].ptype == ProposalType.COMPLIANCE) {
+			if (supports_) proposals[propID].yVotes -= 1;
+			else proposals[propID].nVotes -= 1;
+		} else {
+			if (supports_) proposals[propID].yVotes -= uint256(votes);
+			else {
+				int256 result = int256(proposals[propID].nVotes) + votes;
+				proposals[propID].nVotes = uint256(result);
+			}
+		}
+
+		proposals[propID].totalVoted -= 1;
+	}
+
+	event VoteWithdrawn(
+		uint indexed proposalID,
+		bool supports_,
+		address indexed user,
+		int256 votes
+	);
+
 	function _calculateVotingPower(
 		address voter,
 		uint256 treasuryDeposit,
@@ -627,8 +666,6 @@ contract Governance is IGovernanceCallback {
 		return votes;
 	}
 
-	// ******************************************* Test on voting ***********************************
-
 	function makeItLive(uint _propID) public OnlyComplianceMember {
 		require(_propID < proposals.length, INVALID_ID);
 
@@ -637,11 +674,9 @@ contract Governance is IGovernanceCallback {
 		require(p.vote_start < block.timestamp, VOTING_NOT_STARTED);
 
 		if (isProposalAgreed(p.PID)) {
-			// If agreed, mark proposal as live
-			p.pStatus = ProposalStatus.LIVE;
+			proposals[_propID].pStatus = ProposalStatus.LIVE;
 		} else {
-			// If not agreed, mark proposal as failed
-			p.pStatus = ProposalStatus.FAILED;
+			proposals[_propID].pStatus = ProposalStatus.FAILED;
 		}
 		pendingProposals--;
 	}
@@ -653,9 +688,7 @@ contract Governance is IGovernanceCallback {
 	function executeProposal(uint _pId) external OnlyComplianceMember {
 		require(_pId < proposals.length, INVALID_ID);
 		Proposal p = proposals[_pId];
-		// (, uint totalVotes) = p.yVotes.tryAdd(p.nVotes);
 		uint totalVotes = p.yVotes + p.nVotes;
-		// require(block.timestamp > p.vote_end, VOTE_NOT_ENDED);
 
 		if (p.fundingAmount > 0) {
 			require(p.claimPercent > 0, CLAIM_PERCENT_NOT_SET);
@@ -694,8 +727,8 @@ contract Governance is IGovernanceCallback {
 		}
 
 		if (p.fundingAmount > 0) {
-			p.isStopped = false;
-			p.lastReleaseTime = block.timestamp;
+			proposals[_pId].isStopped = false;
+			proposals[_pId].lastReleaseTime = block.timestamp;
 		}
 
 		if (p.ptype == ProposalType.BLOCK_USER) {
@@ -726,7 +759,6 @@ contract Governance is IGovernanceCallback {
 		}
 	}
 
-	// Continuing error codes (previous codes up to 72)
 	uint16 public constant INVALID_FUNDING_PROPOSAL = 75;
 	uint16 public constant FUNDING_STOPPED = 76;
 	uint16 public constant INTERVAL_NOT_DUE = 77;
@@ -749,111 +781,183 @@ contract Governance is IGovernanceCallback {
 		uint amountToRelease = (p.fundingAmount * p.claimPercent) / 100;
 
 		if (p.releasedAmount + amountToRelease <= p.fundingAmount) {
-			// ITreasury(treasury).swapAndTransferToGovernance(
-			//     amountToRelease,
-			//     p.creator
-			// );
+			require(amountToRelease > 0, NO_FUNDS_AVAILABLE);
+
+			Treasury(treasury).swapAndTransferToGovernance{
+				value: 0.2 ever,
+				flag: 1
+			}(amountToRelease, p.creator);
 		} else if (p.releasedAmount + amountToRelease > p.fundingAmount) {
 			amountToRelease = p.fundingAmount - p.releasedAmount;
 			require(amountToRelease > 0, NO_FUNDS_AVAILABLE);
-			// ITreasury(treasury).swapAndTransferToGovernance(
-			//     amountToRelease,
-			//     p.creator
-			// );
+
+			Treasury(treasury).swapAndTransferToGovernance{
+				value: 0.2 ever,
+				flag: 1
+			}(amountToRelease, p.creator);
 		}
 
 		p.releasedAmount += amountToRelease;
 		if (p.releasedAmount == p.fundingAmount) {
-			p.funded = true;
+			proposals[_proposalId].funded = true;
 		}
 
 		p.lastReleaseTime = block.timestamp;
 	}
 
-	// Continuing error codes (starting from 81 as requested)
 	uint16 public constant INVALID_FUNDING_PROPOSAL_ID = 81;
 	uint16 public constant ALREADY_FUNDED = 82;
 
 	function stopFunding(uint _proposalId) external OnlyComplianceMember {
 		Proposal p = proposals[_proposalId];
-		p.isStopped = true;
+		proposals[_proposalId].isStopped = true;
 	}
 
 	function resumeFunding(uint _proposalId) external OnlyComplianceMember {
 		Proposal p = proposals[_proposalId];
 		require(p.fundingAmount > 0, INVALID_FUNDING_PROPOSAL_ID);
 		require(!p.funded, ALREADY_FUNDED);
-		p.isStopped = false;
+		proposals[_proposalId].isStopped = false;
 	}
 
 	function setFundingParams(
 		uint _proposalId,
 		uint256 Interval,
-		uint claim
+		uint _claimPercemt
 	) external OnlyComplianceMember {
 		Proposal p = proposals[_proposalId];
-		p.fundingInterval = Interval;
-		p.claimPercent = claim;
+		proposals[_proposalId].fundingInterval = Interval;
+		proposals[_proposalId].claimPercent = _claimPercemt;
 	}
 
 	function isTopTreasury(address sender) internal view returns (bool) {
-		// address[] topTreasuryHolders = []; //ITreasury(treasury).getTopTreasuryHolders();
+		// before this function is called, make sure to call getTreasuryManagerQueue()
+		// to populate topTreasuryHoldersArr
+		address[] topTreasuryHolders = topTreasuryHoldersArr; //ITreasury(treasury).getTopTreasuryHolders();
 
-		// uint n = topTreasuryHolders.length;
-		// for (uint i = 0; i < n; i++) {
-		//     if (topTreasuryHolders[i] == sender) {
-		//         return true;
-		//     }
-		// }
+		uint n = topTreasuryHolders.length;
+		for (uint i = 0; i < n; i++) {
+			if (topTreasuryHolders[i] == sender) {
+				return true;
+			}
+		}
 		return false;
 	}
 
-	function getVotingPower(address voter) public view returns (uint) {
-		(
-			uint256 deedNFTCount,
-			uint256 founderNFTCount,
-			uint256 genesisNFTCount
-		) = (50, 30, 20); // ITreasury(treasury).getLockedNFTBalances(voter);
-		// uint total_votes = Math.max(1, deedNFTCount);
-		uint total_votes = deedNFTCount;
-		// uint votes = Math.min(11, total_votes);
-		uint votes = total_votes > 11 ? 11 : total_votes;
+	mapping(address => bool) internal pendingVPRequest;
+	mapping(address => LockedNFTBalances) internal tempVP_NFTs;
+	mapping(address => uint256) internal tempVP_Treasury;
+	bool public isFundingProposal = false;
 
-		// uint256 treasuryDeposit = ITreasury(treasury).treasuryBalances(voter);
-		uint256 treasuryDeposit = 100; // ITreasury(treasury).treasuryBalances(voter);
+	// async getter
+	function getVotingPower(address voter) public returns (uint) {
+		require(!pendingVPRequest[voter], REQUEST_ALREADY_PENDING);
+		tvm.rawReserve(1 ever, 0);
 
-		uint256 treasuryBal = treasuryDeposit / 10 ** 18;
-		if (treasuryBal >= 10) {
-			// (, uint r) = treasuryBal.tryDiv(10);
-			uint r = treasuryBal / 10;
-			votes *= r;
-		}
+		pendingVPRequest[voter] = true;
 
-		votes = votes * (1 + genesisNFTCount + founderNFTCount);
+		Treasury(treasury).getLockedNFTBalances{
+			value: 0.2 ever,
+			flag: 1,
+			callback: Governance.onVP_NFTs
+		}(voter);
 
-		return votes;
+		Treasury(treasury).getTreasuryBalance{
+			value: 0.2 ever,
+			flag: 1,
+			callback: Governance.onVP_Treasury
+		}(voter);
+
+		return 0;
 	}
 
-	// Continuing error codes (previous last was 92)
-	// uint16 constant public ZERO_ADDRESS = 93;                  // 93
+	function onVP_NFTs(LockedNFTBalances balances, address user) external {
+		require(msg.sender == treasury, INVALID_CALLER);
+		tempVP_NFTs[user] = balances;
+		_finalizeVotingPower(user);
+	}
+
+	function onVP_Treasury(uint256 value, address user) external {
+		require(msg.sender == treasury, INVALID_CALLER);
+		tempVP_Treasury[user] = value;
+		_finalizeVotingPower(user);
+	}
+
+	function _finalizeVotingPower(address user) internal {
+		if (tempVP_Treasury[user] == 0 && tempVP_NFTs[user].deedNFTCount == 0) {
+			return;
+		}
+
+		LockedNFTBalances b = tempVP_NFTs[user];
+		uint256 treasuryBal = tempVP_Treasury[user] / 1e9; // adjust decimals if needed
+
+		// start from deed NFT count
+		uint totalVotes = b.deedNFTCount > 0 ? b.deedNFTCount : 1;
+
+		// cap deed count at 11
+		if (totalVotes > 11) totalVotes = 11;
+
+		// treasury multiplier
+		if (treasuryBal >= 10) {
+			uint r = treasuryBal / 10;
+			totalVotes *= r;
+		}
+
+		// exponent factor: founder + genesis
+		uint expFactor = 1 + b.founderNFTCount;
+		uint votingPower = totalVotes * expFactor;
+
+		emit VotingPowerCalculated(user, votingPower);
+		if (isFundingProposal) {
+			fundingProposal(
+				pendingProposalDraft[user],
+				user,
+				tempVP_NFTs[user],
+				tempVP_Treasury[user]
+			);
+		}
+
+		// funding proposal flow
+		// if (isFundingProposal) {
+		// cleanup
+		delete tempVP_Treasury[user];
+		delete tempVP_NFTs[user];
+		delete pendingVPRequest[user];
+	}
+
+	event VotingPowerCalculated(address indexed voter, uint votingPower);
+
 	uint16 public constant BALANCE_SHOULD_NOT_BE_ZERO = 94; // 94
 
 	function getTreasuryManagerQueue()
 		public
 		view
-		returns (address[] topTreasuryHolders)
+		returns (address[] topTreasuryHoldersArr)
 	{
-		// topTreasuryHolders = ITreasury(treasury).getTopTreasuryHolders();
-		topTreasuryHolders = new address[](0);
+		Treasury(treasury).getTopTreasuryHolders{
+			value: 0.2 ever,
+			flag: 1,
+			callback: Governance.onGetTopTreasuryHolders
+		}();
+	}
+
+	address[] public topTreasuryHoldersArr;
+	event TopTreasuryHoldersReceived(address[] topHolders);
+
+	function onGetTopTreasuryHolders(address[] topTreasuryHolders) external {
+		require(msg.sender == treasury, INVALID_CALLER);
+
+		topTreasuryHoldersArr = topTreasuryHolders;
+		emit TopTreasuryHoldersReceived(topTreasuryHolders);
 	}
 
 	modifier onlyTreasuryContract() {
-		require(msg.sender == treasury); // No error message in original
+		require(msg.sender == treasury);
 		_;
 	}
 
 	function getProposal(uint pID) public view returns (Proposal) {
-		require(pID < proposals.length, INVALID_PROPOSAL_ID); // Reused 83
+		require(pID < proposals.length, INVALID_PROPOSAL_ID);
 		return proposals[pID];
 	}
 
@@ -945,7 +1049,7 @@ contract Governance is IGovernanceCallback {
 		admin = _newAdmin;
 	}
 
-	function withdrawCreateProposalFee() external onlyAdmin {
+	function withdrawCreateProposalFee() external view onlyAdmin {
 		require(address(this).balance > 0, BALANCE_SHOULD_NOT_BE_ZERO); // 94
 		payable(admin).transfer(address(this).balance);
 	}
@@ -963,7 +1067,7 @@ contract Governance is IGovernanceCallback {
 		return comProps;
 	}
 
-	function getCallbackAmount() public {
+	function getCallbackAmount() public pure {
 		msg.sender.transfer({value: 1 ever, flag: 128, bounce: false});
 	}
 }

@@ -55,31 +55,31 @@ async function main() {
 
     await traceTree?.beautyPrint();
   }
-  console.log("create a proposal -->UN BLOCK USER", new Date().getTime());
+  // console.log("create a proposal -->UN BLOCK USER", new Date().getTime());
 
-  {
-    const { traceTree } = await locklift.tracing.trace(
-      sample.methods
-        .createProposalRequest({
-          _title: "UnBlocking Address ",
-          _description: "This is my first proposal",
-          _vote_start: 0,
-          _vote_end: 10,
-          _ptype: 5, // ProposalType.UNBLOCK_USER
-          _minVoters: 2,
-          _minPercent: 50,
-          amount: (0),
-          _blockAddress: new Address("0:7179e9aeb58d6fe97610ffcf605eded4f3a161cee84bc0d67bfdf55e6a6a6491"),
+  // {
+  //   const { traceTree } = await locklift.tracing.trace(
+  //     sample.methods
+  //       .createProposalRequest({
+  //         _title: "UnBlocking Address ",
+  //         _description: "This is my first proposal",
+  //         _vote_start: 0,
+  //         _vote_end: 10,
+  //         _ptype: 5, // ProposalType.UNBLOCK_USER
+  //         _minVoters: 2,
+  //         _minPercent: 50,
+  //         amount: (0),
+  //         _blockAddress: new Address("0:7179e9aeb58d6fe97610ffcf605eded4f3a161cee84bc0d67bfdf55e6a6a6491"),
 
-        })
-        .send({
-          from: chakri,
-          amount: toNano(1),
-        }),
-    );
+  //       })
+  //       .send({
+  //         from: chakri,
+  //         amount: toNano(1),
+  //       }),
+  //   );
 
-    await traceTree?.beautyPrint();
-  }
+  //   await traceTree?.beautyPrint();
+  // }
   // vote on the proposal
   console.log("vote on the proposal --> BLOCK USER", new Date().getTime());
 
