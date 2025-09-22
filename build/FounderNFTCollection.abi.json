@@ -131,6 +131,22 @@
 			]
 		},
 		{
+			"name": "setBaseUrl",
+			"inputs": [
+				{"name":"_baseNftUrl","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setCollectionUrl",
+			"inputs": [
+				{"name":"_url","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
 			"name": "_baseURI",
 			"inputs": [
 			],

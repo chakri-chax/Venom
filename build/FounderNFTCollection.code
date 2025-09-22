@@ -1482,6 +1482,116 @@ PUSHCONT {
 IFNOT
 .loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
+.macro setBaseUrl
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 255
+LDREF
+ENDS
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+CALLREF {
+	CALL $setBaseUrl_c7c3268b_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.macro setBaseUrl_c7c3268b_internal_macro
+.loc ../node_modules/@broxus/tip4/contracts/access/OwnableInternal.tsol, 31
+GETGLOB 9
+PARSEMSGADDR
+INDEX 3
+PLDU 256
+NEQINT 0
+DUP
+PUSHCONT {
+	DROP
+	CALLREF {
+		CALL $owner_8da5cb5b_internal_macro$
+	}
+	GETGLOB 9
+	SDEQ
+}
+IF
+THROWIFNOT 100
+.loc ../node_modules/@broxus/tip4/contracts/access/OwnableInternal.tsol, 32
+DEPTH
+ADDCONST -2
+PICK
+THROWIFNOT 101
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 256
+SETGLOB 13
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 257
+PUSHREF {
+	.blob xc00000000000000000000000002761033f
+}
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+
+.macro setCollectionUrl
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 260
+LDREF
+ENDS
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+CALLREF {
+	CALL $setCollectionUrl_945b0c1f_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.macro setCollectionUrl_945b0c1f_internal_macro
+.loc ../node_modules/@broxus/tip4/contracts/access/OwnableInternal.tsol, 31
+GETGLOB 9
+PARSEMSGADDR
+INDEX 3
+PLDU 256
+NEQINT 0
+DUP
+PUSHCONT {
+	DROP
+	CALLREF {
+		CALL $owner_8da5cb5b_internal_macro$
+	}
+	GETGLOB 9
+	SDEQ
+}
+IF
+THROWIFNOT 100
+.loc ../node_modules/@broxus/tip4/contracts/access/OwnableInternal.tsol, 32
+DEPTH
+ADDCONST -2
+PICK
+THROWIFNOT 101
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 261
+SETGLOB 14
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 262
+PUSHREF {
+	.blob xc00000000000000000000000002c67a3dd
+}
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+
 .macro _baseURI
 DROP
 GETGLOB 6
@@ -1491,7 +1601,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 257
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 265
 ENDS
 .loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 CALLREF {
@@ -1529,7 +1639,7 @@ THROW 0
 CALL $_baseURI_743976a0_internal_macro$
 
 .macro _baseURI_743976a0_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 258
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 266
 GETGLOB 28
 .loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 
@@ -1542,7 +1652,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 261
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 269
 ENDS
 .loc ../contracts/Dao/FounderNFTCollection.tsol, 0
 CALLREF {
@@ -1559,7 +1669,7 @@ THROW 0
 CALL $getCallbackAmount_178eb49d_internal_macro$
 
 .macro getCallbackAmount_178eb49d_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 262
+.loc ../contracts/Dao/FounderNFTCollection.tsol, 270
 GETGLOB 9
 NEWC
 STSLICECONST x42_
@@ -4137,7 +4247,7 @@ IFJMPREF {
 	}
 }
 DUP
-PUSHINT 1809827988
+PUSHINT 1640750267
 LEQ
 IFJMPREF {
 	DUP
@@ -4199,9 +4309,15 @@ IFJMPREF {
 		}
 	}
 	DUP
-	PUSHINT 1521930418
+	PUSHINT 1508809258
 	LEQ
 	IFJMPREF {
+		DUP
+		PUSHINT 1470166481
+		EQUAL
+		IFJMPREF {
+			CALL $setCollectionUrl$
+		}
 		DUP
 		PUSHINT 1479945602
 		EQUAL
@@ -4220,17 +4336,17 @@ IFJMPREF {
 		IFJMPREF {
 			CALL $setRoutingWallet$
 		}
+	}
+	DUP
+	PUSHINT 1640750267
+	LEQ
+	IFJMPREF {
 		DUP
 		PUSHINT 1521930418
 		EQUAL
 		IFJMPREF {
 			CALL $routingWallet$
 		}
-	}
-	DUP
-	PUSHINT 1809827988
-	LEQ
-	IFJMPREF {
 		DUP
 		PUSHINT 1594609630
 		EQUAL
@@ -4244,6 +4360,22 @@ IFJMPREF {
 			CALL $totalSupply$
 		}
 		DUP
+		PUSHINT 1640750267
+		EQUAL
+		IFJMPREF {
+			CALL $setBaseUrl$
+		}
+	}
+}
+DUP
+PUSHINT 2131972763
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 1860340199
+	LEQ
+	IFJMPREF {
+		DUP
 		PUSHINT 1726136201
 		EQUAL
 		IFJMPREF {
@@ -4255,16 +4387,6 @@ IFJMPREF {
 		IFJMPREF {
 			CALL $_getPendingMintByIndex$
 		}
-	}
-}
-DUP
-PUSHINT 2131972763
-LEQ
-IFJMPREF {
-	DUP
-	PUSHINT 1933051457
-	LEQ
-	IFJMPREF {
 		DUP
 		PUSHINT 1833689300
 		EQUAL
@@ -4277,6 +4399,11 @@ IFJMPREF {
 		IFJMPREF {
 			CALL $initiateMint$
 		}
+	}
+	DUP
+	PUSHINT 1997736283
+	LEQ
+	IFJMPREF {
 		DUP
 		PUSHINT 1910853286
 		EQUAL
@@ -4289,11 +4416,6 @@ IFJMPREF {
 		IFJMPREF {
 			CALL $nftAddressOf$
 		}
-	}
-	DUP
-	PUSHINT 2131972763
-	LEQ
-	IFJMPREF {
 		DUP
 		PUSHINT 1936958278
 		EQUAL
@@ -4306,6 +4428,11 @@ IFJMPREF {
 		IFJMPREF {
 			CALL $constructor$
 		}
+	}
+	DUP
+	PUSHINT 2131972763
+	LEQ
+	IFJMPREF {
 		DUP
 		PUSHINT 2035913978
 		EQUAL

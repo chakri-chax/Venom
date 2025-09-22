@@ -1,3 +1,5 @@
+
+
 pragma ever-solidity >=0.62.0;
 
 pragma AbiHeader expire;
@@ -297,8 +299,9 @@ contract Governance is IGovernanceCallback {
 
 	function _finalizeProposal(address user) internal {
 		ProposalDraft draft = pendingProposalDraft[user];
-
+		
 		if (draft.amount == 0) {
+			emit step(1000);
 			uint256 treasuryDeposit = tempTreasuryBalance[user];
 			LockedNFTBalances LB = tempLockedBalances[user];
 			userNFTsByProposalId[proposals.length][user] = LB;
@@ -352,13 +355,72 @@ contract Governance is IGovernanceCallback {
 			delete tempTreasuryBalance[user];
 			delete tempLockedBalances[user];
 		} else {
-			isFundingProposal = true;
+			isFundingProposal[proposals.length] = true;
 			getVotingPower(user);
 		}
 	}
+	event step (uint256 s);
+	function fundingProposal(
+		ProposalDraft draft,
+		address user,
+		LockedNFTBalances LB,
+		uint256 treasuryDeposit
+	) public {
+		emit step(1);
+		require(draft.amount > 0, ZERO_AMOUNT);
+		emit step(draft.amount);
+		uint maxFundingAmount = treasuryDeposit *
+			100 *
+			(LB.deedNFTCount + LB.founderNFTCount);
+		require(draft.amount <= maxFundingAmount, FUNDING_LIMIT_EXCEEDED);
+		require(LB.founderNFTCount >= 1, FOUNDER_NFT_LOCKED);
+		emit step(2);
+		Proposal p;
+		p.PID = proposals.length;
+		p.creator = user;
+		p.title = draft.title;
+		p.description = draft.description;
+		p.vote_start = draft.voteStart;
+		p.vote_end = draft.voteEnd;
+		p.minVotes = draft.minVoters;
+		p.minPercent = draft.minPercent;
+		p.ptype = draft.pType;
+		p.fundingAmount = draft.amount;
+		p.blockAddress = draft.blockAddress;
+		emit step(3);
+		if (p.ptype == ProposalType.COMPLIANCE) {
+			p.pStatus = ProposalStatus.LIVE;
+		} else {
+			pendingProposals++;
+		}
+		if (p.ptype == ProposalType.OPEN) {
+			require(
+				LB.deedNFTCount > 0,
+				ONLY_DEED_NFT_HOLDER_CAN_CREATE_OPEN_PROPOSAL
+			);
+		} else if (p.ptype == ProposalType.TREASURY) {
+			require(treasuryDeposit > 0, ZERO_AMOUNT);
+		} else if (
+			p.ptype == ProposalType.BLOCK_USER ||
+			p.ptype == ProposalType.UNBLOCK_USER
+		) {
+			require(
+				LB.deedNFTCount > 0 || isComplianceMember(msg.sender),
+				ONLY_DEED_NFT_HOLDER_OR_COMPLIANCE_MEMBER_CAN_CREATE_PROPOSAL
+			);
+			p.pStatus = ProposalStatus.LIVE;
+		}
+		emit step(4);
+		proposals.push(p);
+		uProposals[user].push(p.PID);
+		emit step(5);
+		isFundingProposal[p.PID] = false;
 
-	function fundingProposal(ProposalDraft draft, address user,LockedNFTBalances LB, uint256 treasuryDeposit) public {
-		
+		emit ProposalCreated(p.PID, user, draft.pType, draft.amount);
+		// cleanup
+		delete pendingProposalDraft[user];
+		delete tempTreasuryBalance[user];
+		delete tempLockedBalances[user];
 	}
 
 	function isProposalAgreed(uint _pId) internal view returns (bool) {
@@ -847,7 +909,8 @@ contract Governance is IGovernanceCallback {
 	mapping(address => bool) internal pendingVPRequest;
 	mapping(address => LockedNFTBalances) internal tempVP_NFTs;
 	mapping(address => uint256) internal tempVP_Treasury;
-	bool public isFundingProposal = false;
+	// bool public isFundingProposalCheck = false;
+	mapping(uint256 => bool) public isFundingProposal;
 
 	// async getter
 	function getVotingPower(address voter) public returns (uint) {
@@ -908,7 +971,7 @@ contract Governance is IGovernanceCallback {
 		uint votingPower = totalVotes * expFactor;
 
 		emit VotingPowerCalculated(user, votingPower);
-		if (isFundingProposal) {
+		if (isFundingProposal[proposals.length]) {
 			fundingProposal(
 				pendingProposalDraft[user],
 				user,
@@ -917,9 +980,7 @@ contract Governance is IGovernanceCallback {
 			);
 		}
 
-		// funding proposal flow
-		// if (isFundingProposal) {
-		// cleanup
+		
 		delete tempVP_Treasury[user];
 		delete tempVP_NFTs[user];
 		delete pendingVPRequest[user];

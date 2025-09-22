@@ -566,7 +566,7 @@
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"isFundingProposal","type":"bool"}
+				{"name":"isFundingProposal","type":"map(uint256,bool)"}
 			]
 		},
 		{
@@ -651,6 +651,14 @@
 			]
 		},
 		{
+			"name": "step",
+			"inputs": [
+				{"name":"s","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
 			"name": "appliedVote",
 			"inputs": [
 				{"name":"proposalID","type":"uint256"},
@@ -722,7 +730,7 @@
 		{"name":"pendingVPRequest","type":"map(address,bool)"},
 		{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"tempVP_NFTs","type":"map(address,tuple)"},
 		{"name":"tempVP_Treasury","type":"map(address,uint256)"},
-		{"name":"isFundingProposal","type":"bool"},
+		{"name":"isFundingProposal","type":"map(uint256,bool)"},
 		{"name":"topTreasuryHoldersArr","type":"address[]"}
 	]
 }

@@ -35,13 +35,13 @@ ROTREV
 PAIR
 SWAP
 ENDS
-.loc ../contracts/Dao/GovernanceToken.tsol, 124
+.loc ../contracts/Dao/GovernanceToken.tsol, 126
 ACCEPT
-.loc ../contracts/Dao/GovernanceToken.tsol, 125
+.loc ../contracts/Dao/GovernanceToken.tsol, 127
 PUSHINT 500000000
 PUSHINT 0
 RAWRESERVE
-.loc ../contracts/Dao/GovernanceToken.tsol, 126
+.loc ../contracts/Dao/GovernanceToken.tsol, 128
 ROLL 3
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
@@ -63,19 +63,19 @@ NOT
 AND
 AND
 THROWIFNOT 57
-.loc ../contracts/Dao/GovernanceToken.tsol, 132
+.loc ../contracts/Dao/GovernanceToken.tsol, 134
 OVER
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 55
-.loc ../contracts/Dao/GovernanceToken.tsol, 134
+.loc ../contracts/Dao/GovernanceToken.tsol, 136
 SWAP
 SETGLOB 14
-.loc ../contracts/Dao/GovernanceToken.tsol, 135
+.loc ../contracts/Dao/GovernanceToken.tsol, 137
 SETGLOB 21
-.loc ../contracts/Dao/GovernanceToken.tsol, 136
+.loc ../contracts/Dao/GovernanceToken.tsol, 138
 SETGLOB 13
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 CALLREF {
@@ -92,7 +92,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 141
+.loc ../contracts/Dao/GovernanceToken.tsol, 143
 OVER
 PUSHCONT {
 	LDREF
@@ -138,10 +138,10 @@ THROW 0
 CALL $isComplianceMember_873c3a01_internal_macro$
 
 .macro isComplianceMember_873c3a01_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 142
+.loc ../contracts/Dao/GovernanceToken.tsol, 144
 FALSE
 DUP
-.loc ../contracts/Dao/GovernanceToken.tsol, 143
+.loc ../contracts/Dao/GovernanceToken.tsol, 145
 PUSHCONT {
 	DUP
 	GETGLOB 21
@@ -149,7 +149,7 @@ PUSHCONT {
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 144
+	.loc ../contracts/Dao/GovernanceToken.tsol, 146
 	PUSH2 S2, S0
 	GETGLOB 21
 	SECOND
@@ -158,21 +158,21 @@ PUSHCONT {
 	THROWIFNOT 50
 	SDEQ
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 145
+		.loc ../contracts/Dao/GovernanceToken.tsol, 147
 		TRUE
 		POP S2
-		.loc ../contracts/Dao/GovernanceToken.tsol, 146
+		.loc ../contracts/Dao/GovernanceToken.tsol, 148
 		RETALT
 		.loc ../contracts/Dao/GovernanceToken.tsol, 0
 	}
 	IFJMP
-	.loc ../contracts/Dao/GovernanceToken.tsol, 143
+	.loc ../contracts/Dao/GovernanceToken.tsol, 145
 	INC
 	.loc ../contracts/Dao/GovernanceToken.tsol, 0
 }
 WHILEBRK
 DROP
-.loc ../contracts/Dao/GovernanceToken.tsol, 149
+.loc ../contracts/Dao/GovernanceToken.tsol, 151
 NIP
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 
@@ -185,7 +185,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 161
+.loc ../contracts/Dao/GovernanceToken.tsol, 163
 OVER
 PUSHCONT {
 	LDREF
@@ -231,10 +231,10 @@ THROW 0
 CALL $isUserBlacklisted_503b8e81_internal_macro$
 
 .macro isUserBlacklisted_503b8e81_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 161
+.loc ../contracts/Dao/GovernanceToken.tsol, 163
 PUSHINT 0
 DUP
-.loc ../contracts/Dao/GovernanceToken.tsol, 164
+.loc ../contracts/Dao/GovernanceToken.tsol, 166
 PUSHCONT {
 	DUP
 	GETGLOB 20
@@ -242,7 +242,7 @@ PUSHCONT {
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 165
+	.loc ../contracts/Dao/GovernanceToken.tsol, 167
 	DUP
 	GETGLOB 20
 	SECOND
@@ -252,13 +252,13 @@ PUSHCONT {
 	PUSH S3
 	SDEQ
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 166
+		.loc ../contracts/Dao/GovernanceToken.tsol, 168
 		TRUE
 		POP S2
 		.loc ../contracts/Dao/GovernanceToken.tsol, 0
 	}
 	IF
-	.loc ../contracts/Dao/GovernanceToken.tsol, 164
+	.loc ../contracts/Dao/GovernanceToken.tsol, 166
 	INC
 	.loc ../contracts/Dao/GovernanceToken.tsol, 0
 }
@@ -270,7 +270,7 @@ NIP
 .macro fallback_macro
 GETGLOB 6
 THROWIFNOT 76
-.loc ../contracts/Dao/GovernanceToken.tsol, 185
+.loc ../contracts/Dao/GovernanceToken.tsol, 187
 PUSHREF {
 	.blob xc00000000000000000000000003929380c000001f9
 }
@@ -304,7 +304,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 198
+.loc ../contracts/Dao/GovernanceToken.tsol, 200
 OVER
 PUSHCONT {
 	LDREF
@@ -331,7 +331,7 @@ THROW 0
 CALL $setLockedNFTBalance_4e806d07_internal_macro$
 
 .macro setLockedNFTBalance_4e806d07_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 203
+.loc ../contracts/Dao/GovernanceToken.tsol, 205
 TRIPLE
 GETGLOB 9
 GETGLOB 23
@@ -360,7 +360,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 237
+.loc ../contracts/Dao/GovernanceToken.tsol, 239
 OVER
 PUSHCONT {
 	LDREF
@@ -402,32 +402,32 @@ CALLREF {
 THROW 0
 
 .macro createProposalRequest_6021d0a1_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 248
+.loc ../contracts/Dao/GovernanceToken.tsol, 250
 PUSH S2
 GTINT 40
 THROWIFNOT 60
-.loc ../contracts/Dao/GovernanceToken.tsol, 249
+.loc ../contracts/Dao/GovernanceToken.tsol, 251
 PUSH S3
 GTINT 1
 THROWIFNOT 61
-.loc ../contracts/Dao/GovernanceToken.tsol, 250
+.loc ../contracts/Dao/GovernanceToken.tsol, 252
 GETGLOB 9
 CALLREF {
 	CALL $isUserBlacklisted_503b8e81_internal_macro$
 }
 THROWIF 62
-.loc ../contracts/Dao/GovernanceToken.tsol, 251
+.loc ../contracts/Dao/GovernanceToken.tsol, 253
 BLOCKLT
 ROLL 6
 MULCONST 24
 MULCONST 60
 MULCONST 60
 ADD
-.loc ../contracts/Dao/GovernanceToken.tsol, 253
+.loc ../contracts/Dao/GovernanceToken.tsol, 255
 PUSHINT 1000000000
 PUSHINT 0
 RAWRESERVE
-.loc ../contracts/Dao/GovernanceToken.tsol, 255
+.loc ../contracts/Dao/GovernanceToken.tsol, 257
 ROLLREV 5
 TUPLE 9
 GETGLOB 9
@@ -458,7 +458,7 @@ ROTREV
 PUSHINT 267
 DICTSETREF
 SETGLOB 24
-.loc ../contracts/Dao/GovernanceToken.tsol, 267
+.loc ../contracts/Dao/GovernanceToken.tsol, 269
 GETGLOB 13
 NEWC
 STSLICECONST x62_
@@ -474,7 +474,7 @@ STBREFR
 ENDC
 PUSHINT 1
 SENDRAWMSG
-.loc ../contracts/Dao/GovernanceToken.tsol, 273
+.loc ../contracts/Dao/GovernanceToken.tsol, 275
 GETGLOB 13
 NEWC
 STSLICECONST x62_
@@ -501,7 +501,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 280
+.loc ../contracts/Dao/GovernanceToken.tsol, 282
 OVER
 PUSHCONT {
 	LDREF
@@ -527,7 +527,7 @@ THROW 0
 CALL $onTreasuryBalance_ea9e74b9_internal_macro$
 
 .macro onTreasuryBalance_ea9e74b9_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 281
+.loc ../contracts/Dao/GovernanceToken.tsol, 283
 GETGLOB 25
 PUSHINT 2
 MAX
@@ -535,7 +535,7 @@ GETGLOB 9
 GETGLOB 13
 SDEQ
 THROWANYIFNOT
-.loc ../contracts/Dao/GovernanceToken.tsol, 282
+.loc ../contracts/Dao/GovernanceToken.tsol, 284
 GETGLOB 26
 ROT
 NEWC
@@ -555,7 +555,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 285
+.loc ../contracts/Dao/GovernanceToken.tsol, 287
 OVER
 PUSHCONT {
 	LDREF
@@ -585,7 +585,7 @@ CALLREF {
 THROW 0
 
 .macro onLockedNFTBalances_c6b4c6ba_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 289
+.loc ../contracts/Dao/GovernanceToken.tsol, 291
 GETGLOB 25
 PUSHINT 2
 MAX
@@ -593,7 +593,7 @@ GETGLOB 9
 GETGLOB 13
 SDEQ
 THROWANYIFNOT
-.loc ../contracts/Dao/GovernanceToken.tsol, 290
+.loc ../contracts/Dao/GovernanceToken.tsol, 292
 TUCK
 GETGLOB 27
 ROT
@@ -610,7 +610,7 @@ ROTREV
 PUSHINT 267
 DICTSETREF
 SETGLOB 27
-.loc ../contracts/Dao/GovernanceToken.tsol, 291
+.loc ../contracts/Dao/GovernanceToken.tsol, 293
 CALLREF {
 	CALL $_finalizeProposal_0a24c88a_internal_macro$
 }
@@ -621,7 +621,7 @@ CALLREF {
 CALL $_finalizeProposal_0a24c88a_internal_macro$
 
 .macro _finalizeProposal_0a24c88a_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 299
+.loc ../contracts/Dao/GovernanceToken.tsol, 301
 DUP
 GETGLOB 24
 PUSHINT 267
@@ -663,15 +663,24 @@ PUSHCONT {
 	TUPLE 9
 }
 IFELSE
-.loc ../contracts/Dao/GovernanceToken.tsol, 301
+.loc ../contracts/Dao/GovernanceToken.tsol, 303
 DUP
 INDEX 7
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 355
-	TRUE
+	.loc ../contracts/Dao/GovernanceToken.tsol, 358
+	PUSHINT 38
+	GETGLOBVAR
+	GETGLOB 12
+	FIRST
+	SWAP
+	NEWC
+	STONE
+	ROTREV
+	PUSHPOW2 8
+	DICTUSETB
 	PUSHINT 38
 	SETGLOBVAR
-	.loc ../contracts/Dao/GovernanceToken.tsol, 356
+	.loc ../contracts/Dao/GovernanceToken.tsol, 359
 	OVER
 	CALLREF {
 		CALL $getVotingPower_bb4d4436_internal_macro$
@@ -679,7 +688,13 @@ PUSHCONT {
 	DROP
 }
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 302
+	.loc ../contracts/Dao/GovernanceToken.tsol, 304
+	PUSHREF {
+		.blob xc00000000000000000000000001003b9d300000000000000000000000000000000000000000000000000000000000003e8
+	}
+	PUSHINT 0
+	SENDRAWMSG
+	.loc ../contracts/Dao/GovernanceToken.tsol, 305
 	OVER
 	GETGLOB 26
 	PUSHINT 267
@@ -689,7 +704,7 @@ PUSHCONT {
 		PLDU 256
 	}
 	IF
-	.loc ../contracts/Dao/GovernanceToken.tsol, 303
+	.loc ../contracts/Dao/GovernanceToken.tsol, 306
 	PUSH S2
 	GETGLOB 27
 	PUSHINT 267
@@ -710,7 +725,7 @@ PUSHCONT {
 		TRIPLE
 	}
 	IFELSE
-	.loc ../contracts/Dao/GovernanceToken.tsol, 304
+	.loc ../contracts/Dao/GovernanceToken.tsol, 307
 	DUP
 	GETGLOB 28
 	GETGLOB 12
@@ -746,7 +761,7 @@ PUSHCONT {
 	PUSHPOW2 8
 	DICTUSETB
 	SETGLOB 28
-	.loc ../contracts/Dao/GovernanceToken.tsol, 305
+	.loc ../contracts/Dao/GovernanceToken.tsol, 308
 	OVER
 	MULCONST 100
 	OVER
@@ -755,18 +770,18 @@ PUSHCONT {
 	SECOND
 	ADD
 	MUL
-	.loc ../contracts/Dao/GovernanceToken.tsol, 308
+	.loc ../contracts/Dao/GovernanceToken.tsol, 311
 	PUSH S3
 	INDEX 7
 	SWAP
 	LEQ
 	THROWIFNOT 59
-	.loc ../contracts/Dao/GovernanceToken.tsol, 309
+	.loc ../contracts/Dao/GovernanceToken.tsol, 312
 	DUP
 	SECOND
 	GTINT 0
 	THROWIFNOT 64
-	.loc ../contracts/Dao/GovernanceToken.tsol, 312
+	.loc ../contracts/Dao/GovernanceToken.tsol, 315
 	GETGLOB 12
 	FIRST
 	PUSHINT 0
@@ -784,62 +799,62 @@ PUSHCONT {
 	TUPLEVAR
 	SWAP
 	SETINDEX 0
-	.loc ../contracts/Dao/GovernanceToken.tsol, 313
+	.loc ../contracts/Dao/GovernanceToken.tsol, 316
 	PUSH S4
 	SETINDEX 1
-	.loc ../contracts/Dao/GovernanceToken.tsol, 314
+	.loc ../contracts/Dao/GovernanceToken.tsol, 317
 	PUSH S3
 	FIRST
 	SETINDEX 3
-	.loc ../contracts/Dao/GovernanceToken.tsol, 315
+	.loc ../contracts/Dao/GovernanceToken.tsol, 318
 	PUSH S3
 	SECOND
 	SETINDEX 4
-	.loc ../contracts/Dao/GovernanceToken.tsol, 316
+	.loc ../contracts/Dao/GovernanceToken.tsol, 319
 	PUSH S3
 	THIRD
 	SETINDEX 5
-	.loc ../contracts/Dao/GovernanceToken.tsol, 317
+	.loc ../contracts/Dao/GovernanceToken.tsol, 320
 	PUSH S3
 	INDEX 3
 	SETINDEX 6
-	.loc ../contracts/Dao/GovernanceToken.tsol, 318
+	.loc ../contracts/Dao/GovernanceToken.tsol, 321
 	PUSH S3
 	INDEX 5
 	SETINDEX 11
-	.loc ../contracts/Dao/GovernanceToken.tsol, 319
+	.loc ../contracts/Dao/GovernanceToken.tsol, 322
 	PUSH S3
 	INDEX 6
 	SETINDEX 13
-	.loc ../contracts/Dao/GovernanceToken.tsol, 320
+	.loc ../contracts/Dao/GovernanceToken.tsol, 323
 	PUSH S3
 	INDEX 4
 	SETINDEX 7
-	.loc ../contracts/Dao/GovernanceToken.tsol, 321
+	.loc ../contracts/Dao/GovernanceToken.tsol, 324
 	PUSH S3
 	INDEX 7
 	SETINDEX 14
-	.loc ../contracts/Dao/GovernanceToken.tsol, 322
+	.loc ../contracts/Dao/GovernanceToken.tsol, 325
 	PUSH S3
 	INDEX 8
 	SETINDEX 2
-	.loc ../contracts/Dao/GovernanceToken.tsol, 324
+	.loc ../contracts/Dao/GovernanceToken.tsol, 327
 	DUP
 	INDEX 7
 	EQINT 2
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 325
+		.loc ../contracts/Dao/GovernanceToken.tsol, 328
 		PUSHINT 1
 		SETINDEX 8
 	}
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 327
+		.loc ../contracts/Dao/GovernanceToken.tsol, 330
 		GETGLOB 15
 		INC
 		SETGLOB 15
 	}
 	IFELSE
-	.loc ../contracts/Dao/GovernanceToken.tsol, 329
+	.loc ../contracts/Dao/GovernanceToken.tsol, 332
 	DUP
 	INDEX 7
 	PUSHCONT {
@@ -847,7 +862,7 @@ PUSHCONT {
 		INDEX 7
 		EQINT 1
 		PUSHCONT {
-			.loc ../contracts/Dao/GovernanceToken.tsol, 335
+			.loc ../contracts/Dao/GovernanceToken.tsol, 338
 			PUSH S2
 			GTINT 0
 			THROWIFNOT 300
@@ -861,7 +876,7 @@ PUSHCONT {
 			EQINT 5
 			OR
 			PUSHCONT {
-				.loc ../contracts/Dao/GovernanceToken.tsol, 340
+				.loc ../contracts/Dao/GovernanceToken.tsol, 343
 				OVER
 				FIRST
 				GTINT 0
@@ -875,7 +890,7 @@ PUSHCONT {
 				}
 				IFNOT
 				THROWIFNOT 65
-				.loc ../contracts/Dao/GovernanceToken.tsol, 344
+				.loc ../contracts/Dao/GovernanceToken.tsol, 347
 				PUSHINT 1
 				SETINDEX 8
 				.loc ../contracts/Dao/GovernanceToken.tsol, 0
@@ -885,14 +900,14 @@ PUSHCONT {
 		IFELSE
 	}
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 330
+		.loc ../contracts/Dao/GovernanceToken.tsol, 333
 		OVER
 		FIRST
 		GTINT 0
 		THROWIFNOT 65
 	}
 	IFELSE
-	.loc ../contracts/Dao/GovernanceToken.tsol, 346
+	.loc ../contracts/Dao/GovernanceToken.tsol, 349
 	GETGLOB 12
 	OVER
 	CALLREF {
@@ -951,7 +966,7 @@ PUSHCONT {
 	DICTUSETREF
 	PAIR
 	SETGLOB 12
-	.loc ../contracts/Dao/GovernanceToken.tsol, 347
+	.loc ../contracts/Dao/GovernanceToken.tsol, 350
 	PUSH S4
 	GETGLOB 17
 	DUP2
@@ -989,7 +1004,7 @@ PUSHCONT {
 	PUSHINT 267
 	DICTSETB
 	SETGLOB 17
-	.loc ../contracts/Dao/GovernanceToken.tsol, 349
+	.loc ../contracts/Dao/GovernanceToken.tsol, 352
 	PUSH S3
 	INDEX 7
 	PUSH S4
@@ -1014,7 +1029,7 @@ PUSHCONT {
 	ENDC
 	PUSHINT 0
 	SENDRAWMSG
-	.loc ../contracts/Dao/GovernanceToken.tsol, 351
+	.loc ../contracts/Dao/GovernanceToken.tsol, 354
 	DROP2
 	OVER
 	GETGLOB 24
@@ -1022,14 +1037,14 @@ PUSHCONT {
 	DICTDEL
 	DROP
 	SETGLOB 24
-	.loc ../contracts/Dao/GovernanceToken.tsol, 352
+	.loc ../contracts/Dao/GovernanceToken.tsol, 355
 	OVER
 	GETGLOB 26
 	PUSHINT 267
 	DICTDEL
 	DROP
 	SETGLOB 26
-	.loc ../contracts/Dao/GovernanceToken.tsol, 353
+	.loc ../contracts/Dao/GovernanceToken.tsol, 356
 	OVER
 	GETGLOB 27
 	PUSHINT 267
@@ -1050,7 +1065,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 360
+.loc ../contracts/Dao/GovernanceToken.tsol, 363
 OVER
 PUSHCONT {
 	LDREF
@@ -1113,8 +1128,353 @@ THROW 0
 CALL $fundingProposal_a5c37f08_internal_macro$
 
 .macro fundingProposal_a5c37f08_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 360
-BLKDROP 4
+.loc ../contracts/Dao/GovernanceToken.tsol, 369
+PUSHREF {
+	.blob xc00000000000000000000000001003b9d30000000000000000000000000000000000000000000000000000000000000001
+}
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/Dao/GovernanceToken.tsol, 370
+PUSH S3
+INDEX 7
+GTINT 0
+THROWIFNOT 300
+.loc ../contracts/Dao/GovernanceToken.tsol, 371
+PUSH S3
+INDEX 7
+PUSHSLICE xc00000000000000000000000001003b9d3
+NEWC
+STSLICE
+STU 256
+ENDC
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/Dao/GovernanceToken.tsol, 372
+DUP
+MULCONST 100
+PUSH S2
+FIRST
+PUSH S3
+SECOND
+ADD
+MUL
+.loc ../contracts/Dao/GovernanceToken.tsol, 375
+PUSH S4
+INDEX 7
+SWAP
+LEQ
+THROWIFNOT 59
+.loc ../contracts/Dao/GovernanceToken.tsol, 376
+OVER
+SECOND
+GTINT 0
+THROWIFNOT 64
+.loc ../contracts/Dao/GovernanceToken.tsol, 377
+PUSHREF {
+	.blob xc00000000000000000000000001003b9d30000000000000000000000000000000000000000000000000000000000000002
+}
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/Dao/GovernanceToken.tsol, 379
+GETGLOB 12
+FIRST
+PUSHINT 0
+PUSHREFSLICE {
+	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+}
+DUP
+PUSHREF {
+}
+DUP
+PUSHINT 0
+BLKPUSH 15, 0
+BLKPUSH 1, 0
+PUSHINT 22
+TUPLEVAR
+SWAP
+SETINDEX 0
+.loc ../contracts/Dao/GovernanceToken.tsol, 380
+PUSH S3
+SETINDEX 1
+.loc ../contracts/Dao/GovernanceToken.tsol, 381
+PUSH S4
+FIRST
+SETINDEX 3
+.loc ../contracts/Dao/GovernanceToken.tsol, 382
+PUSH S4
+SECOND
+SETINDEX 4
+.loc ../contracts/Dao/GovernanceToken.tsol, 383
+PUSH S4
+THIRD
+SETINDEX 5
+.loc ../contracts/Dao/GovernanceToken.tsol, 384
+PUSH S4
+INDEX 3
+SETINDEX 6
+.loc ../contracts/Dao/GovernanceToken.tsol, 385
+PUSH S4
+INDEX 5
+SETINDEX 11
+.loc ../contracts/Dao/GovernanceToken.tsol, 386
+PUSH S4
+INDEX 6
+SETINDEX 13
+.loc ../contracts/Dao/GovernanceToken.tsol, 387
+PUSH S4
+INDEX 4
+SETINDEX 7
+.loc ../contracts/Dao/GovernanceToken.tsol, 388
+PUSH S4
+INDEX 7
+SETINDEX 14
+.loc ../contracts/Dao/GovernanceToken.tsol, 389
+PUSH S4
+INDEX 8
+SETINDEX 2
+.loc ../contracts/Dao/GovernanceToken.tsol, 390
+PUSHREF {
+	.blob xc00000000000000000000000001003b9d30000000000000000000000000000000000000000000000000000000000000003
+}
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/Dao/GovernanceToken.tsol, 391
+DUP
+INDEX 7
+EQINT 2
+PUSHCONT {
+	.loc ../contracts/Dao/GovernanceToken.tsol, 392
+	PUSHINT 1
+	SETINDEX 8
+}
+PUSHCONT {
+	.loc ../contracts/Dao/GovernanceToken.tsol, 394
+	GETGLOB 15
+	INC
+	SETGLOB 15
+}
+IFELSE
+.loc ../contracts/Dao/GovernanceToken.tsol, 396
+DUP
+INDEX 7
+PUSHCONT {
+	DUP
+	INDEX 7
+	EQINT 1
+	PUSHCONT {
+		.loc ../contracts/Dao/GovernanceToken.tsol, 402
+		OVER
+		GTINT 0
+		THROWIFNOT 300
+	}
+	PUSHCONT {
+		DUP
+		INDEX 7
+		EQINT 4
+		OVER
+		INDEX 7
+		EQINT 5
+		OR
+		PUSHCONT {
+			.loc ../contracts/Dao/GovernanceToken.tsol, 407
+			PUSH S2
+			FIRST
+			GTINT 0
+			DUP
+			PUSHCONT {
+				DROP
+				GETGLOB 9
+				CALLREF {
+					CALL $isComplianceMember_873c3a01_internal_macro$
+				}
+			}
+			IFNOT
+			THROWIFNOT 67
+			.loc ../contracts/Dao/GovernanceToken.tsol, 411
+			PUSHINT 1
+			SETINDEX 8
+			.loc ../contracts/Dao/GovernanceToken.tsol, 0
+		}
+		IF
+	}
+	IFELSE
+}
+PUSHCONT {
+	.loc ../contracts/Dao/GovernanceToken.tsol, 397
+	PUSH S2
+	FIRST
+	GTINT 0
+	THROWIFNOT 65
+}
+IFELSE
+.loc ../contracts/Dao/GovernanceToken.tsol, 413
+PUSHREF {
+	.blob xc00000000000000000000000001003b9d30000000000000000000000000000000000000000000000000000000000000004
+}
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/Dao/GovernanceToken.tsol, 414
+GETGLOB 12
+OVER
+CALLREF {
+	PUSHINT 22
+	UNTUPLEVAR
+	PUSHINT 22
+	PUSHINT 0
+	REVX
+	NEWC
+	STU 256
+	STSLICE
+	PUSHINT 20
+	ROLLREVX
+	NEWC
+	STSLICE
+	STREF
+	STREF
+	STU 256
+	ROLLREV 16
+	NEWC
+	STU 256
+	STU 8
+	STU 8
+	STU 256
+	STU 256
+	ROLLREV 11
+	NEWC
+	STU 256
+	STU 256
+	STU 256
+	ROLLREV 8
+	NEWC
+	STU 256
+	STU 256
+	STU 256
+	ROLLREV 5
+	NEWC
+	STU 256
+	STU 256
+	STU 256
+	STI 1
+	STI 1
+	STBREFR
+	STBREFR
+	STBREFR
+	STBREFR
+	STBREFR
+}
+ENDC
+SWAP
+UNPAIR
+OVER
+INC
+ROLLREV 3
+PUSHINT 32
+DICTUSETREF
+PAIR
+SETGLOB 12
+.loc ../contracts/Dao/GovernanceToken.tsol, 415
+PUSH S3
+GETGLOB 17
+DUP2
+PUSHINT 267
+DICTGET
+PUSHCONT {
+	LDU 32
+	PLDDICT
+}
+PUSHCONT {
+	PUSHINT 0
+	NEWDICT
+}
+IFELSE
+PAIR
+PUSH S3
+FIRST
+NEWC
+STU 256
+SWAP
+UNPAIR
+OVER
+INC
+ROLLREV 3
+PUSHINT 32
+DICTUSETB
+PAIR
+NEWC
+SWAP
+UNPAIR
+XCHG S2
+STU 32
+STDICT
+ROTREV
+PUSHINT 267
+DICTSETB
+SETGLOB 17
+.loc ../contracts/Dao/GovernanceToken.tsol, 416
+PUSHREF {
+	.blob xc00000000000000000000000001003b9d30000000000000000000000000000000000000000000000000000000000000005
+}
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/Dao/GovernanceToken.tsol, 417
+PUSHINT 38
+GETGLOBVAR
+OVER
+FIRST
+SWAP
+NEWC
+STZERO
+ROTREV
+PUSHPOW2 8
+DICTUSETB
+PUSHINT 38
+SETGLOBVAR
+.loc ../contracts/Dao/GovernanceToken.tsol, 419
+PUSH S4
+INDEX 7
+ROLL 5
+INDEX 4
+PUSH S5
+ROLL 3
+FIRST
+PUSHSLICE xc0000000000000000000000001
+NEWC
+STSLICE
+ROLLREV 4
+NEWC
+STSLICECONST x565ec8c3
+STU 256
+STSLICE
+STU 8
+SWAP
+NEWC
+STU 256
+STBREFR
+STBREFR
+ENDC
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/Dao/GovernanceToken.tsol, 421
+DROP2
+DUP
+GETGLOB 24
+PUSHINT 267
+DICTDEL
+DROP
+SETGLOB 24
+.loc ../contracts/Dao/GovernanceToken.tsol, 422
+DUP
+GETGLOB 26
+PUSHINT 267
+DICTDEL
+DROP
+SETGLOB 26
+.loc ../contracts/Dao/GovernanceToken.tsol, 423
+GETGLOB 27
+PUSHINT 267
+DICTDEL
+DROP
+SETGLOB 27
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 
 .globl	isProposalAgreed_6c487e50_internal
@@ -1122,19 +1482,19 @@ BLKDROP 4
 CALL $isProposalAgreed_6c487e50_internal_macro$
 
 .macro isProposalAgreed_6c487e50_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 365
+.loc ../contracts/Dao/GovernanceToken.tsol, 427
 PUSHINT 0
-.loc ../contracts/Dao/GovernanceToken.tsol, 366
+.loc ../contracts/Dao/GovernanceToken.tsol, 428
 GETGLOB 21
 FIRST
-.loc ../contracts/Dao/GovernanceToken.tsol, 367
+.loc ../contracts/Dao/GovernanceToken.tsol, 429
 PUSHINT 0
 PUSHCONT {
 	PUSH2 S0, S1
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 368
+	.loc ../contracts/Dao/GovernanceToken.tsol, 430
 	DUP
 	GETGLOB 21
 	SECOND
@@ -1160,33 +1520,33 @@ PUSHCONT {
 	}
 	IF
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 369
+		.loc ../contracts/Dao/GovernanceToken.tsol, 431
 		PUSH S2
 		INC
 		POP S3
 		.loc ../contracts/Dao/GovernanceToken.tsol, 0
 	}
 	IF
-	.loc ../contracts/Dao/GovernanceToken.tsol, 367
+	.loc ../contracts/Dao/GovernanceToken.tsol, 429
 	INC
 	.loc ../contracts/Dao/GovernanceToken.tsol, 0
 }
 WHILE
 DROP2
-.loc ../contracts/Dao/GovernanceToken.tsol, 372
+.loc ../contracts/Dao/GovernanceToken.tsol, 434
 DUP
 PUSHCONT {
 	DROP2
 	FALSE
 }
 IFNOTJMP
-.loc ../contracts/Dao/GovernanceToken.tsol, 373
+.loc ../contracts/Dao/GovernanceToken.tsol, 435
 MULCONST 100
-.loc ../contracts/Dao/GovernanceToken.tsol, 374
+.loc ../contracts/Dao/GovernanceToken.tsol, 436
 GETGLOB 21
 FIRST
 DIV
-.loc ../contracts/Dao/GovernanceToken.tsol, 375
+.loc ../contracts/Dao/GovernanceToken.tsol, 437
 GTINT 50
 NIP
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
@@ -1200,7 +1560,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 381
+.loc ../contracts/Dao/GovernanceToken.tsol, 443
 OVER
 PUSHCONT {
 	LDREF
@@ -1248,25 +1608,25 @@ THROW 0
 CALL $voteByComplianer_59ea2b5a_internal_macro$
 
 .macro voteByComplianer_59ea2b5a_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 153
+.loc ../contracts/Dao/GovernanceToken.tsol, 155
 GETGLOB 9
 CALLREF {
 	CALL $isComplianceMember_873c3a01_internal_macro$
 }
 THROWIFNOT 100
-.loc ../contracts/Dao/GovernanceToken.tsol, 385
+.loc ../contracts/Dao/GovernanceToken.tsol, 447
 OVER
 GETGLOB 12
 FIRST
 LESS
 THROWIFNOT 68
-.loc ../contracts/Dao/GovernanceToken.tsol, 386
+.loc ../contracts/Dao/GovernanceToken.tsol, 448
 GETGLOB 9
 CALLREF {
 	CALL $isUserBlacklisted_503b8e81_internal_macro$
 }
 THROWIF 62
-.loc ../contracts/Dao/GovernanceToken.tsol, 388
+.loc ../contracts/Dao/GovernanceToken.tsol, 450
 OVER
 GETGLOB 12
 SECOND
@@ -1322,11 +1682,11 @@ CALLREF {
 	PUSHINT 22
 	TUPLEVAR
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 390
+.loc ../contracts/Dao/GovernanceToken.tsol, 452
 DUP
 INDEX 8
 THROWIF 70
-.loc ../contracts/Dao/GovernanceToken.tsol, 395
+.loc ../contracts/Dao/GovernanceToken.tsol, 457
 SWAP
 GETGLOB 18
 PUSH S2
@@ -1356,20 +1716,20 @@ ROTREV
 PUSHPOW2 8
 DICTUSETB
 SETGLOB 18
-.loc ../contracts/Dao/GovernanceToken.tsol, 397
+.loc ../contracts/Dao/GovernanceToken.tsol, 459
 DUP
 INDEX 5
 BLOCKLT
 LESS
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 398
+	.loc ../contracts/Dao/GovernanceToken.tsol, 460
 	DUP
 	FIRST
 	CALLREF {
 		CALL $isProposalAgreed_6c487e50_internal_macro$
 	}
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 399
+		.loc ../contracts/Dao/GovernanceToken.tsol, 461
 		GETGLOB 12
 		UNPAIR
 		PUXC S3, S-1
@@ -1432,7 +1792,7 @@ PUSHCONT {
 		PUSHINT 1
 	}
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 401
+		.loc ../contracts/Dao/GovernanceToken.tsol, 463
 		GETGLOB 12
 		UNPAIR
 		PUXC S3, S-1
@@ -1548,7 +1908,7 @@ PUSHCONT {
 	DICTUSETREF
 	PAIR
 	SETGLOB 12
-	.loc ../contracts/Dao/GovernanceToken.tsol, 403
+	.loc ../contracts/Dao/GovernanceToken.tsol, 465
 	GETGLOB 15
 	DEC
 	UFITS 256
@@ -1556,7 +1916,7 @@ PUSHCONT {
 	.loc ../contracts/Dao/GovernanceToken.tsol, 0
 }
 IF
-.loc ../contracts/Dao/GovernanceToken.tsol, 406
+.loc ../contracts/Dao/GovernanceToken.tsol, 468
 DROP2
 TRUE
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
@@ -1570,7 +1930,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 423
+.loc ../contracts/Dao/GovernanceToken.tsol, 485
 OVER
 PUSHCONT {
 	LDREF
@@ -1592,13 +1952,13 @@ CALLREF {
 THROW 0
 
 .macro voteByUser_aab33ad2_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 424
+.loc ../contracts/Dao/GovernanceToken.tsol, 486
 OVER
 GETGLOB 12
 FIRST
 LESS
 THROWIFNOT 83
-.loc ../contracts/Dao/GovernanceToken.tsol, 425
+.loc ../contracts/Dao/GovernanceToken.tsol, 487
 OVER
 GETGLOB 12
 SECOND
@@ -1654,7 +2014,7 @@ CALLREF {
 	PUSHINT 22
 	TUPLEVAR
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 427
+.loc ../contracts/Dao/GovernanceToken.tsol, 489
 GETGLOB 9
 PUSH S3
 GETGLOB 19
@@ -1675,17 +2035,17 @@ PUSHCONT {
 }
 IF
 THROWIF 84
-.loc ../contracts/Dao/GovernanceToken.tsol, 428
+.loc ../contracts/Dao/GovernanceToken.tsol, 490
 INDEX 8
 EQINT 1
 THROWIFNOT 85
-.loc ../contracts/Dao/GovernanceToken.tsol, 430
+.loc ../contracts/Dao/GovernanceToken.tsol, 492
 GETGLOB 9
 CALLREF {
 	CALL $isUserBlacklisted_503b8e81_internal_macro$
 }
 THROWIF 87
-.loc ../contracts/Dao/GovernanceToken.tsol, 432
+.loc ../contracts/Dao/GovernanceToken.tsol, 494
 PAIR
 GETGLOB 9
 GETGLOB 31
@@ -1701,11 +2061,11 @@ ROTREV
 PUSHINT 267
 DICTSETB
 SETGLOB 31
-.loc ../contracts/Dao/GovernanceToken.tsol, 433
+.loc ../contracts/Dao/GovernanceToken.tsol, 495
 PUSHINT 1000000000
 PUSHINT 0
 RAWRESERVE
-.loc ../contracts/Dao/GovernanceToken.tsol, 435
+.loc ../contracts/Dao/GovernanceToken.tsol, 497
 GETGLOB 13
 NEWC
 STSLICECONST x62_
@@ -1721,7 +2081,7 @@ STBREFR
 ENDC
 PUSHINT 1
 SENDRAWMSG
-.loc ../contracts/Dao/GovernanceToken.tsol, 441
+.loc ../contracts/Dao/GovernanceToken.tsol, 503
 GETGLOB 13
 NEWC
 STSLICECONST x62_
@@ -1748,7 +2108,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 457
+.loc ../contracts/Dao/GovernanceToken.tsol, 519
 OVER
 PUSHCONT {
 	LDREF
@@ -1770,7 +2130,7 @@ CALLREF {
 THROW 0
 
 .macro onTreasuryVoteBalance_581db409_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 458
+.loc ../contracts/Dao/GovernanceToken.tsol, 520
 GETGLOB 25
 PUSHINT 2
 MAX
@@ -1778,7 +2138,7 @@ GETGLOB 9
 GETGLOB 13
 SDEQ
 THROWANYIFNOT
-.loc ../contracts/Dao/GovernanceToken.tsol, 459
+.loc ../contracts/Dao/GovernanceToken.tsol, 521
 GETGLOB 29
 ROT
 NEWC
@@ -1798,7 +2158,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 462
+.loc ../contracts/Dao/GovernanceToken.tsol, 524
 OVER
 PUSHCONT {
 	LDREF
@@ -1828,7 +2188,7 @@ CALLREF {
 THROW 0
 
 .macro onNFTVoteBalance_b864d5a2_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 466
+.loc ../contracts/Dao/GovernanceToken.tsol, 528
 GETGLOB 25
 PUSHINT 2
 MAX
@@ -1836,7 +2196,7 @@ GETGLOB 9
 GETGLOB 13
 SDEQ
 THROWANYIFNOT
-.loc ../contracts/Dao/GovernanceToken.tsol, 467
+.loc ../contracts/Dao/GovernanceToken.tsol, 529
 TUCK
 GETGLOB 30
 ROT
@@ -1853,7 +2213,7 @@ ROTREV
 PUSHINT 267
 DICTSETREF
 SETGLOB 30
-.loc ../contracts/Dao/GovernanceToken.tsol, 468
+.loc ../contracts/Dao/GovernanceToken.tsol, 530
 CALLREF {
 	CALL $_finalizeVote_3441cdac_internal_macro$
 }
@@ -1864,7 +2224,7 @@ CALLREF {
 CALL $_finalizeVote_3441cdac_internal_macro$
 
 .macro _finalizeVote_3441cdac_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 472
+.loc ../contracts/Dao/GovernanceToken.tsol, 534
 DUP
 GETGLOB 31
 PUSHINT 267
@@ -1881,7 +2241,7 @@ IFREFELSEREF
 	DUP
 	PAIR
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 473
+.loc ../contracts/Dao/GovernanceToken.tsol, 535
 DUP
 FIRST
 GETGLOB 12
@@ -1938,7 +2298,7 @@ CALLREF {
 	PUSHINT 22
 	TUPLEVAR
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 475
+.loc ../contracts/Dao/GovernanceToken.tsol, 537
 PUSH2 S2, S2
 GETGLOB 29
 PUSHINT 267
@@ -1971,7 +2331,7 @@ IFELSE
 CALLREF {
 	CALL $_calculateVotingPower_5d83924a_internal_macro$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 481
+.loc ../contracts/Dao/GovernanceToken.tsol, 543
 OVER
 INDEX 7
 EQINT 0
@@ -1984,7 +2344,7 @@ EQINT 5
 OR
 OR
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 486
+	.loc ../contracts/Dao/GovernanceToken.tsol, 548
 	PUSH S3
 	GETGLOB 30
 	PUSHINT 267
@@ -2008,7 +2368,7 @@ PUSHCONT {
 	FIRST
 	GTINT 0
 	THROWIFNOT 88
-	.loc ../contracts/Dao/GovernanceToken.tsol, 487
+	.loc ../contracts/Dao/GovernanceToken.tsol, 549
 	PUSH S2
 	FIRST
 	BLKPUSH 2, 4
@@ -2023,7 +2383,7 @@ PUSHCONT {
 	INDEX 7
 	EQINT 1
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 489
+		.loc ../contracts/Dao/GovernanceToken.tsol, 551
 		PUSH S3
 		GETGLOB 29
 		PUSHINT 267
@@ -2035,7 +2395,7 @@ PUSHCONT {
 		IF
 		GTINT 0
 		THROWIFNOT 89
-		.loc ../contracts/Dao/GovernanceToken.tsol, 490
+		.loc ../contracts/Dao/GovernanceToken.tsol, 552
 		PUSH S2
 		FIRST
 		BLKPUSH 2, 4
@@ -2059,7 +2419,7 @@ PUSHCONT {
 		}
 		IF
 		PUSHCONT {
-			.loc ../contracts/Dao/GovernanceToken.tsol, 494
+			.loc ../contracts/Dao/GovernanceToken.tsol, 556
 			PUSH S2
 			FIRST
 			BLKPUSH 2, 4
@@ -2083,7 +2443,7 @@ PUSHCONT {
 			}
 			IF
 			PUSHCONT {
-				.loc ../contracts/Dao/GovernanceToken.tsol, 498
+				.loc ../contracts/Dao/GovernanceToken.tsol, 560
 				PUSH S2
 				FIRST
 				BLKPUSH 2, 4
@@ -2101,7 +2461,7 @@ PUSHCONT {
 	IFELSE
 }
 IFELSE
-.loc ../contracts/Dao/GovernanceToken.tsol, 501
+.loc ../contracts/Dao/GovernanceToken.tsol, 563
 DROP
 PUSH S2
 ROT
@@ -2117,21 +2477,21 @@ STSLICE
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/GovernanceToken.tsol, 504
+.loc ../contracts/Dao/GovernanceToken.tsol, 566
 DUP
 GETGLOB 31
 PUSHINT 267
 DICTDEL
 DROP
 SETGLOB 31
-.loc ../contracts/Dao/GovernanceToken.tsol, 505
+.loc ../contracts/Dao/GovernanceToken.tsol, 567
 DUP
 GETGLOB 29
 PUSHINT 267
 DICTDEL
 DROP
 SETGLOB 29
-.loc ../contracts/Dao/GovernanceToken.tsol, 506
+.loc ../contracts/Dao/GovernanceToken.tsol, 568
 GETGLOB 30
 PUSHINT 267
 DICTDEL
@@ -2144,10 +2504,10 @@ SETGLOB 30
 CALL $_applyVote_b6db2b65_internal_macro$
 
 .macro _applyVote_b6db2b65_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 522
+.loc ../contracts/Dao/GovernanceToken.tsol, 584
 OVER
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 523
+	.loc ../contracts/Dao/GovernanceToken.tsol, 585
 	DUP
 	GETGLOB 12
 	UNPAIR
@@ -2265,7 +2625,7 @@ PUSHCONT {
 	DICTUSETREF
 	PAIR
 	SETGLOB 12
-	.loc ../contracts/Dao/GovernanceToken.tsol, 524
+	.loc ../contracts/Dao/GovernanceToken.tsol, 586
 	DUP
 	FITS 256
 	PUSH S4
@@ -2282,7 +2642,7 @@ PUSHCONT {
 	IFELSE
 }
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 526
+	.loc ../contracts/Dao/GovernanceToken.tsol, 588
 	DUP
 	GETGLOB 12
 	UNPAIR
@@ -2400,7 +2760,7 @@ PUSHCONT {
 	DICTUSETREF
 	PAIR
 	SETGLOB 12
-	.loc ../contracts/Dao/GovernanceToken.tsol, 527
+	.loc ../contracts/Dao/GovernanceToken.tsol, 589
 	DUP
 	FITS 256
 	NEGATE
@@ -2431,7 +2791,7 @@ ROTREV
 PUSHPOW2 8
 DICTUSETB
 SETGLOB 19
-.loc ../contracts/Dao/GovernanceToken.tsol, 529
+.loc ../contracts/Dao/GovernanceToken.tsol, 591
 GETGLOB 12
 UNPAIR
 PUXC S5, S-1
@@ -2547,7 +2907,7 @@ PUSHINT 32
 DICTUSETREF
 PAIR
 SETGLOB 12
-.loc ../contracts/Dao/GovernanceToken.tsol, 531
+.loc ../contracts/Dao/GovernanceToken.tsol, 593
 REVERSE 4, 0
 PUSHSLICE xc0000000000000000000000001
 NEWC
@@ -2577,7 +2937,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 544
+.loc ../contracts/Dao/GovernanceToken.tsol, 606
 OVER
 PUSHCONT {
 	LDREF
@@ -2598,7 +2958,7 @@ CALLREF {
 THROW 0
 
 .macro withdrawVote_87a2301e_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 545
+.loc ../contracts/Dao/GovernanceToken.tsol, 607
 GETGLOB 9
 OVER
 GETGLOB 19
@@ -2619,13 +2979,13 @@ PUSHCONT {
 }
 IF
 THROWIFNOT 90
-.loc ../contracts/Dao/GovernanceToken.tsol, 546
+.loc ../contracts/Dao/GovernanceToken.tsol, 608
 DUP
 GETGLOB 12
 FIRST
 LESS
 THROWIFNOT 83
-.loc ../contracts/Dao/GovernanceToken.tsol, 548
+.loc ../contracts/Dao/GovernanceToken.tsol, 610
 DUP
 GETGLOB 12
 SECOND
@@ -2681,7 +3041,7 @@ CALLREF {
 	PUSHINT 22
 	TUPLEVAR
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 549
+.loc ../contracts/Dao/GovernanceToken.tsol, 611
 GETGLOB 9
 PUSH S2
 GETGLOB 19
@@ -2701,7 +3061,7 @@ PUSHCONT {
 	PLDI 256
 }
 IF
-.loc ../contracts/Dao/GovernanceToken.tsol, 550
+.loc ../contracts/Dao/GovernanceToken.tsol, 612
 SWAP
 INDEX 8
 EQINT 1
@@ -2709,10 +3069,10 @@ OVER
 NEQINT 0
 AND
 THROWIFNOT 86
-.loc ../contracts/Dao/GovernanceToken.tsol, 552
+.loc ../contracts/Dao/GovernanceToken.tsol, 614
 DUP
 GTINT 0
-.loc ../contracts/Dao/GovernanceToken.tsol, 555
+.loc ../contracts/Dao/GovernanceToken.tsol, 617
 SWAP
 TRIPLE
 GETGLOB 9
@@ -2732,7 +3092,7 @@ PUSHINT 267
 DICTSETB
 PUSHINT 32
 SETGLOBVAR
-.loc ../contracts/Dao/GovernanceToken.tsol, 558
+.loc ../contracts/Dao/GovernanceToken.tsol, 620
 GETGLOB 13
 NEWC
 STSLICECONST x62_
@@ -2748,7 +3108,7 @@ STBREFR
 ENDC
 PUSHINT 1
 SENDRAWMSG
-.loc ../contracts/Dao/GovernanceToken.tsol, 564
+.loc ../contracts/Dao/GovernanceToken.tsol, 626
 GETGLOB 13
 NEWC
 STSLICECONST x62_
@@ -2775,7 +3135,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 571
+.loc ../contracts/Dao/GovernanceToken.tsol, 633
 OVER
 PUSHCONT {
 	LDREF
@@ -2797,7 +3157,7 @@ CALLREF {
 THROW 0
 
 .macro onTreasuryWithdrawBalance_ae2f761a_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 572
+.loc ../contracts/Dao/GovernanceToken.tsol, 634
 GETGLOB 25
 PUSHINT 2
 MAX
@@ -2805,7 +3165,7 @@ GETGLOB 9
 GETGLOB 13
 SDEQ
 THROWANYIFNOT
-.loc ../contracts/Dao/GovernanceToken.tsol, 573
+.loc ../contracts/Dao/GovernanceToken.tsol, 635
 PUSHINT 33
 GETGLOBVAR
 ROT
@@ -2827,7 +3187,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 576
+.loc ../contracts/Dao/GovernanceToken.tsol, 638
 OVER
 PUSHCONT {
 	LDREF
@@ -2857,7 +3217,7 @@ CALLREF {
 THROW 0
 
 .macro onNFTWithdrawBalance_17507c13_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 580
+.loc ../contracts/Dao/GovernanceToken.tsol, 642
 GETGLOB 25
 PUSHINT 2
 MAX
@@ -2865,7 +3225,7 @@ GETGLOB 9
 GETGLOB 13
 SDEQ
 THROWANYIFNOT
-.loc ../contracts/Dao/GovernanceToken.tsol, 581
+.loc ../contracts/Dao/GovernanceToken.tsol, 643
 TUCK
 PUSHINT 34
 GETGLOBVAR
@@ -2884,7 +3244,7 @@ PUSHINT 267
 DICTSETREF
 PUSHINT 34
 SETGLOBVAR
-.loc ../contracts/Dao/GovernanceToken.tsol, 583
+.loc ../contracts/Dao/GovernanceToken.tsol, 645
 CALLREF {
 	CALL $_finalizeWithdraw_c6c0252b_internal_macro$
 }
@@ -2895,7 +3255,7 @@ CALLREF {
 CALL $_finalizeWithdraw_c6c0252b_internal_macro$
 
 .macro _finalizeWithdraw_c6c0252b_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 587
+.loc ../contracts/Dao/GovernanceToken.tsol, 649
 DUP
 PUSHINT 32
 GETGLOBVAR
@@ -2914,7 +3274,7 @@ IFREFELSEREF
 	BLKPUSH 2, 0
 	TRIPLE
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 588
+.loc ../contracts/Dao/GovernanceToken.tsol, 650
 DUP
 FIRST
 GETGLOB 12
@@ -2971,7 +3331,7 @@ CALLREF {
 	PUSHINT 22
 	TUPLEVAR
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 590
+.loc ../contracts/Dao/GovernanceToken.tsol, 652
 DUP
 INDEX 7
 EQINT 0
@@ -2984,7 +3344,7 @@ EQINT 5
 OR
 OR
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 595
+	.loc ../contracts/Dao/GovernanceToken.tsol, 657
 	PUSH S2
 	PUSHINT 34
 	GETGLOBVAR
@@ -3009,7 +3369,7 @@ PUSHCONT {
 	FIRST
 	GTINT 0
 	THROWIFNOT 91
-	.loc ../contracts/Dao/GovernanceToken.tsol, 599
+	.loc ../contracts/Dao/GovernanceToken.tsol, 661
 	OVER
 	FIRST
 	OVER2
@@ -3025,7 +3385,7 @@ PUSHCONT {
 	INDEX 7
 	EQINT 1
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 601
+		.loc ../contracts/Dao/GovernanceToken.tsol, 663
 		PUSH S2
 		PUSHINT 33
 		GETGLOBVAR
@@ -3038,7 +3398,7 @@ PUSHCONT {
 		IF
 		GTINT 0
 		THROWIFNOT 92
-		.loc ../contracts/Dao/GovernanceToken.tsol, 605
+		.loc ../contracts/Dao/GovernanceToken.tsol, 667
 		OVER
 		FIRST
 		OVER2
@@ -3063,7 +3423,7 @@ PUSHCONT {
 		}
 		IF
 		PUSHCONT {
-			.loc ../contracts/Dao/GovernanceToken.tsol, 609
+			.loc ../contracts/Dao/GovernanceToken.tsol, 671
 			OVER
 			FIRST
 			OVER2
@@ -3088,7 +3448,7 @@ PUSHCONT {
 			}
 			IF
 			PUSHCONT {
-				.loc ../contracts/Dao/GovernanceToken.tsol, 613
+				.loc ../contracts/Dao/GovernanceToken.tsol, 675
 				OVER
 				FIRST
 				OVER2
@@ -3107,7 +3467,7 @@ PUSHCONT {
 	IFELSE
 }
 IFELSE
-.loc ../contracts/Dao/GovernanceToken.tsol, 616
+.loc ../contracts/Dao/GovernanceToken.tsol, 678
 OVER
 THIRD
 OVER2
@@ -3131,7 +3491,7 @@ STBREFR
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/GovernanceToken.tsol, 619
+.loc ../contracts/Dao/GovernanceToken.tsol, 681
 GETGLOB 19
 SWAP
 FIRST
@@ -3156,7 +3516,7 @@ ROTREV
 PUSHPOW2 8
 DICTUSETB
 SETGLOB 19
-.loc ../contracts/Dao/GovernanceToken.tsol, 620
+.loc ../contracts/Dao/GovernanceToken.tsol, 682
 DUP
 PUSHINT 32
 GETGLOBVAR
@@ -3165,7 +3525,7 @@ DICTDEL
 DROP
 PUSHINT 32
 SETGLOBVAR
-.loc ../contracts/Dao/GovernanceToken.tsol, 621
+.loc ../contracts/Dao/GovernanceToken.tsol, 683
 DUP
 PUSHINT 33
 GETGLOBVAR
@@ -3174,7 +3534,7 @@ DICTDEL
 DROP
 PUSHINT 33
 SETGLOBVAR
-.loc ../contracts/Dao/GovernanceToken.tsol, 622
+.loc ../contracts/Dao/GovernanceToken.tsol, 684
 PUSHINT 34
 GETGLOBVAR
 PUSHINT 267
@@ -3189,7 +3549,7 @@ SETGLOBVAR
 CALL $_applyWithdraw_d018258f_internal_macro$
 
 .macro _applyWithdraw_d018258f_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 631
+.loc ../contracts/Dao/GovernanceToken.tsol, 693
 PUSH S3
 GETGLOB 12
 SECOND
@@ -3248,10 +3608,10 @@ CALLREF {
 INDEX 7
 EQINT 2
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 632
+	.loc ../contracts/Dao/GovernanceToken.tsol, 694
 	OVER
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 632
+		.loc ../contracts/Dao/GovernanceToken.tsol, 694
 		GETGLOB 12
 		UNPAIR
 		PUXC S5, S-1
@@ -3318,7 +3678,7 @@ PUSHCONT {
 		SETINDEX 9
 	}
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 633
+		.loc ../contracts/Dao/GovernanceToken.tsol, 695
 		GETGLOB 12
 		UNPAIR
 		PUXC S5, S-1
@@ -3387,10 +3747,10 @@ PUSHCONT {
 	IFELSE
 }
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 635
+	.loc ../contracts/Dao/GovernanceToken.tsol, 697
 	OVER
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 635
+		.loc ../contracts/Dao/GovernanceToken.tsol, 697
 		DUP
 		UFITS 256
 		GETGLOB 12
@@ -3460,7 +3820,7 @@ PUSHCONT {
 		SETINDEX 9
 	}
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 637
+		.loc ../contracts/Dao/GovernanceToken.tsol, 699
 		PUSH S3
 		GETGLOB 12
 		SECOND
@@ -3521,7 +3881,7 @@ PUSHCONT {
 		OVER
 		ADD
 		FITS 256
-		.loc ../contracts/Dao/GovernanceToken.tsol, 638
+		.loc ../contracts/Dao/GovernanceToken.tsol, 700
 		UFITS 256
 		GETGLOB 12
 		UNPAIR
@@ -3640,7 +4000,7 @@ PUSHINT 32
 DICTUSETREF
 PAIR
 SETGLOB 12
-.loc ../contracts/Dao/GovernanceToken.tsol, 642
+.loc ../contracts/Dao/GovernanceToken.tsol, 704
 BLKDROP 3
 GETGLOB 12
 UNPAIR
@@ -3764,7 +4124,7 @@ SETGLOB 12
 DROP
 GETGLOB 6
 THROWIFNOT 76
-.loc ../contracts/Dao/GovernanceToken.tsol, 652
+.loc ../contracts/Dao/GovernanceToken.tsol, 714
 OVER
 PUSHCONT {
 	LDREF
@@ -3820,10 +4180,10 @@ THROW 0
 CALL $_calculateVotingPower_5d83924a_internal_macro$
 
 .macro _calculateVotingPower_5d83924a_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 657
+.loc ../contracts/Dao/GovernanceToken.tsol, 719
 DUP
 FIRST
-.loc ../contracts/Dao/GovernanceToken.tsol, 658
+.loc ../contracts/Dao/GovernanceToken.tsol, 720
 DUP
 GTINT 11
 PUSHCONT {
@@ -3833,15 +4193,15 @@ PUSHCONT {
 	DUP
 }
 IFELSE
-.loc ../contracts/Dao/GovernanceToken.tsol, 660
+.loc ../contracts/Dao/GovernanceToken.tsol, 722
 ROLL 3
 PUSHINT 1000000000
 DIV
-.loc ../contracts/Dao/GovernanceToken.tsol, 661
+.loc ../contracts/Dao/GovernanceToken.tsol, 723
 DUP
 GTINT 9
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 662
+	.loc ../contracts/Dao/GovernanceToken.tsol, 724
 	DUP
 	PUSHINT 10
 	DIV
@@ -3851,14 +4211,14 @@ PUSHCONT {
 	.loc ../contracts/Dao/GovernanceToken.tsol, 0
 }
 IF
-.loc ../contracts/Dao/GovernanceToken.tsol, 665
+.loc ../contracts/Dao/GovernanceToken.tsol, 727
 DROP
 PUSHINT 1
 ROLL 3
 SECOND
 ADD
 MUL
-.loc ../contracts/Dao/GovernanceToken.tsol, 666
+.loc ../contracts/Dao/GovernanceToken.tsol, 728
 BLKDROP2 2, 1
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 
@@ -3871,7 +4231,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 669
+.loc ../contracts/Dao/GovernanceToken.tsol, 731
 OVER
 PUSHCONT {
 	LDREF
@@ -3896,19 +4256,19 @@ THROW 0
 CALL $makeItLive_f86dfbf2_internal_macro$
 
 .macro makeItLive_f86dfbf2_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 153
+.loc ../contracts/Dao/GovernanceToken.tsol, 155
 GETGLOB 9
 CALLREF {
 	CALL $isComplianceMember_873c3a01_internal_macro$
 }
 THROWIFNOT 100
-.loc ../contracts/Dao/GovernanceToken.tsol, 670
+.loc ../contracts/Dao/GovernanceToken.tsol, 732
 DUP
 GETGLOB 12
 FIRST
 LESS
 THROWIFNOT 68
-.loc ../contracts/Dao/GovernanceToken.tsol, 672
+.loc ../contracts/Dao/GovernanceToken.tsol, 734
 DUP
 GETGLOB 12
 SECOND
@@ -3964,19 +4324,19 @@ CALLREF {
 	PUSHINT 22
 	TUPLEVAR
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 674
+.loc ../contracts/Dao/GovernanceToken.tsol, 736
 DUP
 INDEX 5
 BLOCKLT
 LESS
 THROWIFNOT 71
-.loc ../contracts/Dao/GovernanceToken.tsol, 676
+.loc ../contracts/Dao/GovernanceToken.tsol, 738
 FIRST
 CALLREF {
 	CALL $isProposalAgreed_6c487e50_internal_macro$
 }
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 677
+	.loc ../contracts/Dao/GovernanceToken.tsol, 739
 	GETGLOB 12
 	UNPAIR
 	PUXC S2, S-1
@@ -4039,7 +4399,7 @@ PUSHCONT {
 	PUSHINT 1
 }
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 679
+	.loc ../contracts/Dao/GovernanceToken.tsol, 741
 	GETGLOB 12
 	UNPAIR
 	PUXC S2, S-1
@@ -4155,7 +4515,7 @@ PUSHINT 32
 DICTUSETREF
 PAIR
 SETGLOB 12
-.loc ../contracts/Dao/GovernanceToken.tsol, 681
+.loc ../contracts/Dao/GovernanceToken.tsol, 743
 DROP
 GETGLOB 15
 DEC
@@ -4172,7 +4532,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 688
+.loc ../contracts/Dao/GovernanceToken.tsol, 750
 OVER
 PUSHCONT {
 	LDREF
@@ -4193,21 +4553,21 @@ CALLREF {
 THROW 0
 
 .macro executeProposal_0d61b519_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 153
+.loc ../contracts/Dao/GovernanceToken.tsol, 155
 GETGLOB 9
 CALLREF {
 	CALL $isComplianceMember_873c3a01_internal_macro$
 }
 THROWIFNOT 100
-.loc ../contracts/Dao/GovernanceToken.tsol, 154
+.loc ../contracts/Dao/GovernanceToken.tsol, 156
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 689
+	.loc ../contracts/Dao/GovernanceToken.tsol, 751
 	DUP
 	GETGLOB 12
 	FIRST
 	LESS
 	THROWIFNOT 68
-	.loc ../contracts/Dao/GovernanceToken.tsol, 690
+	.loc ../contracts/Dao/GovernanceToken.tsol, 752
 	DUP
 	GETGLOB 12
 	SECOND
@@ -4263,24 +4623,24 @@ PUSHCONT {
 		PUSHINT 22
 		TUPLEVAR
 	}
-	.loc ../contracts/Dao/GovernanceToken.tsol, 691
+	.loc ../contracts/Dao/GovernanceToken.tsol, 753
 	DUP
 	INDEX 9
 	OVER
 	INDEX 10
 	ADD
-	.loc ../contracts/Dao/GovernanceToken.tsol, 693
+	.loc ../contracts/Dao/GovernanceToken.tsol, 755
 	OVER
 	INDEX 14
 	GTINT 0
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 694
+		.loc ../contracts/Dao/GovernanceToken.tsol, 756
 		OVER
 		PUSHINT 18
 		INDEXVAR
 		GTINT 0
 		THROWIFNOT 73
-		.loc ../contracts/Dao/GovernanceToken.tsol, 695
+		.loc ../contracts/Dao/GovernanceToken.tsol, 757
 		OVER
 		PUSHINT 19
 		INDEXVAR
@@ -4289,14 +4649,14 @@ PUSHCONT {
 		.loc ../contracts/Dao/GovernanceToken.tsol, 0
 	}
 	IF
-	.loc ../contracts/Dao/GovernanceToken.tsol, 697
+	.loc ../contracts/Dao/GovernanceToken.tsol, 759
 	PUSHINT 0
-	.loc ../contracts/Dao/GovernanceToken.tsol, 698
+	.loc ../contracts/Dao/GovernanceToken.tsol, 760
 	PUSH S2
 	INDEX 9
 	GTINT 0
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 699
+		.loc ../contracts/Dao/GovernanceToken.tsol, 761
 		PUSH S2
 		INDEX 9
 		MULCONST 100
@@ -4305,12 +4665,12 @@ PUSHCONT {
 		NIP
 	}
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 702
+		.loc ../contracts/Dao/GovernanceToken.tsol, 764
 		DROP
 		PUSHINT 0
 	}
 	IFELSE
-	.loc ../contracts/Dao/GovernanceToken.tsol, 705
+	.loc ../contracts/Dao/GovernanceToken.tsol, 767
 	PUSH2 S0, S2
 	INDEX 13
 	GEQ
@@ -4320,14 +4680,14 @@ PUSHCONT {
 	INDEX 11
 	GEQ
 	AND
-	.loc ../contracts/Dao/GovernanceToken.tsol, 708
+	.loc ../contracts/Dao/GovernanceToken.tsol, 770
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 709
+		.loc ../contracts/Dao/GovernanceToken.tsol, 771
 		PUSH S2
 		PUSHINT 3
 		SETINDEX 8
 		POP S3
-		.loc ../contracts/Dao/GovernanceToken.tsol, 710
+		.loc ../contracts/Dao/GovernanceToken.tsol, 772
 		FALSE
 		ROLL 3
 		FIRST
@@ -4340,24 +4700,24 @@ PUSHCONT {
 		ENDC
 		PUSHINT 0
 		SENDRAWMSG
-		.loc ../contracts/Dao/GovernanceToken.tsol, 711
+		.loc ../contracts/Dao/GovernanceToken.tsol, 773
 		DROP2
 		.loc ../contracts/Dao/GovernanceToken.tsol, 0
 	}
 	IFNOTJMP
-	.loc ../contracts/Dao/GovernanceToken.tsol, 714
+	.loc ../contracts/Dao/GovernanceToken.tsol, 776
 	FALSE ; decl return flag
 	PUSH S3
 	INDEX 7
 	EQINT 2
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 715
+		.loc ../contracts/Dao/GovernanceToken.tsol, 777
 		GETGLOB 21
 		FIRST
-		.loc ../contracts/Dao/GovernanceToken.tsol, 716
+		.loc ../contracts/Dao/GovernanceToken.tsol, 778
 		RSHIFT 1
 		INC
-		.loc ../contracts/Dao/GovernanceToken.tsol, 718
+		.loc ../contracts/Dao/GovernanceToken.tsol, 780
 		PUSH S4
 		INDEX 9
 		SWAP
@@ -4371,11 +4731,11 @@ PUSHCONT {
 			}
 		}
 		IF
-		.loc ../contracts/Dao/GovernanceToken.tsol, 720
+		.loc ../contracts/Dao/GovernanceToken.tsol, 782
 		FALSE ; decl return flag
 		SWAP
 		PUSHCONT {
-			.loc ../contracts/Dao/GovernanceToken.tsol, 725
+			.loc ../contracts/Dao/GovernanceToken.tsol, 787
 			GETGLOB 21
 			PUSH S5
 			SECOND
@@ -4390,12 +4750,12 @@ PUSHCONT {
 			SETGLOB 21
 		}
 		PUSHCONT {
-			.loc ../contracts/Dao/GovernanceToken.tsol, 721
+			.loc ../contracts/Dao/GovernanceToken.tsol, 783
 			PUSH S4
 			PUSHINT 3
 			SETINDEX 8
 			POP S5
-			.loc ../contracts/Dao/GovernanceToken.tsol, 722
+			.loc ../contracts/Dao/GovernanceToken.tsol, 784
 			ROT
 			FALSE
 			ROLL 5
@@ -4409,7 +4769,7 @@ PUSHCONT {
 			ENDC
 			PUSHINT 0
 			SENDRAWMSG
-			.loc ../contracts/Dao/GovernanceToken.tsol, 723
+			.loc ../contracts/Dao/GovernanceToken.tsol, 785
 			BLKDROP 4
 			PUSHINT 4
 		}
@@ -4422,13 +4782,13 @@ PUSHCONT {
 	IF
 	.loc ../contracts/Dao/GovernanceToken.tsol, 0
 	IFRET
-	.loc ../contracts/Dao/GovernanceToken.tsol, 729
+	.loc ../contracts/Dao/GovernanceToken.tsol, 791
 	DROP2
 	DUP
 	INDEX 14
 	GTINT 0
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 730
+		.loc ../contracts/Dao/GovernanceToken.tsol, 792
 		GETGLOB 12
 		UNPAIR
 		PUXC S3, S-1
@@ -4544,7 +4904,7 @@ PUSHCONT {
 		PAIR
 		DUP
 		SETGLOB 12
-		.loc ../contracts/Dao/GovernanceToken.tsol, 731
+		.loc ../contracts/Dao/GovernanceToken.tsol, 793
 		UNPAIR
 		PUXC S3, S-1
 		PUSH2 S1, S2
@@ -4661,19 +5021,19 @@ PUSHCONT {
 		.loc ../contracts/Dao/GovernanceToken.tsol, 0
 	}
 	IF
-	.loc ../contracts/Dao/GovernanceToken.tsol, 734
+	.loc ../contracts/Dao/GovernanceToken.tsol, 796
 	DUP
 	INDEX 7
 	EQINT 4
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 735
+		.loc ../contracts/Dao/GovernanceToken.tsol, 797
 		DUP
 		THIRD
 		CALLREF {
 			CALL $isUserBlacklisted_503b8e81_internal_macro$
 		}
 		PUSHCONT {
-			.loc ../contracts/Dao/GovernanceToken.tsol, 736
+			.loc ../contracts/Dao/GovernanceToken.tsol, 798
 			GETGLOB 20
 			OVER
 			THIRD
@@ -4692,12 +5052,12 @@ PUSHCONT {
 		.loc ../contracts/Dao/GovernanceToken.tsol, 0
 	}
 	IF
-	.loc ../contracts/Dao/GovernanceToken.tsol, 740
+	.loc ../contracts/Dao/GovernanceToken.tsol, 802
 	DUP
 	INDEX 7
 	EQINT 5
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 741
+		.loc ../contracts/Dao/GovernanceToken.tsol, 803
 		DUP
 		THIRD
 		CALLREF {
@@ -4706,14 +5066,14 @@ PUSHCONT {
 		.loc ../contracts/Dao/GovernanceToken.tsol, 0
 	}
 	IF
-	.loc ../contracts/Dao/GovernanceToken.tsol, 744
+	.loc ../contracts/Dao/GovernanceToken.tsol, 806
 	PUSHINT 2
 	SETINDEX 8
-	.loc ../contracts/Dao/GovernanceToken.tsol, 745
+	.loc ../contracts/Dao/GovernanceToken.tsol, 807
 	GETGLOB 16
 	INC
 	SETGLOB 16
-	.loc ../contracts/Dao/GovernanceToken.tsol, 746
+	.loc ../contracts/Dao/GovernanceToken.tsol, 808
 	PUSHINT 2
 	SWAP
 	FIRST
@@ -4726,7 +5086,7 @@ PUSHCONT {
 	PUSHINT 0
 	SENDRAWMSG
 	DROP
-	.loc ../contracts/Dao/GovernanceToken.tsol, 688
+	.loc ../contracts/Dao/GovernanceToken.tsol, 750
 }
 CALLX
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
@@ -4736,7 +5096,7 @@ CALLX
 CALL $_removeFromBlacklist_a56b60ee_internal_macro$
 
 .macro _removeFromBlacklist_a56b60ee_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 750
+.loc ../contracts/Dao/GovernanceToken.tsol, 812
 PUSHINT 0
 PUSHCONT {
 	DUP
@@ -4745,7 +5105,7 @@ PUSHCONT {
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 751
+	.loc ../contracts/Dao/GovernanceToken.tsol, 813
 	DUP
 	GETGLOB 20
 	SECOND
@@ -4755,7 +5115,7 @@ PUSHCONT {
 	PUSH S2
 	SDEQ
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 753
+		.loc ../contracts/Dao/GovernanceToken.tsol, 815
 		GETGLOB 20
 		FIRST
 		DEC
@@ -4777,7 +5137,7 @@ PUSHCONT {
 		PAIR
 		DUP
 		SETGLOB 20
-		.loc ../contracts/Dao/GovernanceToken.tsol, 756
+		.loc ../contracts/Dao/GovernanceToken.tsol, 818
 		UNPAIR
 		OVER
 		THROWIFNOT 54
@@ -4790,12 +5150,12 @@ PUSHCONT {
 		DROP
 		PAIR
 		SETGLOB 20
-		.loc ../contracts/Dao/GovernanceToken.tsol, 757
+		.loc ../contracts/Dao/GovernanceToken.tsol, 819
 		RETALT
 		.loc ../contracts/Dao/GovernanceToken.tsol, 0
 	}
 	IFJMP
-	.loc ../contracts/Dao/GovernanceToken.tsol, 750
+	.loc ../contracts/Dao/GovernanceToken.tsol, 812
 	INC
 	.loc ../contracts/Dao/GovernanceToken.tsol, 0
 }
@@ -4812,7 +5172,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 769
+.loc ../contracts/Dao/GovernanceToken.tsol, 831
 OVER
 PUSHCONT {
 	LDREF
@@ -4833,7 +5193,7 @@ CALLREF {
 THROW 0
 
 .macro releaseFunds_4d68282f_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 770
+.loc ../contracts/Dao/GovernanceToken.tsol, 832
 DUP
 GETGLOB 12
 SECOND
@@ -4889,17 +5249,17 @@ CALLREF {
 	PUSHINT 22
 	TUPLEVAR
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 771
+.loc ../contracts/Dao/GovernanceToken.tsol, 833
 DUP
 INDEX 14
 GTINT 0
 THROWIFNOT 75
-.loc ../contracts/Dao/GovernanceToken.tsol, 772
+.loc ../contracts/Dao/GovernanceToken.tsol, 834
 DUP
 PUSHINT 20
 INDEXVAR
 THROWIF 76
-.loc ../contracts/Dao/GovernanceToken.tsol, 773
+.loc ../contracts/Dao/GovernanceToken.tsol, 835
 BLOCKLT
 OVER
 PUSHINT 17
@@ -4910,17 +5270,17 @@ INDEXVAR
 ADD
 GEQ
 THROWIFNOT 77
-.loc ../contracts/Dao/GovernanceToken.tsol, 777
+.loc ../contracts/Dao/GovernanceToken.tsol, 839
 DUP
 PUSHINT 21
 INDEXVAR
 THROWIF 78
-.loc ../contracts/Dao/GovernanceToken.tsol, 778
+.loc ../contracts/Dao/GovernanceToken.tsol, 840
 DUP
 INDEX 8
 EQINT 2
 THROWIFNOT 79
-.loc ../contracts/Dao/GovernanceToken.tsol, 779
+.loc ../contracts/Dao/GovernanceToken.tsol, 841
 GETGLOB 9
 OVER
 SECOND
@@ -4935,7 +5295,7 @@ PUSHCONT {
 }
 IFNOT
 THROWIFNOT 100
-.loc ../contracts/Dao/GovernanceToken.tsol, 781
+.loc ../contracts/Dao/GovernanceToken.tsol, 843
 DUP
 INDEX 14
 OVER
@@ -4944,7 +5304,7 @@ INDEXVAR
 MUL
 PUSHINT 100
 DIV
-.loc ../contracts/Dao/GovernanceToken.tsol, 783
+.loc ../contracts/Dao/GovernanceToken.tsol, 845
 OVER
 INDEX 15
 OVER
@@ -4953,11 +5313,11 @@ PUSH S2
 INDEX 14
 LEQ
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 784
+	.loc ../contracts/Dao/GovernanceToken.tsol, 846
 	DUP
 	GTINT 0
 	THROWIFNOT 80
-	.loc ../contracts/Dao/GovernanceToken.tsol, 786
+	.loc ../contracts/Dao/GovernanceToken.tsol, 848
 	OVER
 	SECOND
 	OVER
@@ -4986,7 +5346,7 @@ PUSHCONT {
 	INDEX 14
 	GREATER
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 791
+		.loc ../contracts/Dao/GovernanceToken.tsol, 853
 		OVER
 		INDEX 14
 		PUSH S2
@@ -4994,11 +5354,11 @@ PUSHCONT {
 		SUB
 		UFITS 256
 		NIP
-		.loc ../contracts/Dao/GovernanceToken.tsol, 792
+		.loc ../contracts/Dao/GovernanceToken.tsol, 854
 		DUP
 		GTINT 0
 		THROWIFNOT 80
-		.loc ../contracts/Dao/GovernanceToken.tsol, 794
+		.loc ../contracts/Dao/GovernanceToken.tsol, 856
 		OVER
 		SECOND
 		OVER
@@ -5022,20 +5382,20 @@ PUSHCONT {
 	IF
 }
 IFELSE
-.loc ../contracts/Dao/GovernanceToken.tsol, 800
+.loc ../contracts/Dao/GovernanceToken.tsol, 862
 XCPU S1, S0
 INDEX 15
 ROT
 ADD
 SETINDEX 15
-.loc ../contracts/Dao/GovernanceToken.tsol, 801
+.loc ../contracts/Dao/GovernanceToken.tsol, 863
 DUP
 INDEX 15
 OVER
 INDEX 14
 EQUAL
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 802
+	.loc ../contracts/Dao/GovernanceToken.tsol, 864
 	GETGLOB 12
 	UNPAIR
 	PUXC S3, S-1
@@ -5153,7 +5513,7 @@ PUSHCONT {
 	.loc ../contracts/Dao/GovernanceToken.tsol, 0
 }
 IF
-.loc ../contracts/Dao/GovernanceToken.tsol, 805
+.loc ../contracts/Dao/GovernanceToken.tsol, 867
 BLOCKLT
 PUSHINT 17
 SETINDEXVAR
@@ -5169,7 +5529,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 811
+.loc ../contracts/Dao/GovernanceToken.tsol, 873
 OVER
 PUSHCONT {
 	LDREF
@@ -5190,13 +5550,13 @@ CALLREF {
 THROW 0
 
 .macro stopFunding_bee2ecc0_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 153
+.loc ../contracts/Dao/GovernanceToken.tsol, 155
 GETGLOB 9
 CALLREF {
 	CALL $isComplianceMember_873c3a01_internal_macro$
 }
 THROWIFNOT 100
-.loc ../contracts/Dao/GovernanceToken.tsol, 812
+.loc ../contracts/Dao/GovernanceToken.tsol, 874
 DUP
 GETGLOB 12
 SECOND
@@ -5252,7 +5612,7 @@ CALLREF {
 	PUSHINT 22
 	TUPLEVAR
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 813
+.loc ../contracts/Dao/GovernanceToken.tsol, 875
 DROP
 GETGLOB 12
 UNPAIR
@@ -5379,7 +5739,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 816
+.loc ../contracts/Dao/GovernanceToken.tsol, 878
 OVER
 PUSHCONT {
 	LDREF
@@ -5400,13 +5760,13 @@ CALLREF {
 THROW 0
 
 .macro resumeFunding_7b856ce0_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 153
+.loc ../contracts/Dao/GovernanceToken.tsol, 155
 GETGLOB 9
 CALLREF {
 	CALL $isComplianceMember_873c3a01_internal_macro$
 }
 THROWIFNOT 100
-.loc ../contracts/Dao/GovernanceToken.tsol, 817
+.loc ../contracts/Dao/GovernanceToken.tsol, 879
 DUP
 GETGLOB 12
 SECOND
@@ -5462,16 +5822,16 @@ CALLREF {
 	PUSHINT 22
 	TUPLEVAR
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 818
+.loc ../contracts/Dao/GovernanceToken.tsol, 880
 DUP
 INDEX 14
 GTINT 0
 THROWIFNOT 81
-.loc ../contracts/Dao/GovernanceToken.tsol, 819
+.loc ../contracts/Dao/GovernanceToken.tsol, 881
 PUSHINT 21
 INDEXVAR
 THROWIF 82
-.loc ../contracts/Dao/GovernanceToken.tsol, 820
+.loc ../contracts/Dao/GovernanceToken.tsol, 882
 GETGLOB 12
 UNPAIR
 XCHG S1, S2
@@ -5597,7 +5957,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 823
+.loc ../contracts/Dao/GovernanceToken.tsol, 885
 OVER
 PUSHCONT {
 	LDREF
@@ -5620,13 +5980,13 @@ CALLREF {
 THROW 0
 
 .macro setFundingParams_43d6bd95_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 153
+.loc ../contracts/Dao/GovernanceToken.tsol, 155
 GETGLOB 9
 CALLREF {
 	CALL $isComplianceMember_873c3a01_internal_macro$
 }
 THROWIFNOT 100
-.loc ../contracts/Dao/GovernanceToken.tsol, 828
+.loc ../contracts/Dao/GovernanceToken.tsol, 890
 PUSH S2
 GETGLOB 12
 SECOND
@@ -5682,7 +6042,7 @@ CALLREF {
 	PUSHINT 22
 	TUPLEVAR
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 829
+.loc ../contracts/Dao/GovernanceToken.tsol, 891
 DROP
 SWAP
 GETGLOB 12
@@ -5800,7 +6160,7 @@ DICTUSETREF
 PAIR
 DUP
 SETGLOB 12
-.loc ../contracts/Dao/GovernanceToken.tsol, 830
+.loc ../contracts/Dao/GovernanceToken.tsol, 892
 UNPAIR
 ROLL 3
 TUCK
@@ -5922,13 +6282,13 @@ SETGLOB 12
 CALL $isTopTreasury_9e7a8661_internal_macro$
 
 .macro isTopTreasury_9e7a8661_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 836
+.loc ../contracts/Dao/GovernanceToken.tsol, 898
 PUSHINT 39
 GETGLOBVAR
-.loc ../contracts/Dao/GovernanceToken.tsol, 838
+.loc ../contracts/Dao/GovernanceToken.tsol, 900
 DUP
 FIRST
-.loc ../contracts/Dao/GovernanceToken.tsol, 839
+.loc ../contracts/Dao/GovernanceToken.tsol, 901
 PUSHINT 0
 FALSE ; decl return flag
 PUSHCONT {
@@ -5936,7 +6296,7 @@ PUSHCONT {
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 840
+	.loc ../contracts/Dao/GovernanceToken.tsol, 902
 	PUSH2 S1, S3
 	SECOND
 	PUSHINT 32
@@ -5945,7 +6305,7 @@ PUSHCONT {
 	PUSH S5
 	SDEQ
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 841
+		.loc ../contracts/Dao/GovernanceToken.tsol, 903
 		BLKDROP 5
 		TRUE
 		PUSHINT 4
@@ -5953,7 +6313,7 @@ PUSHCONT {
 		.loc ../contracts/Dao/GovernanceToken.tsol, 0
 	}
 	IFJMP
-	.loc ../contracts/Dao/GovernanceToken.tsol, 839
+	.loc ../contracts/Dao/GovernanceToken.tsol, 901
 	OVER
 	INC
 	POP S2
@@ -5962,7 +6322,7 @@ PUSHCONT {
 WHILEBRK
 IFRET
 BLKDROP 4
-.loc ../contracts/Dao/GovernanceToken.tsol, 844
+.loc ../contracts/Dao/GovernanceToken.tsol, 906
 FALSE
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 
@@ -5975,7 +6335,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 853
+.loc ../contracts/Dao/GovernanceToken.tsol, 916
 OVER
 PUSHCONT {
 	LDREF
@@ -6022,7 +6382,7 @@ THROW 0
 CALL $getVotingPower_bb4d4436_internal_macro$
 
 .macro getVotingPower_bb4d4436_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 854
+.loc ../contracts/Dao/GovernanceToken.tsol, 917
 DUP
 PUSHINT 35
 GETGLOBVAR
@@ -6034,11 +6394,11 @@ PUSHCONT {
 }
 IF
 THROWIF 58
-.loc ../contracts/Dao/GovernanceToken.tsol, 855
+.loc ../contracts/Dao/GovernanceToken.tsol, 918
 PUSHINT 1000000000
 PUSHINT 0
 RAWRESERVE
-.loc ../contracts/Dao/GovernanceToken.tsol, 857
+.loc ../contracts/Dao/GovernanceToken.tsol, 920
 DUP
 PUSHINT 35
 GETGLOBVAR
@@ -6049,7 +6409,7 @@ PUSHINT 267
 DICTSETB
 PUSHINT 35
 SETGLOBVAR
-.loc ../contracts/Dao/GovernanceToken.tsol, 859
+.loc ../contracts/Dao/GovernanceToken.tsol, 922
 DUP
 GETGLOB 13
 NEWC
@@ -6066,7 +6426,7 @@ STBREFR
 ENDC
 PUSHINT 1
 SENDRAWMSG
-.loc ../contracts/Dao/GovernanceToken.tsol, 865
+.loc ../contracts/Dao/GovernanceToken.tsol, 928
 GETGLOB 13
 NEWC
 STSLICECONST x62_
@@ -6082,7 +6442,7 @@ STBREFR
 ENDC
 PUSHINT 1
 SENDRAWMSG
-.loc ../contracts/Dao/GovernanceToken.tsol, 871
+.loc ../contracts/Dao/GovernanceToken.tsol, 934
 PUSHINT 0
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 
@@ -6095,7 +6455,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 874
+.loc ../contracts/Dao/GovernanceToken.tsol, 937
 OVER
 PUSHCONT {
 	LDREF
@@ -6125,7 +6485,7 @@ CALLREF {
 THROW 0
 
 .macro onVP_NFTs_6c71e9ab_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 875
+.loc ../contracts/Dao/GovernanceToken.tsol, 938
 GETGLOB 25
 PUSHINT 2
 MAX
@@ -6133,7 +6493,7 @@ GETGLOB 9
 GETGLOB 13
 SDEQ
 THROWANYIFNOT
-.loc ../contracts/Dao/GovernanceToken.tsol, 876
+.loc ../contracts/Dao/GovernanceToken.tsol, 939
 TUCK
 PUSHINT 36
 GETGLOBVAR
@@ -6152,7 +6512,7 @@ PUSHINT 267
 DICTSETREF
 PUSHINT 36
 SETGLOBVAR
-.loc ../contracts/Dao/GovernanceToken.tsol, 877
+.loc ../contracts/Dao/GovernanceToken.tsol, 940
 CALLREF {
 	CALL $_finalizeVotingPower_4603fc1e_internal_macro$
 }
@@ -6167,7 +6527,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 880
+.loc ../contracts/Dao/GovernanceToken.tsol, 943
 OVER
 PUSHCONT {
 	LDREF
@@ -6189,7 +6549,7 @@ CALLREF {
 THROW 0
 
 .macro onVP_Treasury_d813592e_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 881
+.loc ../contracts/Dao/GovernanceToken.tsol, 944
 GETGLOB 25
 PUSHINT 2
 MAX
@@ -6197,7 +6557,7 @@ GETGLOB 9
 GETGLOB 13
 SDEQ
 THROWANYIFNOT
-.loc ../contracts/Dao/GovernanceToken.tsol, 882
+.loc ../contracts/Dao/GovernanceToken.tsol, 945
 TUCK
 PUSHINT 37
 GETGLOBVAR
@@ -6209,7 +6569,7 @@ PUSHINT 267
 DICTSETB
 PUSHINT 37
 SETGLOBVAR
-.loc ../contracts/Dao/GovernanceToken.tsol, 883
+.loc ../contracts/Dao/GovernanceToken.tsol, 946
 CALLREF {
 	CALL $_finalizeVotingPower_4603fc1e_internal_macro$
 }
@@ -6220,7 +6580,7 @@ CALLREF {
 CALL $_finalizeVotingPower_4603fc1e_internal_macro$
 
 .macro _finalizeVotingPower_4603fc1e_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 887
+.loc ../contracts/Dao/GovernanceToken.tsol, 950
 DUP
 PUSHINT 37
 GETGLOBVAR
@@ -6261,12 +6621,12 @@ PUSHCONT {
 }
 IF
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 888
+	.loc ../contracts/Dao/GovernanceToken.tsol, 951
 	DROP
 	.loc ../contracts/Dao/GovernanceToken.tsol, 0
 }
 IFJMP
-.loc ../contracts/Dao/GovernanceToken.tsol, 891
+.loc ../contracts/Dao/GovernanceToken.tsol, 954
 DUP
 PUSHINT 36
 GETGLOBVAR
@@ -6288,7 +6648,7 @@ PUSHCONT {
 	TRIPLE
 }
 IFELSE
-.loc ../contracts/Dao/GovernanceToken.tsol, 892
+.loc ../contracts/Dao/GovernanceToken.tsol, 955
 OVER
 PUSHINT 37
 GETGLOBVAR
@@ -6301,7 +6661,7 @@ PUSHCONT {
 IF
 PUSHINT 1000000000
 DIV
-.loc ../contracts/Dao/GovernanceToken.tsol, 895
+.loc ../contracts/Dao/GovernanceToken.tsol, 958
 OVER
 FIRST
 GTINT 0
@@ -6313,37 +6673,37 @@ PUSHCONT {
 	PUSHINT 1
 }
 IFELSE
-.loc ../contracts/Dao/GovernanceToken.tsol, 898
+.loc ../contracts/Dao/GovernanceToken.tsol, 961
 DUP
 GTINT 11
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 898
+	.loc ../contracts/Dao/GovernanceToken.tsol, 961
 	DROP
 	PUSHINT 11
 	.loc ../contracts/Dao/GovernanceToken.tsol, 0
 }
 IF
-.loc ../contracts/Dao/GovernanceToken.tsol, 901
+.loc ../contracts/Dao/GovernanceToken.tsol, 964
 OVER
 GTINT 9
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 902
+	.loc ../contracts/Dao/GovernanceToken.tsol, 965
 	OVER
 	PUSHINT 10
 	DIV
-	.loc ../contracts/Dao/GovernanceToken.tsol, 903
+	.loc ../contracts/Dao/GovernanceToken.tsol, 966
 	MUL
 	.loc ../contracts/Dao/GovernanceToken.tsol, 0
 }
 IF
-.loc ../contracts/Dao/GovernanceToken.tsol, 907
+.loc ../contracts/Dao/GovernanceToken.tsol, 970
 PUSHINT 1
 ROLL 3
 SECOND
 ADD
-.loc ../contracts/Dao/GovernanceToken.tsol, 908
+.loc ../contracts/Dao/GovernanceToken.tsol, 971
 MUL
-.loc ../contracts/Dao/GovernanceToken.tsol, 910
+.loc ../contracts/Dao/GovernanceToken.tsol, 973
 PUSH S2
 PUSHSLICE xc00000000000000000000000007d29780a
 NEWC
@@ -6353,12 +6713,21 @@ STU 256
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/GovernanceToken.tsol, 911
+.loc ../contracts/Dao/GovernanceToken.tsol, 974
 DROP
+GETGLOB 12
+FIRST
 PUSHINT 38
 GETGLOBVAR
+PUSHPOW2 8
+DICTUGET
+ZEROSWAPIFNOT
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 912
+	PLDI 1
+}
+IF
+PUSHCONT {
+	.loc ../contracts/Dao/GovernanceToken.tsol, 975
 	DUP
 	GETGLOB 24
 	PUSHINT 267
@@ -6437,7 +6806,7 @@ PUSHCONT {
 	.loc ../contracts/Dao/GovernanceToken.tsol, 0
 }
 IF
-.loc ../contracts/Dao/GovernanceToken.tsol, 923
+.loc ../contracts/Dao/GovernanceToken.tsol, 984
 DUP
 PUSHINT 37
 GETGLOBVAR
@@ -6446,7 +6815,7 @@ DICTDEL
 DROP
 PUSHINT 37
 SETGLOBVAR
-.loc ../contracts/Dao/GovernanceToken.tsol, 924
+.loc ../contracts/Dao/GovernanceToken.tsol, 985
 DUP
 PUSHINT 36
 GETGLOBVAR
@@ -6455,7 +6824,7 @@ DICTDEL
 DROP
 PUSHINT 36
 SETGLOBVAR
-.loc ../contracts/Dao/GovernanceToken.tsol, 925
+.loc ../contracts/Dao/GovernanceToken.tsol, 986
 PUSHINT 35
 GETGLOBVAR
 PUSHINT 267
@@ -6474,7 +6843,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 932
+.loc ../contracts/Dao/GovernanceToken.tsol, 993
 ENDS
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 CALLREF {
@@ -6516,11 +6885,11 @@ THROW 0
 CALL $getTreasuryManagerQueue_45263781_internal_macro$
 
 .macro getTreasuryManagerQueue_45263781_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 932
+.loc ../contracts/Dao/GovernanceToken.tsol, 993
 PUSHINT 0
 NEWDICT
 PAIR
-.loc ../contracts/Dao/GovernanceToken.tsol, 937
+.loc ../contracts/Dao/GovernanceToken.tsol, 998
 GETGLOB 13
 NEWC
 STSLICECONST x62_
@@ -6541,7 +6910,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 947
+.loc ../contracts/Dao/GovernanceToken.tsol, 1008
 LDU 32
 LDDICT
 ROTREV
@@ -6559,7 +6928,7 @@ CALLREF {
 THROW 0
 
 .macro onGetTopTreasuryHolders_38bc6d47_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 948
+.loc ../contracts/Dao/GovernanceToken.tsol, 1009
 GETGLOB 25
 PUSHINT 2
 MAX
@@ -6567,11 +6936,11 @@ GETGLOB 9
 GETGLOB 13
 SDEQ
 THROWANYIFNOT
-.loc ../contracts/Dao/GovernanceToken.tsol, 950
+.loc ../contracts/Dao/GovernanceToken.tsol, 1011
 DUP
 PUSHINT 39
 SETGLOBVAR
-.loc ../contracts/Dao/GovernanceToken.tsol, 951
+.loc ../contracts/Dao/GovernanceToken.tsol, 1012
 PUSHSLICE xc00000000000000000000000001900ac2e
 NEWC
 STSLICE
@@ -6594,7 +6963,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 959
+.loc ../contracts/Dao/GovernanceToken.tsol, 1020
 OVER
 PUSHCONT {
 	LDREF
@@ -6687,13 +7056,13 @@ THROW 0
 CALL $getProposal_c7f758a8_internal_macro$
 
 .macro getProposal_c7f758a8_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 960
+.loc ../contracts/Dao/GovernanceToken.tsol, 1021
 DUP
 GETGLOB 12
 FIRST
 LESS
 THROWIFNOT 83
-.loc ../contracts/Dao/GovernanceToken.tsol, 961
+.loc ../contracts/Dao/GovernanceToken.tsol, 1022
 GETGLOB 12
 SECOND
 PUSHINT 32
@@ -6759,7 +7128,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 964
+.loc ../contracts/Dao/GovernanceToken.tsol, 1025
 ENDS
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 CALLREF {
@@ -6793,7 +7162,7 @@ IFREF {
 THROW 0
 
 .macro numOfProposals_5f570253_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 965
+.loc ../contracts/Dao/GovernanceToken.tsol, 1026
 GETGLOB 12
 FIRST
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
@@ -6807,7 +7176,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 968
+.loc ../contracts/Dao/GovernanceToken.tsol, 1029
 ENDS
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 CALLREF {
@@ -6845,7 +7214,7 @@ IFREF {
 THROW 0
 
 .macro getCreatorProposals_824dda1c_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 969
+.loc ../contracts/Dao/GovernanceToken.tsol, 1030
 GETGLOB 9
 GETGLOB 17
 PUSHINT 267
@@ -6860,7 +7229,7 @@ PUSHCONT {
 }
 IFELSE
 PAIR
-.loc ../contracts/Dao/GovernanceToken.tsol, 970
+.loc ../contracts/Dao/GovernanceToken.tsol, 1031
 DUP
 FIRST
 PUSHREF
@@ -6879,17 +7248,17 @@ PUSHCONT {
 REPEAT
 BLKDROP2 2, 1
 PAIR
-.loc ../contracts/Dao/GovernanceToken.tsol, 971
+.loc ../contracts/Dao/GovernanceToken.tsol, 1032
 OVER
 FIRST
-.loc ../contracts/Dao/GovernanceToken.tsol, 972
+.loc ../contracts/Dao/GovernanceToken.tsol, 1033
 PUSHINT 0
 PUSHCONT {
 	PUSH2 S0, S1
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 973
+	.loc ../contracts/Dao/GovernanceToken.tsol, 1034
 	PUSH2 S0, S3
 	SECOND
 	PUSHINT 32
@@ -7009,13 +7378,13 @@ PUSHCONT {
 	DICTUSETREF
 	PAIR
 	POP S3
-	.loc ../contracts/Dao/GovernanceToken.tsol, 972
+	.loc ../contracts/Dao/GovernanceToken.tsol, 1033
 	INC
 	.loc ../contracts/Dao/GovernanceToken.tsol, 0
 }
 WHILE
 DROP2
-.loc ../contracts/Dao/GovernanceToken.tsol, 975
+.loc ../contracts/Dao/GovernanceToken.tsol, 1036
 NIP
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 
@@ -7028,7 +7397,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 978
+.loc ../contracts/Dao/GovernanceToken.tsol, 1039
 OVER
 PUSHCONT {
 	LDREF
@@ -7070,13 +7439,13 @@ IFREF {
 THROW 0
 
 .macro getProposalYayVotes_2108d00b_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 979
+.loc ../contracts/Dao/GovernanceToken.tsol, 1040
 DUP
 GETGLOB 12
 FIRST
 LESS
 THROWIFNOT 83
-.loc ../contracts/Dao/GovernanceToken.tsol, 980
+.loc ../contracts/Dao/GovernanceToken.tsol, 1041
 GETGLOB 12
 SECOND
 PUSHINT 32
@@ -7143,7 +7512,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 983
+.loc ../contracts/Dao/GovernanceToken.tsol, 1044
 OVER
 PUSHCONT {
 	LDREF
@@ -7185,13 +7554,13 @@ IFREF {
 THROW 0
 
 .macro getProposalNayVotes_5992d8c1_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 984
+.loc ../contracts/Dao/GovernanceToken.tsol, 1045
 DUP
 GETGLOB 12
 FIRST
 LESS
 THROWIFNOT 83
-.loc ../contracts/Dao/GovernanceToken.tsol, 985
+.loc ../contracts/Dao/GovernanceToken.tsol, 1046
 GETGLOB 12
 SECOND
 PUSHINT 32
@@ -7258,7 +7627,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 988
+.loc ../contracts/Dao/GovernanceToken.tsol, 1049
 OVER
 PUSHCONT {
 	LDREF
@@ -7300,13 +7669,13 @@ IFREF {
 THROW 0
 
 .macro getProposalStatus_401853b7_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 991
+.loc ../contracts/Dao/GovernanceToken.tsol, 1052
 DUP
 GETGLOB 12
 FIRST
 LESS
 THROWIFNOT 83
-.loc ../contracts/Dao/GovernanceToken.tsol, 992
+.loc ../contracts/Dao/GovernanceToken.tsol, 1053
 GETGLOB 12
 SECOND
 PUSHINT 32
@@ -7373,7 +7742,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 995
+.loc ../contracts/Dao/GovernanceToken.tsol, 1056
 ENDS
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 CALLREF {
@@ -7415,7 +7784,7 @@ THROW 0
 CALL $getAllProposals_cceb68f5_internal_macro$
 
 .macro getAllProposals_cceb68f5_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 996
+.loc ../contracts/Dao/GovernanceToken.tsol, 1057
 GETGLOB 12
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 
@@ -7428,7 +7797,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 999
+.loc ../contracts/Dao/GovernanceToken.tsol, 1060
 ENDS
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 CALLREF {
@@ -7470,13 +7839,13 @@ THROW 0
 CALL $getPendingProposals_a80db6fc_internal_macro$
 
 .macro getPendingProposals_a80db6fc_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 153
+.loc ../contracts/Dao/GovernanceToken.tsol, 155
 GETGLOB 9
 CALLREF {
 	CALL $isComplianceMember_873c3a01_internal_macro$
 }
 THROWIFNOT 100
-.loc ../contracts/Dao/GovernanceToken.tsol, 1005
+.loc ../contracts/Dao/GovernanceToken.tsol, 1066
 GETGLOB 15
 PUSHREF
 .compute $default_tuple_builder_t_uint256_t_address_t_address_t_string_ptr_t_string_ptr_t_uint256_t_uint256_t_enum$_ProposalType_$28_t_enum$_ProposalStatus_$34_t_uint256_t_uint256_t_uint256_t_uint256_t_uint256_t_uint256_t_uint256_t_uint256_t_uint256_t_uint256_t_uint256_t_bool_t_bool$
@@ -7494,19 +7863,19 @@ PUSHCONT {
 REPEAT
 BLKDROP2 2, 1
 PAIR
-.loc ../contracts/Dao/GovernanceToken.tsol, 1006
+.loc ../contracts/Dao/GovernanceToken.tsol, 1067
 PUSHINT 0
-.loc ../contracts/Dao/GovernanceToken.tsol, 1007
+.loc ../contracts/Dao/GovernanceToken.tsol, 1068
 GETGLOB 12
 FIRST
-.loc ../contracts/Dao/GovernanceToken.tsol, 1008
+.loc ../contracts/Dao/GovernanceToken.tsol, 1069
 PUSHINT 0
 PUSHCONT {
 	PUSH2 S0, S1
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 1009
+	.loc ../contracts/Dao/GovernanceToken.tsol, 1070
 	DUP
 	GETGLOB 12
 	SECOND
@@ -7564,7 +7933,7 @@ PUSHCONT {
 	}
 	INDEX 8
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 1010
+		.loc ../contracts/Dao/GovernanceToken.tsol, 1071
 		DUP
 		GETGLOB 12
 		SECOND
@@ -7679,14 +8048,14 @@ PUSHCONT {
 		DICTUSETREF
 		PAIR
 		POP S4
-		.loc ../contracts/Dao/GovernanceToken.tsol, 1011
+		.loc ../contracts/Dao/GovernanceToken.tsol, 1072
 		PUSH S2
 		INC
 		POP S3
 		.loc ../contracts/Dao/GovernanceToken.tsol, 0
 	}
 	IFNOT
-	.loc ../contracts/Dao/GovernanceToken.tsol, 1008
+	.loc ../contracts/Dao/GovernanceToken.tsol, 1069
 	INC
 	.loc ../contracts/Dao/GovernanceToken.tsol, 0
 }
@@ -7703,7 +8072,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 1017
+.loc ../contracts/Dao/GovernanceToken.tsol, 1078
 ENDS
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 CALLREF {
@@ -7745,7 +8114,7 @@ THROW 0
 CALL $getComplianers_36d7ddf4_internal_macro$
 
 .macro getComplianers_36d7ddf4_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 1018
+.loc ../contracts/Dao/GovernanceToken.tsol, 1079
 GETGLOB 21
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 
@@ -7758,7 +8127,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 1021
+.loc ../contracts/Dao/GovernanceToken.tsol, 1082
 OVER
 PUSHCONT {
 	LDREF
@@ -7779,19 +8148,19 @@ CALLREF {
 THROW 0
 
 .macro setTreasury_f0f44260_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 157
+.loc ../contracts/Dao/GovernanceToken.tsol, 159
 GETGLOB 9
 GETGLOB 14
 SDEQ
 THROWIFNOT 58
-.loc ../contracts/Dao/GovernanceToken.tsol, 1022
+.loc ../contracts/Dao/GovernanceToken.tsol, 1083
 DUP
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 55
-.loc ../contracts/Dao/GovernanceToken.tsol, 1023
+.loc ../contracts/Dao/GovernanceToken.tsol, 1084
 SETGLOB 13
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 
@@ -7804,7 +8173,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 1026
+.loc ../contracts/Dao/GovernanceToken.tsol, 1087
 OVER
 PUSHCONT {
 	LDREF
@@ -7829,12 +8198,12 @@ THROW 0
 CALL $addComplianer_74c6b9ac_internal_macro$
 
 .macro addComplianer_74c6b9ac_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 157
+.loc ../contracts/Dao/GovernanceToken.tsol, 159
 GETGLOB 9
 GETGLOB 14
 SDEQ
 THROWIFNOT 58
-.loc ../contracts/Dao/GovernanceToken.tsol, 1027
+.loc ../contracts/Dao/GovernanceToken.tsol, 1088
 GETGLOB 21
 UNPAIR
 OVER
@@ -7855,7 +8224,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 1030
+.loc ../contracts/Dao/GovernanceToken.tsol, 1091
 OVER
 PUSHCONT {
 	LDREF
@@ -7880,23 +8249,23 @@ THROW 0
 CALL $removeComplianer_bbb85643_internal_macro$
 
 .macro removeComplianer_bbb85643_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 157
+.loc ../contracts/Dao/GovernanceToken.tsol, 159
 GETGLOB 9
 GETGLOB 14
 SDEQ
 THROWIFNOT 58
-.loc ../contracts/Dao/GovernanceToken.tsol, 1031
+.loc ../contracts/Dao/GovernanceToken.tsol, 1092
 PUSHINT 0
-.loc ../contracts/Dao/GovernanceToken.tsol, 1032
+.loc ../contracts/Dao/GovernanceToken.tsol, 1093
 GETGLOB 21
 FIRST
-.loc ../contracts/Dao/GovernanceToken.tsol, 1034
+.loc ../contracts/Dao/GovernanceToken.tsol, 1095
 PUSHCONT {
 	DUP2
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 1035
+	.loc ../contracts/Dao/GovernanceToken.tsol, 1096
 	OVER
 	GETGLOB 21
 	SECOND
@@ -7906,18 +8275,18 @@ PUSHCONT {
 	PUSH S3
 	SDEQ
 	IFRETALT
-	.loc ../contracts/Dao/GovernanceToken.tsol, 1034
+	.loc ../contracts/Dao/GovernanceToken.tsol, 1095
 	OVER
 	INC
 	POP S2
 	.loc ../contracts/Dao/GovernanceToken.tsol, 0
 }
 WHILEBRK
-.loc ../contracts/Dao/GovernanceToken.tsol, 1040
+.loc ../contracts/Dao/GovernanceToken.tsol, 1101
 DUP2
 LESS
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 1041
+	.loc ../contracts/Dao/GovernanceToken.tsol, 1102
 	OVER
 	PUSHCONT {
 		PUSH2 S0, S1
@@ -7926,7 +8295,7 @@ PUSHCONT {
 		LESS
 	}
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 1042
+		.loc ../contracts/Dao/GovernanceToken.tsol, 1103
 		DUP
 		INC
 		GETGLOB 21
@@ -7945,13 +8314,13 @@ PUSHCONT {
 		DICTUSET
 		PAIR
 		SETGLOB 21
-		.loc ../contracts/Dao/GovernanceToken.tsol, 1041
+		.loc ../contracts/Dao/GovernanceToken.tsol, 1102
 		INC
 		.loc ../contracts/Dao/GovernanceToken.tsol, 0
 	}
 	WHILE
 	DROP
-	.loc ../contracts/Dao/GovernanceToken.tsol, 1044
+	.loc ../contracts/Dao/GovernanceToken.tsol, 1105
 	GETGLOB 21
 	UNPAIR
 	OVER
@@ -7980,7 +8349,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 1048
+.loc ../contracts/Dao/GovernanceToken.tsol, 1109
 OVER
 PUSHCONT {
 	LDREF
@@ -8005,12 +8374,12 @@ THROW 0
 CALL $revokeAdmin_2d345670_internal_macro$
 
 .macro revokeAdmin_2d345670_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 157
+.loc ../contracts/Dao/GovernanceToken.tsol, 159
 GETGLOB 9
 GETGLOB 14
 SDEQ
 THROWIFNOT 58
-.loc ../contracts/Dao/GovernanceToken.tsol, 1049
+.loc ../contracts/Dao/GovernanceToken.tsol, 1110
 SETGLOB 14
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 
@@ -8023,7 +8392,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 1052
+.loc ../contracts/Dao/GovernanceToken.tsol, 1113
 ENDS
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 CALLREF {
@@ -8035,17 +8404,17 @@ IFREF {
 THROW 0
 
 .macro withdrawCreateProposalFee_05d66ec8_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 157
+.loc ../contracts/Dao/GovernanceToken.tsol, 159
 GETGLOB 9
 GETGLOB 14
 SDEQ
 THROWIFNOT 58
-.loc ../contracts/Dao/GovernanceToken.tsol, 1053
+.loc ../contracts/Dao/GovernanceToken.tsol, 1114
 GETPARAM 7
 FIRST
 GTINT 0
 THROWIFNOT 94
-.loc ../contracts/Dao/GovernanceToken.tsol, 1054
+.loc ../contracts/Dao/GovernanceToken.tsol, 1115
 GETPARAM 7
 FIRST
 GETGLOB 14
@@ -8070,7 +8439,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/GovernanceToken.tsol, 1057
+.loc ../contracts/Dao/GovernanceToken.tsol, 1118
 ENDS
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 CALLREF {
@@ -8112,7 +8481,7 @@ THROW 0
 CALL $getCompletedProposals_dd81d0ac_internal_macro$
 
 .macro getCompletedProposals_dd81d0ac_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 1058
+.loc ../contracts/Dao/GovernanceToken.tsol, 1119
 GETGLOB 16
 PUSHREF
 .compute $default_tuple_builder_t_uint256_t_address_t_address_t_string_ptr_t_string_ptr_t_uint256_t_uint256_t_enum$_ProposalType_$28_t_enum$_ProposalStatus_$34_t_uint256_t_uint256_t_uint256_t_uint256_t_uint256_t_uint256_t_uint256_t_uint256_t_uint256_t_uint256_t_uint256_t_bool_t_bool$
@@ -8130,19 +8499,19 @@ PUSHCONT {
 REPEAT
 BLKDROP2 2, 1
 PAIR
-.loc ../contracts/Dao/GovernanceToken.tsol, 1059
+.loc ../contracts/Dao/GovernanceToken.tsol, 1120
 PUSHINT 0
-.loc ../contracts/Dao/GovernanceToken.tsol, 1060
+.loc ../contracts/Dao/GovernanceToken.tsol, 1121
 GETGLOB 12
 FIRST
-.loc ../contracts/Dao/GovernanceToken.tsol, 1061
+.loc ../contracts/Dao/GovernanceToken.tsol, 1122
 PUSHINT 0
 PUSHCONT {
 	PUSH2 S0, S1
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/GovernanceToken.tsol, 1062
+	.loc ../contracts/Dao/GovernanceToken.tsol, 1123
 	DUP
 	GETGLOB 12
 	SECOND
@@ -8201,7 +8570,7 @@ PUSHCONT {
 	INDEX 8
 	EQINT 2
 	PUSHCONT {
-		.loc ../contracts/Dao/GovernanceToken.tsol, 1063
+		.loc ../contracts/Dao/GovernanceToken.tsol, 1124
 		DUP
 		GETGLOB 12
 		SECOND
@@ -8316,14 +8685,14 @@ PUSHCONT {
 		DICTUSETREF
 		PAIR
 		POP S4
-		.loc ../contracts/Dao/GovernanceToken.tsol, 1064
+		.loc ../contracts/Dao/GovernanceToken.tsol, 1125
 		PUSH S2
 		INC
 		POP S3
 		.loc ../contracts/Dao/GovernanceToken.tsol, 0
 	}
 	IF
-	.loc ../contracts/Dao/GovernanceToken.tsol, 1061
+	.loc ../contracts/Dao/GovernanceToken.tsol, 1122
 	INC
 	.loc ../contracts/Dao/GovernanceToken.tsol, 0
 }
@@ -8335,7 +8704,7 @@ BLKDROP 3
 DROP
 GETGLOB 6
 THROWIFNOT 76
-.loc ../contracts/Dao/GovernanceToken.tsol, 1070
+.loc ../contracts/Dao/GovernanceToken.tsol, 1131
 ENDS
 .loc ../contracts/Dao/GovernanceToken.tsol, 0
 CALLREF {
@@ -8351,7 +8720,7 @@ THROW 0
 CALL $getCallbackAmount_178eb49d_internal_macro$
 
 .macro getCallbackAmount_178eb49d_internal_macro
-.loc ../contracts/Dao/GovernanceToken.tsol, 1071
+.loc ../contracts/Dao/GovernanceToken.tsol, 1132
 GETGLOB 9
 NEWC
 STSLICECONST x42_
@@ -8441,7 +8810,7 @@ ENDS
 CTOS
 LDDICT
 LDDICT
-LDI 1
+LDDICT
 LDU 32
 LDDICT
 ROTREV
@@ -8518,9 +8887,8 @@ PUSHCONT {
 	DUP
 	PUSHINT 0
 	NEWDICT
-	BLKPUSH 11, 0
+	BLKPUSH 12, 0
 	PUSHINT 0
-	DUP
 	NEWDICT
 	PAIR
 	PUSHINT 40
@@ -8537,9 +8905,6 @@ PUSHCONT {
 	SETGLOB 11
 	PUSHINT 292
 	SETGLOB 25
-	FALSE
-	PUSHINT 38
-	SETGLOBVAR
 }
 IFREFELSE {
 	CALL $c4_to_c7$
@@ -8630,7 +8995,7 @@ ROLLREV 4
 NEWC
 STDICT
 STDICT
-STI 1
+STDICT
 SWAP
 UNPAIR
 XCHG S2
@@ -9235,10 +9600,10 @@ PUSHINT 38
 GETGLOBVAR
 OVER
 PUSHCONT {
-	PUSHSLICE xc0000000000000000000000000edbbad33
+	PUSHSLICE xc000000000000000000000000092a99ce7
 	NEWC
 	STSLICE
-	STI 1
+	STDICT
 	ENDC
 	PUSHINT 0
 	SENDRAWMSG
@@ -9460,11 +9825,11 @@ IFJMPREF {
 		}
 	}
 	DUP
-	PUSHINT 646911359
+	PUSHINT 646174594
 	LEQ
 	IFJMPREF {
 		DUP
-		PUSHINT 341786051
+		PUSHINT 313105639
 		LEQ
 		IFJMPREF {
 			DUP
@@ -9486,16 +9851,22 @@ IFJMPREF {
 				CALL $constructor$
 			}
 			DUP
+			PUSHINT 313105639
+			EQUAL
+			IFJMPREF {
+				CALL $isFundingProposal$
+			}
+		}
+		DUP
+		PUSHINT 461481206
+		LEQ
+		IFJMPREF {
+			DUP
 			PUSHINT 341786051
 			EQUAL
 			IFJMPREF {
 				CALL $isComplianceMember$
 			}
-		}
-		DUP
-		PUSHINT 473759735
-		LEQ
-		IFJMPREF {
 			DUP
 			PUSHINT 407208383
 			EQUAL
@@ -9514,17 +9885,17 @@ IFJMPREF {
 			IFJMPREF {
 				CALL $getTreasuryManagerQueue$
 			}
+		}
+		DUP
+		PUSHINT 577264483
+		LEQ
+		IFJMPREF {
 			DUP
 			PUSHINT 473759735
 			EQUAL
 			IFJMPREF {
 				CALL $getCompletedProposals$
 			}
-		}
-		DUP
-		PUSHINT 606541990
-		LEQ
-		IFJMPREF {
 			DUP
 			PUSHINT 516211134
 			EQUAL
@@ -9543,17 +9914,17 @@ IFJMPREF {
 			IFJMPREF {
 				CALL $INVALID_CALLER$
 			}
+		}
+		DUP
+		PUSHINT 646174594
+		LEQ
+		IFJMPREF {
 			DUP
 			PUSHINT 606541990
 			EQUAL
 			IFJMPREF {
 				CALL $releaseFunds$
 			}
-		}
-		DUP
-		PUSHINT 646911359
-		LEQ
-		IFJMPREF {
 			DUP
 			PUSHINT 618790368
 			EQUAL
@@ -9572,22 +9943,22 @@ IFJMPREF {
 			IFJMPREF {
 				CALL $tempVoteTreasury$
 			}
+		}
+	}
+	DUP
+	PUSHINT 1144806988
+	LEQ
+	IFJMPREF {
+		DUP
+		PUSHINT 750991540
+		LEQ
+		IFJMPREF {
 			DUP
 			PUSHINT 646911359
 			EQUAL
 			IFJMPREF {
 				CALL $onNFTWithdrawBalance$
 			}
-		}
-	}
-	DUP
-	PUSHINT 1209996490
-	LEQ
-	IFJMPREF {
-		DUP
-		PUSHINT 762097281
-		LEQ
-		IFJMPREF {
 			DUP
 			PUSHINT 678867098
 			EQUAL
@@ -9606,17 +9977,17 @@ IFJMPREF {
 			IFJMPREF {
 				CALL $pendingProposalDraft$
 			}
+		}
+		DUP
+		PUSHINT 846843448
+		LEQ
+		IFJMPREF {
 			DUP
 			PUSHINT 762097281
 			EQUAL
 			IFJMPREF {
 				CALL $getProposalStatus$
 			}
-		}
-		DUP
-		PUSHINT 893067753
-		LEQ
-		IFJMPREF {
 			DUP
 			PUSHINT 777581393
 			EQUAL
@@ -9635,17 +10006,17 @@ IFJMPREF {
 			IFJMPREF {
 				CALL $topTreasuryHoldersArr$
 			}
+		}
+		DUP
+		PUSHINT 957887203
+		LEQ
+		IFJMPREF {
 			DUP
 			PUSHINT 893067753
 			EQUAL
 			IFJMPREF {
 				CALL $getCallbackAmount$
 			}
-		}
-		DUP
-		PUSHINT 1031588059
-		LEQ
-		IFJMPREF {
 			DUP
 			PUSHINT 935449629
 			EQUAL
@@ -9664,17 +10035,17 @@ IFJMPREF {
 			IFJMPREF {
 				CALL $tempTreasuryBalance$
 			}
+		}
+		DUP
+		PUSHINT 1144806988
+		LEQ
+		IFJMPREF {
 			DUP
 			PUSHINT 1031588059
 			EQUAL
 			IFJMPREF {
 				CALL $getProposalYayVotes$
 			}
-		}
-		DUP
-		PUSHINT 1209996490
-		LEQ
-		IFJMPREF {
 			DUP
 			PUSHINT 1048530252
 			EQUAL
@@ -9693,12 +10064,6 @@ IFJMPREF {
 			IFJMPREF {
 				CALL $withdrawVote$
 			}
-			DUP
-			PUSHINT 1209996490
-			EQUAL
-			IFJMPREF {
-				CALL $getPendingProposals$
-			}
 		}
 	}
 	DUP
@@ -9706,9 +10071,15 @@ IFJMPREF {
 	LEQ
 	IFJMPREF {
 		DUP
-		PUSHINT 1394249960
+		PUSHINT 1390781512
 		LEQ
 		IFJMPREF {
+			DUP
+			PUSHINT 1209996490
+			EQUAL
+			IFJMPREF {
+				CALL $getPendingProposals$
+			}
 			DUP
 			PUSHINT 1226768176
 			EQUAL
@@ -9727,17 +10098,17 @@ IFJMPREF {
 			IFJMPREF {
 				CALL $resumeFunding$
 			}
+		}
+		DUP
+		PUSHINT 1687817146
+		LEQ
+		IFJMPREF {
 			DUP
 			PUSHINT 1394249960
 			EQUAL
 			IFJMPREF {
 				CALL $userNFTsByProposalId$
 			}
-		}
-		DUP
-		PUSHINT 1690923527
-		LEQ
-		IFJMPREF {
 			DUP
 			PUSHINT 1541684554
 			EQUAL
@@ -9756,17 +10127,17 @@ IFJMPREF {
 			IFJMPREF {
 				CALL $onTreasuryBalance$
 			}
+		}
+		DUP
+		PUSHINT 1768773350
+		LEQ
+		IFJMPREF {
 			DUP
 			PUSHINT 1690923527
 			EQUAL
 			IFJMPREF {
 				CALL $addComplianer$
 			}
-		}
-		DUP
-		PUSHINT 1841016115
-		LEQ
-		IFJMPREF {
 			DUP
 			PUSHINT 1728467620
 			EQUAL
@@ -9784,12 +10155,6 @@ IFJMPREF {
 			EQUAL
 			IFJMPREF {
 				CALL $onTreasuryWithdrawBalance$
-			}
-			DUP
-			PUSHINT 1841016115
-			EQUAL
-			IFJMPREF {
-				CALL $isFundingProposal$
 			}
 		}
 		DUP
