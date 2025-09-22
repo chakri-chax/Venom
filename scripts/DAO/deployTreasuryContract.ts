@@ -69,29 +69,29 @@ async function mainS() {
 
     //
     
-    // const TreasuryArtifacts = locklift.factory.getContractArtifacts("Treasury");
-    // const treasuryContract = await locklift.factory.getDeployedContract("Treasury", await treasuryContractInstance.address);
+    const TreasuryArtifacts = locklift.factory.getContractArtifacts("Treasury");
+    const treasuryContract = await locklift.factory.getDeployedContract("Treasury", await treasuryContractInstance.address);
 
-    // const userUsdtWallet = new locklift.provider.Contract(TIP3_WALLET_ABI, usdtTokenOwnerWallet);
-    // {
-    //     const { traceTree } = await locklift.tracing.trace(
-    //         userUsdtWallet.methods
-    //             .transfer({
-    //                 amount: 50,
-    //                 deployWalletValue: toNano(1),
-    //                 notify: true,
-    //                 payload: "",
-    //                 recipient: treasuryContractInstance.address,
-    //                 remainingGasTo: new Address("0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081"),
-    //             })
-    //             .send({
-    //                 from: OWNER,
-    //                 amount: toNano(2),
-    //             }),
-    //     );
+    const userUsdtWallet = new locklift.provider.Contract(TIP3_WALLET_ABI, usdtTokenOwnerWallet);
+    {
+        const { traceTree } = await locklift.tracing.trace(
+            userUsdtWallet.methods
+                .transfer({
+                    amount: 50,
+                    deployWalletValue: toNano(1),
+                    notify: true,
+                    payload: "",
+                    recipient: treasuryContractInstance.address,
+                    remainingGasTo: new Address("0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081"),
+                })
+                .send({
+                    from: OWNER,
+                    amount: toNano(2),
+                }),
+        );
 
-    //     await traceTree?.beautyPrint();
-    // }
+        await traceTree?.beautyPrint();
+    }
     // deposit admin func 
 
 
