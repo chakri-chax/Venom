@@ -301,7 +301,6 @@ contract Governance is IGovernanceCallback {
 		ProposalDraft draft = pendingProposalDraft[user];
 		
 		if (draft.amount == 0) {
-			emit step(1000);
 			uint256 treasuryDeposit = tempTreasuryBalance[user];
 			LockedNFTBalances LB = tempLockedBalances[user];
 			userNFTsByProposalId[proposals.length][user] = LB;
@@ -367,15 +366,12 @@ contract Governance is IGovernanceCallback {
 		LockedNFTBalances LB,
 		uint256 treasuryDeposit
 	) public {
-		emit step(1);
 		require(draft.amount > 0, ZERO_AMOUNT);
-		emit step(draft.amount);
 		uint maxFundingAmount = treasuryDeposit *
 			100 *
 			(LB.deedNFTCount + LB.founderNFTCount);
 		require(draft.amount <= maxFundingAmount, FUNDING_LIMIT_EXCEEDED);
 		require(LB.founderNFTCount >= 1, FOUNDER_NFT_LOCKED);
-		emit step(2);
 		Proposal p;
 		p.PID = proposals.length;
 		p.creator = user;
@@ -388,7 +384,6 @@ contract Governance is IGovernanceCallback {
 		p.ptype = draft.pType;
 		p.fundingAmount = draft.amount;
 		p.blockAddress = draft.blockAddress;
-		emit step(3);
 		if (p.ptype == ProposalType.COMPLIANCE) {
 			p.pStatus = ProposalStatus.LIVE;
 		} else {
@@ -411,17 +406,19 @@ contract Governance is IGovernanceCallback {
 			);
 			p.pStatus = ProposalStatus.LIVE;
 		}
-		emit step(4);
 		proposals.push(p);
 		uProposals[user].push(p.PID);
-		emit step(5);
 		isFundingProposal[p.PID] = false;
 
 		emit ProposalCreated(p.PID, user, draft.pType, draft.amount);
 		// cleanup
-		// delete pendingProposalDraft[user];
-		// delete tempTreasuryBalance[user];
-		// delete tempLockedBalances[user];
+		delete pendingProposalDraft[user];
+		delete tempTreasuryBalance[user];
+		delete tempLockedBalances[user];
+
+		delete tempVP_Treasury[user];
+		delete tempVP_NFTs[user];
+		delete pendingVPRequest[user];
 	}
 
 	function isProposalAgreed(uint _pId) internal view returns (bool) {
@@ -944,7 +941,6 @@ contract Governance is IGovernanceCallback {
 	function onVP_Treasury(uint256 value, address user) external {
 		require(msg.sender == treasury, INVALID_CALLER);
 		tempVP_Treasury[user] = value;
-		emit step(2000);
 		isFundingProposal[proposals.length] = true;
 		_finalizeVotingPower(user);
 	}
@@ -975,7 +971,6 @@ contract Governance is IGovernanceCallback {
 		uint votingPower = totalVotes * expFactor;
 
 		emit VotingPowerCalculated(user, votingPower);
-		emit step(3000);
 		if (isFundingProposal[proposals.length]) {
 			fundingProposal(
 				pendingProposalDraft[user],
@@ -986,9 +981,7 @@ contract Governance is IGovernanceCallback {
 		}
 
 		
-		// delete tempVP_Treasury[user];
-		// delete tempVP_NFTs[user];
-		// delete pendingVPRequest[user];
+		
 	}
 
 
