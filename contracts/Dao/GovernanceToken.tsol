@@ -355,11 +355,12 @@ contract Governance is IGovernanceCallback {
 			delete tempTreasuryBalance[user];
 			delete tempLockedBalances[user];
 		} else {
-			isFundingProposal[proposals.length] = true;
+			// isFundingProposal[proposals.length] = true;
 			getVotingPower(user);
 		}
 	}
 	event step (uint256 s);
+	event amout (uint256 a);
 	function fundingProposal(
 		ProposalDraft draft,
 		address user,
@@ -418,9 +419,9 @@ contract Governance is IGovernanceCallback {
 
 		emit ProposalCreated(p.PID, user, draft.pType, draft.amount);
 		// cleanup
-		delete pendingProposalDraft[user];
-		delete tempTreasuryBalance[user];
-		delete tempLockedBalances[user];
+		// delete pendingProposalDraft[user];
+		// delete tempTreasuryBalance[user];
+		// delete tempLockedBalances[user];
 	}
 
 	function isProposalAgreed(uint _pId) internal view returns (bool) {
@@ -914,7 +915,7 @@ contract Governance is IGovernanceCallback {
 
 	// async getter
 	function getVotingPower(address voter) public returns (uint) {
-		require(!pendingVPRequest[voter], REQUEST_ALREADY_PENDING);
+		// require(!pendingVPRequest[voter], REQUEST_ALREADY_PENDING);
 		tvm.rawReserve(1 ever, 0);
 
 		pendingVPRequest[voter] = true;
@@ -943,8 +944,11 @@ contract Governance is IGovernanceCallback {
 	function onVP_Treasury(uint256 value, address user) external {
 		require(msg.sender == treasury, INVALID_CALLER);
 		tempVP_Treasury[user] = value;
+		emit step(2000);
+		isFundingProposal[proposals.length] = true;
 		_finalizeVotingPower(user);
 	}
+	event VotingPowerCalculated(address indexed voter, uint votingPower);
 
 	function _finalizeVotingPower(address user) internal {
 		if (tempVP_Treasury[user] == 0 && tempVP_NFTs[user].deedNFTCount == 0) {
@@ -971,6 +975,7 @@ contract Governance is IGovernanceCallback {
 		uint votingPower = totalVotes * expFactor;
 
 		emit VotingPowerCalculated(user, votingPower);
+		emit step(3000);
 		if (isFundingProposal[proposals.length]) {
 			fundingProposal(
 				pendingProposalDraft[user],
@@ -981,12 +986,11 @@ contract Governance is IGovernanceCallback {
 		}
 
 		
-		delete tempVP_Treasury[user];
-		delete tempVP_NFTs[user];
-		delete pendingVPRequest[user];
+		// delete tempVP_Treasury[user];
+		// delete tempVP_NFTs[user];
+		// delete pendingVPRequest[user];
 	}
 
-	event VotingPowerCalculated(address indexed voter, uint votingPower);
 
 	uint16 public constant BALANCE_SHOULD_NOT_BE_ZERO = 94; // 94
 
@@ -1128,7 +1132,7 @@ contract Governance is IGovernanceCallback {
 		return comProps;
 	}
 
-	function getCallbackAmount() public pure {
-		msg.sender.transfer({value: 1 ever, flag: 128, bounce: false});
+	function getCallbackAmount() public view {
+		admin.transfer({value: 1 ever, flag: 128, bounce: false});
 	}
 }

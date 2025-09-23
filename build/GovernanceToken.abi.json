@@ -659,6 +659,14 @@
 			]
 		},
 		{
+			"name": "amout",
+			"inputs": [
+				{"name":"a","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
 			"name": "appliedVote",
 			"inputs": [
 				{"name":"proposalID","type":"uint256"},
