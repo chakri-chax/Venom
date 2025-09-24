@@ -6,6 +6,8 @@ async function main() {
 
   const chakri = new Address("0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081");
   const chakri2 = new Address("0:1c91894d1170cc8b9465b45d2aaaa0110ec3c0bb9e450aba57f0361408fb5263");
+  
+  const treasuryAddress_ = new Address("0:90e3b4a5b21d3b691e6f188836f32aeae7dbee35354bd2106583833e4e1c611e");
 
   const { contract: sample, tx } = await locklift.factory.deployContract({
     contract: "GovernanceToken",
@@ -15,7 +17,7 @@ async function main() {
     },
     constructorParams: {
 
-      treasuryAddress: new Address("0:09717aa05c0ed594d58fc5fe5847fe6dc1cfcb520b3831f79e61889238988b92"),
+      treasuryAddress:treasuryAddress_,
       _deedNFT: new Address("0:9fae74f1be8463f2d707946ef0ec041a36e74bf93e1d3d8ec7556c3d316dc33f"),
       _founderNFT: new Address("0:63e1aac8fa36ab60ba041b09888da2eda43b4d1489480fcd9f0b2e86e0a1270a"),
       _admin: chakri,
@@ -29,6 +31,24 @@ async function main() {
     `Governance  Contract deployed at: ${sample.address.toString()}`
   );
 
+
+  // update governance to treasury
+
+  const treasury = locklift.factory.getDeployedContract("Treasury", treasuryAddress_);
+  {
+    const { traceTree } = await locklift.tracing.trace(
+      treasury.methods
+        .updateGovernance({
+          _newGovernance: sample.address,
+        })
+        .send({
+          from: chakri,
+          amount: toNano(1),
+        }),
+    );
+
+    await traceTree?.beautyPrint();
+  }
   // ******************************* create a proposal BLOCK USER ****************************** 
   // console.log("create a proposal --> BLOCK USER", new Date().getTime());
 
@@ -57,32 +77,47 @@ async function main() {
   // }
 
   // ******************************* create a proposal Funding ****************************** 
-  const endTime = Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 7; // 1 week from now
-  console.log("create a proposal --> FUNDING", new Date().getTime());
-  {
-    const { traceTree } = await locklift.tracing.trace(
-      sample.methods
-        .createProposalRequest({
-          _title: "Funding proposal ",
-          _description: "Funding proposal",
-          _vote_start: 0,
-          _vote_end: endTime,
-          _ptype: 4, // ProposalType.BLOCK_USER
-          _minVoters: 2,
-          _minPercent: 50,
-          amount: (1),
-          _blockAddress: new Address("0:0000000000000000000000000000000000000000000000000000000000000000"),
+  // const endTime = Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 7; // 1 week from now
+  // console.log("create a proposal --> FUNDING", new Date().getTime());
+  // {
+  //   const { traceTree } = await locklift.tracing.trace(
+  //     sample.methods
+  //       .createProposalRequest({
+  //         _title: "Funding proposal ",
+  //         _description: "Funding proposal",
+  //         _vote_start: 0,
+  //         _vote_end: endTime,
+  //         _ptype: 4, // ProposalType.BLOCK_USER
+  //         _minVoters: 2,
+  //         _minPercent: 50,
+  //         amount: (1),
+  //         _blockAddress: new Address("0:0000000000000000000000000000000000000000000000000000000000000000"),
 
-        })
-        .send({
-          from: chakri,
-          amount: toNano(1),
-        }),
-    );
+  //       })
+  //       .send({
+  //         from: chakri,
+  //         amount: toNano(1),
+  //       }),
+  //   );
 
-    await traceTree?.beautyPrint();
-  }
+  //   await traceTree?.beautyPrint();
+  // }
+  // {
+  //   const { traceTree } = await locklift.tracing.trace(
+  //     sample.methods
+  //       .setFundingParams({
+  //         _proposalId: 0,
+  //         Interval:10,
+  //         _claimPercemt:100
+  //       })
+  //       .send({
+  //         from: chakri,
+  //         amount: toNano(1),
+  //       }),
+  //   );
 
+  //   await traceTree?.beautyPrint();
+  // }
   // console.log("create a proposal -->UN BLOCK USER", new Date().getTime());
 
   // {

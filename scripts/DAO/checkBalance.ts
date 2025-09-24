@@ -123,7 +123,7 @@ async function tokenWalletInstanceTIP3(userAddres: Address, tokenAddress: Addres
     return userTokenWalletContract;
 }
 
-const contrac = new Address("0:09717aa05c0ed594d58fc5fe5847fe6dc1cfcb520b3831f79e61889238988b92")
+const contrac = new Address("0:e3818c561ed5957373d03bded11b5fa2e5aa032952a544ea2ebe9a3493f4a3df")
 
 
 checkBalance(contrac, USDT);

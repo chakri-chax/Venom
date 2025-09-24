@@ -166,6 +166,26 @@
 			]
 		},
 		{
+			"name": "swapUsdt",
+			"inputs": [
+				{"name":"amountIn","type":"uint128"},
+				{"name":"receiver","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "transferUsdtToGovernance",
+			"inputs": [
+				{"name":"answerId","type":"uint32"},
+				{"name":"amount","type":"uint128"},
+				{"name":"receiver","type":"address"}
+			],
+			"outputs": [
+				{"name":"success","type":"bool"}
+			]
+		},
+		{
 			"name": "withdrawWvenAmount",
 			"inputs": [
 				{"name":"userShare","type":"uint256"}
@@ -211,10 +231,12 @@
 		{
 			"name": "swapAndTransferToGovernance",
 			"inputs": [
+				{"name":"answerId","type":"uint32"},
 				{"name":"amount","type":"uint256"},
 				{"name":"receiver","type":"address"}
 			],
 			"outputs": [
+				{"name":"success","type":"bool"}
 			]
 		},
 		{

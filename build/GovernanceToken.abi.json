@@ -187,6 +187,23 @@
 			]
 		},
 		{
+			"name": "releaseFundsFromProposal",
+			"inputs": [
+				{"name":"amount","type":"uint256"},
+				{"name":"to","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "onFundsReleased",
+			"inputs": [
+				{"name":"success","type":"bool"}
+			],
+			"outputs": [
+			]
+		},
+		{
 			"name": "stopFunding",
 			"inputs": [
 				{"name":"_proposalId","type":"uint256"}
@@ -684,6 +701,30 @@
 				{"name":"supports_","type":"bool"},
 				{"name":"user","type":"address"},
 				{"name":"votes","type":"int256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "timestampp",
+			"inputs": [
+				{"name":"t","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "amountt",
+			"inputs": [
+				{"name":"a","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "FundsReleased",
+			"inputs": [
+				{"name":"success","type":"bool"}
 			],
 			"outputs": [
 			]

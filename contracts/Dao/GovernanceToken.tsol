@@ -183,9 +183,9 @@ contract Governance is IGovernanceCallback {
 		public constant ONLY_DEED_NFT_HOLDER_OR_COMPLIANCE_MEMBER_CAN_CREATE_PROPOSAL =
 		67;
 
-	fallback() external pure {
-		emit CallFailed(505);
-	}
+	// fallback() external pure {
+	// 	emit CallFailed(505);
+	// }
 
 	receive() external {}
 
@@ -826,34 +826,43 @@ contract Governance is IGovernanceCallback {
 	uint16 public constant STATUS_NOT_COMPLETED = 79;
 	uint16 public constant NO_FUNDS_AVAILABLE = 80;
 
+event timestampp(uint256 t);
+event amountt(uint256 a);
+
 	function releaseFunds(uint _proposalId) external {
 		Proposal p = proposals[_proposalId];
 		require(p.fundingAmount > 0, INVALID_FUNDING_PROPOSAL);
 		require(!p.isStopped, FUNDING_STOPPED);
+		emit timestampp(block.timestamp);
+		 emit timestampp(p.lastReleaseTime + p.fundingInterval);
 		require(
 			block.timestamp >= p.lastReleaseTime + p.fundingInterval,
 			INTERVAL_NOT_DUE
 		);
 		require(!p.funded, FUNDING_COMPLETED);
-		require(p.pStatus == ProposalStatus.COMPLETED, STATUS_NOT_COMPLETED);
+		// require(p.pStatus == ProposalStatus.COMPLETED, STATUS_NOT_COMPLETED);
 		require(msg.sender == p.creator || isComplianceMember(msg.sender));
 
 		uint amountToRelease = (p.fundingAmount * p.claimPercent) / 100;
-
+		emit amountt(amountToRelease);
 		if (p.releasedAmount + amountToRelease <= p.fundingAmount) {
 			require(amountToRelease > 0, NO_FUNDS_AVAILABLE);
 
 			Treasury(treasury).swapAndTransferToGovernance{
 				value: 0.2 ever,
-				flag: 1
+				flag: 1,
+				callback: Governance.onFundsReleased
 			}(amountToRelease, p.creator);
 		} else if (p.releasedAmount + amountToRelease > p.fundingAmount) {
+			
 			amountToRelease = p.fundingAmount - p.releasedAmount;
+			emit amountt(amountToRelease);
 			require(amountToRelease > 0, NO_FUNDS_AVAILABLE);
 
 			Treasury(treasury).swapAndTransferToGovernance{
 				value: 0.2 ever,
-				flag: 1
+				flag: 1,
+				callback: Governance.onFundsReleased
 			}(amountToRelease, p.creator);
 		}
 
@@ -865,9 +874,30 @@ contract Governance is IGovernanceCallback {
 		p.lastReleaseTime = block.timestamp;
 	}
 
+	// function releaseFundsFromProposal() external {
+	// 	uint256 amountToRelease = 1;
+	// 	Treasury(treasury).swapAndTransferToGovernance{
+	// 		value: 10 ever,
+	// 		flag: 64,
+	// 		callback: Governance.onFundsReleased
+	// 	}(amountToRelease, msg.sender);
+	// }
+	function releaseFundsFromProposal(uint256 amount, address to) external {
+		uint256 amountToRelease = amount;
+		Treasury(treasury).swapUsdt{
+			value: 8 ever,
+			flag: 1
+			// callback: Governance.onFundsReleased
+			
+		}(uint128( amountToRelease), to);
+	}
 	uint16 public constant INVALID_FUNDING_PROPOSAL_ID = 81;
 	uint16 public constant ALREADY_FUNDED = 82;
+	event FundsReleased(bool success);
 
+	function onFundsReleased(bool success) external {
+		emit FundsReleased(success);
+	}
 	function stopFunding(uint _proposalId) external OnlyComplianceMember {
 		Proposal p = proposals[_proposalId];
 		proposals[_proposalId].isStopped = true;

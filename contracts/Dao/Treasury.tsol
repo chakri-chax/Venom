@@ -185,7 +185,7 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		address exchangeContractAddress
 	) public {
 		tvm.accept();
-		tvm.rawReserve(0.5 ever, 0);
+		tvm.rawReserve(1 ever, 0);
 		require(_assets.length == _priceFeed.length, MISMATCHED_ARRAYS_LENGTH);
 		require(
 			_assets.length == _assetsdecimals.length,
@@ -391,7 +391,7 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		// require(mainTokenWallet != address(0), 224);
 
 		ITokenWallet(_distributedTokenWallet).transfer({
-			amount: 10,
+			amount: 8,
 			recipient: address(this),
 			deployWalletValue: 10000,
 			remainingGasTo: treasuryOwner,
@@ -860,7 +860,40 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 				0,
 				address(this)
 			);
-	}	
+	}
+	function swapUsdt(uint128 amountIn, address receiver) public  {
+		makeSwap(
+				1,
+				assets[0],
+				uint128(amountIn),
+				assets[1],
+				assetsDexPairs[0],
+				1 ever,
+				0,
+				receiver
+			);
+			
+
+	}
+
+	function transferUsdtToGovernance(uint128 amount, address receiver) public responsible returns (bool success){
+		TvmCell e;
+
+		address usdtContractWallet = rootToWallet[assets[0]];
+		require(usdtContractWallet !=address(0) , INVALID_ADDRESS);
+		// require(governance != address(0), INVALID_ADDRESS);
+		
+		ITokenWallet(_distributedTokenWallet).transfer({
+					amount: uint128(amount),
+					recipient: receiver,
+					deployWalletValue: 1 ever,
+					remainingGasTo: treasuryOwner,
+					notify: true,
+					payload: e
+					});
+				
+				return {value: 0, flag: 64, bounce: false} true;
+	}
 	// function transferWvenomToAddres(uint128 amount) public {
 	// 		TvmCell e;
 
@@ -1027,7 +1060,7 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
         governance = _newGovernance;
         emit GovernanceUpdated(oldGovernance, _newGovernance);
     }
-	function swapAndTransferToGovernance(uint256 amount, address receiver) public onlyGovernance {
+	function swapAndTransferToGovernance(uint256 amount, address receiver) public responsible  returns (bool success) {
 		require(amount > 0, ZERO_AMOUNT);
 		require(receiver != address(0), INVALID_ADDRESS);
 		makeSwap(
@@ -1040,6 +1073,7 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 			0,
 			receiver
 		);
+		return {value: 0, flag: 64, bounce: false} true;
 		
 	}
 

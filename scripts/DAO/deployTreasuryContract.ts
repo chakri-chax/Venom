@@ -48,7 +48,7 @@ async function mainS() {
             _assets: [USDT, WVENOM],
             _assetsdecimals: [6, 9],
             _assetAllocations: [0, 100],
-            _assetsDexPairs: [ USDT_WVENOM_DEX_PAIR],
+            _assetsDexPairs: [USDT_WVENOM_DEX_PAIR],
             _owner: OWNER,
             _deedNFT: deedNFT,
             _founderNFT: FounderNFT,
@@ -68,7 +68,7 @@ async function mainS() {
     console.log(`Treasury deployed at :: ${treasuryContractInstance.address.toString()}`);
 
     //
-    
+
     const TreasuryArtifacts = locklift.factory.getContractArtifacts("Treasury");
     const treasuryContract = await locklift.factory.getDeployedContract("Treasury", await treasuryContractInstance.address);
 
@@ -77,7 +77,7 @@ async function mainS() {
         const { traceTree } = await locklift.tracing.trace(
             userUsdtWallet.methods
                 .transfer({
-                    amount: 50,
+                    amount: 20,
                     deployWalletValue: toNano(1),
                     notify: true,
                     payload: "",
@@ -92,6 +92,69 @@ async function mainS() {
 
         await traceTree?.beautyPrint();
     }
+    // ******************************* transfer usdt from contract  ************************************************
+
+    // try {
+
+    //     {
+    //         const { traceTree } = await locklift.tracing.trace(
+    //             treasuryContract.methods
+    //                 .swapUsdt({
+    //                     amountIn: 10,
+    //                     receiver: new Address("0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081"),
+    //                 })
+    //                 .send({
+    //                     from: OWNER,
+    //                     amount: toNano(8),
+    //                 }),
+    //         );
+    // }} catch (error) {
+        
+    // }
+    // *******************************transfer funds to governance ************************************************
+
+    // try {
+    //     {
+    //         const { traceTree } = await locklift.tracing.trace(
+    //             treasuryContract.methods
+    //                 .transferUsdtToGovernance({
+    //                     answerId: 0,
+    //                     amount: 10,
+    //                     receiver: new Address("0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081"),
+    //                 })
+    //                 .send({
+    //                     from: OWNER,
+    //                     amount: toNano(8),
+    //                 }),
+    //         );
+
+    //         await traceTree?.beautyPrint();
+    //     }
+    // } catch (error) {
+
+    // }
+    // ******************************* Get Callback ************************************************
+    // try {
+    //     {
+    //         const { traceTree } = await locklift.tracing.trace(
+    //             treasuryContract.methods
+    //                 .getCallbackAmount({
+
+    //                 })
+    //                 .send({
+    //                     from: OWNER,
+    //                     amount: toNano(2),
+    //                 }),
+    //         );
+
+    //         await traceTree?.beautyPrint();
+    //     }
+    // } catch (error) {
+    //     console.log('====================================');
+    //     console.log(error);
+    //     console.log('====================================');
+    // }
+
     // deposit admin func 
 
 
