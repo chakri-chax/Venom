@@ -79,7 +79,7 @@ async function main() {
           _vote_start: 0,
           _vote_end: 1, // 1 day
           _ptype: 4, // ProposalType.BLOCK_USER
-          _minVoters: 1,
+          _minVoters: 2,
           _minPercent: 50,
           amount: (0),
           _blockAddress: new Address("0:7179e9aeb58d6fe97610ffcf605eded4f3a161cee84bc0d67bfdf55e6a6a6491"),
