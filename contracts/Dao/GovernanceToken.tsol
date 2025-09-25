@@ -14,6 +14,8 @@ import "./Treasury.tsol";
 
 import "./Nft.tsol";
 
+import "./TokenMsg.tsol";
+
 interface IGovernanceCallback {
 	function onLockedNFTBalances(
 		LockedNFTBalances balances,
@@ -64,7 +66,31 @@ contract Governance is IGovernanceCallback {
 		bool isStopped;
 		bool funded;
 	}
-
+	struct ProposalDraft {
+		string title;
+		string description;
+		uint256 voteStart;
+		uint256 voteEnd;
+		ProposalType pType;
+		uint256 minVoters;
+		uint256 minPercent;
+		uint256 amount;
+		address blockAddress;
+	}
+	struct LockedBal {
+		uint256 deedNFTCount;
+		uint256 founderNFTCount;
+		uint256 genesisNFTCount;
+	}
+	struct VoteDraft {
+		uint propID_;
+		bool supports_;
+	}
+	struct WithdrawDraft {
+		uint propID_;
+		bool supports_;
+		int256 votes_;
+	}
 	uint16 public constant ZERO_ADDRESS = 55;
 	uint16 public constant INVALID_PROPOSAL = 56;
 	uint16 public constant INVALID_TOKEN_ADDRESS = 57;
@@ -85,17 +111,17 @@ contract Governance is IGovernanceCallback {
 	uint16 public constant INVALID_ID = 68;
 	uint16 public constant PROPOSAL_IS_NOT_PENDING_FOR_COMPLIANCE_MEMBERS = 70;
 
-	uint16 public constant INVALID_PROPOSAL_ID = 83; // 83 (reused from earlier INVALID_ID)
-	uint16 public constant USER_ALREADY_VOTED = 84; // 84
-	uint16 public constant PROPOSAL_NOT_LIVE = 85; // 85
-	uint16 public constant VOTING_CLOSED = 86; // 86
-	uint16 public constant USER_BLOCKED = 87; // 87
-	uint16 public constant DEED_NFT_REQUIRED = 88; // 88
-	uint16 public constant TREASURY_BAL_REQUIRED = 89; // 89
+	uint16 public constant INVALID_PROPOSAL_ID = 83; 
+	uint16 public constant USER_ALREADY_VOTED = 84; 
+	uint16 public constant PROPOSAL_NOT_LIVE = 85; 
+	uint16 public constant VOTING_CLOSED = 86; 
+	uint16 public constant USER_BLOCKED = 87;
+	uint16 public constant DEED_NFT_REQUIRED = 88; 
+	uint16 public constant TREASURY_BAL_REQUIRED = 89;
 
-	uint16 public constant USER_NOT_VOTED = 90; // 90
-	uint16 public constant DEED_NFT_REQUIRED_WITHDRAW = 91; // 91 (reuses same requirement as voting)
-	uint16 public constant TREASURY_BAL_REQUIRED_WITHDRAW = 92; // 92 (reuses same requirement as voting)
+	uint16 public constant USER_NOT_VOTED = 90; 
+	uint16 public constant DEED_NFT_REQUIRED_WITHDRAW = 91; 
+	uint16 public constant TREASURY_BAL_REQUIRED_WITHDRAW = 92;
 
 	uint16 public constant VOTING_NOT_STARTED = 71;
 	uint16 public constant INSUFFICIENT_SENDING_AMOUNT = 93;
@@ -111,9 +137,11 @@ contract Governance is IGovernanceCallback {
 	uint16 public constant NO_FUNDS_AVAILABLE = 80;
 	uint16 public constant INVALID_FUNDING_PROPOSAL_ID = 81;
 	uint16 public constant ALREADY_FUNDED = 82;
-	uint16 public constant BALANCE_SHOULD_NOT_BE_ZERO = 94; // 94
+	uint16 public constant BALANCE_SHOULD_NOT_BE_ZERO = 94; 
+	uint private constant PERCENT = 100;
 
-	uint CREATE_PROPOSAL_COST = 1 * 10 ** 9;
+	uint CREATE_PROPOSAL_COST = 1 * 10 ** 9; 
+	uint16 public constant VOTING_IN_PROGRESS = 69	;
 
 	Proposal[] public proposals;
 
@@ -124,14 +152,27 @@ contract Governance is IGovernanceCallback {
 	uint public completedProposals;
 
 	mapping(address => uint[]) public uProposals;
+	mapping(address => LockedBal) public userLockedBalance;
+	mapping(address => ProposalDraft) public pendingProposalDraft;
+	mapping(uint256 => mapping(address => LockedNFTBalances))
+		public userNFTsByProposalId;
+	mapping(address => uint256) public tempVoteTreasury;
+	mapping(address => LockedNFTBalances) public tempVoteNFTs;
+	mapping(address => VoteDraft) public pendingVotes;
 
-	uint private constant PERCENT = 100;
+	mapping(address => uint256) public tempTreasuryBalance;
+	mapping(address => LockedNFTBalances) public tempLockedBalances;
 
 	mapping(uint => mapping(address => bool)) public complianerVotes;
 
 	mapping(uint => mapping(address => int)) public voterVotes;
-
-	address[] public blacklistedUsers;
+	mapping(address => WithdrawDraft) public pendingWithdraws;
+	mapping(address => uint256) public tempWithdrawTreasury;
+	mapping(address => LockedNFTBalances) public tempWithdrawNFTs;
+	mapping(address => bool) internal pendingVPRequest;
+	mapping(address => LockedNFTBalances) internal tempVP_NFTs;
+	mapping(address => uint256) internal tempVP_Treasury;
+	mapping(uint256 => bool) public isFundingProposal;
 
 	event ProposalAdded(
 		uint indexed proposalID,
@@ -147,8 +188,45 @@ contract Governance is IGovernanceCallback {
 		bool result,
 		uint approvalRate
 	);
+	event ProposalCreated(
+		uint256 id,
+		address creater,
+		ProposalType pType,
+		uint256 amount
+	);
+	event TreasuryBalanceReceived(uint256 value, address user);
+	event CallFailed(uint32 errorCode);
+	event appliedVote(
+		uint indexed proposalID,
+		address indexed user,
+		bool supports_,
+		uint votes
+	);
+	event VoteWithdrawn(
+		uint indexed proposalID,
+		bool supports_,
+		address indexed user,
+		int256 votes
+	);
+	event VotingPowerCalculated(address indexed voter, uint votingPower);
+	event TopTreasuryHoldersReceived(address[] topHolders);
 
+	modifier OnlyComplianceMember() {
+		require(isComplianceMember(msg.sender));
+		_;
+	}
+	modifier onlyAdmin() {
+		require(msg.sender == admin, CALLABLE_BY_ADMIN_ONLY);
+		_;
+	}
+	modifier onlyTreasuryContract() {
+		require(msg.sender == treasury);
+		_;
+	}
 	address[] public complianceMembers;
+	address[] public topTreasuryHoldersArr;
+	address[] public blacklistedUsers;
+	address[] private treasureMngQueue;
 
 	constructor(
 		address treasuryAddress,
@@ -158,7 +236,7 @@ contract Governance is IGovernanceCallback {
 		address[] _complianers
 	) public {
 		tvm.accept();
-		tvm.rawReserve(1 ever, 0);
+		tvm.rawReserve(0.5 ever, 0);
 		require(
 			_deedNFT != address(0) &&
 				treasuryAddress != address(0) &&
@@ -172,8 +250,6 @@ contract Governance is IGovernanceCallback {
 		treasury = treasuryAddress;
 	}
 
-	address[] private treasureMngQueue;
-
 	function isComplianceMember(address s) public view returns (bool) {
 		bool _isComplianer = false;
 		for (uint i = 0; i < complianceMembers.length; i++) {
@@ -183,15 +259,6 @@ contract Governance is IGovernanceCallback {
 			}
 		}
 		return _isComplianer;
-	}
-
-	modifier OnlyComplianceMember() {
-		require(isComplianceMember(msg.sender));
-		_;
-	}
-	modifier onlyAdmin() {
-		require(msg.sender == admin, CALLABLE_BY_ADMIN_ONLY);
-		_;
 	}
 
 	function isUserBlacklisted(
@@ -204,59 +271,8 @@ contract Governance is IGovernanceCallback {
 		}
 	}
 
-	fallback() external pure {
-		emit CallFailed(505);
-	}
-
-	receive() external {}
-
-	struct LockedBal {
-		uint256 deedNFTCount;
-		uint256 founderNFTCount;
-		uint256 genesisNFTCount;
-	}
-
-	mapping(address => LockedBal) public userLockedBalance;
-
-	function setLockedNFTBalance(
-		uint256 deedNFTCount,
-		uint256 founderNFTCount,
-		uint256 genesisNFTCount
-	) public {
-		userLockedBalance[msg.sender] = LockedBal(
-			deedNFTCount,
-			founderNFTCount,
-			genesisNFTCount
-		);
-	}
-
-	event ProposalCreated(
-		uint256 id,
-		address creater,
-		ProposalType pType,
-		uint256 amount
-	);
-
-	struct ProposalDraft {
-		string title;
-		string description;
-		uint256 voteStart;
-		uint256 voteEnd;
-		ProposalType pType;
-		uint256 minVoters;
-		uint256 minPercent;
-		uint256 amount;
-		address blockAddress;
-	}
-	mapping(address => ProposalDraft) public pendingProposalDraft;
 	uint32 public INVALID_CALLER = 292;
-
-	event TreasuryBalanceReceived(uint256 value, address user);
-	event CallFailed(uint32 errorCode);
-
-	mapping(address => uint256) public tempTreasuryBalance;
-	mapping(address => LockedNFTBalances) public tempLockedBalances;
-
+	event time(uint256 time);
 	function createProposalRequest(
 		string _title,
 		string _description,
@@ -271,7 +287,8 @@ contract Governance is IGovernanceCallback {
 		require(_minPercent > 40, MIN_PERCENTAGE_TOO_LOW);
 		require(_minVoters >= 2, MIN_VOTERS_TOO_LOW);
 		require(!isUserBlacklisted(msg.sender), USER_IS_BLOCKED);
-		uint voteEndTme = block.timestamp;
+		_vote_start = _vote_start == 0 ? block.timestamp : _vote_start;
+		uint voteEndTme =block.timestamp + _vote_end * 24 * 60 * 60 * 1000000;
 		require(msg.value == CREATE_PROPOSAL_COST, AMOUNT_TOO_LOW);
 		tvm.rawReserve(1 ever, 0);
 
@@ -315,8 +332,6 @@ contract Governance is IGovernanceCallback {
 	}
 
 	uint32 constant ZERO_AMOUNT = 300;
-	mapping(uint256 => mapping(address => LockedNFTBalances))
-		public userNFTsByProposalId;
 
 	function _finalizeProposal(address user) internal {
 		ProposalDraft draft = pendingProposalDraft[user];
@@ -343,6 +358,14 @@ contract Governance is IGovernanceCallback {
 			p.ptype = draft.pType;
 			p.fundingAmount = draft.amount;
 			p.blockAddress = draft.blockAddress;
+			p.startTime = block.timestamp;
+			p.lastReleaseTime = block.timestamp;
+			p.isStopped = true;
+			p.claimPercent = 0;
+			p.fundingInterval = 0;
+			p.funded = false;
+			p.totalVoted = 0;
+			p.releasedAmount = 0;
 
 			if (p.ptype == ProposalType.COMPLIANCE) {
 				p.pStatus = ProposalStatus.LIVE;
@@ -370,25 +393,23 @@ contract Governance is IGovernanceCallback {
 			uProposals[user].push(p.PID);
 
 			emit ProposalCreated(p.PID, user, draft.pType, draft.amount);
-			// cleanup
 			delete pendingProposalDraft[user];
 			delete tempTreasuryBalance[user];
 			delete tempLockedBalances[user];
+			tvm.rawReserve(1 ever, 0);
+			p.creator.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
 		} else {
 			// isFundingProposal[proposals.length] = true;
 			getVotingPower(user);
 		}
 	}
 
-	event step(uint256 s);
-	event amout(uint256 a);
-
 	function fundingProposal(
 		ProposalDraft draft,
 		address user,
 		LockedNFTBalances LB,
 		uint256 treasuryDeposit
-	) public {
+	) internal {
 		require(draft.amount > 0, ZERO_AMOUNT);
 		uint maxFundingAmount = treasuryDeposit *
 			100 *
@@ -442,6 +463,9 @@ contract Governance is IGovernanceCallback {
 		delete tempVP_Treasury[user];
 		delete tempVP_NFTs[user];
 		delete pendingVPRequest[user];
+
+		tvm.rawReserve(1 ever, 0);
+		p.creator.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
 	}
 
 	function isProposalAgreed(uint _pId) internal view returns (bool) {
@@ -484,15 +508,20 @@ contract Governance is IGovernanceCallback {
 		}
 
 		_success = true;
+		tvm.rawReserve(1 ever, 0);
+		msg.sender.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
 	}
 
 	function voteByUser(uint _propID, bool _supports) external {
 		require(_propID < proposals.length, INVALID_PROPOSAL_ID);
 		Proposal p = proposals[_propID];
-
 		require(voterVotes[_propID][msg.sender] == 0, USER_ALREADY_VOTED);
 		require(p.pStatus == ProposalStatus.LIVE, PROPOSAL_NOT_LIVE);
-
+		   require(
+            (block.timestamp >= p.vote_start) &&
+                (block.timestamp <= p.vote_end),
+            VOTING_CLOSED
+        );
 		require(!isUserBlacklisted(msg.sender), USER_BLOCKED);
 
 		pendingVotes[msg.sender] = VoteDraft(_propID, _supports);
@@ -511,15 +540,6 @@ contract Governance is IGovernanceCallback {
 		}(msg.sender);
 	}
 
-	mapping(address => uint256) public tempVoteTreasury;
-	mapping(address => LockedNFTBalances) public tempVoteNFTs;
-
-	struct VoteDraft {
-		uint propID_;
-		bool supports_;
-	}
-	mapping(address => VoteDraft) public pendingVotes;
-
 	function onTreasuryVoteBalance(uint256 value, address user) external {
 		require(msg.sender == treasury, INVALID_CALLER);
 		tempVoteTreasury[user] = value;
@@ -531,7 +551,7 @@ contract Governance is IGovernanceCallback {
 	) external {
 		require(msg.sender == treasury, INVALID_CALLER);
 		tempVoteNFTs[user] = balances;
-		_finalizeVote(user); // finalize when both callbacks complete
+		_finalizeVote(user); 
 	}
 
 	function _finalizeVote(address user) internal {
@@ -566,18 +586,10 @@ contract Governance is IGovernanceCallback {
 
 		emit Voted(p.PID, vd.supports_, user);
 
-		// cleanup
 		delete pendingVotes[user];
 		delete tempVoteTreasury[user];
 		delete tempVoteNFTs[user];
 	}
-
-	event appliedVote(
-		uint indexed proposalID,
-		address indexed user,
-		bool supports_,
-		uint votes
-	);
 
 	function _applyVote(
 		uint propID,
@@ -593,19 +605,10 @@ contract Governance is IGovernanceCallback {
 			voterVotes[propID][voter] = -int256(votes);
 		}
 		proposals[propID].totalVoted += 1;
-
+		tvm.rawReserve(1 ever, 0);
+		voter.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
 		emit appliedVote(propID, voter, supports_, votes);
 	}
-
-	struct WithdrawDraft {
-		uint propID_;
-		bool supports_;
-		int256 votes_;
-	}
-
-	mapping(address => WithdrawDraft) public pendingWithdraws;
-	mapping(address => uint256) public tempWithdrawTreasury;
-	mapping(address => LockedNFTBalances) public tempWithdrawNFTs;
 
 	function withdrawVote(uint _propID) external {
 		require(voterVotes[_propID][msg.sender] != 0, USER_NOT_VOTED);
@@ -617,10 +620,8 @@ contract Governance is IGovernanceCallback {
 
 		bool _supports = votes > 0;
 
-		// Store draft
 		pendingWithdraws[msg.sender] = WithdrawDraft(_propID, _supports, votes);
 
-		// async calls like voteByUser
 		Treasury(treasury).getTreasuryBalance{
 			value: 0.2 ever,
 			flag: 1,
@@ -681,7 +682,6 @@ contract Governance is IGovernanceCallback {
 
 		emit VoteWithdrawn(p.PID, wd.supports_, user, wd.votes_);
 
-		// cleanup
 		delete voterVotes[wd.propID_][user];
 		delete pendingWithdraws[user];
 		delete tempWithdrawTreasury[user];
@@ -706,20 +706,15 @@ contract Governance is IGovernanceCallback {
 		}
 
 		proposals[propID].totalVoted -= 1;
+		tvm.rawReserve(1 ever, 0);
+		voter.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
 	}
 
-	event VoteWithdrawn(
-		uint indexed proposalID,
-		bool supports_,
-		address indexed user,
-		int256 votes
-	);
-
 	function _calculateVotingPower(
-		address voter,
+		address /*voter*/,
 		uint256 treasuryDeposit,
 		LockedNFTBalances LB
-	) public pure returns (uint) {
+	) internal pure returns (uint) {
 		uint total_votes = LB.deedNFTCount;
 		uint votes = total_votes > 11 ? 11 : total_votes;
 
@@ -745,13 +740,16 @@ contract Governance is IGovernanceCallback {
 			proposals[_propID].pStatus = ProposalStatus.FAILED;
 		}
 		pendingProposals--;
-	}
 
+		emit ProposalStatusChanged(p.PID, p.pStatus);
+		tvm.rawReserve(1 ever, 0);
+		msg.sender.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
+	}
 	function executeProposal(uint _pId) external OnlyComplianceMember {
 		require(_pId < proposals.length, INVALID_ID);
 		Proposal p = proposals[_pId];
 		uint totalVotes = p.yVotes + p.nVotes;
-
+		require(block.timestamp > p.vote_end, VOTING_IN_PROGRESS);
 		if (p.fundingAmount > 0) {
 			require(p.claimPercent > 0, CLAIM_PERCENT_NOT_SET);
 			require(p.fundingInterval > 0, FUNDING_INTERVAL_NOT_SET);
@@ -760,7 +758,6 @@ contract Governance is IGovernanceCallback {
 		if (p.yVotes > 0) {
 			percent = (p.yVotes * PERCENT) / totalVotes;
 		} else {
-			// Handle the case where yVotes is zero
 			percent = 0;
 		}
 
@@ -811,7 +808,6 @@ contract Governance is IGovernanceCallback {
 	function _removeFromBlacklist(address _user) internal {
 		for (uint i = 0; i < blacklistedUsers.length; i++) {
 			if (blacklistedUsers[i] == _user) {
-				// Replace the user to remove with the last element
 				blacklistedUsers[i] = blacklistedUsers[
 					blacklistedUsers.length - 1
 				];
@@ -819,17 +815,14 @@ contract Governance is IGovernanceCallback {
 				break;
 			}
 		}
+		tvm.rawReserve(1 ever, 0);
+		msg.sender.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
 	}
-
-	event timestampp(uint256 t);
-	event amountt(uint256 a);
 
 	function releaseFunds(uint _proposalId) external {
 		Proposal p = proposals[_proposalId];
 		require(p.fundingAmount > 0, INVALID_FUNDING_PROPOSAL);
 		require(!p.isStopped, FUNDING_STOPPED);
-		emit timestampp(block.timestamp);
-		emit timestampp(p.lastReleaseTime + p.fundingInterval);
 		require(
 			block.timestamp >= p.lastReleaseTime + p.fundingInterval,
 			INTERVAL_NOT_DUE
@@ -840,7 +833,6 @@ contract Governance is IGovernanceCallback {
 		require(msg.value >= 3 ever, INSUFFICIENT_SENDING_AMOUNT);
 		uint128 amountToRelease = uint128(p.fundingAmount * p.claimPercent) /
 			100;
-		emit amountt(amountToRelease);
 		if (p.releasedAmount + amountToRelease <= p.fundingAmount) {
 			require(amountToRelease > 0, NO_FUNDS_AVAILABLE);
 
@@ -848,17 +840,14 @@ contract Governance is IGovernanceCallback {
 				value: 3 ever,
 				flag: 1
 			}(amountToRelease, p.creator);
-			// callback: Governance.onFundsReleased
 		} else if (p.releasedAmount + amountToRelease > p.fundingAmount) {
 			amountToRelease = uint128(p.fundingAmount - p.releasedAmount);
-			emit amountt(amountToRelease);
 			require(amountToRelease > 0, NO_FUNDS_AVAILABLE);
 
 			Treasury(treasury).swapAndTransferToGovernance{
 				value: 3 ever,
 				flag: 1
 			}(amountToRelease, p.creator);
-			// callback: Governance.onFundsReleased
 		}
 
 		p.releasedAmount += amountToRelease;
@@ -867,27 +856,23 @@ contract Governance is IGovernanceCallback {
 		}
 
 		p.lastReleaseTime = block.timestamp;
+		tvm.rawReserve(1 ever, 0);
+		msg.sender.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
 	}
 
-	function swapFunds(uint256 amount, address to) external {
+	function swapFunds(uint256 amount, address to) external view {
 		require(msg.value >= 3 ever, INSUFFICIENT_SENDING_AMOUNT);
 		uint256 amountToRelease = amount;
 		Treasury(treasury).swapAndTransferToGovernance{value: 3 ever, flag: 1}(
-			// callback: Governance.onFundsReleased
 			uint128(amountToRelease),
 			to
 		);
 	}
 
-	event FundsReleased(bool success);
-
-	function onFundsReleased(bool success) external {
-		emit FundsReleased(success);
-	}
-
 	function stopFunding(uint _proposalId) external OnlyComplianceMember {
-		Proposal p = proposals[_proposalId];
 		proposals[_proposalId].isStopped = true;
+		tvm.rawReserve(1 ever, 0);
+		msg.sender.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
 	}
 
 	function resumeFunding(uint _proposalId) external OnlyComplianceMember {
@@ -895,6 +880,8 @@ contract Governance is IGovernanceCallback {
 		require(p.fundingAmount > 0, INVALID_FUNDING_PROPOSAL_ID);
 		require(!p.funded, ALREADY_FUNDED);
 		proposals[_proposalId].isStopped = false;
+		tvm.rawReserve(1 ever, 0);
+		msg.sender.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
 	}
 
 	function setFundingParams(
@@ -902,15 +889,14 @@ contract Governance is IGovernanceCallback {
 		uint256 Interval,
 		uint _claimPercemt
 	) external OnlyComplianceMember {
-		Proposal p = proposals[_proposalId];
 		proposals[_proposalId].fundingInterval = Interval;
 		proposals[_proposalId].claimPercent = _claimPercemt;
+		tvm.rawReserve(1 ever, 0);
+		msg.sender.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
 	}
 
 	function isTopTreasury(address sender) internal view returns (bool) {
-		// before this function is called, make sure to call getTreasuryManagerQueue()
-		// to populate topTreasuryHoldersArr
-		address[] topTreasuryHolders = topTreasuryHoldersArr; //ITreasury(treasury).getTopTreasuryHolders();
+		address[] topTreasuryHolders = topTreasuryHoldersArr;
 
 		uint n = topTreasuryHolders.length;
 		for (uint i = 0; i < n; i++) {
@@ -921,15 +907,7 @@ contract Governance is IGovernanceCallback {
 		return false;
 	}
 
-	mapping(address => bool) internal pendingVPRequest;
-	mapping(address => LockedNFTBalances) internal tempVP_NFTs;
-	mapping(address => uint256) internal tempVP_Treasury;
-	// bool public isFundingProposalCheck = false;
-	mapping(uint256 => bool) public isFundingProposal;
-
-	// async getter
 	function getVotingPower(address voter) public returns (uint) {
-		// require(!pendingVPRequest[voter], REQUEST_ALREADY_PENDING);
 		tvm.rawReserve(1 ever, 0);
 
 		pendingVPRequest[voter] = true;
@@ -962,29 +940,23 @@ contract Governance is IGovernanceCallback {
 		_finalizeVotingPower(user);
 	}
 
-	event VotingPowerCalculated(address indexed voter, uint votingPower);
-
 	function _finalizeVotingPower(address user) internal {
 		if (tempVP_Treasury[user] == 0 && tempVP_NFTs[user].deedNFTCount == 0) {
 			return;
 		}
 
 		LockedNFTBalances b = tempVP_NFTs[user];
-		uint256 treasuryBal = tempVP_Treasury[user] / 1e9; // adjust decimals if needed
+		uint256 treasuryBal = tempVP_Treasury[user] / 1e9;
 
-		// start from deed NFT count
 		uint totalVotes = b.deedNFTCount > 0 ? b.deedNFTCount : 1;
 
-		// cap deed count at 11
 		if (totalVotes > 11) totalVotes = 11;
 
-		// treasury multiplier
 		if (treasuryBal >= 10) {
 			uint r = treasuryBal / 10;
 			totalVotes *= r;
 		}
 
-		// exponent factor: founder + genesis
 		uint expFactor = 1 + b.founderNFTCount;
 		uint votingPower = totalVotes * expFactor;
 
@@ -1002,7 +974,7 @@ contract Governance is IGovernanceCallback {
 	function getTreasuryManagerQueue()
 		public
 		view
-		returns (address[] topTreasuryHoldersArr)
+		
 	{
 		Treasury(treasury).getTopTreasuryHolders{
 			value: 0.2 ever,
@@ -1011,19 +983,11 @@ contract Governance is IGovernanceCallback {
 		}();
 	}
 
-	address[] public topTreasuryHoldersArr;
-	event TopTreasuryHoldersReceived(address[] topHolders);
-
 	function onGetTopTreasuryHolders(address[] topTreasuryHolders) external {
 		require(msg.sender == treasury, INVALID_CALLER);
 
 		topTreasuryHoldersArr = topTreasuryHolders;
 		emit TopTreasuryHoldersReceived(topTreasuryHolders);
-	}
-
-	modifier onlyTreasuryContract() {
-		require(msg.sender == treasury);
-		_;
 	}
 
 	function getProposal(uint pID) public view returns (Proposal) {
@@ -1046,19 +1010,19 @@ contract Governance is IGovernanceCallback {
 	}
 
 	function getProposalYayVotes(uint _pid) external view returns (uint) {
-		require(_pid < proposals.length, INVALID_PROPOSAL_ID); // Reused 83
+		require(_pid < proposals.length, INVALID_PROPOSAL_ID); 
 		return proposals[_pid].yVotes;
 	}
 
 	function getProposalNayVotes(uint _pid) external view returns (uint) {
-		require(_pid < proposals.length, INVALID_PROPOSAL_ID); // Reused 83
+		require(_pid < proposals.length, INVALID_PROPOSAL_ID); 
 		return proposals[_pid].nVotes;
 	}
 
 	function getProposalStatus(
 		uint _pid
 	) external view returns (ProposalStatus) {
-		require(_pid < proposals.length, INVALID_PROPOSAL_ID); // Reused 83
+		require(_pid < proposals.length, INVALID_PROPOSAL_ID);
 		return proposals[_pid].pStatus;
 	}
 
@@ -1089,12 +1053,14 @@ contract Governance is IGovernanceCallback {
 	}
 
 	function setTreasury(address _treasury) external onlyAdmin {
-		require(_treasury != address(0), ZERO_ADDRESS); // 93
+		require(_treasury != address(0), ZERO_ADDRESS); 
 		treasury = _treasury;
 	}
 
 	function addComplianer(address _complianer) public onlyAdmin {
 		complianceMembers.push(_complianer);
+		tvm.rawReserve(1 ever, 0);
+		msg.sender.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
 	}
 
 	function removeComplianer(address _complianer) public onlyAdmin {
@@ -1113,10 +1079,14 @@ contract Governance is IGovernanceCallback {
 			}
 			complianceMembers.pop();
 		}
+		tvm.rawReserve(1 ever, 0);
+		msg.sender.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
 	}
 
 	function revokeAdmin(address _newAdmin) public onlyAdmin {
 		admin = _newAdmin;
+		tvm.rawReserve(1 ever, 0);
+		msg.sender.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
 	}
 
 	function getCompletedProposals() public view returns (Proposal[]) {
@@ -1135,4 +1105,10 @@ contract Governance is IGovernanceCallback {
 	function withdrawCreateProposalFee() public view {
 		admin.transfer({value: 1 ever, flag: 128, bounce: false});
 	}
+
+	fallback() external pure {
+		emit CallFailed(505);
+	}
+
+	receive() external {}
 }

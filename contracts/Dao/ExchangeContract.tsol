@@ -104,6 +104,5 @@ contract ExchangeContract is IAcceptTokensTransferCallback {
     }
     function getCallbackAmouhnt() public {
 		msg.sender.transfer({value: 1 ever, flag: 128, bounce: false});
-		
 	}
 }

@@ -34,16 +34,6 @@
 			]
 		},
 		{
-			"name": "setLockedNFTBalance",
-			"inputs": [
-				{"name":"deedNFTCount","type":"uint256"},
-				{"name":"founderNFTCount","type":"uint256"},
-				{"name":"genesisNFTCount","type":"uint256"}
-			],
-			"outputs": [
-			]
-		},
-		{
 			"name": "createProposalRequest",
 			"inputs": [
 				{"name":"_title","type":"string"},
@@ -73,17 +63,6 @@
 			"inputs": [
 				{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"balances","type":"tuple"},
 				{"name":"user","type":"address"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "fundingProposal",
-			"inputs": [
-				{"components":[{"name":"title","type":"string"},{"name":"description","type":"string"},{"name":"voteStart","type":"uint256"},{"name":"voteEnd","type":"uint256"},{"name":"pType","type":"uint8"},{"name":"minVoters","type":"uint256"},{"name":"minPercent","type":"uint256"},{"name":"amount","type":"uint256"},{"name":"blockAddress","type":"address"}],"name":"draft","type":"tuple"},
-				{"name":"user","type":"address"},
-				{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"LB","type":"tuple"},
-				{"name":"treasuryDeposit","type":"uint256"}
 			],
 			"outputs": [
 			]
@@ -152,17 +131,6 @@
 			]
 		},
 		{
-			"name": "_calculateVotingPower",
-			"inputs": [
-				{"name":"voter","type":"address"},
-				{"name":"treasuryDeposit","type":"uint256"},
-				{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"LB","type":"tuple"}
-			],
-			"outputs": [
-				{"name":"value0","type":"uint256"}
-			]
-		},
-		{
 			"name": "makeItLive",
 			"inputs": [
 				{"name":"_propID","type":"uint256"}
@@ -191,14 +159,6 @@
 			"inputs": [
 				{"name":"amount","type":"uint256"},
 				{"name":"to","type":"address"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "onFundsReleased",
-			"inputs": [
-				{"name":"success","type":"bool"}
 			],
 			"outputs": [
 			]
@@ -261,7 +221,6 @@
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"topTreasuryHoldersArr","type":"address[]"}
 			]
 		},
 		{
@@ -444,38 +403,6 @@
 			]
 		},
 		{
-			"name": "complianerVotes",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"complianerVotes","type":"map(uint256,map(address,bool))"}
-			]
-		},
-		{
-			"name": "voterVotes",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"voterVotes","type":"map(uint256,map(address,int256))"}
-			]
-		},
-		{
-			"name": "blacklistedUsers",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"blacklistedUsers","type":"address[]"}
-			]
-		},
-		{
-			"name": "complianceMembers",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"complianceMembers","type":"address[]"}
-			]
-		},
-		{
 			"name": "userLockedBalance",
 			"inputs": [
 			],
@@ -489,30 +416,6 @@
 			],
 			"outputs": [
 				{"components":[{"name":"title","type":"string"},{"name":"description","type":"string"},{"name":"voteStart","type":"uint256"},{"name":"voteEnd","type":"uint256"},{"name":"pType","type":"uint8"},{"name":"minVoters","type":"uint256"},{"name":"minPercent","type":"uint256"},{"name":"amount","type":"uint256"},{"name":"blockAddress","type":"address"}],"name":"pendingProposalDraft","type":"map(address,tuple)"}
-			]
-		},
-		{
-			"name": "INVALID_CALLER",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"INVALID_CALLER","type":"uint32"}
-			]
-		},
-		{
-			"name": "tempTreasuryBalance",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"tempTreasuryBalance","type":"map(address,uint256)"}
-			]
-		},
-		{
-			"name": "tempLockedBalances",
-			"inputs": [
-			],
-			"outputs": [
-				{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"tempLockedBalances","type":"map(address,tuple)"}
 			]
 		},
 		{
@@ -548,6 +451,38 @@
 			]
 		},
 		{
+			"name": "tempTreasuryBalance",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"tempTreasuryBalance","type":"map(address,uint256)"}
+			]
+		},
+		{
+			"name": "tempLockedBalances",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"tempLockedBalances","type":"map(address,tuple)"}
+			]
+		},
+		{
+			"name": "complianerVotes",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"complianerVotes","type":"map(uint256,map(address,bool))"}
+			]
+		},
+		{
+			"name": "voterVotes",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"voterVotes","type":"map(uint256,map(address,int256))"}
+			]
+		},
+		{
 			"name": "pendingWithdraws",
 			"inputs": [
 			],
@@ -580,11 +515,35 @@
 			]
 		},
 		{
+			"name": "complianceMembers",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"complianceMembers","type":"address[]"}
+			]
+		},
+		{
 			"name": "topTreasuryHoldersArr",
 			"inputs": [
 			],
 			"outputs": [
 				{"name":"topTreasuryHoldersArr","type":"address[]"}
+			]
+		},
+		{
+			"name": "blacklistedUsers",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"blacklistedUsers","type":"address[]"}
+			]
+		},
+		{
+			"name": "INVALID_CALLER",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"INVALID_CALLER","type":"uint32"}
 			]
 		}
 	],
@@ -661,22 +620,6 @@
 			]
 		},
 		{
-			"name": "step",
-			"inputs": [
-				{"name":"s","type":"uint256"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "amout",
-			"inputs": [
-				{"name":"a","type":"uint256"}
-			],
-			"outputs": [
-			]
-		},
-		{
 			"name": "appliedVote",
 			"inputs": [
 				{"name":"proposalID","type":"uint256"},
@@ -699,30 +642,6 @@
 			]
 		},
 		{
-			"name": "timestampp",
-			"inputs": [
-				{"name":"t","type":"uint256"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "amountt",
-			"inputs": [
-				{"name":"a","type":"uint256"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "FundsReleased",
-			"inputs": [
-				{"name":"success","type":"bool"}
-			],
-			"outputs": [
-			]
-		},
-		{
 			"name": "VotingPowerCalculated",
 			"inputs": [
 				{"name":"voter","type":"address"},
@@ -735,6 +654,14 @@
 			"name": "TopTreasuryHoldersReceived",
 			"inputs": [
 				{"name":"topHolders","type":"address[]"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "time",
+			"inputs": [
+				{"name":"time","type":"uint256"}
 			],
 			"outputs": [
 			]
@@ -752,20 +679,16 @@
 		{"name":"pendingProposals","type":"uint256"},
 		{"name":"completedProposals","type":"uint256"},
 		{"name":"uProposals","type":"map(address,uint256[])"},
-		{"name":"complianerVotes","type":"map(uint256,map(address,bool))"},
-		{"name":"voterVotes","type":"map(uint256,map(address,int256))"},
-		{"name":"blacklistedUsers","type":"address[]"},
-		{"name":"complianceMembers","type":"address[]"},
-		{"name":"treasureMngQueue","type":"address[]"},
 		{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisNFTCount","type":"uint256"}],"name":"userLockedBalance","type":"map(address,tuple)"},
 		{"components":[{"name":"title","type":"string"},{"name":"description","type":"string"},{"name":"voteStart","type":"uint256"},{"name":"voteEnd","type":"uint256"},{"name":"pType","type":"uint8"},{"name":"minVoters","type":"uint256"},{"name":"minPercent","type":"uint256"},{"name":"amount","type":"uint256"},{"name":"blockAddress","type":"address"}],"name":"pendingProposalDraft","type":"map(address,tuple)"},
-		{"name":"INVALID_CALLER","type":"uint32"},
-		{"name":"tempTreasuryBalance","type":"map(address,uint256)"},
-		{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"tempLockedBalances","type":"map(address,tuple)"},
 		{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"userNFTsByProposalId","type":"map(uint256,map(address,tuple))"},
 		{"name":"tempVoteTreasury","type":"map(address,uint256)"},
 		{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"tempVoteNFTs","type":"map(address,tuple)"},
 		{"components":[{"name":"propID_","type":"uint256"},{"name":"supports_","type":"bool"}],"name":"pendingVotes","type":"map(address,tuple)"},
+		{"name":"tempTreasuryBalance","type":"map(address,uint256)"},
+		{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"tempLockedBalances","type":"map(address,tuple)"},
+		{"name":"complianerVotes","type":"map(uint256,map(address,bool))"},
+		{"name":"voterVotes","type":"map(uint256,map(address,int256))"},
 		{"components":[{"name":"propID_","type":"uint256"},{"name":"supports_","type":"bool"},{"name":"votes_","type":"int256"}],"name":"pendingWithdraws","type":"map(address,tuple)"},
 		{"name":"tempWithdrawTreasury","type":"map(address,uint256)"},
 		{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"tempWithdrawNFTs","type":"map(address,tuple)"},
@@ -773,6 +696,10 @@
 		{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"tempVP_NFTs","type":"map(address,tuple)"},
 		{"name":"tempVP_Treasury","type":"map(address,uint256)"},
 		{"name":"isFundingProposal","type":"map(uint256,bool)"},
-		{"name":"topTreasuryHoldersArr","type":"address[]"}
+		{"name":"complianceMembers","type":"address[]"},
+		{"name":"topTreasuryHoldersArr","type":"address[]"},
+		{"name":"blacklistedUsers","type":"address[]"},
+		{"name":"treasureMngQueue","type":"address[]"},
+		{"name":"INVALID_CALLER","type":"uint32"}
 	]
 }
