@@ -183,9 +183,9 @@ contract Governance is IGovernanceCallback {
 		public constant ONLY_DEED_NFT_HOLDER_OR_COMPLIANCE_MEMBER_CAN_CREATE_PROPOSAL =
 		67;
 
-	// fallback() external pure {
-	// 	emit CallFailed(505);
-	// }
+	fallback() external pure {
+		emit CallFailed(505);
+	}
 
 	receive() external {}
 
@@ -479,7 +479,7 @@ contract Governance is IGovernanceCallback {
 	uint16 public constant TREASURY_BAL_REQUIRED_WITHDRAW = 92; // 92 (reuses same requirement as voting)
 
 	uint16 public constant VOTING_NOT_STARTED = 71;
-
+	uint16 public constant INSUFFICIENT_SENDING_AMOUNT = 93;
 	function voteByUser(uint _propID, bool _supports) external {
 		require(_propID < proposals.length, INVALID_PROPOSAL_ID);
 		Proposal p = proposals[_propID];
@@ -840,29 +840,29 @@ event amountt(uint256 a);
 			INTERVAL_NOT_DUE
 		);
 		require(!p.funded, FUNDING_COMPLETED);
-		// require(p.pStatus == ProposalStatus.COMPLETED, STATUS_NOT_COMPLETED);
+		require(p.pStatus == ProposalStatus.COMPLETED, STATUS_NOT_COMPLETED);
 		require(msg.sender == p.creator || isComplianceMember(msg.sender));
-
-		uint amountToRelease = (p.fundingAmount * p.claimPercent) / 100;
+		require(msg.value >= 3 ever, INSUFFICIENT_SENDING_AMOUNT);
+		uint128 amountToRelease = uint128(p.fundingAmount * p.claimPercent) / 100;
 		emit amountt(amountToRelease);
 		if (p.releasedAmount + amountToRelease <= p.fundingAmount) {
 			require(amountToRelease > 0, NO_FUNDS_AVAILABLE);
 
 			Treasury(treasury).swapAndTransferToGovernance{
-				value: 0.2 ever,
-				flag: 1,
-				callback: Governance.onFundsReleased
+				value: 3 ever,
+				flag: 1
+				// callback: Governance.onFundsReleased
 			}(amountToRelease, p.creator);
 		} else if (p.releasedAmount + amountToRelease > p.fundingAmount) {
 			
-			amountToRelease = p.fundingAmount - p.releasedAmount;
+			amountToRelease = uint128(p.fundingAmount - p.releasedAmount);
 			emit amountt(amountToRelease);
 			require(amountToRelease > 0, NO_FUNDS_AVAILABLE);
 
 			Treasury(treasury).swapAndTransferToGovernance{
-				value: 0.2 ever,
-				flag: 1,
-				callback: Governance.onFundsReleased
+				value: 3 ever,
+				flag: 1
+				// callback: Governance.onFundsReleased
 			}(amountToRelease, p.creator);
 		}
 
@@ -874,18 +874,12 @@ event amountt(uint256 a);
 		p.lastReleaseTime = block.timestamp;
 	}
 
-	// function releaseFundsFromProposal() external {
-	// 	uint256 amountToRelease = 1;
-	// 	Treasury(treasury).swapAndTransferToGovernance{
-	// 		value: 10 ever,
-	// 		flag: 64,
-	// 		callback: Governance.onFundsReleased
-	// 	}(amountToRelease, msg.sender);
-	// }
-	function releaseFundsFromProposal(uint256 amount, address to) external {
+	
+	function swapFunds(uint256 amount, address to) external {
+		require(msg.value >= 3 ever, INSUFFICIENT_SENDING_AMOUNT);
 		uint256 amountToRelease = amount;
-		Treasury(treasury).swapUsdt{
-			value: 8 ever,
+		Treasury(treasury).swapAndTransferToGovernance{
+			value: 3 ever,
 			flag: 1
 			// callback: Governance.onFundsReleased
 			

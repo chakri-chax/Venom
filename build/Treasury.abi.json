@@ -166,7 +166,7 @@
 			]
 		},
 		{
-			"name": "swapUsdt",
+			"name": "swapAndTransferToGovernance",
 			"inputs": [
 				{"name":"amountIn","type":"uint128"},
 				{"name":"receiver","type":"address"}
@@ -226,17 +226,6 @@
 				{"name":"_newGovernance","type":"address"}
 			],
 			"outputs": [
-			]
-		},
-		{
-			"name": "swapAndTransferToGovernance",
-			"inputs": [
-				{"name":"answerId","type":"uint32"},
-				{"name":"amount","type":"uint256"},
-				{"name":"receiver","type":"address"}
-			],
-			"outputs": [
-				{"name":"success","type":"bool"}
 			]
 		},
 		{

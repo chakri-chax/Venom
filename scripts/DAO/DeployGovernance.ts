@@ -7,7 +7,7 @@ async function main() {
   const chakri = new Address("0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081");
   const chakri2 = new Address("0:1c91894d1170cc8b9465b45d2aaaa0110ec3c0bb9e450aba57f0361408fb5263");
   
-  const treasuryAddress_ = new Address("0:90e3b4a5b21d3b691e6f188836f32aeae7dbee35354bd2106583833e4e1c611e");
+  const treasuryAddress_ = new Address("0:ab2b7c3e557524adeffb446e1d2380c3765499e999d97a9e641d5d385c564d9c");
 
   const { contract: sample, tx } = await locklift.factory.deployContract({
     contract: "GovernanceToken",
@@ -49,6 +49,23 @@ async function main() {
 
     await traceTree?.beautyPrint();
   }
+
+
+  // release funds from governance token
+
+  try{
+    const { traceTree } = await locklift.tracing.trace(
+      sample.methods
+        .releaseFundsFromProposal({
+          amount: (5),
+          to: chakri,
+        })
+        .send({
+          from: chakri,
+          amount: toNano(5),
+        }),
+    );
+  }catch(e){}
   // ******************************* create a proposal BLOCK USER ****************************** 
   // console.log("create a proposal --> BLOCK USER", new Date().getTime());
 
@@ -209,6 +226,30 @@ async function main() {
 
   //   await traceTree?.beautyPrint();
   // }
+
+
+    // ******************************* Get Callback ************************************************
+    try {
+        {
+            const { traceTree } = await locklift.tracing.trace(
+                sample.methods
+                    .getCallbackAmount({
+
+                    })
+                    .send({
+                        from: chakri,
+                        amount: toNano(2),
+                    }),
+            );
+
+            await traceTree?.beautyPrint();
+        }
+    } catch (error) {
+        console.log('====================================');
+        console.log(error);
+        console.log('====================================');
+    }
+
 }
 
 main()
