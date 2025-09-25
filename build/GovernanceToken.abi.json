@@ -187,7 +187,7 @@
 			]
 		},
 		{
-			"name": "releaseFundsFromProposal",
+			"name": "swapFunds",
 			"inputs": [
 				{"name":"amount","type":"uint256"},
 				{"name":"to","type":"address"}
@@ -381,13 +381,6 @@
 			]
 		},
 		{
-			"name": "withdrawCreateProposalFee",
-			"inputs": [
-			],
-			"outputs": [
-			]
-		},
-		{
 			"name": "getCompletedProposals",
 			"inputs": [
 			],
@@ -396,7 +389,7 @@
 			]
 		},
 		{
-			"name": "getCallbackAmount",
+			"name": "withdrawCreateProposalFee",
 			"inputs": [
 			],
 			"outputs": [
