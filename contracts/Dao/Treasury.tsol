@@ -1404,9 +1404,8 @@ function getLockedNFTBalances(address _user)
 
 	fallback() external {
     tvm.accept();
-    // Optional logging here
+  
 }
-
 
 }
 
