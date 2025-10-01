@@ -10,7 +10,7 @@
 				{"name":"codeIndex","type":"cell"},
 				{"name":"codeIndexBasis","type":"cell"},
 				{"name":"owner","type":"address"},
-				{"name":"remainOnNft","type":"uint128"},
+				{"name":"value4","type":"uint128"},
 				{"name":"baseNftUrl","type":"string"},
 				{"name":"collectionUrl","type":"string"},
 				{"name":"_warehouseWallet","type":"address"},

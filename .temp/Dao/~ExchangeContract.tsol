@@ -1,108 +1,108 @@
-pragma ever-solidity >= 0.61.2;
-pragma AbiHeader expire;
-pragma AbiHeader pubkey;
+// pragma ever-solidity >= 0.61.2;
+// pragma AbiHeader expire;
+// pragma AbiHeader pubkey;
 
-import "/home/gaian/venomChain/Venom/node_modules/dex/contracts/libraries/PairPayload.tsol";
-import "../TIP3Root/contracts/interfaces/~IAcceptTokensTransferCallback.tsol";
-import {GasValues} from "/home/gaian/venomChain/Venom/node_modules/dex/contracts/libraries/GasValues.tsol";
-import {IExchangeResult} from "/home/gaian/venomChain/Venom/node_modules/dex/contracts/structures/IExchangeResult.tsol";
-import {IGasValueStructure} from "/home/gaian/venomChain/Venom/node_modules/dex/contracts/structures/IGasValueStructure.tsol";
-// import {ITokenWallet} from "tip3-contracts/contracts/interfaces/ITokenWallet.tsol";
-import "../TIP3Root/contracts/interfaces/~ITokenRoot.tsol";
-import "../TIP3Root/contracts/interfaces/~ITokenWallet.tsol";
-import "./~Treasury.tsol";
+// import "dex/contracts/libraries/~PairPayload.tsol";
+// import "../TIP3Root/contracts/interfaces/~IAcceptTokensTransferCallback.tsol";
+// import {GasValues} from "dex/contracts/libraries/GasValues.tsol";
+// import {IExchangeResult} from "dex/contracts/structures/IExchangeResult.tsol";
+// import {IGasValueStructure} from "dex/contracts/structures/IGasValueStructure.tsol";
+// // import {ITokenWallet} from "tip3-contracts/contracts/interfaces/ITokenWallet.tsol";
+// import "../TIP3Root/contracts/interfaces/~ITokenRoot.tsol";
+// import "../TIP3Root/contracts/interfaces/~ITokenWallet.tsol";
+// import "./~Treasury.tsol";
 
-contract ExchangeContract is IAcceptTokensTransferCallback {
-    event SwapSuccess(uint64 queyId ,IExchangeResult.ExchangeResult result);
-    event madeSwap(address tokenIn,address tokenOut,uint128 amount);
-    mapping(address => address) public rootToWallet;
+// contract ExchangeContract is IAcceptTokensTransferCallback {
+//     event SwapSuccess(uint64 queyId ,IExchangeResult.ExchangeResult result);
+//     event madeSwap(address tokenIn,address tokenOut,uint128 amount);
+//     mapping(address => address) public rootToWallet;
 
-    uint16 constant WALLET_NOT_EXISTS = 101;
-    uint16 constant NOT_ENOUGH_VALUE = 102;
+//     uint16 constant WALLET_NOT_EXISTS = 101;
+//     uint16 constant NOT_ENOUGH_VALUE = 102;
 
-    constructor() public {
-        tvm.accept();
-    }
+//     constructor() public {
+//         tvm.accept();
+//     }
 
-     function makeSwap(
-        uint64 queryId,
-        address tokenIn,
-        uint128 amountIn,
-        address tokenOut,
-        address pair,
-        uint128 deployWalletValue,
-        uint128 expectedAmountOut,
-        address treasuryAddress
-    ) external {
-        address tokenWallet = rootToWallet[tokenIn];
-        require(address.makeAddrNone() != tokenWallet, WALLET_NOT_EXISTS);
-        IGasValueStructure.GasValue gas = GasValues.getPoolDirectExchangeGas(0.1 ever, address(0));
-        uint128 gasValue = gas.dynamicGas + gas.fixedValue;
-        require(msg.value >= gasValue, NOT_ENOUGH_VALUE);
-        TvmCell e;
-        TvmCell swapPayload = PairPayload.buildExchangePayloadV2(
-            queryId,
-            deployWalletValue,
-            expectedAmountOut,
-            treasuryAddress,
-            tokenOut,
-            address(0),
-            e,
-            e,
-            null
-        );
+//      function makeSwap(
+//         uint64 queryId,
+//         address tokenIn,
+//         uint128 amountIn,
+//         address tokenOut,
+//         address pair,
+//         uint128 deployWalletValue,
+//         uint128 expectedAmountOut,
+//         address treasuryAddress
+//     ) external {
+//         address tokenWallet = rootToWallet[tokenIn];
+//         require(address.makeAddrNone() != tokenWallet, WALLET_NOT_EXISTS);
+//         IGasValueStructure.GasValue gas = GasValues.getPoolDirectExchangeGas(0.1 ever, address(0));
+//         uint128 gasValue = gas.dynamicGas + gas.fixedValue;
+//         require(msg.value >= gasValue, NOT_ENOUGH_VALUE);
+//         TvmCell e;
+//         TvmCell swapPayload = PairPayload.buildExchangePayloadV2(
+//             queryId,
+//             deployWalletValue,
+//             expectedAmountOut,
+//             treasuryAddress,
+//             tokenOut,
+//             address(0),
+//             e,
+//             e,
+//             null
+//         );
 
-        ITokenWallet(tokenWallet).transfer{value: 0, flag: 64}(
-            amountIn,
-            pair,
-            deployWalletValue,
-            treasuryAddress,
-            true,
-            swapPayload
-        );
-        // Treasury(treasuryAddress).onSwapComplete();
-    emit madeSwap(tokenIn,tokenOut,amountIn);
+//         ITokenWallet(tokenWallet).transfer{value: 0, flag: 64}(
+//             amountIn,
+//             pair,
+//             deployWalletValue,
+//             treasuryAddress,
+//             true,
+//             swapPayload
+//         );
+//         // Treasury(treasuryAddress).onSwapComplete();
+//     emit madeSwap(tokenIn,tokenOut,amountIn);
 
 
         
-    }
+//     }
 
-    function makeSwapWithOffChainPayload(
-        address dst,
-        uint128 value,
-        TvmCell swapPayload
-    ) external {
-        dst.transfer({
-            value: value,
-            flag: 1,
-            body: swapPayload,
-            bounce: false
-        });
-    }
+//     function makeSwapWithOffChainPayload(
+//         address dst,
+//         uint128 value,
+//         TvmCell swapPayload
+//     ) external {
+//         dst.transfer({
+//             value: value,
+//             flag: 1,
+//             body: swapPayload,
+//             bounce: false
+//         });
+//     }
 
 
-    function onAcceptTokensTransfer(
-        address tokenRoot,
-        uint128 amount,
-        address sender,
-        address senderWallet,
-        address remainingGasTo,
-        TvmCell payload
-    ) external override {
+//     function onAcceptTokensTransfer(
+//         address tokenRoot,
+//         uint128 amount,
+//         address sender,
+//         address senderWallet,
+//         address remainingGasTo,
+//         TvmCell payload
+//     ) external override {
 
-        rootToWallet[tokenRoot] = msg.sender;
-        remainingGasTo.transfer({
-            value: 0,
-            flag: 64
-        });
+//         rootToWallet[tokenRoot] = msg.sender;
+//         remainingGasTo.transfer({
+//             value: 0,
+//             flag: 64
+//         });
 
-    }
+//     }
 
-    function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.ExchangeResult result) external {
-        // will be call before tokens actually transferred
-        emit SwapSuccess(id, result);
-    }
-    function getCallbackAmouhnt() public {
-		msg.sender.transfer({value: 1 ever, flag: 128, bounce: false});
-	}
-}
+//     function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.ExchangeResult result) external {
+//         // will be call before tokens actually transferred
+//         emit SwapSuccess(id, result);
+//     }
+//     function getCallbackAmouhnt() public {
+// 		msg.sender.transfer({value: 1 ever, flag: 128, bounce: false});
+// 	}
+// }

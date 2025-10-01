@@ -302,6 +302,7 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 			flag: 1,
 			callback: Treasury.onTokenWallet
 		}(address(this), 0.1 ever);
+
 	}
 		function onDeployWallet(address _wallet) public {
 		require(msg.sender == assets[0], 166);
@@ -315,10 +316,10 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 			msg.sender.value != 0 && msg.sender == _distributedTokenRoot,
 			101
 		);
-		tvm.rawReserve(2 ever, 0);
+		tvm.rawReserve(5 ever, 0);
 		_distributedTokenWallet = value; // store deployed tip3 wallet address
 		require(_distributedTokenWallet != address(0), INVALID_ADDRESS);
-		treasuryOwner.transfer({value: 0, flag: 128, bounce: false}); // sending remaining gas after setups
+		// treasuryOwner.transfer({value: 0, flag: 128, bounce: false}); // sending remaining gas after setups
 	}
 	function addAsset(newAssetStruct newAsset) public onlyOwnerOrGovernance {
 		require(newAsset.asset != address(0), INVALID_ADDRESS);
@@ -340,11 +341,11 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 	}
 	function onAcceptTokensTransfer(
 		address tokenRoot,
-		uint128 amount,
-		address sender,
-		address senderWallet,
+		uint128 /*amount*/,
+		address /*sender*/,
+		address /*senderWallet*/,
 		address remainingGasTo,
-		TvmCell payload
+		TvmCell /*payload */
 	) external override {
 		rootToWallet[tokenRoot] = msg.sender;
 		remainingGasTo.transfer({value: 0, flag: 64});
@@ -413,7 +414,6 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 	) external onlyOwnerOrDepositingAddress {
 		uint256[] daiAmounts = usdtAmounts;
 		require(users.length == daiAmounts.length, LENGTH_MISMATCH);
-		TvmCell e;
 		uint256 totalAmount = calculateTotalDeposit(users, daiAmounts);
 		uint256 daiAmountToSwap = totalAmount;
 
@@ -437,7 +437,7 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		emit DepositBatch(lengthh, totalAmount);
 	}
 
-function deposit(uint256 usdtAmount) internal {
+function deposit(uint256 usdtAmount) internal view{
 		uint256 daiAmount = usdtAmount;
 		
 		uint256 n = assets.length;
@@ -471,8 +471,8 @@ function deposit(uint256 usdtAmount) internal {
 			// 	poolFeeTier[i - 1],
 			// 	minamountout
 			// );
-		tvm.rawReserve(1 ever, 0);
-		msg.sender.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
+		// tvm.rawReserve(5 ever, 0);
+		// msg.sender.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
 		
 		}
 	}
@@ -480,20 +480,6 @@ function deposit(uint256 usdtAmount) internal {
 		return userDeposits[msg.sender];
 	}
 
-	function drainTreasury(address _wallet) external onlyOwner {
-		TvmCell e;
-		require(msg.sender == treasuryOwner, ONLY_OWNER_CAN_CALL);
-		ITokenWallet(_distributedTokenWallet).transfer({
-			amount: uint128(totalTreasuryPoints),
-			recipient: _wallet,
-			deployWalletValue: 10000,
-			remainingGasTo: treasuryOwner,
-			notify: true,
-			payload: e
-		});
-		_transferAllNFTs(deedNFT);
-		_transferAllNFTs(founderNFT);
-	}
 
 	function _transferAllNFTs(address collection) internal {
 		uint256 totalLocked = contractlockedNFTs[address(this)][collection]
@@ -661,7 +647,7 @@ function setLockPeriod(uint _lockupPeriod) external onlyOwner {
             true,
             swapPayload
         );
-		tvm.rawReserve(1 ever, 0);
+		tvm.rawReserve(5 ever, 0);
 		treasuryOwner.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
 		
     emit madeSwap(tokenIn,tokenOut,amountIn);
@@ -669,7 +655,7 @@ function setLockPeriod(uint _lockupPeriod) external onlyOwner {
 
         
     }
-function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.ExchangeResult result) external {
+function dexPairExchangeSuccess(uint64 id, bool /* via_account */, IExchangeResult.ExchangeResult result) external pure{
         emit SwapSuccess(id, result);
     }
 
@@ -730,38 +716,114 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
         calculateSumOfRatios(_allocationRatios);
         assetAllocationRatio = _allocationRatios;
     }
-	// function fetchUsdIntoAssetsPrice(
-	// 	uint256 assetIndex,
-	// 	uint256 usdAmount
-	// ) internal view returns (uint256) {
-	// 	require(assetIndex < assets.length, "Invalid asset index");
-	// 	// AggregatorV3Interface pricefeed = AggregatorV3Interface(
-	// 	//     priceFeed[assetIndex]
-	// 	// );
-
-	// 	uint8 decimals = uint8(assetsdecimals[assetIndex]);
-	// 	uint256 assetAmount;
-
-	// 	if (assets[assetIndex] == WETH) {
-	// 		// Convert USD to DAI first, then DAI to WETH
-	// 		uint256 usdToDaiAmount = getUsdToDaiAmount(
-	// 			usdAmount,
-	// 			AggregatorV3Interface(priceFeed[0])
-	// 		); // DAI/USD feed
-	// 		uint256 daiToWethAmount = getDaitoWethAmount(
-	// 			usdToDaiAmount,
-	// 			pricefeed
-	// 		); // DAI/ETH feed
-	// 		assetAmount = daiToWethAmount;
-	// 	} else {
-	// 		uint8 decimal = uint8(assetsdecimals[assetIndex]);
-	// 		assetAmount = getusdAmountInassets(usdAmount, pricefeed, decimal);
-	// 	}
-
-	// 	return assetAmount;
-	// }
-
 	
+	event balance(address root, uint256 amount);
+	mapping(address => address) public walletToRoot; 
+	mapping (address=>uint128) private tempBalances;
+	struct balanceOfStruct {
+		address root;
+		uint128 amount;
+	}
+	balanceOfStruct[] public balanceOfArray;
+	
+	event tempRoot(address root);
+	event tempBal(uint128 bal);
+	address private tempRootAddress;
+	
+		function getAllTokenBalOfContract() public {
+    delete balanceOfArray;
+
+    uint256 n = assets.length;
+    for (uint256 i = 0; i < n; i++) {
+        address wallet = rootToWallet[assets[i]];
+        if (wallet != address(0)) {
+            // Store mapping from wallet to root
+            walletToRoot[wallet] = assets[i];
+
+            ITokenWallet(wallet).balance{
+                value: 0.1 ever,
+                flag: 64,
+                callback: Treasury.onGetBalance
+            }();
+        }
+    }
+}
+
+
+	function onGetBalance(uint128 bal) public {
+    // Identify which root this wallet corresponds to
+    address root = walletToRoot[msg.sender];
+
+    balanceOfStruct b = balanceOfStruct({root: root, amount: bal});
+    balanceOfArray.push(b);
+    tempBalances[root] = bal;
+	if(assets.length == balanceOfArray.length && drainTreasuryInProgress){
+		drainTreasuryInProgress = false;
+		drainTreasuryInternal();
+	}
+    emit balance(root, bal);
+}
+
+	function drainTreasuryInternal() internal {
+		balanceOfStruct[]  balArray = getBalances();
+		uint256 n = balArray.length;
+
+		for (uint256 i = 0; i < n; i++) {
+			address root = balArray[i].root;
+			uint256 bal = balArray[i].amount;
+			if (root != address(0)) {
+				address wallet = rootToWallet[root];
+				if (wallet != address(0) && bal > 0) {
+					TvmCell e;
+
+					ITokenWallet(wallet).transfer{
+			value: 2 ever,
+			flag: 64
+		}({
+			amount: uint128(bal),
+			recipient: treasuryOwner,
+			deployWalletValue: 1 ever,
+			remainingGasTo: treasuryOwner,
+			notify: true,
+			payload: e
+		});
+				}
+			}
+		}
+
+		
+		_transferAllNFTs(deedNFT);
+		_transferAllNFTs(founderNFT);
+		tvm.rawReserve(5 ever, 0);
+		treasuryOwner.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
+	}
+	function drainUsdt( uint128 bal) public view {
+		address wallet = rootToWallet[assets[0]];
+		require(wallet != address(0), INVALID_ADDRESS);
+		TvmCell e;
+		ITokenWallet(wallet).transfer{
+			value: 2 ever,
+			flag: 64
+		}({
+			amount: bal,
+			recipient: treasuryOwner,
+			deployWalletValue: 1 ever,
+			remainingGasTo: treasuryOwner,
+			notify: true,
+			payload: e
+		});
+	}
+	function getBalances() public view returns (balanceOfStruct[]) {
+    return balanceOfArray;
+}
+bool drainTreasuryInProgress;
+	function drainTreasury() public  {
+				require(msg.sender == treasuryOwner, ONLY_OWNER_CAN_CALL);
+	drainTreasuryInProgress = true;
+		getAllTokenBalOfContract();
+
+		
+	}
 	function withdraw(uint256[] indices) external {
 		uint256 totalAmount;
 
@@ -770,7 +832,7 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 
 		// Calculate total amount eligible for withdrawal
 		uint256 cnt = indices.length;
-		uint256 userPrimaryTokenUnlockingAmt; // usdt user share
+		// uint256 userPrimaryTokenUnlockingAmt; // usdt user share
 
 		for (uint256 i = 0; i < cnt; i++) {
 			require(indices[i] < userDepositCount, INVALID_INDEX);
@@ -814,9 +876,9 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 			// }
 
 			totalAmountInUsd += assetPriceInUsd;
-			uint256 assetPriceindai = (assetPriceInUsd * 10 ** 18) / 10 ** 8;
-			uint256 slipageamount = (assetPriceindai * maxslippage) / 100;
-			uint256 minamountout = assetPriceindai - slipageamount;
+			// uint256 assetPriceindai = (assetPriceInUsd * 10 ** 18) / 10 ** 8;
+			// uint256 slipageamount = (assetPriceindai * maxslippage) / 100;
+			// uint256 minamountout = assetPriceindai - slipageamount;
 			
 			if (assets[i] == assets[0]) {
 				// IERC20(assets[0]).transfer(mainWallet, userShare);
@@ -940,7 +1002,7 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 	function swapAndTransferToGovernance(
 		uint128 amountIn,
 		address receiver
-	) public {
+	) public view{
 		require(receiver != address(0), INVALID_ADDRESS);
 		require(msg.sender == governance, ONLY_OWNER_CAN_CALL);
 		require(amountIn > 0, ZERO_AMOUNT);
@@ -994,9 +1056,8 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 	// 				payload: e
 	// 				});
 	// }
-	function withdrawWvenAmount(uint256 userShare) public {
+	function withdrawWvenAmount(uint256 userShare) public view{
 		TvmCell e;
-
 		uint256 userDaiShareInUsdt = (userShare * assetAllocationRatio[1]) /
 			100; // 10 contract
 		// uint256 userUSDTShare = (userShare * assetAllocationRatio[0])/100;
@@ -1030,6 +1091,7 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 			userDaiShareInUsdt,
 			swapAmtInDai
 		);
+
 	}
 
 	function usdtRate(
@@ -1068,7 +1130,7 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 
 	function getAmountInUsd(
 		uint256 assetAmount,
-		AggregatorV3Interface pricefeed,
+		AggregatorV3Interface /*pricefeed */,
 		uint8 decimals
 	) internal pure returns (uint256) {
 		// Fetch the latest price from the price feed
@@ -1198,7 +1260,7 @@ function dexPairExchangeSuccess(uint64 id, bool via_account, IExchangeResult.Exc
 	function onNftOwner(
 		uint256 id,
 		address owner,
-		address manager,
+		address /*manager*/,
 		address collection
 	) external {
 		require(owner != address(0), INVALID_ADDRESS);

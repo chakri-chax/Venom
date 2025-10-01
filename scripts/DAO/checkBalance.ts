@@ -123,7 +123,7 @@ async function tokenWalletInstanceTIP3(userAddres: Address, tokenAddress: Addres
     return userTokenWalletContract;
 }
 
-const contrac = new Address("0:e3818c561ed5957373d03bded11b5fa2e5aa032952a544ea2ebe9a3493f4a3df")
+const contrac = new Address("0:1fc481eb8192a9793ae41d1bbe5da77d2697e18f047d4e3bb765368aaf524ede")
 
 
 checkBalance(contrac, USDT);
@@ -139,7 +139,7 @@ checkBalance(myAccount, USDT);
 
 
 // console.log("Wvenom contract Balance");
-// checkBalance(contrac, WVENOM);
+checkBalance(contrac, WVENOM);
 
 
 // checkBalance(myAccount, WVENOM);

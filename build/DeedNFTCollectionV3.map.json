@@ -4358,8 +4358,8 @@
     },
     "61ab4641fa30d9310391025086eec65d200d79268e1b7cd402565e01ba64be3c": {
       "0": {
-        "filename": "DeedNFTCollectionV3.code",
-        "line": 4102
+        "filename": "../contracts/DeedNFTCollectionV3/DeedNFTCollectionV3.tsol",
+        "line": 79
       }
     },
     "647bf3f2cba59298087bfbfc6b33d51e73ebe238f6220d45a9ee7118160124b4": {

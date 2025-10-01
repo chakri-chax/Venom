@@ -62,7 +62,7 @@ async function mainS() {
             exchangeContractAddress: new Address("0:0ec4f4d06dd7abd671f272bb5429426c98971cb2227a5d1b80344e066efdbddd"),
             // userAssetZeroTokenWallet:new Address("")
         },
-        value: locklift.utils.toNano(3),
+        value: locklift.utils.toNano(6),
     });
 
     console.log(`Treasury deployed at :: ${treasuryContractInstance.address.toString()}`);

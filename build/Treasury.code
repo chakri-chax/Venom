@@ -230,7 +230,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 306
+.loc ../contracts/Dao/Treasury.tsol, 307
 OVER
 PUSHCONT {
 	LDREF
@@ -255,7 +255,7 @@ THROW 0
 CALL $onDeployWallet_65bf83eb_internal_macro$
 
 .macro onDeployWallet_65bf83eb_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 307
+.loc ../contracts/Dao/Treasury.tsol, 308
 GETGLOB 9
 PUSHINT 0
 GETGLOB 18
@@ -265,14 +265,14 @@ DICTUGET
 THROWIFNOT 50
 SDEQ
 THROWIFNOT 166
-.loc ../contracts/Dao/Treasury.tsol, 308
+.loc ../contracts/Dao/Treasury.tsol, 309
 DUP
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 132
-.loc ../contracts/Dao/Treasury.tsol, 309
+.loc ../contracts/Dao/Treasury.tsol, 310
 PUSHINT 34
 SETGLOBVAR
 .loc ../contracts/Dao/Treasury.tsol, 0
@@ -286,7 +286,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 313
+.loc ../contracts/Dao/Treasury.tsol, 314
 OVER
 PUSHCONT {
 	LDREF
@@ -307,7 +307,7 @@ CALLREF {
 THROW 0
 
 .macro onTokenWallet_e6d1bd58_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 314
+.loc ../contracts/Dao/Treasury.tsol, 315
 GETGLOB 9
 PARSEMSGADDR
 INDEX 3
@@ -318,29 +318,19 @@ GETGLOB 29
 SDEQ
 AND
 THROWIFNOT 101
-.loc ../contracts/Dao/Treasury.tsol, 318
-PUSHINT 2000000000
+.loc ../contracts/Dao/Treasury.tsol, 319
+PUSHINT 5000000000
 PUSHINT 0
 RAWRESERVE
-.loc ../contracts/Dao/Treasury.tsol, 319
+.loc ../contracts/Dao/Treasury.tsol, 320
 DUP
 SETGLOB 30
-.loc ../contracts/Dao/Treasury.tsol, 320
+.loc ../contracts/Dao/Treasury.tsol, 321
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 224
-.loc ../contracts/Dao/Treasury.tsol, 321
-GETGLOB 11
-NEWC
-STSLICECONST x42_
-STSLICE
-PUSHINT 111
-STZEROES
-ENDC
-PUSHPOW2 7
-SENDRAWMSG
 .loc ../contracts/Dao/Treasury.tsol, 0
 
 .macro addAsset
@@ -352,7 +342,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 323
+.loc ../contracts/Dao/Treasury.tsol, 324
 OVER
 PUSHCONT {
 	LDREF
@@ -403,17 +393,9 @@ GETGLOB 17
 SDEQ
 OR
 THROWIFNOT 227
-.loc ../contracts/Dao/Treasury.tsol, 324
-DUP
-FIRST
-PUSHREFSLICE {
-	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
-}
-SDEQ
-THROWIF 224
 .loc ../contracts/Dao/Treasury.tsol, 325
 DUP
-THIRD
+FIRST
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
@@ -421,7 +403,7 @@ SDEQ
 THROWIF 224
 .loc ../contracts/Dao/Treasury.tsol, 326
 DUP
-INDEX 3
+THIRD
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
@@ -429,10 +411,18 @@ SDEQ
 THROWIF 224
 .loc ../contracts/Dao/Treasury.tsol, 327
 DUP
+INDEX 3
+PUSHREFSLICE {
+	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+}
+SDEQ
+THROWIF 224
+.loc ../contracts/Dao/Treasury.tsol, 328
+DUP
 INDEX 4
 GTINT 0
 THROWIFNOT 225
-.loc ../contracts/Dao/Treasury.tsol, 328
+.loc ../contracts/Dao/Treasury.tsol, 329
 DUP
 INDEX2 1, 0
 GETGLOB 18
@@ -440,23 +430,23 @@ FIRST
 INC
 EQUAL
 THROWIFNOT 222
-.loc ../contracts/Dao/Treasury.tsol, 332
+.loc ../contracts/Dao/Treasury.tsol, 333
 GETGLOB 18
 FIRST
-.loc ../contracts/Dao/Treasury.tsol, 333
+.loc ../contracts/Dao/Treasury.tsol, 334
 LESSINT 5
 THROWIFNOT 261
-.loc ../contracts/Dao/Treasury.tsol, 334
+.loc ../contracts/Dao/Treasury.tsol, 335
 DUP
 SECOND
 CALLREF {
 	CALL $calculateSumOfRatios_bc8a1743_internal_macro$
 }
-.loc ../contracts/Dao/Treasury.tsol, 335
+.loc ../contracts/Dao/Treasury.tsol, 336
 DUP
 SECOND
 SETGLOB 22
-.loc ../contracts/Dao/Treasury.tsol, 336
+.loc ../contracts/Dao/Treasury.tsol, 337
 GETGLOB 18
 OVER
 FIRST
@@ -469,7 +459,7 @@ PUSHINT 32
 DICTUSET
 PAIR
 SETGLOB 18
-.loc ../contracts/Dao/Treasury.tsol, 337
+.loc ../contracts/Dao/Treasury.tsol, 338
 GETGLOB 20
 OVER
 THIRD
@@ -482,7 +472,7 @@ PUSHINT 32
 DICTUSET
 PAIR
 SETGLOB 20
-.loc ../contracts/Dao/Treasury.tsol, 338
+.loc ../contracts/Dao/Treasury.tsol, 339
 GETGLOB 21
 OVER
 INDEX 3
@@ -495,7 +485,7 @@ PUSHINT 32
 DICTUSET
 PAIR
 SETGLOB 21
-.loc ../contracts/Dao/Treasury.tsol, 339
+.loc ../contracts/Dao/Treasury.tsol, 340
 GETGLOB 19
 SWAP
 INDEX 4
@@ -521,7 +511,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 341
+.loc ../contracts/Dao/Treasury.tsol, 342
 OVER
 PUSHCONT {
 	LDREF
@@ -556,7 +546,7 @@ CALLREF {
 THROW 0
 
 .macro onAcceptTokensTransfer_e63f2284_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 349
+.loc ../contracts/Dao/Treasury.tsol, 350
 DROP
 PUSHINT 48
 GETGLOBVAR
@@ -568,7 +558,7 @@ PUSHINT 267
 DICTSET
 PUSHINT 48
 SETGLOBVAR
-.loc ../contracts/Dao/Treasury.tsol, 350
+.loc ../contracts/Dao/Treasury.tsol, 351
 NEWC
 STSLICECONST x62_
 STSLICE
@@ -584,7 +574,7 @@ BLKDROP 3
 DROP
 GETGLOB 6
 THROWIFNOT 76
-.loc ../contracts/Dao/Treasury.tsol, 355
+.loc ../contracts/Dao/Treasury.tsol, 356
 LDU 32
 LDDICT
 ROTREV
@@ -605,19 +595,19 @@ THROW 0
 CALL $calculateSumOfRatios_bc8a1743_internal_macro$
 
 .macro calculateSumOfRatios_bc8a1743_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 357
-PUSHINT 0
 .loc ../contracts/Dao/Treasury.tsol, 358
+PUSHINT 0
+.loc ../contracts/Dao/Treasury.tsol, 359
 OVER
 FIRST
-.loc ../contracts/Dao/Treasury.tsol, 359
+.loc ../contracts/Dao/Treasury.tsol, 360
 PUSHINT 0
 PUSHCONT {
 	PUSH2 S0, S1
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 360
+	.loc ../contracts/Dao/Treasury.tsol, 361
 	PUSH2 S0, S3
 	SECOND
 	PUSHINT 32
@@ -628,14 +618,14 @@ PUSHCONT {
 	ADD
 	UFITS 8
 	POP S3
-	.loc ../contracts/Dao/Treasury.tsol, 359
+	.loc ../contracts/Dao/Treasury.tsol, 360
 	INC
 	UFITS 8
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
 WHILE
 DROP2
-.loc ../contracts/Dao/Treasury.tsol, 362
+.loc ../contracts/Dao/Treasury.tsol, 363
 EQINT 100
 THROWIFNOT 222
 .loc ../contracts/Dao/Treasury.tsol, 0
@@ -650,7 +640,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 365
+.loc ../contracts/Dao/Treasury.tsol, 366
 OVER
 PUSHCONT {
 	LDREF
@@ -703,7 +693,7 @@ IFREF {
 THROW 0
 
 .macro getEligibleWithdrawDetails_ebc19a17_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 368
+.loc ../contracts/Dao/Treasury.tsol, 369
 DUP
 PUSHINT 44
 GETGLOBVAR
@@ -720,20 +710,20 @@ PUSHCONT {
 IFELSE
 PAIR
 FIRST
-.loc ../contracts/Dao/Treasury.tsol, 369
+.loc ../contracts/Dao/Treasury.tsol, 370
 DUP
 GTINT 0
 THROWIFNOT 219
-.loc ../contracts/Dao/Treasury.tsol, 371
+.loc ../contracts/Dao/Treasury.tsol, 372
 PUSHINT 0
 DUP
-.loc ../contracts/Dao/Treasury.tsol, 373
+.loc ../contracts/Dao/Treasury.tsol, 374
 PUSHCONT {
 	PUSH2 S0, S2
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 374
+	.loc ../contracts/Dao/Treasury.tsol, 375
 	PUSH2 S0, S3
 	PUSHINT 44
 	GETGLOBVAR
@@ -797,20 +787,20 @@ PUSHCONT {
 	}
 	IF
 	PUSHCONT {
-		.loc ../contracts/Dao/Treasury.tsol, 380
+		.loc ../contracts/Dao/Treasury.tsol, 381
 		OVER
 		INC
 		POP S2
 		.loc ../contracts/Dao/Treasury.tsol, 0
 	}
 	IF
-	.loc ../contracts/Dao/Treasury.tsol, 373
+	.loc ../contracts/Dao/Treasury.tsol, 374
 	INC
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
 WHILE
 DROP
-.loc ../contracts/Dao/Treasury.tsol, 384
+.loc ../contracts/Dao/Treasury.tsol, 385
 DUP
 PUSHINT 0
 NEWC
@@ -829,7 +819,7 @@ PUSHCONT {
 REPEAT
 BLKDROP2 2, 1
 PAIR
-.loc ../contracts/Dao/Treasury.tsol, 385
+.loc ../contracts/Dao/Treasury.tsol, 386
 SWAP
 PUSHREFSLICE
 .compute $default_tuple_builder_t_uint256_t_uint256$
@@ -847,16 +837,16 @@ PUSHCONT {
 REPEAT
 BLKDROP2 2, 1
 PAIR
-.loc ../contracts/Dao/Treasury.tsol, 386
+.loc ../contracts/Dao/Treasury.tsol, 387
 PUSHINT 0
 DUP
-.loc ../contracts/Dao/Treasury.tsol, 388
+.loc ../contracts/Dao/Treasury.tsol, 389
 PUSHCONT {
 	PUSH2 S0, S4
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 389
+	.loc ../contracts/Dao/Treasury.tsol, 390
 	PUSH2 S0, S5
 	PUSHINT 44
 	GETGLOBVAR
@@ -920,7 +910,7 @@ PUSHCONT {
 	}
 	IF
 	PUSHCONT {
-		.loc ../contracts/Dao/Treasury.tsol, 395
+		.loc ../contracts/Dao/Treasury.tsol, 396
 		PUSH2 S0, S3
 		UNPAIR
 		PUXC S4, S-1
@@ -935,7 +925,7 @@ PUSHCONT {
 		DICTUSETB
 		PAIR
 		POP S4
-		.loc ../contracts/Dao/Treasury.tsol, 396
+		.loc ../contracts/Dao/Treasury.tsol, 397
 		PUSH2 S0, S5
 		PUSHINT 44
 		GETGLOBVAR
@@ -980,20 +970,20 @@ PUSHCONT {
 		DICTUSETB
 		PAIR
 		POP S3
-		.loc ../contracts/Dao/Treasury.tsol, 397
+		.loc ../contracts/Dao/Treasury.tsol, 398
 		OVER
 		INC
 		POP S2
 		.loc ../contracts/Dao/Treasury.tsol, 0
 	}
 	IF
-	.loc ../contracts/Dao/Treasury.tsol, 388
+	.loc ../contracts/Dao/Treasury.tsol, 389
 	INC
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
 WHILE
 DROP2
-.loc ../contracts/Dao/Treasury.tsol, 401
+.loc ../contracts/Dao/Treasury.tsol, 402
 BLKDROP2 2, 2
 .loc ../contracts/Dao/Treasury.tsol, 0
 
@@ -1006,7 +996,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 410
+.loc ../contracts/Dao/Treasury.tsol, 411
 LDU 32
 LDDICT
 ROTREV
@@ -1038,7 +1028,7 @@ GETGLOB 26
 SDEQ
 OR
 THROWIFNOT 228
-.loc ../contracts/Dao/Treasury.tsol, 415
+.loc ../contracts/Dao/Treasury.tsol, 416
 OVER
 FIRST
 OVER
@@ -1052,21 +1042,21 @@ CALLREF {
 }
 .loc ../contracts/Dao/Treasury.tsol, 418
 DUP
-.loc ../contracts/Dao/Treasury.tsol, 441
+.loc ../contracts/Dao/Treasury.tsol, 421
 CALLREF {
 	CALL $deposit_b6b55f25_internal_macro$
 }
-.loc ../contracts/Dao/Treasury.tsol, 443
+.loc ../contracts/Dao/Treasury.tsol, 423
 PUSH S2
 FIRST
-.loc ../contracts/Dao/Treasury.tsol, 444
+.loc ../contracts/Dao/Treasury.tsol, 424
 PUSHINT 0
 PUSHCONT {
 	PUSH2 S0, S1
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 445
+	.loc ../contracts/Dao/Treasury.tsol, 425
 	PUSH2 S0, S3
 	SECOND
 	PUSHINT 32
@@ -1075,7 +1065,7 @@ PUSHCONT {
 	PLDU 256
 	BLOCKLT
 	PAIR
-	.loc ../contracts/Dao/Treasury.tsol, 450
+	.loc ../contracts/Dao/Treasury.tsol, 430
 	PUSHINT 44
 	GETGLOBVAR
 	PUSH2 S2, S6
@@ -1124,7 +1114,7 @@ PUSHCONT {
 	DICTSETB
 	PUSHINT 44
 	SETGLOBVAR
-	.loc ../contracts/Dao/Treasury.tsol, 452
+	.loc ../contracts/Dao/Treasury.tsol, 432
 	PUSH2 S0, S3
 	SECOND
 	PUSHINT 32
@@ -1156,7 +1146,7 @@ PUSHCONT {
 	DICTSETB
 	PUSHINT 46
 	SETGLOBVAR
-	.loc ../contracts/Dao/Treasury.tsol, 453
+	.loc ../contracts/Dao/Treasury.tsol, 433
 	PUSH2 S0, S4
 	SECOND
 	PUSHINT 32
@@ -1165,18 +1155,18 @@ PUSHCONT {
 	CALLREF {
 		CALL $updateTopTreasuryHolders_c81182d7_internal_macro$
 	}
-	.loc ../contracts/Dao/Treasury.tsol, 444
+	.loc ../contracts/Dao/Treasury.tsol, 424
 	INC
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
 WHILE
 DROP
-.loc ../contracts/Dao/Treasury.tsol, 457
+.loc ../contracts/Dao/Treasury.tsol, 436
 GETGLOB 28
 PUSH S2
 ADD
 SETGLOB 28
-.loc ../contracts/Dao/Treasury.tsol, 458
+.loc ../contracts/Dao/Treasury.tsol, 437
 PUSHSLICE xc0000000000000000000000000286751e4
 NEWC
 STSLICE
@@ -1188,6 +1178,70 @@ SENDRAWMSG
 DROP2
 .loc ../contracts/Dao/Treasury.tsol, 0
 
+.globl	deposit_b6b55f25_internal
+.type	deposit_b6b55f25_internal, @function
+CALL $deposit_b6b55f25_internal_macro$
+
+.macro deposit_b6b55f25_internal_macro
+.loc ../contracts/Dao/Treasury.tsol, 443
+GETGLOB 18
+FIRST
+.loc ../contracts/Dao/Treasury.tsol, 445
+PUSHINT 1
+PUSHCONT {
+	PUSH2 S0, S1
+	LESS
+}
+PUSHCONT {
+	.loc ../contracts/Dao/Treasury.tsol, 446
+	PUSH2 S2, S0
+	GETGLOB 22
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	PLDU 8
+	MUL
+	PUSHINT 100
+	DIV
+	.loc ../contracts/Dao/Treasury.tsol, 456
+	PUSHINT 1
+	PUSHINT 0
+	GETGLOB 18
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	ROT
+	UFITS 128
+	PUSH S3
+	GETGLOB 18
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	PUSH S4
+	DEC
+	UFITS 256
+	GETGLOB 20
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	PUSHINT 1000000000
+	PUSHINT 0
+	MYADDR
+	CALLREF {
+		CALL $makeSwap_530494b5_internal_macro$
+	}
+	.loc ../contracts/Dao/Treasury.tsol, 445
+	INC
+	.loc ../contracts/Dao/Treasury.tsol, 0
+}
+WHILE
+BLKDROP 3
+.loc ../contracts/Dao/Treasury.tsol, 0
+
 .macro getUserDeposits
 DROP
 GETGLOB 6
@@ -1197,7 +1251,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 463
+.loc ../contracts/Dao/Treasury.tsol, 479
 ENDS
 .loc ../contracts/Dao/Treasury.tsol, 0
 CALLREF {
@@ -1235,7 +1289,7 @@ IFREF {
 THROW 0
 
 .macro getUserDeposits_94951944_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 464
+.loc ../contracts/Dao/Treasury.tsol, 480
 GETGLOB 9
 PUSHINT 44
 GETGLOBVAR
@@ -1253,98 +1307,12 @@ IFELSE
 PAIR
 .loc ../contracts/Dao/Treasury.tsol, 0
 
-.macro drainTreasury
-DROP
-GETGLOB 6
-THROWIFNOT 76
-GETGLOB 2
-ISNULL
-IFREF {
-	CALL $c4_to_c7$
-}
-.loc ../contracts/Dao/Treasury.tsol, 467
-OVER
-PUSHCONT {
-	LDREF
-	ENDS
-	CTOS
-}
-IF
-LDMSGADDR
-ENDS
-.loc ../contracts/Dao/Treasury.tsol, 0
-CALLREF {
-	CALL $drainTreasury_d26be472_internal_macro$
-}
-DROP
-CALLREF {
-	CALL $c7_to_c4$
-}
-THROW 0
-
-.macro drainTreasury_d26be472_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 228
-GETGLOB 9
-GETGLOB 11
-SDEQ
-THROWIFNOT 226
-.loc ../contracts/Dao/Treasury.tsol, 468
-PUSHREF {
-}
-.loc ../contracts/Dao/Treasury.tsol, 469
-GETGLOB 9
-GETGLOB 11
-SDEQ
-THROWIFNOT 226
-.loc ../contracts/Dao/Treasury.tsol, 470
-TRUE
-GETGLOB 11
-PUSHINT 10000
-ROLL 4
-GETGLOB 28
-UFITS 128
-GETGLOB 30
-NEWC
-STSLICECONST x62_
-STSLICE
-PUSHINT 9789369574394656757036770681243717074945
-STUR 135
-ROLLREV 6
-NEWC
-STSLICECONST x73e22143
-STU 128
-STSLICE
-STU 128
-ROLLREV 3
-NEWC
-STSLICE
-STI 1
-STREF
-STBREFR
-STBREFR
-ENDC
-PUSHINT 0
-SENDRAWMSG
-.loc ../contracts/Dao/Treasury.tsol, 478
-PUSHINT 35
-GETGLOBVAR
-CALLREF {
-	CALL $_transferAllNFTs_c0e770e4_internal_macro$
-}
-.loc ../contracts/Dao/Treasury.tsol, 479
-PUSHINT 36
-GETGLOBVAR
-CALLREF {
-	CALL $_transferAllNFTs_c0e770e4_internal_macro$
-}
-.loc ../contracts/Dao/Treasury.tsol, 0
-
 .globl	_transferAllNFTs_c0e770e4_internal
 .type	_transferAllNFTs_c0e770e4_internal, @function
 CALL $_transferAllNFTs_c0e770e4_internal_macro$
 
 .macro _transferAllNFTs_c0e770e4_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 483
+.loc ../contracts/Dao/Treasury.tsol, 485
 DUP
 MYADDR
 PUSHINT 41
@@ -1371,14 +1339,14 @@ PUSHCONT {
 IFELSE
 PAIR
 FIRST
-.loc ../contracts/Dao/Treasury.tsol, 485
+.loc ../contracts/Dao/Treasury.tsol, 487
 PUSHINT 0
 PUSHCONT {
 	PUSH2 S0, S1
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 486
+	.loc ../contracts/Dao/Treasury.tsol, 488
 	PUSH2 S0, S2
 	MYADDR
 	PUSHINT 41
@@ -1409,12 +1377,12 @@ PUSHCONT {
 	DICTUGET
 	THROWIFNOT 50
 	PLDU 256
-	.loc ../contracts/Dao/Treasury.tsol, 488
+	.loc ../contracts/Dao/Treasury.tsol, 490
 	DUP
 	NEWC
 	STU 256
 	ENDC
-	.loc ../contracts/Dao/Treasury.tsol, 490
+	.loc ../contracts/Dao/Treasury.tsol, 492
 	PUSHINT 50000000
 	SWAP
 	PAIR
@@ -1435,7 +1403,7 @@ PUSHCONT {
 	DUP
 	PUSHINT 50
 	SETGLOBVAR
-	.loc ../contracts/Dao/Treasury.tsol, 493
+	.loc ../contracts/Dao/Treasury.tsol, 495
 	GETGLOB 11
 	PUSH2 S0, S5
 	NEWC
@@ -1456,7 +1424,7 @@ PUSHCONT {
 	ENDC
 	PUSHINT 0
 	SENDRAWMSG
-	.loc ../contracts/Dao/Treasury.tsol, 498
+	.loc ../contracts/Dao/Treasury.tsol, 500
 	PUXC S2, S-1
 	PUSH S4
 	PUSHREFSLICE {
@@ -1477,7 +1445,7 @@ PUSHCONT {
 	ENDC
 	PUSHINT 0
 	SENDRAWMSG
-	.loc ../contracts/Dao/Treasury.tsol, 485
+	.loc ../contracts/Dao/Treasury.tsol, 487
 	INC
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
@@ -1494,7 +1462,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 501
+.loc ../contracts/Dao/Treasury.tsol, 503
 OVER
 PUSHCONT {
 	LDU 32
@@ -1556,16 +1524,16 @@ GETGLOB 9
 GETGLOB 11
 SDEQ
 THROWIFNOT 226
-.loc ../contracts/Dao/Treasury.tsol, 507
+.loc ../contracts/Dao/Treasury.tsol, 509
 ROLL 3
 SETGLOB 18
-.loc ../contracts/Dao/Treasury.tsol, 508
+.loc ../contracts/Dao/Treasury.tsol, 510
 ROT
 SETGLOB 19
-.loc ../contracts/Dao/Treasury.tsol, 509
+.loc ../contracts/Dao/Treasury.tsol, 511
 SWAP
 SETGLOB 22
-.loc ../contracts/Dao/Treasury.tsol, 510
+.loc ../contracts/Dao/Treasury.tsol, 512
 SETGLOB 21
 .loc ../contracts/Dao/Treasury.tsol, 0
 
@@ -1574,12 +1542,12 @@ SETGLOB 21
 CALL $updateTopTreasuryHolders_c81182d7_internal_macro$
 
 .macro updateTopTreasuryHolders_c81182d7_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 514
+.loc ../contracts/Dao/Treasury.tsol, 516
 GETGLOB 9
 GETGLOB 11
 SDEQ
 THROWIFNOT 226
-.loc ../contracts/Dao/Treasury.tsol, 515
+.loc ../contracts/Dao/Treasury.tsol, 517
 DUP
 PUSHINT 46
 GETGLOBVAR
@@ -1592,7 +1560,7 @@ PUSHCONT {
 IF
 GTINT 0
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 516
+	.loc ../contracts/Dao/Treasury.tsol, 518
 	DUP
 	PUSHINT 42
 	GETGLOBVAR
@@ -1604,7 +1572,7 @@ PUSHCONT {
 	}
 	IF
 	PUSHCONT {
-		.loc ../contracts/Dao/Treasury.tsol, 517
+		.loc ../contracts/Dao/Treasury.tsol, 519
 		DUP
 		PUSHINT 45
 		GETGLOBVAR
@@ -1615,7 +1583,7 @@ PUSHCONT {
 			PLDU 256
 		}
 		IF
-		.loc ../contracts/Dao/Treasury.tsol, 518
+		.loc ../contracts/Dao/Treasury.tsol, 520
 		OVER
 		PUSHINT 32
 		GETGLOBVAR
@@ -1633,14 +1601,14 @@ PUSHCONT {
 		SETGLOBVAR
 	}
 	PUSHCONT {
-		.loc ../contracts/Dao/Treasury.tsol, 520
+		.loc ../contracts/Dao/Treasury.tsol, 522
 		PUSHINT 32
 		GETGLOBVAR
 		FIRST
-		.loc ../contracts/Dao/Treasury.tsol, 521
+		.loc ../contracts/Dao/Treasury.tsol, 523
 		LESSINT 10
 		PUSHCONT {
-			.loc ../contracts/Dao/Treasury.tsol, 522
+			.loc ../contracts/Dao/Treasury.tsol, 524
 			DUP
 			PUSHINT 32
 			GETGLOBVAR
@@ -1653,7 +1621,7 @@ PUSHCONT {
 			PAIR
 			PUSHINT 32
 			SETGLOBVAR
-			.loc ../contracts/Dao/Treasury.tsol, 523
+			.loc ../contracts/Dao/Treasury.tsol, 525
 			DUP
 			PUSHINT 42
 			GETGLOBVAR
@@ -1664,7 +1632,7 @@ PUSHCONT {
 			DICTSETB
 			PUSHINT 42
 			SETGLOBVAR
-			.loc ../contracts/Dao/Treasury.tsol, 524
+			.loc ../contracts/Dao/Treasury.tsol, 526
 			PUSHINT 32
 			GETGLOBVAR
 			FIRST
@@ -1683,7 +1651,7 @@ PUSHCONT {
 			SETGLOBVAR
 		}
 		PUSHCONT {
-			.loc ../contracts/Dao/Treasury.tsol, 526
+			.loc ../contracts/Dao/Treasury.tsol, 528
 			DUP
 			CALLREF {
 				CALL $_replaceSmallestHolder_d3dc42c8_internal_macro$
@@ -1693,13 +1661,13 @@ PUSHCONT {
 		.loc ../contracts/Dao/Treasury.tsol, 0
 	}
 	IFELSE
-	.loc ../contracts/Dao/Treasury.tsol, 529
+	.loc ../contracts/Dao/Treasury.tsol, 531
 	CALLREF {
 		CALL $sortTopHolders_86be25f1_internal_macro$
 	}
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 531
+	.loc ../contracts/Dao/Treasury.tsol, 533
 	DUP
 	PUSHINT 42
 	GETGLOBVAR
@@ -1711,7 +1679,7 @@ PUSHCONT {
 	}
 	IF
 	PUSHCONT {
-		.loc ../contracts/Dao/Treasury.tsol, 532
+		.loc ../contracts/Dao/Treasury.tsol, 534
 		DUP
 		PUSHINT 45
 		GETGLOBVAR
@@ -1722,7 +1690,7 @@ PUSHCONT {
 			PLDU 256
 		}
 		IF
-		.loc ../contracts/Dao/Treasury.tsol, 533
+		.loc ../contracts/Dao/Treasury.tsol, 535
 		PUXC S1, S-1
 		CALLREF {
 			CALL $_removeTopHolder_a027ebb3_internal_macro$
@@ -1740,7 +1708,7 @@ DROP
 CALL $_replaceSmallestHolder_d3dc42c8_internal_macro$
 
 .macro _replaceSmallestHolder_d3dc42c8_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 538
+.loc ../contracts/Dao/Treasury.tsol, 540
 PUSHINT 0
 PUSHINT 32
 GETGLOBVAR
@@ -1748,7 +1716,7 @@ SECOND
 PUSHINT 32
 DICTUGET
 THROWIFNOT 50
-.loc ../contracts/Dao/Treasury.tsol, 539
+.loc ../contracts/Dao/Treasury.tsol, 541
 DUP
 PUSHINT 46
 GETGLOBVAR
@@ -1759,20 +1727,20 @@ PUSHCONT {
 	PLDU 256
 }
 IF
-.loc ../contracts/Dao/Treasury.tsol, 540
-PUSHINT 0
 .loc ../contracts/Dao/Treasury.tsol, 542
+PUSHINT 0
+.loc ../contracts/Dao/Treasury.tsol, 544
 PUSHINT 32
 GETGLOBVAR
 FIRST
-.loc ../contracts/Dao/Treasury.tsol, 543
+.loc ../contracts/Dao/Treasury.tsol, 545
 PUSHINT 1
 PUSHCONT {
 	PUSH2 S0, S1
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 544
+	.loc ../contracts/Dao/Treasury.tsol, 546
 	DUP
 	PUSHINT 32
 	GETGLOBVAR
@@ -1780,7 +1748,7 @@ PUSHCONT {
 	PUSHINT 32
 	DICTUGET
 	THROWIFNOT 50
-	.loc ../contracts/Dao/Treasury.tsol, 545
+	.loc ../contracts/Dao/Treasury.tsol, 547
 	DUP
 	PUSHINT 46
 	GETGLOBVAR
@@ -1794,10 +1762,10 @@ PUSHCONT {
 	PUSH S5
 	LESS
 	PUSHCONT {
-		.loc ../contracts/Dao/Treasury.tsol, 546
+		.loc ../contracts/Dao/Treasury.tsol, 548
 		DUP
 		POP S6
-		.loc ../contracts/Dao/Treasury.tsol, 547
+		.loc ../contracts/Dao/Treasury.tsol, 549
 		DUP
 		PUSHINT 46
 		GETGLOBVAR
@@ -1809,7 +1777,7 @@ PUSHCONT {
 		}
 		IF
 		POP S5
-		.loc ../contracts/Dao/Treasury.tsol, 548
+		.loc ../contracts/Dao/Treasury.tsol, 550
 		OVER
 		POP S4
 		.loc ../contracts/Dao/Treasury.tsol, 0
@@ -1817,13 +1785,13 @@ PUSHCONT {
 	IF
 	.loc ../contracts/Dao/Treasury.tsol, 0
 	DROP
-	.loc ../contracts/Dao/Treasury.tsol, 543
+	.loc ../contracts/Dao/Treasury.tsol, 545
 	INC
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
 WHILE
 DROP2
-.loc ../contracts/Dao/Treasury.tsol, 552
+.loc ../contracts/Dao/Treasury.tsol, 554
 PUSH S3
 PUSHINT 46
 GETGLOBVAR
@@ -1834,16 +1802,16 @@ PUSHCONT {
 	PLDU 256
 }
 IF
-.loc ../contracts/Dao/Treasury.tsol, 553
+.loc ../contracts/Dao/Treasury.tsol, 555
 ROT
 GREATER
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 554
+	.loc ../contracts/Dao/Treasury.tsol, 556
 	DUP2
 	CALLREF {
 		CALL $_removeTopHolder_a027ebb3_internal_macro$
 	}
-	.loc ../contracts/Dao/Treasury.tsol, 555
+	.loc ../contracts/Dao/Treasury.tsol, 557
 	PUSH S2
 	PUSHINT 32
 	GETGLOBVAR
@@ -1858,7 +1826,7 @@ PUSHCONT {
 	PAIR
 	PUSHINT 32
 	SETGLOBVAR
-	.loc ../contracts/Dao/Treasury.tsol, 556
+	.loc ../contracts/Dao/Treasury.tsol, 558
 	PUSH S2
 	PUSHINT 45
 	GETGLOBVAR
@@ -1870,7 +1838,7 @@ PUSHCONT {
 	DICTSETB
 	PUSHINT 45
 	SETGLOBVAR
-	.loc ../contracts/Dao/Treasury.tsol, 557
+	.loc ../contracts/Dao/Treasury.tsol, 559
 	PUSH S2
 	PUSHINT 42
 	GETGLOBVAR
@@ -1896,7 +1864,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 560
+.loc ../contracts/Dao/Treasury.tsol, 562
 OVER
 PUSHCONT {
 	LDREF
@@ -1922,7 +1890,7 @@ GETGLOB 9
 GETGLOB 11
 SDEQ
 THROWIFNOT 226
-.loc ../contracts/Dao/Treasury.tsol, 561
+.loc ../contracts/Dao/Treasury.tsol, 563
 SETGLOB 12
 .loc ../contracts/Dao/Treasury.tsol, 0
 
@@ -1935,7 +1903,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 563
+.loc ../contracts/Dao/Treasury.tsol, 565
 OVER
 PUSHCONT {
 	LDREF
@@ -1961,7 +1929,7 @@ GETGLOB 9
 GETGLOB 11
 SDEQ
 THROWIFNOT 226
-.loc ../contracts/Dao/Treasury.tsol, 564
+.loc ../contracts/Dao/Treasury.tsol, 566
 SETGLOB 26
 .loc ../contracts/Dao/Treasury.tsol, 0
 
@@ -1974,7 +1942,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 566
+.loc ../contracts/Dao/Treasury.tsol, 568
 LDI 1
 ENDS
 .loc ../contracts/Dao/Treasury.tsol, 0
@@ -1993,7 +1961,7 @@ GETGLOB 9
 GETGLOB 11
 SDEQ
 THROWIFNOT 226
-.loc ../contracts/Dao/Treasury.tsol, 567
+.loc ../contracts/Dao/Treasury.tsol, 569
 PUSHINT 38
 SETGLOBVAR
 .loc ../contracts/Dao/Treasury.tsol, 0
@@ -2003,20 +1971,20 @@ SETGLOBVAR
 CALL $sortTopHolders_86be25f1_internal_macro$
 
 .macro sortTopHolders_86be25f1_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 570
+.loc ../contracts/Dao/Treasury.tsol, 572
 PUSHINT 32
 GETGLOBVAR
 FIRST
-.loc ../contracts/Dao/Treasury.tsol, 571
+.loc ../contracts/Dao/Treasury.tsol, 573
 DUP
 LESSINT 2
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 572
+	.loc ../contracts/Dao/Treasury.tsol, 574
 	DROP
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
 IFJMP
-.loc ../contracts/Dao/Treasury.tsol, 576
+.loc ../contracts/Dao/Treasury.tsol, 578
 PUSHINT 0
 PUSHCONT {
 	PUSH2 S0, S1
@@ -2025,7 +1993,7 @@ PUSHCONT {
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 577
+	.loc ../contracts/Dao/Treasury.tsol, 579
 	PUSHINT 0
 	PUSHCONT {
 		PUSH3 S0, S2, S1
@@ -2036,7 +2004,7 @@ PUSHCONT {
 		LESS
 	}
 	PUSHCONT {
-		.loc ../contracts/Dao/Treasury.tsol, 578
+		.loc ../contracts/Dao/Treasury.tsol, 580
 		DUP
 		PUSHINT 32
 		GETGLOBVAR
@@ -2044,7 +2012,7 @@ PUSHCONT {
 		PUSHINT 32
 		DICTUGET
 		THROWIFNOT 50
-		.loc ../contracts/Dao/Treasury.tsol, 579
+		.loc ../contracts/Dao/Treasury.tsol, 581
 		OVER
 		INC
 		PUSHINT 32
@@ -2053,7 +2021,7 @@ PUSHCONT {
 		PUSHINT 32
 		DICTUGET
 		THROWIFNOT 50
-		.loc ../contracts/Dao/Treasury.tsol, 582
+		.loc ../contracts/Dao/Treasury.tsol, 584
 		OVER
 		PUSHINT 46
 		GETGLOBVAR
@@ -2076,7 +2044,7 @@ PUSHCONT {
 		IF
 		LESS
 		PUSHCONT {
-			.loc ../contracts/Dao/Treasury.tsol, 584
+			.loc ../contracts/Dao/Treasury.tsol, 586
 			PUSH S2
 			INC
 			PUSHINT 32
@@ -2120,7 +2088,7 @@ PUSHCONT {
 			PAIR
 			PUSHINT 32
 			SETGLOBVAR
-			.loc ../contracts/Dao/Treasury.tsol, 590
+			.loc ../contracts/Dao/Treasury.tsol, 592
 			PUSH S2
 			INC
 			PUSH S2
@@ -2134,7 +2102,7 @@ PUSHCONT {
 			DICTSETB
 			PUSHINT 45
 			SETGLOBVAR
-			.loc ../contracts/Dao/Treasury.tsol, 591
+			.loc ../contracts/Dao/Treasury.tsol, 593
 			DUP
 			PUSHINT 45
 			GETGLOBVAR
@@ -2151,13 +2119,13 @@ PUSHCONT {
 		IF
 		.loc ../contracts/Dao/Treasury.tsol, 0
 		DROP2
-		.loc ../contracts/Dao/Treasury.tsol, 577
+		.loc ../contracts/Dao/Treasury.tsol, 579
 		INC
 		.loc ../contracts/Dao/Treasury.tsol, 0
 	}
 	WHILE
 	DROP
-	.loc ../contracts/Dao/Treasury.tsol, 576
+	.loc ../contracts/Dao/Treasury.tsol, 578
 	INC
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
@@ -2170,7 +2138,7 @@ DROP2
 CALL $_removeTopHolder_a027ebb3_internal_macro$
 
 .macro _removeTopHolder_a027ebb3_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 598
+.loc ../contracts/Dao/Treasury.tsol, 600
 OVER
 PUSHINT 42
 GETGLOBVAR
@@ -2182,17 +2150,17 @@ PUSHCONT {
 }
 IF
 THROWIFNOT 237
-.loc ../contracts/Dao/Treasury.tsol, 600
+.loc ../contracts/Dao/Treasury.tsol, 602
 PUSHINT 32
 GETGLOBVAR
 FIRST
 DEC
 UFITS 256
-.loc ../contracts/Dao/Treasury.tsol, 601
+.loc ../contracts/Dao/Treasury.tsol, 603
 DUP2
 LESS
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 602
+	.loc ../contracts/Dao/Treasury.tsol, 604
 	DUP
 	PUSHINT 32
 	GETGLOBVAR
@@ -2200,7 +2168,7 @@ PUSHCONT {
 	PUSHINT 32
 	DICTUGET
 	THROWIFNOT 50
-	.loc ../contracts/Dao/Treasury.tsol, 603
+	.loc ../contracts/Dao/Treasury.tsol, 605
 	DUP
 	PUSHINT 32
 	GETGLOBVAR
@@ -2215,7 +2183,7 @@ PUSHCONT {
 	PAIR
 	PUSHINT 32
 	SETGLOBVAR
-	.loc ../contracts/Dao/Treasury.tsol, 604
+	.loc ../contracts/Dao/Treasury.tsol, 606
 	PUSHINT 45
 	GETGLOBVAR
 	PUSH S3
@@ -2229,7 +2197,7 @@ PUSHCONT {
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
 IF
-.loc ../contracts/Dao/Treasury.tsol, 607
+.loc ../contracts/Dao/Treasury.tsol, 609
 DROP2
 PUSHINT 32
 GETGLOBVAR
@@ -2246,7 +2214,7 @@ DROP
 PAIR
 PUSHINT 32
 SETGLOBVAR
-.loc ../contracts/Dao/Treasury.tsol, 608
+.loc ../contracts/Dao/Treasury.tsol, 610
 DUP
 PUSHINT 42
 GETGLOBVAR
@@ -2257,7 +2225,7 @@ PUSHINT 267
 DICTSETB
 PUSHINT 42
 SETGLOBVAR
-.loc ../contracts/Dao/Treasury.tsol, 609
+.loc ../contracts/Dao/Treasury.tsol, 611
 PUSHINT 45
 GETGLOBVAR
 PUSHINT 267
@@ -2276,7 +2244,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 612
+.loc ../contracts/Dao/Treasury.tsol, 614
 OVER
 PUSHCONT {
 	LDU 64
@@ -2319,7 +2287,7 @@ THROW 0
 CALL $makeSwap_530494b5_internal_macro$
 
 .macro makeSwap_530494b5_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 622
+.loc ../contracts/Dao/Treasury.tsol, 624
 PUSH S6
 PUSHINT 48
 GETGLOBVAR
@@ -2331,12 +2299,12 @@ PUSHCONT {
 	}
 }
 IFNOT
-.loc ../contracts/Dao/Treasury.tsol, 623
+.loc ../contracts/Dao/Treasury.tsol, 625
 PUSHSLICE x2_
 OVER
 SDEQ
 THROWIF 101
-.loc ../contracts/Dao/Treasury.tsol, 624
+.loc ../contracts/Dao/Treasury.tsol, 626
 PUSHINT 100000000
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
@@ -2344,24 +2312,24 @@ PUSHREFSLICE {
 CALLREF {
 	CALL $GasValues_no_obj_getPoolDirectExchangeGas_47b146c5_macro$
 }
-.loc ../contracts/Dao/Treasury.tsol, 625
+.loc ../contracts/Dao/Treasury.tsol, 627
 DUP
 SECOND
 SWAP
 FIRST
 ADD
 UFITS 128
-.loc ../contracts/Dao/Treasury.tsol, 626
+.loc ../contracts/Dao/Treasury.tsol, 628
 DEPTH
 ADDCONST -2
 PICK
 SWAP
 GEQ
 THROWIFNOT 102
-.loc ../contracts/Dao/Treasury.tsol, 627
+.loc ../contracts/Dao/Treasury.tsol, 629
 PUSHREF {
 }
-.loc ../contracts/Dao/Treasury.tsol, 628
+.loc ../contracts/Dao/Treasury.tsol, 630
 ROLL 9
 PUSH S5
 ROLL 5
@@ -2375,7 +2343,7 @@ NULL
 CALLREF {
 	CALL $PairPayload_no_obj_buildExchangePayloadV2_0d450309_macro$
 }
-.loc ../contracts/Dao/Treasury.tsol, 640
+.loc ../contracts/Dao/Treasury.tsol, 642
 TRUE
 BLKSWAP 3, 3
 XCPU S2, S7
@@ -2401,7 +2369,21 @@ STBREFR
 ENDC
 PUSHINT 64
 SENDRAWMSG
-.loc ../contracts/Dao/Treasury.tsol, 649
+.loc ../contracts/Dao/Treasury.tsol, 650
+PUSHINT 5000000000
+PUSHINT 0
+RAWRESERVE
+.loc ../contracts/Dao/Treasury.tsol, 651
+GETGLOB 11
+NEWC
+STSLICECONST x42_
+STSLICE
+PUSHINT 111
+STZEROES
+ENDC
+PUSHPOW2 7
+SENDRAWMSG
+.loc ../contracts/Dao/Treasury.tsol, 653
 ROT
 PUSHREFSLICE {
 	.blob xc0000000000000000000000001
@@ -2427,12 +2409,7 @@ SENDRAWMSG
 DROP
 GETGLOB 6
 THROWIFNOT 76
-GETGLOB 2
-ISNULL
-IFREF {
-	CALL $c4_to_c7$
-}
-.loc ../contracts/Dao/Treasury.tsol, 654
+.loc ../contracts/Dao/Treasury.tsol, 658
 OVER
 PUSHCONT {
 	LDU 64
@@ -2459,14 +2436,13 @@ ENDS
 CALLREF {
 	CALL $dexPairExchangeSuccess_8d6a631b_internal_macro$
 }
-DROP
-CALLREF {
-	CALL $c7_to_c4$
+IFREF {
+	CALL $upd_only_time_in_c4$
 }
 THROW 0
 
 .macro dexPairExchangeSuccess_8d6a631b_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 655
+.loc ../contracts/Dao/Treasury.tsol, 659
 ROT
 PUSHSLICE xc000000000000000000000000061e8e4c6
 NEWC
@@ -2485,89 +2461,11 @@ SENDRAWMSG
 DROP
 .loc ../contracts/Dao/Treasury.tsol, 0
 
-.globl	deposit_b6b55f25_internal
-.type	deposit_b6b55f25_internal, @function
-CALL $deposit_b6b55f25_internal_macro$
-
-.macro deposit_b6b55f25_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 664
-GETGLOB 18
-FIRST
-.loc ../contracts/Dao/Treasury.tsol, 669
-PUSHINT 1
-PUSHCONT {
-	PUSH2 S0, S1
-	LESS
-}
-PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 670
-	PUSH2 S2, S0
-	GETGLOB 22
-	SECOND
-	PUSHINT 32
-	DICTUGET
-	THROWIFNOT 50
-	PLDU 8
-	MUL
-	PUSHINT 100
-	DIV
-	.loc ../contracts/Dao/Treasury.tsol, 680
-	PUSHINT 1
-	PUSHINT 0
-	GETGLOB 18
-	SECOND
-	PUSHINT 32
-	DICTUGET
-	THROWIFNOT 50
-	ROT
-	UFITS 128
-	PUSH S3
-	GETGLOB 18
-	SECOND
-	PUSHINT 32
-	DICTUGET
-	THROWIFNOT 50
-	PUSH S4
-	DEC
-	UFITS 256
-	GETGLOB 20
-	SECOND
-	PUSHINT 32
-	DICTUGET
-	THROWIFNOT 50
-	PUSHINT 1000000000
-	PUSHINT 0
-	MYADDR
-	CALLREF {
-		CALL $makeSwap_530494b5_internal_macro$
-	}
-	.loc ../contracts/Dao/Treasury.tsol, 698
-	PUSHINT 1000000000
-	PUSHINT 0
-	RAWRESERVE
-	.loc ../contracts/Dao/Treasury.tsol, 699
-	GETGLOB 11
-	NEWC
-	STSLICECONST x42_
-	STSLICE
-	PUSHINT 111
-	STZEROES
-	ENDC
-	PUSHPOW2 7
-	SENDRAWMSG
-	.loc ../contracts/Dao/Treasury.tsol, 669
-	INC
-	.loc ../contracts/Dao/Treasury.tsol, 0
-}
-WHILE
-BLKDROP 3
-.loc ../contracts/Dao/Treasury.tsol, 0
-
 .macro calculateTotalDeposit
 DROP
 GETGLOB 6
 THROWIFNOT 76
-.loc ../contracts/Dao/Treasury.tsol, 708
+.loc ../contracts/Dao/Treasury.tsol, 669
 LDU 32
 LDDICT
 ROTREV
@@ -2615,19 +2513,19 @@ THROW 0
 CALL $calculateTotalDeposit_d50c3bc9_internal_macro$
 
 .macro calculateTotalDeposit_d50c3bc9_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 712
+.loc ../contracts/Dao/Treasury.tsol, 673
 PUSHINT 0
-.loc ../contracts/Dao/Treasury.tsol, 713
+.loc ../contracts/Dao/Treasury.tsol, 674
 OVER
 FIRST
-.loc ../contracts/Dao/Treasury.tsol, 715
+.loc ../contracts/Dao/Treasury.tsol, 676
 PUSHINT 0
 PUSHCONT {
 	PUSH2 S0, S1
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 716
+	.loc ../contracts/Dao/Treasury.tsol, 677
 	PUSH2 S0, S3
 	SECOND
 	PUSHINT 32
@@ -2636,7 +2534,7 @@ PUSHCONT {
 	PLDU 256
 	GTINT 0
 	THROWIFNOT 231
-	.loc ../contracts/Dao/Treasury.tsol, 717
+	.loc ../contracts/Dao/Treasury.tsol, 678
 	PUSH2 S0, S4
 	SECOND
 	PUSHINT 32
@@ -2647,7 +2545,7 @@ PUSHCONT {
 	}
 	SDEQ
 	THROWIF 232
-	.loc ../contracts/Dao/Treasury.tsol, 719
+	.loc ../contracts/Dao/Treasury.tsol, 680
 	PUSH2 S0, S3
 	SECOND
 	PUSHINT 32
@@ -2657,13 +2555,13 @@ PUSHCONT {
 	PUSH S3
 	ADD
 	POP S3
-	.loc ../contracts/Dao/Treasury.tsol, 715
+	.loc ../contracts/Dao/Treasury.tsol, 676
 	INC
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
 WHILE
 DROP2
-.loc ../contracts/Dao/Treasury.tsol, 721
+.loc ../contracts/Dao/Treasury.tsol, 682
 BLKDROP2 2, 1
 .loc ../contracts/Dao/Treasury.tsol, 0
 
@@ -2676,7 +2574,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 723
+.loc ../contracts/Dao/Treasury.tsol, 684
 LDU 32
 LDDICT
 ROTREV
@@ -2704,29 +2602,29 @@ GETGLOB 9
 GETGLOB 11
 SDEQ
 THROWIFNOT 226
-.loc ../contracts/Dao/Treasury.tsol, 727
+.loc ../contracts/Dao/Treasury.tsol, 688
 OVER
 FIRST
 OVER
 FIRST
 EQUAL
 THROWIFNOT 229
-.loc ../contracts/Dao/Treasury.tsol, 729
+.loc ../contracts/Dao/Treasury.tsol, 690
 DUP2
 CALLREF {
 	CALL $calculateTotalDeposit_d50c3bc9_internal_macro$
 }
-.loc ../contracts/Dao/Treasury.tsol, 730
+.loc ../contracts/Dao/Treasury.tsol, 691
 PUSH S2
 FIRST
-.loc ../contracts/Dao/Treasury.tsol, 731
+.loc ../contracts/Dao/Treasury.tsol, 692
 PUSHINT 0
 PUSHCONT {
 	PUSH2 S0, S1
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 732
+	.loc ../contracts/Dao/Treasury.tsol, 693
 	PUSH2 S0, S3
 	SECOND
 	PUSHINT 32
@@ -2735,7 +2633,7 @@ PUSHCONT {
 	PLDU 256
 	BLOCKLT
 	PAIR
-	.loc ../contracts/Dao/Treasury.tsol, 738
+	.loc ../contracts/Dao/Treasury.tsol, 699
 	PUSHINT 44
 	GETGLOBVAR
 	PUSH2 S2, S6
@@ -2784,7 +2682,7 @@ PUSHCONT {
 	DICTSETB
 	PUSHINT 44
 	SETGLOBVAR
-	.loc ../contracts/Dao/Treasury.tsol, 741
+	.loc ../contracts/Dao/Treasury.tsol, 702
 	PUSH2 S0, S3
 	SECOND
 	PUSHINT 32
@@ -2816,18 +2714,18 @@ PUSHCONT {
 	DICTSETB
 	PUSHINT 46
 	SETGLOBVAR
-	.loc ../contracts/Dao/Treasury.tsol, 731
+	.loc ../contracts/Dao/Treasury.tsol, 692
 	INC
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
 WHILE
 DROP
-.loc ../contracts/Dao/Treasury.tsol, 745
+.loc ../contracts/Dao/Treasury.tsol, 706
 GETGLOB 28
 PUSH S2
 ADD
 SETGLOB 28
-.loc ../contracts/Dao/Treasury.tsol, 746
+.loc ../contracts/Dao/Treasury.tsol, 707
 PUSHSLICE xc0000000000000000000000000286751e4
 NEWC
 STSLICE
@@ -2848,7 +2746,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 749
+.loc ../contracts/Dao/Treasury.tsol, 710
 OVER
 PUSHCONT {
 	LDREF
@@ -2874,7 +2772,7 @@ GETGLOB 9
 GETGLOB 11
 SDEQ
 THROWIFNOT 226
-.loc ../contracts/Dao/Treasury.tsol, 750
+.loc ../contracts/Dao/Treasury.tsol, 711
 SETGLOB 16
 .loc ../contracts/Dao/Treasury.tsol, 0
 
@@ -2887,7 +2785,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 752
+.loc ../contracts/Dao/Treasury.tsol, 713
 LDU 32
 LDDICT
 ROTREV
@@ -2914,13 +2812,585 @@ GETGLOB 9
 GETGLOB 11
 SDEQ
 THROWIFNOT 226
-.loc ../contracts/Dao/Treasury.tsol, 755
+.loc ../contracts/Dao/Treasury.tsol, 716
 DUP
 CALLREF {
 	CALL $calculateSumOfRatios_bc8a1743_internal_macro$
 }
-.loc ../contracts/Dao/Treasury.tsol, 756
+.loc ../contracts/Dao/Treasury.tsol, 717
 SETGLOB 22
+.loc ../contracts/Dao/Treasury.tsol, 0
+
+.macro getAllTokenBalOfContract
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Dao/Treasury.tsol, 733
+ENDS
+.loc ../contracts/Dao/Treasury.tsol, 0
+CALLREF {
+	CALL $getAllTokenBalOfContract_b9f685ff_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	getAllTokenBalOfContract_b9f685ff_internal
+.type	getAllTokenBalOfContract_b9f685ff_internal, @function
+CALL $getAllTokenBalOfContract_b9f685ff_internal_macro$
+
+.macro getAllTokenBalOfContract_b9f685ff_internal_macro
+.loc ../contracts/Dao/Treasury.tsol, 734
+PUSHINT 0
+NEWDICT
+PAIR
+PUSHINT 53
+SETGLOBVAR
+.loc ../contracts/Dao/Treasury.tsol, 736
+GETGLOB 18
+FIRST
+.loc ../contracts/Dao/Treasury.tsol, 737
+PUSHINT 0
+PUSHCONT {
+	PUSH2 S0, S1
+	LESS
+}
+PUSHCONT {
+	.loc ../contracts/Dao/Treasury.tsol, 738
+	DUP
+	GETGLOB 18
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	PUSHINT 48
+	GETGLOBVAR
+	PUSHINT 267
+	DICTGET
+	PUSHCONT {
+		PUSHREFSLICE {
+			.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+		}
+	}
+	IFNOT
+	.loc ../contracts/Dao/Treasury.tsol, 739
+	DUP
+	PUSHREFSLICE {
+		.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+	}
+	SDEQ
+	PUSHCONT {
+		.loc ../contracts/Dao/Treasury.tsol, 741
+		OVER
+		GETGLOB 18
+		SECOND
+		PUSHINT 32
+		DICTUGET
+		THROWIFNOT 50
+		OVER
+		PUSHINT 51
+		GETGLOBVAR
+		PUSHINT 267
+		DICTSET
+		PUSHINT 51
+		SETGLOBVAR
+		.loc ../contracts/Dao/Treasury.tsol, 743
+		DUP
+		NEWC
+		STSLICECONST x62_
+		STSLICE
+		PUSHINT 51721332951613057734990901608657498043136036075707396927801702
+		STUR 207
+		ENDC
+		PUSHINT 64
+		SENDRAWMSG
+		.loc ../contracts/Dao/Treasury.tsol, 0
+	}
+	IFNOT
+	.loc ../contracts/Dao/Treasury.tsol, 0
+	DROP
+	.loc ../contracts/Dao/Treasury.tsol, 737
+	INC
+	.loc ../contracts/Dao/Treasury.tsol, 0
+}
+WHILE
+DROP2
+.loc ../contracts/Dao/Treasury.tsol, 0
+
+.macro onGetBalance
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Dao/Treasury.tsol, 753
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDU 128
+ENDS
+.loc ../contracts/Dao/Treasury.tsol, 0
+CALLREF {
+	CALL $onGetBalance_aeffd4a5_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	onGetBalance_aeffd4a5_internal
+.type	onGetBalance_aeffd4a5_internal, @function
+CALL $onGetBalance_aeffd4a5_internal_macro$
+
+.macro onGetBalance_aeffd4a5_internal_macro
+.loc ../contracts/Dao/Treasury.tsol, 755
+GETGLOB 9
+PUSHINT 51
+GETGLOBVAR
+PUSHINT 267
+DICTGET
+PUSHCONT {
+	PUSHREFSLICE {
+		.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+	}
+}
+IFNOT
+.loc ../contracts/Dao/Treasury.tsol, 757
+PUSH2 S0, S1
+PAIR
+.loc ../contracts/Dao/Treasury.tsol, 758
+PUSHINT 53
+GETGLOBVAR
+SWAP
+CALLREF {
+	UNPAIR
+	SWAP
+	NEWC
+	STSLICE
+	STU 128
+}
+SWAP
+UNPAIR
+OVER
+INC
+ROLLREV 3
+PUSHINT 32
+DICTUSETB
+PAIR
+PUSHINT 53
+SETGLOBVAR
+.loc ../contracts/Dao/Treasury.tsol, 759
+DUP
+PUSHINT 52
+GETGLOBVAR
+PUSH S3
+NEWC
+STU 128
+ROTREV
+PUSHINT 267
+DICTSETB
+PUSHINT 52
+SETGLOBVAR
+.loc ../contracts/Dao/Treasury.tsol, 760
+GETGLOB 18
+FIRST
+PUSHINT 53
+GETGLOBVAR
+FIRST
+EQUAL
+PUSHINT 55
+GETGLOBVAR
+AND
+PUSHCONT {
+	.loc ../contracts/Dao/Treasury.tsol, 761
+	FALSE
+	PUSHINT 55
+	SETGLOBVAR
+	.loc ../contracts/Dao/Treasury.tsol, 762
+	CALLREF {
+		CALL $drainTreasuryInternal_7851d236_internal_macro$
+	}
+	.loc ../contracts/Dao/Treasury.tsol, 0
+}
+IF
+.loc ../contracts/Dao/Treasury.tsol, 764
+PUSHSLICE xc00000000000000000000000004a92136c
+NEWC
+STSLICE
+STSLICE
+STU 256
+ENDC
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/Dao/Treasury.tsol, 0
+
+.globl	drainTreasuryInternal_7851d236_internal
+.type	drainTreasuryInternal_7851d236_internal, @function
+CALL $drainTreasuryInternal_7851d236_internal_macro$
+
+.macro drainTreasuryInternal_7851d236_internal_macro
+.loc ../contracts/Dao/Treasury.tsol, 769
+GETGLOB 9
+PUSHSLICE xc00000000000000000000000006a4782f6
+NEWC
+STSLICE
+STSLICE
+ENDC
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/Dao/Treasury.tsol, 770
+CALLREF {
+	CALL $getBalances_00113e08_internal_macro$
+}
+.loc ../contracts/Dao/Treasury.tsol, 771
+DUP
+FIRST
+.loc ../contracts/Dao/Treasury.tsol, 773
+PUSHINT 0
+PUSHCONT {
+	PUSH2 S0, S1
+	LESS
+}
+PUSHCONT {
+	.loc ../contracts/Dao/Treasury.tsol, 774
+	PUSH2 S0, S2
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	CALLREF {
+		LDMSGADDR
+		LDU 128
+		ENDS
+		PAIR
+	}
+	FIRST
+	.loc ../contracts/Dao/Treasury.tsol, 775
+	PUSH2 S1, S3
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	CALLREF {
+		LDMSGADDR
+		LDU 128
+		ENDS
+		PAIR
+	}
+	SECOND
+	.loc ../contracts/Dao/Treasury.tsol, 776
+	OVER
+	PUSHSLICE xc00000000000000000000000006a4782f6
+	NEWC
+	STSLICE
+	STSLICE
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+	.loc ../contracts/Dao/Treasury.tsol, 777
+	OVER
+	PUSHREFSLICE {
+		.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+	}
+	SDEQ
+	PUSHCONT {
+		.loc ../contracts/Dao/Treasury.tsol, 778
+		OVER
+		PUSHINT 48
+		GETGLOBVAR
+		PUSHINT 267
+		DICTGET
+		PUSHCONT {
+			PUSHREFSLICE {
+				.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+			}
+		}
+		IFNOT
+		.loc ../contracts/Dao/Treasury.tsol, 779
+		DUP
+		PUSHREFSLICE {
+			.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+		}
+		SDEQ
+		NOT
+		PUSH S2
+		GTINT 0
+		AND
+		PUSHCONT {
+			.loc ../contracts/Dao/Treasury.tsol, 780
+			PUSHREF {
+			}
+			.loc ../contracts/Dao/Treasury.tsol, 782
+			TRUE
+			GETGLOB 11
+			PUSHINT 1000000000
+			GETGLOB 11
+			PUSH S6
+			UFITS 128
+			PUSH S6
+			NEWC
+			STSLICECONST x62_
+			STSLICE
+			PUSHINT 3112111703474754619475120804657301188247553
+			STUR 143
+			ROLLREV 6
+			NEWC
+			STSLICECONST x73e22143
+			STU 128
+			STSLICE
+			STU 128
+			ROLLREV 3
+			NEWC
+			STSLICE
+			STI 1
+			STREF
+			STBREFR
+			STBREFR
+			ENDC
+			PUSHINT 64
+			SENDRAWMSG
+			.loc ../contracts/Dao/Treasury.tsol, 0
+		}
+		IF
+		.loc ../contracts/Dao/Treasury.tsol, 0
+		DROP
+	}
+	IFNOT
+	.loc ../contracts/Dao/Treasury.tsol, 0
+	DROP2
+	.loc ../contracts/Dao/Treasury.tsol, 773
+	INC
+	.loc ../contracts/Dao/Treasury.tsol, 0
+}
+WHILE
+BLKDROP 3
+.loc ../contracts/Dao/Treasury.tsol, 798
+PUSHINT 35
+GETGLOBVAR
+CALLREF {
+	CALL $_transferAllNFTs_c0e770e4_internal_macro$
+}
+.loc ../contracts/Dao/Treasury.tsol, 799
+PUSHINT 36
+GETGLOBVAR
+CALLREF {
+	CALL $_transferAllNFTs_c0e770e4_internal_macro$
+}
+.loc ../contracts/Dao/Treasury.tsol, 800
+PUSHINT 5000000000
+PUSHINT 0
+RAWRESERVE
+.loc ../contracts/Dao/Treasury.tsol, 801
+GETGLOB 11
+NEWC
+STSLICECONST x42_
+STSLICE
+PUSHINT 111
+STZEROES
+ENDC
+PUSHPOW2 7
+SENDRAWMSG
+.loc ../contracts/Dao/Treasury.tsol, 0
+
+.macro drainUsdt
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Dao/Treasury.tsol, 803
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDU 128
+ENDS
+.loc ../contracts/Dao/Treasury.tsol, 0
+CALLREF {
+	CALL $drainUsdt_6f8a078e_internal_macro$
+}
+IFREF {
+	CALL $upd_only_time_in_c4$
+}
+THROW 0
+
+.globl	drainUsdt_6f8a078e_internal
+.type	drainUsdt_6f8a078e_internal, @function
+CALL $drainUsdt_6f8a078e_internal_macro$
+
+.macro drainUsdt_6f8a078e_internal_macro
+.loc ../contracts/Dao/Treasury.tsol, 804
+PUSHINT 0
+GETGLOB 18
+SECOND
+PUSHINT 32
+DICTUGET
+THROWIFNOT 50
+PUSHINT 48
+GETGLOBVAR
+PUSHINT 267
+DICTGET
+PUSHCONT {
+	PUSHREFSLICE {
+		.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+	}
+}
+IFNOT
+.loc ../contracts/Dao/Treasury.tsol, 805
+DUP
+PUSHREFSLICE {
+	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+}
+SDEQ
+THROWIF 224
+.loc ../contracts/Dao/Treasury.tsol, 806
+PUSHREF {
+}
+.loc ../contracts/Dao/Treasury.tsol, 807
+TRUE
+GETGLOB 11
+PUSHINT 1000000000
+GETGLOB 11
+BLKSWAP 2, 5
+NEWC
+STSLICECONST x62_
+STSLICE
+PUSHINT 3112111703474754619475120804657301188247553
+STUR 143
+ROLLREV 6
+NEWC
+STSLICECONST x73e22143
+STU 128
+STSLICE
+STU 128
+ROLLREV 3
+NEWC
+STSLICE
+STI 1
+STREF
+STBREFR
+STBREFR
+ENDC
+PUSHINT 64
+SENDRAWMSG
+.loc ../contracts/Dao/Treasury.tsol, 0
+
+.macro getBalances
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Dao/Treasury.tsol, 819
+ENDS
+.loc ../contracts/Dao/Treasury.tsol, 0
+CALLREF {
+	CALL $getBalances_00113e08_internal_macro$
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 2325087933
+	STUR 130
+	SWAP
+	UNPAIR
+	XCHG S2
+	STU 32
+	STDICT
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	CALL $upd_only_time_in_c4$
+}
+THROW 0
+
+.globl	getBalances_00113e08_internal
+.type	getBalances_00113e08_internal, @function
+CALL $getBalances_00113e08_internal_macro$
+
+.macro getBalances_00113e08_internal_macro
+.loc ../contracts/Dao/Treasury.tsol, 820
+PUSHINT 53
+GETGLOBVAR
+.loc ../contracts/Dao/Treasury.tsol, 0
+
+.macro drainTreasury
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Dao/Treasury.tsol, 823
+ENDS
+.loc ../contracts/Dao/Treasury.tsol, 0
+CALLREF {
+	CALL $drainTreasury_c3490bc7_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	drainTreasury_c3490bc7_internal
+.type	drainTreasury_c3490bc7_internal, @function
+CALL $drainTreasury_c3490bc7_internal_macro$
+
+.macro drainTreasury_c3490bc7_internal_macro
+.loc ../contracts/Dao/Treasury.tsol, 824
+GETGLOB 9
+GETGLOB 11
+SDEQ
+THROWIFNOT 226
+.loc ../contracts/Dao/Treasury.tsol, 825
+TRUE
+PUSHINT 55
+SETGLOBVAR
+.loc ../contracts/Dao/Treasury.tsol, 826
+CALLREF {
+	CALL $getAllTokenBalOfContract_b9f685ff_internal_macro$
+}
 .loc ../contracts/Dao/Treasury.tsol, 0
 
 .macro withdraw
@@ -2932,7 +3402,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 790
+.loc ../contracts/Dao/Treasury.tsol, 830
 LDU 32
 LDDICT
 ROTREV
@@ -2950,9 +3420,9 @@ CALLREF {
 THROW 0
 
 .macro withdraw_983d95ce_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 791
+.loc ../contracts/Dao/Treasury.tsol, 831
 PUSHINT 0
-.loc ../contracts/Dao/Treasury.tsol, 793
+.loc ../contracts/Dao/Treasury.tsol, 833
 GETGLOB 9
 PUSHINT 44
 GETGLOBVAR
@@ -2969,21 +3439,21 @@ PUSHCONT {
 IFELSE
 PAIR
 FIRST
-.loc ../contracts/Dao/Treasury.tsol, 794
+.loc ../contracts/Dao/Treasury.tsol, 834
 DUP
 GTINT 0
 THROWIFNOT 236
-.loc ../contracts/Dao/Treasury.tsol, 797
+.loc ../contracts/Dao/Treasury.tsol, 837
 PUSH S2
 FIRST
-.loc ../contracts/Dao/Treasury.tsol, 800
+.loc ../contracts/Dao/Treasury.tsol, 840
 PUSHINT 0
 PUSHCONT {
 	PUSH2 S0, S1
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 801
+	.loc ../contracts/Dao/Treasury.tsol, 841
 	PUSH2 S0, S4
 	SECOND
 	PUSHINT 32
@@ -2993,7 +3463,7 @@ PUSHCONT {
 	PUSH S3
 	LESS
 	THROWIFNOT 234
-	.loc ../contracts/Dao/Treasury.tsol, 802
+	.loc ../contracts/Dao/Treasury.tsol, 842
 	PUSH2 S0, S4
 	SECOND
 	PUSHINT 32
@@ -3025,66 +3495,47 @@ PUSHCONT {
 		ENDS
 		PAIR
 	}
-	.loc ../contracts/Dao/Treasury.tsol, 810
+	.loc ../contracts/Dao/Treasury.tsol, 850
 	DUP
 	FIRST
 	PUSH S5
 	ADD
 	POP S5
-	.loc ../contracts/Dao/Treasury.tsol, 811
+	.loc ../contracts/Dao/Treasury.tsol, 851
 	PUSHINT 0
 	SETINDEX 0
-	.loc ../contracts/Dao/Treasury.tsol, 812
+	.loc ../contracts/Dao/Treasury.tsol, 852
 	PUSHINT 0
 	SETINDEX 1
 	.loc ../contracts/Dao/Treasury.tsol, 0
 	DROP
-	.loc ../contracts/Dao/Treasury.tsol, 800
+	.loc ../contracts/Dao/Treasury.tsol, 840
 	INC
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
 WHILE
 BLKDROP 3
-.loc ../contracts/Dao/Treasury.tsol, 815
+.loc ../contracts/Dao/Treasury.tsol, 855
 DUP
 GTINT 0
 THROWIFNOT 236
-.loc ../contracts/Dao/Treasury.tsol, 819
+.loc ../contracts/Dao/Treasury.tsol, 859
 PUSHINT 0
-.loc ../contracts/Dao/Treasury.tsol, 820
+.loc ../contracts/Dao/Treasury.tsol, 860
 GETGLOB 18
 FIRST
-.loc ../contracts/Dao/Treasury.tsol, 822
+.loc ../contracts/Dao/Treasury.tsol, 862
 PUSHINT 1
 PUSHCONT {
 	PUSH2 S0, S1
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 826
-	PUSH S3
-	.loc ../contracts/Dao/Treasury.tsol, 827
-	PUSHINT 0
-	.loc ../contracts/Dao/Treasury.tsol, 841
-	PUSH2 S4, S0
-	ADD
-	POP S5
-	.loc ../contracts/Dao/Treasury.tsol, 842
-	PUSHINT 1000000000000000000
-	MUL
-	PUSHINT 100000000
-	DIV
-	.loc ../contracts/Dao/Treasury.tsol, 843
-	DUP
-	GETGLOB 14
-	MUL
-	PUSHINT 100
-	DIV
-	.loc ../contracts/Dao/Treasury.tsol, 844
-	SUB
-	UFITS 256
-	.loc ../contracts/Dao/Treasury.tsol, 846
-	DROP
+	.loc ../contracts/Dao/Treasury.tsol, 866
+	OVER2
+	.loc ../contracts/Dao/Treasury.tsol, 881
+	POP S4
+	.loc ../contracts/Dao/Treasury.tsol, 886
 	OVER
 	GETGLOB 18
 	SECOND
@@ -3099,7 +3550,7 @@ PUSHCONT {
 	THROWIFNOT 50
 	SDEQ
 	PUSHCONT {
-		.loc ../contracts/Dao/Treasury.tsol, 854
+		.loc ../contracts/Dao/Treasury.tsol, 894
 		DUP
 		PUSHINT 0
 		GETGLOB 22
@@ -3111,13 +3562,13 @@ PUSHCONT {
 		MUL
 		PUSHINT 100
 		DIV
-		.loc ../contracts/Dao/Treasury.tsol, 855
+		.loc ../contracts/Dao/Treasury.tsol, 895
 		PUSHREF {
 		}
-		.loc ../contracts/Dao/Treasury.tsol, 856
+		.loc ../contracts/Dao/Treasury.tsol, 896
 	}
 	PUSHCONT {
-		.loc ../contracts/Dao/Treasury.tsol, 866
+		.loc ../contracts/Dao/Treasury.tsol, 906
 		DUP
 		PUSHINT 0
 		GETGLOB 18
@@ -3149,7 +3600,7 @@ PUSHCONT {
 		ENDC
 		PUSHINT 0
 		SENDRAWMSG
-		.loc ../contracts/Dao/Treasury.tsol, 867
+		.loc ../contracts/Dao/Treasury.tsol, 907
 		PUSH2 S0, S1
 		GETGLOB 22
 		SECOND
@@ -3160,17 +3611,17 @@ PUSHCONT {
 		MUL
 		PUSHINT 100
 		DIV
-		.loc ../contracts/Dao/Treasury.tsol, 869
+		.loc ../contracts/Dao/Treasury.tsol, 909
 		PUSH S2
 		UFITS 16
 		OVER
 		CALLREF {
 			CALL $usdtRate_1f2bfa53_internal_macro$
 		}
-		.loc ../contracts/Dao/Treasury.tsol, 870
+		.loc ../contracts/Dao/Treasury.tsol, 910
 		PUSHINT 10
 		DIV
-		.loc ../contracts/Dao/Treasury.tsol, 871
+		.loc ../contracts/Dao/Treasury.tsol, 911
 		PUSHINT 1
 		PUSH S4
 		GETGLOB 18
@@ -3200,10 +3651,10 @@ PUSHCONT {
 		CALLREF {
 			CALL $makeSwap_530494b5_internal_macro$
 		}
-		.loc ../contracts/Dao/Treasury.tsol, 881
+		.loc ../contracts/Dao/Treasury.tsol, 921
 		PUSHREF {
 		}
-		.loc ../contracts/Dao/Treasury.tsol, 882
+		.loc ../contracts/Dao/Treasury.tsol, 922
 	}
 	IFELSE
 	TRUE
@@ -3236,62 +3687,62 @@ PUSHCONT {
 	SENDRAWMSG
 	.loc ../contracts/Dao/Treasury.tsol, 0
 	DROP
-	.loc ../contracts/Dao/Treasury.tsol, 822
+	.loc ../contracts/Dao/Treasury.tsol, 862
 	INC
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
 WHILE
 DROP2
-.loc ../contracts/Dao/Treasury.tsol, 904
+.loc ../contracts/Dao/Treasury.tsol, 944
 OVER
-.loc ../contracts/Dao/Treasury.tsol, 905
+.loc ../contracts/Dao/Treasury.tsol, 945
 PUSHINT 0
 OVER
 CALLREF {
 	CALL $fetchAssetPriceInUsd_b24fed22_internal_macro$
 }
-.loc ../contracts/Dao/Treasury.tsol, 908
+.loc ../contracts/Dao/Treasury.tsol, 948
 XCHG S1, S2
 MULCONST 2
 GREATER
 PUSHINT 20
 PUSHINT 10
 CONDSEL
-.loc ../contracts/Dao/Treasury.tsol, 911
+.loc ../contracts/Dao/Treasury.tsol, 951
 PUSHINT 100
-.loc ../contracts/Dao/Treasury.tsol, 916
+.loc ../contracts/Dao/Treasury.tsol, 956
 PUSHINT 0
 BLKPUSH 2, 0
-.loc ../contracts/Dao/Treasury.tsol, 919
+.loc ../contracts/Dao/Treasury.tsol, 959
 PUSH2 S5, S3
 LESS
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 920
+	.loc ../contracts/Dao/Treasury.tsol, 960
 	PUSH2 S3, S4
 	MUL
 	PUSHINT 100
 	DIV
 	POP S3
-	.loc ../contracts/Dao/Treasury.tsol, 922
+	.loc ../contracts/Dao/Treasury.tsol, 962
 	OVER2
 	SUB
 	UFITS 256
 	POP S2
-	.loc ../contracts/Dao/Treasury.tsol, 924
+	.loc ../contracts/Dao/Treasury.tsol, 964
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 928
+	.loc ../contracts/Dao/Treasury.tsol, 968
 	BLKPUSH 2, 5
 	MUL
 	PUSHINT 100
 	DIV
 	POP S3
-	.loc ../contracts/Dao/Treasury.tsol, 930
+	.loc ../contracts/Dao/Treasury.tsol, 970
 	PUSH2 S5, S2
 	SUB
 	UFITS 256
 	POP S2
-	.loc ../contracts/Dao/Treasury.tsol, 932
+	.loc ../contracts/Dao/Treasury.tsol, 972
 }
 IFELSE
 OVER
@@ -3302,7 +3753,7 @@ MUL
 PUSHINT 1000000000000000000
 DIV
 NIP
-.loc ../contracts/Dao/Treasury.tsol, 938
+.loc ../contracts/Dao/Treasury.tsol, 978
 DUP
 GETGLOB 9
 GETGLOB 24
@@ -3320,13 +3771,13 @@ STBREFR
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/Treasury.tsol, 940
+.loc ../contracts/Dao/Treasury.tsol, 980
 GETGLOB 28
 PUSH S7
 SUB
 UFITS 256
 SETGLOB 28
-.loc ../contracts/Dao/Treasury.tsol, 942
+.loc ../contracts/Dao/Treasury.tsol, 982
 PUSH S6
 GETGLOB 9
 PUSHINT 46
@@ -3349,13 +3800,13 @@ PUSHINT 267
 DICTSETB
 PUSHINT 46
 SETGLOBVAR
-.loc ../contracts/Dao/Treasury.tsol, 945
+.loc ../contracts/Dao/Treasury.tsol, 985
 GETGLOB 9
 ROLL 8
 CALLREF {
 	CALL $removeUserDeposits_39f42c60_internal_macro$
 }
-.loc ../contracts/Dao/Treasury.tsol, 946
+.loc ../contracts/Dao/Treasury.tsol, 986
 ROLL 6
 GETGLOB 9
 PUSHREFSLICE {
@@ -3388,7 +3839,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 965
+.loc ../contracts/Dao/Treasury.tsol, 1005
 OVER
 PUSHCONT {
 	LDREF
@@ -3403,9 +3854,8 @@ ENDS
 CALLREF {
 	CALL $swapAndTransferToGovernance_b2f6819a_internal_macro$
 }
-DROP
-CALLREF {
-	CALL $c7_to_c4$
+IFREF {
+	CALL $upd_only_time_in_c4$
 }
 THROW 0
 
@@ -3414,23 +3864,23 @@ THROW 0
 CALL $swapAndTransferToGovernance_b2f6819a_internal_macro$
 
 .macro swapAndTransferToGovernance_b2f6819a_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 969
+.loc ../contracts/Dao/Treasury.tsol, 1009
 DUP
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 224
-.loc ../contracts/Dao/Treasury.tsol, 970
+.loc ../contracts/Dao/Treasury.tsol, 1010
 GETGLOB 9
 GETGLOB 17
 SDEQ
 THROWIFNOT 226
-.loc ../contracts/Dao/Treasury.tsol, 971
+.loc ../contracts/Dao/Treasury.tsol, 1011
 OVER
 GTINT 0
 THROWIFNOT 231
-.loc ../contracts/Dao/Treasury.tsol, 974
+.loc ../contracts/Dao/Treasury.tsol, 1014
 PUSHINT 1
 PUSHINT 0
 GETGLOB 18
@@ -3468,7 +3918,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 986
+.loc ../contracts/Dao/Treasury.tsol, 1026
 LDU 32
 GETGLOB 4
 ROT
@@ -3544,10 +3994,10 @@ THROW 0
 CALL $transferUsdtToGovernance_c98cdfae_internal_macro$
 
 .macro transferUsdtToGovernance_c98cdfae_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 990
+.loc ../contracts/Dao/Treasury.tsol, 1030
 PUSHREF {
 }
-.loc ../contracts/Dao/Treasury.tsol, 992
+.loc ../contracts/Dao/Treasury.tsol, 1032
 PUSHINT 0
 GETGLOB 18
 SECOND
@@ -3564,13 +4014,13 @@ PUSHCONT {
 	}
 }
 IFNOT
-.loc ../contracts/Dao/Treasury.tsol, 993
+.loc ../contracts/Dao/Treasury.tsol, 1033
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 224
-.loc ../contracts/Dao/Treasury.tsol, 996
+.loc ../contracts/Dao/Treasury.tsol, 1036
 TRUE
 GETGLOB 11
 PUSHINT 1000000000
@@ -3598,7 +4048,7 @@ STBREFR
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/Treasury.tsol, 1005
+.loc ../contracts/Dao/Treasury.tsol, 1045
 GETGLOB 4
 PUSHINT 0
 SETINDEXQ 2
@@ -3619,7 +4069,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 1022
+.loc ../contracts/Dao/Treasury.tsol, 1062
 OVER
 PUSHCONT {
 	LDREF
@@ -3633,9 +4083,8 @@ ENDS
 CALLREF {
 	CALL $withdrawWvenAmount_07921296_internal_macro$
 }
-DROP
-CALLREF {
-	CALL $c7_to_c4$
+IFREF {
+	CALL $upd_only_time_in_c4$
 }
 THROW 0
 
@@ -3644,7 +4093,7 @@ THROW 0
 CALL $withdrawWvenAmount_07921296_internal_macro$
 
 .macro withdrawWvenAmount_07921296_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1025
+.loc ../contracts/Dao/Treasury.tsol, 1064
 DUP
 PUSHINT 1
 GETGLOB 22
@@ -3656,13 +4105,13 @@ PLDU 8
 MUL
 PUSHINT 100
 DIV
-.loc ../contracts/Dao/Treasury.tsol, 1028
+.loc ../contracts/Dao/Treasury.tsol, 1067
 PUSHINT 1
 OVER
 CALLREF {
 	CALL $usdtRate_1f2bfa53_internal_macro$
 }
-.loc ../contracts/Dao/Treasury.tsol, 1030
+.loc ../contracts/Dao/Treasury.tsol, 1069
 PUSHINT 1
 DUP
 GETGLOB 18
@@ -3690,7 +4139,7 @@ MYADDR
 CALLREF {
 	CALL $makeSwap_530494b5_internal_macro$
 }
-.loc ../contracts/Dao/Treasury.tsol, 1044
+.loc ../contracts/Dao/Treasury.tsol, 1083
 PUSHREF {
 }
 TRUE
@@ -3721,7 +4170,7 @@ STBREFR
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/Treasury.tsol, 1052
+.loc ../contracts/Dao/Treasury.tsol, 1091
 SWAP
 PUSHINT 0
 GETGLOB 18
@@ -3763,7 +4212,7 @@ SENDRAWMSG
 DROP
 GETGLOB 6
 THROWIFNOT 76
-.loc ../contracts/Dao/Treasury.tsol, 1060
+.loc ../contracts/Dao/Treasury.tsol, 1100
 OVER
 PUSHCONT {
 	LDU 16
@@ -3813,22 +4262,22 @@ THROW 0
 CALL $usdtRate_1f2bfa53_internal_macro$
 
 .macro usdtRate_1f2bfa53_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1060
+.loc ../contracts/Dao/Treasury.tsol, 1100
 PUSHINT 0
 PUSH2 S0, S2
-.loc ../contracts/Dao/Treasury.tsol, 1066
+.loc ../contracts/Dao/Treasury.tsol, 1106
 EQINT 1
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 1068
+	.loc ../contracts/Dao/Treasury.tsol, 1108
 	DROP
 	PUSHINT 57456
-	.loc ../contracts/Dao/Treasury.tsol, 1069
+	.loc ../contracts/Dao/Treasury.tsol, 1109
 	PUSH S2
 	PUSHINT 1000000
 	MUL
 	PUSHINT 1000
 	MUL
-	.loc ../contracts/Dao/Treasury.tsol, 1070
+	.loc ../contracts/Dao/Treasury.tsol, 1110
 	OVER
 	MUL
 	PUSHINT 1000000000
@@ -3838,23 +4287,23 @@ PUSHCONT {
 	PUSH S3
 	EQINT 3
 	PUSHCONT {
-		.loc ../contracts/Dao/Treasury.tsol, 1073
+		.loc ../contracts/Dao/Treasury.tsol, 1113
 		DROP
 		PUSHINT 949038394185496310
-		.loc ../contracts/Dao/Treasury.tsol, 1074
+		.loc ../contracts/Dao/Treasury.tsol, 1114
 		PUSH S2
 		PUSHINT 1000000
 		MUL
 		PUSHINT 1000000000000
 		MUL
-		.loc ../contracts/Dao/Treasury.tsol, 1075
+		.loc ../contracts/Dao/Treasury.tsol, 1115
 		OVER
 		MUL
 		PUSHINT 1000000000000000000
 		DIV
 	}
 	PUSHCONT {
-		.loc ../contracts/Dao/Treasury.tsol, 1077
+		.loc ../contracts/Dao/Treasury.tsol, 1117
 		PUSHINT 0
 	}
 	IFELSE
@@ -3872,7 +4321,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 1081
+.loc ../contracts/Dao/Treasury.tsol, 1121
 OVER
 PUSHCONT {
 	LDREF
@@ -3919,20 +4368,20 @@ THROW 0
 CALL $fetchAssetPriceInUsd_b24fed22_internal_macro$
 
 .macro fetchAssetPriceInUsd_b24fed22_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1085
+.loc ../contracts/Dao/Treasury.tsol, 1125
 OVER
 GETGLOB 18
 FIRST
 LESS
 THROWIFNOT 237
-.loc ../contracts/Dao/Treasury.tsol, 1087
+.loc ../contracts/Dao/Treasury.tsol, 1127
 OVER
 GETGLOB 21
 SECOND
 PUSHINT 32
 DICTUGET
 THROWIFNOT 50
-.loc ../contracts/Dao/Treasury.tsol, 1090
+.loc ../contracts/Dao/Treasury.tsol, 1130
 ROT
 GETGLOB 19
 SECOND
@@ -3941,7 +4390,7 @@ DICTUGET
 THROWIFNOT 50
 PLDU 256
 UFITS 8
-.loc ../contracts/Dao/Treasury.tsol, 1091
+.loc ../contracts/Dao/Treasury.tsol, 1131
 CALLREF {
 	CALL $getAmountInUsd_77816c57_internal_macro$
 }
@@ -3952,13 +4401,13 @@ CALLREF {
 CALL $getAmountInUsd_77816c57_internal_macro$
 
 .macro getAmountInUsd_77816c57_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1101
+.loc ../contracts/Dao/Treasury.tsol, 1141
 PUSHINT 100
-.loc ../contracts/Dao/Treasury.tsol, 1102
+.loc ../contracts/Dao/Treasury.tsol, 1142
 DUP
 GTINT 0
 THROWIFNOT 238
-.loc ../contracts/Dao/Treasury.tsol, 1105
+.loc ../contracts/Dao/Treasury.tsol, 1145
 ROLL 3
 MUL
 PUSHINT 10
@@ -3978,17 +4427,17 @@ NIP
 CALL $removeUserDeposits_39f42c60_internal_macro$
 
 .macro removeUserDeposits_39f42c60_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1109
+.loc ../contracts/Dao/Treasury.tsol, 1149
 DUP
 FIRST
 GTINT 0
 THROWIFNOT 219
-.loc ../contracts/Dao/Treasury.tsol, 1112
+.loc ../contracts/Dao/Treasury.tsol, 1152
 DUP
 CALLREF {
 	CALL $sortAscending_5ba18df1_internal_macro$
 }
-.loc ../contracts/Dao/Treasury.tsol, 1114
+.loc ../contracts/Dao/Treasury.tsol, 1154
 OVER
 PUSHINT 44
 GETGLOBVAR
@@ -4005,7 +4454,7 @@ PUSHCONT {
 IFELSE
 PAIR
 FIRST
-.loc ../contracts/Dao/Treasury.tsol, 1115
+.loc ../contracts/Dao/Treasury.tsol, 1155
 DUP
 PUSHINT 0
 NEWC
@@ -4024,7 +4473,7 @@ PUSHCONT {
 REPEAT
 BLKDROP2 2, 1
 PAIR
-.loc ../contracts/Dao/Treasury.tsol, 1118
+.loc ../contracts/Dao/Treasury.tsol, 1158
 PUSHINT 0
 PUSHCONT {
 	PUSH2 S0, S3
@@ -4032,18 +4481,18 @@ PUSHCONT {
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 1119
+	.loc ../contracts/Dao/Treasury.tsol, 1159
 	PUSH2 S0, S3
 	SECOND
 	PUSHINT 32
 	DICTUGET
 	THROWIFNOT 50
 	PLDU 256
-	.loc ../contracts/Dao/Treasury.tsol, 1120
+	.loc ../contracts/Dao/Treasury.tsol, 1160
 	PUSH2 S0, S3
 	LESS
 	THROWIFNOT 239
-	.loc ../contracts/Dao/Treasury.tsol, 1123
+	.loc ../contracts/Dao/Treasury.tsol, 1163
 	PUSH S2
 	UNPAIR
 	XCHG S1, S2
@@ -4057,22 +4506,22 @@ PUSHCONT {
 	DICTUSETB
 	PAIR
 	POP S2
-	.loc ../contracts/Dao/Treasury.tsol, 1118
+	.loc ../contracts/Dao/Treasury.tsol, 1158
 	INC
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
 WHILE
 DROP
-.loc ../contracts/Dao/Treasury.tsol, 1127
+.loc ../contracts/Dao/Treasury.tsol, 1167
 PUSHINT 0
 DUP
-.loc ../contracts/Dao/Treasury.tsol, 1128
+.loc ../contracts/Dao/Treasury.tsol, 1168
 PUSHCONT {
 	PUSH2 S0, S3
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 1129
+	.loc ../contracts/Dao/Treasury.tsol, 1169
 	PUSH2 S0, S2
 	SECOND
 	PUSHINT 32
@@ -4080,20 +4529,20 @@ PUSHCONT {
 	THROWIFNOT 50
 	PLDI 1
 	PUSHCONT {
-		.loc ../contracts/Dao/Treasury.tsol, 1130
+		.loc ../contracts/Dao/Treasury.tsol, 1170
 		OVER
 		INC
 		POP S2
 		.loc ../contracts/Dao/Treasury.tsol, 0
 	}
 	IFNOT
-	.loc ../contracts/Dao/Treasury.tsol, 1128
+	.loc ../contracts/Dao/Treasury.tsol, 1168
 	INC
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
 WHILE
 DROP
-.loc ../contracts/Dao/Treasury.tsol, 1136
+.loc ../contracts/Dao/Treasury.tsol, 1176
 PUSHREFSLICE
 .compute $default_tuple_builder_t_uint256_t_uint256$
 PUSHINT 0
@@ -4110,16 +4559,16 @@ PUSHCONT {
 REPEAT
 BLKDROP2 2, 1
 PAIR
-.loc ../contracts/Dao/Treasury.tsol, 1137
+.loc ../contracts/Dao/Treasury.tsol, 1177
 PUSHINT 0
 DUP
-.loc ../contracts/Dao/Treasury.tsol, 1138
+.loc ../contracts/Dao/Treasury.tsol, 1178
 PUSHCONT {
 	PUSH2 S0, S4
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 1139
+	.loc ../contracts/Dao/Treasury.tsol, 1179
 	PUSH2 S0, S3
 	SECOND
 	PUSHINT 32
@@ -4127,7 +4576,7 @@ PUSHCONT {
 	THROWIFNOT 50
 	PLDI 1
 	PUSHCONT {
-		.loc ../contracts/Dao/Treasury.tsol, 1140
+		.loc ../contracts/Dao/Treasury.tsol, 1180
 		PUSH2 S0, S6
 		PUSHINT 44
 		GETGLOBVAR
@@ -4172,20 +4621,20 @@ PUSHCONT {
 		DICTUSETB
 		PAIR
 		POP S3
-		.loc ../contracts/Dao/Treasury.tsol, 1141
+		.loc ../contracts/Dao/Treasury.tsol, 1181
 		OVER
 		INC
 		POP S2
 		.loc ../contracts/Dao/Treasury.tsol, 0
 	}
 	IFNOT
-	.loc ../contracts/Dao/Treasury.tsol, 1138
+	.loc ../contracts/Dao/Treasury.tsol, 1178
 	INC
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
 WHILE
 DROP2
-.loc ../contracts/Dao/Treasury.tsol, 1146
+.loc ../contracts/Dao/Treasury.tsol, 1186
 PUSHINT 44
 GETGLOBVAR
 ROLL 5
@@ -4209,17 +4658,17 @@ BLKDROP 3
 CALL $sortAscending_5ba18df1_internal_macro$
 
 .macro sortAscending_5ba18df1_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1150
+.loc ../contracts/Dao/Treasury.tsol, 1190
 DUP
 FIRST
-.loc ../contracts/Dao/Treasury.tsol, 1151
+.loc ../contracts/Dao/Treasury.tsol, 1191
 PUSHINT 0
 PUSHCONT {
 	PUSH2 S0, S1
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 1152
+	.loc ../contracts/Dao/Treasury.tsol, 1192
 	DUP
 	INC
 	PUSHCONT {
@@ -4227,7 +4676,7 @@ PUSHCONT {
 		LESS
 	}
 	PUSHCONT {
-		.loc ../contracts/Dao/Treasury.tsol, 1153
+		.loc ../contracts/Dao/Treasury.tsol, 1193
 		PUSH2 S1, S3
 		SECOND
 		PUSHINT 32
@@ -4242,7 +4691,7 @@ PUSHCONT {
 		PLDU 256
 		GREATER
 		PUSHCONT {
-			.loc ../contracts/Dao/Treasury.tsol, 1155
+			.loc ../contracts/Dao/Treasury.tsol, 1195
 			PUSH2 S0, S3
 			SECOND
 			PUSHINT 32
@@ -4286,13 +4735,13 @@ PUSHCONT {
 			.loc ../contracts/Dao/Treasury.tsol, 0
 		}
 		IF
-		.loc ../contracts/Dao/Treasury.tsol, 1152
+		.loc ../contracts/Dao/Treasury.tsol, 1192
 		INC
 		.loc ../contracts/Dao/Treasury.tsol, 0
 	}
 	WHILE
 	DROP
-	.loc ../contracts/Dao/Treasury.tsol, 1151
+	.loc ../contracts/Dao/Treasury.tsol, 1191
 	INC
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
@@ -4309,7 +4758,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 1161
+.loc ../contracts/Dao/Treasury.tsol, 1201
 ENDS
 .loc ../contracts/Dao/Treasury.tsol, 0
 CALLREF {
@@ -4325,7 +4774,7 @@ THROW 0
 CALL $getCallbackAmount_178eb49d_internal_macro$
 
 .macro getCallbackAmount_178eb49d_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1162
+.loc ../contracts/Dao/Treasury.tsol, 1202
 GETGLOB 11
 NEWC
 STSLICECONST x42_
@@ -4346,7 +4795,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 1165
+.loc ../contracts/Dao/Treasury.tsol, 1205
 OVER
 PUSHCONT {
 	LDREF
@@ -4376,19 +4825,19 @@ GETGLOB 26
 SDEQ
 OR
 THROWIFNOT 228
-.loc ../contracts/Dao/Treasury.tsol, 1168
+.loc ../contracts/Dao/Treasury.tsol, 1208
 DUP
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 224
-.loc ../contracts/Dao/Treasury.tsol, 1169
+.loc ../contracts/Dao/Treasury.tsol, 1209
 GETGLOB 17
-.loc ../contracts/Dao/Treasury.tsol, 1170
+.loc ../contracts/Dao/Treasury.tsol, 1210
 OVER
 SETGLOB 17
-.loc ../contracts/Dao/Treasury.tsol, 1171
+.loc ../contracts/Dao/Treasury.tsol, 1211
 PUSHREFSLICE {
 	.blob xc0000000000000000000000001
 }
@@ -4417,7 +4866,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 1174
+.loc ../contracts/Dao/Treasury.tsol, 1214
 OVER
 PUSHCONT {
 	LDREF
@@ -4468,7 +4917,7 @@ THROW 0
 CALL $getNftAddrOfNftIdMap_fd186f3a_internal_macro$
 
 .macro getNftAddrOfNftIdMap_fd186f3a_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1178
+.loc ../contracts/Dao/Treasury.tsol, 1218
 SWAP
 PUSHINT 47
 GETGLOBVAR
@@ -4500,7 +4949,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 1181
+.loc ../contracts/Dao/Treasury.tsol, 1221
 OVER
 PUSHCONT {
 	LDREF
@@ -4551,7 +5000,7 @@ THROW 0
 CALL $getNftOwnerOfNftIdMap_b6e38c1c_internal_macro$
 
 .macro getNftOwnerOfNftIdMap_b6e38c1c_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1185
+.loc ../contracts/Dao/Treasury.tsol, 1225
 SWAP
 PUSHINT 49
 GETGLOBVAR
@@ -4583,7 +5032,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 1188
+.loc ../contracts/Dao/Treasury.tsol, 1228
 OVER
 PUSHCONT {
 	LDREF
@@ -4607,9 +5056,9 @@ THROW 0
 CALL $lockFounderNFT_8d340c98_internal_macro$
 
 .macro lockFounderNFT_8d340c98_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1190
+.loc ../contracts/Dao/Treasury.tsol, 1230
 ACCEPT
-.loc ../contracts/Dao/Treasury.tsol, 1192
+.loc ../contracts/Dao/Treasury.tsol, 1232
 PUSHINT 36
 GETGLOBVAR
 NEWC
@@ -4637,7 +5086,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 1199
+.loc ../contracts/Dao/Treasury.tsol, 1239
 OVER
 PUSHCONT {
 	LDREF
@@ -4661,9 +5110,9 @@ THROW 0
 CALL $lockDeedNFT_d78afb07_internal_macro$
 
 .macro lockDeedNFT_d78afb07_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1201
+.loc ../contracts/Dao/Treasury.tsol, 1241
 ACCEPT
-.loc ../contracts/Dao/Treasury.tsol, 1203
+.loc ../contracts/Dao/Treasury.tsol, 1243
 PUSHINT 35
 GETGLOBVAR
 NEWC
@@ -4691,7 +5140,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 1210
+.loc ../contracts/Dao/Treasury.tsol, 1250
 OVER
 PUSHCONT {
 	LDREF
@@ -4712,14 +5161,14 @@ CALLREF {
 THROW 0
 
 .macro onNftAddress_9e8c4a8d_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1211
+.loc ../contracts/Dao/Treasury.tsol, 1251
 DUP
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 224
-.loc ../contracts/Dao/Treasury.tsol, 1213
+.loc ../contracts/Dao/Treasury.tsol, 1253
 DUP
 PUSHINT 9999999999999
 PUSHINT 39
@@ -4728,7 +5177,7 @@ PUSHPOW2 8
 DICTUSET
 PUSHINT 39
 SETGLOBVAR
-.loc ../contracts/Dao/Treasury.tsol, 1214
+.loc ../contracts/Dao/Treasury.tsol, 1254
 DUP
 PUSHSLICE xc000000000000000000000000072a2724c
 NEWC
@@ -4737,7 +5186,7 @@ STSLICE
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/Treasury.tsol, 1216
+.loc ../contracts/Dao/Treasury.tsol, 1256
 NEWC
 STSLICECONST x62_
 STSLICE
@@ -4757,7 +5206,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 1223
+.loc ../contracts/Dao/Treasury.tsol, 1263
 OVER
 PUSHCONT {
 	LDREF
@@ -4787,14 +5236,14 @@ CALLREF {
 THROW 0
 
 .macro onNftOwner_ae34ed32_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1229
+.loc ../contracts/Dao/Treasury.tsol, 1269
 PUSH S2
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 224
-.loc ../contracts/Dao/Treasury.tsol, 1231
+.loc ../contracts/Dao/Treasury.tsol, 1271
 PUSH2 S2, S0
 PUSHINT 49
 GETGLOBVAR
@@ -4820,7 +5269,7 @@ PUSHINT 267
 DICTSETB
 PUSHINT 49
 SETGLOBVAR
-.loc ../contracts/Dao/Treasury.tsol, 1232
+.loc ../contracts/Dao/Treasury.tsol, 1272
 PUSHINT 9999999999999
 PUSHINT 39
 GETGLOBVAR
@@ -4832,7 +5281,7 @@ PUSHCONT {
 	}
 }
 IFNOT
-.loc ../contracts/Dao/Treasury.tsol, 1233
+.loc ../contracts/Dao/Treasury.tsol, 1273
 PUSH2 S0, S1
 PUSHINT 47
 GETGLOBVAR
@@ -4858,7 +5307,7 @@ PUSHINT 267
 DICTSETB
 PUSHINT 47
 SETGLOBVAR
-.loc ../contracts/Dao/Treasury.tsol, 1235
+.loc ../contracts/Dao/Treasury.tsol, 1275
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
@@ -4869,7 +5318,7 @@ PUSHPOW2 8
 DICTUSET
 PUSHINT 39
 SETGLOBVAR
-.loc ../contracts/Dao/Treasury.tsol, 1237
+.loc ../contracts/Dao/Treasury.tsol, 1277
 PUSHSLICE xc0000000000000000000000000638a6da2
 NEWC
 STSLICE
@@ -4877,7 +5326,7 @@ STSLICE
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/Treasury.tsol, 1239
+.loc ../contracts/Dao/Treasury.tsol, 1279
 SWAP
 XCHG S3
 CALLREF {
@@ -4893,13 +5342,13 @@ CALL $lockNFTInternal_afd78a37_internal_macro$
 .macro lockNFTInternal_afd78a37_internal_macro
 .loc ../contracts/Dao/Treasury.tsol, 232
 ACCEPT
-.loc ../contracts/Dao/Treasury.tsol, 1247
+.loc ../contracts/Dao/Treasury.tsol, 1287
 BLKPUSH 3, 2
 CALLREF {
 	CALL $_isLocked_71638e98_internal_macro$
 }
 THROWIF 257
-.loc ../contracts/Dao/Treasury.tsol, 1251
+.loc ../contracts/Dao/Treasury.tsol, 1291
 PUSH2 S0, S1
 PUSHINT 49
 GETGLOBVAR
@@ -4923,7 +5372,7 @@ IFNOT
 PUSH S3
 SDEQ
 THROWIFNOT 258
-.loc ../contracts/Dao/Treasury.tsol, 1255
+.loc ../contracts/Dao/Treasury.tsol, 1295
 PUSH2 S0, S1
 PUSHINT 47
 GETGLOBVAR
@@ -4944,19 +5393,19 @@ PUSHCONT {
 	}
 }
 IFNOT
-.loc ../contracts/Dao/Treasury.tsol, 1256
+.loc ../contracts/Dao/Treasury.tsol, 1296
 DUP
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 224
-.loc ../contracts/Dao/Treasury.tsol, 1258
+.loc ../contracts/Dao/Treasury.tsol, 1298
 OVER
 NEWC
 STU 256
 ENDC
-.loc ../contracts/Dao/Treasury.tsol, 1260
+.loc ../contracts/Dao/Treasury.tsol, 1300
 PUSHINT 50000000
 SWAP
 PAIR
@@ -4977,7 +5426,7 @@ DICTSETB
 DUP
 PUSHINT 50
 SETGLOBVAR
-.loc ../contracts/Dao/Treasury.tsol, 1263
+.loc ../contracts/Dao/Treasury.tsol, 1303
 PUSH S4
 MYADDR
 PUSH S3
@@ -4999,7 +5448,7 @@ STBREFR
 ENDC
 PUSHINT 1
 SENDRAWMSG
-.loc ../contracts/Dao/Treasury.tsol, 1268
+.loc ../contracts/Dao/Treasury.tsol, 1308
 PUXC S1, S-1
 PUSH S4
 PUSHREFSLICE {
@@ -5020,7 +5469,7 @@ STBREFR
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/Treasury.tsol, 1271
+.loc ../contracts/Dao/Treasury.tsol, 1311
 PUSH S2
 PUSHINT 43
 GETGLOBVAR
@@ -5064,7 +5513,7 @@ PUSHINT 267
 DICTSETB
 PUSHINT 43
 SETGLOBVAR
-.loc ../contracts/Dao/Treasury.tsol, 1272
+.loc ../contracts/Dao/Treasury.tsol, 1312
 PUSH S2
 PUSHINT 40
 GETGLOBVAR
@@ -5119,7 +5568,7 @@ PUSHINT 267
 DICTSETB
 PUSHINT 40
 SETGLOBVAR
-.loc ../contracts/Dao/Treasury.tsol, 1273
+.loc ../contracts/Dao/Treasury.tsol, 1313
 MYADDR
 PUSHINT 41
 GETGLOBVAR
@@ -5174,7 +5623,7 @@ PUSHINT 267
 DICTSETB
 PUSHINT 41
 SETGLOBVAR
-.loc ../contracts/Dao/Treasury.tsol, 1274
+.loc ../contracts/Dao/Treasury.tsol, 1314
 XCHG S2
 PUSHREFSLICE {
 	.blob xc0000000000000000000000001
@@ -5203,7 +5652,7 @@ CALL $lockDeedNFTInternal_1185b696_internal_macro$
 .macro lockDeedNFTInternal_1185b696_internal_macro
 .loc ../contracts/Dao/Treasury.tsol, 232
 ACCEPT
-.loc ../contracts/Dao/Treasury.tsol, 1282
+.loc ../contracts/Dao/Treasury.tsol, 1322
 PUSH S2
 PUSHINT 36
 GETGLOBVAR
@@ -5212,7 +5661,7 @@ CALLREF {
 	CALL $_isLocked_71638e98_internal_macro$
 }
 THROWIF 257
-.loc ../contracts/Dao/Treasury.tsol, 1283
+.loc ../contracts/Dao/Treasury.tsol, 1323
 PUSH2 S0, S1
 PUSHINT 49
 GETGLOBVAR
@@ -5236,7 +5685,7 @@ IFNOT
 PUSH S3
 SDEQ
 THROWIFNOT 258
-.loc ../contracts/Dao/Treasury.tsol, 1287
+.loc ../contracts/Dao/Treasury.tsol, 1327
 DUP
 ROT
 PUSHINT 47
@@ -5258,19 +5707,19 @@ PUSHCONT {
 	}
 }
 IFNOT
-.loc ../contracts/Dao/Treasury.tsol, 1288
+.loc ../contracts/Dao/Treasury.tsol, 1328
 DUP
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 224
-.loc ../contracts/Dao/Treasury.tsol, 1290
+.loc ../contracts/Dao/Treasury.tsol, 1330
 OVER
 NEWC
 STU 256
 ENDC
-.loc ../contracts/Dao/Treasury.tsol, 1292
+.loc ../contracts/Dao/Treasury.tsol, 1332
 PUSHINT 50000000
 SWAP
 PAIR
@@ -5291,7 +5740,7 @@ DICTSETB
 DUP
 PUSHINT 50
 SETGLOBVAR
-.loc ../contracts/Dao/Treasury.tsol, 1295
+.loc ../contracts/Dao/Treasury.tsol, 1335
 PUSH S3
 MYADDR
 PUSH S3
@@ -5313,7 +5762,7 @@ STBREFR
 ENDC
 PUSHINT 1
 SENDRAWMSG
-.loc ../contracts/Dao/Treasury.tsol, 1300
+.loc ../contracts/Dao/Treasury.tsol, 1340
 PUXC S1, S-1
 PUSH S3
 PUSHREFSLICE {
@@ -5334,7 +5783,7 @@ STBREFR
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/Treasury.tsol, 1303
+.loc ../contracts/Dao/Treasury.tsol, 1343
 OVER
 PUSHINT 43
 GETGLOBVAR
@@ -5380,7 +5829,7 @@ PUSHINT 267
 DICTSETB
 PUSHINT 43
 SETGLOBVAR
-.loc ../contracts/Dao/Treasury.tsol, 1304
+.loc ../contracts/Dao/Treasury.tsol, 1344
 OVER
 PUSHINT 40
 GETGLOBVAR
@@ -5437,7 +5886,7 @@ PUSHINT 267
 DICTSETB
 PUSHINT 40
 SETGLOBVAR
-.loc ../contracts/Dao/Treasury.tsol, 1305
+.loc ../contracts/Dao/Treasury.tsol, 1345
 MYADDR
 PUSHINT 41
 GETGLOBVAR
@@ -5494,7 +5943,7 @@ PUSHINT 267
 DICTSETB
 PUSHINT 41
 SETGLOBVAR
-.loc ../contracts/Dao/Treasury.tsol, 1306
+.loc ../contracts/Dao/Treasury.tsol, 1346
 PUSHINT 36
 GETGLOBVAR
 ROT
@@ -5527,7 +5976,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 1309
+.loc ../contracts/Dao/Treasury.tsol, 1349
 OVER
 PUSHCONT {
 	LDREF
@@ -5549,14 +5998,14 @@ CALLREF {
 THROW 0
 
 .macro unlockNFT_2672c002_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1310
+.loc ../contracts/Dao/Treasury.tsol, 1350
 GETGLOB 9
 BLKPUSH 2, 2
 CALLREF {
 	CALL $_isLocked_71638e98_internal_macro$
 }
 THROWIFNOT 257
-.loc ../contracts/Dao/Treasury.tsol, 1315
+.loc ../contracts/Dao/Treasury.tsol, 1355
 PUSHINT 38
 GETGLOBVAR
 DUP
@@ -5598,7 +6047,7 @@ PUSHCONT {
 }
 IFNOT
 THROWIFNOT 260
-.loc ../contracts/Dao/Treasury.tsol, 1325
+.loc ../contracts/Dao/Treasury.tsol, 1365
 OVER
 GETGLOB 9
 PUSHINT 40
@@ -5624,7 +6073,7 @@ PUSHCONT {
 }
 IFELSE
 PAIR
-.loc ../contracts/Dao/Treasury.tsol, 1326
+.loc ../contracts/Dao/Treasury.tsol, 1366
 DUP
 FIRST
 PUSH2 S2, S3
@@ -5646,22 +6095,22 @@ STBREFR
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/Treasury.tsol, 1327
+.loc ../contracts/Dao/Treasury.tsol, 1367
 DUP
 FIRST
 GTINT 0
 THROWIFNOT 236
-.loc ../contracts/Dao/Treasury.tsol, 1328
+.loc ../contracts/Dao/Treasury.tsol, 1368
 DUP
 FIRST
-.loc ../contracts/Dao/Treasury.tsol, 1329
+.loc ../contracts/Dao/Treasury.tsol, 1369
 PUSHINT 0
 PUSHCONT {
 	PUSH2 S0, S1
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 1330
+	.loc ../contracts/Dao/Treasury.tsol, 1370
 	PUSH2 S0, S2
 	SECOND
 	PUSHINT 32
@@ -5671,7 +6120,7 @@ PUSHCONT {
 	PUSH S4
 	EQUAL
 	PUSHCONT {
-		.loc ../contracts/Dao/Treasury.tsol, 1331
+		.loc ../contracts/Dao/Treasury.tsol, 1371
 		OVER
 		DEC
 		UFITS 256
@@ -5695,7 +6144,7 @@ PUSHCONT {
 		DICTUSETB
 		PAIR
 		POP S3
-		.loc ../contracts/Dao/Treasury.tsol, 1332
+		.loc ../contracts/Dao/Treasury.tsol, 1372
 		PUSH S2
 		UNPAIR
 		OVER
@@ -5709,18 +6158,18 @@ PUSHCONT {
 		DROP
 		PAIR
 		POP S3
-		.loc ../contracts/Dao/Treasury.tsol, 1333
+		.loc ../contracts/Dao/Treasury.tsol, 1373
 		RETALT
 		.loc ../contracts/Dao/Treasury.tsol, 0
 	}
 	IFJMP
-	.loc ../contracts/Dao/Treasury.tsol, 1329
+	.loc ../contracts/Dao/Treasury.tsol, 1369
 	INC
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
 WHILEBRK
 DROP
-.loc ../contracts/Dao/Treasury.tsol, 1336
+.loc ../contracts/Dao/Treasury.tsol, 1376
 OVER
 FIRST
 PUSH2 S3, S4
@@ -5742,7 +6191,7 @@ STBREFR
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/Treasury.tsol, 1337
+.loc ../contracts/Dao/Treasury.tsol, 1377
 OVER
 GETGLOB 9
 PUSHINT 40
@@ -5774,7 +6223,7 @@ PUSHINT 267
 DICTSETB
 PUSHINT 40
 SETGLOBVAR
-.loc ../contracts/Dao/Treasury.tsol, 1338
+.loc ../contracts/Dao/Treasury.tsol, 1378
 PUSH S3
 MYADDR
 PUSHINT 41
@@ -5800,17 +6249,17 @@ PUSHCONT {
 }
 IFELSE
 PAIR
-.loc ../contracts/Dao/Treasury.tsol, 1339
+.loc ../contracts/Dao/Treasury.tsol, 1379
 DUP
 FIRST
-.loc ../contracts/Dao/Treasury.tsol, 1340
+.loc ../contracts/Dao/Treasury.tsol, 1380
 PUSHINT 0
 PUSHCONT {
 	PUSH2 S0, S1
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 1341
+	.loc ../contracts/Dao/Treasury.tsol, 1381
 	PUSH2 S0, S2
 	SECOND
 	PUSHINT 32
@@ -5820,7 +6269,7 @@ PUSHCONT {
 	PUSH S6
 	EQUAL
 	PUSHCONT {
-		.loc ../contracts/Dao/Treasury.tsol, 1342
+		.loc ../contracts/Dao/Treasury.tsol, 1382
 		OVER
 		DEC
 		UFITS 256
@@ -5844,7 +6293,7 @@ PUSHCONT {
 		DICTUSETB
 		PAIR
 		POP S3
-		.loc ../contracts/Dao/Treasury.tsol, 1343
+		.loc ../contracts/Dao/Treasury.tsol, 1383
 		PUSH S2
 		UNPAIR
 		OVER
@@ -5858,18 +6307,18 @@ PUSHCONT {
 		DROP
 		PAIR
 		POP S3
-		.loc ../contracts/Dao/Treasury.tsol, 1344
+		.loc ../contracts/Dao/Treasury.tsol, 1384
 		RETALT
 		.loc ../contracts/Dao/Treasury.tsol, 0
 	}
 	IFJMP
-	.loc ../contracts/Dao/Treasury.tsol, 1340
+	.loc ../contracts/Dao/Treasury.tsol, 1380
 	INC
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
 WHILEBRK
 BLKDROP 5
-.loc ../contracts/Dao/Treasury.tsol, 1347
+.loc ../contracts/Dao/Treasury.tsol, 1387
 PUSH2 S0, S1
 PUSHINT 47
 GETGLOBVAR
@@ -5890,12 +6339,12 @@ PUSHCONT {
 	}
 }
 IFNOT
-.loc ../contracts/Dao/Treasury.tsol, 1348
+.loc ../contracts/Dao/Treasury.tsol, 1388
 OVER
 NEWC
 STU 256
 ENDC
-.loc ../contracts/Dao/Treasury.tsol, 1350
+.loc ../contracts/Dao/Treasury.tsol, 1390
 PUSHINT 50000000
 SWAP
 PAIR
@@ -5916,7 +6365,7 @@ DICTSETB
 DUP
 PUSHINT 50
 SETGLOBVAR
-.loc ../contracts/Dao/Treasury.tsol, 1353
+.loc ../contracts/Dao/Treasury.tsol, 1393
 GETGLOB 9
 PUSH2 S0, S2
 NEWC
@@ -5937,7 +6386,7 @@ STBREFR
 ENDC
 PUSHINT 1
 SENDRAWMSG
-.loc ../contracts/Dao/Treasury.tsol, 1358
+.loc ../contracts/Dao/Treasury.tsol, 1398
 PUXC S1, S-1
 GETGLOB 9
 PUSHREFSLICE {
@@ -5958,7 +6407,7 @@ STBREFR
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/Treasury.tsol, 1360
+.loc ../contracts/Dao/Treasury.tsol, 1400
 SWAP
 GETGLOB 9
 PUSHREFSLICE {
@@ -5990,7 +6439,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 1363
+.loc ../contracts/Dao/Treasury.tsol, 1403
 LDU 32
 GETGLOB 4
 ROT
@@ -6065,7 +6514,7 @@ THROW 0
 CALL $getTopTreasuryHolders_eec255d1_internal_macro$
 
 .macro getTopTreasuryHolders_eec255d1_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1369
+.loc ../contracts/Dao/Treasury.tsol, 1409
 GETGLOB 4
 PUSHINT 0
 SETINDEXQ 2
@@ -6083,7 +6532,7 @@ GETGLOBVAR
 CALL $_isLocked_71638e98_internal_macro$
 
 .macro _isLocked_71638e98_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1377
+.loc ../contracts/Dao/Treasury.tsol, 1417
 XCHG S2
 PUSHINT 40
 GETGLOBVAR
@@ -6108,10 +6557,10 @@ PUSHCONT {
 }
 IFELSE
 PAIR
-.loc ../contracts/Dao/Treasury.tsol, 1378
+.loc ../contracts/Dao/Treasury.tsol, 1418
 DUP
 FIRST
-.loc ../contracts/Dao/Treasury.tsol, 1379
+.loc ../contracts/Dao/Treasury.tsol, 1419
 PUSHINT 0
 FALSE ; decl return flag
 PUSHCONT {
@@ -6119,7 +6568,7 @@ PUSHCONT {
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 1380
+	.loc ../contracts/Dao/Treasury.tsol, 1420
 	PUSH2 S1, S3
 	SECOND
 	PUSHINT 32
@@ -6129,7 +6578,7 @@ PUSHCONT {
 	PUSH S5
 	EQUAL
 	PUSHCONT {
-		.loc ../contracts/Dao/Treasury.tsol, 1381
+		.loc ../contracts/Dao/Treasury.tsol, 1421
 		BLKDROP 5
 		TRUE
 		PUSHINT 4
@@ -6137,7 +6586,7 @@ PUSHCONT {
 		.loc ../contracts/Dao/Treasury.tsol, 0
 	}
 	IFJMP
-	.loc ../contracts/Dao/Treasury.tsol, 1379
+	.loc ../contracts/Dao/Treasury.tsol, 1419
 	OVER
 	INC
 	POP S2
@@ -6146,7 +6595,7 @@ PUSHCONT {
 WHILEBRK
 IFRET
 BLKDROP 4
-.loc ../contracts/Dao/Treasury.tsol, 1384
+.loc ../contracts/Dao/Treasury.tsol, 1424
 FALSE
 .loc ../contracts/Dao/Treasury.tsol, 0
 
@@ -6155,7 +6604,7 @@ FALSE
 CALL $_removeLockedNFT_1e19e02a_internal_macro$
 
 .macro _removeLockedNFT_1e19e02a_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1392
+.loc ../contracts/Dao/Treasury.tsol, 1432
 PUSH2 S1, S2
 PUSHINT 40
 GETGLOBVAR
@@ -6180,7 +6629,7 @@ PUSHCONT {
 }
 IFELSE
 PAIR
-.loc ../contracts/Dao/Treasury.tsol, 1393
+.loc ../contracts/Dao/Treasury.tsol, 1433
 DUP
 FIRST
 PUSH2 S2, S3
@@ -6202,17 +6651,17 @@ STBREFR
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/Treasury.tsol, 1395
+.loc ../contracts/Dao/Treasury.tsol, 1435
 DUP
 FIRST
-.loc ../contracts/Dao/Treasury.tsol, 1396
+.loc ../contracts/Dao/Treasury.tsol, 1436
 PUSHINT 0
 PUSHCONT {
 	PUSH2 S0, S1
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/Treasury.tsol, 1397
+	.loc ../contracts/Dao/Treasury.tsol, 1437
 	PUSH2 S0, S2
 	SECOND
 	PUSHINT 32
@@ -6222,7 +6671,7 @@ PUSHCONT {
 	PUSH S4
 	EQUAL
 	PUSHCONT {
-		.loc ../contracts/Dao/Treasury.tsol, 1398
+		.loc ../contracts/Dao/Treasury.tsol, 1438
 		OVER
 		DEC
 		UFITS 256
@@ -6246,7 +6695,7 @@ PUSHCONT {
 		DICTUSETB
 		PAIR
 		POP S3
-		.loc ../contracts/Dao/Treasury.tsol, 1399
+		.loc ../contracts/Dao/Treasury.tsol, 1439
 		PUSH S2
 		UNPAIR
 		OVER
@@ -6260,18 +6709,18 @@ PUSHCONT {
 		DROP
 		PAIR
 		POP S3
-		.loc ../contracts/Dao/Treasury.tsol, 1400
+		.loc ../contracts/Dao/Treasury.tsol, 1440
 		RETALT
 		.loc ../contracts/Dao/Treasury.tsol, 0
 	}
 	IFJMP
-	.loc ../contracts/Dao/Treasury.tsol, 1396
+	.loc ../contracts/Dao/Treasury.tsol, 1436
 	INC
 	.loc ../contracts/Dao/Treasury.tsol, 0
 }
 WHILEBRK
 DROP2
-.loc ../contracts/Dao/Treasury.tsol, 1403
+.loc ../contracts/Dao/Treasury.tsol, 1443
 FIRST
 XCHG S2
 PUSHREFSLICE {
@@ -6304,7 +6753,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 1406
+.loc ../contracts/Dao/Treasury.tsol, 1446
 OVER
 PUSHCONT {
 	LDREF
@@ -6354,7 +6803,7 @@ IFREF {
 THROW 0
 
 .macro getLockedNFTs_0aca0432_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1410
+.loc ../contracts/Dao/Treasury.tsol, 1450
 SWAP
 PUSHINT 40
 GETGLOBVAR
@@ -6390,7 +6839,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 1413
+.loc ../contracts/Dao/Treasury.tsol, 1453
 LDU 32
 GETGLOB 4
 ROT
@@ -6470,7 +6919,7 @@ IFREF {
 THROW 0
 
 .macro getTreasuryBalance_57baeac8_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1417
+.loc ../contracts/Dao/Treasury.tsol, 1457
 GETGLOB 4
 PUSHINT 0
 SETINDEXQ 2
@@ -6501,7 +6950,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/Treasury.tsol, 1423
+.loc ../contracts/Dao/Treasury.tsol, 1463
 LDU 32
 GETGLOB 4
 ROT
@@ -6597,7 +7046,7 @@ IFREF {
 THROW 0
 
 .macro getLockedNFTBalances_6f58ebe0_internal_macro
-.loc ../contracts/Dao/Treasury.tsol, 1432
+.loc ../contracts/Dao/Treasury.tsol, 1472
 PUSHINT 35
 GETGLOBVAR
 OVER
@@ -6680,7 +7129,7 @@ IFELSE
 PAIR
 FIRST
 TRIPLE
-.loc ../contracts/Dao/Treasury.tsol, 1437
+.loc ../contracts/Dao/Treasury.tsol, 1477
 GETGLOB 4
 PUSHINT 0
 SETINDEXQ 2
@@ -6695,7 +7144,7 @@ SWAP
 .macro fallback_macro
 GETGLOB 6
 THROWIFNOT 76
-.loc ../contracts/Dao/Treasury.tsol, 1441
+.loc ../contracts/Dao/Treasury.tsol, 1481
 ACCEPT
 .loc ../contracts/Dao/Treasury.tsol, 0
 DUP
@@ -6830,6 +7279,18 @@ CTOS
 LDDICT
 LDDICT
 LDDICT
+LDREF
+ENDS
+CTOS
+LDDICT
+LDDICT
+LDU 32
+LDDICT
+ROTREV
+PAIR
+SWAP
+LDMSGADDR
+LDI 1
 ENDS
 PUSHINT 0
 GETGLOBVAR
@@ -6842,10 +7303,10 @@ GETGLOB 6
 GETGLOB 7
 GETGLOB 8
 GETGLOB 9
-PUSHINT 41
+PUSHINT 46
 PUSHINT 10
 BLKSWX
-PUSHINT 51
+PUSHINT 56
 TUPLEVAR
 POP C7
 SETGLOB 3
@@ -6922,8 +7383,15 @@ PUSHCONT {
 	BLKPUSH 3, 0
 	PUSHINT 0
 	NEWDICT
-	BLKPUSH 11, 0
-	PUSHINT 51
+	BLKPUSH 13, 0
+	PUSHINT 0
+	NEWDICT
+	PAIR
+	PUSHREFSLICE {
+		.blob x8000000000000000000000000000000000000000000000000000000000000000001_
+	}
+	PUSHINT 0
+	PUSHINT 56
 	TUPLEVAR
 	POP C7
 	PUSHINT 64
@@ -6955,12 +7423,12 @@ IFREFELSE {
 .macro c7_to_c4
 PUSH C7
 FALSE
-PUSHINT 51
+PUSHINT 56
 SETINDEXVARQ
-PUSHINT 52
+PUSHINT 57
 UNTUPLEVAR
 DROP
-PUSHINT 51
+PUSHINT 56
 PUSHINT 0
 REVX
 BLKDROP 10
@@ -6972,50 +7440,68 @@ STU 64
 STONE
 STU 64
 STSLICE
-PUSHINT 39
+PUSHINT 44
 ROLLREVX
 NEWC
 STU 256
 STSLICE
-PUSHINT 37
+PUSHINT 42
 ROLLREVX
 NEWC
 STU 256
 STSLICE
+PUSHINT 40
+ROLLREVX
+NEWC
+STU 256
+STSLICE
+SWAP
+UNPAIR
+XCHG S2
+STU 32
+STDICT
+SWAP
+UNPAIR
+XCHG S2
+STU 32
+STDICT
+SWAP
+UNPAIR
+XCHG S2
+STU 32
+STDICT
 PUSHINT 35
 ROLLREVX
 NEWC
-STU 256
+SWAP
+UNPAIR
+XCHG S2
+STU 32
+STDICT
+SWAP
+UNPAIR
+XCHG S2
+STU 32
+STDICT
 STSLICE
-SWAP
-UNPAIR
-XCHG S2
-STU 32
-STDICT
-SWAP
-UNPAIR
-XCHG S2
-STU 32
-STDICT
-SWAP
-UNPAIR
-XCHG S2
-STU 32
-STDICT
+PUSHINT 32
+ROLLREVX
+NEWC
+STSLICE
+PUSHINT 31
+ROLLREVX
+NEWC
+STSLICE
 PUSHINT 30
 ROLLREVX
 NEWC
-SWAP
-UNPAIR
-XCHG S2
-STU 32
-STDICT
-SWAP
-UNPAIR
-XCHG S2
-STU 32
-STDICT
 STSLICE
+SWAP
+UNPAIR
+XCHG S2
+STU 32
+STDICT
+STU 256
 PUSHINT 27
 ROLLREVX
 NEWC
@@ -7046,44 +7532,41 @@ PUSHINT 20
 ROLLREVX
 NEWC
 STSLICE
-SWAP
-UNPAIR
-XCHG S2
-STU 32
-STDICT
-STU 256
-PUSHINT 17
+PUSHINT 19
 ROLLREVX
-NEWC
-STSLICE
-ROLLREV 16
-NEWC
-STSLICE
-ROLLREV 15
-NEWC
-STSLICE
-ROLLREV 14
 NEWC
 STSLICE
 STI 1
 STDICT
 STDICT
 STDICT
-ROLLREV 9
+ROLLREV 14
 NEWC
 STDICT
 STDICT
 STDICT
-ROLLREV 6
+ROLLREV 11
 NEWC
 STDICT
 STDICT
 STDICT
-ROLLREV 3
+ROLLREV 8
 NEWC
 STDICT
 STDICT
 STDICT
+ROLLREV 5
+NEWC
+STDICT
+STDICT
+SWAP
+UNPAIR
+XCHG S2
+STU 32
+STDICT
+STSLICE
+STI 1
+STBREFR
 STBREFR
 STBREFR
 STBREFR
@@ -8017,6 +8500,52 @@ PUSHCONT {
 IF
 THROW 0
 
+.macro walletToRoot
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+PUSHINT 51
+GETGLOBVAR
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000d31344cc
+	NEWC
+	STSLICE
+	STDICT
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro balanceOfArray
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+PUSHINT 53
+GETGLOBVAR
+OVER
+PUSHCONT {
+	PUSHSLICE xc00000000000000000000000009fd0e817
+	NEWC
+	STSLICE
+	SWAP
+	UNPAIR
+	XCHG S2
+	STU 32
+	STDICT
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
 .globl	GasValues_with_obj_getPoolDirectExchangeGas_47b146c5
 .type	GasValues_with_obj_getPoolDirectExchangeGas_47b146c5, @function
 CALL $GasValues_with_obj_getPoolDirectExchangeGas_47b146c5_macro$
@@ -8409,15 +8938,15 @@ ENDC
 
 .macro public_function_selector
 DUP
-PUSHINT 1893244873
+PUSHINT 1703959019
 LEQ
 IFJMPREF {
 	DUP
-	PUSHINT 678448267
+	PUSHINT 560164985
 	LEQ
 	IFJMPREF {
 		DUP
-		PUSHINT 226403448
+		PUSHINT 210755979
 		LEQ
 		IFJMPREF {
 			DUP
@@ -8433,22 +8962,28 @@ IFJMPREF {
 				CALL $dexPairExchangeSuccess$
 			}
 			DUP
+			PUSHINT 177604285
+			EQUAL
+			IFJMPREF {
+				CALL $getBalances$
+			}
+			DUP
 			PUSHINT 210755979
 			EQUAL
 			IFJMPREF {
 				CALL $assetsZeroWallet$
 			}
+		}
+		DUP
+		PUSHINT 388617225
+		LEQ
+		IFJMPREF {
 			DUP
 			PUSHINT 226403448
 			EQUAL
 			IFJMPREF {
 				CALL $constructor$
 			}
-		}
-		DUP
-		PUSHINT 433086100
-		LEQ
-		IFJMPREF {
 			DUP
 			PUSHINT 270419194
 			EQUAL
@@ -8467,17 +9002,17 @@ IFJMPREF {
 			IFJMPREF {
 				CALL $lockTimestamps$
 			}
+		}
+		DUP
+		PUSHINT 482251492
+		LEQ
+		IFJMPREF {
 			DUP
 			PUSHINT 433086100
 			EQUAL
 			IFJMPREF {
 				CALL $usdtRate$
 			}
-		}
-		DUP
-		PUSHINT 560164985
-		LEQ
-		IFJMPREF {
 			DUP
 			PUSHINT 436694491
 			EQUAL
@@ -8491,10 +9026,33 @@ IFJMPREF {
 				CALL $nftAddressOfId$
 			}
 			DUP
+			PUSHINT 482251492
+			EQUAL
+			IFJMPREF {
+				CALL $getAllTokenBalOfContract$
+			}
+		}
+		DUP
+		PUSHINT 560164985
+		LEQ
+		IFJMPREF {
+			DUP
+			PUSHINT 533784599
+			EQUAL
+			IFJMPREF {
+				CALL $balanceOfArray$
+			}
+			DUP
 			PUSHINT 548625323
 			EQUAL
 			IFJMPREF {
 				CALL $setUserDepositData$
+			}
+			DUP
+			PUSHINT 558406688
+			EQUAL
+			IFJMPREF {
+				CALL $drainUsdt$
 			}
 			DUP
 			PUSHINT 560164985
@@ -8503,6 +9061,11 @@ IFJMPREF {
 				CALL $priceFeed$
 			}
 		}
+	}
+	DUP
+	PUSHINT 1013137090
+	LEQ
+	IFJMPREF {
 		DUP
 		PUSHINT 678448267
 		LEQ
@@ -8532,11 +9095,6 @@ IFJMPREF {
 				CALL $setAllocationRatios$
 			}
 		}
-	}
-	DUP
-	PUSHINT 1086066597
-	LEQ
-	IFJMPREF {
 		DUP
 		PUSHINT 848726194
 		LEQ
@@ -8624,8 +9182,13 @@ IFJMPREF {
 				CALL $onNftAddress$
 			}
 		}
+	}
+	DUP
+	PUSHINT 1385441624
+	LEQ
+	IFJMPREF {
 		DUP
-		PUSHINT 1086066597
+		PUSHINT 1088391121
 		LEQ
 		IFJMPREF {
 			DUP
@@ -8647,27 +9210,16 @@ IFJMPREF {
 				CALL $deedToken$
 			}
 			DUP
-			PUSHINT 1086066597
-			EQUAL
-			IFJMPREF {
-				CALL $drainTreasury$
-			}
-		}
-	}
-	DUP
-	PUSHINT 1438337725
-	LEQ
-	IFJMPREF {
-		DUP
-		PUSHINT 1172969472
-		LEQ
-		IFJMPREF {
-			DUP
 			PUSHINT 1088391121
 			EQUAL
 			IFJMPREF {
 				CALL $assetAllocationRatio$
 			}
+		}
+		DUP
+		PUSHINT 1186717031
+		LEQ
+		IFJMPREF {
 			DUP
 			PUSHINT 1165317518
 			EQUAL
@@ -8686,17 +9238,17 @@ IFJMPREF {
 			IFJMPREF {
 				CALL $lockedNFTs$
 			}
-		}
-		DUP
-		PUSHINT 1236465367
-		LEQ
-		IFJMPREF {
 			DUP
 			PUSHINT 1186717031
 			EQUAL
 			IFJMPREF {
 				CALL $addAsset$
 			}
+		}
+		DUP
+		PUSHINT 1278035697
+		LEQ
+		IFJMPREF {
 			DUP
 			PUSHINT 1206069514
 			EQUAL
@@ -8715,17 +9267,17 @@ IFJMPREF {
 			IFJMPREF {
 				CALL $onTokenWallet$
 			}
-		}
-		DUP
-		PUSHINT 1370124336
-		LEQ
-		IFJMPREF {
 			DUP
 			PUSHINT 1278035697
 			EQUAL
 			IFJMPREF {
 				CALL $genesisNFT$
 			}
+		}
+		DUP
+		PUSHINT 1385441624
+		LEQ
+		IFJMPREF {
 			DUP
 			PUSHINT 1309995552
 			EQUAL
@@ -8744,16 +9296,27 @@ IFJMPREF {
 			IFJMPREF {
 				CALL $userDeposits$
 			}
-		}
-		DUP
-		PUSHINT 1438337725
-		LEQ
-		IFJMPREF {
 			DUP
 			PUSHINT 1385441624
 			EQUAL
 			IFJMPREF {
 				CALL $_distributedTokenWallet$
+			}
+		}
+	}
+	DUP
+	PUSHINT 1703959019
+	LEQ
+	IFJMPREF {
+		DUP
+		PUSHINT 1438337725
+		LEQ
+		IFJMPREF {
+			DUP
+			PUSHINT 1393771724
+			EQUAL
+			IFJMPREF {
+				CALL $walletToRoot$
 			}
 			DUP
 			PUSHINT 1421488694
@@ -8774,13 +9337,8 @@ IFJMPREF {
 				CALL $governance$
 			}
 		}
-	}
-	DUP
-	PUSHINT 1893244873
-	LEQ
-	IFJMPREF {
 		DUP
-		PUSHINT 1551458466
+		PUSHINT 1547957226
 		LEQ
 		IFJMPREF {
 			DUP
@@ -8802,16 +9360,22 @@ IFJMPREF {
 				CALL $deedNFT$
 			}
 			DUP
+			PUSHINT 1547957226
+			EQUAL
+			IFJMPREF {
+				CALL $drainTreasury$
+			}
+		}
+		DUP
+		PUSHINT 1590708582
+		LEQ
+		IFJMPREF {
+			DUP
 			PUSHINT 1551458466
 			EQUAL
 			IFJMPREF {
 				CALL $getLockedNFTs$
 			}
-		}
-		DUP
-		PUSHINT 1667125221
-		LEQ
-		IFJMPREF {
 			DUP
 			PUSHINT 1567214795
 			EQUAL
@@ -8825,6 +9389,17 @@ IFJMPREF {
 				CALL $assets$
 			}
 			DUP
+			PUSHINT 1590708582
+			EQUAL
+			IFJMPREF {
+				CALL $onGetBalance$
+			}
+		}
+		DUP
+		PUSHINT 1703959019
+		LEQ
+		IFJMPREF {
+			DUP
 			PUSHINT 1656514833
 			EQUAL
 			IFJMPREF {
@@ -8836,11 +9411,6 @@ IFJMPREF {
 			IFJMPREF {
 				CALL $getNftAddrOfNftIdMap$
 			}
-		}
-		DUP
-		PUSHINT 1769111038
-		LEQ
-		IFJMPREF {
 			DUP
 			PUSHINT 1680420637
 			EQUAL
@@ -8853,6 +9423,21 @@ IFJMPREF {
 			IFJMPREF {
 				CALL $updateGovernance$
 			}
+		}
+	}
+}
+DUP
+PUSHINT 2113944064
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 2102354396
+	LEQ
+	IFJMPREF {
+		DUP
+		PUSHINT 1813643114
+		LEQ
+		IFJMPREF {
 			DUP
 			PUSHINT 1745267147
 			EQUAL
@@ -8865,11 +9450,6 @@ IFJMPREF {
 			IFJMPREF {
 				CALL $maxslippage$
 			}
-		}
-		DUP
-		PUSHINT 1893244873
-		LEQ
-		IFJMPREF {
 			DUP
 			PUSHINT 1778283587
 			EQUAL
@@ -8882,6 +9462,11 @@ IFJMPREF {
 			IFJMPREF {
 				CALL $unlockNFT$
 			}
+		}
+		DUP
+		PUSHINT 1965541272
+		LEQ
+		IFJMPREF {
 			DUP
 			PUSHINT 1863027896
 			EQUAL
@@ -8894,87 +9479,82 @@ IFJMPREF {
 			IFJMPREF {
 				CALL $onAcceptTokensTransfer$
 			}
-		}
-	}
-}
-DUP
-PUSHINT 2113944064
-LEQ
-IFJMPREF {
-	DUP
-	PUSHINT 2018993379
-	LEQ
-	IFJMPREF {
-		DUP
-		PUSHINT 1933623947
-		EQUAL
-		IFJMPREF {
-			CALL $getTreasuryBalance$
-		}
-		DUP
-		PUSHINT 1965541272
-		EQUAL
-		IFJMPREF {
-			CALL $DEED_EMISSION_RATE$
-		}
-		DUP
-		PUSHINT 1984217483
-		EQUAL
-		IFJMPREF {
-			CALL $getLockedNFTBalances$
-		}
-		DUP
-		PUSHINT 2018993379
-		EQUAL
-		IFJMPREF {
-			CALL $setForceUnlock$
-		}
-	}
-	DUP
-	PUSHINT 2066762008
-	LEQ
-	IFJMPREF {
-		DUP
-		PUSHINT 2037180676
-		EQUAL
-		IFJMPREF {
-			CALL $assetsDexPairs$
+			DUP
+			PUSHINT 1933623947
+			EQUAL
+			IFJMPREF {
+				CALL $getTreasuryBalance$
+			}
+			DUP
+			PUSHINT 1965541272
+			EQUAL
+			IFJMPREF {
+				CALL $DEED_EMISSION_RATE$
+			}
 		}
 		DUP
 		PUSHINT 2041964165
-		EQUAL
+		LEQ
 		IFJMPREF {
-			CALL $updateDepositingAddress$
+			DUP
+			PUSHINT 1984217483
+			EQUAL
+			IFJMPREF {
+				CALL $getLockedNFTBalances$
+			}
+			DUP
+			PUSHINT 2018993379
+			EQUAL
+			IFJMPREF {
+				CALL $setForceUnlock$
+			}
+			DUP
+			PUSHINT 2037180676
+			EQUAL
+			IFJMPREF {
+				CALL $assetsDexPairs$
+			}
+			DUP
+			PUSHINT 2041964165
+			EQUAL
+			IFJMPREF {
+				CALL $updateDepositingAddress$
+			}
 		}
 		DUP
-		PUSHINT 2065433786
-		EQUAL
+		PUSHINT 2102354396
+		LEQ
 		IFJMPREF {
-			CALL $fetchAssetPriceInUsd$
-		}
-		DUP
-		PUSHINT 2066762008
-		EQUAL
-		IFJMPREF {
-			CALL $getNftOwnerOfNftIdMap$
+			DUP
+			PUSHINT 2065433786
+			EQUAL
+			IFJMPREF {
+				CALL $fetchAssetPriceInUsd$
+			}
+			DUP
+			PUSHINT 2066762008
+			EQUAL
+			IFJMPREF {
+				CALL $getNftOwnerOfNftIdMap$
+			}
+			DUP
+			PUSHINT 2101243996
+			EQUAL
+			IFJMPREF {
+				CALL $DaiToEthPriceFeed$
+			}
+			DUP
+			PUSHINT 2102354396
+			EQUAL
+			IFJMPREF {
+				CALL $treasuryHolderIndex$
+			}
 		}
 	}
 	DUP
 	PUSHINT 2113944064
 	LEQ
 	IFJMPREF {
-		DUP
-		PUSHINT 2101243996
-		EQUAL
-		IFJMPREF {
-			CALL $DaiToEthPriceFeed$
-		}
-		DUP
-		PUSHINT 2102354396
-		EQUAL
-		IFJMPREF {
-			CALL $treasuryHolderIndex$
-		}
 		DUP
 		PUSHINT 2110503392
 		EQUAL

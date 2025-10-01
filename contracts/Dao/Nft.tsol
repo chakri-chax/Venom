@@ -48,7 +48,7 @@ contract Nft is TIP4_1Nft, TIP4_2_2Nft, TIP4_3Nft {
     function _afterTransfer(
         address  /*to*/, 
         address  /*sendGasTo*/, 
-        mapping(address => CallbackParams) callbacks
+        mapping(address => CallbackParams) /*callbacks*/
     ) internal virtual override(TIP4_1Nft, TIP4_3Nft) {
         TIP4_3Nft._deployIndex();
     }
@@ -57,7 +57,7 @@ contract Nft is TIP4_1Nft, TIP4_2_2Nft, TIP4_3Nft {
         address /*oldOwner*/, 
         address /*newOwner*/,
         address sendGasTo, 
-        mapping(address => CallbackParams) callbacks
+        mapping(address => CallbackParams) /*callbacks*/
     ) internal virtual override(TIP4_1Nft, TIP4_3Nft) {
         TIP4_3Nft._destructIndex(sendGasTo);
     }   
@@ -66,7 +66,7 @@ contract Nft is TIP4_1Nft, TIP4_2_2Nft, TIP4_3Nft {
         address /*oldOwner*/, 
         address /*newOwner*/,
         address /*sendGasTo*/, 
-        mapping(address => CallbackParams) callbacks
+        mapping(address => CallbackParams) /*callbacks*/
     ) internal virtual override(TIP4_1Nft, TIP4_3Nft) {
         TIP4_3Nft._deployIndex();
     }

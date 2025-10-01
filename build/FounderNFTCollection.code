@@ -1658,9 +1658,8 @@ ENDS
 CALLREF {
 	CALL $getCallbackAmount_178eb49d_internal_macro$
 }
-DROP
-CALLREF {
-	CALL $c7_to_c4$
+IFREF {
+	CALL $upd_only_time_in_c4$
 }
 THROW 0
 
