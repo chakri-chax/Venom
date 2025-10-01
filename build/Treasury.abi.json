@@ -26,9 +26,25 @@
 			]
 		},
 		{
+			"name": "onDeployWallet",
+			"inputs": [
+				{"name":"_wallet","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
 			"name": "onTokenWallet",
 			"inputs": [
 				{"name":"value","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "addAsset",
+			"inputs": [
+				{"components":[{"name":"asset","type":"address"},{"name":"_newAssetAllocations","type":"uint8[]"},{"name":"dexPair","type":"address"},{"name":"priceFeed","type":"address"},{"name":"decimals","type":"uint8"}],"name":"newAsset","type":"tuple"}
 			],
 			"outputs": [
 			]
@@ -65,22 +81,6 @@
 			]
 		},
 		{
-			"name": "onDeployWallet",
-			"inputs": [
-				{"name":"_wallet","type":"address"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "setMainTokenWallet",
-			"inputs": [
-				{"name":"_mainTokWallet","type":"address"}
-			],
-			"outputs": [
-			]
-		},
-		{
 			"name": "deposit_admin",
 			"inputs": [
 				{"name":"users","type":"address[]"},
@@ -90,9 +90,52 @@
 			]
 		},
 		{
-			"name": "updateTopTreasuryHolders",
+			"name": "getUserDeposits",
 			"inputs": [
-				{"name":"user","type":"address"}
+			],
+			"outputs": [
+				{"components":[{"name":"treasuryDeposit","type":"uint256"},{"name":"firstDepositTime","type":"uint256"}],"name":"value0","type":"tuple[]"}
+			]
+		},
+		{
+			"name": "drainTreasury",
+			"inputs": [
+				{"name":"_wallet","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "changeAssetAllocations",
+			"inputs": [
+				{"name":"_assets","type":"address[]"},
+				{"name":"_assetsdecimals","type":"uint256[]"},
+				{"name":"_assetAllocationRatio","type":"uint8[]"},
+				{"name":"_priceFeed","type":"address[]"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setLockPeriod",
+			"inputs": [
+				{"name":"_lockupPeriod","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "updateDepositingAddress",
+			"inputs": [
+				{"name":"_newAddress","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setForceUnlock",
+			"inputs": [
+				{"name":"_forceUnlock","type":"bool"}
 			],
 			"outputs": [
 			]
@@ -123,23 +166,6 @@
 			]
 		},
 		{
-			"name": "deposit",
-			"inputs": [
-				{"name":"usdtAmount","type":"uint256"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "rootToWalletAddress",
-			"inputs": [
-				{"name":"_root","type":"address"}
-			],
-			"outputs": [
-				{"name":"value0","type":"address"}
-			]
-		},
-		{
 			"name": "calculateTotalDeposit",
 			"inputs": [
 				{"name":"users","type":"address[]"},
@@ -150,17 +176,34 @@
 			]
 		},
 		{
-			"name": "withdraw",
+			"name": "setUserDepositData",
 			"inputs": [
-				{"name":"indices","type":"uint256[]"}
+				{"name":"users","type":"address[]"},
+				{"name":"daiAmounts","type":"uint256[]"}
 			],
 			"outputs": [
 			]
 		},
 		{
-			"name": "swapWvenom",
+			"name": "setDeedEmissionRate",
 			"inputs": [
-				{"name":"amountIn","type":"uint128"}
+				{"name":"_deedEmissionRate","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setAllocationRatios",
+			"inputs": [
+				{"name":"_allocationRatios","type":"uint8[]"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "withdraw",
+			"inputs": [
+				{"name":"indices","type":"uint256[]"}
 			],
 			"outputs": [
 			]
@@ -502,22 +545,6 @@
 			]
 		},
 		{
-			"name": "treasuryHolderIndex",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"treasuryHolderIndex","type":"map(address,uint256)"}
-			]
-		},
-		{
-			"name": "treasuryBalances",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"treasuryBalances","type":"map(address,uint256)"}
-			]
-		},
-		{
 			"name": "primaryTokenLockedAmount",
 			"inputs": [
 			],
@@ -531,14 +558,6 @@
 			],
 			"outputs": [
 				{"name":"assetsZeroWallet","type":"address"}
-			]
-		},
-		{
-			"name": "userDeposits",
-			"inputs": [
-			],
-			"outputs": [
-				{"components":[{"name":"treasuryDeposit","type":"uint256"},{"name":"firstDepositTime","type":"uint256"}],"name":"userDeposits","type":"map(address,tuple[])"}
 			]
 		},
 		{
@@ -606,11 +625,27 @@
 			]
 		},
 		{
-			"name": "rootToWallet",
+			"name": "userDeposits",
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"rootToWallet","type":"map(address,address)"}
+				{"components":[{"name":"treasuryDeposit","type":"uint256"},{"name":"firstDepositTime","type":"uint256"}],"name":"userDeposits","type":"map(address,tuple[])"}
+			]
+		},
+		{
+			"name": "treasuryHolderIndex",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"treasuryHolderIndex","type":"map(address,uint256)"}
+			]
+		},
+		{
+			"name": "treasuryBalances",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"treasuryBalances","type":"map(address,uint256)"}
 			]
 		},
 		{
@@ -619,6 +654,14 @@
 			],
 			"outputs": [
 				{"name":"nftAddressOfId","type":"map(address,map(uint256,address))"}
+			]
+		},
+		{
+			"name": "rootToWallet",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"rootToWallet","type":"map(address,address)"}
 			]
 		},
 		{
@@ -749,25 +792,6 @@
 			]
 		},
 		{
-			"name": "SwapSuccess",
-			"inputs": [
-				{"name":"queyId","type":"uint64"},
-				{"components":[{"name":"left_to_right","type":"bool"},{"name":"spent","type":"uint128"},{"name":"fee","type":"uint128"},{"name":"received","type":"uint128"}],"name":"result","type":"tuple"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "madeSwap",
-			"inputs": [
-				{"name":"tokenIn","type":"address"},
-				{"name":"tokenOut","type":"address"},
-				{"name":"amount","type":"uint128"}
-			],
-			"outputs": [
-			]
-		},
-		{
 			"name": "WithdrawDai",
 			"inputs": [
 				{"name":"asset1","type":"address"},
@@ -805,19 +829,30 @@
 			]
 		},
 		{
-			"name": "step",
-			"inputs": [
-				{"name":"_step","type":"uint256"}
-			],
-			"outputs": [
-			]
-		},
-		{
 			"name": "unLocked",
 			"inputs": [
 				{"name":"nftCollection","type":"address"},
 				{"name":"id","type":"uint256"},
 				{"name":"length","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "SwapSuccess",
+			"inputs": [
+				{"name":"queyId","type":"uint64"},
+				{"components":[{"name":"left_to_right","type":"bool"},{"name":"spent","type":"uint128"},{"name":"fee","type":"uint128"},{"name":"received","type":"uint128"}],"name":"result","type":"tuple"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "madeSwap",
+			"inputs": [
+				{"name":"tokenIn","type":"address"},
+				{"name":"tokenOut","type":"address"},
+				{"name":"amount","type":"uint128"}
 			],
 			"outputs": [
 			]
@@ -850,11 +885,8 @@
 		{"name":"_distributedTokenWallet","type":"address"},
 		{"name":"_exchangeContractAddress","type":"address"},
 		{"name":"topTreasuryHolders","type":"address[]"},
-		{"name":"treasuryHolderIndex","type":"map(address,uint256)"},
-		{"name":"treasuryBalances","type":"map(address,uint256)"},
 		{"name":"primaryTokenLockedAmount","type":"uint256"},
 		{"name":"assetsZeroWallet","type":"address"},
-		{"components":[{"name":"treasuryDeposit","type":"uint256"},{"name":"firstDepositTime","type":"uint256"}],"name":"userDeposits","type":"map(address,tuple[])"},
 		{"name":"deedNFT","type":"address"},
 		{"name":"founderNFT","type":"address"},
 		{"name":"genesisNFT","type":"address"},
@@ -864,8 +896,12 @@
 		{"name":"contractlockedNFTs","type":"map(address,map(address,uint256[]))"},
 		{"name":"isTopTreasuryHolder","type":"map(address,bool)"},
 		{"name":"lockTimestamps","type":"map(address,map(address,map(uint256,uint256)))"},
-		{"name":"rootToWallet","type":"map(address,address)"},
+		{"components":[{"name":"treasuryDeposit","type":"uint256"},{"name":"firstDepositTime","type":"uint256"}],"name":"userDeposits","type":"map(address,tuple[])"},
+		{"name":"treasuryHolderIndex","type":"map(address,uint256)"},
+		{"name":"treasuryBalances","type":"map(address,uint256)"},
 		{"name":"nftAddressOfId","type":"map(address,map(uint256,address))"},
-		{"name":"nftOwnerOfId","type":"map(address,map(uint256,address))"}
+		{"name":"rootToWallet","type":"map(address,address)"},
+		{"name":"nftOwnerOfId","type":"map(address,map(uint256,address))"},
+		{"components":[{"name":"value","type":"uint128"},{"name":"payload","type":"cell"}],"name":"localCallbacks","type":"map(address,tuple)"}
 	]
 }

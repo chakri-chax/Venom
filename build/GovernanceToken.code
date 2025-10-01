@@ -329,7 +329,7 @@ GTINT 40
 THROWIFNOT 60
 .loc ../contracts/Dao/GovernanceToken.tsol, 288
 PUSH S3
-GTINT 0
+GTINT 1
 THROWIFNOT 61
 .loc ../contracts/Dao/GovernanceToken.tsol, 289
 GETGLOB 9
@@ -4548,6 +4548,12 @@ PUSHCONT {
 	OVER
 	INDEX 10
 	ADD
+	.loc ../contracts/Dao/GovernanceToken.tsol, 752
+	BLOCKLT
+	PUSH S2
+	INDEX 6
+	GREATER
+	THROWIFNOT 69
 	.loc ../contracts/Dao/GovernanceToken.tsol, 753
 	OVER
 	INDEX 14

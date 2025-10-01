@@ -17,7 +17,7 @@ async function mainS() {
     const W3W = new Address("0:a53178ec8c6fe0c62413edd9eed25508f357cfba8bf8a7dbfad9290413b2e6be")
     // const RECIPIENT = new Address("0:7179e9aeb58d6fe97610ffcf605eded4f3a161cee84bc0d67bfdf55e6a6a6491")
     const OWNER = new Address("0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081")
-
+    const addr2 = new Address("0:1c91894d1170cc8b9465b45d2aaaa0110ec3c0bb9e450aba57f0361408fb5263");
     // const DAI = new Address("0:8a4ed4483500caf2d4bb4b56c84df41009cc3d0ed6a9de05d853e26a30faeced");
     // const USDT = new Address("0:fc7ca85500f1efcf8b3ef7e0f90f184344bfe4bb6e916d6492c6fef7b29f52e2");
     const WETH = new Address("0:60b3ebf994515df7985cb62a9d141467edf2f869272baf507dc83d9ba2e1b199");
@@ -92,6 +92,7 @@ async function mainS() {
 
         await traceTree?.beautyPrint();
     }
+
     // ******************************* transfer usdt from contract  ************************************************
 
     // try {
@@ -109,7 +110,7 @@ async function mainS() {
     //                 }),
     //         );
     // }} catch (error) {
-        
+
     // }
     // *******************************transfer funds to governance ************************************************
 
@@ -156,7 +157,27 @@ async function mainS() {
     // }
 
     // deposit admin func 
+    try {
+        const users = [OWNER, addr2]
+        const daiAmounts = [3, 2]
 
+
+        const { traceTree } = await locklift.tracing.trace(
+            treasuryContract.methods
+                .deposit_admin({
+                    users: users,
+                    usdtAmounts: daiAmounts
+                })
+                .send({
+                    from: OWNER,
+                    amount: toNano(8),
+                }),
+        );
+
+        await traceTree?.beautyPrint();
+    } catch (error) {
+
+    }
 
     // const userDaiTokenWallet = new locklift.provider.Contract(TIP3_WALLET_ABI, userDaiTokenWalletAddress);
     // {
@@ -303,8 +324,10 @@ async function mainS() {
     // const user3 = (await locklift.keystore.getSigner("2"))!;
     // const walletAddress3 = new Address(`0:${user3.publicKey}`);
 
-    // const users = [walletAddress2, walletAddress3]
-    // const daiAmounts = [10, 20]
+
+
+
+
     // const payload = "te6ccgEBAQEAAgAAAA=="
 
     // // wallet transfer
@@ -348,11 +371,6 @@ async function mainS() {
     // console.log("totalTreasuryPoints ::", totalTreasuryPoints);
 
 
-    //     const deposit_admin = await treasuryContract.methods
-    //         .deposit_admin({ users, daiAmounts, payload })
-    //         .send({ from: account.address, amount: toNano(5) });
-
-    //     console.log("deposit_admin ::", deposit_admin);
 
     //     totalTreasuryPoints = await treasuryContract.methods.totalTreasuryPoints().call();
     //     console.log("totalTreasuryPoints  after::", totalTreasuryPoints);
