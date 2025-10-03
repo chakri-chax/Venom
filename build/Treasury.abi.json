@@ -232,17 +232,9 @@
 			]
 		},
 		{
-			"name": "withdrawssss",
-			"inputs": [
-				{"name":"user","type":"address"},
-				{"name":"indices","type":"uint256[]"}
-			],
-			"outputs": [
-			]
-		},
-		{
 			"name": "withdrawInternal",
 			"inputs": [
+				{"name":"user","type":"address"},
 				{"name":"indices","type":"uint256[]"}
 			],
 			"outputs": [
@@ -1010,6 +1002,15 @@
 			"name": "step",
 			"inputs": [
 				{"name":"step","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "log",
+			"inputs": [
+				{"name":"msg","type":"string"},
+				{"name":"amount","type":"uint256"}
 			],
 			"outputs": [
 			]

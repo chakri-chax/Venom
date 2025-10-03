@@ -74,10 +74,10 @@
     "contracts/TIP3Root/contracts/interfaces/ITransferTokenRootOwnershipCallback.tsol": {
         "modificationTime": 1752673254478
     },
-    "contracts/TIP3Root/contracts/interfaces/TIP3TokenRoot.tsol": {
+    "contracts/TIP3Root/contracts/interfaces/IVersioned.tsol": {
         "modificationTime": 1752673254479
     },
-    "contracts/TIP3Root/contracts/interfaces/IVersioned.tsol": {
+    "contracts/TIP3Root/contracts/interfaces/TIP3TokenRoot.tsol": {
         "modificationTime": 1752673254479
     },
     "contracts/TIP3Root/contracts/interfaces/TIP3TokenWallet.tsol": {
@@ -137,10 +137,10 @@
     "contracts/TIP3Root/contracts/abstract/TokenWalletBurnableBase.tsol": {
         "modificationTime": 1752673254471
     },
-    "contracts/TIP3Root/contracts/abstract/TokenWalletDestroyableBase.tsol": {
+    "contracts/TIP3Root/contracts/abstract/TokenWalletBurnableByRootBase.tsol": {
         "modificationTime": 1752673254472
     },
-    "contracts/TIP3Root/contracts/abstract/TokenWalletBurnableByRootBase.tsol": {
+    "contracts/TIP3Root/contracts/abstract/TokenWalletDestroyableBase.tsol": {
         "modificationTime": 1752673254472
     },
     "contracts/TIP3Root/contracts/additional/ITokenFactory.tsol": {
@@ -170,22 +170,22 @@
     "contracts/TIP3Root/contracts/tests/Callbacks.tsol": {
         "modificationTime": 1752673254481
     },
-    "contracts/Dao/FounderNFTCollection.tsol": {
-        "modificationTime": 1759325207435
-    },
     "contracts/Dao/GovernanceToken.tsol": {
         "modificationTime": 1758808953053
+    },
+    "contracts/Dao/FounderNFTCollection.tsol": {
+        "modificationTime": 1759325207435
     },
     "contracts/Dao/Nft.tsol": {
         "modificationTime": 1759325292260
     },
     "contracts/Dao/Treasury.tsol": {
-        "modificationTime": 1759495491637
-    },
-    "contracts/DeedNFTCollectionV3/DeedNFTv3.tsol": {
-        "modificationTime": 1758543653233
+        "modificationTime": 1759499776687
     },
     "contracts/DeedNFTCollectionV3/DeedNFTCollectionV3.tsol": {
+        "modificationTime": 1758543653233
+    },
+    "contracts/DeedNFTCollectionV3/DeedNFTv3.tsol": {
         "modificationTime": 1758543653233
     },
     "contracts/FounderNFTCollectionV2.tsol": {
@@ -206,6 +206,12 @@
     "contracts/TIP3Root/contracts/additional/Wallet.tsol": {
         "modificationTime": 1752673254474
     },
+    "/home/gaian/venomChain/Venom/node_modules/@broxus/tip4/contracts/TIP4_2_2/interfaces/ITIP4_2_2Collection.tsol": {
+        "modificationTime": 1752661284717
+    },
+    "/home/gaian/venomChain/Venom/node_modules/@broxus/tip4/contracts/TIP4_3/interfaces/ITIP4_3Collection.tsol": {
+        "modificationTime": 1752661284719
+    },
     "/home/gaian/venomChain/Venom/node_modules/@broxus/tip4/contracts/TIP4_2_2/TIP4_2_2Collection.tsol": {
         "modificationTime": 1752661284727
     },
@@ -214,12 +220,6 @@
     },
     "/home/gaian/venomChain/Venom/node_modules/@broxus/tip4/contracts/access/OwnableInternal.tsol": {
         "modificationTime": 1752661284724
-    },
-    "/home/gaian/venomChain/Venom/node_modules/@broxus/tip4/contracts/TIP4_2_2/interfaces/ITIP4_2_2Collection.tsol": {
-        "modificationTime": 1752661284717
-    },
-    "/home/gaian/venomChain/Venom/node_modules/@broxus/tip4/contracts/TIP4_3/interfaces/ITIP4_3Collection.tsol": {
-        "modificationTime": 1752661284719
     },
     "/home/gaian/venomChain/Venom/node_modules/@broxus/tip4/contracts/TIP4_1/TIP4_1Nft.tsol": {
         "modificationTime": 1752661284727

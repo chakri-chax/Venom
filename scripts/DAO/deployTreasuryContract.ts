@@ -193,6 +193,26 @@ async function mainS() {
     } catch (error) {
 
     }
+     try {
+        const users = [OWNER, addr2]
+        const daiAmounts = [10, 11]
+
+
+        const { traceTree } = await locklift.tracing.trace(
+            treasuryContract.methods
+                .withdraw({
+                   indices: [0]
+                })
+                .send({
+                    from: OWNER,
+                    amount: toNano(13),
+                }),
+        );
+
+        await traceTree?.beautyPrint();
+    } catch (error) {
+
+    }
 
     // const userDaiTokenWallet = new locklift.provider.Contract(TIP3_WALLET_ABI, userDaiTokenWalletAddress);
     // {
