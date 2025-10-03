@@ -60,6 +60,21 @@ async function mainS() {
             _WETH: WETH,
             _nonce: locklift.utils.getRandomNonce(),
             exchangeContractAddress: new Address("0:0ec4f4d06dd7abd671f272bb5429426c98971cb2227a5d1b80344e066efdbddd"),
+            _assetPriceFeed: [
+                {
+                    asset: USDT,
+                    rate: 1000000,
+                    decimals: 6,
+                    lastUpdatedTimeStamp: Math.floor(Date.now() / 1000),
+                },
+                {
+                    asset: WVENOM,
+                    rate: 7316096730,
+                    decimals: 9,
+                    lastUpdatedTimeStamp: Math.floor(Date.now() / 1000),
+                }
+            ]
+            // exchangeContractAddress: new Address("0:0ec4f4d06dd7abd671f272bb5429426c98971cb2227a5d1b80344e066efdbddd") --- IGNORE ---
             // userAssetZeroTokenWallet:new Address("")
         },
         value: locklift.utils.toNano(6),
@@ -77,7 +92,7 @@ async function mainS() {
         const { traceTree } = await locklift.tracing.trace(
             userUsdtWallet.methods
                 .transfer({
-                    amount: 20,
+                    amount: 50,
                     deployWalletValue: toNano(1),
                     notify: true,
                     payload: "",
@@ -159,7 +174,7 @@ async function mainS() {
     // deposit admin func 
     try {
         const users = [OWNER, addr2]
-        const daiAmounts = [3, 2]
+        const daiAmounts = [10, 11]
 
 
         const { traceTree } = await locklift.tracing.trace(

@@ -23,14 +23,14 @@
     "contracts/DeedNFTCollectionV3/interfaces/INft.tsol": {
         "modificationTime": 1758543653234
     },
+    "contracts/DeedNFTCollectionV3/libraries/Errors.tsol": {
+        "modificationTime": 1758543653234
+    },
     "contracts/DeedRoot.tsol": {
         "modificationTime": 1752661149290
     },
     "contracts/FounderNFTCollectionV1.tsol": {
         "modificationTime": 1752661149291
-    },
-    "contracts/DeedNFTCollectionV3/libraries/Errors.tsol": {
-        "modificationTime": 1758543653234
     },
     "contracts/TIP3Root/contracts/additional/ITokenRootDeployedCallback.tsol": {
         "modificationTime": 1752673254473
@@ -77,10 +77,10 @@
     "contracts/TIP3Root/contracts/interfaces/IVersioned.tsol": {
         "modificationTime": 1752673254479
     },
-    "contracts/TIP3Root/contracts/interfaces/TIP3TokenWallet.tsol": {
+    "contracts/TIP3Root/contracts/interfaces/TIP3TokenRoot.tsol": {
         "modificationTime": 1752673254479
     },
-    "contracts/TIP3Root/contracts/interfaces/TIP3TokenRoot.tsol": {
+    "contracts/TIP3Root/contracts/interfaces/TIP3TokenWallet.tsol": {
         "modificationTime": 1752673254479
     },
     "contracts/TIP3Root/contracts/libraries/TokenErrors.tsol": {
@@ -128,10 +128,10 @@
     "contracts/TIP3Root/contracts/abstract/TokenRootDisableableMintBase.tsol": {
         "modificationTime": 1752673254470
     },
-    "contracts/TIP3Root/contracts/abstract/TokenWalletBase.tsol": {
+    "contracts/TIP3Root/contracts/abstract/TokenRootTransferableOwnershipBase.tsol": {
         "modificationTime": 1752673254471
     },
-    "contracts/TIP3Root/contracts/abstract/TokenRootTransferableOwnershipBase.tsol": {
+    "contracts/TIP3Root/contracts/abstract/TokenWalletBase.tsol": {
         "modificationTime": 1752673254471
     },
     "contracts/TIP3Root/contracts/abstract/TokenWalletBurnableBase.tsol": {
@@ -180,7 +180,7 @@
         "modificationTime": 1759325292260
     },
     "contracts/Dao/Treasury.tsol": {
-        "modificationTime": 1759330179395
+        "modificationTime": 1759492198945
     },
     "contracts/DeedNFTCollectionV3/DeedNFTCollectionV3.tsol": {
         "modificationTime": 1758543653233
