@@ -785,7 +785,7 @@ event sender(address sender);
 		uint256[] indices = p.indices;
 		address user = p.user;
 		emit sender(user);
-		
+		emit pendingWithdrawalsss(user,indices);
 		withdrawssss(user,indices);
 
 
@@ -795,7 +795,7 @@ event sender(address sender);
     emit balance(root, bal);
 }
 bool drainTreasuryInProgress;
-
+event pendingWithdrawalsss(address user,uint256[] indices);
 	function drainTreasury() public  {
 				require(msg.sender == treasuryOwner, ONLY_OWNER_CAN_CALL);
 	drainTreasuryInProgress = true;
@@ -990,7 +990,7 @@ uint16 public constant WITHDRAW_IN_PROGRESS = 51;
 	event transfered(address from,address to,uint128 Usdtamount);
 	event step(uint256 step);
 
-	function withdrawssss(address user,uint256[] indices) public {
+	function withdrawssss(address user, uint256[] indices) public {
 		uint256 totalAmount;
 
 		uint256 userDepositCount = userDeposits[user].length;
@@ -1002,7 +1002,7 @@ uint16 public constant WITHDRAW_IN_PROGRESS = 51;
 
 		for (uint256 i = 0; i < cnt; i++) {
 			require(indices[i] < userDepositCount, INVALID_INDEX);
-			User userDeposit = userDeposits[msg.sender][indices[i]];
+			User userDeposit = userDeposits[user][indices[i]];
 			// require(
 			// 	block.timestamp >=
 			// 		userDeposit.firstDepositTime + FULL_TERM_LOCK_PERIOD,
@@ -1115,49 +1115,49 @@ uint16 public constant WITHDRAW_IN_PROGRESS = 51;
 
 
 // **************************** Fee Start ****************************************//
-		uint256 totalamount2 = totalAmount;
-		uint256 totalDepositInUsd = fetchAssetPriceInUsd(0, totalamount2);
+		// uint256 totalamount2 = totalAmount;
+		// uint256 totalDepositInUsd = fetchAssetPriceInUsd(0, totalamount2);
 		
-		// // Determine fee percentage
-		uint256 feePercentage = totalAmountInUsd > (totalDepositInUsd * 2)
-			? 20
-			: 10;
-		uint256 totalAmountInDaiSwap = 100; //57675 //getUsdToDaiAmount(
-		//     totalAmountInUsd,
-		//     AggregatorV3Interface(priceFeed[0])
-		// );
+		// // // Determine fee percentage
+		// uint256 feePercentage = totalAmountInUsd > (totalDepositInUsd * 2)
+		// 	? 20
+		// 	: 10;
+		// uint256 totalAmountInDaiSwap = 100; //57675 //getUsdToDaiAmount(
+		// //     totalAmountInUsd,
+		// //     AggregatorV3Interface(priceFeed[0])
+		// // );
 
-		uint256 feeAmount;
-		uint256 amountAfterFee;
-		uint256 daiAmountToMint;
-		if (totalamount2 < totalAmountInDaiSwap) {
-			feeAmount = (totalAmountInDaiSwap * feePercentage) / 100;
+		// uint256 feeAmount;
+		// uint256 amountAfterFee;
+		// uint256 daiAmountToMint;
+		// if (totalamount2 < totalAmountInDaiSwap) {
+		// 	feeAmount = (totalAmountInDaiSwap * feePercentage) / 100;
 
-			amountAfterFee = totalAmountInDaiSwap - feeAmount;
+		// 	amountAfterFee = totalAmountInDaiSwap - feeAmount;
 
-			daiAmountToMint =
-				(amountAfterFee * DEED_EMISSION_RATE * 10 ** 8) /
-				(10 ** 18);
-		} else {
-			feeAmount = (totalamount2 * feePercentage) / 100;
+		// 	daiAmountToMint =
+		// 		(amountAfterFee * DEED_EMISSION_RATE * 10 ** 8) /
+		// 		(10 ** 18);
+		// } else {
+		// 	feeAmount = (totalamount2 * feePercentage) / 100;
 
-			amountAfterFee = totalamount2 - feeAmount;
+		// 	amountAfterFee = totalamount2 - feeAmount;
 
-			daiAmountToMint =
-				(amountAfterFee * DEED_EMISSION_RATE * 10 ** 8) /
-				(10 ** 18);
-		}
+		// 	daiAmountToMint =
+		// 		(amountAfterFee * DEED_EMISSION_RATE * 10 ** 8) /
+		// 		(10 ** 18);
+		// }
 
 
-		IDeedToken(deedToken).mintForTreasury(msg.sender, daiAmountToMint);
+		// IDeedToken(deedToken).mintForTreasury(msg.sender, daiAmountToMint);
 
-		totalTreasuryPoints -= totalAmount;
-		// Update treasury points for user
-		treasuryBalances[msg.sender] -= totalAmount;
+		// totalTreasuryPoints -= totalAmount;
+		// // Update treasury points for user
+		// treasuryBalances[msg.sender] -= totalAmount;
 
-		// // Remove withdrawn deposits from userDeposits array
-		removeUserDeposits(msg.sender, indices);
-		emit Withdraw(msg.sender, totalAmount, daiAmountToMint);
+		// // // Remove withdrawn deposits from userDeposits array
+		// removeUserDeposits(msg.sender, indices);
+		// emit Withdraw(msg.sender, totalAmount, daiAmountToMint);
 
 // *********************************** Fee End *********************************//
 
