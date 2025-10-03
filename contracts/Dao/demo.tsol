@@ -1,9 +1,15 @@
-// pragma ever-solidity >=0.62.0;
+pragma ever-solidity >=0.62.0;
 
-// pragma AbiHeader expire;
-// pragma AbiHeader time;
-// pragma AbiHeader pubkey;
+pragma AbiHeader expire;
+pragma AbiHeader time;
+pragma AbiHeader pubkey;
+import "../TIP3Root/contracts/interfaces/ITokenRoot.tsol";
+import "../TIP3Root/contracts/interfaces/ITokenWallet.tsol";
 
-// contract Name {
+contract demooo {
+	uint64 static nonce_;
+
+
+
 	
-// }
+}

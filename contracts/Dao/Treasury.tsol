@@ -420,9 +420,6 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 
 
 
-	// function setMainTokenWallet(address _mainTokWallet) public {
-	// 	mainTokenWallet = _mainTokWallet;
-	// }
 
 	function deposit_admin(
 		address[] users,

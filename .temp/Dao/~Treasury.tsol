@@ -1127,15 +1127,15 @@ uint16 public constant WITHDRAW_IN_PROGRESS = 51;
 
 		uint256 amountAfterFee = totalDepositInUsd - feeAmount;
 		emit log("amountAfterFee",amountAfterFee);
-		
-		// uint256 daiAmountToMint = (amountAfterFee * DEED_EMISSION_RATE * 10 ** 8) / (10 ** 6);
-		// emit log("daiAmountToMint",daiAmountToMint);
+
+		uint256 daiAmountToMint = (amountAfterFee * DEED_EMISSION_RATE * 10 ** 6) / (10 ** 6);
+		emit log("daiAmountToMint",daiAmountToMint);
 
 		// // IDeedToken(deedToken).mintForTreasury(msg.sender, daiAmountToMint);
 
-		// totalTreasuryPoints -= totalAmount;
+		totalTreasuryPoints -= totalAmount;
 		// // // Update treasury points for user
-		// treasuryBalances[msg.sender] -= totalAmount;
+		treasuryBalances[user] -= totalAmount;
 
 		// // Remove withdrawn deposits from userDeposits array
 		removeUserDeposits(user, indices);

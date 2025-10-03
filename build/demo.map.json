@@ -1,0 +1,1071 @@
+{
+  "map": {
+    "29e39998d56bfb58eddfc329fa2e7c871c4e2f24ba7d00160d5b9e546c5ed382": {
+      "0": {
+        "filename": "demo.code",
+        "line": 181
+      },
+      "16": {
+        "filename": "demo.code",
+        "line": 182
+      },
+      "32": {
+        "filename": "demo.code",
+        "line": 183
+      },
+      "48": {
+        "filename": "demo.code",
+        "line": 184
+      },
+      "64": {
+        "filename": "demo.code",
+        "line": 185
+      },
+      "72": {
+        "filename": "demo.code",
+        "line": 186
+      },
+      "88": {
+        "filename": "demo.code",
+        "line": 187
+      },
+      "104": {
+        "filename": "demo.code",
+        "line": 188
+      },
+      "120": {
+        "filename": "demo.code",
+        "line": 189
+      },
+      "136": {
+        "filename": "demo.code",
+        "line": 190
+      },
+      "144": {
+        "filename": "demo.code",
+        "line": 191
+      },
+      "152": {
+        "filename": "demo.code",
+        "line": 192
+      }
+    },
+    "2c4de5fdc7b92856d1654de66c6ee8cdd0fd605d3965cdc225e62a9049d18634": {
+      "0": {
+        "filename": "<entry-selector>",
+        "line": 1
+      },
+      "8": {
+        "filename": "<entry-selector>",
+        "line": 2
+      },
+      "24": {
+        "filename": "<entry-selector>",
+        "line": 3
+      },
+      "32": {
+        "filename": "<entry-selector>",
+        "line": 4
+      },
+      "48": {
+        "filename": "<entry-selector>",
+        "line": 5
+      },
+      "56": {
+        "filename": "<entry-selector>",
+        "line": 6
+      },
+      "72": {
+        "filename": "<entry-selector>",
+        "line": 7
+      },
+      "88": {
+        "filename": "<entry-selector>",
+        "line": 8
+      },
+      "96": {
+        "filename": "<entry-selector>",
+        "line": 9
+      },
+      "112": {
+        "filename": "<entry-selector>",
+        "line": 10
+      },
+      "128": {
+        "filename": "<entry-selector>",
+        "line": 11
+      }
+    },
+    "3157f4a1e37454a968139292b6fad9ca25acf5ed1ff81a9272029e5789ab400c": {
+      "0": {
+        "filename": "demo.code",
+        "line": 145
+      },
+      "16": {
+        "filename": "demo.code",
+        "line": 146
+      },
+      "24": {
+        "filename": "demo.code",
+        "line": 147
+      },
+      "40": {
+        "filename": "demo.code",
+        "line": 148
+      },
+      "56": {
+        "filename": "demo.code",
+        "line": 149
+      },
+      "72": {
+        "filename": "demo.code",
+        "line": 176
+      }
+    },
+    "3840b27935f4aa916b43cde0da48214410684afe4120612cd24356b9eb16a3da": {
+      "0": {
+        "filename": "demo.code",
+        "line": 30
+      },
+      "8": {
+        "filename": "demo.code",
+        "line": 31
+      },
+      "24": {
+        "filename": "demo.code",
+        "line": 32
+      },
+      "48": {
+        "filename": "demo.code",
+        "line": 33
+      },
+      "64": {
+        "filename": "demo.code",
+        "line": 34
+      },
+      "72": {
+        "filename": "demo.code",
+        "line": 35
+      },
+      "88": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 18
+      },
+      "96": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 18
+      },
+      "104": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 18
+      },
+      "112": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 18
+      },
+      "120": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 18
+      },
+      "128": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 18
+      },
+      "136": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 18
+      },
+      "152": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 18
+      },
+      "168": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 18
+      },
+      "176": {
+        "filename": "demo.code",
+        "line": 50
+      },
+      "192": {
+        "filename": "demo.code",
+        "line": 53
+      },
+      "200": {
+        "filename": "demo.code",
+        "line": 54
+      },
+      "216": {
+        "filename": "demo.code",
+        "line": 57
+      }
+    },
+    "44c3b7e00d9d2e7f60570d3272887faa70c17bd94e2e64fe2b98edcb7b0d9033": {
+      "0": {
+        "filename": "demo.code",
+        "line": 304
+      },
+      "8": {
+        "filename": "demo.code",
+        "line": 305
+      },
+      "56": {
+        "filename": "demo.code",
+        "line": 306
+      },
+      "64": {
+        "filename": "demo.code",
+        "line": 307
+      },
+      "80": {
+        "filename": "demo.code",
+        "line": 310
+      },
+      "88": {
+        "filename": "demo.code",
+        "line": 311
+      },
+      "136": {
+        "filename": "demo.code",
+        "line": 312
+      },
+      "144": {
+        "filename": "demo.code",
+        "line": 313
+      },
+      "160": {
+        "filename": "demo.code",
+        "line": 316
+      },
+      "168": {
+        "filename": "demo.code",
+        "line": 317
+      },
+      "216": {
+        "filename": "demo.code",
+        "line": 318
+      },
+      "224": {
+        "filename": "demo.code",
+        "line": 319
+      }
+    },
+    "4d8355d728e215250b978eb2dccde07235ce73854d8a035e9221f308df1d50d7": {
+      "0": {
+        "filename": "demo.code",
+        "line": 150
+      },
+      "8": {
+        "filename": "demo.code",
+        "line": 151
+      },
+      "24": {
+        "filename": "demo.code",
+        "line": 152
+      },
+      "32": {
+        "filename": "demo.code",
+        "line": 153
+      },
+      "48": {
+        "filename": "demo.code",
+        "line": 154
+      },
+      "56": {
+        "filename": "demo.code",
+        "line": 155
+      },
+      "64": {
+        "filename": "demo.code",
+        "line": 156
+      },
+      "80": {
+        "filename": "demo.code",
+        "line": 157
+      },
+      "96": {
+        "filename": "demo.code",
+        "line": 158
+      },
+      "112": {
+        "filename": "demo.code",
+        "line": 159
+      },
+      "120": {
+        "filename": "demo.code",
+        "line": 160
+      },
+      "144": {
+        "filename": "demo.code",
+        "line": 162
+      },
+      "152": {
+        "filename": "demo.code",
+        "line": 163
+      },
+      "160": {
+        "filename": "demo.code",
+        "line": 166
+      },
+      "176": {
+        "filename": "demo.code",
+        "line": 167
+      },
+      "192": {
+        "filename": "demo.code",
+        "line": 168
+      },
+      "208": {
+        "filename": "demo.code",
+        "line": 169
+      },
+      "224": {
+        "filename": "demo.code",
+        "line": 170
+      },
+      "240": {
+        "filename": "demo.code",
+        "line": 171
+      },
+      "264": {
+        "filename": "demo.code",
+        "line": 172
+      },
+      "280": {
+        "filename": "demo.code",
+        "line": 173
+      },
+      "288": {
+        "filename": "demo.code",
+        "line": 174
+      }
+    },
+    "61ab4641fa30d9310391025086eec65d200d79268e1b7cd402565e01ba64be3c": {
+      "0": {
+        "filename": "demo.code",
+        "line": 164
+      }
+    },
+    "6c51ff3978e5999d14137af0def4bae8f8e1de85b45fd95466198992e1a51061": {
+      "0": {
+        "filename": "demo.code",
+        "line": 246
+      },
+      "16": {
+        "filename": "demo.code",
+        "line": 247
+      },
+      "24": {
+        "filename": "demo.code",
+        "line": 248
+      },
+      "40": {
+        "filename": "demo.code",
+        "line": 249
+      },
+      "56": {
+        "filename": "demo.code",
+        "line": 250
+      },
+      "72": {
+        "filename": "demo.code",
+        "line": 251
+      },
+      "80": {
+        "filename": "demo.code",
+        "line": 254
+      },
+      "96": {
+        "filename": "demo.code",
+        "line": 255
+      },
+      "104": {
+        "filename": "demo.code",
+        "line": 256
+      },
+      "120": {
+        "filename": "demo.code",
+        "line": 259
+      },
+      "136": {
+        "filename": "demo.code",
+        "line": 260
+      },
+      "144": {
+        "filename": "demo.code",
+        "line": 261
+      },
+      "160": {
+        "filename": "demo.code",
+        "line": 262
+      },
+      "176": {
+        "filename": "demo.code",
+        "line": 263
+      },
+      "192": {
+        "filename": "demo.code",
+        "line": 264
+      },
+      "200": {
+        "filename": "demo.code",
+        "line": 265
+      },
+      "216": {
+        "filename": "demo.code",
+        "line": 266
+      },
+      "224": {
+        "filename": "demo.code",
+        "line": 267
+      },
+      "240": {
+        "filename": "demo.code",
+        "line": 268
+      },
+      "248": {
+        "filename": "demo.code",
+        "line": 269
+      },
+      "256": {
+        "filename": "demo.code",
+        "line": 270
+      },
+      "272": {
+        "filename": "demo.code",
+        "line": 271
+      },
+      "280": {
+        "filename": "demo.code",
+        "line": 272
+      },
+      "288": {
+        "filename": "demo.code",
+        "line": 274
+      },
+      "296": {
+        "filename": "demo.code",
+        "line": 275
+      },
+      "304": {
+        "filename": "demo.code",
+        "line": 276
+      },
+      "320": {
+        "filename": "demo.code",
+        "line": 278
+      },
+      "328": {
+        "filename": "demo.code",
+        "line": 279
+      },
+      "344": {
+        "filename": "demo.code",
+        "line": 280
+      },
+      "360": {
+        "filename": "demo.code",
+        "line": 282
+      },
+      "368": {
+        "filename": "demo.code",
+        "line": 283
+      },
+      "384": {
+        "filename": "demo.code",
+        "line": 284
+      },
+      "392": {
+        "filename": "demo.code",
+        "line": 285
+      },
+      "408": {
+        "filename": "demo.code",
+        "line": 287
+      },
+      "416": {
+        "filename": "demo.code",
+        "line": 288
+      },
+      "432": {
+        "filename": "demo.code",
+        "line": 289
+      },
+      "440": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "456": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "464": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "472": {
+        "filename": "stdlib.sol",
+        "line": 61
+      },
+      "488": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "496": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "512": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "536": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "544": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "584": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "592": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "600": {
+        "filename": "stdlib.sol",
+        "line": 62
+      },
+      "616": {
+        "filename": "stdlib.sol",
+        "line": 63
+      },
+      "632": {
+        "filename": "demo.code",
+        "line": 291
+      },
+      "648": {
+        "filename": "demo.code",
+        "line": 292
+      },
+      "656": {
+        "filename": "demo.code",
+        "line": 293
+      },
+      "672": {
+        "filename": "demo.code",
+        "line": 294
+      },
+      "680": {
+        "filename": "demo.code",
+        "line": 295
+      },
+      "696": {
+        "filename": "demo.code",
+        "line": 296
+      },
+      "712": {
+        "filename": "demo.code",
+        "line": 297
+      },
+      "720": {
+        "filename": "demo.code",
+        "line": 298
+      },
+      "736": {
+        "filename": "demo.code",
+        "line": 301
+      }
+    },
+    "73867e37ec1ffb9ecb087a37d71892215b0b805a73c127da219a28729084e2e0": {
+      "0": {
+        "filename": "<internal-selector>",
+        "line": 1
+      },
+      "24": {
+        "filename": "<internal-selector>",
+        "line": 2
+      }
+    },
+    "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7": {},
+    "c44bd55ccd8332458e6085cc95e9efcd0ace6d0d79ecea00d1f22cad5199de34": {
+      "0": {
+        "filename": "demo.code",
+        "line": 4
+      },
+      "8": {
+        "filename": "demo.code",
+        "line": 5
+      },
+      "24": {
+        "filename": "demo.code",
+        "line": 6
+      },
+      "32": {
+        "filename": "demo.code",
+        "line": 7
+      },
+      "48": {
+        "filename": "demo.code",
+        "line": 10
+      },
+      "64": {
+        "filename": "demo.code",
+        "line": 11
+      },
+      "80": {
+        "filename": "demo.code",
+        "line": 12
+      },
+      "88": {
+        "filename": "demo.code",
+        "line": 13
+      },
+      "96": {
+        "filename": "demo.code",
+        "line": 14
+      },
+      "104": {
+        "filename": "demo.code",
+        "line": 15
+      },
+      "112": {
+        "filename": "demo.code",
+        "line": 16
+      },
+      "120": {
+        "filename": "demo.code",
+        "line": 18
+      },
+      "128": {
+        "filename": "demo.code",
+        "line": 19
+      },
+      "144": {
+        "filename": "demo.code",
+        "line": 20
+      },
+      "152": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 14
+      },
+      "168": {
+        "filename": "demo.code",
+        "line": 24
+      },
+      "184": {
+        "filename": "demo.code",
+        "line": 27
+      }
+    },
+    "e6936e8f0e7b8fe98c2ca66eee9d4e9dafcfc747defef9cb795288fabb1b7ef3": {
+      "0": {
+        "filename": "demo.code",
+        "line": 195
+      },
+      "16": {
+        "filename": "demo.code",
+        "line": 196
+      },
+      "24": {
+        "filename": "demo.code",
+        "line": 197
+      },
+      "40": {
+        "filename": "demo.code",
+        "line": 198
+      },
+      "56": {
+        "filename": "demo.code",
+        "line": 199
+      },
+      "64": {
+        "filename": "demo.code",
+        "line": 200
+      },
+      "80": {
+        "filename": "demo.code",
+        "line": 201
+      },
+      "88": {
+        "filename": "demo.code",
+        "line": 202
+      },
+      "96": {
+        "filename": "demo.code",
+        "line": 203
+      },
+      "112": {
+        "filename": "demo.code",
+        "line": 204
+      },
+      "128": {
+        "filename": "demo.code",
+        "line": 205
+      },
+      "136": {
+        "filename": "demo.code",
+        "line": 206
+      },
+      "144": {
+        "filename": "demo.code",
+        "line": 207
+      }
+    },
+    "e7c5f360e8e691c2939ef72cb128f1fddb46aa3b11b6912a8ca473c9a36fe528": {
+      "0": {
+        "filename": "demo.code",
+        "line": 93
+      },
+      "8": {
+        "filename": "demo.code",
+        "line": 94
+      },
+      "24": {
+        "filename": "demo.code",
+        "line": 95
+      },
+      "48": {
+        "filename": "demo.code",
+        "line": 96
+      },
+      "64": {
+        "filename": "demo.code",
+        "line": 97
+      },
+      "72": {
+        "filename": "demo.code",
+        "line": 98
+      },
+      "88": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 32
+      },
+      "96": {
+        "filename": "demo.code",
+        "line": 104
+      },
+      "112": {
+        "filename": "demo.code",
+        "line": 107
+      },
+      "128": {
+        "filename": "demo.code",
+        "line": 110
+      }
+    },
+    "ea3168d593e9b40c24850d848458400ca392fd6b708f400b0fd93cd90e93952e": {
+      "0": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 19
+      },
+      "8": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "16": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "32": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "80": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "96": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "112": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "120": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "144": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "152": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "312": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "336": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "352": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "360": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "408": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "424": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "432": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "448": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "464": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "472": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "480": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "496": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "504": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "512": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "520": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "528": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      },
+      "544": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 20
+      }
+    },
+    "ee173513570bafc5af9e3d4ce7f3926cf6808254bd83d4e7761b0e2115faa67b": {
+      "0": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 33
+      },
+      "16": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 33
+      },
+      "24": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 33
+      },
+      "48": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 33
+      },
+      "56": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 33
+      },
+      "216": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 33
+      },
+      "240": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 33
+      },
+      "248": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 33
+      },
+      "264": {
+        "filename": "../contracts/Dao/demo.tsol",
+        "line": 33
+      }
+    },
+    "f24e1e7aa04d89aad2945816b6e9b921f2b3892da9ba53e2383c148351b96d0c": {
+      "0": {
+        "filename": "demo.code",
+        "line": 227
+      },
+      "16": {
+        "filename": "demo.code",
+        "line": 228
+      }
+    },
+    "f2ebb3ff81fb55f45d540af7821117fc317cf2c2f34a9782794e889c6f46432c": {
+      "0": {
+        "filename": "demo.code",
+        "line": 211
+      },
+      "16": {
+        "filename": "demo.code",
+        "line": 212
+      },
+      "24": {
+        "filename": "demo.code",
+        "line": 213
+      },
+      "40": {
+        "filename": "demo.code",
+        "line": 214
+      },
+      "56": {
+        "filename": "demo.code",
+        "line": 215
+      },
+      "72": {
+        "filename": "demo.code",
+        "line": 216
+      },
+      "80": {
+        "filename": "demo.code",
+        "line": 217
+      },
+      "88": {
+        "filename": "demo.code",
+        "line": 218
+      },
+      "104": {
+        "filename": "demo.code",
+        "line": 219
+      },
+      "120": {
+        "filename": "demo.code",
+        "line": 220
+      },
+      "128": {
+        "filename": "demo.code",
+        "line": 221
+      },
+      "144": {
+        "filename": "demo.code",
+        "line": 222
+      },
+      "168": {
+        "filename": "demo.code",
+        "line": 223
+      },
+      "176": {
+        "filename": "demo.code",
+        "line": 224
+      },
+      "184": {
+        "filename": "demo.code",
+        "line": 225
+      },
+      "200": {
+        "filename": "demo.code",
+        "line": 226
+      },
+      "216": {
+        "filename": "demo.code",
+        "line": 230
+      },
+      "224": {
+        "filename": "demo.code",
+        "line": 231
+      },
+      "248": {
+        "filename": "demo.code",
+        "line": 232
+      },
+      "264": {
+        "filename": "demo.code",
+        "line": 233
+      },
+      "272": {
+        "filename": "demo.code",
+        "line": 234
+      },
+      "288": {
+        "filename": "demo.code",
+        "line": 238
+      },
+      "296": {
+        "filename": "demo.code",
+        "line": 239
+      },
+      "312": {
+        "filename": "demo.code",
+        "line": 242
+      }
+    },
+    "f7952b2592556a9366e17b6f1ca35cfe359a583cae8b6202f12c8a03f9bae268": {
+      "0": {
+        "filename": "demo.code",
+        "line": 130
+      },
+      "16": {
+        "filename": "demo.code",
+        "line": 131
+      },
+      "24": {
+        "filename": "demo.code",
+        "line": 132
+      },
+      "40": {
+        "filename": "demo.code",
+        "line": 133
+      },
+      "56": {
+        "filename": "demo.code",
+        "line": 134
+      },
+      "72": {
+        "filename": "demo.code",
+        "line": 135
+      },
+      "80": {
+        "filename": "demo.code",
+        "line": 136
+      },
+      "96": {
+        "filename": "demo.code",
+        "line": 137
+      },
+      "112": {
+        "filename": "demo.code",
+        "line": 138
+      },
+      "120": {
+        "filename": "demo.code",
+        "line": 139
+      },
+      "136": {
+        "filename": "demo.code",
+        "line": 140
+      },
+      "152": {
+        "filename": "demo.code",
+        "line": 141
+      },
+      "168": {
+        "filename": "demo.code",
+        "line": 142
+      }
+    }
+  }
+}
