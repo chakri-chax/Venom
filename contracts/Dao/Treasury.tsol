@@ -112,6 +112,7 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 	address public depositingAddress;
 	uint16[] poolFeeTier = [100, 100, 3000, 100];
 	uint256 public totalTreasuryPoints;
+	uint16 public constant WITHDRAW_IN_PROGRESS = 51;
 
 	address public _distributedTokenRoot;
 	address public _distributedTokenWallet;
@@ -160,6 +161,9 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 	event SwapSuccess(uint64 queyId, IExchangeResult.ExchangeResult result);
 	event madeSwap(address tokenIn, address tokenOut, uint128 amount);
 	event PriceFeedsUpdated(priceFeedUSDT[] newPriceFeeds);
+	event pendingWithdrawalsss(address user, uint256[] indices);
+	event transfered(address from,address to,uint128 Usdtamount);
+
 	uint16 public constant MISMATCHED_ARRAYS_LENGTH = 223;
 	uint16 public constant INVALID_ADDRESS = 224;
 	uint16 public constant INVALID_ASSET = 225;
@@ -190,6 +194,8 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 	uint32 constant NFT_STILL_LOCKED_TERM_NOT_ENDS = 260;
 	uint16 constant MAX_ASSETS_REACHED = 261;
 	mapping(uint256 => address) nftAddressOfIdMock;
+	bool drainTreasuryInProgress;
+
 	mapping(address => mapping(address => uint256[])) public lockedNFTs;
 	mapping(address => mapping(address => uint256[])) public contractlockedNFTs;
 	mapping(address => bool) public isTopTreasuryHolder;
@@ -251,6 +257,12 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		uint8 decimals;
 		uint64 lastUpdatedTimeStamp;
 	}
+	struct tempWithdrawStruct {
+		address user;
+		uint256[] indices;
+		uint256 timeStamp;
+	}
+	tempWithdrawStruct public pendingWithdrawals;
 
 
 	priceFeedUSDT[] public assetPriceFeed;
@@ -318,14 +330,13 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 			flag: 1,
 			callback: Treasury.onTokenWallet
 		}(address(this), 0.1 ever);
-
 	}
-		function onDeployWallet(address _wallet) public {
+
+	function onDeployWallet(address _wallet) public {
 		require(msg.sender == assets[0], 166);
 		require(_wallet != address(0), 132);
 		assetsZeroWallet = _wallet;
 	}
-	
 
 	function onTokenWallet(address value) external {
 		require(
@@ -333,10 +344,10 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 			101
 		);
 		tvm.rawReserve(5 ever, 0);
-		_distributedTokenWallet = value; // store deployed tip3 wallet address
+		_distributedTokenWallet = value;
 		require(_distributedTokenWallet != address(0), INVALID_ADDRESS);
-		// treasuryOwner.transfer({value: 0, flag: 128, bounce: false}); // sending remaining gas after setups
 	}
+
 	function addAsset(newAssetStruct newAsset) public onlyOwnerOrGovernance {
 		require(newAsset.asset != address(0), INVALID_ADDRESS);
 		require(newAsset.dexPair != address(0), INVALID_ADDRESS);
@@ -355,6 +366,7 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		priceFeed.push(newAsset.priceFeed);
 		assetsdecimals.push(newAsset.decimals);
 	}
+
 	function onAcceptTokensTransfer(
 		address tokenRoot,
 		uint128 /*amount*/,
@@ -366,8 +378,6 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		rootToWallet[tokenRoot] = msg.sender;
 		remainingGasTo.transfer({value: 0, flag: 64});
 	}
-
-
 
 	function calculateSumOfRatios(uint8[] _ratios) public pure {
 		// require(_ratios.length == 5, "Need ratios for 5 assets");
@@ -418,9 +428,6 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		return (eligibleIndices, eligibleUsers);
 	}
 
-
-
-
 	function deposit_admin(
 		address[] users,
 		uint256[] usdtAmounts
@@ -430,7 +437,6 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		uint256 totalAmount = calculateTotalDeposit(users, daiAmounts);
 		uint256 daiAmountToSwap = totalAmount;
 
-		
 		deposit(daiAmountToSwap);
 
 		uint256 lengthh = users.length;
@@ -450,23 +456,13 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		emit DepositBatch(lengthh, totalAmount);
 	}
 
-
-
-	function deposit(uint256 usdtAmount) internal view{
+	function deposit(uint256 usdtAmount) internal view {
 		uint256 daiAmount = usdtAmount;
-		
+
 		uint256 n = assets.length;
 
 		for (uint256 i = 1; i < n; i++) {
 			uint256 amountIn = (daiAmount * assetAllocationRatio[i]) / 100;
-			// uint8 decimals = uint8(assetsdecimals[i];)
-			// uint256 amountinusd = (amountIn * 10 ** 8) / (10 ** 18);
-			// uint256 examountout = 100; //fetchUsdIntoAssetsPrice(i, amountinusd);
-			// // uint256 slipage = 5;
-			// uint256 slipageamount = (examountout * maxslippage) / 100;
-			// uint256 minamountout = examountout - slipageamount;
-
-			// require(minamountout > 0, SLIPPAGE_TOO_HIGH);
 
 			makeSwap(
 				1,
@@ -478,19 +474,9 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 				0,
 				address(this)
 			);
-			// Adjust for decimals of the asset
-			// swapExactInputSingle(
-			// 	assets[0],
-			// 	assets[i],
-			// 	amountIn,
-			// 	poolFeeTier[i - 1],
-			// 	minamountout
-			// );
-		// tvm.rawReserve(5 ever, 0);
-		// msg.sender.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
-		
 		}
 	}
+
 	function getUserDeposits() external view returns (User[]) {
 		return userDeposits[msg.sender];
 	}
@@ -527,91 +513,97 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
         priceFeed = _priceFeed;
     }
 
- function updateTopTreasuryHolders(address user) internal  {
-	require(msg.sender == treasuryOwner, ONLY_OWNER_CAN_CALL);
-        if (treasuryBalances[user] > 0) {
-            if (isTopTreasuryHolder[user]) {
-                uint256 index = treasuryHolderIndex[user];
-                topTreasuryHolders[index] = user;
-            } else {
-                uint len = topTreasuryHolders.length;
-                if (len < 10) {
-                    topTreasuryHolders.push(user);
-                    isTopTreasuryHolder[user] = true;
-                    treasuryHolderIndex[user] = topTreasuryHolders.length - 1;
-                } else {
-                    _replaceSmallestHolder(user);
-                }
-            }
-            sortTopHolders();
-        } else {
-            if (isTopTreasuryHolder[user]) {
-                uint256 index = treasuryHolderIndex[user];
-                _removeTopHolder(user, index);
-            }
-        }
-    }
-	 function _replaceSmallestHolder(address newUser) internal {
-        address smallestHolder = topTreasuryHolders[0];
-        uint256 smallestBalance = treasuryBalances[smallestHolder];
-        uint256 indexToReplace = 0;
+	function updateTopTreasuryHolders(address user) internal {
+		require(msg.sender == treasuryOwner, ONLY_OWNER_CAN_CALL);
+		if (treasuryBalances[user] > 0) {
+			if (isTopTreasuryHolder[user]) {
+				uint256 index = treasuryHolderIndex[user];
+				topTreasuryHolders[index] = user;
+			} else {
+				uint len = topTreasuryHolders.length;
+				if (len < 10) {
+					topTreasuryHolders.push(user);
+					isTopTreasuryHolder[user] = true;
+					treasuryHolderIndex[user] = topTreasuryHolders.length - 1;
+				} else {
+					_replaceSmallestHolder(user);
+				}
+			}
+			sortTopHolders();
+		} else {
+			if (isTopTreasuryHolder[user]) {
+				uint256 index = treasuryHolderIndex[user];
+				_removeTopHolder(user, index);
+			}
+		}
+	}
 
-        uint256 len = topTreasuryHolders.length;
-        for (uint256 i = 1; i < len; i++) {
-            address holder = topTreasuryHolders[i];
-            if (treasuryBalances[holder] < smallestBalance) {
-                smallestHolder = holder;
-                smallestBalance = treasuryBalances[holder];
-                indexToReplace = i;
-            }
-        }
+	function _replaceSmallestHolder(address newUser) internal {
+		address smallestHolder = topTreasuryHolders[0];
+		uint256 smallestBalance = treasuryBalances[smallestHolder];
+		uint256 indexToReplace = 0;
 
-        uint256 newUserBalance = treasuryBalances[newUser];
-        if (newUserBalance > smallestBalance) {
-            _removeTopHolder(smallestHolder, indexToReplace);
-            topTreasuryHolders[indexToReplace] = newUser;
-            treasuryHolderIndex[newUser] = indexToReplace;
-            isTopTreasuryHolder[newUser] = true;
-        }
-    }
-function setLockPeriod(uint _lockupPeriod) external onlyOwner {
-        FULL_TERM_LOCK_PERIOD = _lockupPeriod;
-    }
+		uint256 len = topTreasuryHolders.length;
+		for (uint256 i = 1; i < len; i++) {
+			address holder = topTreasuryHolders[i];
+			if (treasuryBalances[holder] < smallestBalance) {
+				smallestHolder = holder;
+				smallestBalance = treasuryBalances[holder];
+				indexToReplace = i;
+			}
+		}
+
+		uint256 newUserBalance = treasuryBalances[newUser];
+		if (newUserBalance > smallestBalance) {
+			_removeTopHolder(smallestHolder, indexToReplace);
+			topTreasuryHolders[indexToReplace] = newUser;
+			treasuryHolderIndex[newUser] = indexToReplace;
+			isTopTreasuryHolder[newUser] = true;
+		}
+	}
+
+	function setLockPeriod(uint _lockupPeriod) external onlyOwner {
+		FULL_TERM_LOCK_PERIOD = _lockupPeriod;
+	}
+
 	function updateDepositingAddress(address _newAddress) external onlyOwner {
-        depositingAddress = _newAddress;
-    }
+		depositingAddress = _newAddress;
+	}
+
 	function setForceUnlock(bool _forceUnlock) external onlyOwner {
-        forceUnlock = _forceUnlock;
-    }
+		forceUnlock = _forceUnlock;
+	}
+
 	function sortTopHolders() internal {
-        uint256 n = topTreasuryHolders.length;
-        if (n <= 1) {
-            return; // No need to sort if there is only one or no holder
-        }
+		uint256 n = topTreasuryHolders.length;
+		if (n <= 1) {
+			return; // No need to sort if there is only one or no holder
+		}
 
-        // Bubble Sort Algorithm to sort topTreasuryHolders by their balances in descending order
-        for (uint256 i = 0; i < n - 1; i++) {
-            for (uint256 j = 0; j < n - i - 1; j++) {
-                address holder1 = topTreasuryHolders[j];
-                address holder2 = topTreasuryHolders[j + 1];
+		// Bubble Sort Algorithm to sort topTreasuryHolders by their balances in descending order
+		for (uint256 i = 0; i < n - 1; i++) {
+			for (uint256 j = 0; j < n - i - 1; j++) {
+				address holder1 = topTreasuryHolders[j];
+				address holder2 = topTreasuryHolders[j + 1];
 
-                // Compare balances of holder1 and holder2
-                if (treasuryBalances[holder1] < treasuryBalances[holder2]) {
-                    // Swap the positions
-                    (topTreasuryHolders[j], topTreasuryHolders[j + 1]) = (
-                        topTreasuryHolders[j + 1],
-                        topTreasuryHolders[j]
-                    );
+				// Compare balances of holder1 and holder2
+				if (treasuryBalances[holder1] < treasuryBalances[holder2]) {
+					// Swap the positions
+					(topTreasuryHolders[j], topTreasuryHolders[j + 1]) = (
+						topTreasuryHolders[j + 1],
+						topTreasuryHolders[j]
+					);
 
-                    // Update the treasuryHolderIndex mapping
-                    treasuryHolderIndex[holder1] = j + 1;
-                    treasuryHolderIndex[holder2] = j;
-                }
-            }
-        }
-    }
+					// Update the treasuryHolderIndex mapping
+					treasuryHolderIndex[holder1] = j + 1;
+					treasuryHolderIndex[holder2] = j;
+				}
+			}
+		}
+	}
 
-	 function _removeTopHolder(address user, uint256 index) internal {
+
+	function _removeTopHolder(address user, uint256 index) internal {
         require(isTopTreasuryHolder[user], NOT_TOP_HOLDER);
 
         uint256 lastIndex = topTreasuryHolders.length - 1;
@@ -626,7 +618,7 @@ function setLockPeriod(uint _lockupPeriod) external onlyOwner {
         delete treasuryHolderIndex[user];
     }
 
-	 function makeSwap(
+	function makeSwap(
         uint64 queryId,
         address tokenIn,
         uint128 amountIn,
@@ -665,18 +657,20 @@ function setLockPeriod(uint _lockupPeriod) external onlyOwner {
 		tvm.rawReserve(5 ever, 0);
 		treasuryOwner.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
 		
-    emit madeSwap(tokenIn,tokenOut,amountIn);
+    	emit madeSwap(tokenIn,tokenOut,amountIn);
 
 
         
     }
-function dexPairExchangeSuccess(uint64 id, bool /* via_account */, IExchangeResult.ExchangeResult result) external pure{
-        emit SwapSuccess(id, result);
-    }
 
-	
 
-	
+	function dexPairExchangeSuccess(
+		uint64 id,
+		bool /* via_account */,
+		IExchangeResult.ExchangeResult result
+	) external pure {
+		emit SwapSuccess(id, result);
+	}
 
 	function calculateTotalDeposit(
 		address[] users,
@@ -693,115 +687,103 @@ function dexPairExchangeSuccess(uint64 id, bool /* via_account */, IExchangeResu
 		}
 		return _totalAmount;
 	}
+
 	function setUserDepositData(
-        address[]  users,
-        uint256[]  daiAmounts
-    ) external onlyOwner {
-        require(users.length == daiAmounts.length, LENGTH_MISMATCH);
+		address[] users,
+		uint256[] daiAmounts
+	) external onlyOwner {
+		require(users.length == daiAmounts.length, LENGTH_MISMATCH);
 
-        uint256 totalAmount = calculateTotalDeposit(users, daiAmounts);
-        uint256 lengthh = users.length;
-        for (uint256 i = 0; i < lengthh; i++) {
-            User  newUserDeposit = User({
-                treasuryDeposit: daiAmounts[i],
-                firstDepositTime: block.timestamp
-            });
+		uint256 totalAmount = calculateTotalDeposit(users, daiAmounts);
+		uint256 lengthh = users.length;
+		for (uint256 i = 0; i < lengthh; i++) {
+			User newUserDeposit = User({
+				treasuryDeposit: daiAmounts[i],
+				firstDepositTime: block.timestamp
+			});
 
-            // Push the new deposit entry into the userDeposits array
-            userDeposits[users[i]].push(newUserDeposit);
+			// Push the new deposit entry into the userDeposits array
+			userDeposits[users[i]].push(newUserDeposit);
 
-            // Update the overall treasury balance
-            treasuryBalances[users[i]] += daiAmounts[i];
-        }
+			// Update the overall treasury balance
+			treasuryBalances[users[i]] += daiAmounts[i];
+		}
 
-        // Update total treasury points
-        totalTreasuryPoints += totalAmount;
-        emit DepositBatch(lengthh, totalAmount);
-    }
+		// Update total treasury points
+		totalTreasuryPoints += totalAmount;
+		emit DepositBatch(lengthh, totalAmount);
+	}
 
-    function setDeedEmissionRate(uint256 _deedEmissionRate) external onlyOwner {
-        DEED_EMISSION_RATE = _deedEmissionRate;
-    }
-	function setAllocationRatios(
-        uint8[]  _allocationRatios
-    ) public onlyOwner {
-        calculateSumOfRatios(_allocationRatios);
-        assetAllocationRatio = _allocationRatios;
-    }
-	
+	function setDeedEmissionRate(uint256 _deedEmissionRate) external onlyOwner {
+		DEED_EMISSION_RATE = _deedEmissionRate;
+	}
+
+	function setAllocationRatios(uint8[] _allocationRatios) public onlyOwner {
+		calculateSumOfRatios(_allocationRatios);
+		assetAllocationRatio = _allocationRatios;
+	}
+
 	event balance(address root, uint256 amount);
-	mapping(address => address) public walletToRoot; 
-	mapping (address=>uint128) private tempBalances;
+	mapping(address => address) public walletToRoot;
+	mapping(address => uint128) private tempBalances;
 	struct balanceOfStruct {
 		address root;
 		uint128 amount;
 	}
 	balanceOfStruct[] public balanceOfArray;
-	
-	event tempRoot(address root);
-	event tempBal(uint128 bal);
+
+
 	address private tempRootAddress;
-	
+
 	function getAllTokenBalOfContract() public {
-    delete balanceOfArray;
+		delete balanceOfArray;
 
-    uint256 n = assets.length;
-    for (uint256 i = 0; i < n; i++) {
-        address wallet = rootToWallet[assets[i]];
-        if (wallet != address(0)) {
-            walletToRoot[wallet] = assets[i];
+		uint256 n = assets.length;
+		for (uint256 i = 0; i < n; i++) {
+			address wallet = rootToWallet[assets[i]];
+			if (wallet != address(0)) {
+				walletToRoot[wallet] = assets[i];
 
-            ITokenWallet(wallet).balance{
-                value: 0.5 ever,
-                flag: 64,
-                callback: Treasury.onGetBalance
-            }();
-        }
-    }
-}	
-
-event sender(address sender);
+				ITokenWallet(wallet).balance{
+					value: 0.5 ever,
+					flag: 64,
+					callback: Treasury.onGetBalance
+				}();
+			}
+		}
+	}
 	function onGetBalance(uint128 bal) public {
-    address root = walletToRoot[msg.sender];
+		address root = walletToRoot[msg.sender];
 
-    balanceOfStruct b = balanceOfStruct({root: root, amount: bal});
-    balanceOfArray.push(b);
-    tempBalances[root] = bal;
-	emit step(13);
-	emit sender(msg.sender);
-	if(assets.length == balanceOfArray.length && drainTreasuryInProgress){
-		emit step(51);
-		drainTreasuryInProgress = false;
-		drainTreasuryInternal();
-	}else if(withdrawInProgress && assets.length == balanceOfArray.length){
-	emit step(52);
+		balanceOfStruct b = balanceOfStruct({root: root, amount: bal});
+		balanceOfArray.push(b);
+		tempBalances[root] = bal;
+		if (assets.length == balanceOfArray.length && drainTreasuryInProgress) {
+			drainTreasuryInProgress = false;
+			drainTreasuryInternal();
+		} else if (
+			withdrawInProgress && assets.length == balanceOfArray.length
+		) {
 
-		withdrawInProgress = false;
-		// withdrawInternal();
-		tempWithdrawStruct p = pendingWithdrawals;
-		uint256[] indices = p.indices;
-		address user = p.user;
-		emit sender(user);
-		emit pendingWithdrawalsss(user,indices);
-		withdrawInternal(user,indices);
+			withdrawInProgress = false;
+			tempWithdrawStruct p = pendingWithdrawals;
+			uint256[] indices = p.indices;
+			address user = p.user;
+			withdrawInternal(user, indices);
+		}
 
-
+		emit balance(root, bal);
 	}
-	emit step(14);
 
-    emit balance(root, bal);
-}
-bool drainTreasuryInProgress;
-event pendingWithdrawalsss(address user,uint256[] indices);
-	function drainTreasury() public  {
-				require(msg.sender == treasuryOwner, ONLY_OWNER_CAN_CALL);
-	drainTreasuryInProgress = true;
+
+	function drainTreasury() public {
+		require(msg.sender == treasuryOwner, ONLY_OWNER_CAN_CALL);
+		drainTreasuryInProgress = true;
 		getAllTokenBalOfContract();
-
-		
 	}
+
 	function drainTreasuryInternal() internal {
-		balanceOfStruct[]  balArray = getBalances();
+		balanceOfStruct[] balArray = getBalances();
 		uint256 n = balArray.length;
 
 		for (uint256 i = 0; i < n; i++) {
@@ -812,40 +794,35 @@ event pendingWithdrawalsss(address user,uint256[] indices);
 				if (wallet != address(0) && bal > 0) {
 					TvmCell e;
 
-					ITokenWallet(wallet).transfer{
-			value: 2 ever,
-			flag: 64
-		}({
-			amount: uint128(bal),
-			recipient: treasuryOwner,
-			deployWalletValue: 1 ever,
-			remainingGasTo: treasuryOwner,
-			notify: true,
-			payload: e
-		});
+					ITokenWallet(wallet).transfer{value: 2 ever, flag: 64}({
+						amount: uint128(bal),
+						recipient: treasuryOwner,
+						deployWalletValue: 1 ever,
+						remainingGasTo: treasuryOwner,
+						notify: true,
+						payload: e
+					});
 				}
 			}
 		}
 
-		
 		_transferAllNFTs(deedNFT);
 		_transferAllNFTs(founderNFT);
 		tvm.rawReserve(5 ever, 0);
-		treasuryOwner.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
+		treasuryOwner.transfer({
+			value: 0,
+			flag: TokenMsgFlag.ALL_NOT_RESERVED,
+			bounce: false
+		});
 	}
-	
-	function getBalances() public view returns (balanceOfStruct[]) {
-    return balanceOfArray;
-}
-	struct tempWithdrawStruct {
-		address user;
-		uint256[] indices;
-		uint256 timeStamp;
-	}
-	tempWithdrawStruct public pendingWithdrawals; 
-	
-uint16 public constant WITHDRAW_IN_PROGRESS = 51;
 
+	function getBalances() public view returns (balanceOfStruct[]) {
+		return balanceOfArray;
+	}
+
+	
+	
+	
 	function withdraw(uint256[] indices) external {
 		require(withdrawInProgress == false, WITHDRAW_IN_PROGRESS);
 		
@@ -860,133 +837,10 @@ uint16 public constant WITHDRAW_IN_PROGRESS = 51;
 		pendingWithdrawals = tempWithdraw;
 		
 		getAllTokenBalOfContract();
-		// for (uint256 i = 1; i < len; i++) {
-		// 	// uint256 treasuryBal = 100; //IERC20(assets[i]).balanceOf(address(this));
-		// 	// uint256 userShare = (treasuryBal * totalAmount) /
-		// 	// totalTreasuryPoints; //in asset decimals
-		// 	uint256 userShare = totalAmount; 
-		// 	uint256 assetPriceInUsd;
-
-		// 	totalAmountInUsd += assetPriceInUsd;
-		// 	// uint256 assetPriceindai = (assetPriceInUsd * 10 ** 18) / 10 ** 8;
-		// 	// uint256 slipageamount = (assetPriceindai * maxslippage) / 100;
-		// 	// uint256 minamountout = assetPriceindai - slipageamount;
-			
-		// 	if (assets[i] == assets[0]) {
-		// 		// IERC20(assets[0]).transfer(mainWallet, userShare);
-		// 		// transfer usdt user share to mainWallet
-
-		// 	// uint256 primaryUnLockingAmount = (userShare * assetAllocationRatio[0]) / 100;
-		// 	// userPrimaryTokenUnlockingAmt+=primaryUnLockingAmount;
-		// 	// primaryTokenLockedAmount -= primaryUnLockingAmount; // unlocking usdt amount
-
-		// 	uint256 share = (userShare * assetAllocationRatio[0])/100;
-		// 	TvmCell e;
-
-		// 		ITokenWallet(_distributedTokenWallet).transfer{
-		// 	value: 2 ever,
-		// 	flag: 64
-		// }({
-		// 			amount: uint128(share),
-		// 			recipient: mainWallet,
-		// 			deployWalletValue: 1 ever,
-		// 			remainingGasTo: treasuryOwner,
-		// 			notify: true,
-		// 			payload: e
-		// 			});
-
-		// 	} else {
-		// 		emit swaplog(assets[i], assets[0], userShare);
-		// 		uint256 userDaiShareInUsdt = (userShare * assetAllocationRatio[i])/100;
-
-		// 		uint256 swapAmtInDai = usdtRate(assets[i],userDaiShareInUsdt);
-		// 		swapAmtInDai = swapAmtInDai/10;
-		// 		makeSwap(
-		// 		1,
-		// 		assets[i],
-		// 		uint128(swapAmtInDai),
-		// 		assets[0],
-		// 		assetsDexPairs[i - 1],
-		// 		1 ever,
-		// 		0,
-		// 		mainWallet
-		// 	);
-		// 	TvmCell e;
-		// 	ITokenWallet(_distributedTokenWallet).transfer({
-		// 			amount: uint128(userDaiShareInUsdt),
-		// 			recipient: mainWallet,
-		// 			deployWalletValue: 10000,
-		// 			remainingGasTo: treasuryOwner,
-		// 			notify: true,
-		// 			payload: e
-		// 			});
-		// 		// uint256 usershareInDai = swap(
-		// 		//     assets[i],
-		// 		//     assets[0],
-		// 		//     userShare,
-		// 		//     poolFeeTier[i - 1],
-		// 		//     minamountout
-		// 		// );
-		// 		// IERC20(assets[0]).transfer(mainWallet, usershareInDai);
-		// 	}
-		// 	// q should transfer only usershare or userShareInDai
-		// }
-
-
-// **************************** Fee Start ****************************************//
-		// uint256 totalamount2 = totalAmount;
-		// uint256 totalDepositInUsd = fetchAssetPriceInUsd(0, totalamount2);
 		
-		// uint256 feePercentage = totalAmountInUsd > (totalDepositInUsd * 2)
-		// 	? 20
-		// 	: 10;
-		// uint256 totalAmountInDaiSwap = 100; //57675 //getUsdToDaiAmount(
-		
-
-		// uint256 feeAmount;
-		// uint256 amountAfterFee;
-		// uint256 daiAmountToMint;
-		// if (totalamount2 < totalAmountInDaiSwap) {
-		// 	feeAmount = (totalAmountInDaiSwap * feePercentage) / 100;
-
-		// 	amountAfterFee = totalAmountInDaiSwap - feeAmount;
-
-		// 	daiAmountToMint =
-		// 		(amountAfterFee * DEED_EMISSION_RATE * 10 ** 8) /
-		// 		(10 ** 18);
-		// } else {
-		// 	feeAmount = (totalamount2 * feePercentage) / 100;
-
-		// 	amountAfterFee = totalamount2 - feeAmount;
-
-		// 	daiAmountToMint =
-		// 		(amountAfterFee * DEED_EMISSION_RATE * 10 ** 8) /
-		// 		(10 ** 18);
-		// }
-
-
-		// // IDeedToken(deedToken).mintForTreasury(msg.sender, daiAmountToMint);
-
-		// totalTreasuryPoints -= totalAmount;
-		// // Update treasury points for user
-		// treasuryBalances[msg.sender] -= totalAmount;
-
-		// // // Remove withdrawn deposits from userDeposits array
-		// removeUserDeposits(msg.sender, indices);
-		// emit Withdraw(msg.sender, totalAmount, daiAmountToMint);
-
-// *********************************** Fee End *********************************//
 	}
-	// 	struct tempWithdrawStruct {
-	// 	address user;
-	// 	address root;
-	// 	uint256 totalAmount;		
-	// }
-
-	// tempWithdrawStruct public tempWithdraw;
-	event transfered(address from,address to,uint128 Usdtamount);
-	event step(uint256 step);
-
+	
+	
 	function withdrawInternal(address user, uint256[] indices) public {
 		uint256 totalAmount;
 
@@ -1000,11 +854,11 @@ uint16 public constant WITHDRAW_IN_PROGRESS = 51;
 		for (uint256 i = 0; i < cnt; i++) {
 			require(indices[i] < userDepositCount, INVALID_INDEX);
 			User userDeposit = userDeposits[user][indices[i]];
-			// require(
-			// 	block.timestamp >=
-			// 		userDeposit.firstDepositTime + FULL_TERM_LOCK_PERIOD,
-			// 	DEPOSIT_NOT_ELIGIBLE
-			// );
+			require(
+				block.timestamp >=
+					userDeposit.firstDepositTime + FULL_TERM_LOCK_PERIOD,
+				DEPOSIT_NOT_ELIGIBLE
+			);
 
 			
 			totalAmount += userDeposit.treasuryDeposit; //in Usdt 6 decimals
@@ -1020,40 +874,17 @@ uint16 public constant WITHDRAW_IN_PROGRESS = 51;
 		uint256 len = assets.length;
 
 		for (uint256 i = 1; i < len; i++) {
-			// uint256 treasuryBal = 100; //IERC20(assets[i]).balanceOf(address(this));
-			// uint256 userShare = (treasuryBal * totalAmount) /
-			// totalTreasuryPoints; //in asset decimals
+			
 			uint256 userShare = totalAmount; 
 			uint256 assetPriceInUsd;
 
-			// if (assets[i] == WETH) {
-			//     // Special case for WETH
-			//     uint256 wethPriceInDai = getWethToDaiAmount(
-			//         userShare,
-			//         AggregatorV3Interface(DaiToEthPriceFeed)
-			//     );
-			//     assetPriceInUsd = fetchAssetPriceInUsd(0, wethPriceInDai);
-			// } else {
-			//     // Fetch asset price in USD
-			//     assetPriceInUsd = fetchAssetPriceInUsd(i, userShare);
-			// }
-
+			
 			totalAmountInUsd += assetPriceInUsd;
-			// uint256 assetPriceindai = (assetPriceInUsd * 10 ** 18) / 10 ** 8;
-			// uint256 slipageamount = (assetPriceindai * maxslippage) / 100;
-			// uint256 minamountout = assetPriceindai - slipageamount;
 			
 			if (assets[i] == assets[0]) {
-				// IERC20(assets[0]).transfer(mainWallet, userShare);
-				// transfer usdt user share to mainWallet
-
-			// uint256 primaryUnLockingAmount = (userShare * assetAllocationRatio[0]) / 100;
-			// userPrimaryTokenUnlockingAmt+=primaryUnLockingAmount;
-			// primaryTokenLockedAmount -= primaryUnLockingAmount; // unlocking usdt amount
-
+			
 			uint256 share = (userShare * assetAllocationRatio[0])/100;
 			if(share > 0){
-				emit step(99);
 				TvmCell e;
 				ITokenWallet(_distributedTokenWallet).transfer{
 				value: 2 ever, flag: 64}
@@ -1073,9 +904,7 @@ uint16 public constant WITHDRAW_IN_PROGRESS = 51;
 				uint256 userDaiShareInUsdt = (userShare * assetAllocationRatio[i])/100;
 
 				uint256 swapAmtInDai = usdtRate(assets[i],userDaiShareInUsdt);
-				emit step(swapAmtInDai);
-				emit step(userDaiShareInUsdt);
-				// swapAmtInDai = swapAmtInDai/10;
+				
 				makeSwap(
 				1,
 				assets[i],
@@ -1103,30 +932,21 @@ uint16 public constant WITHDRAW_IN_PROGRESS = 51;
 		}
 
 
-// **************************** Fee Start ****************************************//
 		uint256 totalamount2 = totalAmount;
 		uint256 totalDepositInUsd = totalamount2;
 		
-		// // // Determine fee percentage
 		uint256 feePercentage = totalDepositInUsd > (totalDepositInUsd * 2)
 			? 20
 			: 10;
 
-		emit log("feePercentage",feePercentage);
 
-		// // uint256 totalAmountInDaiSwap = 100; //57675 //getUsdToDaiAmount(
-		// // //     totalAmountInUsd,
-		// // //     AggregatorV3Interface(priceFeed[0])
-		// // // );
+	
 
 		uint256 feeAmount = totalDepositInUsd * feePercentage / 100;
-		emit log("feeAmount",feeAmount);
 
 		uint256 amountAfterFee = totalDepositInUsd - feeAmount;
-		emit log("amountAfterFee",amountAfterFee);
 
 		uint256 daiAmountToMint = (amountAfterFee * DEED_EMISSION_RATE * 10 ** 6) / (10 ** 6);
-		emit log("daiAmountToMint",daiAmountToMint);
 
 		// // IDeedToken(deedToken).mintForTreasury(msg.sender, daiAmountToMint);
 
@@ -1138,143 +958,10 @@ uint16 public constant WITHDRAW_IN_PROGRESS = 51;
 		removeUserDeposits(user, indices);
 		// emit Withdraw(msg.sender, totalAmount, daiAmountToMint);
 
-// *********************************** Fee End *********************************//
 
 	}
 
-event log(string msg,uint256 amount);
-	// function withdrawInternal(uint256[] indices) public  {
-	// 	uint256 totalAmount;
 
-	// 	uint256 userDepositCount = userDeposits[msg.sender].length;
-	// 	require(userDepositCount > 0, NO_VALID_DEPOSITS);
-
-	// 	// Calculate total amount eligible for withdrawal
-	// 	uint256 cnt = indices.length;
-	// 	// uint256 userPrimaryTokenUnlockingAmt; // usdt user share
-
-	// 	for (uint256 i = 0; i < cnt; i++) {
-	// 		require(indices[i] < userDepositCount, INVALID_INDEX);
-	// 		User userDeposit = userDeposits[msg.sender][indices[i]];
-	// 		// require(
-	// 		// 	block.timestamp >=
-	// 		// 		userDeposit.firstDepositTime + FULL_TERM_LOCK_PERIOD,
-	// 		// 	DEPOSIT_NOT_ELIGIBLE
-	// 		// );
-
-			
-	// 		totalAmount += userDeposit.treasuryDeposit; //in Usdt 6 decimals
-	// 		userDeposit.treasuryDeposit = 0;
-	// 		userDeposit.firstDepositTime = 0; // Set deposit to 0 to prevent double withdrawal
-			
-	// 	}
-	// 	require(totalAmount > 0, NO_VALID_DEPOSITS);
-
-		
-	// 	// Calculate total user deposit assets in USDT after a year
-	// 	uint256 totalAmountInUsd;
-	// 	uint256 len = assets.length;
-
-	// 	balanceOfStruct[]  balArray = getBalances();
-
-	// 	uint256 n = balArray.length;
-		
-
-		
-
-	// 	for (uint256 i = 0; i < len; i++) {
-	// 		uint256 treasuryBal ;
-	// 		for(uint256 j=0;j<n;j++){
-	// 			if(balArray[j].root == assets[i]){
-	// 				treasuryBal = balArray[j].amount;
-	// 				break;
-	// 			}
-	// 		}
-	// 		emit step(8);
-
-	// 		uint256 userShare = (treasuryBal * totalAmount) /
-	// 		totalTreasuryPoints; 
-	// 		emit step(9);
-	// 		emit step(userShare);
-	// 		uint256 assetPriceInUsd;
-
-	// 		totalAmountInUsd += assetPriceInUsd;
-	// 		uint256 assetPriceindai = (assetPriceInUsd * 10 ** 18) / 10 ** 8;
-	// 		uint256 slipageamount = (assetPriceindai * maxslippage) / 100;
-	// 		uint256 minamountout = assetPriceindai - slipageamount;
-			
-	// 		if (assets[i] == assets[0]) {
-	// 				emit step(2);
-	
-	// 		TvmCell e;
-
-	// 			ITokenWallet(_distributedTokenWallet).transfer{
-	// 		value: 2 ever,
-	// 		flag: 64
-	// 			}({
-	// 				amount: uint128(userShare),
-	// 				recipient: mainWallet,
-	// 				deployWalletValue: 1 ever,
-	// 				remainingGasTo: treasuryOwner,
-	// 				notify: true,
-	// 				payload: e
-	// 				});
-	// 			emit transfered(address(this),mainWallet,uint128(userShare));
-	// 		} else {
-	// 			emit step(3);
-	// 			emit swaplog(assets[i], assets[0], userShare);
-	// 			uint256 userDaiShareInUsdt = (userShare * assetAllocationRatio[i])/100;
-
-	// 			uint256 swapAmtInDai = usdtRate(assets[i],userDaiShareInUsdt);
-	// 			swapAmtInDai = swapAmtInDai/10;
-	// 			makeSwap(
-	// 			1,
-	// 			assets[i],
-	// 			uint128(swapAmtInDai),
-	// 			assets[0],
-	// 			assetsDexPairs[i - 1],
-	// 			1 ever,
-	// 			0,
-	// 			mainWallet
-	// 		);
-	// 	emit transfered(address(this),mainWallet,uint128(userDaiShareInUsdt));
-	// 		// TvmCell e;
-	// 		// ITokenWallet(_distributedTokenWallet).transfer({
-	// 		// 		amount: uint128(userDaiShareInUsdt),
-	// 		// 		recipient: mainWallet,
-	// 		// 		deployWalletValue: 10000,
-	// 		// 		remainingGasTo: treasuryOwner,
-	// 		// 		notify: true,
-	// 		// 		payload: e
-	// 		// 		});
-	// 		// 	// uint256 usershareInDai = swap(
-	// 		// 	//     assets[i],
-	// 		// 	//     assets[0],
-	// 		// 	//     userShare,
-	// 		// 	//     poolFeeTier[i - 1],
-	// 		// 	//     minamountout
-	// 		// 	// );
-	// 		// 	// IERC20(assets[0]).transfer(mainWallet, usershareInDai);
-	// 		// }
-	// 		// q should transfer only usershare or userShareInDai
-
-	// 		withdrawInProgress = false;
-	// 	}
-		
-	// }
-	// }
-	// function swapWvenom(uint128 amountIn) public {
-	// 	makeSwap(
-	// 			1,
-	// 			assets[1],
-	// 			uint128(amountIn),
-	// 			assets[0],
-	// 			assetsDexPairs[0],
-	// 			1 ever,
-	// 			0,
-	// 			address(this)
-	// 		);
-	// }
 	function swapAndTransferToGovernance(
 		uint128 amountIn,
 		address receiver
@@ -1318,49 +1005,6 @@ event log(string msg,uint256 amount);
 		return {value: 0, flag: 64, bounce: false} true;
 	}
 
-	// function transferWvenomToAddres(uint128 amount) public {
-	// 		TvmCell e;
-
-	// 	address venomContractWallet = rootToWallet[assets[1]];
-	// 				require(venomContractWallet !=address(0) , 555);
-	// 	ITokenWallet(venomContractWallet).transfer({
-	// 				amount: uint128(amount),
-	// 				recipient: mainWallet,
-	// 				deployWalletValue: 10000,
-	// 				remainingGasTo: owner,
-	// 				notify: true,
-	// 				payload: e
-	// 				});
-	// }
-	function withdrawWvenAmount(uint256 userShare,address user) public view{
-		TvmCell e;
-		uint256 userDaiShareInUsdt = (userShare * assetAllocationRatio[1]) /
-			100; // 10 contract
-		// uint256 userUSDTShare = (userShare * assetAllocationRatio[0])/100;
-		uint256 swapAmtInDai = usdtRate(assets[1], userDaiShareInUsdt); // 576458  contract
-
-		makeSwap(
-			1,
-			assets[1],
-			uint128(swapAmtInDai),
-			assets[0],
-			assetsDexPairs[0],
-			1 ever,
-			0,
-			user
-		);
-
-		
-
-		
-		emit WithdrawDai(
-			assets[1],
-			assets[0],
-			userDaiShareInUsdt,
-			swapAmtInDai
-		);
-
-	}
 	
 
 	event usdtRateLog(address asset, uint256 usdtAmount, uint256 outAmount);
@@ -1396,73 +1040,23 @@ function updatePriceFeeds(priceFeedUSDT[] newPriceFeeds) public onlyOwner {
 	}
 	emit PriceFeedsUpdated(newPriceFeeds);	
 }
-	// function usdtRate(
-	// 	uint16 index,
-	// 	uint256 _usdtAmount
-	// ) public pure returns (uint256 outAmount) {
-	// 	uint256 RATE;
-
-	// 	if (index == 1) {
-	// 		// USDT -> WVENOM
-	// 		RATE = 57456; // 9 decimals
-	// 		uint256 usdt9 = (_usdtAmount * 1e6) * 1e3; // scale USDT tokens -> 6 decimals -> 9 decimals
-	// 		outAmount = (usdt9 * RATE) / 1e9;
-	// 	} else if (index == 3) {
-	// 		// USDT -> DAI
-	// 		RATE = 949038394185496310; // 18 decimals
-	// 		uint256 usdt18 = (_usdtAmount * 1e6) * 1e12; // scale USDT tokens -> 6 decimals -> 18 decimals
-	// 		outAmount = (usdt18 * RATE) / 1e18;
-	// 	} else {
-	// 		outAmount = 0;
-	// 	}
-	// }
-
-	function fetchAssetPriceInUsd(
-		uint256 assetIndex,
-		uint256 assetAmount
-	) public view returns (uint256) {
-		require(assetIndex < assets.length, INVALID_ASSET_INDEX);
-
-		AggregatorV3Interface pricefeed = AggregatorV3Interface(
-			priceFeed[assetIndex]
-		);
-		uint8 decimals = uint8(assetsdecimals[assetIndex]);
-		return getAmountInUsd(assetAmount, pricefeed, decimals);
-	}
-
-	function getAmountInUsd(
-		uint256 assetAmount,
-		AggregatorV3Interface /*pricefeed */,
-		uint8 decimals
-	) internal pure returns (uint256) {
-		// Fetch the latest price from the price feed
-		// (, int256 price, , , ) = pricefeed.latestRoundData();
-		uint256 price = 100;
-		require(price > 0, INVALID_PRICE);
-
-		// Convert asset amount to USD using the price and decimals
-		return (assetAmount * uint256(price)) / (10 ** uint256(decimals));
-	}
-
+	
+	
 	function removeUserDeposits(address user, uint256[] indices) internal {
 		require(indices.length > 0, NO_DEPOSITS_FOUND);
 
-		// Sort the indices in ascending order to avoid shifting issues
 		sortAscending(indices);
 
 		uint256 originalLength = userDeposits[user].length;
 		bool[] skip = new bool[](originalLength); // Skip list to mark removal
 
-		// Mark the elements that need to be removed by setting skip flags
 		for (uint256 i = 0; i < indices.length; i++) {
 			uint256 index = indices[i];
 			require(index < originalLength, INDEX_OUT_OF_BOUNDS);
 
-			// Mark the index for removal
 			skip[index] = true;
 		}
 
-		// Count how many elements will remain after removal
 		uint256 remainingCount;
 		for (uint256 i = 0; i < originalLength; i++) {
 			if (!skip[i]) {
@@ -1470,8 +1064,6 @@ function updatePriceFeeds(priceFeedUSDT[] newPriceFeeds) public onlyOwner {
 			}
 		}
 
-		// Create a new array to store remaining elements
-		//// uint256[]  newDeposits = new uint256[](remainingCount);
 		User[] newDeposits = new User[](remainingCount);
 		uint256 j;
 		for (uint256 i = 0; i < originalLength; i++) {
@@ -1481,7 +1073,6 @@ function updatePriceFeeds(priceFeedUSDT[] newPriceFeeds) public onlyOwner {
 			}
 		}
 
-		// Replace the original array with the new one
 		userDeposits[user] = newDeposits;
 	}
 

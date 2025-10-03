@@ -1,15 +1,197 @@
-pragma ever-solidity >=0.62.0;
+// pragma ever-solidity >=0.62.0;
 
-pragma AbiHeader expire;
-pragma AbiHeader time;
-pragma AbiHeader pubkey;
-import "../TIP3Root/contracts/interfaces/ITokenRoot.tsol";
-import "../TIP3Root/contracts/interfaces/ITokenWallet.tsol";
+// pragma AbiHeader expire;
+// pragma AbiHeader time;
+// pragma AbiHeader pubkey;
+// import "../TIP3Root/contracts/interfaces/ITokenRoot.tsol";
+// import "../TIP3Root/contracts/interfaces/ITokenWallet.tsol";
 
-contract demooo {
-	uint64 static nonce_;
+// contract DeedToken {
+// 	uint64 static nonce_;
+// 	address deedTokenRoot;
+
+// 	constructor(address _deedTokenRoot) public {
+// 		tvm.accept();
+// 		tvm.rawReserve(0.5 ever, 0);
+// 		deedTokenRoot = _deedTokenRoot;
+// 	}
+// function _transferAllNFTs(address collection) internal {
+// 		uint256 totalLocked = contractlockedNFTs[address(this)][collection]
+// 			.length;
+// 		for (uint256 i = 0; i < totalLocked; i++) {
+// 			uint256 tokenId = contractlockedNFTs[address(this)][collection][i];
+
+// 			TvmCell payload = abi.encode(tokenId);
+
+// 			localCallbacks[treasuryOwner] = ICallbackParamsStructure
+// 				.CallbackParams({value: 0.05 ever, payload: payload});
+
+// 			INft(collection).transfer(
+// 				treasuryOwner,
+// 				treasuryOwner,
+// 				localCallbacks
+// 			);
+// 			emit unLocked(collection, tokenId, totalLocked);
+// 		}
+// 	}
+// 	  function changeAssetAllocations(
+//         address[]  _assets,
+//         uint256[]  _assetsdecimals,
+//         uint8[]  _assetAllocationRatio,
+//         address[]  _priceFeed
+//     ) external onlyOwner {
+//         assets = _assets;
+//         assetsdecimals = _assetsdecimals;
+//         assetAllocationRatio = _assetAllocationRatio;
+//         priceFeed = _priceFeed;
+//     }
+
+//  function updateTopTreasuryHolders(address user) internal  {
+// 	require(msg.sender == treasuryOwner, ONLY_OWNER_CAN_CALL);
+//         if (treasuryBalances[user] > 0) {
+//             if (isTopTreasuryHolder[user]) {
+//                 uint256 index = treasuryHolderIndex[user];
+//                 topTreasuryHolders[index] = user;
+//             } else {
+//                 uint len = topTreasuryHolders.length;
+//                 if (len < 10) {
+//                     topTreasuryHolders.push(user);
+//                     isTopTreasuryHolder[user] = true;
+//                     treasuryHolderIndex[user] = topTreasuryHolders.length - 1;
+//                 } else {
+//                     _replaceSmallestHolder(user);
+//                 }
+//             }
+//             sortTopHolders();
+//         } else {
+//             if (isTopTreasuryHolder[user]) {
+//                 uint256 index = treasuryHolderIndex[user];
+//                 _removeTopHolder(user, index);
+//             }
+//         }
+//     }
+// 	 function _replaceSmallestHolder(address newUser) internal {
+//         address smallestHolder = topTreasuryHolders[0];
+//         uint256 smallestBalance = treasuryBalances[smallestHolder];
+//         uint256 indexToReplace = 0;
+
+//         uint256 len = topTreasuryHolders.length;
+//         for (uint256 i = 1; i < len; i++) {
+//             address holder = topTreasuryHolders[i];
+//             if (treasuryBalances[holder] < smallestBalance) {
+//                 smallestHolder = holder;
+//                 smallestBalance = treasuryBalances[holder];
+//                 indexToReplace = i;
+//             }
+//         }
+
+//         uint256 newUserBalance = treasuryBalances[newUser];
+//         if (newUserBalance > smallestBalance) {
+//             _removeTopHolder(smallestHolder, indexToReplace);
+//             topTreasuryHolders[indexToReplace] = newUser;
+//             treasuryHolderIndex[newUser] = indexToReplace;
+//             isTopTreasuryHolder[newUser] = true;
+//         }
+//     }
+// function setLockPeriod(uint _lockupPeriod) external onlyOwner {
+//         FULL_TERM_LOCK_PERIOD = _lockupPeriod;
+//     }
+// 	function updateDepositingAddress(address _newAddress) external onlyOwner {
+//         depositingAddress = _newAddress;
+//     }
+// 	function setForceUnlock(bool _forceUnlock) external onlyOwner {
+//         forceUnlock = _forceUnlock;
+//     }
+// 	function sortTopHolders() internal {
+//         uint256 n = topTreasuryHolders.length;
+//         if (n <= 1) {
+//             return; // No need to sort if there is only one or no holder
+//         }
+
+//         // Bubble Sort Algorithm to sort topTreasuryHolders by their balances in descending order
+//         for (uint256 i = 0; i < n - 1; i++) {
+//             for (uint256 j = 0; j < n - i - 1; j++) {
+//                 address holder1 = topTreasuryHolders[j];
+//                 address holder2 = topTreasuryHolders[j + 1];
+
+//                 // Compare balances of holder1 and holder2
+//                 if (treasuryBalances[holder1] < treasuryBalances[holder2]) {
+//                     // Swap the positions
+//                     (topTreasuryHolders[j], topTreasuryHolders[j + 1]) = (
+//                         topTreasuryHolders[j + 1],
+//                         topTreasuryHolders[j]
+//                     );
+
+//                     // Update the treasuryHolderIndex mapping
+//                     treasuryHolderIndex[holder1] = j + 1;
+//                     treasuryHolderIndex[holder2] = j;
+//                 }
+//             }
+//         }
+//     }
+
+// 	 function _removeTopHolder(address user, uint256 index) internal {
+//         require(isTopTreasuryHolder[user], NOT_TOP_HOLDER);
+
+//         uint256 lastIndex = topTreasuryHolders.length - 1;
+//         if (index < lastIndex) {
+//             address lastHolder = topTreasuryHolders[lastIndex];
+//             topTreasuryHolders[index] = lastHolder;
+//             treasuryHolderIndex[lastHolder] = index;
+//         }
+
+//         topTreasuryHolders.pop();
+//         isTopTreasuryHolder[user] = false;
+//         delete treasuryHolderIndex[user];
+//     }
+
+// 	 function makeSwap(
+//         uint64 queryId,
+//         address tokenIn,
+//         uint128 amountIn,
+//         address tokenOut,
+//         address pair,
+//         uint128 deployWalletValue,
+//         uint128 expectedAmountOut,
+//         address treasuryAddress
+//     ) public view {
+//         address tokenWallet = rootToWallet[tokenIn];
+//         require(address.makeAddrNone() != tokenWallet, WALLET_NOT_EXISTS);
+//         IGasValueStructure.GasValue gas = GasValues.getPoolDirectExchangeGas(0.1 ever, address(0));
+//         uint128 gasValue = gas.dynamicGas + gas.fixedValue;
+//         require(msg.value >= gasValue, NOT_ENOUGH_VALUE);
+//         TvmCell e;
+//         TvmCell swapPayload = PairPayload.buildExchangePayloadV2(
+//             queryId,
+//             deployWalletValue,
+//             expectedAmountOut,
+//             treasuryAddress,
+//             tokenOut,
+//             address(0),
+//             e,
+//             e,
+//             null
+//         );
+
+//         ITokenWallet(tokenWallet).transfer{value: 0, flag: 64}(
+//             amountIn,
+//             pair,
+//             deployWalletValue,
+//             treasuryAddress,
+//             true,
+//             swapPayload
+//         );
+// 		tvm.rawReserve(5 ever, 0);
+// 		treasuryOwner.transfer({value: 0, flag: TokenMsgFlag.ALL_NOT_RESERVED, bounce: false});
+		
+//     emit madeSwap(tokenIn,tokenOut,amountIn);
 
 
+        
+//     }
+// function dexPairExchangeSuccess(uint64 id, bool /* via_account */, IExchangeResult.ExchangeResult result) external pure{
+//         emit SwapSuccess(id, result);
+//     }
 
 	
-}
+// }

@@ -1,495 +1,247 @@
 {
   "map": {
-    "29e39998d56bfb58eddfc329fa2e7c871c4e2f24ba7d00160d5b9e546c5ed382": {
+    "20cf6be333ed8061e5627dd27e802699a258879cd3f1e0a318a88061bb788ccd": {
       "0": {
         "filename": "DeedToken.code",
-        "line": 181
+        "line": 217
       },
       "16": {
         "filename": "DeedToken.code",
-        "line": 182
-      },
-      "32": {
-        "filename": "DeedToken.code",
-        "line": 183
-      },
-      "48": {
-        "filename": "DeedToken.code",
-        "line": 184
-      },
-      "64": {
-        "filename": "DeedToken.code",
-        "line": 185
-      },
-      "72": {
-        "filename": "DeedToken.code",
-        "line": 186
-      },
-      "88": {
-        "filename": "DeedToken.code",
-        "line": 187
-      },
-      "104": {
-        "filename": "DeedToken.code",
-        "line": 188
-      },
-      "120": {
-        "filename": "DeedToken.code",
-        "line": 189
-      },
-      "136": {
-        "filename": "DeedToken.code",
-        "line": 190
-      },
-      "144": {
-        "filename": "DeedToken.code",
-        "line": 191
-      },
-      "152": {
-        "filename": "DeedToken.code",
-        "line": 192
-      }
-    },
-    "2c4de5fdc7b92856d1654de66c6ee8cdd0fd605d3965cdc225e62a9049d18634": {
-      "0": {
-        "filename": "<entry-selector>",
-        "line": 1
-      },
-      "8": {
-        "filename": "<entry-selector>",
-        "line": 2
-      },
-      "24": {
-        "filename": "<entry-selector>",
-        "line": 3
-      },
-      "32": {
-        "filename": "<entry-selector>",
-        "line": 4
-      },
-      "48": {
-        "filename": "<entry-selector>",
-        "line": 5
-      },
-      "56": {
-        "filename": "<entry-selector>",
-        "line": 6
-      },
-      "72": {
-        "filename": "<entry-selector>",
-        "line": 7
-      },
-      "88": {
-        "filename": "<entry-selector>",
-        "line": 8
-      },
-      "96": {
-        "filename": "<entry-selector>",
-        "line": 9
-      },
-      "112": {
-        "filename": "<entry-selector>",
-        "line": 10
-      },
-      "128": {
-        "filename": "<entry-selector>",
-        "line": 11
-      }
-    },
-    "3157f4a1e37454a968139292b6fad9ca25acf5ed1ff81a9272029e5789ab400c": {
-      "0": {
-        "filename": "DeedToken.code",
-        "line": 145
-      },
-      "16": {
-        "filename": "DeedToken.code",
-        "line": 146
+        "line": 218
       },
       "24": {
         "filename": "DeedToken.code",
-        "line": 147
+        "line": 219
       },
       "40": {
         "filename": "DeedToken.code",
-        "line": 148
+        "line": 220
       },
       "56": {
         "filename": "DeedToken.code",
-        "line": 149
+        "line": 221
       },
       "72": {
         "filename": "DeedToken.code",
-        "line": 176
-      }
-    },
-    "3840b27935f4aa916b43cde0da48214410684afe4120612cd24356b9eb16a3da": {
-      "0": {
-        "filename": "DeedToken.code",
-        "line": 30
+        "line": 222
       },
-      "8": {
+      "80": {
         "filename": "DeedToken.code",
-        "line": 31
-      },
-      "24": {
-        "filename": "DeedToken.code",
-        "line": 32
-      },
-      "48": {
-        "filename": "DeedToken.code",
-        "line": 33
-      },
-      "64": {
-        "filename": "DeedToken.code",
-        "line": 34
-      },
-      "72": {
-        "filename": "DeedToken.code",
-        "line": 35
+        "line": 223
       },
       "88": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 18
-      },
-      "96": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 18
+        "filename": "DeedToken.code",
+        "line": 224
       },
       "104": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 18
-      },
-      "112": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 18
+        "filename": "DeedToken.code",
+        "line": 225
       },
       "120": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 18
+        "filename": "DeedToken.code",
+        "line": 226
       },
       "128": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 18
-      },
-      "136": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 18
-      },
-      "152": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 18
-      },
-      "168": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 18
-      },
-      "176": {
         "filename": "DeedToken.code",
-        "line": 50
-      },
-      "192": {
-        "filename": "DeedToken.code",
-        "line": 53
-      },
-      "200": {
-        "filename": "DeedToken.code",
-        "line": 54
-      },
-      "216": {
-        "filename": "DeedToken.code",
-        "line": 57
-      }
-    },
-    "44c3b7e00d9d2e7f60570d3272887faa70c17bd94e2e64fe2b98edcb7b0d9033": {
-      "0": {
-        "filename": "DeedToken.code",
-        "line": 304
-      },
-      "8": {
-        "filename": "DeedToken.code",
-        "line": 305
-      },
-      "56": {
-        "filename": "DeedToken.code",
-        "line": 306
-      },
-      "64": {
-        "filename": "DeedToken.code",
-        "line": 307
-      },
-      "80": {
-        "filename": "DeedToken.code",
-        "line": 310
-      },
-      "88": {
-        "filename": "DeedToken.code",
-        "line": 311
-      },
-      "136": {
-        "filename": "DeedToken.code",
-        "line": 312
+        "line": 227
       },
       "144": {
         "filename": "DeedToken.code",
-        "line": 313
-      },
-      "160": {
-        "filename": "DeedToken.code",
-        "line": 316
+        "line": 228
       },
       "168": {
         "filename": "DeedToken.code",
-        "line": 317
-      },
-      "216": {
-        "filename": "DeedToken.code",
-        "line": 318
-      },
-      "224": {
-        "filename": "DeedToken.code",
-        "line": 319
-      }
-    },
-    "4d8355d728e215250b978eb2dccde07235ce73854d8a035e9221f308df1d50d7": {
-      "0": {
-        "filename": "DeedToken.code",
-        "line": 150
-      },
-      "8": {
-        "filename": "DeedToken.code",
-        "line": 151
-      },
-      "24": {
-        "filename": "DeedToken.code",
-        "line": 152
-      },
-      "32": {
-        "filename": "DeedToken.code",
-        "line": 153
-      },
-      "48": {
-        "filename": "DeedToken.code",
-        "line": 154
-      },
-      "56": {
-        "filename": "DeedToken.code",
-        "line": 155
-      },
-      "64": {
-        "filename": "DeedToken.code",
-        "line": 156
-      },
-      "80": {
-        "filename": "DeedToken.code",
-        "line": 157
-      },
-      "96": {
-        "filename": "DeedToken.code",
-        "line": 158
-      },
-      "112": {
-        "filename": "DeedToken.code",
-        "line": 159
-      },
-      "120": {
-        "filename": "DeedToken.code",
-        "line": 160
-      },
-      "144": {
-        "filename": "DeedToken.code",
-        "line": 162
-      },
-      "152": {
-        "filename": "DeedToken.code",
-        "line": 163
-      },
-      "160": {
-        "filename": "DeedToken.code",
-        "line": 166
+        "line": 229
       },
       "176": {
         "filename": "DeedToken.code",
-        "line": 167
+        "line": 230
       },
-      "192": {
+      "184": {
         "filename": "DeedToken.code",
-        "line": 168
-      },
-      "208": {
-        "filename": "DeedToken.code",
-        "line": 169
-      },
-      "224": {
-        "filename": "DeedToken.code",
-        "line": 170
-      },
-      "240": {
-        "filename": "DeedToken.code",
-        "line": 171
-      },
-      "264": {
-        "filename": "DeedToken.code",
-        "line": 172
-      },
-      "280": {
-        "filename": "DeedToken.code",
-        "line": 173
-      },
-      "288": {
-        "filename": "DeedToken.code",
-        "line": 174
-      }
-    },
-    "61ab4641fa30d9310391025086eec65d200d79268e1b7cd402565e01ba64be3c": {
-      "0": {
-        "filename": "DeedToken.code",
-        "line": 164
-      }
-    },
-    "6c51ff3978e5999d14137af0def4bae8f8e1de85b45fd95466198992e1a51061": {
-      "0": {
-        "filename": "DeedToken.code",
-        "line": 246
-      },
-      "16": {
-        "filename": "DeedToken.code",
-        "line": 247
-      },
-      "24": {
-        "filename": "DeedToken.code",
-        "line": 248
-      },
-      "40": {
-        "filename": "DeedToken.code",
-        "line": 249
-      },
-      "56": {
-        "filename": "DeedToken.code",
-        "line": 250
-      },
-      "72": {
-        "filename": "DeedToken.code",
-        "line": 251
-      },
-      "80": {
-        "filename": "DeedToken.code",
-        "line": 254
-      },
-      "96": {
-        "filename": "DeedToken.code",
-        "line": 255
-      },
-      "104": {
-        "filename": "DeedToken.code",
-        "line": 256
-      },
-      "120": {
-        "filename": "DeedToken.code",
-        "line": 259
-      },
-      "136": {
-        "filename": "DeedToken.code",
-        "line": 260
-      },
-      "144": {
-        "filename": "DeedToken.code",
-        "line": 261
-      },
-      "160": {
-        "filename": "DeedToken.code",
-        "line": 262
-      },
-      "176": {
-        "filename": "DeedToken.code",
-        "line": 263
-      },
-      "192": {
-        "filename": "DeedToken.code",
-        "line": 264
+        "line": 231
       },
       "200": {
         "filename": "DeedToken.code",
-        "line": 265
+        "line": 232
       },
       "216": {
         "filename": "DeedToken.code",
-        "line": 266
+        "line": 236
       },
       "224": {
         "filename": "DeedToken.code",
-        "line": 267
-      },
-      "240": {
-        "filename": "DeedToken.code",
-        "line": 268
+        "line": 237
       },
       "248": {
         "filename": "DeedToken.code",
-        "line": 269
+        "line": 238
       },
-      "256": {
+      "264": {
         "filename": "DeedToken.code",
-        "line": 270
+        "line": 239
       },
       "272": {
         "filename": "DeedToken.code",
-        "line": 271
-      },
-      "280": {
-        "filename": "DeedToken.code",
-        "line": 272
+        "line": 240
       },
       "288": {
         "filename": "DeedToken.code",
-        "line": 274
+        "line": 244
       },
       "296": {
         "filename": "DeedToken.code",
+        "line": 245
+      },
+      "312": {
+        "filename": "DeedToken.code",
+        "line": 248
+      }
+    },
+    "274a2d3c2a4a56fbc531de8a3cbc23c2a0324630f71e6944f887c228b89cceb6": {
+      "0": {
+        "filename": "DeedToken.code",
+        "line": 252
+      },
+      "16": {
+        "filename": "DeedToken.code",
+        "line": 253
+      },
+      "24": {
+        "filename": "DeedToken.code",
+        "line": 254
+      },
+      "40": {
+        "filename": "DeedToken.code",
+        "line": 255
+      },
+      "56": {
+        "filename": "DeedToken.code",
+        "line": 256
+      },
+      "72": {
+        "filename": "DeedToken.code",
+        "line": 257
+      },
+      "80": {
+        "filename": "DeedToken.code",
+        "line": 260
+      },
+      "96": {
+        "filename": "DeedToken.code",
+        "line": 261
+      },
+      "104": {
+        "filename": "DeedToken.code",
+        "line": 262
+      },
+      "120": {
+        "filename": "DeedToken.code",
+        "line": 265
+      },
+      "136": {
+        "filename": "DeedToken.code",
+        "line": 266
+      },
+      "144": {
+        "filename": "DeedToken.code",
+        "line": 267
+      },
+      "160": {
+        "filename": "DeedToken.code",
+        "line": 268
+      },
+      "176": {
+        "filename": "DeedToken.code",
+        "line": 269
+      },
+      "192": {
+        "filename": "DeedToken.code",
+        "line": 270
+      },
+      "200": {
+        "filename": "DeedToken.code",
+        "line": 271
+      },
+      "216": {
+        "filename": "DeedToken.code",
+        "line": 272
+      },
+      "224": {
+        "filename": "DeedToken.code",
+        "line": 273
+      },
+      "240": {
+        "filename": "DeedToken.code",
+        "line": 274
+      },
+      "248": {
+        "filename": "DeedToken.code",
         "line": 275
       },
-      "304": {
+      "256": {
         "filename": "DeedToken.code",
         "line": 276
       },
-      "320": {
+      "272": {
+        "filename": "DeedToken.code",
+        "line": 277
+      },
+      "280": {
         "filename": "DeedToken.code",
         "line": 278
       },
-      "328": {
-        "filename": "DeedToken.code",
-        "line": 279
-      },
-      "344": {
+      "288": {
         "filename": "DeedToken.code",
         "line": 280
       },
-      "360": {
+      "296": {
+        "filename": "DeedToken.code",
+        "line": 281
+      },
+      "304": {
         "filename": "DeedToken.code",
         "line": 282
       },
-      "368": {
-        "filename": "DeedToken.code",
-        "line": 283
-      },
-      "384": {
+      "320": {
         "filename": "DeedToken.code",
         "line": 284
       },
-      "392": {
+      "328": {
         "filename": "DeedToken.code",
         "line": 285
       },
-      "408": {
+      "344": {
         "filename": "DeedToken.code",
-        "line": 287
+        "line": 286
       },
-      "416": {
+      "360": {
         "filename": "DeedToken.code",
         "line": 288
       },
-      "432": {
+      "368": {
         "filename": "DeedToken.code",
         "line": 289
+      },
+      "384": {
+        "filename": "DeedToken.code",
+        "line": 290
+      },
+      "392": {
+        "filename": "DeedToken.code",
+        "line": 291
+      },
+      "408": {
+        "filename": "DeedToken.code",
+        "line": 293
+      },
+      "416": {
+        "filename": "DeedToken.code",
+        "line": 294
+      },
+      "432": {
+        "filename": "DeedToken.code",
+        "line": 295
       },
       "440": {
         "filename": "stdlib.sol",
@@ -545,39 +297,335 @@
       },
       "632": {
         "filename": "DeedToken.code",
-        "line": 291
+        "line": 297
       },
       "648": {
         "filename": "DeedToken.code",
-        "line": 292
+        "line": 298
       },
       "656": {
         "filename": "DeedToken.code",
-        "line": 293
+        "line": 299
       },
       "672": {
         "filename": "DeedToken.code",
-        "line": 294
+        "line": 300
       },
       "680": {
         "filename": "DeedToken.code",
-        "line": 295
+        "line": 301
       },
       "696": {
         "filename": "DeedToken.code",
-        "line": 296
+        "line": 302
       },
       "712": {
         "filename": "DeedToken.code",
-        "line": 297
+        "line": 303
       },
       "720": {
         "filename": "DeedToken.code",
-        "line": 298
+        "line": 304
       },
       "736": {
         "filename": "DeedToken.code",
-        "line": 301
+        "line": 307
+      }
+    },
+    "29e39998d56bfb58eddfc329fa2e7c871c4e2f24ba7d00160d5b9e546c5ed382": {
+      "0": {
+        "filename": "DeedToken.code",
+        "line": 187
+      },
+      "16": {
+        "filename": "DeedToken.code",
+        "line": 188
+      },
+      "32": {
+        "filename": "DeedToken.code",
+        "line": 189
+      },
+      "48": {
+        "filename": "DeedToken.code",
+        "line": 190
+      },
+      "64": {
+        "filename": "DeedToken.code",
+        "line": 191
+      },
+      "72": {
+        "filename": "DeedToken.code",
+        "line": 192
+      },
+      "88": {
+        "filename": "DeedToken.code",
+        "line": 193
+      },
+      "104": {
+        "filename": "DeedToken.code",
+        "line": 194
+      },
+      "120": {
+        "filename": "DeedToken.code",
+        "line": 195
+      },
+      "136": {
+        "filename": "DeedToken.code",
+        "line": 196
+      },
+      "144": {
+        "filename": "DeedToken.code",
+        "line": 197
+      },
+      "152": {
+        "filename": "DeedToken.code",
+        "line": 198
+      }
+    },
+    "3157f4a1e37454a968139292b6fad9ca25acf5ed1ff81a9272029e5789ab400c": {
+      "0": {
+        "filename": "DeedToken.code",
+        "line": 151
+      },
+      "16": {
+        "filename": "DeedToken.code",
+        "line": 152
+      },
+      "24": {
+        "filename": "DeedToken.code",
+        "line": 153
+      },
+      "40": {
+        "filename": "DeedToken.code",
+        "line": 154
+      },
+      "56": {
+        "filename": "DeedToken.code",
+        "line": 155
+      },
+      "72": {
+        "filename": "DeedToken.code",
+        "line": 182
+      }
+    },
+    "3840b27935f4aa916b43cde0da48214410684afe4120612cd24356b9eb16a3da": {
+      "0": {
+        "filename": "DeedToken.code",
+        "line": 36
+      },
+      "8": {
+        "filename": "DeedToken.code",
+        "line": 37
+      },
+      "24": {
+        "filename": "DeedToken.code",
+        "line": 38
+      },
+      "48": {
+        "filename": "DeedToken.code",
+        "line": 39
+      },
+      "64": {
+        "filename": "DeedToken.code",
+        "line": 40
+      },
+      "72": {
+        "filename": "DeedToken.code",
+        "line": 41
+      },
+      "88": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 19
+      },
+      "96": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 19
+      },
+      "104": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 19
+      },
+      "112": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 19
+      },
+      "120": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 19
+      },
+      "128": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 19
+      },
+      "136": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 19
+      },
+      "152": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 19
+      },
+      "168": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 19
+      },
+      "176": {
+        "filename": "DeedToken.code",
+        "line": 56
+      },
+      "192": {
+        "filename": "DeedToken.code",
+        "line": 59
+      },
+      "200": {
+        "filename": "DeedToken.code",
+        "line": 60
+      },
+      "216": {
+        "filename": "DeedToken.code",
+        "line": 63
+      }
+    },
+    "4d8355d728e215250b978eb2dccde07235ce73854d8a035e9221f308df1d50d7": {
+      "0": {
+        "filename": "DeedToken.code",
+        "line": 156
+      },
+      "8": {
+        "filename": "DeedToken.code",
+        "line": 157
+      },
+      "24": {
+        "filename": "DeedToken.code",
+        "line": 158
+      },
+      "32": {
+        "filename": "DeedToken.code",
+        "line": 159
+      },
+      "48": {
+        "filename": "DeedToken.code",
+        "line": 160
+      },
+      "56": {
+        "filename": "DeedToken.code",
+        "line": 161
+      },
+      "64": {
+        "filename": "DeedToken.code",
+        "line": 162
+      },
+      "80": {
+        "filename": "DeedToken.code",
+        "line": 163
+      },
+      "96": {
+        "filename": "DeedToken.code",
+        "line": 164
+      },
+      "112": {
+        "filename": "DeedToken.code",
+        "line": 165
+      },
+      "120": {
+        "filename": "DeedToken.code",
+        "line": 166
+      },
+      "144": {
+        "filename": "DeedToken.code",
+        "line": 168
+      },
+      "152": {
+        "filename": "DeedToken.code",
+        "line": 169
+      },
+      "160": {
+        "filename": "DeedToken.code",
+        "line": 172
+      },
+      "176": {
+        "filename": "DeedToken.code",
+        "line": 173
+      },
+      "192": {
+        "filename": "DeedToken.code",
+        "line": 174
+      },
+      "208": {
+        "filename": "DeedToken.code",
+        "line": 175
+      },
+      "224": {
+        "filename": "DeedToken.code",
+        "line": 176
+      },
+      "240": {
+        "filename": "DeedToken.code",
+        "line": 177
+      },
+      "264": {
+        "filename": "DeedToken.code",
+        "line": 178
+      },
+      "280": {
+        "filename": "DeedToken.code",
+        "line": 179
+      },
+      "288": {
+        "filename": "DeedToken.code",
+        "line": 180
+      }
+    },
+    "61ab4641fa30d9310391025086eec65d200d79268e1b7cd402565e01ba64be3c": {
+      "0": {
+        "filename": "DeedToken.code",
+        "line": 258
+      }
+    },
+    "61ecf9aab9817a840e362b5a0c7973481f14f78b400471d7c187f89a1458918a": {
+      "0": {
+        "filename": "<entry-selector>",
+        "line": 1
+      },
+      "8": {
+        "filename": "<entry-selector>",
+        "line": 2
+      },
+      "24": {
+        "filename": "<entry-selector>",
+        "line": 3
+      },
+      "32": {
+        "filename": "<entry-selector>",
+        "line": 4
+      },
+      "48": {
+        "filename": "<entry-selector>",
+        "line": 5
+      },
+      "56": {
+        "filename": "<entry-selector>",
+        "line": 6
+      },
+      "72": {
+        "filename": "<entry-selector>",
+        "line": 7
+      },
+      "88": {
+        "filename": "<entry-selector>",
+        "line": 8
+      },
+      "96": {
+        "filename": "<entry-selector>",
+        "line": 9
+      },
+      "112": {
+        "filename": "<entry-selector>",
+        "line": 10
+      },
+      "128": {
+        "filename": "<entry-selector>",
+        "line": 11
       }
     },
     "73867e37ec1ffb9ecb087a37d71892215b0b805a73c127da219a28729084e2e0": {
@@ -590,8 +638,366 @@
         "line": 2
       }
     },
+    "8858460ee6f3b1a8a875ecb107a746506018f955b0221cd1b2faa142b9f67e2f": {
+      "0": {
+        "filename": "DeedToken.code",
+        "line": 310
+      },
+      "8": {
+        "filename": "DeedToken.code",
+        "line": 311
+      },
+      "56": {
+        "filename": "DeedToken.code",
+        "line": 312
+      },
+      "64": {
+        "filename": "DeedToken.code",
+        "line": 313
+      },
+      "80": {
+        "filename": "DeedToken.code",
+        "line": 316
+      },
+      "88": {
+        "filename": "DeedToken.code",
+        "line": 317
+      },
+      "136": {
+        "filename": "DeedToken.code",
+        "line": 318
+      },
+      "144": {
+        "filename": "DeedToken.code",
+        "line": 319
+      },
+      "160": {
+        "filename": "DeedToken.code",
+        "line": 322
+      },
+      "168": {
+        "filename": "DeedToken.code",
+        "line": 323
+      },
+      "216": {
+        "filename": "DeedToken.code",
+        "line": 324
+      },
+      "224": {
+        "filename": "DeedToken.code",
+        "line": 325
+      }
+    },
     "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7": {},
-    "c44bd55ccd8332458e6085cc95e9efcd0ace6d0d79ecea00d1f22cad5199de34": {
+    "e6936e8f0e7b8fe98c2ca66eee9d4e9dafcfc747defef9cb795288fabb1b7ef3": {
+      "0": {
+        "filename": "DeedToken.code",
+        "line": 201
+      },
+      "16": {
+        "filename": "DeedToken.code",
+        "line": 202
+      },
+      "24": {
+        "filename": "DeedToken.code",
+        "line": 203
+      },
+      "40": {
+        "filename": "DeedToken.code",
+        "line": 204
+      },
+      "56": {
+        "filename": "DeedToken.code",
+        "line": 205
+      },
+      "64": {
+        "filename": "DeedToken.code",
+        "line": 206
+      },
+      "80": {
+        "filename": "DeedToken.code",
+        "line": 207
+      },
+      "88": {
+        "filename": "DeedToken.code",
+        "line": 208
+      },
+      "96": {
+        "filename": "DeedToken.code",
+        "line": 209
+      },
+      "112": {
+        "filename": "DeedToken.code",
+        "line": 210
+      },
+      "128": {
+        "filename": "DeedToken.code",
+        "line": 211
+      },
+      "136": {
+        "filename": "DeedToken.code",
+        "line": 212
+      },
+      "144": {
+        "filename": "DeedToken.code",
+        "line": 213
+      }
+    },
+    "e7c5f360e8e691c2939ef72cb128f1fddb46aa3b11b6912a8ca473c9a36fe528": {
+      "0": {
+        "filename": "DeedToken.code",
+        "line": 99
+      },
+      "8": {
+        "filename": "DeedToken.code",
+        "line": 100
+      },
+      "24": {
+        "filename": "DeedToken.code",
+        "line": 101
+      },
+      "48": {
+        "filename": "DeedToken.code",
+        "line": 102
+      },
+      "64": {
+        "filename": "DeedToken.code",
+        "line": 103
+      },
+      "72": {
+        "filename": "DeedToken.code",
+        "line": 104
+      },
+      "88": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 31
+      },
+      "96": {
+        "filename": "DeedToken.code",
+        "line": 110
+      },
+      "112": {
+        "filename": "DeedToken.code",
+        "line": 113
+      },
+      "128": {
+        "filename": "DeedToken.code",
+        "line": 116
+      }
+    },
+    "ea3168d593e9b40c24850d848458400ca392fd6b708f400b0fd93cd90e93952e": {
+      "0": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 20
+      },
+      "8": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "16": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "32": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "80": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "96": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "112": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "120": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "144": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "152": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "312": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "336": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "352": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "360": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "408": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "424": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "432": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "448": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "464": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "472": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "480": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "496": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "504": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "512": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "520": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "528": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      },
+      "544": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 21
+      }
+    },
+    "ee173513570bafc5af9e3d4ce7f3926cf6808254bd83d4e7761b0e2115faa67b": {
+      "0": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 32
+      },
+      "16": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 32
+      },
+      "24": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 32
+      },
+      "48": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 32
+      },
+      "56": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 32
+      },
+      "216": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 32
+      },
+      "240": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 32
+      },
+      "248": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 32
+      },
+      "264": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 32
+      }
+    },
+    "f24e1e7aa04d89aad2945816b6e9b921f2b3892da9ba53e2383c148351b96d0c": {
+      "0": {
+        "filename": "DeedToken.code",
+        "line": 233
+      },
+      "16": {
+        "filename": "DeedToken.code",
+        "line": 234
+      }
+    },
+    "f7952b2592556a9366e17b6f1ca35cfe359a583cae8b6202f12c8a03f9bae268": {
+      "0": {
+        "filename": "DeedToken.code",
+        "line": 136
+      },
+      "16": {
+        "filename": "DeedToken.code",
+        "line": 137
+      },
+      "24": {
+        "filename": "DeedToken.code",
+        "line": 138
+      },
+      "40": {
+        "filename": "DeedToken.code",
+        "line": 139
+      },
+      "56": {
+        "filename": "DeedToken.code",
+        "line": 140
+      },
+      "72": {
+        "filename": "DeedToken.code",
+        "line": 141
+      },
+      "80": {
+        "filename": "DeedToken.code",
+        "line": 142
+      },
+      "96": {
+        "filename": "DeedToken.code",
+        "line": 143
+      },
+      "112": {
+        "filename": "DeedToken.code",
+        "line": 144
+      },
+      "120": {
+        "filename": "DeedToken.code",
+        "line": 145
+      },
+      "136": {
+        "filename": "DeedToken.code",
+        "line": 146
+      },
+      "152": {
+        "filename": "DeedToken.code",
+        "line": 147
+      },
+      "168": {
+        "filename": "DeedToken.code",
+        "line": 148
+      }
+    },
+    "f8118a486aff58b15f7ab2555c018b14816ebd1ad12b57b95c755ee38d149333": {
       "0": {
         "filename": "DeedToken.code",
         "line": 4
@@ -653,418 +1059,28 @@
         "line": 14
       },
       "168": {
-        "filename": "DeedToken.code",
-        "line": 24
-      },
-      "184": {
-        "filename": "DeedToken.code",
-        "line": 27
-      }
-    },
-    "e6936e8f0e7b8fe98c2ca66eee9d4e9dafcfc747defef9cb795288fabb1b7ef3": {
-      "0": {
-        "filename": "DeedToken.code",
-        "line": 195
-      },
-      "16": {
-        "filename": "DeedToken.code",
-        "line": 196
-      },
-      "24": {
-        "filename": "DeedToken.code",
-        "line": 197
-      },
-      "40": {
-        "filename": "DeedToken.code",
-        "line": 198
-      },
-      "56": {
-        "filename": "DeedToken.code",
-        "line": 199
-      },
-      "64": {
-        "filename": "DeedToken.code",
-        "line": 200
-      },
-      "80": {
-        "filename": "DeedToken.code",
-        "line": 201
-      },
-      "88": {
-        "filename": "DeedToken.code",
-        "line": 202
-      },
-      "96": {
-        "filename": "DeedToken.code",
-        "line": 203
-      },
-      "112": {
-        "filename": "DeedToken.code",
-        "line": 204
-      },
-      "128": {
-        "filename": "DeedToken.code",
-        "line": 205
-      },
-      "136": {
-        "filename": "DeedToken.code",
-        "line": 206
-      },
-      "144": {
-        "filename": "DeedToken.code",
-        "line": 207
-      }
-    },
-    "e7c5f360e8e691c2939ef72cb128f1fddb46aa3b11b6912a8ca473c9a36fe528": {
-      "0": {
-        "filename": "DeedToken.code",
-        "line": 93
-      },
-      "8": {
-        "filename": "DeedToken.code",
-        "line": 94
-      },
-      "24": {
-        "filename": "DeedToken.code",
-        "line": 95
-      },
-      "48": {
-        "filename": "DeedToken.code",
-        "line": 96
-      },
-      "64": {
-        "filename": "DeedToken.code",
-        "line": 97
-      },
-      "72": {
-        "filename": "DeedToken.code",
-        "line": 98
-      },
-      "88": {
         "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 32
-      },
-      "96": {
-        "filename": "DeedToken.code",
-        "line": 104
-      },
-      "112": {
-        "filename": "DeedToken.code",
-        "line": 107
-      },
-      "128": {
-        "filename": "DeedToken.code",
-        "line": 110
-      }
-    },
-    "ea3168d593e9b40c24850d848458400ca392fd6b708f400b0fd93cd90e93952e": {
-      "0": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 19
-      },
-      "8": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "16": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "32": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "80": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "96": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "112": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "120": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "144": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "152": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "312": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "336": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "352": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "360": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "408": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "424": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "432": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "448": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "464": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "472": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "480": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "496": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "504": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "512": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "520": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "528": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      },
-      "544": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 20
-      }
-    },
-    "ee173513570bafc5af9e3d4ce7f3926cf6808254bd83d4e7761b0e2115faa67b": {
-      "0": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 33
-      },
-      "16": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 33
-      },
-      "24": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 33
-      },
-      "48": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 33
-      },
-      "56": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 33
+        "line": 15
       },
       "216": {
         "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 33
+        "line": 15
+      },
+      "224": {
+        "filename": "../contracts/Dao/DeedToken.tsol",
+        "line": 15
       },
       "240": {
         "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 33
+        "line": 16
       },
-      "248": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 33
-      },
-      "264": {
-        "filename": "../contracts/Dao/DeedToken.tsol",
-        "line": 33
-      }
-    },
-    "f24e1e7aa04d89aad2945816b6e9b921f2b3892da9ba53e2383c148351b96d0c": {
-      "0": {
+      "256": {
         "filename": "DeedToken.code",
-        "line": 227
-      },
-      "16": {
-        "filename": "DeedToken.code",
-        "line": 228
-      }
-    },
-    "f2ebb3ff81fb55f45d540af7821117fc317cf2c2f34a9782794e889c6f46432c": {
-      "0": {
-        "filename": "DeedToken.code",
-        "line": 211
-      },
-      "16": {
-        "filename": "DeedToken.code",
-        "line": 212
-      },
-      "24": {
-        "filename": "DeedToken.code",
-        "line": 213
-      },
-      "40": {
-        "filename": "DeedToken.code",
-        "line": 214
-      },
-      "56": {
-        "filename": "DeedToken.code",
-        "line": 215
-      },
-      "72": {
-        "filename": "DeedToken.code",
-        "line": 216
-      },
-      "80": {
-        "filename": "DeedToken.code",
-        "line": 217
-      },
-      "88": {
-        "filename": "DeedToken.code",
-        "line": 218
-      },
-      "104": {
-        "filename": "DeedToken.code",
-        "line": 219
-      },
-      "120": {
-        "filename": "DeedToken.code",
-        "line": 220
-      },
-      "128": {
-        "filename": "DeedToken.code",
-        "line": 221
-      },
-      "144": {
-        "filename": "DeedToken.code",
-        "line": 222
-      },
-      "168": {
-        "filename": "DeedToken.code",
-        "line": 223
-      },
-      "176": {
-        "filename": "DeedToken.code",
-        "line": 224
-      },
-      "184": {
-        "filename": "DeedToken.code",
-        "line": 225
-      },
-      "200": {
-        "filename": "DeedToken.code",
-        "line": 226
-      },
-      "216": {
-        "filename": "DeedToken.code",
-        "line": 230
-      },
-      "224": {
-        "filename": "DeedToken.code",
-        "line": 231
-      },
-      "248": {
-        "filename": "DeedToken.code",
-        "line": 232
-      },
-      "264": {
-        "filename": "DeedToken.code",
-        "line": 233
+        "line": 30
       },
       "272": {
         "filename": "DeedToken.code",
-        "line": 234
-      },
-      "288": {
-        "filename": "DeedToken.code",
-        "line": 238
-      },
-      "296": {
-        "filename": "DeedToken.code",
-        "line": 239
-      },
-      "312": {
-        "filename": "DeedToken.code",
-        "line": 242
-      }
-    },
-    "f7952b2592556a9366e17b6f1ca35cfe359a583cae8b6202f12c8a03f9bae268": {
-      "0": {
-        "filename": "DeedToken.code",
-        "line": 130
-      },
-      "16": {
-        "filename": "DeedToken.code",
-        "line": 131
-      },
-      "24": {
-        "filename": "DeedToken.code",
-        "line": 132
-      },
-      "40": {
-        "filename": "DeedToken.code",
-        "line": 133
-      },
-      "56": {
-        "filename": "DeedToken.code",
-        "line": 134
-      },
-      "72": {
-        "filename": "DeedToken.code",
-        "line": 135
-      },
-      "80": {
-        "filename": "DeedToken.code",
-        "line": 136
-      },
-      "96": {
-        "filename": "DeedToken.code",
-        "line": 137
-      },
-      "112": {
-        "filename": "DeedToken.code",
-        "line": 138
-      },
-      "120": {
-        "filename": "DeedToken.code",
-        "line": 139
-      },
-      "136": {
-        "filename": "DeedToken.code",
-        "line": 140
-      },
-      "152": {
-        "filename": "DeedToken.code",
-        "line": 141
-      },
-      "168": {
-        "filename": "DeedToken.code",
-        "line": 142
+        "line": 33
       }
     }
   }

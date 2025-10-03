@@ -6456,8 +6456,8 @@
     },
     "61ab4641fa30d9310391025086eec65d200d79268e1b7cd402565e01ba64be3c": {
       "0": {
-        "filename": "GovernanceToken.code",
-        "line": 9023
+        "filename": "../contracts/Dao/GovernanceToken.tsol",
+        "line": 1056
       }
     },
     "6207f4250cd908c3493b7c4a51888b9419cc04c0b8c38eb52d73ed1be333fd56": {

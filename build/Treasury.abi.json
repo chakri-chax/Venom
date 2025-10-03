@@ -261,15 +261,6 @@
 			]
 		},
 		{
-			"name": "withdrawWvenAmount",
-			"inputs": [
-				{"name":"userShare","type":"uint256"},
-				{"name":"user","type":"address"}
-			],
-			"outputs": [
-			]
-		},
-		{
 			"name": "usdtRate",
 			"inputs": [
 				{"name":"asset","type":"address"},
@@ -285,16 +276,6 @@
 				{"components":[{"name":"asset","type":"address"},{"name":"rate","type":"uint256"},{"name":"decimals","type":"uint8"},{"name":"lastUpdatedTimeStamp","type":"uint64"}],"name":"newPriceFeeds","type":"tuple[]"}
 			],
 			"outputs": [
-			]
-		},
-		{
-			"name": "fetchAssetPriceInUsd",
-			"inputs": [
-				{"name":"assetIndex","type":"uint256"},
-				{"name":"assetAmount","type":"uint256"}
-			],
-			"outputs": [
-				{"name":"value0","type":"uint256"}
 			]
 		},
 		{
@@ -722,6 +703,14 @@
 			]
 		},
 		{
+			"name": "pendingWithdrawals",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"user","type":"address"},{"name":"indices","type":"uint256[]"},{"name":"timeStamp","type":"uint256"}],"name":"pendingWithdrawals","type":"tuple"}
+			]
+		},
+		{
 			"name": "assetPriceFeed",
 			"inputs": [
 			],
@@ -743,14 +732,6 @@
 			],
 			"outputs": [
 				{"components":[{"name":"root","type":"address"},{"name":"amount","type":"uint128"}],"name":"balanceOfArray","type":"tuple[]"}
-			]
-		},
-		{
-			"name": "pendingWithdrawals",
-			"inputs": [
-			],
-			"outputs": [
-				{"components":[{"name":"user","type":"address"},{"name":"indices","type":"uint256[]"},{"name":"timeStamp","type":"uint256"}],"name":"pendingWithdrawals","type":"tuple"}
 			]
 		}
 	],
@@ -947,39 +928,6 @@
 			]
 		},
 		{
-			"name": "balance",
-			"inputs": [
-				{"name":"root","type":"address"},
-				{"name":"amount","type":"uint256"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "tempRoot",
-			"inputs": [
-				{"name":"root","type":"address"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "tempBal",
-			"inputs": [
-				{"name":"bal","type":"uint128"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "sender",
-			"inputs": [
-				{"name":"sender","type":"address"}
-			],
-			"outputs": [
-			]
-		},
-		{
 			"name": "pendingWithdrawalsss",
 			"inputs": [
 				{"name":"user","type":"address"},
@@ -999,17 +947,9 @@
 			]
 		},
 		{
-			"name": "step",
+			"name": "balance",
 			"inputs": [
-				{"name":"step","type":"uint256"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "log",
-			"inputs": [
-				{"name":"msg","type":"string"},
+				{"name":"root","type":"address"},
 				{"name":"amount","type":"uint256"}
 			],
 			"outputs": [
@@ -1061,6 +1001,7 @@
 		{"name":"forceUnlock","type":"bool"},
 		{"name":"withdrawInProgress","type":"bool"},
 		{"name":"nftAddressOfIdMock","type":"map(uint256,address)"},
+		{"name":"drainTreasuryInProgress","type":"bool"},
 		{"name":"lockedNFTs","type":"map(address,map(address,uint256[]))"},
 		{"name":"contractlockedNFTs","type":"map(address,map(address,uint256[]))"},
 		{"name":"isTopTreasuryHolder","type":"map(address,bool)"},
@@ -1072,12 +1013,11 @@
 		{"name":"rootToWallet","type":"map(address,address)"},
 		{"name":"nftOwnerOfId","type":"map(address,map(uint256,address))"},
 		{"components":[{"name":"value","type":"uint128"},{"name":"payload","type":"cell"}],"name":"localCallbacks","type":"map(address,tuple)"},
+		{"components":[{"name":"user","type":"address"},{"name":"indices","type":"uint256[]"},{"name":"timeStamp","type":"uint256"}],"name":"pendingWithdrawals","type":"tuple"},
 		{"components":[{"name":"asset","type":"address"},{"name":"rate","type":"uint256"},{"name":"decimals","type":"uint8"},{"name":"lastUpdatedTimeStamp","type":"uint64"}],"name":"assetPriceFeed","type":"tuple[]"},
 		{"name":"walletToRoot","type":"map(address,address)"},
 		{"name":"tempBalances","type":"map(address,uint128)"},
 		{"components":[{"name":"root","type":"address"},{"name":"amount","type":"uint128"}],"name":"balanceOfArray","type":"tuple[]"},
-		{"name":"tempRootAddress","type":"address"},
-		{"name":"drainTreasuryInProgress","type":"bool"},
-		{"components":[{"name":"user","type":"address"},{"name":"indices","type":"uint256[]"},{"name":"timeStamp","type":"uint256"}],"name":"pendingWithdrawals","type":"tuple"}
+		{"name":"tempRootAddress","type":"address"}
 	]
 }

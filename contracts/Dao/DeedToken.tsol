@@ -9,27 +9,28 @@ import "../TIP3Root/contracts/interfaces/ITokenWallet.tsol";
 contract DeedToken {
 	uint64 static nonce_;
 	address deedTokenRoot;
-    constructor(address _deedTokenRoot) public {
-        
-        deedTokenRoot = _deedTokenRoot;
-       
-    }
 
-    function mintForTreasury(address to, uint128 amount) external {
-        TvmCell e;
-        ITokenRoot(deedTokenRoot).mint{value:2 ever, flag:64}({
-            amount: amount,
-            recipient: to,
-            deployWalletValue: 0.5 ever,
-            remainingGasTo: msg.sender,
-            notify: true,
-            payload: e
+	constructor(address _deedTokenRoot) public {
+		tvm.accept();
+		tvm.rawReserve(0.5 ever, 0);
+		deedTokenRoot = _deedTokenRoot;
+	}
 
-        });
+	function mintForTreasury(address to, uint128 amount) external {
+		TvmCell e;
+		ITokenRoot(deedTokenRoot).mint{value: 1 ever, flag: 64}({
+			amount: amount,
+			recipient: to,
+			deployWalletValue: 0.5 ever,
+			remainingGasTo: msg.sender,
+			notify: true,
+			payload: e
+		});
+	}
 
-    }
-
-    function getCallbackAmount() public view {
+	function getCallbackAmount() public view {
 		msg.sender.transfer({value: 1 ever, flag: 128, bounce: false});
 	}
+
+	
 }

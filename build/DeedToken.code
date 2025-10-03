@@ -19,6 +19,12 @@ IF
 LDMSGADDR
 ENDS
 .loc ../contracts/Dao/DeedToken.tsol, 14
+ACCEPT
+.loc ../contracts/Dao/DeedToken.tsol, 15
+PUSHINT 500000000
+PUSHINT 0
+RAWRESERVE
+.loc ../contracts/Dao/DeedToken.tsol, 16
 SETGLOB 11
 .loc ../contracts/Dao/DeedToken.tsol, 0
 CALLREF {
@@ -35,7 +41,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/DeedToken.tsol, 18
+.loc ../contracts/Dao/DeedToken.tsol, 19
 OVER
 PUSHCONT {
 	LDREF
@@ -57,10 +63,10 @@ CALLREF {
 THROW 0
 
 .macro mintForTreasury_4c2dac3b_internal_macro
-.loc ../contracts/Dao/DeedToken.tsol, 19
+.loc ../contracts/Dao/DeedToken.tsol, 20
 PUSHREF {
 }
-.loc ../contracts/Dao/DeedToken.tsol, 20
+.loc ../contracts/Dao/DeedToken.tsol, 21
 TRUE
 GETGLOB 9
 PUSHINT 500000000
@@ -98,7 +104,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/DeedToken.tsol, 32
+.loc ../contracts/Dao/DeedToken.tsol, 31
 ENDS
 .loc ../contracts/Dao/DeedToken.tsol, 0
 CALLREF {
@@ -114,7 +120,7 @@ THROW 0
 CALL $getCallbackAmount_178eb49d_internal_macro$
 
 .macro getCallbackAmount_178eb49d_internal_macro
-.loc ../contracts/Dao/DeedToken.tsol, 33
+.loc ../contracts/Dao/DeedToken.tsol, 32
 GETGLOB 9
 NEWC
 STSLICECONST x42_
