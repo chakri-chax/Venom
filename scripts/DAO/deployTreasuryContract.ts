@@ -35,8 +35,11 @@ async function mainS() {
     const userWvenomTokenWalletAddress = new Address("0:9b264e76f3b413c0001d57bb5c7885de3db88e6df7f78f10b81315b6865de3b6")
     const userW3wTokenWalletAddress = new Address("0:f4c410f546e61cfd583cf245ba539e0baf8fd557f08513a5ac14648754615036")
     const userWethTokenWalletAddress = new Address("0:16ddab5fbe9bd9a592b536dd7209504d2f7b45cba535ea88ec1347e32fa4c092")
+    const DeedTokenInstanceAddress = new Address("0:674817c72e2708dd03a72244f59926dfed85ebbda7f16920f00dc44e06dd7dfd");
 
-    console.log(" Signer address:", signer.publicKey!);
+    // console.log(" Signer address:", signer.publicKey!);
+    console.log("Deploying Treasury contract...");
+    
 
     const { contract: treasuryContractInstance, tx } = await locklift.factory.deployContract({
         contract: "Treasury",
@@ -54,7 +57,7 @@ async function mainS() {
             _founderNFT: FounderNFT,
             _mainWallet: OWNER,
             _priceFeed: [USDT, WVENOM],
-            _deedToken: USDT,
+            _deedToken: DeedTokenInstanceAddress,
             _DaiToEthPriceFeed: new Address("0:72a4629b7c0f9ffdffa141521658cdbba2e66aac2d70f640e504e60ea0a9b4dd"),
             _depositingAddress: OWNER,
             _WETH: WETH,
@@ -171,6 +174,29 @@ async function mainS() {
     //     console.log('====================================');
     // }
 
+    // change root owner of deed 
+    // const treasuryContract = await locklift.factory.getDeployedContract("Treasury", await treasuryContractInstance.address);
+
+    const deedRootContract = await locklift.factory.getDeployedContract("TokenRoot", DeedTokenInstanceAddress);
+    try{
+        const { traceTree } = await locklift.tracing.trace(
+            deedRootContract.methods
+                .transferOwnership({
+                    newOwner: treasuryContractInstance.address,
+                    remainingGasTo: new Address("0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081"),
+                    callbacks: []
+                    
+                }).send({
+                    from: OWNER,
+                    amount: toNano(2),
+                })
+        );
+
+        await traceTree?.beautyPrint();
+    }catch(error){
+
+    }
+
     // deposit admin func 
     try {
         const users = [OWNER, addr2]
@@ -193,26 +219,27 @@ async function mainS() {
     } catch (error) {
 
     }
-     try {
-        const users = [OWNER, addr2]
-        const daiAmounts = [10, 11]
+    //  try {
+    //     const users = [OWNER, addr2]
+    //     const daiAmounts = [10, 11]
 
 
-        const { traceTree } = await locklift.tracing.trace(
-            treasuryContract.methods
-                .withdraw({
-                   indices: [0]
-                })
-                .send({
-                    from: OWNER,
-                    amount: toNano(13),
-                }),
-        );
+    //     const { traceTree } = await locklift.tracing.trace(
+    //         treasuryContract.methods
+    //             .withdraw({
+    //                indices: [0]
+    //             })
+    //             .send({
+    //                 from: OWNER,
+    //                 amount: toNano(6),
+    //             }),
+    //     );
 
-        await traceTree?.beautyPrint();
-    } catch (error) {
+    //     await traceTree?.beautyPrint();
+    // } catch (error) {
 
-    }
+    // }
+
 
     // const userDaiTokenWallet = new locklift.provider.Contract(TIP3_WALLET_ABI, userDaiTokenWalletAddress);
     // {

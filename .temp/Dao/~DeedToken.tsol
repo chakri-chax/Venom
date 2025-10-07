@@ -3,14 +3,14 @@ pragma ever-solidity >=0.62.0;
 pragma AbiHeader expire;
 pragma AbiHeader time;
 pragma AbiHeader pubkey;
-import "../TIP3Root/contracts/interfaces/ITokenRoot.tsol";
-// import "../TIP3Root/contracts/interfaces/ITransferableOwnership.tsol";
+import "../TIP3Root/contracts/interfaces/~ITokenRoot.tsol";
+// import "../TIP3Root/contracts/interfaces/~ITransferableOwnership.tsol";
 
-import "../TIP3Root/contracts/interfaces/ITokenWallet.tsol";
-import "../TIP3Root/contracts/interfaces/IAcceptTokensTransferCallback.tsol";
+import "../TIP3Root/contracts/interfaces/~ITokenWallet.tsol";
+import "../TIP3Root/contracts/interfaces/~IAcceptTokensTransferCallback.tsol";
 
-// import "../TIP3Root/contracts/structures/ICallbackParamsStructure.tsol";
-// import "./Treasury.tsol";
+// import "../TIP3Root/contracts/structures/~ICallbackParamsStructure.tsol";
+import "./~Treasury.tsol";
 
 interface IChangeOwnership {
      struct CallbackParams {
@@ -55,6 +55,7 @@ contract DeedToken is IDeedToken  {
 	function onDeployWallet(address wallet) public {
 		deedTokenWallet = wallet;
        
+
 	}
 
     function changeRootOwner(address newOwner) external onlyOwner {

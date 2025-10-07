@@ -45,9 +45,12 @@ async function mainS() {
             nonce_: locklift.utils.getRandomNonce(),
         },
         constructorParams: {
-          _deedTokenRoot : DeedTokenRootAddress
+          _deedTokenRoot : DeedTokenRootAddress,
+          _treasuryOwner: OWNER,
+
+
         },
-        value: locklift.utils.toNano(2),
+        value: locklift.utils.toNano(5),
     });
 
     console.log(`DeedToken deployed at :: ${treasuryContractInstance.address.toString()}`);

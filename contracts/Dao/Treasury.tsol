@@ -74,7 +74,17 @@ interface AggregatorV3Interface {
 			uint80 answeredInRound
 		);
 }
-
+    interface IChangeOwnership {
+     struct CallbackParams {
+        uint128 value;
+        TvmCell payload;
+    }
+    function transferOwnership(
+        address newOwner,
+        address remainingGasTo,
+        mapping(address => CallbackParams) callbacks
+    ) external;
+}
 interface INft {
     function transfer(
         address newOwner,
@@ -348,24 +358,24 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		require(_distributedTokenWallet != address(0), INVALID_ADDRESS);
 	}
 
-	function addAsset(newAssetStruct newAsset) public onlyOwnerOrGovernance {
-		require(newAsset.asset != address(0), INVALID_ADDRESS);
-		require(newAsset.dexPair != address(0), INVALID_ADDRESS);
-		require(newAsset.priceFeed != address(0), INVALID_ADDRESS);
-		require(newAsset.decimals > 0, INVALID_ASSET);
-		require(
-			newAsset._newAssetAllocations.length == assets.length + 1,
-			INVALID_RATIO
-		);
-		uint256 n = assets.length;
-		require(n < 5, MAX_ASSETS_REACHED);
-		calculateSumOfRatios(newAsset._newAssetAllocations);
-		assetAllocationRatio = newAsset._newAssetAllocations;
-		assets.push(newAsset.asset);
-		assetsDexPairs.push(newAsset.dexPair);
-		priceFeed.push(newAsset.priceFeed);
-		assetsdecimals.push(newAsset.decimals);
-	}
+	// function addAsset(newAssetStruct newAsset) public onlyOwnerOrGovernance {
+	// 	require(newAsset.asset != address(0), INVALID_ADDRESS);
+	// 	require(newAsset.dexPair != address(0), INVALID_ADDRESS);
+	// 	require(newAsset.priceFeed != address(0), INVALID_ADDRESS);
+	// 	require(newAsset.decimals > 0, INVALID_ASSET);
+	// 	require(
+	// 		newAsset._newAssetAllocations.length == assets.length + 1,
+	// 		INVALID_RATIO
+	// 	);
+	// 	uint256 n = assets.length;
+	// 	require(n < 5, MAX_ASSETS_REACHED);
+	// 	calculateSumOfRatios(newAsset._newAssetAllocations);
+	// 	assetAllocationRatio = newAsset._newAssetAllocations;
+	// 	assets.push(newAsset.asset);
+	// 	assetsDexPairs.push(newAsset.dexPair);
+	// 	priceFeed.push(newAsset.priceFeed);
+	// 	assetsdecimals.push(newAsset.decimals);
+	// }
 
 	function onAcceptTokensTransfer(
 		address tokenRoot,
@@ -477,9 +487,9 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		}
 	}
 
-	function getUserDeposits() external view returns (User[]) {
-		return userDeposits[msg.sender];
-	}
+	// function getUserDeposits() external view returns (User[]) {
+	// 	return userDeposits[msg.sender];
+	// }
 
 
 	function _transferAllNFTs(address collection) internal {
@@ -854,11 +864,11 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		for (uint256 i = 0; i < cnt; i++) {
 			require(indices[i] < userDepositCount, INVALID_INDEX);
 			User userDeposit = userDeposits[user][indices[i]];
-			require(
-				block.timestamp >=
-					userDeposit.firstDepositTime + FULL_TERM_LOCK_PERIOD,
-				DEPOSIT_NOT_ELIGIBLE
-			);
+			// require(
+			// 	block.timestamp >=
+			// 		userDeposit.firstDepositTime + FULL_TERM_LOCK_PERIOD,
+			// 	DEPOSIT_NOT_ELIGIBLE
+			// );
 
 			
 			totalAmount += userDeposit.treasuryDeposit; //in Usdt 6 decimals
@@ -947,9 +957,7 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		uint256 amountAfterFee = totalDepositInUsd - feeAmount;
 
 		uint256 daiAmountToMint = (amountAfterFee * DEED_EMISSION_RATE * 10 ** 6) / (10 ** 6);
-
-		// // IDeedToken(deedToken).mintForTreasury(msg.sender, daiAmountToMint);
-
+		
 		totalTreasuryPoints -= totalAmount;
 		// // // Update treasury points for user
 		treasuryBalances[user] -= totalAmount;
@@ -958,9 +966,30 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		removeUserDeposits(user, indices);
 		// emit Withdraw(msg.sender, totalAmount, daiAmountToMint);
 
+		// TvmCell e;
+		// // // IDeedToken(deedToken).mintForTreasury(msg.sender, daiAmountToMint);
+		// ITokenRoot(deedToken).mint{value: 0, flag: 64}({
+        //     amount: uint128(daiAmountToMint),
+        //     recipient: user,
+        //     deployWalletValue: 1 ever,
+        //     remainingGasTo: treasuryOwner,
+        //     notify: true,
+        //     payload: e
+        // });
+	emit Debug("withdrawInternal",msg.sender,1);
+	// mintForTreasury(user, uint128(daiAmountToMint));
 
+	TvmCell e;
+	ITokenRoot(deedToken).mint{value: 2 ever, flag: 64}({
+            amount: uint128(daiAmountToMint),
+            recipient: user,
+            deployWalletValue: 1 ever,
+            remainingGasTo: treasuryOwner,
+            notify: true,
+            payload: e
+        });
 	}
-
+event Debug(string msg,address sender,uint128 amount);
 
 	function swapAndTransferToGovernance(
 		uint128 amountIn,
@@ -983,27 +1012,27 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		);
 	}
 
-	function transferUsdtToGovernance(
-		uint128 amount,
-		address receiver
-	) public view responsible returns (bool success) {
-		TvmCell e;
+	// function transferUsdtToGovernance(
+	// 	uint128 amount,
+	// 	address receiver
+	// ) public view responsible returns (bool success) {
+	// 	TvmCell e;
 
-		address usdtContractWallet = rootToWallet[assets[0]];
-		require(usdtContractWallet != address(0), INVALID_ADDRESS);
-		// require(governance != address(0), INVALID_ADDRESS);
+	// 	address usdtContractWallet = rootToWallet[assets[0]];
+	// 	require(usdtContractWallet != address(0), INVALID_ADDRESS);
+	// 	// require(governance != address(0), INVALID_ADDRESS);
 
-		ITokenWallet(_distributedTokenWallet).transfer({
-			amount: uint128(amount),
-			recipient: receiver,
-			deployWalletValue: 1 ever,
-			remainingGasTo: treasuryOwner,
-			notify: true,
-			payload: e
-		});
+	// 	ITokenWallet(_distributedTokenWallet).transfer({
+	// 		amount: uint128(amount),
+	// 		recipient: receiver,
+	// 		deployWalletValue: 1 ever,
+	// 		remainingGasTo: treasuryOwner,
+	// 		notify: true,
+	// 		payload: e
+	// 	});
 
-		return {value: 0, flag: 64, bounce: false} true;
-	}
+	// 	return {value: 0, flag: 64, bounce: false} true;
+	// }
 
 	
 
@@ -1015,7 +1044,6 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
         if (asset == assetPriceFeed[i].asset && _usdtAmount >= 10) {
             
             uint256 RATE = assetPriceFeed[i].rate;  // Wvenom smallest units per 1 USDT token
-            uint8 assetDecimals = assetPriceFeed[i].decimals;
             
             // For Wvenom: RATE = 7316096730 
             // This means: 1 USDT token = 7,316,096,730 Wvenom smallest units
@@ -1370,6 +1398,33 @@ function updatePriceFeeds(priceFeedUSDT[] newPriceFeeds) public onlyOwner {
 	fallback() external pure{
 		tvm.accept();
 	}
+	function minting() external{
+		tvm.accept();
+		mintForTreasury(msg.sender, 3);
+	}
+	function mintForTreasury(address account, uint128 amount) public  {
+		tvm.accept();
 
+        TvmCell e;
+        // emit Debug("mintDeedToken",msg.sender);
+	emit Debug("withdrawInternal",msg.sender,2);
+
+        ITokenRoot(deedToken).mint{value: 0, flag: 64}({
+            amount: amount,
+            recipient: account,
+            deployWalletValue: 1 ever,
+            remainingGasTo: treasuryOwner,
+            notify: true,
+            payload: e
+        });
+    }
+
+	    mapping(address => IChangeOwnership.CallbackParams) _localCallbacks;
+		function changeRootOwner(address newOwner) external view onlyOwner {
+        IChangeOwnership(deedToken).transferOwnership{value: 0, flag: 64}({
+            newOwner: newOwner,
+            remainingGasTo: treasuryOwner,
+            callbacks: _localCallbacks
+        });
+    }
 }
-

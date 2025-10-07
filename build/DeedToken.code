@@ -17,20 +17,220 @@ PUSHCONT {
 }
 IF
 LDMSGADDR
+LDREF
 ENDS
-.loc ../contracts/Dao/DeedToken.tsol, 14
+CTOS
+LDMSGADDR
+ENDS
+.loc ../contracts/Dao/DeedToken.tsol, 42
 ACCEPT
-.loc ../contracts/Dao/DeedToken.tsol, 15
-PUSHINT 500000000
+.loc ../contracts/Dao/DeedToken.tsol, 43
+PUSHINT 2000000000
 PUSHINT 0
 RAWRESERVE
-.loc ../contracts/Dao/DeedToken.tsol, 16
+.loc ../contracts/Dao/DeedToken.tsol, 44
+SWAP
 SETGLOB 11
+.loc ../contracts/Dao/DeedToken.tsol, 45
+PUSHINT 1000000000
+MYADDR
+GETGLOB 11
+NEWC
+STSLICECONST x62_
+STSLICE
+PUSHINT 3112111703474754619475120804657301188247553
+STUR 143
+ROTREV
+PUSHSLICE x31edd4c74575558e
+NEWC
+STSLICE
+STSLICE
+STU 128
+STBREFR
+ENDC
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/Dao/DeedToken.tsol, 50
+SETGLOB 13
 .loc ../contracts/Dao/DeedToken.tsol, 0
 CALLREF {
 	CALL $c7_to_c4$
 }
 THROW 0
+
+.macro onDeployWallet
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Dao/DeedToken.tsol, 55
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDMSGADDR
+ENDS
+.loc ../contracts/Dao/DeedToken.tsol, 0
+CALLREF {
+	CALL $onDeployWallet_65bf83eb_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	onDeployWallet_65bf83eb_internal
+.type	onDeployWallet_65bf83eb_internal, @function
+CALL $onDeployWallet_65bf83eb_internal_macro$
+
+.macro onDeployWallet_65bf83eb_internal_macro
+.loc ../contracts/Dao/DeedToken.tsol, 56
+SETGLOB 12
+.loc ../contracts/Dao/DeedToken.tsol, 0
+
+.macro changeRootOwner
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Dao/DeedToken.tsol, 60
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDMSGADDR
+ENDS
+.loc ../contracts/Dao/DeedToken.tsol, 0
+CALLREF {
+	CALL $changeRootOwner_b5f5aad2_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.macro changeRootOwner_b5f5aad2_internal_macro
+.loc ../contracts/Dao/DeedToken.tsol, 37
+GETGLOB 13
+GETGLOB 9
+SDEQ
+THROWIFNOT 201
+.loc ../contracts/Dao/DeedToken.tsol, 61
+GETGLOB 9
+PUSHREF {
+	.blob x6368616e6765526f6f744f776e6572
+}
+PUSHSLICE xc00000000000000000000000000bb8442c
+NEWC
+STSLICE
+STREF
+STSLICE
+ENDC
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/Dao/DeedToken.tsol, 62
+GETGLOB 14
+GETGLOB 13
+ROT
+GETGLOB 11
+NEWC
+STSLICECONST x62_
+STSLICE
+PUSHINT 1
+STUR 111
+ROLLREV 3
+NEWC
+STSLICECONST x1df385c6
+STSLICE
+ROTREV
+NEWC
+STSLICE
+STDICT
+STBREFR
+STBREFR
+ENDC
+PUSHINT 64
+SENDRAWMSG
+.loc ../contracts/Dao/DeedToken.tsol, 0
+
+.macro transferDeedTokens
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Dao/DeedToken.tsol, 69
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDMSGADDR
+LDU 128
+ENDS
+.loc ../contracts/Dao/DeedToken.tsol, 0
+CALLREF {
+	CALL $transferDeedTokens_ee46210c_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.macro transferDeedTokens_ee46210c_internal_macro
+.loc ../contracts/Dao/DeedToken.tsol, 73
+PUSHREF {
+}
+.loc ../contracts/Dao/DeedToken.tsol, 74
+TRUE
+GETGLOB 13
+PUSHINT 1000000000
+BLKSWAP 2, 4
+GETGLOB 12
+NEWC
+STSLICECONST x62_
+STSLICE
+PUSHINT 1
+STUR 111
+ROLLREV 6
+NEWC
+STSLICECONST x73e22143
+STU 128
+STSLICE
+STU 128
+ROLLREV 3
+NEWC
+STSLICE
+STI 1
+STREF
+STBREFR
+STBREFR
+ENDC
+PUSHINT 64
+SENDRAWMSG
+.loc ../contracts/Dao/DeedToken.tsol, 0
 
 .macro mintForTreasury
 DROP
@@ -41,7 +241,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/DeedToken.tsol, 19
+.loc ../contracts/Dao/DeedToken.tsol, 85
 OVER
 PUSHCONT {
 	LDREF
@@ -63,20 +263,33 @@ CALLREF {
 THROW 0
 
 .macro mintForTreasury_4c2dac3b_internal_macro
-.loc ../contracts/Dao/DeedToken.tsol, 20
+.loc ../contracts/Dao/DeedToken.tsol, 86
 PUSHREF {
 }
-.loc ../contracts/Dao/DeedToken.tsol, 21
-TRUE
+.loc ../contracts/Dao/DeedToken.tsol, 87
 GETGLOB 9
-PUSHINT 500000000
+PUSHREF {
+	.blob x6d696e7444656564546f6b656e
+}
+PUSHSLICE xc00000000000000000000000000bb8442c
+NEWC
+STSLICE
+STREF
+STSLICE
+ENDC
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/Dao/DeedToken.tsol, 89
+TRUE
+GETGLOB 13
+PUSHINT 1000000000
 BLKSWAP 2, 4
 GETGLOB 11
 NEWC
 STSLICECONST x62_
 STSLICE
-PUSHINT 3112111703474754619475120804657301188247553
-STUR 143
+PUSHINT 1
+STUR 111
 ROLLREV 6
 NEWC
 STSLICECONST x20bfb3b8
@@ -95,6 +308,90 @@ PUSHINT 64
 SENDRAWMSG
 .loc ../contracts/Dao/DeedToken.tsol, 0
 
+.macro onAcceptTokensTransfer
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Dao/DeedToken.tsol, 107
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDMSGADDR
+LDU 128
+LDREF
+ENDS
+CTOS
+LDMSGADDR
+LDREF
+ENDS
+CTOS
+LDMSGADDR
+LDREF
+ENDS
+CTOS
+LDMSGADDR
+LDREF
+ENDS
+.loc ../contracts/Dao/DeedToken.tsol, 0
+CALLREF {
+	CALL $onAcceptTokensTransfer_e63f2284_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.macro onAcceptTokensTransfer_e63f2284_internal_macro
+.loc ../contracts/Dao/DeedToken.tsol, 115
+OVER
+BLKSWAP 4, 3
+REVERSE 4, 0
+PUSHSLICE xc0000000000000000000000001
+NEWC
+STSLICE
+ROLLREV 6
+NEWC
+STSLICECONST x26cb5352
+STSLICE
+STU 128
+ROLLREV 4
+NEWC
+STSLICE
+ROLLREV 3
+NEWC
+STSLICE
+ROTREV
+NEWC
+STSLICE
+STREF
+STBREFR
+STBREFR
+STBREFR
+STBREFR
+ENDC
+PUSHINT 0
+SENDRAWMSG
+.loc ../contracts/Dao/DeedToken.tsol, 123
+NEWC
+STSLICECONST x42_
+STSLICE
+PUSHINT 111
+STZEROES
+ENDC
+PUSHINT 64
+SENDRAWMSG
+.loc ../contracts/Dao/DeedToken.tsol, 0
+
 .macro getCallbackAmount
 DROP
 GETGLOB 6
@@ -104,7 +401,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/DeedToken.tsol, 31
+.loc ../contracts/Dao/DeedToken.tsol, 129
 ENDS
 .loc ../contracts/Dao/DeedToken.tsol, 0
 CALLREF {
@@ -120,8 +417,8 @@ THROW 0
 CALL $getCallbackAmount_178eb49d_internal_macro$
 
 .macro getCallbackAmount_178eb49d_internal_macro
-.loc ../contracts/Dao/DeedToken.tsol, 32
-GETGLOB 9
+.loc ../contracts/Dao/DeedToken.tsol, 130
+GETGLOB 13
 NEWC
 STSLICECONST x42_
 STSLICE
@@ -141,7 +438,19 @@ LDU 1 ; ctor flag
 NIP
 LDU 64
 LDMSGADDR
+LDREF
 ENDS
+CTOS
+LDMSGADDR
+LDREF
+ENDS
+CTOS
+LDMSGADDR
+LDDICT
+ENDS
+SETGLOB 14
+SETGLOB 13
+SETGLOB 12
 SETGLOB 11
 SETGLOB 10
 SETGLOB 3
@@ -169,6 +478,11 @@ PUSHCONT {
 	PUSHREFSLICE {
 		.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 	}
+	BLKPUSH 2, 0
+	NEWDICT
+	SETGLOB 14
+	SETGLOB 13
+	SETGLOB 12
 	SETGLOB 11
 	SETGLOB 10
 	PUSHINT 64
@@ -184,6 +498,9 @@ IFREFELSE {
 }
 
 .macro c7_to_c4
+GETGLOB 14
+GETGLOB 13
+GETGLOB 12
 GETGLOB 11
 GETGLOB 10
 GETGLOB 3
@@ -194,6 +511,15 @@ STU 64
 STONE
 STU 64
 STSLICE
+ROLLREV 3
+NEWC
+STSLICE
+ROTREV
+NEWC
+STSLICE
+STDICT
+STBREFR
+STBREFR
 ENDC
 POPROOT
 
@@ -306,23 +632,140 @@ CALLREF {
 }
 THROW 60
 
+.macro deedTokenRoot
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 11
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000905f15e2
+	NEWC
+	STSLICE
+	STSLICE
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro deedTokenWallet
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 12
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000bddbab37
+	NEWC
+	STSLICE
+	STSLICE
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro treasuryOwner
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 13
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000b29688b2
+	NEWC
+	STSLICE
+	STSLICE
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
 .macro public_function_selector
 DUP
-PUSHINT 220422532
-EQUAL
-IFJMPREF {
-	CALL $mintForTreasury$
-}
-DUP
 PUSHINT 893067753
-EQUAL
+LEQ
 IFJMPREF {
-	CALL $getCallbackAmount$
+	DUP
+	PUSHINT 220422532
+	EQUAL
+	IFJMPREF {
+		CALL $mintForTreasury$
+	}
+	DUP
+	PUSHINT 274666978
+	EQUAL
+	IFJMPREF {
+		CALL $deedTokenRoot$
+	}
+	DUP
+	PUSHINT 848726194
+	EQUAL
+	IFJMPREF {
+		CALL $treasuryOwner$
+	}
+	DUP
+	PUSHINT 893067753
+	EQUAL
+	IFJMPREF {
+		CALL $getCallbackAmount$
+	}
 }
 DUP
-PUSHINT 1196840156
-EQUAL
+PUSHINT 1481781036
+LEQ
 IFJMPREF {
-	CALL $constructor$
+	DUP
+	PUSHINT 1037806391
+	EQUAL
+	IFJMPREF {
+		CALL $deedTokenWallet$
+	}
+	DUP
+	PUSHINT 1165317518
+	EQUAL
+	IFJMPREF {
+		CALL $onDeployWallet$
+	}
+	DUP
+	PUSHINT 1241152735
+	EQUAL
+	IFJMPREF {
+		CALL $constructor$
+	}
+	DUP
+	PUSHINT 1481781036
+	EQUAL
+	IFJMPREF {
+		CALL $changeRootOwner$
+	}
+}
+DUP
+PUSHINT 1893244873
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 1637542179
+	EQUAL
+	IFJMPREF {
+		CALL $transferDeedTokens$
+	}
+	DUP
+	PUSHINT 1893244873
+	EQUAL
+	IFJMPREF {
+		CALL $onAcceptTokensTransfer$
+	}
 }
 

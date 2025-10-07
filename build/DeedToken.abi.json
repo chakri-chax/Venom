@@ -6,7 +6,33 @@
 		{
 			"name": "constructor",
 			"inputs": [
-				{"name":"_deedTokenRoot","type":"address"}
+				{"name":"_deedTokenRoot","type":"address"},
+				{"name":"_treasuryOwner","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "onDeployWallet",
+			"inputs": [
+				{"name":"wallet","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "changeRootOwner",
+			"inputs": [
+				{"name":"newOwner","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "transferDeedTokens",
+			"inputs": [
+				{"name":"account","type":"address"},
+				{"name":"amount","type":"uint128"}
 			],
 			"outputs": [
 			]
@@ -14,8 +40,21 @@
 		{
 			"name": "mintForTreasury",
 			"inputs": [
-				{"name":"to","type":"address"},
+				{"name":"account","type":"address"},
 				{"name":"amount","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "onAcceptTokensTransfer",
+			"inputs": [
+				{"name":"tokenRoot","type":"address"},
+				{"name":"amount","type":"uint128"},
+				{"name":"sender","type":"address"},
+				{"name":"senderWallet","type":"address"},
+				{"name":"remainingGasTo","type":"address"},
+				{"name":"payload","type":"cell"}
 			],
 			"outputs": [
 			]
@@ -26,18 +65,67 @@
 			],
 			"outputs": [
 			]
+		},
+		{
+			"name": "deedTokenRoot",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"deedTokenRoot","type":"address"}
+			]
+		},
+		{
+			"name": "deedTokenWallet",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"deedTokenWallet","type":"address"}
+			]
+		},
+		{
+			"name": "treasuryOwner",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"treasuryOwner","type":"address"}
+			]
 		}
 	],
 	"data": [
 		{"key":1,"name":"nonce_","type":"uint64"}
 	],
 	"events": [
+		{
+			"name": "Debug",
+			"inputs": [
+				{"name":"msg","type":"string"},
+				{"name":"sender","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "AcceptedTokensTransfer",
+			"inputs": [
+				{"name":"tokenRoot","type":"address"},
+				{"name":"amount","type":"uint128"},
+				{"name":"sender","type":"address"},
+				{"name":"senderWallet","type":"address"},
+				{"name":"remainingGasTo","type":"address"},
+				{"name":"payload","type":"cell"}
+			],
+			"outputs": [
+			]
+		}
 	],
 	"fields": [
 		{"name":"_pubkey","type":"uint256"},
 		{"name":"_timestamp","type":"uint64"},
 		{"name":"_constructorFlag","type":"bool"},
 		{"name":"nonce_","type":"uint64"},
-		{"name":"deedTokenRoot","type":"address"}
+		{"name":"deedTokenRoot","type":"address"},
+		{"name":"deedTokenWallet","type":"address"},
+		{"name":"treasuryOwner","type":"address"},
+		{"components":[{"name":"value","type":"uint128"},{"name":"payload","type":"cell"}],"name":"localCallbacks","type":"map(address,tuple)"}
 	]
 }

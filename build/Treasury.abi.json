@@ -43,14 +43,6 @@
 			]
 		},
 		{
-			"name": "addAsset",
-			"inputs": [
-				{"components":[{"name":"asset","type":"address"},{"name":"_newAssetAllocations","type":"uint8[]"},{"name":"dexPair","type":"address"},{"name":"priceFeed","type":"address"},{"name":"decimals","type":"uint8"}],"name":"newAsset","type":"tuple"}
-			],
-			"outputs": [
-			]
-		},
-		{
 			"name": "onAcceptTokensTransfer",
 			"inputs": [
 				{"name":"tokenRoot","type":"address"},
@@ -88,14 +80,6 @@
 				{"name":"usdtAmounts","type":"uint256[]"}
 			],
 			"outputs": [
-			]
-		},
-		{
-			"name": "getUserDeposits",
-			"inputs": [
-			],
-			"outputs": [
-				{"components":[{"name":"treasuryDeposit","type":"uint256"},{"name":"firstDepositTime","type":"uint256"}],"name":"value0","type":"tuple[]"}
 			]
 		},
 		{
@@ -250,17 +234,6 @@
 			]
 		},
 		{
-			"name": "transferUsdtToGovernance",
-			"inputs": [
-				{"name":"answerId","type":"uint32"},
-				{"name":"amount","type":"uint128"},
-				{"name":"receiver","type":"address"}
-			],
-			"outputs": [
-				{"name":"success","type":"bool"}
-			]
-		},
-		{
 			"name": "usdtRate",
 			"inputs": [
 				{"name":"asset","type":"address"},
@@ -396,6 +369,30 @@
 			"outputs": [
 				{"components":[{"name":"deedNFTCount","type":"uint256"},{"name":"founderNFTCount","type":"uint256"},{"name":"genesisCount","type":"uint256"}],"name":"balances","type":"tuple"},
 				{"name":"user","type":"address"}
+			]
+		},
+		{
+			"name": "minting",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "mintForTreasury",
+			"inputs": [
+				{"name":"account","type":"address"},
+				{"name":"amount","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "changeRootOwner",
+			"inputs": [
+				{"name":"newOwner","type":"address"}
+			],
+			"outputs": [
 			]
 		},
 		{
@@ -956,6 +953,16 @@
 			]
 		},
 		{
+			"name": "Debug",
+			"inputs": [
+				{"name":"msg","type":"string"},
+				{"name":"sender","type":"address"},
+				{"name":"amount","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
 			"name": "usdtRateLog",
 			"inputs": [
 				{"name":"asset","type":"address"},
@@ -1018,6 +1025,7 @@
 		{"name":"walletToRoot","type":"map(address,address)"},
 		{"name":"tempBalances","type":"map(address,uint128)"},
 		{"components":[{"name":"root","type":"address"},{"name":"amount","type":"uint128"}],"name":"balanceOfArray","type":"tuple[]"},
-		{"name":"tempRootAddress","type":"address"}
+		{"name":"tempRootAddress","type":"address"},
+		{"components":[{"name":"value","type":"uint128"},{"name":"payload","type":"cell"}],"name":"_localCallbacks","type":"map(address,tuple)"}
 	]
 }
