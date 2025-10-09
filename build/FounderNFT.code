@@ -153,41 +153,41 @@ ROLL 5
 CALLREF {
 	CALL $_transferOwnership_d29d44ee_internal_macro$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 93
+.loc ../contracts/Dao/FounderNFT.tsol, 93
 ACCEPT
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 94
+.loc ../contracts/Dao/FounderNFT.tsol, 94
 PUSHINT 1000000000
 PUSHINT 0
 RAWRESERVE
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 95
+.loc ../contracts/Dao/FounderNFT.tsol, 95
 PUSH S4
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 101
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 96
+.loc ../contracts/Dao/FounderNFT.tsol, 96
 PUSH S3
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 102
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 98
+.loc ../contracts/Dao/FounderNFT.tsol, 98
 ROLL 4
 SETGLOB 27
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 99
+.loc ../contracts/Dao/FounderNFT.tsol, 99
 ROLL 3
 SETGLOB 28
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 100
+.loc ../contracts/Dao/FounderNFT.tsol, 100
 ROT
 SETGLOB 29
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 101
+.loc ../contracts/Dao/FounderNFT.tsol, 101
 SWAP
 SETGLOB 21
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 102
+.loc ../contracts/Dao/FounderNFT.tsol, 102
 SETGLOB 25
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 CALLREF {
 	CALL $c7_to_c4$
 }
@@ -202,9 +202,9 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 105
+.loc ../contracts/Dao/FounderNFT.tsol, 105
 ENDS
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 CALLREF {
 	CALL $codeDepth_b85a2af4_internal_macro$
 }
@@ -240,20 +240,20 @@ THROW 0
 CALL $codeDepth_b85a2af4_internal_macro$
 
 .macro codeDepth_b85a2af4_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 106
+.loc ../contracts/Dao/FounderNFT.tsol, 106
 MYADDR
 CALLREF {
 	CALL $_buildNftCode_c58e679e_internal_macro$
 }
 CDEPTH
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .globl	_buildNftState_c971fdf8_internal
 .type	_buildNftState_c971fdf8_internal, @function
 CALL $_buildNftState_c971fdf8_internal_macro$
 
 .macro _buildNftState_c971fdf8_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 119
+.loc ../contracts/Dao/FounderNFT.tsol, 119
 PUSHINT 0
 NEWC
 STU 256
@@ -278,7 +278,7 @@ STOPTREF
 STOPTREF
 STZERO
 ENDC
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .macro getIndexFromRequestId
 DROP
@@ -289,7 +289,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 122
+.loc ../contracts/Dao/FounderNFT.tsol, 122
 OVER
 PUSHCONT {
 	LDREF
@@ -299,7 +299,7 @@ PUSHCONT {
 IF
 LDU 256
 ENDS
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 CALLREF {
 	CALL $getIndexFromRequestId_a715ab3e_internal_macro$
 }
@@ -335,7 +335,7 @@ THROW 0
 CALL $getIndexFromRequestId_a715ab3e_internal_macro$
 
 .macro getIndexFromRequestId_a715ab3e_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 125
+.loc ../contracts/Dao/FounderNFT.tsol, 125
 DUP
 GTINT -1
 OVER
@@ -343,7 +343,7 @@ GETGLOB 24
 LESS
 AND
 THROWIFNOT 109
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 126
+.loc ../contracts/Dao/FounderNFT.tsol, 126
 PUSHINT 32
 GETGLOBVAR
 PUSHPOW2 8
@@ -353,7 +353,7 @@ PUSHCONT {
 	PLDU 256
 }
 IF
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .macro initiateMint
 DROP
@@ -364,7 +364,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 129
+.loc ../contracts/Dao/FounderNFT.tsol, 129
 OVER
 PUSHCONT {
 	LDREF
@@ -375,7 +375,7 @@ IF
 LDMSGADDR
 LDU 256
 ENDS
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 CALLREF {
 	CALL $initiateMint_5b867de7_internal_macro$
 }
@@ -386,34 +386,34 @@ CALLREF {
 THROW 0
 
 .macro initiateMint_5b867de7_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 130
+.loc ../contracts/Dao/FounderNFT.tsol, 130
 OVER
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 103
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 131
+.loc ../contracts/Dao/FounderNFT.tsol, 131
 DUP
 GTINT 0
 THROWIFNOT 104
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 132
+.loc ../contracts/Dao/FounderNFT.tsol, 132
 GETGLOB 9
 GETGLOB 28
 SDEQ
 THROWIFNOT 105
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 133
+.loc ../contracts/Dao/FounderNFT.tsol, 133
 GETGLOB 23
 PUSHINT 222000000
 LESS
 THROWIFNOT 106
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 134
+.loc ../contracts/Dao/FounderNFT.tsol, 134
 GETGLOB 24
 DUP
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 136
+.loc ../contracts/Dao/FounderNFT.tsol, 136
 INC
 SETGLOB 24
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 137
+.loc ../contracts/Dao/FounderNFT.tsol, 137
 GETGLOB 31
 OVER2
 GETGLOB 24
@@ -442,7 +442,7 @@ DICTUSETREF
 PAIR
 DUP
 SETGLOB 31
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 146
+.loc ../contracts/Dao/FounderNFT.tsol, 146
 FIRST
 DEC
 UFITS 256
@@ -457,7 +457,7 @@ PUSHPOW2 8
 DICTUSETB
 PUSHINT 32
 SETGLOBVAR
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 147
+.loc ../contracts/Dao/FounderNFT.tsol, 147
 BLKPUSH 2, 2
 GETGLOB 24
 FALSE
@@ -484,7 +484,7 @@ PUSHPOW2 8
 DICTUSETREF
 PUSHINT 33
 SETGLOBVAR
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 154
+.loc ../contracts/Dao/FounderNFT.tsol, 154
 ROT
 PUSHSLICE xc0000000000000000000000001
 NEWC
@@ -502,7 +502,7 @@ STBREFR
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .macro getAllPendingMints
 DROP
@@ -513,9 +513,9 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 157
+.loc ../contracts/Dao/FounderNFT.tsol, 157
 ENDS
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 CALLREF {
 	CALL $getAllPendingMints_d05bac41_internal_macro$
 }
@@ -551,9 +551,9 @@ IFREF {
 THROW 0
 
 .macro getAllPendingMints_d05bac41_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 158
+.loc ../contracts/Dao/FounderNFT.tsol, 158
 GETGLOB 31
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .macro getAllNfts
 DROP
@@ -564,9 +564,9 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 161
+.loc ../contracts/Dao/FounderNFT.tsol, 161
 ENDS
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 CALLREF {
 	CALL $getAllNfts_732e8d73_internal_macro$
 }
@@ -602,9 +602,9 @@ IFREF {
 THROW 0
 
 .macro getAllNfts_732e8d73_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 162
+.loc ../contracts/Dao/FounderNFT.tsol, 162
 GETGLOB 30
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .macro getPendingMintByIndex
 DROP
@@ -615,7 +615,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 165
+.loc ../contracts/Dao/FounderNFT.tsol, 165
 OVER
 PUSHCONT {
 	LDREF
@@ -625,7 +625,7 @@ PUSHCONT {
 IF
 LDU 256
 ENDS
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 CALLREF {
 	CALL $getPendingMintByIndex_c9caba6a_internal_macro$
 }
@@ -670,7 +670,7 @@ IFREF {
 THROW 0
 
 .macro getPendingMintByIndex_c9caba6a_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 168
+.loc ../contracts/Dao/FounderNFT.tsol, 168
 PUSHINT 33
 GETGLOBVAR
 PUSHPOW2 8
@@ -698,7 +698,7 @@ PUSHCONT {
 	TUPLE 4
 }
 IFELSE
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .macro completeMint
 DROP
@@ -709,7 +709,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 171
+.loc ../contracts/Dao/FounderNFT.tsol, 171
 OVER
 PUSHCONT {
 	LDREF
@@ -719,7 +719,7 @@ PUSHCONT {
 IF
 LDU 256
 ENDS
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 CALLREF {
 	CALL $completeMint_f96cb26c_internal_macro$
 }
@@ -730,7 +730,7 @@ CALLREF {
 THROW 0
 
 .macro completeMint_f96cb26c_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 172
+.loc ../contracts/Dao/FounderNFT.tsol, 172
 GETGLOB 9
 CALLREF {
 	CALL $owner_8da5cb5b_internal_macro$
@@ -741,17 +741,17 @@ GETGLOB 28
 SDEQ
 OR
 THROWIFNOT 201
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 173
+.loc ../contracts/Dao/FounderNFT.tsol, 173
 CALLREF {
 	CALL $getIndexFromRequestId_a715ab3e_internal_macro$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 174
+.loc ../contracts/Dao/FounderNFT.tsol, 174
 DUP
 GETGLOB 31
 FIRST
 LEQ
 THROWIFNOT 107
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 175
+.loc ../contracts/Dao/FounderNFT.tsol, 175
 DUP
 GETGLOB 31
 SECOND
@@ -770,15 +770,15 @@ CALLREF {
 	ENDS
 	TUPLE 4
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 176
+.loc ../contracts/Dao/FounderNFT.tsol, 176
 DUP
 INDEX 3
 THROWIF 108
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 177
+.loc ../contracts/Dao/FounderNFT.tsol, 177
 DUP
 SECOND
 UFITS 128
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 179
+.loc ../contracts/Dao/FounderNFT.tsol, 179
 GETGLOB 23
 PUSHCONT {
 	DUP
@@ -789,31 +789,31 @@ PUSHCONT {
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/FounderNFTCollection.tsol, 180
+	.loc ../contracts/Dao/FounderNFT.tsol, 180
 	PUSH S2
 	FIRST
 	OVER
 	CALLREF {
 		CALL $mintNft_d1194e2b_internal_macro$
 	}
-	.loc ../contracts/Dao/FounderNFTCollection.tsol, 179
+	.loc ../contracts/Dao/FounderNFT.tsol, 179
 	INC
-	.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+	.loc ../contracts/Dao/FounderNFT.tsol, 0
 }
 WHILE
 DROP
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 182
+.loc ../contracts/Dao/FounderNFT.tsol, 182
 GETGLOB 23
 OVER
 ADD
 UFITS 128
 SETGLOB 23
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 183
+.loc ../contracts/Dao/FounderNFT.tsol, 183
 OVER
 TRUE
 SETINDEX 3
 POP S2
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 187
+.loc ../contracts/Dao/FounderNFT.tsol, 187
 OVER
 THIRD
 ROT
@@ -834,27 +834,27 @@ STBREFR
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 189
+.loc ../contracts/Dao/FounderNFT.tsol, 189
 CALLREF {
 	CALL $_removePendingMint_596a4214_internal_macro$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .globl	_removePendingMint_596a4214_internal
 .type	_removePendingMint_596a4214_internal, @function
 CALL $_removePendingMint_596a4214_internal_macro$
 
 .macro _removePendingMint_596a4214_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 193
+.loc ../contracts/Dao/FounderNFT.tsol, 193
 GETGLOB 31
 FIRST
 DEC
 UFITS 256
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 195
+.loc ../contracts/Dao/FounderNFT.tsol, 195
 DUP2
 NEQ
 PUSHCONT {
-	.loc ../contracts/Dao/FounderNFTCollection.tsol, 196
+	.loc ../contracts/Dao/FounderNFT.tsol, 196
 	DUP
 	GETGLOB 31
 	SECOND
@@ -873,7 +873,7 @@ PUSHCONT {
 		ENDS
 		TUPLE 4
 	}
-	.loc ../contracts/Dao/FounderNFTCollection.tsol, 197
+	.loc ../contracts/Dao/FounderNFT.tsol, 197
 	DUP
 	GETGLOB 31
 	UNPAIR
@@ -900,7 +900,7 @@ PUSHCONT {
 	DICTUSETREF
 	PAIR
 	SETGLOB 31
-	.loc ../contracts/Dao/FounderNFTCollection.tsol, 198
+	.loc ../contracts/Dao/FounderNFT.tsol, 198
 	PUSH S2
 	PUSHINT 32
 	GETGLOBVAR
@@ -914,10 +914,10 @@ PUSHCONT {
 	DICTUSETB
 	PUSHINT 32
 	SETGLOBVAR
-	.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+	.loc ../contracts/Dao/FounderNFT.tsol, 0
 }
 IF
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 201
+.loc ../contracts/Dao/FounderNFT.tsol, 201
 DROP2
 GETGLOB 31
 UNPAIR
@@ -932,7 +932,7 @@ DICTUDEL
 DROP
 PAIR
 SETGLOB 31
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .macro mintBatchToHolders
 DROP
@@ -943,7 +943,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 204
+.loc ../contracts/Dao/FounderNFT.tsol, 204
 LDU 32
 LDDICT
 ROTREV
@@ -955,7 +955,7 @@ ROTREV
 PAIR
 SWAP
 ENDS
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 CALLREF {
 	CALL $mintBatchToHolders_1611a56b_internal_macro$
 }
@@ -966,72 +966,72 @@ CALLREF {
 THROW 0
 
 .macro mintBatchToHolders_1611a56b_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 205
+.loc ../contracts/Dao/FounderNFT.tsol, 205
 GETGLOB 9
 GETGLOB 27
 SDEQ
 THROWIFNOT 201
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 207
+.loc ../contracts/Dao/FounderNFT.tsol, 207
 OVER
 FIRST
 OVER
 FIRST
 EQUAL
 THROWIFNOT 202
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 209
+.loc ../contracts/Dao/FounderNFT.tsol, 209
 OVER
 FIRST
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 210
+.loc ../contracts/Dao/FounderNFT.tsol, 210
 PUSHINT 0
 PUSHCONT {
 	PUSH2 S0, S1
 	LESS
 }
 PUSHCONT {
-	.loc ../contracts/Dao/FounderNFTCollection.tsol, 211
+	.loc ../contracts/Dao/FounderNFT.tsol, 211
 	PUSH2 S0, S3
 	SECOND
 	PUSHINT 32
 	DICTUGET
 	THROWIFNOT 50
-	.loc ../contracts/Dao/FounderNFTCollection.tsol, 212
+	.loc ../contracts/Dao/FounderNFT.tsol, 212
 	PUSH2 S1, S3
 	SECOND
 	PUSHINT 32
 	DICTUGET
 	THROWIFNOT 50
 	PLDU 256
-	.loc ../contracts/Dao/FounderNFTCollection.tsol, 214
+	.loc ../contracts/Dao/FounderNFT.tsol, 214
 	PUSHINT 0
 	PUSHCONT {
 		PUSH2 S0, S1
 		LESS
 	}
 	PUSHCONT {
-		.loc ../contracts/Dao/FounderNFTCollection.tsol, 215
+		.loc ../contracts/Dao/FounderNFT.tsol, 215
 		PUSH S2
 		GETGLOB 23
 		CALLREF {
 			CALL $mintNft_d1194e2b_internal_macro$
 		}
-		.loc ../contracts/Dao/FounderNFTCollection.tsol, 216
+		.loc ../contracts/Dao/FounderNFT.tsol, 216
 		GETGLOB 23
 		INC
 		UFITS 128
 		SETGLOB 23
-		.loc ../contracts/Dao/FounderNFTCollection.tsol, 214
+		.loc ../contracts/Dao/FounderNFT.tsol, 214
 		INC
-		.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+		.loc ../contracts/Dao/FounderNFT.tsol, 0
 	}
 	WHILE
 	BLKDROP 3
-	.loc ../contracts/Dao/FounderNFTCollection.tsol, 210
+	.loc ../contracts/Dao/FounderNFT.tsol, 210
 	INC
-	.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+	.loc ../contracts/Dao/FounderNFT.tsol, 0
 }
 WHILE
 DROP
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 220
+.loc ../contracts/Dao/FounderNFT.tsol, 220
 PUSHSLICE xc000000000000000000000000008f69127
 NEWC
 STSLICE
@@ -1040,40 +1040,40 @@ ENDC
 PUSHINT 0
 SENDRAWMSG
 DROP2
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .globl	mintNft_d1194e2b_internal
 .type	mintNft_d1194e2b_internal, @function
 CALL $mintNft_d1194e2b_internal_macro$
 
 .macro mintNft_d1194e2b_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 224
+.loc ../contracts/Dao/FounderNFT.tsol, 224
 DEPTH
 ADDCONST -2
 PICK
 PUSHINT 400000000
 GREATER
 THROWIFNOT 101
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 225
+.loc ../contracts/Dao/FounderNFT.tsol, 225
 PUSHINT 0
 PUSHINT 4
 RAWRESERVE
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 229
+.loc ../contracts/Dao/FounderNFT.tsol, 229
 DUP
 PUSHINT 222000000
 LESS
 THROWIFNOT 102
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 230
+.loc ../contracts/Dao/FounderNFT.tsol, 230
 GETGLOB 12
 INC
 UFITS 128
 SETGLOB 12
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 233
+.loc ../contracts/Dao/FounderNFT.tsol, 233
 MYADDR
 CALLREF {
 	CALL $_buildNftCode_c58e679e_internal_macro$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 234
+.loc ../contracts/Dao/FounderNFT.tsol, 234
 PUSHINT 0
 NEWC
 STU 256
@@ -1098,7 +1098,7 @@ STOPTREF
 STOPTREF
 STZERO
 ENDC
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 239
+.loc ../contracts/Dao/FounderNFT.tsol, 239
 GETGLOB 18
 GETGLOB 17
 GETGLOB 15
@@ -1161,7 +1161,7 @@ STBREFR
 ENDC
 PUSHPOW2 7
 SENDRAWMSG
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 247
+.loc ../contracts/Dao/FounderNFT.tsol, 247
 GETGLOB 30
 PUSH3 S2, S3, S1
 TRIPLE
@@ -1186,7 +1186,7 @@ PUSHINT 32
 DICTUSETREF
 PAIR
 SETGLOB 30
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 249
+.loc ../contracts/Dao/FounderNFT.tsol, 249
 PUSH2 S0, S1
 PUSHINT 35
 GETGLOBVAR
@@ -1194,7 +1194,7 @@ PUSHPOW2 8
 DICTUSET
 PUSHINT 35
 SETGLOBVAR
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 250
+.loc ../contracts/Dao/FounderNFT.tsol, 250
 ROT
 PUSHSLICE xc0000000000000000000000001
 NEWC
@@ -1212,7 +1212,7 @@ STBREFR
 ENDC
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .macro setWarehouseWallet
 DROP
@@ -1223,7 +1223,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 253
+.loc ../contracts/Dao/FounderNFT.tsol, 253
 OVER
 PUSHCONT {
 	LDREF
@@ -1233,7 +1233,7 @@ PUSHCONT {
 IF
 LDMSGADDR
 ENDS
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 CALLREF {
 	CALL $setWarehouseWallet_70bdcf05_internal_macro$
 }
@@ -1244,21 +1244,21 @@ CALLREF {
 THROW 0
 
 .macro setWarehouseWallet_70bdcf05_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 254
+.loc ../contracts/Dao/FounderNFT.tsol, 254
 GETGLOB 9
 GETGLOB 27
 SDEQ
 THROWIFNOT 201
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 256
+.loc ../contracts/Dao/FounderNFT.tsol, 256
 DUP
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 103
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 257
+.loc ../contracts/Dao/FounderNFT.tsol, 257
 SETGLOB 27
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .macro setRoutingWallet
 DROP
@@ -1269,7 +1269,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 260
+.loc ../contracts/Dao/FounderNFT.tsol, 260
 OVER
 PUSHCONT {
 	LDREF
@@ -1279,7 +1279,7 @@ PUSHCONT {
 IF
 LDMSGADDR
 ENDS
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 CALLREF {
 	CALL $setRoutingWallet_bf2033ea_internal_macro$
 }
@@ -1290,21 +1290,21 @@ CALLREF {
 THROW 0
 
 .macro setRoutingWallet_bf2033ea_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 261
+.loc ../contracts/Dao/FounderNFT.tsol, 261
 GETGLOB 9
 GETGLOB 27
 SDEQ
 THROWIFNOT 201
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 263
+.loc ../contracts/Dao/FounderNFT.tsol, 263
 DUP
 PUSHREFSLICE {
 	.blob x8000000000000000000000000000000000000000000000000000000000000000001_
 }
 SDEQ
 THROWIF 103
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 264
+.loc ../contracts/Dao/FounderNFT.tsol, 264
 SETGLOB 28
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .macro getWarehouseWallet
 DROP
@@ -1315,9 +1315,9 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 267
+.loc ../contracts/Dao/FounderNFT.tsol, 267
 ENDS
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 CALLREF {
 	CALL $getWarehouseWallet_052c03e2_internal_macro$
 }
@@ -1357,9 +1357,9 @@ THROW 0
 CALL $getWarehouseWallet_052c03e2_internal_macro$
 
 .macro getWarehouseWallet_052c03e2_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 268
+.loc ../contracts/Dao/FounderNFT.tsol, 268
 GETGLOB 27
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .macro getRoutingWallet
 DROP
@@ -1370,9 +1370,9 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 271
+.loc ../contracts/Dao/FounderNFT.tsol, 271
 ENDS
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 CALLREF {
 	CALL $getRoutingWallet_4ee1f08e_internal_macro$
 }
@@ -1412,9 +1412,9 @@ THROW 0
 CALL $getRoutingWallet_4ee1f08e_internal_macro$
 
 .macro getRoutingWallet_4ee1f08e_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 272
+.loc ../contracts/Dao/FounderNFT.tsol, 272
 GETGLOB 28
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .macro getNftAddress
 DROP
@@ -1425,7 +1425,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 275
+.loc ../contracts/Dao/FounderNFT.tsol, 275
 OVER
 PUSHCONT {
 	LDREF
@@ -1435,7 +1435,7 @@ PUSHCONT {
 IF
 LDU 256
 ENDS
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 CALLREF {
 	CALL $getNftAddress_e8072bd4_internal_macro$
 }
@@ -1475,7 +1475,7 @@ THROW 0
 CALL $getNftAddress_e8072bd4_internal_macro$
 
 .macro getNftAddress_e8072bd4_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 276
+.loc ../contracts/Dao/FounderNFT.tsol, 276
 PUSHINT 35
 GETGLOBVAR
 PUSHPOW2 8
@@ -1486,7 +1486,7 @@ PUSHCONT {
 	}
 }
 IFNOT
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .macro setBaseUrl
 DROP
@@ -1497,10 +1497,10 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 279
+.loc ../contracts/Dao/FounderNFT.tsol, 279
 LDREF
 ENDS
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 CALLREF {
 	CALL $setBaseUrl_c7c3268b_internal_macro$
 }
@@ -1533,15 +1533,15 @@ DEPTH
 ADDCONST -2
 PICK
 THROWIFNOT 101
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 280
+.loc ../contracts/Dao/FounderNFT.tsol, 280
 SETGLOB 13
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 281
+.loc ../contracts/Dao/FounderNFT.tsol, 281
 PUSHREF {
 	.blob xc00000000000000000000000002761033f
 }
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .macro setCollectionUrl
 DROP
@@ -1552,10 +1552,10 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 284
+.loc ../contracts/Dao/FounderNFT.tsol, 284
 LDREF
 ENDS
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 CALLREF {
 	CALL $setCollectionUrl_945b0c1f_internal_macro$
 }
@@ -1588,15 +1588,15 @@ DEPTH
 ADDCONST -2
 PICK
 THROWIFNOT 101
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 285
+.loc ../contracts/Dao/FounderNFT.tsol, 285
 SETGLOB 14
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 286
+.loc ../contracts/Dao/FounderNFT.tsol, 286
 PUSHREF {
 	.blob xc00000000000000000000000002c67a3dd
 }
 PUSHINT 0
 SENDRAWMSG
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .macro _baseURI
 DROP
@@ -1607,9 +1607,9 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 289
+.loc ../contracts/Dao/FounderNFT.tsol, 289
 ENDS
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 CALLREF {
 	CALL $_baseURI_743976a0_internal_macro$
 }
@@ -1645,9 +1645,9 @@ THROW 0
 CALL $_baseURI_743976a0_internal_macro$
 
 .macro _baseURI_743976a0_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 290
+.loc ../contracts/Dao/FounderNFT.tsol, 290
 GETGLOB 29
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .macro getCallbackAmount
 DROP
@@ -1658,9 +1658,9 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 293
+.loc ../contracts/Dao/FounderNFT.tsol, 293
 ENDS
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 CALLREF {
 	CALL $getCallbackAmount_178eb49d_internal_macro$
 }
@@ -1674,7 +1674,7 @@ THROW 0
 CALL $getCallbackAmount_178eb49d_internal_macro$
 
 .macro getCallbackAmount_178eb49d_internal_macro
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 294
+.loc ../contracts/Dao/FounderNFT.tsol, 294
 GETGLOB 28
 NEWC
 STSLICECONST x42_
@@ -1684,7 +1684,7 @@ STUR 143
 ENDC
 PUSHPOW2 7
 SENDRAWMSG
-.loc ../contracts/Dao/FounderNFTCollection.tsol, 0
+.loc ../contracts/Dao/FounderNFT.tsol, 0
 
 .macro owner
 DROP

@@ -10,7 +10,7 @@ import "@broxus/tip4/contracts/access/OwnableInternal.tsol";
 
 import "./Nft.tsol";
 
-contract FounderNFTCollection is
+contract FounderNFT is
 	TIP4_2_2Collection,
 	TIP4_3Collection,
 	OwnableInternal
@@ -21,7 +21,8 @@ contract FounderNFTCollection is
 
 	uint128 public _tokenId = 1;
 	uint256 public requestId = 0;
-	uint256 public constant MAX_SUPPLY = 222000;
+	uint256 public constant MAX_SUPPLY = 222000000;
+	uint public COST_PER_NFT;
 	uint256 public lastHolderIndex = 0;
 
 	address public warehouseWallet;
@@ -74,13 +75,14 @@ contract FounderNFTCollection is
 		TvmCell codeIndex,
 		TvmCell codeIndexBasis,
 		address owner,
-		uint128 /*remainOnNft */,
+		// uint128 /*remainOnNft */,
 		string baseNftUrl,
 		string collectionUrl,
 		address _warehouseWallet,
 		address _routingWallet,
 		string _baseTokenURI,
-		uint64 _nonce
+		uint64 _nonce,
+		uint256 costPerNft
 	)
 		public
 		OwnableInternal(owner)
@@ -97,6 +99,7 @@ contract FounderNFTCollection is
 		routingWallet = _routingWallet;
 		baseTokenURI = _baseTokenURI;
 		nonce_ = _nonce;
+		COST_PER_NFT = costPerNft;
 	}
 
 	function codeDepth() public view returns (uint16) {

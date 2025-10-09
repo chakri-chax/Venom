@@ -22,7 +22,7 @@ import "./ITreasury.tsol";
 import "./ExchangeContract.tsol";
 import "dex/contracts/libraries/PairPayload.tsol";
 
-import "./FounderNFTCollection.tsol";
+import "./FounderNFT.tsol";
 import "./Nft.tsol";
 import "./TokenMsg.tsol";
 
@@ -102,6 +102,11 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		uint256 treasuryDeposit;
 		uint256 firstDepositTime;
 	}
+	struct balanceOfStruct {
+		address root;
+		uint128 amount;
+	}
+	balanceOfStruct[] public balanceOfArray;
 
 	address public treasuryOwner;
 	uint256 public FULL_TERM_LOCK_PERIOD = 2 * 6 * 30 * 24 * 60 * 60;
@@ -132,7 +137,8 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 	uint256 public primaryTokenLockedAmount;
 	
 	address public assetsZeroWallet;
-
+	address private tempRootAddress;
+	
 	// uint256 public totalDepositsAmount;
 
 	address public deedNFT;
@@ -151,7 +157,7 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 	event Withdraw(address user, uint256 deposits, uint256 deedMinted);
 	event TreasuryIsDrained();
 	event fundsTransferred(address receiver, uint256 totalamountinDai);
-
+	event usdtRateLog(address asset, uint256 usdtAmount, uint256 outAmount);
 	event assetpriceinusd(uint256 assetpriceinusd);
 	event assetpriceindai(uint256 assetpriceindai);
 	event slipageamoun(uint256 slipageamount);
@@ -173,6 +179,7 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 	event PriceFeedsUpdated(priceFeedUSDT[] newPriceFeeds);
 	event pendingWithdrawalsss(address user, uint256[] indices);
 	event transfered(address from,address to,uint128 Usdtamount);
+	event balance(address root, uint256 amount);
 
 	uint16 public constant MISMATCHED_ARRAYS_LENGTH = 223;
 	uint16 public constant INVALID_ADDRESS = 224;
@@ -215,11 +222,11 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 	mapping(address => uint256) public treasuryHolderIndex;
 	mapping(address => uint256) public treasuryBalances;
 	mapping(address => mapping(uint256 => address)) public nftAddressOfId;
-	// mapping(address => ICallbackParamsStructure.CallbackParams) localCallbacks;
 	mapping(address => address) public rootToWallet;
-
+	mapping(address => address) private walletToRoot;
+	mapping(address => uint128) private tempBalances;
 	mapping(address => mapping(uint256 => address)) public nftOwnerOfId;
-	// mapping(address => ICallbackParamsStructure.CallbackParams) localCallbacks;
+	
 	mapping(address => ICallbackParamsStructure.CallbackParams) localCallbacks;
 	modifier onlyGovernance() {
 		require(msg.sender == governance, ONLY_OWNER_CAN_CALL);
@@ -590,13 +597,11 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 			return; // No need to sort if there is only one or no holder
 		}
 
-		// Bubble Sort Algorithm to sort topTreasuryHolders by their balances in descending order
 		for (uint256 i = 0; i < n - 1; i++) {
 			for (uint256 j = 0; j < n - i - 1; j++) {
 				address holder1 = topTreasuryHolders[j];
 				address holder2 = topTreasuryHolders[j + 1];
 
-				// Compare balances of holder1 and holder2
 				if (treasuryBalances[holder1] < treasuryBalances[holder2]) {
 					// Swap the positions
 					(topTreasuryHolders[j], topTreasuryHolders[j + 1]) = (
@@ -604,7 +609,6 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 						topTreasuryHolders[j]
 					);
 
-					// Update the treasuryHolderIndex mapping
 					treasuryHolderIndex[holder1] = j + 1;
 					treasuryHolderIndex[holder2] = j;
 				}
@@ -733,18 +737,8 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		assetAllocationRatio = _allocationRatios;
 	}
 
-	event balance(address root, uint256 amount);
-	mapping(address => address) public walletToRoot;
-	mapping(address => uint128) private tempBalances;
-	struct balanceOfStruct {
-		address root;
-		uint128 amount;
-	}
-	balanceOfStruct[] public balanceOfArray;
-
-
-	address private tempRootAddress;
-
+	
+	
 	function getAllTokenBalOfContract() public {
 		delete balanceOfArray;
 
@@ -762,6 +756,7 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 			}
 		}
 	}
+
 	function onGetBalance(uint128 bal) public {
 		address root = walletToRoot[msg.sender];
 
@@ -831,8 +826,6 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 	}
 
 	
-	
-	
 	function withdraw(uint256[] indices) external {
 		require(withdrawInProgress == false, WITHDRAW_IN_PROGRESS);
 		
@@ -851,24 +844,22 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 	}
 	
 	
-	function withdrawInternal(address user, uint256[] indices) public {
+	function withdrawInternal(address user, uint256[] indices) internal {
 		uint256 totalAmount;
 
 		uint256 userDepositCount = userDeposits[user].length;
 		require(userDepositCount > 0, NO_VALID_DEPOSITS);
 
-		// Calculate total amount eligible for withdrawal
 		uint256 cnt = indices.length;
-		// uint256 userPrimaryTokenUnlockingAmt; // usdt user share
 
 		for (uint256 i = 0; i < cnt; i++) {
 			require(indices[i] < userDepositCount, INVALID_INDEX);
 			User userDeposit = userDeposits[user][indices[i]];
-			// require(
-			// 	block.timestamp >=
-			// 		userDeposit.firstDepositTime + FULL_TERM_LOCK_PERIOD,
-			// 	DEPOSIT_NOT_ELIGIBLE
-			// );
+			require(
+				block.timestamp >=
+					userDeposit.firstDepositTime + FULL_TERM_LOCK_PERIOD,
+				DEPOSIT_NOT_ELIGIBLE
+			);
 
 			
 			totalAmount += userDeposit.treasuryDeposit; //in Usdt 6 decimals
@@ -879,7 +870,6 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		require(totalAmount > 0, NO_VALID_DEPOSITS);
 
 		
-		// Calculate total user deposit assets in USDT after a year
 		uint256 totalAmountInUsd;
 		uint256 len = assets.length;
 
@@ -959,37 +949,25 @@ contract Treasury is IAcceptTokensTransferCallback , ITreasury{
 		uint256 daiAmountToMint = (amountAfterFee * DEED_EMISSION_RATE * 10 ** 6) / (10 ** 6);
 		
 		totalTreasuryPoints -= totalAmount;
-		// // // Update treasury points for user
 		treasuryBalances[user] -= totalAmount;
 
 		// // Remove withdrawn deposits from userDeposits array
 		removeUserDeposits(user, indices);
-		// emit Withdraw(msg.sender, totalAmount, daiAmountToMint);
 
-		// TvmCell e;
-		// // // IDeedToken(deedToken).mintForTreasury(msg.sender, daiAmountToMint);
-		// ITokenRoot(deedToken).mint{value: 0, flag: 64}({
-        //     amount: uint128(daiAmountToMint),
-        //     recipient: user,
-        //     deployWalletValue: 1 ever,
-        //     remainingGasTo: treasuryOwner,
-        //     notify: true,
-        //     payload: e
-        // });
-	emit Debug("withdrawInternal",msg.sender,1);
-	// mintForTreasury(user, uint128(daiAmountToMint));
+		
 
-	TvmCell e;
-	ITokenRoot(deedToken).mint{value: 2 ever, flag: 64}({
-            amount: uint128(daiAmountToMint),
-            recipient: user,
-            deployWalletValue: 1 ever,
-            remainingGasTo: treasuryOwner,
-            notify: true,
-            payload: e
-        });
+		TvmCell e;
+		ITokenRoot(deedToken).mint{value: 2 ever, flag: 64}({
+				amount: uint128(daiAmountToMint),
+				recipient: user,
+				deployWalletValue: 1 ever,
+				remainingGasTo: treasuryOwner,
+				notify: true,
+				payload: e
+			});
+			emit Withdraw(msg.sender, totalAmount, daiAmountToMint);
+
 	}
-event Debug(string msg,address sender,uint128 amount);
 
 	function swapAndTransferToGovernance(
 		uint128 amountIn,
@@ -1036,8 +1014,7 @@ event Debug(string msg,address sender,uint128 amount);
 
 	
 
-	event usdtRateLog(address asset, uint256 usdtAmount, uint256 outAmount);
-
+	
 	function usdtRate(address asset, uint256 _usdtAmount) public view returns (uint256 outAmount) {
     uint256 n = assetPriceFeed.length;
     for (uint256 i = 0; i < n; i++) {
@@ -1056,18 +1033,18 @@ event Debug(string msg,address sender,uint128 amount);
     }
 }
 
-function updatePriceFeeds(priceFeedUSDT[] newPriceFeeds) public onlyOwner {
-	delete assetPriceFeed; 
-	uint256 n = newPriceFeeds.length;
-	for (uint256 i = 0; i < n; i++) {
-		require(newPriceFeeds[i].asset != address(0), INVALID_ADDRESS);
-		require(newPriceFeeds[i].rate > 0, INVALID_RATE);
-		require(newPriceFeeds[i].decimals > 0, INVALID_DECIMALS);
-		newPriceFeeds[i].lastUpdatedTimeStamp = block.timestamp;
-		assetPriceFeed.push(newPriceFeeds[i]);
+	function updatePriceFeeds(priceFeedUSDT[] newPriceFeeds) public onlyOwner {
+		delete assetPriceFeed; 
+		uint256 n = newPriceFeeds.length;
+		for (uint256 i = 0; i < n; i++) {
+			require(newPriceFeeds[i].asset != address(0), INVALID_ADDRESS);
+			require(newPriceFeeds[i].rate > 0, INVALID_RATE);
+			require(newPriceFeeds[i].decimals > 0, INVALID_DECIMALS);
+			newPriceFeeds[i].lastUpdatedTimeStamp = block.timestamp;
+			assetPriceFeed.push(newPriceFeeds[i]);
+		}
+		emit PriceFeedsUpdated(newPriceFeeds);	
 	}
-	emit PriceFeedsUpdated(newPriceFeeds);	
-}
 	
 	
 	function removeUserDeposits(address user, uint256[] indices) internal {
@@ -1076,7 +1053,7 @@ function updatePriceFeeds(priceFeedUSDT[] newPriceFeeds) public onlyOwner {
 		sortAscending(indices);
 
 		uint256 originalLength = userDeposits[user].length;
-		bool[] skip = new bool[](originalLength); // Skip list to mark removal
+		bool[] skip = new bool[](originalLength); 
 
 		for (uint256 i = 0; i < indices.length; i++) {
 			uint256 index = indices[i];
@@ -1109,7 +1086,6 @@ function updatePriceFeeds(priceFeedUSDT[] newPriceFeeds) public onlyOwner {
 		for (uint256 i = 0; i < n; i++) {
 			for (uint256 j = i + 1; j < n; j++) {
 				if (data[i] > data[j]) {
-					// Swap values
 					(data[i], data[j]) = (data[j], data[i]);
 				}
 			}
@@ -1147,7 +1123,7 @@ function updatePriceFeeds(priceFeedUSDT[] newPriceFeeds) public onlyOwner {
 		address collection = founderNFT;
 		tvm.accept();
 
-		FounderNFTCollection(collection).nftAddress{
+		FounderNFT(collection).nftAddress{
 			value: 0.2 ever,
 			flag: 1,
 			callback: Treasury.onNftAddress
@@ -1158,7 +1134,7 @@ function updatePriceFeeds(priceFeedUSDT[] newPriceFeeds) public onlyOwner {
 		address collection = deedNFT;
 		tvm.accept();
 
-		FounderNFTCollection(collection).nftAddress{
+		FounderNFT(collection).nftAddress{
 			value: 0.2 ever,
 			flag: 1,
 			callback: Treasury.onNftAddress
@@ -1278,7 +1254,7 @@ function updatePriceFeeds(priceFeedUSDT[] newPriceFeeds) public onlyOwner {
 			NFT_STILL_LOCKED_TERM_NOT_ENDS
 		);
 
-		// _removeLockedNFT(msg.sender, collectionAddress, _tokenId);
+		_removeLockedNFT(msg.sender, collectionAddress, _tokenId);
 
 		uint256[] lockedTokens = lockedNFTs[msg.sender][collectionAddress];
 		emit unLocked(collectionAddress, _tokenId, lockedTokens.length);
@@ -1398,16 +1374,12 @@ function updatePriceFeeds(priceFeedUSDT[] newPriceFeeds) public onlyOwner {
 	fallback() external pure{
 		tvm.accept();
 	}
-	function minting() external{
-		tvm.accept();
-		mintForTreasury(msg.sender, 3);
-	}
-	function mintForTreasury(address account, uint128 amount) public  {
+	
+	function mintForTreasury(address account, uint128 amount) public  view{
 		tvm.accept();
 
         TvmCell e;
-        // emit Debug("mintDeedToken",msg.sender);
-	emit Debug("withdrawInternal",msg.sender,2);
+        
 
         ITokenRoot(deedToken).mint{value: 0, flag: 64}({
             amount: amount,

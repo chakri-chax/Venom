@@ -7,7 +7,7 @@ async function main() {
   const chakri = new Address("0:777fa2283eea7b1364b015571c4d3649f4f501d83d24e4f8876e753fc3ab5081");
   const chakri2 = new Address("0:1c91894d1170cc8b9465b45d2aaaa0110ec3c0bb9e450aba57f0361408fb5263");
   
-  const treasuryAddress_ = new Address("0:ab2b7c3e557524adeffb446e1d2380c3765499e999d97a9e641d5d385c564d9c");
+  const treasuryAddress_ = new Address("0:f7826b7c4fc85f5da3776e277d022ea7fd38d7457e8e082fd1929daf7f7795ea");
 
   const { contract: sample, tx } = await locklift.factory.deployContract({
     contract: "GovernanceToken",
@@ -79,9 +79,9 @@ async function main() {
           _vote_start: 0,
           _vote_end: 1, // 1 day
           _ptype: 4, // ProposalType.BLOCK_USER
-          _minVoters: 2,
+          _minVoters: 1,
           _minPercent: 50,
-          amount: (0),
+          amount: (5),
           _blockAddress: new Address("0:7179e9aeb58d6fe97610ffcf605eded4f3a161cee84bc0d67bfdf55e6a6a6491"),
 
         })
@@ -138,40 +138,20 @@ async function main() {
   // }
   // console.log("create a proposal -->UN BLOCK USER", new Date().getTime());
 
-  {
-    const { traceTree } = await locklift.tracing.trace(
-      sample.methods
-        .createProposalRequest({
-          _title: "UnBlocking Address ",
-          _description: "This is my first proposal",
-          _vote_start: 0,
-          _vote_end: 10,
-          _ptype: 5, // ProposalType.UNBLOCK_USER
-          _minVoters: 2,
-          _minPercent: 50,
-          amount: (0),
-          _blockAddress: new Address("0:7179e9aeb58d6fe97610ffcf605eded4f3a161cee84bc0d67bfdf55e6a6a6491"),
-
-        })
-        .send({
-          from: chakri,
-          amount: toNano(1),
-        }),
-    );
-
-    await traceTree?.beautyPrint();
-  }
-
-  // ****************************** vote on the proposal ******************************
-
-  // console.log("vote on the proposal --> BLOCK USER", new Date().getTime());
-
   // {
   //   const { traceTree } = await locklift.tracing.trace(
   //     sample.methods
-  //       .voteByUser({
-  //         _propID: 0,
-  //         _supports: true,
+  //       .createProposalRequest({
+  //         _title: "UnBlocking Address ",
+  //         _description: "This is my first proposal",
+  //         _vote_start: 0,
+  //         _vote_end: 10,
+  //         _ptype: 5, // ProposalType.UNBLOCK_USER
+  //         _minVoters: 1,
+  //         _minPercent: 50,
+  //         amount: (0),
+  //         _blockAddress: new Address("0:7179e9aeb58d6fe97610ffcf605eded4f3a161cee84bc0d67bfdf55e6a6a6491"),
+
   //       })
   //       .send({
   //         from: chakri,
@@ -182,7 +162,27 @@ async function main() {
   //   await traceTree?.beautyPrint();
   // }
 
-  // console.log("vote on the proposal --> UN BLOCK USER", new Date().getTime());
+  // ****************************** vote on the proposal ******************************
+
+  console.log("vote on the proposal --> BLOCK USER", new Date().getTime());
+
+  {
+    const { traceTree } = await locklift.tracing.trace(
+      sample.methods
+        .voteByUser({
+          _propID: 0,
+          _supports: true,
+        })
+        .send({
+          from: chakri,
+          amount: toNano(1),
+        }),
+    );
+
+    await traceTree?.beautyPrint();
+  }
+
+  console.log("vote on the proposal --> UN BLOCK USER", new Date().getTime());
 
   // {
   //   const { traceTree } = await locklift.tracing.trace(
@@ -199,7 +199,23 @@ async function main() {
 
   //   await traceTree?.beautyPrint();
   // }
+{
+  console.log("setting params");
+ const { traceTree } = await locklift.tracing.trace(
+      sample.methods
+        .setFundingParams({
+          _proposalId: 0,
+          Interval:10,
+          _claimPercemt:100
+        })
+        .send({
+          from: chakri,
+          amount: toNano(1),
+        }),
+    );
 
+    await traceTree?.beautyPrint();
+}
 
   // create a proposal for complaince 
   // console.log("create a proposal --> COMPLAINCE USER", new Date().getTime());

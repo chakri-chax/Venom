@@ -36,7 +36,7 @@ async function main() {
   // };
   
   const { contract: sample, tx } = await locklift.factory.deployContract({
-    contract: "FounderNFTCollection",
+    contract: "FounderNFT",
     publicKey: signer.publicKey,
     initParams: {
       nonce_: locklift.utils.getRandomNonce(),
@@ -46,7 +46,7 @@ async function main() {
       codeIndex: indexArtifacts.code,
       codeIndexBasis: indexBasisArtifacts.code,
       owner: chakri,
-      remainOnNft: locklift.utils.toNano(0.2),
+      // remainOnNft: locklift.utils.toNano(0.2),
       baseNftUrl: `https://silver-general-planarian-831.mypinata.cloud/ipfs/bafkreiesdeoqwzs2j5k6pg3dqy6yav75tew4mstxnqaw5w6hia7xbclxem/`, // 	string baseNftUrl,
       collectionUrl: `https://silver-general-planarian-831.mypinata.cloud/ipfs/bafkreiesdeoqwzs2j5k6pg3dqy6yav75tew4mstxnqaw5w6hia7xbclxem`, //     string collectionUrl,
      
@@ -54,8 +54,10 @@ async function main() {
       _routingWallet: chakri,
       _baseTokenURI: `https://silver-general-planarian-831.mypinata.cloud/ipfs/bafkreiesdeoqwzs2j5k6pg3dqy6yav75tew4mstxnqaw5w6hia7xbclxem/`,
       _nonce: locklift.utils.getRandomNonce(),
+      costPerNft: locklift.utils.toNano(1),
     },
     value: locklift.utils.toNano(1.5),
+
   });
 
   console.log(

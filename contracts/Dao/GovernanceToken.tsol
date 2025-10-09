@@ -285,7 +285,7 @@ contract Governance is IGovernanceCallback {
 		address _blockAddress
 	) external {
 		require(_minPercent > 40, MIN_PERCENTAGE_TOO_LOW);
-		require(_minVoters >= 2, MIN_VOTERS_TOO_LOW);
+		require(_minVoters >= 1, MIN_VOTERS_TOO_LOW);
 		require(!isUserBlacklisted(msg.sender), USER_IS_BLOCKED);
 		_vote_start = _vote_start == 0 ? block.timestamp : _vote_start;
 		uint voteEndTme =block.timestamp + _vote_end * 24 * 60 * 60 * 1000000;
@@ -749,7 +749,7 @@ contract Governance is IGovernanceCallback {
 		require(_pId < proposals.length, INVALID_ID);
 		Proposal p = proposals[_pId];
 		uint totalVotes = p.yVotes + p.nVotes;
-		require(block.timestamp > p.vote_end, VOTING_IN_PROGRESS);
+		// require(block.timestamp > p.vote_end, VOTING_IN_PROGRESS);
 		if (p.fundingAmount > 0) {
 			require(p.claimPercent > 0, CLAIM_PERCENT_NOT_SET);
 			require(p.fundingInterval > 0, FUNDING_INTERVAL_NOT_SET);
@@ -800,7 +800,7 @@ contract Governance is IGovernanceCallback {
 			_removeFromBlacklist(p.blockAddress);
 		}
 
-		p.pStatus = ProposalStatus.COMPLETED;
+		proposals[_pId].pStatus = ProposalStatus.COMPLETED;
 		completedProposals++;
 		emit ProposalStatusChanged(p.PID, ProposalStatus.COMPLETED);
 	}
@@ -837,7 +837,7 @@ contract Governance is IGovernanceCallback {
 			require(amountToRelease > 0, NO_FUNDS_AVAILABLE);
 
 			Treasury(treasury).swapAndTransferToGovernance{
-				value: 3 ever,
+				value: 5 ever,
 				flag: 1
 			}(amountToRelease, p.creator);
 		} else if (p.releasedAmount + amountToRelease > p.fundingAmount) {
@@ -845,7 +845,7 @@ contract Governance is IGovernanceCallback {
 			require(amountToRelease > 0, NO_FUNDS_AVAILABLE);
 
 			Treasury(treasury).swapAndTransferToGovernance{
-				value: 3 ever,
+				value: 5 ever,
 				flag: 1
 			}(amountToRelease, p.creator);
 		}
